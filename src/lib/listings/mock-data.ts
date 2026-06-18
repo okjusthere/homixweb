@@ -184,6 +184,18 @@ export const MOCK_AGENTS: Agent[] = [
   { id: "jorcylu", slug: "jorcylu", name: "Jorcy (Jueyao) Lu", title: "Licensed Real Estate Salesperson", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/f14fd0c3-81dd-4300-8a8e-903ba953a7db/jorcylu.jpg", phone: "917-821-5179", email: "jorcy@homixny.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/jorcylu" },
   { id: "chunchinyang", slug: "chunchinyang", name: "Chun Chin Yang", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "917-355-5190", email: "ccy1368@outlook.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/chunchinyang" },
   { id: "yukeyhoo", slug: "yukeyhoo", name: "Yukey Hoo", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "407-937-8888", email: "", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/yukeyhoo" },
+  // --- Added from the OneKey MLS office roster (not on the legacy site).
+  // Replace public/agents/<slug>.jpg with real photos; add contact details as available.
+  { id: "winarkotanumiharjo", slug: "winarkotanumiharjo", name: "Winarko Tanumiharjo", title: "Licensed Real Estate Salesperson", photo: "/agents/winarkotanumiharjo.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "yufeiwang", slug: "yufeiwang", name: "Yufei Wang", title: "Licensed Real Estate Salesperson", photo: "/agents/yufeiwang.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "yilinwang", slug: "yilinwang", name: "Yilin Wang", title: "Licensed Real Estate Salesperson", photo: "/agents/yilinwang.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "evama", slug: "evama", name: "Eva Y. Ma", title: "Licensed Real Estate Salesperson", photo: "/agents/evama.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "qinghe", slug: "qinghe", name: "Qing He", title: "Licensed Real Estate Salesperson", photo: "/agents/qinghe.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "defenghuang", slug: "defenghuang", name: "Defeng Huang", title: "Licensed Real Estate Salesperson", photo: "/agents/defenghuang.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "yixianli", slug: "yixianli", name: "Yixian Li", title: "Licensed Real Estate Salesperson", photo: "/agents/yixianli.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "yinchunwu", slug: "yinchunwu", name: "Yinchun Wu", title: "Licensed Real Estate Salesperson", photo: "/agents/yinchunwu.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "jinxiuyang", slug: "jinxiuyang", name: "Jinxiu Yang", title: "Licensed Real Estate Salesperson", photo: "/agents/jinxiuyang.jpg", phone: "", email: "", bio: "", specialties: [] },
+  { id: "honglongchen", slug: "honglongchen", name: "Honglong Chen", title: "Licensed Real Estate Salesperson", photo: "/agents/honglongchen.jpg", phone: "", email: "", bio: "", specialties: [] },
 ];
 
 // Overlay real bios scraped verbatim from homixny.com (only agents that have one).
