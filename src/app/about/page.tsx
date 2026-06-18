@@ -44,8 +44,7 @@ export default async function AboutPage() {
 
       <Container className="py-20 sm:py-28">
         <div className="max-w-2xl">
-          <Eyebrow>{t.about.foundersEyebrow}</Eyebrow>
-          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+          <h2 className="font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
             {t.about.foundersTitle}
           </h2>
         </div>

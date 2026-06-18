@@ -15,7 +15,7 @@ import type { Agent, Listing } from "./types";
 const img = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`;
 
-const PLACEHOLDER_PORTRAIT = "/agent-placeholder.svg";
+const PLACEHOLDER_PORTRAIT = "/agent-placeholder-logo.png";
 
 export const MOCK_AGENTS: Agent[] = [
   {
@@ -80,8 +80,8 @@ export const MOCK_AGENTS: Agent[] = [
     slug: "yanxue",
     name: "Christina (Yan Xue) Zheng",
     title: "Licensed Associate Real Estate Broker",
-    photo:
-      "https://static1.squarespace.com/static/686fe7f9a969e208b5dce2a0/t/69320ffbed7bd92b55ec55cb/1764888571617/d05317987b2784f5ec1ab1859f5c4169.JPG?format=1500w",
+    // Correct photo supplied by client — replace public/agents/yanxue.jpg to update.
+    photo: "/agents/yanxue.jpg",
     phone: "917-836-1628",
     email: "chrisinanyrealtor@gmail.com",
     bio: "Associate Broker with nearly a decade in the business and a passion for staging, design, and photography — a perennial top-10 agent at her firm.",
@@ -171,7 +171,7 @@ export const MOCK_AGENTS: Agent[] = [
   { id: "yukizhang", slug: "yukizhang", name: "Yuki (Yan) Zhang", title: "Licensed Real Estate Salesperson", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/0a208a00-9989-4df6-8731-1087768f114a/yukizhang.jpg", phone: "917-783-0806", email: "zhangyan14105@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/yukizhang" },
   { id: "angelalin", slug: "angelalin", name: "Angela (Jianxiu) Lin", title: "Licensed Real Estate Salesperson", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/62d15b1e-45b5-4c75-86fc-1324c8b720c6/angelalin.jpg", phone: "516-989-8588", email: "angelacomm688@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/angelalin" },
   { id: "davidhu", slug: "davidhu", name: "David Hu", title: "Licensed Real Estate Salesperson", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/d40dcbd8-ee60-4c3a-a00a-ae60025aa2c2/davidhu.jpg", phone: "516-373-4779", email: "david.homix@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/davidhu" },
-  { id: "kylehuang", slug: "kylehuang", name: "Kyle (Huizhong) Huang", title: "Licensed Real Estate Salesperson", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/f69ed391-8271-4da8-9efc-82490b3c5f14/kylehuang.jpg", phone: "347-637-9380", email: "homix.realty.kyle@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/kylehuang" },
+  { id: "kylehuang", slug: "kylehuang", name: "Kyle (Huizhong) Huang", title: "Licensed Real Estate Salesperson", photo: "/agents/kylehuang.jpg", phone: "347-637-9380", email: "homix.realty.kyle@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/kylehuang" },
   { id: "xueyaozou", slug: "xueyaozou", name: "Xueyao Zou", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "", email: "xyzou98@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/xueyaozou" },
   { id: "shawnzhang", slug: "shawnzhang", name: "Shawn (Xiaoyi) Zhang", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "201-889-0333", email: "shawnxiao1987@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/shawnzhang" },
   { id: "bingwu", slug: "bingwu", name: "Bing Wu", title: "Licensed Salesperson (NY) · Broker (CA)", photo: "https://images.squarespace-cdn.com/content/v1/686fe7f9a969e208b5dce2a0/c9db9f8e-2918-4b34-8f53-1898f08c6d51/bingwu.jpg", phone: "951-733-8143", email: "bingwu.bwc@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/bingwu" },
