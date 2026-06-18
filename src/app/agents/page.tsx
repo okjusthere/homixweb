@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { AgentCard } from "@/components/agents/AgentCard";
+import { getT } from "@/lib/i18n";
 import { listings } from "@/lib/listings";
 
 export const metadata: Metadata = {
@@ -12,18 +13,18 @@ export const metadata: Metadata = {
 };
 
 export default async function AgentsPage() {
+  const { t } = await getT();
   const agents = await listings.getAgents();
 
   return (
     <Container className="py-12 sm:py-16">
       <div className="max-w-2xl">
-        <Eyebrow>The team</Eyebrow>
+        <Eyebrow>{t.agentsPage.eyebrow}</Eyebrow>
         <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
-          Our advisors
+          {t.agentsPage.title}
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted">
-          A bilingual team across Queens, Long Island, and Manhattan — each one a
-          licensed New York professional who knows the neighborhoods firsthand.
+          {t.agentsPage.lead}
         </p>
       </div>
 

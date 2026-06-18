@@ -47,6 +47,19 @@ export async function Neighborhoods() {
                   </div>
                 </div>
               </Link>
+              {n.photoCredit && (
+                <p className="mt-2 text-[11px] leading-tight text-muted">
+                  Photo:{" "}
+                  <a
+                    href={n.photoCreditUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-offset-2 hover:text-bronze hover:underline"
+                  >
+                    {n.photoCredit}
+                  </a>
+                </p>
+              )}
             </Reveal>
           ))}
         </div>

@@ -204,6 +204,40 @@ const en = {
     backToJournal: "All articles",
     minRead: "min read",
   },
+  agentsPage: {
+    eyebrow: "The team",
+    title: "Our advisors",
+    lead: "A bilingual team across Queens, Long Island, and Manhattan — each one a licensed New York professional who knows the neighborhoods firsthand.",
+    contact: "Contact",
+    licenseNo: "License #",
+  },
+  contactPage: {
+    eyebrow: "Contact",
+    title: "Start a quiet conversation.",
+    lead: "Buying, selling, or just thinking it through — we're glad to help, with no pressure and no obligation.",
+    byPhone: "By phone",
+    byEmail: "By email",
+    inPerson: "In person",
+  },
+  neighborhoodsPage: {
+    eyebrow: "Neighborhoods",
+    title: "The places we know best",
+    lead: "Local guides to the New York neighborhoods where Homix works most closely.",
+    viewHomes: "View homes here",
+    backToAll: "All neighborhoods",
+    photoBy: "Photo",
+  },
+  notFound: {
+    eyebrow: "404",
+    title: "This page has moved on.",
+    lead: "The page you're looking for isn't here. Let's get you back to the homes.",
+    backHome: "Back home",
+    browseListings: "Browse listings",
+  },
+  legal: {
+    note: "This is a working template. Have qualified counsel review and finalize the text before launch.",
+    lastUpdated: "Last updated",
+  },
 };
 
 type Dict = typeof en;
@@ -388,6 +422,40 @@ const zh: Dict = {
     by: "作者",
     backToJournal: "全部文章",
     minRead: "分钟阅读",
+  },
+  agentsPage: {
+    eyebrow: "团队",
+    title: "我们的经纪人",
+    lead: "一支覆盖皇后区、长岛与曼哈顿的双语团队——每一位都是熟悉本地社区的纽约持牌专业人士。",
+    contact: "联系",
+    licenseNo: "牌照号",
+  },
+  contactPage: {
+    eyebrow: "联系",
+    title: "开始一次轻松的对话。",
+    lead: "买房、卖房，或只是还在考虑——我们都乐意帮忙，没有压力，没有义务。",
+    byPhone: "电话",
+    byEmail: "邮箱",
+    inPerson: "到访",
+  },
+  neighborhoodsPage: {
+    eyebrow: "社区",
+    title: "我们最了解的地方",
+    lead: "Homix 深耕的纽约社区的本地指南。",
+    viewHomes: "查看该区房源",
+    backToAll: "全部社区",
+    photoBy: "摄影",
+  },
+  notFound: {
+    eyebrow: "404",
+    title: "这个页面已经搬走了。",
+    lead: "你要找的页面不在这里。我们带你回到房子那边。",
+    backHome: "返回首页",
+    browseListings: "浏览房源",
+  },
+  legal: {
+    note: "这是一份可用模板。上线前请由专业律师审核并定稿。",
+    lastUpdated: "最近更新",
   },
 };
 

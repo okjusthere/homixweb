@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/site/PagePlaceholder";
+import { LegalLayout } from "@/components/site/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Fair Housing",
@@ -8,12 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function FairHousingPage() {
-  return (
-    <PagePlaceholder eyebrow="Legal" title="Fair Housing & Equal Opportunity">
-      Homix is committed to the Fair Housing Act and the Equal Opportunity Act.
-      We do not discriminate on the basis of race, color, religion, sex,
-      disability, familial status, or national origin. Full disclosures and
-      state brokerage notices will be published here before launch.
-    </PagePlaceholder>
-  );
+  return <LegalLayout doc="fair-housing" />;
 }

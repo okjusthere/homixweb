@@ -13,6 +13,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "static1.squarespace.com" },
       // OneKey / MLS Grid listing photos (time-limited signed URLs).
       { protocol: "https", hostname: "media.mlsgrid.com" },
+      // Wikimedia Commons — real, freely-licensed neighborhood photos.
+      { protocol: "https", hostname: "upload.wikimedia.org" },
     ],
   },
 };

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { getT } from "@/lib/i18n";
 import { listings } from "@/lib/listings";
 import { siteConfig } from "@/lib/site";
 
@@ -36,10 +37,18 @@ export default async function AgentProfilePage({
   const agent = await listings.getAgentBySlug(slug);
   if (!agent) notFound();
 
+  const { locale, t } = await getT();
   const social = Object.entries(agent.social ?? {}).filter(([, v]) => v) as [
     string,
     string,
   ][];
+
+  const fallbackBio =
+    locale === "zh"
+      ? `${agent.name} 是 Homix 的纽约持牌地产专业人士，服务大纽约地区的买家与卖家。`
+      : `${agent.name} is a licensed New York real estate professional with Homix, serving buyers and sellers across the greater New York market.`;
+  const callLabel = locale === "zh" ? "致电" : "Call";
+  const emailLabel = locale === "zh" ? "邮件" : "Email";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -58,7 +67,7 @@ export default async function AgentProfilePage({
         href="/agents"
         className="text-sm text-muted underline-offset-4 transition-colors hover:text-bronze hover:underline"
       >
-        ← All advisors
+        ← {t.agentsPage.title}
       </Link>
 
       <div className="mt-8 grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
@@ -94,33 +103,31 @@ export default async function AgentProfilePage({
             </div>
           )}
 
-          {agent.bio ? (
-            <p className="mt-7 whitespace-pre-line text-lg leading-relaxed text-ink/85">
-              {agent.bio}
-            </p>
-          ) : (
-            <p className="mt-7 text-lg leading-relaxed text-muted">
-              {agent.name} is a licensed New York real estate professional with
-              Homix, serving buyers and sellers across the greater New York market.
-            </p>
-          )}
+          <p className="mt-7 whitespace-pre-line text-lg leading-relaxed text-ink/85">
+            {agent.bio || fallbackBio}
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             {agent.phone && (
               <Button href={`tel:${agent.phone.replace(/[^\d+]/g, "")}`}>
-                Call {agent.phone}
+                {callLabel} {agent.phone}
               </Button>
             )}
             {agent.email && (
               <Button href={`mailto:${agent.email}`} variant="outline">
-                Email
+                {emailLabel}
               </Button>
             )}
           </div>
 
           {(social.length > 0 || agent.profileUrl || agent.licenseNumber) && (
             <div className="mt-8 space-y-2 border-t border-line pt-6 text-sm text-muted">
-              {agent.licenseNumber && <p>License #{agent.licenseNumber}</p>}
+              {agent.licenseNumber && (
+                <p>
+                  {t.agentsPage.licenseNo}
+                  {agent.licenseNumber}
+                </p>
+              )}
               {social.length > 0 && (
                 <p className="flex flex-wrap gap-x-4">
                   {social.map(([platform, url]) => (

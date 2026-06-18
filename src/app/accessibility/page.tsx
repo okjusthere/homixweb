@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/site/PagePlaceholder";
+import { LegalLayout } from "@/components/site/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Accessibility",
@@ -7,11 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function AccessibilityPage() {
-  return (
-    <PagePlaceholder eyebrow="Legal" title="Accessibility Statement">
-      Homix is committed to meeting WCAG 2.2 AA. A full accessibility statement
-      with an accommodation contact will be published here before launch. If you
-      need assistance, please reach out — we&rsquo;ll help directly.
-    </PagePlaceholder>
-  );
+  return <LegalLayout doc="accessibility" />;
 }

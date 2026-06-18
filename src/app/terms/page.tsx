@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PagePlaceholder } from "@/components/site/PagePlaceholder";
+import { LegalLayout } from "@/components/site/LegalLayout";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -7,11 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
-  return (
-    <PagePlaceholder eyebrow="Legal" title="Terms of Use">
-      Terms of use, including a listing-accuracy disclaimer and required state
-      agency disclosures, will be published here before launch. Please have
-      counsel review the final text.
-    </PagePlaceholder>
-  );
+  return <LegalLayout doc="terms" />;
 }
