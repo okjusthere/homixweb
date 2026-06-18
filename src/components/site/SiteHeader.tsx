@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/i18n";
 import { LocaleToggle } from "./LocaleToggle";
-import { Wordmark } from "./Wordmark";
 
 export interface HeaderNavItem {
   href: string;
@@ -63,7 +63,19 @@ export function SiteHeader({
           )}
         >
           <div className="mx-auto flex h-[68px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-12">
-            <Wordmark className={light ? "text-paper" : "text-ink"} />
+            <Link href="/" aria-label="Homix — home" className="flex items-center">
+              <Image
+                src="/homix-mark.webp"
+                alt="Homix"
+                width={1500}
+                height={699}
+                priority
+                className={cn(
+                  "h-10 w-auto transition-[filter] duration-200",
+                  light ? "brightness-0 invert" : "",
+                )}
+              />
+            </Link>
 
             <nav className="hidden items-center gap-9 md:flex">
               {nav.map((link) => (
