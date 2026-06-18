@@ -40,6 +40,29 @@ export default async function AboutPage() {
         </div>
       </Container>
 
+      <section className="border-t border-line bg-surface py-16 sm:py-24">
+        <Container>
+          <div className="max-w-2xl">
+            <Eyebrow>{t.about.teamEyebrow}</Eyebrow>
+            <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+              {t.about.teamTitle}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted">
+              {t.about.teamBody}
+            </p>
+          </div>
+          <div className="relative mt-12 aspect-[3/2] overflow-hidden rounded-sm bg-line/40">
+            <Image
+              src="/about/team.jpg"
+              alt="The Homix team"
+              fill
+              sizes="(max-width: 1024px) 100vw, 1200px"
+              className="object-cover"
+            />
+          </div>
+        </Container>
+      </section>
+
       <StatsBand />
 
       <Container className="py-20 sm:py-28">

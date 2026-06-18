@@ -160,6 +160,9 @@ const en = {
     howEyebrow: "How we work",
     workWithUs: "Work with us",
     meetTeam: "Meet the team",
+    teamEyebrow: "Our team",
+    teamTitle: "One team, every corner of New York.",
+    teamBody: "From Flushing to Manhattan to the North Shore, our advisors share one standard of service — local knowledge, bilingual care, and a media engine behind every deal.",
   },
   join: {
     eyebrow: "Careers · Join Homix",
@@ -417,6 +420,9 @@ const zh: Dict = {
     howEyebrow: "我们的方式",
     workWithUs: "与我们合作",
     meetTeam: "认识团队",
+    teamEyebrow: "我们的团队",
+    teamTitle: "一个团队，服务纽约每个角落。",
+    teamBody: "从法拉盛到曼哈顿，再到长岛北岸，我们的经纪人秉持同一套服务标准——本地洞察、双语贴心，以及每一单背后的媒体引擎。",
   },
   join: {
     eyebrow: "招募 · 加入 Homix",
