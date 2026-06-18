@@ -60,6 +60,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     headingKey: "explore",
     links: [
       { key: "listings", href: "/listings" },
+      { key: "sell", href: "/sell" },
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "advisors", href: "/agents" },
       { key: "journal", href: "/journal" },
@@ -70,6 +71,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "about", href: "/about" },
       { key: "join", href: "/join" },
+      { key: "calculator", href: "/calculator" },
       { key: "contact", href: "/contact" },
     ],
   },
@@ -95,26 +97,17 @@ export interface Testimonial {
 }
 
 /**
- * PLACEHOLDER testimonials — written as samples. Replace with REAL, attributable
- * client quotes (with consent) before launch; anonymous/invented testimonials
- * are a compliance risk.
+ * One REAL testimonial migrated from homixny.com ("What Our Clients Say"). It is
+ * anonymous on the source, so it's attributed honestly without a fabricated name.
+ * Add more attributable client quotes (with consent) as they come in.
  */
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Their video tour hit tens of thousands of views in days, and we had multiple offers the first weekend. The exposure was unlike any agent we'd worked with.",
-    name: "The Chen Family",
-    detail: "Sold in Flushing",
-    photo:
-      "https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=crop&w=320&q=80",
-  },
-  {
-    quote:
-      "As first-time buyers from out of state, we needed patience and honesty in both languages. Homix gave us exactly that, start to finish.",
-    name: "Daniel & Mei",
-    detail: "Bought in Long Island City",
-    photo:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=320&q=80",
+      "Sunny was very professional and responsive throughout the entire process. They helped me sell my condo above asking price and guided me through every step with patience. Highly recommend!",
+    name: "A Homix client",
+    detail: "Sold a condo above asking price",
+    photo: "",
   },
 ];
 

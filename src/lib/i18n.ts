@@ -28,6 +28,7 @@ const en = {
     listings: "Listings",
     advisors: "Advisors",
     journal: "Journal",
+    sell: "Sell",
     join: "Join Homix",
     about: "About",
     contact: "Contact",
@@ -41,6 +42,7 @@ const en = {
     legal: "Legal",
     backHome: "Back home",
     viewProfile: "View profile",
+    calculator: "Mortgage calculator",
     langLabel: "中文",
   },
   footer: {
@@ -238,6 +240,42 @@ const en = {
     note: "This is a working template. Have qualified counsel review and finalize the text before launch.",
     lastUpdated: "Last updated",
   },
+  sell: {
+    eyebrow: "Sell with Homix",
+    title: "Your home deserves an audience.",
+    lead: "Most listings reach a fraction of the market. Homix puts yours in front of a 1,000,000+ audience with video, content, and AI-driven marketing — so it sells faster, and for more.",
+    points: [
+      {
+        title: "A marketing machine, not a yard sign",
+        body: "Professional photography, video tours, and Reels distributed to a 1M+ audience already watching New York real estate.",
+      },
+      {
+        title: "Priced with data, not guesswork",
+        body: "We price with live market data and AI-assisted analysis, so your home lists at the number that actually moves.",
+      },
+      {
+        title: "Concierge from prep to closing",
+        body: "Staging, marketing, negotiation, and paperwork — handled end to end by an advisor whose name is on the door.",
+      },
+    ],
+    valuationEyebrow: "Free home valuation",
+    valuationTitle: "What's your home worth?",
+    valuationLead: "Tell us about your home and a Homix advisor will prepare a complimentary, no-obligation valuation.",
+    orCall: "Or call",
+  },
+  calculator: {
+    eyebrow: "Tools",
+    title: "Mortgage calculator",
+    lead: "Estimate your monthly payment. For guidance only — talk to a lender for an exact quote.",
+    homePrice: "Home price",
+    downPayment: "Down payment",
+    interestRate: "Interest rate",
+    loanTerm: "Loan term (years)",
+    monthlyPayment: "Estimated monthly payment",
+    principalInterest: "Principal & interest",
+    loanAmount: "Loan amount",
+    disclaimer: "Estimates principal and interest only; taxes, insurance, and HOA are not included. Not a loan offer.",
+  },
 };
 
 type Dict = typeof en;
@@ -247,6 +285,7 @@ const zh: Dict = {
     listings: "房源",
     advisors: "经纪人",
     journal: "观察",
+    sell: "卖房",
     join: "加入我们",
     about: "关于",
     contact: "联系",
@@ -260,6 +299,7 @@ const zh: Dict = {
     legal: "法律",
     backHome: "返回首页",
     viewProfile: "查看主页",
+    calculator: "房贷计算器",
     langLabel: "EN",
   },
   footer: {
@@ -456,6 +496,42 @@ const zh: Dict = {
   legal: {
     note: "这是一份可用模板。上线前请由专业律师审核并定稿。",
     lastUpdated: "最近更新",
+  },
+  sell: {
+    eyebrow: "卖房 · Homix",
+    title: "你的家，值得被看见。",
+    lead: "大多数房源只触达市场的一小部分。Homix 用视频、内容与 AI 营销，把你的家推到 100 万+ 受众面前——卖得更快，也卖得更高。",
+    points: [
+      {
+        title: "营销机器，而非院里一块牌子",
+        body: "专业摄影、视频带看与 Reels，投放给 100 万+ 本就关注纽约地产的受众。",
+      },
+      {
+        title: "用数据定价，而非凭感觉",
+        body: "我们以实时市场数据与 AI 辅助分析定价，让你的房子挂在真正能成交的价位。",
+      },
+      {
+        title: "从筹备到成交的管家式服务",
+        body: "布置、营销、谈判、文书——由名字挂在门上的顾问全程一手包办。",
+      },
+    ],
+    valuationEyebrow: "免费房屋估价",
+    valuationTitle: "你的家值多少？",
+    valuationLead: "告诉我们你的房子，Homix 顾问将为你准备一份免费、无义务的估价。",
+    orCall: "或致电",
+  },
+  calculator: {
+    eyebrow: "工具",
+    title: "房贷计算器",
+    lead: "估算你的月供。仅供参考——准确报价请咨询贷款机构。",
+    homePrice: "房屋总价",
+    downPayment: "首付",
+    interestRate: "利率",
+    loanTerm: "贷款年限",
+    monthlyPayment: "预估月供",
+    principalInterest: "本金 + 利息",
+    loanAmount: "贷款金额",
+    disclaimer: "仅估算本金与利息；不含税费、保险与 HOA。不构成贷款要约。",
   },
 };
 

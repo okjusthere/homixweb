@@ -9,6 +9,7 @@
  * in for the OneKey MLS / IDX feed. Do not present them as real inventory.
  */
 
+import { REAL_BIOS } from "@/data/agent-bios";
 import type { Agent, Listing } from "./types";
 
 const img = (id: string) =>
@@ -184,6 +185,15 @@ export const MOCK_AGENTS: Agent[] = [
   { id: "chunchinyang", slug: "chunchinyang", name: "Chun Chin Yang", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "917-355-5190", email: "ccy1368@outlook.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/chunchinyang" },
   { id: "yukeyhoo", slug: "yukeyhoo", name: "Yukey Hoo", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "407-937-8888", email: "", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/yukeyhoo" },
 ];
+
+// Overlay real bios scraped verbatim from homixny.com (only agents that have one).
+for (const agent of MOCK_AGENTS) {
+  const real = REAL_BIOS[agent.slug];
+  if (real) {
+    agent.bio = real.bio;
+    if (real.specialties.length) agent.specialties = real.specialties;
+  }
+}
 
 export const MOCK_LISTINGS: Listing[] = [
   {

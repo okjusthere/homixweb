@@ -37,7 +37,7 @@ function OrganizationJsonLd() {
     legalName,
     url,
     description,
-    image: `${url}/og.jpg`,
+    image: `${url}/opengraph-image`,
     telephone: contact.phone,
     email: contact.email,
     address: {

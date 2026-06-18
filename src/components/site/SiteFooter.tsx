@@ -1,9 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getT } from "@/lib/i18n";
 import { footerNav, siteConfig } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { EqualHousingLogo } from "./EqualHousingLogo";
-import { Wordmark } from "./Wordmark";
 
 const year = 2026;
 
@@ -17,7 +17,13 @@ export async function SiteFooter() {
       <Container className="py-16">
         <div className="grid gap-12 md:grid-cols-[1.4fr_2fr]">
           <div>
-            <Wordmark className="text-ink" />
+            <Image
+              src="/homix-logo.webp"
+              alt={siteConfig.legalName}
+              width={240}
+              height={136}
+              className="h-auto w-[210px]"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               {siteConfig.tagline}
             </p>
