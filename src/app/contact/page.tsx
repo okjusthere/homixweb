@@ -30,9 +30,15 @@ export default async function ContactPage() {
               <p className="eyebrow mb-2">{t.contactPage.byPhone}</p>
               <a
                 href={contact.phoneHref}
-                className="font-serif text-2xl transition-colors hover:text-bronze"
+                className="block font-serif text-2xl transition-colors hover:text-bronze"
               >
                 {contact.phone}
+              </a>
+              <a
+                href={contact.phone2Href}
+                className="mt-1 block font-serif text-2xl transition-colors hover:text-bronze"
+              >
+                {contact.phone2}
               </a>
             </div>
             <div>

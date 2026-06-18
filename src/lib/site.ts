@@ -15,8 +15,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homixny.com",
   market: "New York",
   contact: {
-    phone: "(917) 688-9917",
-    phoneHref: "tel:+19176889917",
+    phone: "(929) 666-9886",
+    phoneHref: "tel:+19296669886",
+    phone2: "(516) 988-8558",
+    phone2Href: "tel:+15169888558",
     email: "homix@homixny.com",
     address: {
       line1: "37-20 Prince St, Ste 3F",

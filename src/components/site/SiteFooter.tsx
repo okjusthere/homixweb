@@ -39,6 +39,11 @@ export async function SiteFooter() {
                   {contact.phone}
                 </a>{" "}
                 ·{" "}
+                <a className="hover:text-bronze" href={contact.phone2Href}>
+                  {contact.phone2}
+                </a>
+              </p>
+              <p>
                 <a className="hover:text-bronze" href={`mailto:${contact.email}`}>
                   {contact.email}
                 </a>
