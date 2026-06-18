@@ -36,7 +36,9 @@ export default async function JournalPage() {
       </div>
 
       <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {journalPosts.map((post, i) => (
+        {[...journalPosts]
+          .sort((a, b) => b.date.localeCompare(a.date))
+          .map((post, i) => (
           <Reveal key={post.slug} delay={(i % 3) * 60}>
             <Link
               href={`/journal/${post.slug}`}

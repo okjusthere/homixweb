@@ -203,6 +203,48 @@ export const neighborhoods: NeighborhoodTeaser[] = [
       zh: "Great Neck 位于长岛北岸,是一组以林荫街道、优雅住宅闻名的村镇,搭乘长岛铁路很快即达宾州车站。Steppingstone 等滨水公园俯瞰 Manhasset 湾,该区的学校是全岛最受追捧之列。\n\n从经典殖民式到现代新建,Great Neck 在离市区不远处提供了空间与宁静——这种组合在各种市场里都保值。",
     },
   },
+  {
+    name: "Manhasset",
+    slug: "manhasset",
+    blurb: "Gracious North Shore homes, top schools, and a short LIRR ride to the city.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Plandome_Pond_Park%2C_Manhasset%2C_Long_Island%2C_New_York_August_2%2C_2021.jpg/1280px-Plandome_Pond_Park%2C_Manhasset%2C_Long_Island%2C_New_York_August_2%2C_2021.jpg",
+    photoCredit: "AITFFan1 · CC BY-SA 4.0",
+    photoCreditUrl:
+      "https://commons.wikimedia.org/wiki/File:Plandome_Pond_Park,_Manhasset,_Long_Island,_New_York_August_2,_2021.jpg",
+    guide: {
+      en: "Manhasset is a North Shore community known for tree-lined streets, gracious homes, and an easy Long Island Rail Road commute to Penn Station and Grand Central. The Plandome and Strathmore areas offer classic colonials and estate properties, while Manhasset's Miracle Mile brings high-end shopping close to home. The public schools are among the most sought-after on Long Island.\n\nFor buyers, Manhasset pairs space and quiet with quick access to Manhattan; for sellers, well-kept homes in the top school zones stay in steady demand.",
+      zh: "Manhasset 是长岛北岸的社区，以林荫街道、优雅住宅，以及搭乘长岛铁路便捷直达宾州车站与中央车站而闻名。Plandome 与 Strathmore 一带多为经典殖民式与庄园式住宅，而 Manhasset 的「Miracle Mile」将高端购物带到家门口。当地公立学校是长岛最受追捧之列。\n\n对买家而言，Manhasset 在空间与宁静之外，又有通往曼哈顿的便捷；对卖家而言，顶级学区内保养良好的房子需求稳定。",
+    },
+  },
+  {
+    name: "Syosset",
+    slug: "syosset",
+    blurb: "Award-winning schools and a walkable downtown in the heart of Long Island.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Downtown_Syosset%2C_Long_Island%2C_New_York_August_29%2C_2021.jpg/1280px-Downtown_Syosset%2C_Long_Island%2C_New_York_August_29%2C_2021.jpg",
+    photoCredit: "AITFFan1 · CC BY-SA 4.0",
+    photoCreditUrl:
+      "https://commons.wikimedia.org/wiki/File:Downtown_Syosset,_Long_Island,_New_York_August_29,_2021.jpg",
+    guide: {
+      en: "Syosset sits in the heart of Nassau County, prized for its award-winning school district, a walkable downtown along Jackson Avenue, and an LIRR station with direct service to Manhattan. Homes range from mid-century classics to updated colonials on generous lots, with parks and recreation close at hand.\n\nFamilies and investors alike track Syosset for its schools and steady demand; well-priced homes in the district move quickly through any season.",
+      zh: "Syosset 位于拿骚县腹地，以屡获殊荣的学区、Jackson Avenue 沿线可步行的市中心，以及直达曼哈顿的长岛铁路车站而著称。住宅从世纪中叶的经典款到翻新的殖民式不等，地块宽敞，公园与休闲设施近在咫尺。\n\n无论家庭还是投资者，都因学区与稳定需求而关注 Syosset；学区内定价合理的房子，一年四季都走得快。",
+    },
+  },
+  {
+    name: "Jericho",
+    slug: "jericho",
+    blurb: "One of Long Island's top school districts, with quiet streets and easy highways.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_Milleridge_Inn%3B_Jericho%2C_New_York-3.jpg/1280px-The_Milleridge_Inn%3B_Jericho%2C_New_York-3.jpg",
+    photoCredit: "DanTD · CC BY-SA 4.0",
+    photoCreditUrl:
+      "https://commons.wikimedia.org/wiki/File:The_Milleridge_Inn;_Jericho,_New_York-3.jpg",
+    guide: {
+      en: "Jericho is a Nassau County hamlet consistently ranked among Long Island's strongest school districts, which keeps demand high year-round. Its quiet residential streets, a central location near the Long Island Expressway and Northern State Parkway, and the historic Milleridge Inn give the area a settled, established character.\n\nBuyers are drawn to Jericho for schools and convenience; for sellers, homes in the district command attention and hold their value across markets.",
+      zh: "Jericho 是拿骚县的一处社区，长年位列长岛最强学区之中，全年需求旺盛。安静的住宅街道、临近长岛快速路与 Northern State Parkway 的中心位置，以及历史悠久的 Milleridge Inn，赋予这一带成熟稳重的气质。\n\n买家因学区与便利而青睐 Jericho；对卖家而言，学区内的房子备受关注，并在各种市场里保值。",
+    },
+  },
 ];
 
 /** Hero art direction — replace with owned photography for launch. */

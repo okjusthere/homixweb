@@ -3,25 +3,17 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 import { StatsBand } from "@/components/home/StatsBand";
 import { getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Homix is New York's media-first real estate company — a brokerage, media studio, and agent incubator with a 1M+ audience. Meet the founders.",
+    "Homix is New York's media-first real estate company — a brokerage, media studio, and agent incubator with a 1M+ audience.",
 };
-
-const FOUNDER_SLUGS = ["sunny", "heidi", "queenie"];
 
 export default async function AboutPage() {
   const { t } = await getT();
-  const agents = await listings.getAgents();
-  const founders = FOUNDER_SLUGS.map((s) => agents.find((a) => a.slug === s)).filter(
-    (a): a is NonNullable<typeof a> => Boolean(a),
-  );
 
   return (
     <>
@@ -65,47 +57,7 @@ export default async function AboutPage() {
 
       <StatsBand />
 
-      <Container className="py-20 sm:py-28">
-        <div className="max-w-2xl">
-          <h2 className="font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
-            {t.about.foundersTitle}
-          </h2>
-        </div>
-
-        <div className="mt-14 space-y-16">
-          {founders.map((f, i) => (
-            <Reveal key={f.id}>
-              <div
-                className={`grid gap-8 md:grid-cols-[0.6fr_1.4fr] md:gap-12 ${
-                  i % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
-                }`}
-              >
-                <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-line/50">
-                  <Image
-                    src={f.photo}
-                    alt={f.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 320px"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="md:py-4">
-                  <h3 className="font-serif text-2xl text-ink">{f.name}</h3>
-                  <p className="mt-1 text-sm uppercase tracking-wide text-bronze">
-                    {f.title}
-                  </p>
-                  <p className="mt-5 text-lg leading-relaxed text-ink/85">{f.bio}</p>
-                  <Button href={`/agents/${f.slug}`} variant="ghost" className="mt-5">
-                    {t.common.viewProfile} →
-                  </Button>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Container>
-
-      <section className="border-t border-line bg-surface py-20 sm:py-28">
+      <section className="border-t border-line py-20 sm:py-28">
         <Container>
           <Eyebrow>{t.about.howEyebrow}</Eyebrow>
           <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
