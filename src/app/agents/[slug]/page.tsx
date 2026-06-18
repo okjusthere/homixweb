@@ -5,12 +5,12 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { getAgents, getAgentBySlug } from "@/lib/agents";
 import { getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
-  const agents = await listings.getAgents();
+  const agents = await getAgents();
   return agents.map((a) => ({ slug: a.slug }));
 }
 
@@ -20,7 +20,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const agent = await listings.getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
   if (!agent) return { title: "Advisor not found" };
   return {
     title: agent.name,
@@ -34,7 +34,7 @@ export default async function AgentProfilePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const agent = await listings.getAgentBySlug(slug);
+  const agent = await getAgentBySlug(slug);
   if (!agent) notFound();
 
   const { locale, t } = await getT();

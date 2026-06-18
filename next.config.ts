@@ -15,7 +15,13 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "media.mlsgrid.com" },
       // Wikimedia Commons — real, freely-licensed neighborhood photos.
       { protocol: "https", hostname: "upload.wikimedia.org" },
+      // Supabase Storage — advisor-uploaded headshots.
+      { protocol: "https", hostname: "*.supabase.co" },
     ],
+  },
+  experimental: {
+    // Advisor headshot uploads go through a server action.
+    serverActions: { bodySizeLimit: "8mb" },
   },
 };
 

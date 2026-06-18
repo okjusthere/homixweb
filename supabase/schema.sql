@@ -1,0 +1,41 @@
+-- Homix — agent self-edit schema.
+-- Run once in the Supabase SQL editor after creating your project.
+
+create table if not exists public.agents (
+  id text primary key,
+  slug text unique not null,
+  name text not null,
+  title text not null default 'Licensed Real Estate Salesperson',
+  photo_url text,
+  phone text,
+  email text,
+  bio text,
+  specialties text[] not null default '{}',
+  social jsonb not null default '{}'::jsonb,
+  license_number text,
+  profile_url text,
+  edit_token text unique not null,
+  sort int not null default 100,
+  visible boolean not null default true,
+  updated_at timestamptz not null default now()
+);
+
+-- Row Level Security: anyone may READ visible agents; nobody may write through
+-- the public/anon key. All writes go through the server (service role key),
+-- which bypasses RLS and is gated by each advisor's secret edit token.
+alter table public.agents enable row level security;
+
+drop policy if exists "agents public read" on public.agents;
+create policy "agents public read"
+  on public.agents for select
+  using (visible = true);
+
+-- Public bucket for advisor headshots.
+insert into storage.buckets (id, name, public)
+values ('agent-photos', 'agent-photos', true)
+on conflict (id) do nothing;
+
+drop policy if exists "agent photos public read" on storage.objects;
+create policy "agent photos public read"
+  on storage.objects for select
+  using (bucket_id = 'agent-photos');

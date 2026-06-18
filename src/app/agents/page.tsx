@@ -3,8 +3,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { AgentCard } from "@/components/agents/AgentCard";
+import { getAgents } from "@/lib/agents";
 import { getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 
 export const metadata: Metadata = {
   title: "Advisors",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default async function AgentsPage() {
   const { t } = await getT();
-  const agents = await listings.getAgents();
+  const agents = await getAgents();
 
   return (
     <Container className="py-12 sm:py-16">

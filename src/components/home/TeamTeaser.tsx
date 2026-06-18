@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { getAgents } from "@/lib/agents";
 import { getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 
 export async function TeamTeaser() {
   const { t } = await getT();
-  const agents = (await listings.getAgents()).slice(0, 3);
+  const agents = (await getAgents()).slice(0, 3);
 
   return (
     <section className="bg-surface py-24 sm:py-32">

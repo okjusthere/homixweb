@@ -7,8 +7,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Markdown } from "@/components/journal/Markdown";
 import { getJournalPost, journalPosts } from "@/content/journal/posts";
+import { getAgentBySlug } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -41,7 +41,7 @@ export default async function JournalArticlePage({
   if (!post) notFound();
 
   const { locale, t } = await getT();
-  const author = await listings.getAgentBySlug(post.authorSlug);
+  const author = await getAgentBySlug(post.authorSlug);
   const df = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
     year: "numeric",
     month: "long",

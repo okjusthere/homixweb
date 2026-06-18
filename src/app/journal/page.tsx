@@ -5,8 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { journalPosts } from "@/content/journal/posts";
+import { getAgents } from "@/lib/agents";
 import { getT } from "@/lib/i18n";
-import { listings } from "@/lib/listings";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default async function JournalPage() {
   const { locale, t } = await getT();
-  const agents = await listings.getAgents();
+  const agents = await getAgents();
   const authorName = (slug: string) =>
     agents.find((a) => a.slug === slug)?.name ?? "Homix";
   const df = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
