@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# synced MLS data — real IDX listings must not be committed (display rules)
+/src/data/listings-cache.json
+
+# Claude Code local settings (machine-specific)
+.claude/settings.local.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

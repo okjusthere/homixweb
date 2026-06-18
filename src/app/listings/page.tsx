@@ -1,0 +1,101 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { ListingCard } from "@/components/listings/ListingCard";
+import { ListingFilters } from "@/components/listings/ListingFilters";
+import { ListingsPagination } from "@/components/listings/ListingsPagination";
+import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
+import { listings, type ListingQuery, type PropertyType } from "@/lib/listings";
+import { cityFacets } from "@/lib/listings/search";
+import { formatNumber } from "@/lib/format";
+
+export const metadata: Metadata = {
+  title: "Listings",
+  description:
+    "Search homes for sale across New York — Queens, Long Island, Manhattan and beyond — from the OneKey MLS, presented by Homix.",
+};
+
+const PER_PAGE = 12;
+
+type SearchParams = Record<string, string | string[] | undefined>;
+
+function one(v: string | string[] | undefined): string {
+  return (Array.isArray(v) ? v[0] : v) ?? "";
+}
+
+export default async function ListingsPage({
+  searchParams,
+}: {
+  searchParams: Promise<SearchParams>;
+}) {
+  const sp = await searchParams;
+  const page = Math.max(1, parseInt(one(sp.page), 10) || 1);
+
+  const query: ListingQuery = {
+    city: one(sp.city) || undefined,
+    propertyType: (one(sp.type) as PropertyType) || undefined,
+    minPrice: one(sp.minPrice) ? Number(one(sp.minPrice)) : undefined,
+    maxPrice: one(sp.maxPrice) ? Number(one(sp.maxPrice)) : undefined,
+    minBeds: one(sp.beds) ? Number(one(sp.beds)) : undefined,
+    q: one(sp.q) || undefined,
+    sort: (one(sp.sort) as ListingQuery["sort"]) || "newest",
+    limit: PER_PAGE,
+    offset: (page - 1) * PER_PAGE,
+  };
+
+  const { listings: results, total } = await listings.getListings(query);
+  const pages = Math.ceil(total / PER_PAGE);
+
+  const cities = listings.cities
+    ? listings.cities(30)
+    : cityFacets((await listings.getListings({})).listings, 30);
+
+  // Preserve active filters in pagination links.
+  const baseParams: Record<string, string> = {};
+  for (const k of ["city", "type", "minPrice", "maxPrice", "beds", "q", "sort"]) {
+    const v = one(sp[k]);
+    if (v) baseParams[k] = v;
+  }
+
+  return (
+    <Container className="py-12 sm:py-16">
+      <div className="max-w-2xl">
+        <Eyebrow>Listings</Eyebrow>
+        <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
+          Homes for sale in New York
+        </h1>
+        <p className="mt-4 text-muted">
+          Live listings from the OneKey® MLS, presented by Homix.
+        </p>
+      </div>
+
+      <div className="mt-10 border-y border-line py-5">
+        <ListingFilters cities={cities} />
+      </div>
+
+      <p className="mt-6 text-sm text-muted">
+        {formatNumber(total)} {total === 1 ? "home" : "homes"}
+        {query.city ? ` in ${query.city}` : ""} · page {page} of {pages || 1}
+      </p>
+
+      {results.length === 0 ? (
+        <div className="py-24 text-center">
+          <p className="font-serif text-2xl text-ink">No homes match those filters.</p>
+          <p className="mt-2 text-muted">Try widening your price range or location.</p>
+        </div>
+      ) : (
+        <div className="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+          {results.map((listing, i) => (
+            <ListingCard key={listing.id} listing={listing} priority={i < 3} />
+          ))}
+        </div>
+      )}
+
+      <ListingsPagination page={page} pages={pages} baseParams={baseParams} />
+
+      <div className="mt-16 border-t border-line pt-8">
+        <MlsDisclaimer syncedAt={listings.lastSyncedAt} />
+      </div>
+    </Container>
+  );
+}

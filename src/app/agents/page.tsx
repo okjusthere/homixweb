@@ -1,0 +1,39 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
+import { AgentCard } from "@/components/agents/AgentCard";
+import { listings } from "@/lib/listings";
+
+export const metadata: Metadata = {
+  title: "Advisors",
+  description:
+    "Meet the Homix team — bilingual New York real estate advisors across Queens, Long Island, and Manhattan.",
+};
+
+export default async function AgentsPage() {
+  const agents = await listings.getAgents();
+
+  return (
+    <Container className="py-12 sm:py-16">
+      <div className="max-w-2xl">
+        <Eyebrow>The team</Eyebrow>
+        <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
+          Our advisors
+        </h1>
+        <p className="mt-4 text-lg leading-relaxed text-muted">
+          A bilingual team across Queens, Long Island, and Manhattan — each one a
+          licensed New York professional who knows the neighborhoods firsthand.
+        </p>
+      </div>
+
+      <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+        {agents.map((agent, i) => (
+          <Reveal key={agent.id} delay={(i % 4) * 50}>
+            <AgentCard agent={agent} />
+          </Reveal>
+        ))}
+      </div>
+    </Container>
+  );
+}
