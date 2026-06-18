@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { isAdmin, signIn, signOut } from "@/lib/admin-auth";
 import { getSupabase } from "@/lib/supabase";
+import { getOrigin } from "@/lib/site-url";
 
 export interface ActionState {
   ok: boolean;
@@ -21,9 +22,8 @@ function kebab(s: string): string {
     .slice(0, 48);
 }
 
-function editUrl(token: string): string {
-  const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "";
-  return `${base}/edit/${token}`;
+async function editUrl(token: string): Promise<string> {
+  return `${await getOrigin()}/edit/${token}`;
 }
 
 export async function loginAction(
@@ -80,7 +80,7 @@ export async function addAgentAction(
 
   revalidatePath("/agents");
   revalidatePath("/admin");
-  return { ok: true, name, editUrl: editUrl(token) };
+  return { ok: true, name, editUrl: await editUrl(token) };
 }
 
 export async function toggleVisibleAction(formData: FormData): Promise<void> {

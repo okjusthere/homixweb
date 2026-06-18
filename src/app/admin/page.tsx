@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { isAdmin, isAdminConfigured } from "@/lib/admin-auth";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
+import { getOrigin } from "@/lib/site-url";
 import { Dashboard, type AdminAgent } from "./Dashboard";
 import { LoginForm } from "./LoginForm";
 
@@ -55,7 +56,7 @@ export default async function AdminPage() {
     .select("id, name, slug, visible, edit_token")
     .order("sort", { ascending: true });
 
-  const base = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "";
+  const base = await getOrigin();
   const agents: AdminAgent[] = (data ?? []).map((r) => ({
     id: r.id,
     name: r.name,

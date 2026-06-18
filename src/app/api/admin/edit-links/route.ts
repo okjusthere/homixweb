@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSupabase } from "@/lib/supabase";
+import { getOriginFromRequest } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +29,7 @@ export async function GET(req: Request): Promise<Response> {
     .order("sort", { ascending: true });
   if (error) return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
 
-  const base =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || new URL(req.url).origin;
+  const base = getOriginFromRequest(req);
   const links = (data ?? []).map((r) => ({
     name: r.name,
     slug: r.slug,

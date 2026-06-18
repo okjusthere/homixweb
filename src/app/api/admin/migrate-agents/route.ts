@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { randomBytes } from "node:crypto";
 import { MOCK_AGENTS } from "@/lib/listings/mock-data";
 import { getSupabase } from "@/lib/supabase";
+import { getOriginFromRequest } from "@/lib/site-url";
 
 export const dynamic = "force-dynamic";
 
@@ -55,8 +56,7 @@ export async function GET(req: Request): Promise<Response> {
     return NextResponse.json({ ok: false, error: error.message }, { status: 500 });
   }
 
-  const base =
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || new URL(req.url).origin;
+  const base = getOriginFromRequest(req);
   const links = rows.map((r) => ({
     name: r.name,
     slug: r.slug,
