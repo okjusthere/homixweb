@@ -63,7 +63,7 @@ export default async function ContactPage() {
         </div>
 
         <div className="rounded-sm border border-line bg-surface p-7 sm:p-9">
-          <InquiryForm labels={t.inquiry} />
+          <InquiryForm labels={t.inquiry} source="contact" />
         </div>
       </div>
     </Container>

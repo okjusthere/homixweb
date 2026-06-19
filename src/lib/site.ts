@@ -1,9 +1,8 @@
 /**
  * Site-wide brand content and configuration for Homix.
  *
- * Most values are REAL, migrated from homixny.com. Items still needing the
- * client's confirmation are marked CONFIRM. Compliance note: keep stats and
- * testimonials truthful and attributable.
+ * Most values are REAL, migrated from homixny.com. Compliance note: keep stats
+ * and testimonials truthful and attributable.
  */
 
 export const siteConfig = {
@@ -27,10 +26,10 @@ export const siteConfig = {
       zip: "11354",
     },
   },
-  // Required US/NY brokerage disclosures — CONFIRM exact license numbers + text.
+  // Required US/NY brokerage disclosures.
   legal: {
     brokerOfRecord: "Si Zhang",
-    brokerLicense: "NY Licensed Real Estate Broker", // CONFIRM: add license #
+    brokerLicense: "NYS Real Estate Broker License #10991241632",
     statesLicensed: ["New York"],
     // New York requires a Fair Housing Notice + Standard Operating Procedures.
     iabsNote: "NY Fair Housing Notice · Standard Operating Procedures",
@@ -84,6 +83,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "terms", href: "/terms" },
       { key: "accessibility", href: "/accessibility" },
       { key: "fairHousing", href: "/fair-housing" },
+      { key: "standardOperatingProcedures", href: "/standard-operating-procedures" },
     ],
   },
 ];

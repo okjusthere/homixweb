@@ -117,8 +117,8 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
       : bioLen < BIO_GOOD
         ? "text-muted"
         : bioLen > BIO_MAX - 60
-          ? "text-bronze-dark"
-          : "text-pine";
+        ? "text-bronze-dark"
+          : "text-ink";
 
   return (
     <form action={formAction} onChange={onFormChange} className="space-y-10">
@@ -251,7 +251,7 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
               className="h-full rounded-sm transition-[width] duration-500 ease-out"
               style={{
                 width: `${score}%`,
-                backgroundColor: score >= 80 ? "var(--color-pine)" : "var(--color-bronze)",
+                backgroundColor: score >= 80 ? "var(--color-ink)" : "var(--color-bronze)",
               }}
             />
           </div>
@@ -263,7 +263,7 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
             type="submit"
             disabled={pending}
             className={`inline-flex items-center justify-center gap-2 rounded-sm px-6 py-3 text-sm font-medium text-paper transition-colors disabled:opacity-60 ${
-              saved ? "bg-pine" : "bg-bronze hover:bg-bronze-dark"
+              saved ? "bg-ink" : "bg-bronze hover:bg-bronze-dark"
             } ${state?.error && !pending ? "shake" : ""}`}
           >
             {pending ? (

@@ -55,15 +55,15 @@ export default async function JoinPage() {
       </Container>
 
       {/* Stats band */}
-      <section className="bg-pine py-14 text-paper sm:py-16">
+      <section className="border-y border-line bg-surface py-14 text-ink sm:py-16">
         <Container>
           <div className="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-4">
             {t.join.stats.map((s, i) => (
               <Reveal key={s.value + i} delay={i * 60}>
-                <p className="font-serif text-2xl leading-tight text-paper sm:text-[1.9rem]">
+                <p className="font-serif text-2xl leading-tight text-ink sm:text-[1.9rem]">
                   {s.value}
                 </p>
-                <p className="mt-2 text-xs leading-relaxed text-paper/65">{s.label}</p>
+                <p className="mt-2 text-xs leading-relaxed text-muted">{s.label}</p>
               </Reveal>
             ))}
           </div>
@@ -172,7 +172,7 @@ export default async function JoinPage() {
               </p>
             </div>
             <div className="rounded-sm bg-surface p-7 sm:p-9">
-              <InquiryForm labels={t.inquiry} />
+              <InquiryForm labels={t.inquiry} source="join" />
             </div>
           </div>
         </Container>

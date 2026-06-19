@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
+import { usePathname } from "next/navigation";
+import { submitInquiry, type InquiryActionState } from "@/app/inquiry-actions";
 import { Button } from "@/components/ui/Button";
 
 const inputClass =
@@ -30,31 +32,43 @@ const DEFAULT_LABELS: InquiryLabels = {
 };
 
 /**
- * Lead capture form. Client-side only for now — wire the submit handler to your
- * CRM / email / serverless route later. TCPA: consent is unchecked by default
- * and is NOT a condition of any service.
+ * Lead capture form backed by a server action. TCPA: consent is unchecked by
+ * default and is NOT a condition of any service.
  */
-export function InquiryForm({ labels = DEFAULT_LABELS }: { labels?: InquiryLabels }) {
-  const [submitted, setSubmitted] = useState(false);
+export function InquiryForm({
+  labels = DEFAULT_LABELS,
+  source = "website",
+}: {
+  labels?: InquiryLabels;
+  source?: string;
+}) {
+  const pathname = usePathname();
+  const [state, formAction, pending] = useActionState<InquiryActionState | null, FormData>(
+    submitInquiry,
+    null,
+  );
 
-  if (submitted) {
+  if (state?.ok) {
     return (
       <div className="rounded-sm border border-line bg-surface p-8 text-center">
         <p className="font-serif text-2xl text-ink">{labels.thanksTitle}</p>
-        <p className="mt-2 text-sm text-muted">{labels.thanksBody}</p>
+        <p className="mt-2 text-sm text-muted">{state.message || labels.thanksBody}</p>
       </div>
     );
   }
 
   return (
-    <form
-      className="space-y-4"
-      onSubmit={(e) => {
-        e.preventDefault();
-        // TODO: POST to /api/inquiry or your CRM. Keep timestamped consent.
-        setSubmitted(true);
-      }}
-    >
+    <form className="space-y-4" action={formAction}>
+      <input type="hidden" name="source" value={source} />
+      <input type="hidden" name="page_path" value={pathname} />
+      <input
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="sr-only">
@@ -67,7 +81,11 @@ export function InquiryForm({ labels = DEFAULT_LABELS }: { labels?: InquiryLabel
             placeholder={labels.name}
             autoComplete="name"
             className={inputClass}
+            aria-invalid={Boolean(state?.fieldErrors?.name)}
           />
+          {state?.fieldErrors?.name && (
+            <p className="mt-1.5 text-xs text-bronze-dark">{state.fieldErrors.name}</p>
+          )}
         </div>
         <div>
           <label htmlFor="phone" className="sr-only">
@@ -95,7 +113,11 @@ export function InquiryForm({ labels = DEFAULT_LABELS }: { labels?: InquiryLabel
           placeholder={labels.email}
           autoComplete="email"
           className={inputClass}
+          aria-invalid={Boolean(state?.fieldErrors?.email)}
         />
+        {state?.fieldErrors?.email && (
+          <p className="mt-1.5 text-xs text-bronze-dark">{state.fieldErrors.email}</p>
+        )}
       </div>
       <div>
         <label htmlFor="message" className="sr-only">
@@ -116,12 +138,26 @@ export function InquiryForm({ labels = DEFAULT_LABELS }: { labels?: InquiryLabel
           name="consent"
           required
           className="mt-0.5 h-4 w-4 shrink-0 accent-bronze"
+          aria-invalid={Boolean(state?.fieldErrors?.consent)}
         />
         <span>{labels.consent}</span>
       </label>
+      {state?.fieldErrors?.consent && (
+        <p className="text-xs text-bronze-dark">{state.fieldErrors.consent}</p>
+      )}
 
-      <Button type="submit" className="w-full bg-bronze hover:bg-bronze-dark">
-        {labels.submit}
+      {state?.error && (
+        <p className="text-sm text-bronze-dark" role="alert">
+          {state.error}
+        </p>
+      )}
+
+      <Button
+        type="submit"
+        disabled={pending}
+        className="w-full bg-bronze hover:bg-bronze-dark"
+      >
+        {pending ? "Sending..." : labels.submit}
       </Button>
     </form>
   );

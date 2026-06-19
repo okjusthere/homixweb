@@ -39,3 +39,27 @@ drop policy if exists "agent photos public read" on storage.objects;
 create policy "agent photos public read"
   on storage.objects for select
   using (bucket_id = 'agent-photos');
+
+-- Website inquiries submitted through the public contact forms. No public read
+-- or write policy is created; inserts happen through the server-side service
+-- role after validation, and the team can review rows in Supabase.
+create table if not exists public.inquiries (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  name text not null,
+  phone text,
+  email text not null,
+  message text,
+  consent boolean not null default false,
+  source text not null default 'website',
+  page_path text,
+  locale text,
+  status text not null default 'received',
+  ip_address text,
+  user_agent text,
+  referrer text,
+  email_sent_at timestamptz,
+  email_error text
+);
+
+alter table public.inquiries enable row level security;

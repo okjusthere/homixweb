@@ -89,7 +89,8 @@ export async function SiteFooter() {
         </div>
 
         <p className="mt-8 text-xs text-muted">
-          © {year} {legalName}. {t.footer.rights}
+          © {year} {legalName}
+          {legalName.endsWith(".") ? "" : "."} {t.footer.rights}
         </p>
       </Container>
     </footer>

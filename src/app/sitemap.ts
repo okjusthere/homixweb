@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/terms",
     "/accessibility",
     "/fair-housing",
+    "/standard-operating-procedures",
   ];
 
   const agents = await listings.getAgents();

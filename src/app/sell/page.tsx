@@ -44,7 +44,7 @@ export default async function SellPage() {
       </Container>
 
       {/* Proof band */}
-      <section className="bg-pine py-16 text-paper sm:py-20">
+      <section className="bg-ink py-16 text-paper sm:py-20">
         <Container>
           <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/55">
             {t.sell.proof.eyebrow}
@@ -148,7 +148,7 @@ export default async function SellPage() {
               </p>
             </div>
             <div className="rounded-sm bg-surface p-7 sm:p-9">
-              <InquiryForm labels={t.inquiry} />
+              <InquiryForm labels={t.inquiry} source="sell-valuation" />
             </div>
           </div>
         </Container>

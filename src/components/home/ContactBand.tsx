@@ -37,7 +37,7 @@ export async function ContactBand() {
           </div>
 
           <div className="rounded-sm bg-surface p-7 sm:p-9">
-            <InquiryForm labels={t.inquiry} />
+            <InquiryForm labels={t.inquiry} source="home-contact-band" />
           </div>
         </div>
       </Container>

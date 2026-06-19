@@ -37,6 +37,7 @@ const en = {
     terms: "Terms",
     accessibility: "Accessibility",
     fairHousing: "Fair Housing",
+    standardOperatingProcedures: "Standard Operating Procedures",
     explore: "Explore",
     firm: "Firm",
     legal: "Legal",
@@ -179,7 +180,7 @@ const en = {
     teamBody: "From Flushing to Manhattan to the North Shore, our advisors share one standard of service — local knowledge, bilingual care, and a media engine behind every deal.",
   },
   join: {
-    eyebrow: "Careers at Homix · Flushing, NYC",
+    eyebrow: "Careers at Homix · Flushing · NYC · LI",
     title: "We don't hand you a desk. We hand you an audience.",
     lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. Day one, you step into an audience of 1,000,000+ across 抖音, 小红书, and Instagram, an in-house content studio, AI and data tools, and bilingual senior mentors who have closed in this market. Where Homes Meet Headlines — we turn agents into local stars.",
     heroCta: "Apply to join Homix",
@@ -197,7 +198,7 @@ const en = {
         label: "Content studio — shoot, edit, and publish without paying an outside agency",
       },
       {
-        value: "Flushing · Queens · LI",
+        value: "Flushing · NYC · LI",
         label: "Rooted in the markets we actually live and sell in",
       },
     ],
@@ -317,7 +318,7 @@ const en = {
     browseListings: "Browse listings",
   },
   legal: {
-    note: "This is a working template. Have qualified counsel review and finalize the text before launch.",
+    note: "Have qualified counsel and the broker of record review legal text before launch.",
     lastUpdated: "Last updated",
   },
   sell: {
@@ -331,7 +332,7 @@ const en = {
         { value: "1,000,000+", label: "Audience we reach" },
         { value: "EN · 中文", label: "Bilingual marketing" },
         { value: "抖音 · 小红书 · IG", label: "Where we publish" },
-        { value: "Flushing · Queens · LI", label: "Where we go deep" },
+        { value: "Flushing · NYC · LI", label: "Where we go deep" },
       ],
     },
     advantagesEyebrow: "Why sell with Homix",
@@ -432,6 +433,7 @@ const zh: Dict = {
     terms: "服务条款",
     accessibility: "无障碍",
     fairHousing: "公平住房",
+    standardOperatingProcedures: "标准操作流程",
     explore: "探索",
     firm: "公司",
     legal: "法律",
@@ -574,7 +576,7 @@ const zh: Dict = {
     teamBody: "从法拉盛到曼哈顿，再到长岛北岸，我们的经纪人秉持同一套服务标准——本地洞察、双语贴心，以及每一单背后的媒体引擎。",
   },
   join: {
-    eyebrow: "Homix 招募 · 纽约法拉盛",
+    eyebrow: "Homix 招募 · Flushing · NYC · LI",
     title: "我们给你的不是一张办公桌，而是一群观众。",
     lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就接入抖音、小红书、Instagram 上超过 100 万的粉丝群体，拥有自有内容工作室、AI 与数据工具，以及在本地真正成交过的双语资深导师。Where Homes Meet Headlines——我们把经纪人打造成本地明星。",
     heroCta: "申请加入 Homix",
@@ -592,7 +594,7 @@ const zh: Dict = {
         label: "自有内容工作室——拍摄、剪辑、发布，无需外包",
       },
       {
-        value: "Flushing · Queens · LI",
+        value: "Flushing · NYC · LI",
         label: "扎根法拉盛、皇后区与长岛，我们真正生活与成交的市场",
       },
     ],
@@ -712,7 +714,7 @@ const zh: Dict = {
     browseListings: "浏览房源",
   },
   legal: {
-    note: "这是一份可用模板。上线前请由专业律师审核并定稿。",
+    note: "上线前请由专业律师和备案经纪人审核法律文本。",
     lastUpdated: "最近更新",
   },
   sell: {
@@ -726,7 +728,7 @@ const zh: Dict = {
         { value: "1,000,000+", label: "触达受众" },
         { value: "EN · 中文", label: "双语营销" },
         { value: "抖音 · 小红书 · IG", label: "发布平台" },
-        { value: "Flushing · Queens · LI", label: "深耕区域" },
+        { value: "Flushing · NYC · LI", label: "深耕区域" },
       ],
     },
     advantagesEyebrow: "为什么把房子交给 Homix",

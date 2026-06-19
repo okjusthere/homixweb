@@ -27,7 +27,11 @@ export async function LegalLayout({ doc }: { doc: keyof typeof legalDocs }) {
           {d.sections.map((s) => (
             <section key={s.heading.en}>
               <h2 className="font-serif text-xl text-ink">{s.heading[locale]}</h2>
-              <p className="mt-3 leading-relaxed text-ink/85">{s.body[locale]}</p>
+              <div className="mt-3 space-y-3 leading-relaxed text-ink/85">
+                {s.body[locale].split("\n\n").map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
             </section>
           ))}
         </div>
