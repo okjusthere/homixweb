@@ -240,7 +240,7 @@ export const journalPosts: JournalPost[] = [
     "slug": "first-investment-property-nyc",
     "date": "2026-04-02",
     "authorSlug": "linafeng",
-    "cover": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80",
+    "cover": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80",
     "readMinutes": 6,
     "category": {
       "en": "Investing",

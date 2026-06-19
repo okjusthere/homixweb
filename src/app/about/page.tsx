@@ -13,8 +13,7 @@ export const metadata: Metadata = {
     "Homix is a media-first, AI-empowered New York real estate company — a brokerage, a media studio, and an agent incubator with a 1M+ bilingual audience.",
 };
 
-const HERO =
-  "https://images.unsplash.com/photo-1499462994724-775b2edaf559?auto=format&fit=crop&w=2400&q=80";
+const HERO = "/about/hero.jpg";
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");
