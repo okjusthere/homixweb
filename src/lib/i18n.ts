@@ -25,7 +25,7 @@ export async function getT() {
 
 const en = {
   common: {
-    listings: "Listings",
+    listings: "Buy",
     advisors: "Advisors",
     journal: "Journal",
     sell: "Sell",
@@ -569,7 +569,7 @@ type Dict = typeof en;
 
 const zh: Dict = {
   common: {
-    listings: "房源",
+    listings: "买房",
     advisors: "经纪人",
     journal: "观察",
     sell: "卖房",
