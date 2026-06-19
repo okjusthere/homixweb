@@ -245,26 +245,84 @@ const en = {
   },
   sell: {
     eyebrow: "Sell with Homix",
-    title: "Your home deserves an audience.",
-    lead: "Most listings reach a fraction of the market. Homix puts yours in front of a 1,000,000+ audience with video, content, and AI-driven marketing — so it sells faster, and for more.",
-    points: [
+    title: "Sell where the buyers already are.",
+    lead: "Most homes wait on a portal to be found. Homix launches yours as content to a 1,000,000+ audience across 抖音, 小红书, and Instagram — in English and 中文 — reaching qualified, often cash-ready buyers other brokerages can't. The result: broader demand, a faster sale, and more money in your pocket.",
+    heroCta: "Get your free valuation",
+    proof: {
+      eyebrow: "The Homix difference",
+      items: [
+        { value: "1,000,000+", label: "Audience we reach" },
+        { value: "EN · 中文", label: "Bilingual marketing" },
+        { value: "抖音 · 小红书 · IG", label: "Where we publish" },
+        { value: "Flushing · Queens · LI", label: "Where we go deep" },
+      ],
+    },
+    advantagesEyebrow: "Why sell with Homix",
+    advantagesTitle: "An unfair advantage for your listing.",
+    advantages: [
       {
-        title: "A marketing machine, not a yard sign",
-        body: "Professional photography, video tours, and Reels distributed to a 1M+ audience already watching New York real estate.",
+        headline: "Your home launches to an audience we already own",
+        body: "Most listings sit on a portal waiting to be found. We broadcast yours on day one to a 1,000,000+ following across 抖音, 小红书, and Instagram — real buyers already watching New York real estate. More eyes in the first days means more showings, faster, and the demand that creates competing offers.",
       },
       {
-        title: "Priced with data, not guesswork",
-        body: "We price with live market data and AI-assisted analysis, so your home lists at the number that actually moves.",
+        headline: "We reach buyers in the language they buy in",
+        body: "We market and negotiate fully in English and 中文, opening your home to the large, often cash-ready Chinese-speaking buyer pool across Flushing, Queens, and Long Island — including overseas buyers who research on 微信, 小红书, and 抖音, not English-only portals. That's a bigger, more qualified buyer base, which national English-only brokerages can't tap in-house.",
       },
       {
-        title: "Concierge from prep to closing",
-        body: "Staging, marketing, negotiation, and paperwork — handled end to end by an advisor whose name is on the door.",
+        headline: "Your home becomes a story, not a slideshow",
+        body: "Our in-house studio films your home the way a brand films a product — cinematic walk-throughs, short-form tours, and bilingual storytelling built to travel on social, not just sit in an MLS gallery. Presentation is what makes buyers stop scrolling and book a showing — and what lets a home command its price.",
+      },
+      {
+        headline: "Priced with data, decided by a person",
+        body: "We cross-check multiple valuation models against a hand-built set of local comparable sales and live demand signals, then a licensed Homix advisor sets your number and walks you through exactly how we got there. Pricing right from day one is how you avoid the stale-listing discount and sell for more.",
+      },
+      {
+        headline: "We engineer the first days, when it matters most",
+        body: "A listing draws its peak attention in its first days live. We line up a coming-soon audience and launch across every channel at once, so interest lands all at the same time instead of trickling in — the raw material for momentum and multiple offers, rather than a home that slowly goes stale.",
+      },
+      {
+        headline: "We handle it, so you don't have to",
+        body: "Staging guidance, photography, marketing, showings, negotiation, attorney and closing coordination — handled end to end by the advisor whose name is on the door. Selling is one of the most stressful things people do; our job is to take the weight off and keep the deal moving to the closing table.",
+      },
+      {
+        headline: "Hyper-local, from people who walk these streets",
+        body: "We know Flushing, Queens, and the Long Island North Shore block by block — the comps, the school districts, what local buyers actually pay for. That local read is how we price with confidence and defend your number when offers come in.",
+      },
+      {
+        headline: "You see the comps, the data, and the reasoning",
+        body: "No black-box estimate, no take-our-word-for-it. We show you the comparable sales, the market data, and the reasoning behind your price and your strategy — and we give you a clear net-proceeds estimate up front, before you list.",
+      },
+    ],
+    howEyebrow: "How it works",
+    howTitle: "Four steps from listed to closed.",
+    steps: [
+      {
+        title: "Valuation & strategy",
+        body: "A free, data-backed valuation. We set your price and the plan together — and show our reasoning.",
+      },
+      {
+        title: "Prep & production",
+        body: "Staging guidance, then our in-house studio films your home into bilingual content built for social.",
+      },
+      {
+        title: "Media launch",
+        body: "A coming-soon warm-up, then a day-one broadcast to our 1,000,000+ audience across every channel.",
+      },
+      {
+        title: "MLS, offers & closing",
+        body: "Full MLS and portal syndication, offer negotiation, and attorney and closing coordination — handled for you.",
       },
     ],
     valuationEyebrow: "Free home valuation",
     valuationTitle: "What's your home worth?",
     valuationLead: "Tell us about your home and a Homix advisor will prepare a complimentary, no-obligation valuation.",
+    valuationAssurances: ["Free & no-obligation", "We reply within one business day", "Confidential"],
     orCall: "Or call",
+    listingsCta: {
+      kicker: "Thinking of selling?",
+      line: "Your home deserves more than a yard sign. We launch it to a 1,000,000+ bilingual audience — and reach buyers other brokerages can't.",
+      button: "Sell with Homix",
+    },
   },
   calculator: {
     eyebrow: "Tools",
@@ -505,26 +563,84 @@ const zh: Dict = {
   },
   sell: {
     eyebrow: "卖房 · Homix",
-    title: "你的家，值得被看见。",
-    lead: "大多数房源只触达市场的一小部分。Homix 用视频、内容与 AI 营销，把你的家推到 100 万+ 受众面前——卖得更快，也卖得更高。",
-    points: [
+    title: "把房子卖到买家本来就在的地方。",
+    lead: "大多数房子只是挂在网站上等人来翻。Homix 把你的家做成内容，第一天就推给抖音、小红书、Instagram 上 100 万+ 的受众，中英文双语触达那些别家够不着、又往往手握现金的精准买家。结果是：更广的需求、更快的成交、更多落进你口袋的钱。",
+    heroCta: "免费估价",
+    proof: {
+      eyebrow: "Homix 的不同之处",
+      items: [
+        { value: "1,000,000+", label: "触达受众" },
+        { value: "EN · 中文", label: "双语营销" },
+        { value: "抖音 · 小红书 · IG", label: "发布平台" },
+        { value: "Flushing · Queens · LI", label: "深耕区域" },
+      ],
+    },
+    advantagesEyebrow: "为什么把房子交给 Homix",
+    advantagesTitle: "给你的房源，一个别人给不了的优势。",
+    advantages: [
       {
-        title: "营销机器，而非院里一块牌子",
-        body: "专业摄影、视频带看与 Reels，投放给 100 万+ 本就关注纽约地产的受众。",
+        headline: "你的房子，第一天就推给我们自己的百万受众",
+        body: "大多数房源只是挂在网站上，等着被人翻到。我们不一样：挂牌第一天，就把你的房子推送给抖音、小红书、Instagram 上 100 万+ 的粉丝——一群本就在看纽约房子的真实买家。开盘头几天看的人越多，带看越多、越快，也越容易形成抢 offer 的局面。",
       },
       {
-        title: "用数据定价，而非凭感觉",
-        body: "我们以实时市场数据与 AI 辅助分析定价，让你的房子挂在真正能成交的价位。",
+        headline: "我们能用买家的母语，把房子卖给他们",
+        body: "从营销到谈判，我们全程中英文双语，把你的房子打开给法拉盛、皇后区、长岛一大批往往手握现金的华人买家——包括那些只在微信、小红书、抖音上看房，根本不上英文网站的海外买家。买家池更大、更精准，这正是只做英文的全国大行做不到的。",
       },
       {
-        title: "从筹备到成交的管家式服务",
-        body: "布置、营销、谈判、文书——由名字挂在门上的顾问全程一手包办。",
+        headline: "把你的家拍成一个故事，而不是一组图",
+        body: "我们有自己的内容工作室，像拍品牌大片一样拍你的家——电影感带看、短视频房源、中英文讲述，专为在社交平台上被刷到、被转发而做，而不是塞进 MLS 图库里没人看。好的呈现，能让买家停下手指、约看房，也能让房子卖出该有的价。",
+      },
+      {
+        headline: "定价用数据，拍板靠人",
+        body: "我们会把多个估价模型，和我们手工挑选的本地成交对比盘、实时市场热度信号交叉核对，再由持牌的 Homix 顾问拍定价格，并把每一步逻辑讲清楚给你听。一开盘就定对价，才不会越拖越掉价，最终卖得更高。",
+      },
+      {
+        headline: "我们做足开盘头几天——最关键的窗口",
+        body: "一套房子最被关注的，就是刚挂牌的头几天。我们会先用预热把一批意向买家攒起来，再各平台同时开盘，让关注集中爆发，而不是零零散散地来——这才是势头起来、多组买家抢的开始，而不是慢慢挂冷。",
+      },
+      {
+        headline: "繁琐的事我们扛，你省心",
+        body: "布置建议、摄影、营销、带看、谈判，再到对接律师、协调过户——全程由名字挂在门上的那位顾问一手包办。卖房是很多人经历过最操心的事之一；我们的活儿，就是把这份重量接过来，把成交一路稳稳推到签约桌前。",
+      },
+      {
+        headline: "真正走在这些街区里的本地团队",
+        body: "法拉盛、皇后区、长岛北岸，我们一个街区一个街区地熟——成交对比、学区、本地买家真正愿意为什么买单。正是这份本地判断，让我们敢于定价，也能在出 offer 时替你守住价格。",
+      },
+      {
+        headline: "成交、数据、逻辑，全都摊开给你看",
+        body: "不靠看不懂的网络估价，也不让你听一句空话。我们会把对比成交、市场数据，以及定价和策略背后的逻辑全摊开给你看——还会在挂牌前，先给你一份清清楚楚的到手净收益预估。",
+      },
+    ],
+    howEyebrow: "卖房流程",
+    howTitle: "从挂牌到成交，四步搞定。",
+    steps: [
+      {
+        title: "估价与策略",
+        body: "免费、有数据支撑的估价。价格和方案我们和你一起定，逻辑也讲给你听。",
+      },
+      {
+        title: "筹备与拍摄",
+        body: "先给布置建议，再由我们的工作室把你的家拍成适合社交平台的中英文内容。",
+      },
+      {
+        title: "媒体开盘",
+        body: "先做预热，挂牌第一天各平台同时开盘，推送给我们 100 万+ 的受众。",
+      },
+      {
+        title: "上市 · 谈判 · 过户",
+        body: "全面同步 MLS 与各大网站，谈判出价，对接律师与过户——全程替你打理。",
       },
     ],
     valuationEyebrow: "免费房屋估价",
     valuationTitle: "你的家值多少？",
     valuationLead: "告诉我们你的房子，Homix 顾问将为你准备一份免费、无义务的估价。",
+    valuationAssurances: ["免费、无义务", "一个工作日内回复", "全程保密"],
     orCall: "或致电",
+    listingsCta: {
+      kicker: "在考虑卖房？",
+      line: "你的家，值得的不止门口一块牌子。我们把它推给 100 万+ 双语受众，触达别家够不着的买家。",
+      button: "卖房 · Homix",
+    },
   },
   calculator: {
     eyebrow: "工具",

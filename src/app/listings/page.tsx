@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ListingCard } from "@/components/listings/ListingCard";
@@ -8,6 +9,7 @@ import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
 import { listings, type ListingQuery, type PropertyType } from "@/lib/listings";
 import { cityFacets } from "@/lib/listings/search";
 import { formatNumber } from "@/lib/format";
+import { getT } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Listings",
@@ -29,6 +31,7 @@ export default async function ListingsPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
+  const { t } = await getT();
   const page = Math.max(1, parseInt(one(sp.page), 10) || 1);
 
   const query: ListingQuery = {
@@ -59,14 +62,35 @@ export default async function ListingsPage({
 
   return (
     <Container className="py-12 sm:py-16">
-      <div className="max-w-2xl">
-        <Eyebrow>Listings</Eyebrow>
-        <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
-          Homes for sale in New York
-        </h1>
-        <p className="mt-4 text-muted">
-          Live listings from the OneKey® MLS, presented by Homix.
-        </p>
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+        <div className="max-w-2xl">
+          <Eyebrow>Listings</Eyebrow>
+          <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
+            Homes for sale in New York
+          </h1>
+          <p className="mt-4 text-muted">
+            Live listings from the OneKey® MLS, presented by Homix.
+          </p>
+        </div>
+
+        {/* Sell-side CTA */}
+        <Link
+          href="/sell"
+          className="group block w-full shrink-0 rounded-sm border border-line bg-surface p-6 transition-colors hover:border-bronze lg:max-w-xs"
+        >
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+            {t.sell.listingsCta.kicker}
+          </p>
+          <p className="mt-3 text-[15px] leading-relaxed text-ink/85">
+            {t.sell.listingsCta.line}
+          </p>
+          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors group-hover:text-bronze">
+            {t.sell.listingsCta.button}
+            <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+              →
+            </span>
+          </span>
+        </Link>
       </div>
 
       <div className="mt-10 border-y border-line py-5">
