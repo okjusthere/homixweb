@@ -257,12 +257,11 @@ export const heroImage = {
   alt: "A bright, contemporary New York home at dusk",
 };
 
-/** Tools dropdown in the header nav (labels via i18n common.*). */
+/** Agents Portal dropdown in the header nav (labels via i18n common.*). */
 export const toolsNav: NavItem[] = [
-  { key: "calculator", href: "/calculator" },
+  { key: "onboarding", href: "/onboarding" },
   { key: "offer", href: "/offer" },
   { key: "buyercoach", href: "/buyercoach" },
-  { key: "onboarding", href: "/onboarding" },
 ];
 
 /** Evergreen "at a glance" facts per neighborhood (durable, not prices). */

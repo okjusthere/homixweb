@@ -104,9 +104,17 @@ export default async function ListingDetailPage({
                 {address.city}, {address.state} {address.postalCode}
               </p>
             </div>
-            <p className="font-serif text-3xl tabular-nums text-ink">
-              {formatPrice(listPrice)}
-            </p>
+            <div className="text-left sm:text-right">
+              <p className="font-serif text-3xl tabular-nums text-ink">
+                {formatPrice(listPrice)}
+              </p>
+              <Link
+                href="/calculator"
+                className="mt-1 inline-block text-sm text-bronze underline-offset-4 hover:underline"
+              >
+                Estimate monthly payment →
+              </Link>
+            </div>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-ink">

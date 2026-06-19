@@ -71,6 +71,13 @@ export default async function ListingsPage({
           <p className="mt-4 text-muted">
             Live listings from the OneKey® MLS, presented by Homix.
           </p>
+          <Link
+            href="/calculator"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
+          >
+            {t.common.calculator}
+            <span aria-hidden>→</span>
+          </Link>
         </div>
 
         {/* Sell-side CTA */}
