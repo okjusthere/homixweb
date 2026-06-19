@@ -23,7 +23,8 @@ export async function Neighborhoods() {
         </div>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {neighborhoods.map((n, i) => (
+          {/* Homepage shows a few flagship areas; the rest live on /neighborhoods. */}
+          {neighborhoods.slice(0, 3).map((n, i) => (
             <Reveal key={n.slug} delay={i * 70}>
               <Link
                 href={`/neighborhoods/${n.slug}`}
