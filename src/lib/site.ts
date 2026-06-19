@@ -20,7 +20,7 @@ export const siteConfig = {
     phone2Href: "tel:+15169888558",
     email: "homix@homixny.com",
     address: {
-      line1: "37-20 Prince St, Ste 3F",
+      line1: "37-20 Prince St, STE 3H",
       city: "Flushing",
       state: "NY",
       zip: "11354",

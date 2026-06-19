@@ -102,7 +102,7 @@ export const journalPosts: JournalPost[] = [
     "slug": "long-island-city-buyers-guide",
     "date": "2026-06-15",
     "authorSlug": "michelleli",
-    "cover": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80",
+    "cover": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Long_Island_City_Skyline_2026.jpg/1280px-Long_Island_City_Skyline_2026.jpg",
     "readMinutes": 5,
     "category": {
       "en": "Neighborhood",
@@ -148,7 +148,7 @@ export const journalPosts: JournalPost[] = [
     "slug": "coop-vs-condo-nyc",
     "date": "2026-05-28",
     "authorSlug": "heidi",
-    "cover": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=80",
+    "cover": "https://images.unsplash.com/photo-1551361415-69c87624334f?auto=format&fit=crop&w=1600&q=80",
     "readMinutes": 5,
     "category": {
       "en": "Buyer Guide",
@@ -263,7 +263,7 @@ export const journalPosts: JournalPost[] = [
     slug: "flushing-queens-market-report",
     date: "2026-06-10",
     authorSlug: "michelleli",
-    cover: cover("photo-1502602898657-3e91760cbb34"),
+    cover: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Flushing_Queens_March_2022_076.jpg/1280px-Flushing_Queens_March_2022_076.jpg",
     readMinutes: 4,
     category: { en: "Market Report", zh: "市场观察" },
     title: {
@@ -319,7 +319,7 @@ Exposure is everything. A listing that lives only on the MLS reaches a fraction 
     slug: "first-time-buyer-guide-nyc",
     date: "2026-05-22",
     authorSlug: "heidi",
-    cover: cover("photo-1568605114967-8130f3a36994"),
+    cover: cover("photo-1567684014761-b65e2e59b9eb"),
     readMinutes: 5,
     category: { en: "Buyer Guide", zh: "购房指南" },
     title: {
@@ -383,7 +383,7 @@ Ready when you are. [Start a conversation](/contact).`,
     slug: "why-media-first-sells-faster",
     date: "2026-05-05",
     authorSlug: "queenie",
-    cover: cover("photo-1600607687939-ce8a6c25118c"),
+    cover: cover("photo-1518391846015-55a9cc003b25"),
     readMinutes: 4,
     category: { en: "Selling", zh: "卖房策略" },
     title: {

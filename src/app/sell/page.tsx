@@ -44,18 +44,18 @@ export default async function SellPage() {
       </Container>
 
       {/* Proof band */}
-      <section className="bg-ink py-16 text-paper sm:py-20">
+      <section className="border-y border-line bg-surface py-16 text-ink sm:py-20">
         <Container>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-paper/55">
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
             {t.sell.proof.eyebrow}
           </p>
           <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
             {t.sell.proof.items.map((s, i) => (
               <Reveal key={s.label} delay={i * 60}>
-                <p className="font-serif text-2xl leading-tight text-paper sm:text-[2rem]">
+                <p className="font-serif text-2xl leading-tight text-ink sm:text-[2rem]">
                   {s.value}
                 </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-paper/60">
+                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted">
                   {s.label}
                 </p>
               </Reveal>
