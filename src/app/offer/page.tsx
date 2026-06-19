@@ -1,0 +1,90 @@
+import type { Metadata } from "next";
+import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
+import { Reveal } from "@/components/ui/Reveal";
+import { Button } from "@/components/ui/Button";
+import { TallyEmbed } from "@/components/embeds/TallyEmbed";
+import { getT } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site";
+import { offerTallyId, offerTallyIdZh } from "@/lib/embeds";
+
+export const metadata: Metadata = {
+  title: "Make an Offer",
+  description:
+    "Submit an offer on a New York home with Homix. Tell us the property and your terms — a Homix advisor reviews every submission and follows up to formalize your offer.",
+};
+
+function n2(i: number): string {
+  return String(i + 1).padStart(2, "0");
+}
+
+export default async function OfferPage() {
+  const { locale, t } = await getT();
+  const { phone, phoneHref } = siteConfig.contact;
+  const formId = locale === "zh" ? offerTallyIdZh : offerTallyId;
+
+  return (
+    <>
+      {/* Hero */}
+      <Container className="py-16 sm:py-24">
+        <div className="max-w-3xl">
+          <Eyebrow>{t.offer.eyebrow}</Eyebrow>
+          <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-ink sm:text-[3.25rem]">
+            {t.offer.title}
+          </h1>
+          <p className="mt-6 text-xl leading-relaxed text-muted">{t.offer.lead}</p>
+        </div>
+      </Container>
+
+      {/* Prep */}
+      <section className="border-y border-line bg-surface py-16 sm:py-20">
+        <Container>
+          <Eyebrow>{t.offer.prepEyebrow}</Eyebrow>
+          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+            {t.offer.prepTitle}
+          </h2>
+          <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
+            {t.offer.prep.map((p, i) => (
+              <Reveal key={p.title} delay={i * 60} className="bg-surface">
+                <div className="h-full p-8">
+                  <p className="font-serif text-2xl text-bronze/60">{n2(i)}</p>
+                  <p className="mt-3 font-serif text-xl text-ink">{p.title}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-muted">{p.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Form */}
+      <Container className="py-16 sm:py-20">
+        <div className="mx-auto max-w-2xl">
+          <Eyebrow>{t.offer.formEyebrow}</Eyebrow>
+          <div className="mt-6">
+            {formId ? (
+              <TallyEmbed formId={formId} title={t.offer.title} />
+            ) : (
+              <div className="rounded-sm border border-line bg-surface p-8 text-center sm:p-10">
+                <p className="font-serif text-xl text-ink">{t.offer.fallbackTitle}</p>
+                <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+                  {t.offer.fallbackBody}
+                </p>
+                <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+                  <Button href="/contact">{t.offer.talkToUs}</Button>
+                  <a
+                    href={phoneHref}
+                    className="text-sm font-medium text-ink underline-offset-4 hover:text-bronze hover:underline"
+                  >
+                    {phone}
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+          <p className="mt-6 text-xs leading-relaxed text-muted">{t.offer.disclaimer}</p>
+        </div>
+      </Container>
+    </>
+  );
+}

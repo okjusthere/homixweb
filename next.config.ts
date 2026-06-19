@@ -23,6 +23,12 @@ const nextConfig: NextConfig = {
     // Advisor headshot uploads go through a server action.
     serverActions: { bodySizeLimit: "8mb" },
   },
+  async redirects() {
+    return [
+      // /offers and /offer are the same thing.
+      { source: "/offers", destination: "/offer", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

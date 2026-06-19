@@ -62,6 +62,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "listings", href: "/listings" },
       { key: "sell", href: "/sell" },
+      { key: "offer", href: "/offer" },
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "advisors", href: "/agents" },
       { key: "journal", href: "/journal" },
@@ -72,6 +73,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "about", href: "/about" },
       { key: "join", href: "/join" },
+      { key: "buyercoach", href: "/buyercoach" },
       { key: "calculator", href: "/calculator" },
       { key: "contact", href: "/contact" },
     ],
