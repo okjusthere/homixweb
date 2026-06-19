@@ -13,14 +13,24 @@ export interface HeaderNavItem {
   label: string;
 }
 
+export interface ToolNavItem {
+  href: string;
+  label: string;
+  desc: string;
+}
+
 export function SiteHeader({
   nav,
+  tools,
+  toolsLabel,
   locale,
   langLabel,
   phone,
   phoneHref,
 }: {
   nav: HeaderNavItem[];
+  tools: ToolNavItem[];
+  toolsLabel: string;
   locale: Locale;
   langLabel: string;
   phone: string;
@@ -90,6 +100,50 @@ export function SiteHeader({
                   {link.label}
                 </Link>
               ))}
+
+              {/* Tools dropdown (hover / keyboard focus) */}
+              <div className="group relative">
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  className={cn(
+                    "flex items-center gap-1 text-sm transition-colors hover:text-bronze",
+                    light ? "text-paper/90" : "text-ink/80",
+                  )}
+                >
+                  {toolsLabel}
+                  <svg
+                    width="11"
+                    height="11"
+                    viewBox="0 0 12 12"
+                    aria-hidden
+                    className="opacity-70 transition-transform duration-200 group-hover:rotate-180"
+                  >
+                    <path
+                      d="M2.5 4.5L6 8l3.5-3.5"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+                <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <div className="overflow-hidden rounded-sm border border-line bg-surface py-1.5 shadow-lg">
+                    {tools.map((tl) => (
+                      <Link
+                        key={tl.href}
+                        href={tl.href}
+                        className="block px-4 py-2.5 transition-colors hover:bg-paper"
+                      >
+                        <p className="text-sm font-medium text-ink">{tl.label}</p>
+                        <p className="mt-0.5 text-xs leading-snug text-muted">{tl.desc}</p>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </nav>
 
             <div className="hidden items-center gap-5 md:flex">
@@ -135,6 +189,19 @@ export function SiteHeader({
                 className="border-b border-line py-4 font-serif text-2xl text-ink"
               >
                 {link.label}
+              </Link>
+            ))}
+            <p className="mb-1 mt-6 text-xs uppercase tracking-[0.14em] text-muted">
+              {toolsLabel}
+            </p>
+            {tools.map((tl) => (
+              <Link
+                key={tl.href}
+                href={tl.href}
+                onClick={() => setMenuOpen(false)}
+                className="border-b border-line py-3 text-lg text-ink"
+              >
+                {tl.label}
               </Link>
             ))}
           </nav>

@@ -13,6 +13,10 @@ export const metadata: Metadata = {
     "Local guides to the New York neighborhoods Homix knows best — Flushing, Long Island City, Great Neck and more.",
 };
 
+function n2(i: number): string {
+  return String(i + 1).padStart(2, "0");
+}
+
 export default async function NeighborhoodsPage() {
   const { t } = await getT();
   return (
@@ -68,6 +72,30 @@ export default async function NeighborhoodsPage() {
           </Reveal>
         ))}
       </div>
+
+      {/* How we read a neighborhood */}
+      <section className="mt-20 border-t border-line pt-16 sm:mt-24 sm:pt-20">
+        <div className="max-w-2xl">
+          <Eyebrow>{t.neighborhoodsPage.whyEyebrow}</Eyebrow>
+          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+            {t.neighborhoodsPage.whyTitle}
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted">
+            {t.neighborhoodsPage.whyBody}
+          </p>
+        </div>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+          {t.neighborhoodsPage.methodology.map((m, i) => (
+            <Reveal key={m.title} delay={i * 60} className="bg-surface">
+              <div className="h-full p-7">
+                <p className="font-serif text-2xl text-bronze/60">{n2(i)}</p>
+                <p className="mt-3 font-serif text-lg leading-snug text-ink">{m.title}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{m.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
     </Container>
   );
 }

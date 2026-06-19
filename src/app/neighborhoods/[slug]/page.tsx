@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { getT } from "@/lib/i18n";
-import { neighborhoods, siteConfig } from "@/lib/site";
+import { neighborhoodGlance, neighborhoods, siteConfig } from "@/lib/site";
 
 function getNeighborhood(slug: string) {
   return neighborhoods.find((n) => n.slug === slug);
@@ -42,6 +42,7 @@ export default async function NeighborhoodPage({
 
   const { locale, t } = await getT();
   const paragraphs = (n.guide?.[locale] ?? n.blurb).split("\n\n");
+  const glance = neighborhoodGlance[slug];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -100,7 +101,32 @@ export default async function NeighborhoodPage({
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-4 border-t border-line pt-8">
+        {glance && (
+          <div className="mt-12 rounded-sm border border-line bg-surface p-7 sm:p-8">
+            <p className="eyebrow">{t.neighborhoodsPage.glanceTitle}</p>
+            <dl className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+              {(
+                [
+                  ["transit", glance.transit],
+                  ["schools", glance.schools],
+                  ["character", glance.character],
+                  ["bestFor", glance.bestFor],
+                ] as const
+              ).map(([key, val]) => (
+                <div key={key}>
+                  <dt className="text-xs uppercase tracking-[0.14em] text-muted">
+                    {t.neighborhoodsPage.glanceLabels[key]}
+                  </dt>
+                  <dd className="mt-1.5 text-[15px] leading-relaxed text-ink/85">
+                    {val[locale]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        )}
+
+        <div className="mt-12 flex flex-wrap gap-4 border-t border-line pt-8">
           <Button href={`/listings?city=${encodeURIComponent(n.name)}`}>
             {t.neighborhoodsPage.viewHomes} →
           </Button>

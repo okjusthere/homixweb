@@ -35,6 +35,8 @@ const en = {
     neighborhoods: "Neighborhoods",
     offer: "Make an offer",
     buyercoach: "Buyer coach",
+    tools: "Tools",
+    onboarding: "Onboarding",
     privacy: "Privacy",
     terms: "Terms",
     accessibility: "Accessibility",
@@ -324,6 +326,87 @@ const en = {
     fallbackBody: "Our AI buyer coach is coming online. In the meantime, reach a real advisor — we're glad to help.",
     talkToAdvisor: "Talk to an advisor",
   },
+  toolDesc: {
+    calculator: "Estimate your monthly payment",
+    offer: "Submit an offer on a home",
+    buyercoach: "AI answers for home buyers",
+    onboarding: "How joining Homix works",
+  },
+  onboarding: {
+    eyebrow: "Agent Onboarding",
+    title: "Your first 90 days at Homix, mapped out",
+    lead: "Joining a brokerage should feel like joining a team that has already cleared the runway for you. This is the full picture of what onboarding at Homix Realty involves — from the moment you accept our offer in Flushing to the day you close your first deal. Six phases, no guesswork: licensing and compliance handled correctly under New York law, every account and system set up, a media kit and personal brand built in our in-house studio, and a bilingual mentor walking beside you the whole way.",
+    phases: [
+      {
+        title: "Phase 1 — Offer & Paperwork",
+        blurb: "We start with clarity. Before any system or license, you and Homix put the working relationship in writing — your commission tier, what the brokerage provides, and what we expect of each other. Most of this happens in a single sit-down at our Flushing office, in the language you're most comfortable in.",
+        items: [
+          "Review and sign your Independent Contractor Agreement, which defines your commission split, tier, and how splits grow with production.",
+          "Walk through the Homix policy manual and code of conduct — advertising rules, client handling, anti-discrimination and Fair Housing expectations.",
+          "Complete tax and payroll setup: W-9, direct-deposit details, and emergency contact on file.",
+          "Meet your onboarding lead and pick your bilingual (EN/中文) mentor track.",
+          "Receive your onboarding roadmap — this six-phase plan with target dates for each milestone.",
+        ],
+      },
+      {
+        title: "Phase 2 — Licensing & Compliance",
+        blurb: "Real estate is a licensed profession, and in New York it is taken seriously. Homix becomes your sponsoring broker — but the salesperson license is yours, applied for in your name through the NY Department of State. We make sure every step is done correctly the first time, because a clean license file is the foundation of everything that follows.",
+        items: [
+          "Confirm your 77-hour NY pre-licensing course completion and passing state exam score (or transfer an active license if you already hold one).",
+          "Apply for your salesperson license via eAccessNY, entering Homix Realty Inc.'s broker UID as your sponsoring broker; we authorize the association from our side.",
+          "Receive your DOS pocket card and license number — this number is disclosed on all your advertising and listings.",
+          "Be added to Homix's Errors & Omissions (E&O) insurance and review your coverage.",
+          "Complete required Fair Housing and Code of Ethics training so you start fully compliant.",
+        ],
+      },
+      {
+        title: "Phase 3 — Systems & Accounts",
+        blurb: "With your license active, we switch on your toolkit. Homix gives you a single Homix ID that opens your email, CRM, the OneKey MLS, and our AI workspace — the same intelligence that powers our listings, valuations, and content. By the end of this phase you can log in once and reach everything you need to work a deal.",
+        items: [
+          "Activate your @homix email and Homix ID single sign-on for the agent portal.",
+          "Gain OneKey MLS access through our association membership — covering Queens and the wider NYC metro — and complete the required MLS rules orientation.",
+          "Set up your CRM: import contacts, connect lead routing, and learn how Homix-sourced leads land in your pipeline.",
+          "Get onboarded to the Homix AI workspace — listing copy, valuations, bilingual translation, and content drafting.",
+          "Install transaction and e-signature tools, and bookmark the brokerage's compliant forms library.",
+        ],
+      },
+      {
+        title: "Phase 4 — Brand & Media Kit",
+        blurb: "This is where Homix is different. Most brokerages hand you a logo and wish you luck. We put you in front of a camera. Our in-house studio and 1M+ audience exist to make you visible from day one — so the market meets a Homix professional, not an anonymous new agent. This phase turns you into recognizable, on-brand media.",
+        items: [
+          "Book your in-house studio session: professional headshots, a short intro reel, and on-brand profile photography.",
+          "Publish your agent profile on the Homix website and connect it to your listings.",
+          "Receive your branded media kit — business cards, email signature, social templates, and EHO/license disclosures built in.",
+          "Plan your first content with the media team: a Flushing/Queens neighborhood feature or a listing tour for our channels.",
+          "Set up your social handles to brand standards, with bilingual captions ready to go.",
+        ],
+      },
+      {
+        title: "Phase 5 — Training & Mentorship",
+        blurb: "Tools and a brand don't close deals — skill does. Homix is an agent incubator first, so we don't drop you in the deep end. You get a structured curriculum and a bilingual mentor who has done the work in this market. You'll learn how a Homix deal actually runs, from first call to closing table, before you ever do it for real.",
+        items: [
+          "Complete the Homix Foundations curriculum: pricing, buyer and seller consultations, contracts, and negotiation.",
+          "Shadow your mentor on live appointments and a closing, and debrief each one together.",
+          "Run role-play scripts for buyer consultations and listing presentations in English and 中文.",
+          "Build your 90-day business plan: lead sources, content cadence, and weekly activity targets.",
+          "Learn the compliance essentials in practice — agency disclosure, Fair Housing in conversation, and accurate listing attribution.",
+        ],
+      },
+      {
+        title: "Phase 6 — First Deal & Beyond",
+        blurb: "Onboarding ends where your career begins: a real client and a real transaction, with the whole brokerage behind you. Your mentor, the media engine, the AI tools, and our operations desk stay close while you take a deal across the line. After it closes, we review what worked and set the rhythm that carries you into a steady, growing book of business.",
+        items: [
+          "Take your first lead from intake to signed agreement with mentor support at each step.",
+          "Use the operations desk for contract review, timelines, and a smooth, compliant closing.",
+          "Turn the win into content: a closing announcement and client story for the Homix channels.",
+          "Hold a first-deal debrief with your mentor and lock in your ongoing growth plan.",
+          "Map your path up the commission tiers and into Homix's advanced and leadership tracks.",
+        ],
+      },
+    ],
+    closingTitle: "You're never onboarding alone",
+    closingBody: "Every phase here is something Homix does with you, not a checklist we hand off and forget. By the time you finish, you have an active New York license sponsored by Homix Realty, full OneKey MLS access, a complete tech and AI stack, a studio-built personal brand in front of a 1M+ audience, and a mentor who has already walked the same road. That is the difference between getting a job and being set up to win. Welcome to Homix.",
+  },
   agentsPage: {
     eyebrow: "The team",
     title: "Our advisors",
@@ -346,6 +429,34 @@ const en = {
     viewHomes: "View homes here",
     backToAll: "All neighborhoods",
     photoBy: "Photo",
+    whyEyebrow: "Neighborhood Intelligence",
+    whyTitle: "We don't sell zip codes. We read neighborhoods.",
+    whyBody: "From Downtown Flushing to the North Shore villages of Nassau County, these are the markets Homix works in every week. Our agents grew up here, shop here, and ride these trains — so our guidance is grounded in lived knowledge, not a portal listing. For each neighborhood we pair that local fluency with disciplined data: how homes are actually pricing, which school districts hold their reputation, what the commute really looks like, and where supply and demand are heading. The result is bilingual, fair-housing-conscious counsel you can act on, whether you're buying your first co-op near the 7 train or trading up to a colonial in a top-ranked school zone.",
+    methodology: [
+      {
+        title: "Comps & pricing discipline",
+        body: "We price from recent, genuinely comparable sales — adjusting for floor, condition, lot, and view rather than headline list prices. Buyers get an offer strategy backed by evidence; sellers get a number the market will actually support, so homes don't sit and don't leave money on the table.",
+      },
+      {
+        title: "Schools & zoning",
+        body: "On Long Island especially, the school district line can matter more than the street. We confirm which district and attendance zone a home actually falls in, track each district's long-standing reputation rather than a single year's ranking, and flag zoning or co-op board rules that shape what you can buy and how.",
+      },
+      {
+        title: "Transit & access",
+        body: "We map the real commute — which subway lines, LIRR branch, ferry, or highways serve a home, and how that translates into door-to-door time and resale appeal. Proximity to a station or express service is a durable value driver, and we weigh it the way buyers and future buyers will.",
+      },
+      {
+        title: "Supply, demand & timing",
+        body: "We watch inventory, days-on-market, and seasonal rhythm by neighborhood so timing works for you, not against you. Knowing whether a market favors buyers or sellers — and when listings typically surge — turns a stressful guess into a planned move.",
+      },
+    ],
+    glanceTitle: "At a glance",
+    glanceLabels: {
+      transit: "Getting around",
+      schools: "Schools",
+      character: "Character",
+      bestFor: "Best for",
+    },
   },
   notFound: {
     eyebrow: "404",
@@ -468,6 +579,8 @@ const zh: Dict = {
     neighborhoods: "社区",
     offer: "提交报价",
     buyercoach: "买家教练",
+    tools: "工具",
+    onboarding: "入职",
     privacy: "隐私政策",
     terms: "服务条款",
     accessibility: "无障碍",
@@ -757,6 +870,87 @@ const zh: Dict = {
     fallbackBody: "我们的 AI 买房教练即将上线。在此之前，欢迎联系真人顾问，我们很乐意帮忙。",
     talkToAdvisor: "联系顾问",
   },
+  toolDesc: {
+    calculator: "估算你的月供",
+    offer: "在线提交购房报价",
+    buyercoach: "AI 买房问答",
+    onboarding: "加入 Homix 的全流程",
+  },
+  onboarding: {
+    eyebrow: "经纪人入职",
+    title: "在 Homix 的前 90 天，为你铺好每一步",
+    lead: "加入一家经纪公司，应当像加入一支早已为你扫清跑道的团队。这里是 Homix Realty 入职流程的完整图景——从你在法拉盛接受我们的 offer，到成交第一单。六个阶段，无需自己摸索：依据纽约州法律正确办妥执照与合规、配齐所有账户与系统、在自有摄影棚打造你的媒体素材包与个人品牌，并由一位中英双语导师全程陪你同行。",
+    phases: [
+      {
+        title: "第一阶段 · Offer 与签约文件",
+        blurb: "我们从把话说清楚开始。在配置任何系统或办理执照之前，你与 Homix 先把合作关系白纸黑字写下来——你的佣金档位、公司提供什么、彼此的期待是什么。这些大多在法拉盛办公室一次面谈中、用你最自在的语言完成。",
+        items: [
+          "审阅并签署《独立承包人协议》，其中界定你的佣金分成、档位，以及分成如何随业绩成长。",
+          "通读 Homix 政策手册与行为准则——广告规则、客户对接、反歧视与公平住房（Fair Housing）要求。",
+          "完成税务与发放设置：W-9 表、直接存款资料，并登记紧急联系人。",
+          "认识你的入职负责人，并选定中英双语导师路线。",
+          "领取你的入职路线图——这份六阶段计划，并为每个里程碑标注目标日期。",
+        ],
+      },
+      {
+        title: "第二阶段 · 执照与合规",
+        blurb: "房地产是受执照监管的行业，在纽约州尤为严格。Homix 成为你的挂靠经纪（sponsoring broker）——但销售员执照属于你本人，以你的名义通过纽约州务厅（NY Department of State）申请。我们确保每一步第一次就办对，因为一份干净的执照档案，是后续一切的根基。",
+        items: [
+          "确认你已完成纽约州 77 小时执照前课程并通过州考（若已持有有效执照，则办理挂靠转移）。",
+          "通过 eAccessNY 申请销售员执照，填入 Homix Realty Inc. 的经纪 UID 作为挂靠经纪；我们从公司端确认关联。",
+          "领取州务厅 pocket card 与执照号——该号码须出现在你所有广告与房源中。",
+          "纳入 Homix 的错误与遗漏（E&O）责任保险，并了解你的保障范围。",
+          "完成必修的公平住房与职业道德规范（Code of Ethics）培训，确保起步即合规。",
+        ],
+      },
+      {
+        title: "第三阶段 · 系统与账户",
+        blurb: "执照生效后，我们为你开启全套工具。Homix 给你一个统一的 Homix ID，打通邮箱、CRM、OneKey MLS，以及我们的 AI 工作台——正是驱动我们房源、估价与内容的同一套智能。到本阶段结束，你只需登录一次，就能触达推进一单交易所需的全部工具。",
+        items: [
+          "激活你的 @homix 企业邮箱与 Homix ID 单点登录，进入经纪人后台。",
+          "通过公司协会会员资格获得 OneKey MLS 权限——覆盖皇后区及整个纽约都会区——并完成必修的 MLS 规则培训。",
+          "配置你的 CRM：导入联系人、接通线索分配，了解 Homix 提供的线索如何进入你的管道。",
+          "接入 Homix AI 工作台——房源文案、估价、中英互译与内容初稿。",
+          "安装交易管理与电子签名工具，并收藏公司合规表单库。",
+        ],
+      },
+      {
+        title: "第四阶段 · 品牌与媒体素材包",
+        blurb: "这是 Homix 与众不同之处。多数经纪公司只给你一个 logo，然后祝你好运。我们把你请到镜头前。我们的自有摄影棚与百万级（1M+）受众，就是为了让你从第一天起就被看见——市场遇见的是一位 Homix 专业人士，而非一个无名的新人。本阶段，把你打造成可被识别、契合品牌的媒体形象。",
+        items: [
+          "预约自有摄影棚拍摄：专业形象照、一段简短自我介绍影片，以及契合品牌的个人照片。",
+          "在 Homix 官网发布你的经纪人主页，并关联到你的房源。",
+          "领取品牌媒体素材包——名片、邮件签名、社交模板，并已内置平等住房机会（EHO）与执照披露。",
+          "与媒体团队规划你的首批内容：一期法拉盛/皇后区社区特辑，或一支登上我们频道的房源导览。",
+          "按品牌规范建立你的社交账号，并备好中英双语文案。",
+        ],
+      },
+      {
+        title: "第五阶段 · 培训与师徒同行",
+        blurb: "工具与品牌成交不了单——本事才行。Homix 首先是一个经纪人孵化器，所以我们不会把你直接丢进深水区。你将获得一套结构化课程，以及一位在本地市场真正实战过的双语导师。在你真正上手之前，你会先学会一单 Homix 交易究竟如何运转——从第一通电话到成交桌。",
+        items: [
+          "完成 Homix 基础课程：定价、买卖方咨询、合同与谈判。",
+          "跟随导师实地参与真实约访与一场成交，并在每次结束后共同复盘。",
+          "用中英双语演练买方咨询与房源推介的话术剧本。",
+          "制定你的 90 天业务计划：线索来源、内容节奏与每周行动目标。",
+          "在实操中掌握合规要点——代理关系披露、对话中的公平住房原则，以及准确的房源署名。",
+        ],
+      },
+      {
+        title: "第六阶段 · 第一单及之后",
+        blurb: "入职在你的事业起点处收尾：一位真实客户、一笔真实交易，整家公司做你的后盾。在你把一单送过终点线时，导师、媒体引擎、AI 工具与运营台始终在你身边。成交之后，我们一起复盘哪些奏效，并定下能带你走向稳定、持续增长业务的节奏。",
+        items: [
+          "在导师每一步的支持下，把你的第一条线索从接洽推进到签约。",
+          "借助运营台完成合同审阅、时间节点把控，达成顺畅而合规的成交。",
+          "把成功转化为内容：在 Homix 频道发布成交喜讯与客户故事。",
+          "与导师进行首单复盘，并敲定你的长期成长计划。",
+          "规划你晋升佣金档位、迈入 Homix 进阶与带队领导路线的路径。",
+        ],
+      },
+    ],
+    closingTitle: "入职路上，你从不孤单",
+    closingBody: "这里的每一个阶段，都是 Homix 与你一起完成的，而非交出一张清单便不再过问。当你走完全程，你将拥有：由 Homix Realty 挂靠的有效纽约执照、完整的 OneKey MLS 权限、一整套技术与 AI 工具、在摄影棚打造并面向百万级受众的个人品牌，以及一位早已走过同一条路的导师。这正是\"找到一份工作\"与\"被托举着去赢\"之间的差别。欢迎加入 Homix。",
+  },
   agentsPage: {
     eyebrow: "团队",
     title: "我们的经纪人",
@@ -779,6 +973,34 @@ const zh: Dict = {
     viewHomes: "查看该区房源",
     backToAll: "全部社区",
     photoBy: "摄影",
+    whyEyebrow: "社区研判",
+    whyTitle: "我们卖的不是邮编，而是对社区的理解",
+    whyBody: "从法拉盛市中心到拿骚县北岸的村镇，这些都是 Homix 每周深耕的市场。我们的经纪人在这里长大、在这里生活、也每天搭乘这些列车——因此我们的建议来自真实的在地认知，而非门户网站上的一条房源。对每个社区，我们都把这份在地熟悉与严谨的数据结合起来：房子真实的定价走向、哪些学区的口碑长期稳固、通勤实际是什么样、供需又在往哪个方向走。最终交付的，是符合公平住房原则的中英双语建议，让你可以据此行动——无论是在 7 号线旁购入第一套合作公寓，还是换购顶级学区里的一栋殖民式住宅。",
+    methodology: [
+      {
+        title: "可比成交与定价纪律",
+        body: "我们以近期、真正可比的成交为基准定价——按楼层、房况、地块与景观逐项调整，而非照搬挂牌标价。买家得到有据可依的出价策略；卖家得到市场真正能承接的价格，让房子既不滞销，也不贱卖。",
+      },
+      {
+        title: "学区与分区",
+        body: "尤其在长岛，学区边界往往比所在街道更关键。我们核实房子真正所属的学区与对口范围，关注各学区长期稳固的口碑而非某一年的排名，并提示影响你能买什么、怎么买的分区规定与合作公寓董事会规则。",
+      },
+      {
+        title: "交通与可达性",
+        body: "我们把真实的通勤画出来——哪条地铁线、哪条长岛铁路支线、渡轮或高速公路服务这套房子，以及它如何转化为门到门的时间与转售吸引力。临近车站或快车服务是长期的价值支撑，我们会像买家和未来买家那样去权衡它。",
+      },
+      {
+        title: "供需与时机",
+        body: "我们按社区跟踪库存量、在售天数与季节节奏，让时机为你所用，而不是与你作对。清楚一个市场当下偏向买方还是卖方、房源通常在何时集中放出，能把一次紧张的猜测变成一步有计划的行动。",
+      },
+    ],
+    glanceTitle: "速览",
+    glanceLabels: {
+      transit: "交通",
+      schools: "学区",
+      character: "社区气质",
+      bestFor: "适合人群",
+    },
   },
   notFound: {
     eyebrow: "404",

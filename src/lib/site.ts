@@ -256,3 +256,59 @@ export const heroImage = {
   src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
   alt: "A bright, contemporary New York home at dusk",
 };
+
+/** Tools dropdown in the header nav (labels via i18n common.*). */
+export const toolsNav: NavItem[] = [
+  { key: "calculator", href: "/calculator" },
+  { key: "offer", href: "/offer" },
+  { key: "buyercoach", href: "/buyercoach" },
+  { key: "onboarding", href: "/onboarding" },
+];
+
+/** Evergreen "at a glance" facts per neighborhood (durable, not prices). */
+export const neighborhoodGlance: Record<
+  string,
+  {
+    transit: { en: string; zh: string };
+    schools: { en: string; zh: string };
+    character: { en: string; zh: string };
+    bestFor: { en: string; zh: string };
+  }
+> = {
+  "flushing": {
+    transit: { en: "A true transit hub: the 7 subway and the LIRR Port Washington Branch meet at Flushing–Main Street, joined by one of Queens' busiest bus networks (Q-line and SBS service). Rare walk-everywhere access for the borough.", zh: "名副其实的交通枢纽：7 号线地铁与长岛铁路 Port Washington 支线在法拉盛-缅街站交汇，再加上皇后区最繁忙的公交网络之一（多条 Q 线及 SBS 快速公交）。在本区中少见的「步行即达」便利。" },
+    schools: { en: "Served by NYC public schools (largely District 25), with specialized and dual-language programs that draw families; many also weigh nearby private and parochial options.", zh: "隶属纽约市公立学校系统（主要为第 25 学区），设有吸引家庭的特殊项目与双语课程；不少家庭也会考虑周边的私立与教会学校。" },
+    character: { en: "A dense, fast-moving downtown core — one of New York's premier Asian commercial and dining districts — where new-construction condos rise beside long-established blocks of shops and restaurants.", zh: "密集而快节奏的市中心核心区——纽约首屈一指的亚裔商业与餐饮聚集地之一——新建公寓与历史悠久的商铺、餐馆街区比邻而立。" },
+    bestFor: { en: "Best for buyers who want urban energy, transit, and condo living, plus investors drawn to steady rental and resale demand near the station.", zh: "适合想要都市活力、便捷交通与公寓生活的买家，以及看重车站周边稳定租售需求的投资者。" },
+  },
+  "long-island-city": {
+    transit: { en: "Among the most connected neighborhoods in NYC: the 7, E, M and G (plus the F on weekdays) converge at Court Square, putting Midtown roughly one stop and a few minutes away, with NYC Ferry at Hunters Point as a scenic alternative.", zh: "纽约市连通性最强的社区之一：7、E、M、G 线（工作日另有 F 线）在 Court Square 站汇集，到中城大约一站、几分钟即达，Hunters Point 的 NYC 渡轮则是风景宜人的另一选择。" },
+    schools: { en: "Part of the NYC public school system (District 30), alongside a growing roster of charter, private, and pre-K options that families compare.", zh: "属于纽约市公立学校系统（第 30 学区），并有日益增多的特许、私立及学前班选择供家庭比较。" },
+    character: { en: "A former industrial waterfront reborn as a skyline of glass towers, riverfront parks, and a lively arts and dining scene looking straight across the East River at Manhattan.", zh: "昔日的工业滨水区，如今重生为玻璃高层的天际线，拥有滨河公园与热闹的艺术、餐饮场景，隔着东河正对曼哈顿。" },
+    bestFor: { en: "Best for buyers and renters who want new-construction amenities, skyline views, and the shortest possible commute to Midtown.", zh: "适合想要新建配套、天际线景观，以及通往中城最短通勤的买家与租客。" },
+  },
+  "great-neck": {
+    transit: { en: "On the LIRR Port Washington Branch with direct service to Penn Station and Grand Central; peak express trains reach Midtown in roughly half an hour, making it one of the quicker North Shore commutes.", zh: "位于长岛铁路 Port Washington 支线，直达宾州车站与中央车站；高峰时段的快车约半小时即抵中城，是北岸较快的通勤之一。" },
+    schools: { en: "Great Neck Union Free School District is a long-standing top-tier Nassau County district, consistently rated among the strongest in New York State.", zh: "Great Neck 联合自由学区是拿骚县长期稳居顶尖的学区，始终位列纽约州最强学区之中。" },
+    character: { en: "A cluster of North Shore villages defined by tree-lined streets, waterfront parks on Manhasset Bay, and a housing mix from classic colonials to modern builds.", zh: "一组北岸村镇，以林荫街道、Manhasset 湾畔的滨水公园，以及从经典殖民式到现代新建的多元住宅著称。" },
+    bestFor: { en: "Best for families and commuters who want top schools and suburban space within a quick, direct ride to Manhattan.", zh: "适合想要顶级学校与郊区空间、又能快速直达曼哈顿的家庭与通勤者。" },
+  },
+  "manhasset": {
+    transit: { en: "The Manhasset LIRR station (Plandome Road) sits on the Port Washington Branch with direct trains to Penn Station and Grand Central — a short, reliable North Shore commute.", zh: "Manhasset 长岛铁路车站（Plandome Road）位于 Port Washington 支线，直达宾州车站与中央车站——一段短而可靠的北岸通勤。" },
+    schools: { en: "Manhasset Union Free School District is a small, highly regarded district; its secondary school ranks among the very top public schools in New York year after year.", zh: "Manhasset 联合自由学区是一所规模不大却备受推崇的学区，其中学连年位列纽约州顶尖公立学校之中。" },
+    character: { en: "A gracious North Shore community of tree-lined streets and classic colonial and estate homes, anchored by the upscale Miracle Mile shopping district on Northern Boulevard.", zh: "一处优雅的北岸社区，林荫街道间散落着经典殖民式与庄园式住宅，并以 Northern Boulevard 上的高端购物区「Miracle Mile」为核心。" },
+    bestFor: { en: "Best for families seeking estate-style space, premier schools, and high-end shopping within an easy commute to the city.", zh: "适合追求庄园式空间、顶尖学校与高端购物，同时通勤进城便捷的家庭。" },
+  },
+  "syosset": {
+    transit: { en: "Syosset's LIRR station, on the Port Jefferson Branch, offers direct service to Penn Station and Grand Central, while the LIE and Northern State Parkway keep the area well connected by car.", zh: "Syosset 的长岛铁路车站位于 Port Jefferson 支线，直达宾州车站与中央车站；长岛快速路（LIE）与 Northern State Parkway 也让该区在自驾上四通八达。" },
+    schools: { en: "Syosset Central School District is one of the most acclaimed districts in the state and nation — repeatedly ranked at or near the top of New York's public school districts.", zh: "Syosset 中央学区是全州乃至全美最受赞誉的学区之一——屡次位列纽约州公立学区的榜首或前列。" },
+    character: { en: "A heart-of-Nassau community with a walkable downtown along Jackson Avenue, parks and recreation close by, and homes from mid-century classics to updated colonials on generous lots.", zh: "位于拿骚县腹地的社区，Jackson Avenue 沿线有可步行的市中心，公园与休闲设施近在咫尺，住宅从世纪中叶经典款到地块宽敞、翻新过的殖民式不等。" },
+    bestFor: { en: "Best for families prioritizing nationally ranked schools alongside a walkable downtown and classic suburban lots.", zh: "适合把全美知名学校放在首位，同时看重可步行市中心与经典郊区地块的家庭。" },
+  },
+  "jericho": {
+    transit: { en: "Jericho has no station of its own; commuters use the nearby Hicksville and Syosset LIRR stations for direct Manhattan service, while the Long Island Expressway and Northern State Parkway make for an easy drive.", zh: "Jericho 本身没有车站；通勤者借由邻近的 Hicksville 与 Syosset 长岛铁路车站直达曼哈顿，长岛快速路与 Northern State Parkway 则让自驾轻松便捷。" },
+    schools: { en: "Jericho Union Free School District is among the most decorated in the country, consistently ranked New York's #1 public school district and one of the very best nationally.", zh: "Jericho 联合自由学区是全美最受表彰的学区之一，长期被评为纽约州第一、并跻身全美最佳之列。" },
+    character: { en: "A quiet, established Nassau County hamlet of residential streets and a central location, anchored by landmarks like the historic Milleridge Inn.", zh: "一处宁静、成熟的拿骚县社区，住宅街道与中心地段相映，并以历史悠久的 Milleridge Inn 等地标为依托。" },
+    bestFor: { en: "Best for families who put top-ranked schools first and value quiet streets with quick highway access.", zh: "适合把顶级学区放在第一位、并看重安静街道与便捷高速通行的家庭。" },
+  },
+};
