@@ -25,24 +25,13 @@ export default async function OfferPage() {
 
   return (
     <>
-      {/* Hero */}
-      <Container className="py-16 sm:py-24">
-        <div className="max-w-3xl">
-          <Eyebrow>{t.offer.eyebrow}</Eyebrow>
-          <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-ink sm:text-[3.25rem]">
-            {t.offer.title}
-          </h1>
-          <p className="mt-6 text-xl leading-relaxed text-muted">{t.offer.lead}</p>
-        </div>
-      </Container>
-
       {/* Prep */}
-      <section className="border-y border-line bg-surface py-16 sm:py-20">
+      <section className="border-b border-line bg-surface py-16 sm:py-20">
         <Container>
           <Eyebrow>{t.offer.prepEyebrow}</Eyebrow>
-          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+          <h1 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
             {t.offer.prepTitle}
-          </h2>
+          </h1>
           <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
             {t.offer.prep.map((p, i) => (
               <Reveal key={p.title} delay={i * 60} className="bg-surface">
