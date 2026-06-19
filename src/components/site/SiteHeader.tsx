@@ -27,7 +27,7 @@ export function SiteHeader({
   phoneHref: string;
 }) {
   const pathname = usePathname();
-  const overHero = pathname === "/";
+  const overHero = pathname === "/" || pathname === "/about";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 

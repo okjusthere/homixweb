@@ -151,12 +151,26 @@ const en = {
   },
   about: {
     eyebrow: "About Homix",
-    title: "New York's first media-first real estate company.",
-    lead: "Homix blends the essence of home and mix — a full-service brokerage, a media studio, and an agent incubator, powered by a 1,000,000+ audience and AI-driven marketing.",
-    p1: "Most brokerages still market the way they did a decade ago. Homix was built differently — around viral social video, lifestyle content, and curated guides that amplify a property far beyond the MLS. The result is exposure traditional firms can't match, faster closings, and a marketing edge that compounds.",
-    p2: "Behind the content is a bilingual team that knows Queens, Long Island, and Manhattan by heart — fluent in Mandarin and English, and relentless on behalf of every client from the first showing to the closing table.",
-    foundersEyebrow: "Our founders",
-    foundersTitle: "The people who built Homix",
+    title: "A media-first, AI-empowered New York real estate company.",
+    lead: "Homix is a New York real estate company built media-first: we earn attention before we ask for a listing. We pair a bilingual team across Flushing, Queens and Long Island with AI-assisted pricing and marketing — so your home reaches the right buyers, in the right language, on the platforms they already trust.",
+    p1: "Homix started with a camera, not a \"for sale\" sign. Before there was a brokerage, there was an audience — neighbors who followed founder Si Zhang (\"Sunny\") for honest, in-language explanations of how New York real estate actually works: what a co-op board really wants, why one block trades at a premium over the next, how to read a Queens listing between the lines. That media-first habit is still the whole point. We believe the best way to earn a client is to be genuinely useful long before anyone is ready to buy or sell, and to keep showing up after the deal closes.",
+    p2: "That origin shapes how we operate. Our team is bilingual by default — fluent in English and Mandarin, and fluent in the realities of Flushing, the rest of Queens and Long Island, where so many families are making their first or biggest American purchase. We use AI where it earns its place: pricing a home against fresh comparables, drafting marketing in two languages, matching the right buyer to the right home faster. The technology stays behind the scenes; the relationship stays in front. Whether you're buying your first apartment or listing the home you raised a family in, you get a team that already knows your neighborhood — and an audience that's already listening.",
+    whatWeAreEyebrow: "What we are",
+    whatWeAreTitle: "Three companies in one.",
+    whatWeAre: [
+      {
+        title: "A brokerage",
+        body: "A licensed New York residential brokerage. We list, market and close homes the way a brokerage should — fiduciary, full-service, fair-housing compliant — but with an audience already watching before your sign goes up.",
+      },
+      {
+        title: "A media studio",
+        body: "Content is how we work, not an afterthought. We shoot, edit and publish the neighborhood walk-throughs, market explainers and home tours that have built a real local following — so every listing launches into an audience instead of into silence.",
+      },
+      {
+        title: "An agent incubator",
+        body: "We help agents build a personal brand, not just a pipeline. New agents get our media playbook, AI tools and bilingual support from day one — the platform we wish we'd had — so their reputation compounds instead of resetting with every deal.",
+      },
+    ],
     howEyebrow: "How we work",
     workWithUs: "Work with us",
     meetTeam: "Meet the team",
@@ -165,45 +179,108 @@ const en = {
     teamBody: "From Flushing to Manhattan to the North Shore, our advisors share one standard of service — local knowledge, bilingual care, and a media engine behind every deal.",
   },
   join: {
-    eyebrow: "Careers · Join Homix",
-    title: "Join the brokerage that hands you an audience.",
-    lead: "Most brokerages give you a desk and a logo. Homix gives you a 1M+ media engine, real leads, and the tools to build a brand — so your business compounds instead of starting from zero on every deal.",
+    eyebrow: "Careers at Homix · Flushing, NYC",
+    title: "We don't hand you a desk. We hand you an audience.",
+    lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. Day one, you step into an audience of 1,000,000+ across 抖音, 小红书, and Instagram, an in-house content studio, AI and data tools, and bilingual senior mentors who have closed in this market. Where Homes Meet Headlines — we turn agents into local stars.",
+    heroCta: "Apply to join Homix",
+    stats: [
+      {
+        value: "1,000,000+",
+        label: "Followers across 抖音 · 小红书 · Instagram you tap into on day one",
+      },
+      {
+        value: "Bilingual",
+        label: "English + 中文 team built for NYC's Chinese-American buyers and sellers",
+      },
+      {
+        value: "In-house",
+        label: "Content studio — shoot, edit, and publish without paying an outside agency",
+      },
+      {
+        value: "Flushing · Queens · LI",
+        label: "Rooted in the markets we actually live and sell in",
+      },
+    ],
+    benefitsEyebrow: "Why agents join",
+    benefitsTitle: "What you get on day one.",
     benefits: [
       {
-        title: "An audience on day one",
-        body: "Plug into a 1,000,000+ following and a content engine already producing video, Reels, and lifestyle posts that generate real buyer and seller interest.",
+        title: "An audience, handed to you",
+        body: "You don't start from zero followers. Our 1,000,000+ community across 抖音, 小红书, and Instagram becomes the top of your funnel. Your listings, your face, and your story go out to people already watching Homix — so the leads find you, not the other way around.",
       },
       {
-        title: "A media studio behind you",
-        body: "Professional photography, video walk-throughs, drone, and virtual staging — plus coaching to build and grow your own channel.",
+        title: "An in-house studio that makes you famous",
+        body: "This is the SERHANT idea, localized for our market: media is how we sell. Our studio scripts, shoots, and edits short-form video, listing films, and personal-brand content for you — at no agency markup. You stay in front of clients; we make sure the camera loves you.",
       },
       {
-        title: "Build a personal brand that compounds",
-        body: "We help you develop a personal IP: more reach, more trust, more referrals — an asset that grows with every deal.",
+        title: "AI and data tools that save your week",
+        body: "Pricing comps, neighborhood data, lead follow-up, and listing copy in two languages — handled by our AI and data stack so you spend your hours with clients, not spreadsheets. Smart tech should serve the agent, not the other way around.",
       },
       {
-        title: "Warm leads and AI tools",
-        body: "Leads that come from our content, plus AI-assisted tools for pricing, marketing copy, and client follow-up that save you hours.",
+        title: "Bilingual senior mentorship",
+        body: "Whether you're newly licensed or stuck at a desk-fee shop, you're paired with senior agents who have actually closed in Flushing, Queens, and Long Island — in English and 中文. Real shadowing, real deal reviews, real introductions. You learn the market, not just the theory.",
       },
       {
-        title: "Bilingual, senior mentorship",
-        body: "Guidance from founders and brokers with decades of New York experience — fluent in Mandarin and English.",
+        title: "Built for the bilingual market",
+        body: "New York's Chinese-American buyers and sellers are an enormous, underserved market — and we are built for them in both languages. Marketing, contracts, and conversations happen in the language each client trusts, which means you can serve clients other agents simply can't reach.",
       },
       {
-        title: "A team, not a desk-fee factory",
-        body: "We're a small, senior group that actually invests in your growth, from your first transaction to your hundredth.",
+        title: "A real team, not a desk-fee factory",
+        body: "Some brokerages just rent you a seat and collect a monthly fee. Homix invests in you because your wins are our story. Transparent economics, a clear path to grow, and a team that shows up — we'd rather have a smaller roster of stars than a warehouse of names.",
+      },
+    ],
+    stepsEyebrow: "How to join",
+    stepsTitle: "From hello to local star.",
+    steps: [
+      {
+        title: "Apply and have a real conversation",
+        body: "Send us your background — licensed, newly licensed, or considering the move. We'll sit down (in English or 中文) to understand your goals and tell you honestly whether Homix is the right fit.",
+      },
+      {
+        title: "Build your brand kit",
+        body: "Our studio shoots your intro content, sets up your bilingual profile, and plugs you into the Homix channels so the 1,000,000+ audience starts seeing your name and your listings.",
+      },
+      {
+        title: "Get paired with a mentor and tools",
+        body: "You're matched with a senior bilingual mentor and onboarded to our AI, data, and CRM tools — then you start working real leads with support beside you, not a manual to read alone.",
+      },
+      {
+        title: "Grow into a local star",
+        body: "As your deals and content compound, we scale your reach, your brand, and your earnings. The agents who lean in become the faces people in the neighborhood already recognize.",
+      },
+    ],
+    whoEyebrow: "Who we're looking for",
+    whoTitle: "Who we're looking for",
+    whoBody: "You don't need a big book of business or a following — you need ambition and a willingness to show up on camera and in the community. We're a fit for newly licensed agents who want a real launchpad instead of a desk and a login, and for experienced agents who are stuck at a fee-factory brokerage and tired of generating every lead alone. Bilingual (English/中文) is a major plus given the clients we serve, but the non-negotiables are hunger, coachability, and integrity. If you want to be a local star and you're willing to do the work to get there, we want to talk.",
+    faqEyebrow: "Questions",
+    faqTitle: "Good to know.",
+    faq: [
+      {
+        q: "I'm not licensed yet — can I still join?",
+        a: "Talk to us early. We can't issue your license — that's the state — but we'll point you to the right pre-licensing course, and we're built to launch newly licensed agents. The mentorship, tools, and audience matter most exactly when you're starting out.",
+      },
+      {
+        q: "How do the splits and economics work?",
+        a: "We keep economics transparent and discuss them openly in your first conversation, because the right structure depends on your experience and goals. What we won't do is dress up a monthly desk fee as a 'partnership.' We invest in your brand and leads because your growth is how we grow.",
+      },
+      {
+        q: "Do I need an existing following to benefit from the media engine?",
+        a: "No — that's the entire point. You plug into our 1,000,000+ audience and in-house studio from day one. We build your personal brand from where you are; you don't need to arrive famous, you leave famous.",
+      },
+      {
+        q: "Do I have to speak Chinese to work here?",
+        a: "It's a strong advantage because so many of our clients are Chinese-American, and our team operates in both languages. But it isn't a hard requirement — drive, coachability, and integrity come first. We'll place you where you can win.",
       },
     ],
     ctaEyebrow: "Let's talk",
-    ctaTitle: "Tell us about yourself.",
-    ctaLead:
-      "Licensed already or just getting started — if you're ambitious and curious about a media-first brokerage, we'd love to talk. Every conversation is confidential.",
+    ctaTitle: "Stop chasing leads alone. Become the headline.",
+    ctaLead: "One conversation is all it takes to see what an audience, a studio, AI tools, and real mentorship could do for your career. Apply below — we'll reply in the language you prefer.",
     orReach: "Or reach us directly at",
   },
   journal: {
     eyebrow: "Journal",
-    title: "Notes from a media-first brokerage",
-    lead: "Market reports, neighborhood deep-dives, and a point of view worth reading — from the people who do the work.",
+    title: "Notes from an AI-first brokerage",
+    lead: "Market data, neighborhood deep-dives, and a point of view worth reading — from the people who do the work.",
     readMore: "Read article",
     by: "By",
     backToJournal: "All articles",
@@ -469,12 +546,26 @@ const zh: Dict = {
   },
   about: {
     eyebrow: "关于 Homix",
-    title: "纽约首家以媒体驱动的地产公司。",
-    lead: "Homix 融合 home 与 mix——集全程经纪、媒体工作室与经纪人孵化器于一体，由 100 万+ 全网粉丝与 AI 营销驱动。",
-    p1: "大多数经纪公司还在用十年前的方式做营销。Homix 生来不同——以爆款短视频、生活方式内容与精选指南，把房源的曝光带到远超 MLS 的范围。由此带来传统公司无法匹敌的曝光、更快的成交，以及不断累积的营销优势。",
-    p2: "内容背后，是一支把皇后区、长岛与曼哈顿了如指掌的双语团队——中英文流利，从第一次看房到成交签约，始终全力以赴。",
-    foundersEyebrow: "创始团队",
-    foundersTitle: "缔造 Homix 的人",
+    title: "一家媒体先行、AI 赋能的纽约房地产公司。",
+    lead: "Homix 是一家以\"媒体先行\"为根基的纽约房地产公司：我们先赢得关注，再谈房源委托。我们组建了一支横跨法拉盛、皇后区与长岛的双语团队，并以 AI 辅助定价与营销——让您的房子用对的语言、在买家本就信任的平台上，触达真正合适的买家。",
+    p1: "Homix 的起点是一台相机，而不是一块\"待售\"招牌。在公司成立之前，先有了观众——一群追随创始人张思（Si Zhang，\"Sunny\"）的街坊邻里，因为他用大家听得懂的语言，诚实地讲清楚纽约房地产到底是怎么运转的：合作公寓（co-op）董事会真正在意什么、为什么相邻两个街区价格相差悬殊、怎样读懂一则皇后区房源字里行间的言外之意。这种\"媒体先行\"的习惯，至今仍是我们存在的全部意义。我们相信，赢得客户最好的方式，是在任何人准备买卖之前就真正帮上忙，并在成交之后依然在场。",
+    p2: "这样的起点，决定了我们做事的方式。我们的团队天生双语——英语与普通话皆能流利沟通，更通晓法拉盛、皇后区其他社区与长岛的真实生态：在这里，许多家庭正进行人生中第一笔、或最大一笔的美国置业。我们让 AI 在它该出力的地方出力：依据最新可比成交为房屋定价、用两种语言撰写营销文案、更快地为合适的房子匹配合适的买家。技术留在幕后，关系留在台前。无论您是初次置业，还是要出售养育了一家人的住所，您得到的，都是一支早已熟悉您社区的团队——以及一群早已在聆听的观众。",
+    whatWeAreEyebrow: "我们是什么",
+    whatWeAreTitle: "三位一体，一家公司。",
+    whatWeAre: [
+      {
+        title: "一家持牌经纪公司",
+        body: "我们是一家持牌的纽约住宅房地产经纪公司。挂牌、营销、成交，我们坚守经纪应有的本分——尽责守信、全程服务、遵循公平住房原则——区别只在于：在挂牌牌子立起之前，已经有一群观众在关注。",
+      },
+      {
+        title: "一间内容工作室",
+        body: "内容是我们做事的方式，而非事后的点缀。我们亲自拍摄、剪辑并发布社区漫步、市场解读与房源导览，由此积累起真实的本地粉丝——让每一套房源一上线就面对观众，而不是面对沉默。",
+      },
+      {
+        title: "一个经纪人孵化器",
+        body: "我们帮助经纪人打造个人品牌，而不只是积累客源。新加入的经纪人从第一天起就能用上我们的内容方法论、AI 工具与双语支持——这正是我们当初渴望拥有的平台——让他们的口碑不断累积，而非每成交一单就归零重来。",
+      },
+    ],
     howEyebrow: "我们的方式",
     workWithUs: "与我们合作",
     meetTeam: "认识团队",
@@ -483,45 +574,108 @@ const zh: Dict = {
     teamBody: "从法拉盛到曼哈顿，再到长岛北岸，我们的经纪人秉持同一套服务标准——本地洞察、双语贴心，以及每一单背后的媒体引擎。",
   },
   join: {
-    eyebrow: "招募 · 加入 Homix",
-    title: "加入这家把流量交到你手里的经纪公司。",
-    lead: "大多数公司给你一张办公桌和一个 logo。Homix 给你一台 100 万+ 粉丝的媒体引擎、真实客源，以及打造个人品牌的工具——让你的生意不断累积，而不是每单从零开始。",
+    eyebrow: "Homix 招募 · 纽约法拉盛",
+    title: "我们给你的不是一张办公桌，而是一群观众。",
+    lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就接入抖音、小红书、Instagram 上超过 100 万的粉丝群体，拥有自有内容工作室、AI 与数据工具，以及在本地真正成交过的双语资深导师。Where Homes Meet Headlines——我们把经纪人打造成本地明星。",
+    heroCta: "申请加入 Homix",
+    stats: [
+      {
+        value: "1,000,000+",
+        label: "抖音 · 小红书 · Instagram 全网粉丝，入职即可触达",
+      },
+      {
+        value: "Bilingual",
+        label: "中英双语团队，专为纽约华人买家与卖家而建",
+      },
+      {
+        value: "In-house",
+        label: "自有内容工作室——拍摄、剪辑、发布，无需外包",
+      },
+      {
+        value: "Flushing · Queens · LI",
+        label: "扎根法拉盛、皇后区与长岛，我们真正生活与成交的市场",
+      },
+    ],
+    benefitsEyebrow: "为什么选择加入",
+    benefitsTitle: "入职第一天，你就拥有。",
     benefits: [
       {
-        title: "第一天就有流量",
-        body: "接入 100 万+ 粉丝与一台已经在产出视频、Reels 与生活方式内容的引擎，持续带来真实的买家与卖家。",
+        title: "一群现成的观众，直接交到你手上",
+        body: "你不必从零粉丝起步。我们在抖音、小红书、Instagram 上超过 100 万的社群，就是你的获客漏斗顶端。你的房源、你的出镜、你的故事，会推送给本就关注 Homix 的人群——让客户主动找到你，而不是你苦苦去找客户。",
       },
       {
-        title: "一支媒体工作室在背后",
-        body: "专业摄影、视频带看、航拍与虚拟布置——再加上帮你打造并做大自己账号的辅导。",
+        title: "自有工作室，把你打造成名",
+        body: "这正是 SERHANT 的逻辑，并为本地市场量身定制：用媒体来卖房。我们的工作室为你撰稿、拍摄、剪辑短视频、房源影片和个人品牌内容——没有外包加价。你专注面对客户，我们负责让镜头爱上你。",
       },
       {
-        title: "打造会复利的个人品牌",
-        body: "我们帮你建立个人 IP：更多触达、更多信任、更多转介绍——一项随每单成交而增值的资产。",
+        title: "AI 与数据工具，帮你省下整周时间",
+        body: "定价比对、社区数据、客户跟进、双语房源文案——全部交给我们的 AI 与数据系统处理，让你把时间花在客户身上，而不是表格里。好的科技应该服务于经纪人，而不是反过来。",
       },
       {
-        title: "温暖客源与 AI 工具",
-        body: "来自我们内容的客源，加上用于定价、营销文案与客户跟进的 AI 工具，为你省下大量时间。",
+        title: "双语资深导师带教",
+        body: "无论你是刚拿到执照，还是被困在只收桌费的公司，我们都会为你配对真正在法拉盛、皇后区和长岛成交过的资深经纪人——中英双语。真实跟单、真实复盘、真实人脉引荐。你学到的是市场，而不只是理论。",
       },
       {
-        title: "双语 · 资深导师",
-        body: "来自拥有数十年纽约经验的创始人与经纪人的指导——中英文流利。",
+        title: "为双语市场而生",
+        body: "纽约的华人买家与卖家是一个庞大却被忽视的市场——而我们就是为他们、用两种语言打造的。营销、合同、沟通，都用每位客户最信任的语言进行，这意味着你能服务到其他经纪人根本触及不到的客户。",
       },
       {
-        title: "是团队，不是收桌费的工厂",
-        body: "我们是一支真正投入于你成长的资深小团队，从你的第一单到第一百单。",
+        title: "一个真正的团队，而非桌费工厂",
+        body: "有些经纪公司只是租给你一个座位、按月收费。Homix 选择投资你，因为你的成功就是我们的故事。透明的分成结构、清晰的成长路径，以及一个真正并肩作战的团队——我们宁愿打造一小批明星，也不要一仓库的名字。",
+      },
+    ],
+    stepsEyebrow: "如何加入",
+    stepsTitle: "从初次见面，到本地明星。",
+    steps: [
+      {
+        title: "提交申请，进行一次真诚的面谈",
+        body: "把你的背景告诉我们——已持照、刚持照，或正在考虑转行。我们会面对面（中英文皆可）了解你的目标，并坦诚地告诉你 Homix 是否适合你。",
+      },
+      {
+        title: "打造你的品牌套装",
+        body: "我们的工作室为你拍摄出镜内容、建立你的双语主页，并将你接入 Homix 各大渠道，让超过 100 万的观众开始看到你的名字和你的房源。",
+      },
+      {
+        title: "配对导师，开通工具",
+        body: "我们为你配对一位资深双语导师，并开通 AI、数据与 CRM 工具——随后你便开始跟进真实客户，身边有人支持，而不是丢给你一本手册自己啃。",
+      },
+      {
+        title: "成长为本地明星",
+        body: "随着你的成交与内容不断累积，我们持续放大你的曝光、品牌与收入。真正投入的经纪人，会成为整个社区一眼就认得的面孔。",
+      },
+    ],
+    whoEyebrow: "我们在寻找谁",
+    whoTitle: "我们在寻找这样的你",
+    whoBody: "你不需要庞大的客户名单，也不需要现成的粉丝——你需要的是企图心，以及愿意出镜、愿意走进社区的态度。如果你是刚持照、想要一个真正的起飞平台而不只是一张桌子和一个登录账号，我们很合适；如果你是经验丰富、却被困在只收费的经纪公司、厌倦了所有客户都得自己一个人去找，我们同样合适。考虑到我们服务的客户群，双语（中英文）是很大的加分项，但不可妥协的是：渴望、可被指导的心态，以及正直。如果你想成为本地明星，并且愿意为之付出，我们想和你聊聊。",
+    faqEyebrow: "常见问题",
+    faqTitle: "你可能想了解。",
+    faq: [
+      {
+        q: "我还没有执照，可以加入吗？",
+        a: "欢迎尽早联系我们。我们无法为你颁发执照——那是州里的事——但我们会指引你报读正确的考照课程，而且我们本就是为帮助新持照经纪人起步而设计的。导师、工具与观众，恰恰在你刚起步时最有价值。",
+      },
+      {
+        q: "佣金分成和收入结构是怎样的？",
+        a: "我们坚持透明的收入结构，并会在首次面谈时与你开诚布公地讨论，因为最合适的方案取决于你的经验和目标。我们绝不会把每月的桌费包装成所谓的“合伙”。我们投资你的品牌与客户，因为你的成长就是我们的成长方式。",
+      },
+      {
+        q: "我需要先有粉丝才能用上媒体引擎吗？",
+        a: "不需要——这正是关键所在。你从第一天起就接入我们超过 100 万的观众和自有工作室。我们从你当下的起点出发，帮你打造个人品牌；你不必带着名气进来，而是带着名气走出去。",
+      },
+      {
+        q: "在这里工作必须会中文吗？",
+        a: "会中文是很大的优势，因为我们大量客户是华人，团队本身也以中英双语运作。但这并非硬性要求——企图心、可指导性和正直更为重要。我们会把你安排在最能取胜的位置。",
       },
     ],
     ctaEyebrow: "聊一聊",
-    ctaTitle: "介绍一下你自己。",
-    ctaLead:
-      "无论你已持牌还是刚起步——只要你有野心、对媒体驱动的经纪模式感兴趣，我们都很想聊聊。每一次对话都严格保密。",
+    ctaTitle: "别再独自追着客户跑。让自己成为头条。",
+    ctaLead: "只需一次面谈，你就能看到一群观众、一个工作室、一套 AI 工具和真正的导师，能为你的事业带来什么。请在下方申请——我们会用你偏好的语言回复你。",
     orReach: "或直接联系我们：",
   },
   journal: {
     eyebrow: "观察",
-    title: "来自媒体优先经纪公司的洞察",
-    lead: "市场月报、社区深度、值得一读的观点——出自真正做事的人。",
+    title: "来自一家 AI 优先经纪公司的洞察",
+    lead: "市场数据、社区深度、值得一读的观点——出自真正做事的人。",
     readMore: "阅读全文",
     by: "作者",
     backToJournal: "全部文章",
