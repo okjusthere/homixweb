@@ -4,7 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { getT } from "@/lib/i18n";
-import { primaryNav, siteConfig, toolsNav } from "@/lib/site";
+import { buyNav, primaryNav, siteConfig, toolsNav } from "@/lib/site";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -55,6 +55,11 @@ export default async function RootLayout({
     label: t.common[item.key as keyof typeof t.common],
     desc: t.toolDesc[item.key as keyof typeof t.toolDesc],
   }));
+  const buy = buyNav.map((href, i) => ({
+    href,
+    label: t.buyMenu[i].title,
+    desc: t.buyMenu[i].desc,
+  }));
 
   return (
     <html
@@ -70,6 +75,8 @@ export default async function RootLayout({
         </a>
         <SiteHeader
           nav={nav}
+          buy={buy}
+          buyLabel={t.common.listings}
           tools={tools}
           toolsLabel={t.common.tools}
           locale={locale}

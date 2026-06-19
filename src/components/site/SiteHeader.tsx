@@ -21,6 +21,8 @@ export interface ToolNavItem {
 
 export function SiteHeader({
   nav,
+  buy,
+  buyLabel,
   tools,
   toolsLabel,
   locale,
@@ -29,6 +31,8 @@ export function SiteHeader({
   phoneHref,
 }: {
   nav: HeaderNavItem[];
+  buy: ToolNavItem[];
+  buyLabel: string;
   tools: ToolNavItem[];
   toolsLabel: string;
   locale: Locale;
@@ -57,6 +61,7 @@ export function SiteHeader({
 
   const light = overHero && !scrolled && !menuOpen;
   const solid = !light;
+  const close = () => setMenuOpen(false);
 
   return (
     <>
@@ -88,6 +93,12 @@ export function SiteHeader({
             </Link>
 
             <nav className="hidden items-center gap-9 md:flex">
+              <NavDropdown
+                label={buyLabel}
+                href={buy[0]?.href}
+                items={buy}
+                light={light}
+              />
               {nav.map((link) => (
                 <Link
                   key={link.href}
@@ -100,50 +111,7 @@ export function SiteHeader({
                   {link.label}
                 </Link>
               ))}
-
-              {/* Tools dropdown (hover / keyboard focus) */}
-              <div className="group relative">
-                <button
-                  type="button"
-                  aria-haspopup="true"
-                  className={cn(
-                    "flex items-center gap-1 text-sm transition-colors hover:text-bronze",
-                    light ? "text-paper/90" : "text-ink/80",
-                  )}
-                >
-                  {toolsLabel}
-                  <svg
-                    width="11"
-                    height="11"
-                    viewBox="0 0 12 12"
-                    aria-hidden
-                    className="opacity-70 transition-transform duration-200 group-hover:rotate-180"
-                  >
-                    <path
-                      d="M2.5 4.5L6 8l3.5-3.5"
-                      stroke="currentColor"
-                      strokeWidth="1.4"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </button>
-                <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-                  <div className="overflow-hidden rounded-sm border border-line bg-surface py-1.5 shadow-lg">
-                    {tools.map((tl) => (
-                      <Link
-                        key={tl.href}
-                        href={tl.href}
-                        className="block px-4 py-2.5 transition-colors hover:bg-paper"
-                      >
-                        <p className="text-sm font-medium text-ink">{tl.label}</p>
-                        <p className="mt-0.5 text-xs leading-snug text-muted">{tl.desc}</p>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <NavDropdown label={toolsLabel} items={tools} light={light} />
             </nav>
 
             <div className="hidden items-center gap-5 md:flex">
@@ -179,31 +147,20 @@ export function SiteHeader({
       {!overHero && <div aria-hidden className="h-[68px]" />}
 
       {menuOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col bg-paper px-5 pb-10 pt-[68px] md:hidden">
-          <nav className="mt-8 flex flex-col gap-2">
+        <div className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-paper px-5 pb-10 pt-[68px] md:hidden">
+          <nav className="mt-8 flex flex-col">
+            <MobileSection label={buyLabel} items={buy} onNavigate={close} />
             {nav.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMenuOpen(false)}
+                onClick={close}
                 className="border-b border-line py-4 font-serif text-2xl text-ink"
               >
                 {link.label}
               </Link>
             ))}
-            <p className="mb-1 mt-6 text-xs uppercase tracking-[0.14em] text-muted">
-              {toolsLabel}
-            </p>
-            {tools.map((tl) => (
-              <Link
-                key={tl.href}
-                href={tl.href}
-                onClick={() => setMenuOpen(false)}
-                className="border-b border-line py-3 text-lg text-ink"
-              >
-                {tl.label}
-              </Link>
-            ))}
+            <MobileSection label={toolsLabel} items={tools} onNavigate={close} />
           </nav>
           <div className="mt-8 flex items-center justify-between">
             <a href={phoneHref} className="text-lg font-medium text-bronze">
@@ -213,6 +170,100 @@ export function SiteHeader({
           </div>
         </div>
       )}
+    </>
+  );
+}
+
+/** A header nav item with a hover/focus dropdown. If `href` is set the trigger
+ *  is a link (clicking navigates); otherwise it's a button (menu only). */
+function NavDropdown({
+  label,
+  href,
+  items,
+  light,
+}: {
+  label: string;
+  href?: string;
+  items: ToolNavItem[];
+  light: boolean;
+}) {
+  const trigger = cn(
+    "flex items-center gap-1 text-sm transition-colors hover:text-bronze",
+    light ? "text-paper/90" : "text-ink/80",
+  );
+  const chevron = (
+    <svg
+      width="11"
+      height="11"
+      viewBox="0 0 12 12"
+      aria-hidden
+      className="opacity-70 transition-transform duration-200 group-hover:rotate-180"
+    >
+      <path
+        d="M2.5 4.5L6 8l3.5-3.5"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+  return (
+    <div className="group relative">
+      {href ? (
+        <Link href={href} className={trigger}>
+          {label}
+          {chevron}
+        </Link>
+      ) : (
+        <button type="button" aria-haspopup="true" className={trigger}>
+          {label}
+          {chevron}
+        </button>
+      )}
+      <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+        <div className="overflow-hidden rounded-sm border border-line bg-surface py-1.5 shadow-lg">
+          {items.map((it) => (
+            <Link
+              key={it.href}
+              href={it.href}
+              className="block px-4 py-2.5 transition-colors hover:bg-paper"
+            >
+              <p className="text-sm font-medium text-ink">{it.label}</p>
+              <p className="mt-0.5 text-xs leading-snug text-muted">{it.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileSection({
+  label,
+  items,
+  onNavigate,
+}: {
+  label: string;
+  items: ToolNavItem[];
+  onNavigate: () => void;
+}) {
+  return (
+    <>
+      <p className="mb-1 mt-6 text-xs uppercase tracking-[0.14em] text-muted first:mt-0">
+        {label}
+      </p>
+      {items.map((it) => (
+        <Link
+          key={it.href}
+          href={it.href}
+          onClick={onNavigate}
+          className="border-b border-line py-3 text-lg text-ink"
+        >
+          {it.label}
+        </Link>
+      ))}
     </>
   );
 }

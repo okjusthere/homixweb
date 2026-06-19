@@ -332,6 +332,11 @@ const en = {
     buyercoach: "AI answers for home buyers",
     onboarding: "How joining Homix works",
   },
+  buyMenu: [
+    { title: "Browse homes", desc: "Search every home for sale" },
+    { title: "Neighborhoods", desc: "Guides to the areas we cover" },
+    { title: "Mortgage calculator", desc: "Estimate your monthly payment" },
+  ],
   onboarding: {
     eyebrow: "Agent Onboarding",
     title: "Your first 90 days at Homix, mapped out",
@@ -876,6 +881,11 @@ const zh: Dict = {
     buyercoach: "AI 买房问答",
     onboarding: "加入 Homix 的全流程",
   },
+  buyMenu: [
+    { title: "搜索房源", desc: "查找全部在售房源" },
+    { title: "社区指南", desc: "我们覆盖区域的本地指南" },
+    { title: "房贷计算器", desc: "估算你的月供" },
+  ],
   onboarding: {
     eyebrow: "经纪人入职",
     title: "在 Homix 的前 90 天，为你铺好每一步",
