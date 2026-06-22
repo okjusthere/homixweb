@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { GuideAccordion } from "@/components/ui/GuideAccordion";
 import { getT } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -397,29 +398,7 @@ export default async function OnboardingPage() {
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted">{o.buyerGuide.lead}</p>
           </div>
-          <div className="mt-10 border-t border-line">
-            {o.buyerGuide.steps.map((step, i) => (
-              <Reveal key={step.title}>
-                <div className="grid gap-5 border-b border-line py-10 md:grid-cols-[0.42fr_1.58fr] md:gap-12">
-                  <div>
-                    <p className="font-serif text-4xl text-bronze">{n2(i)}</p>
-                    <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">{step.title.replace(/^\d+\s*—\s*/, "")}</h3>
-                  </div>
-                  <div>
-                    <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
-                    <ul className="mt-5 space-y-3">
-                      {step.items.map((it) => (
-                        <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
-                          <Check />
-                          <span>{it}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <GuideAccordion steps={o.buyerGuide.steps} accentColor="bronze" />
         </Container>
       </section>
 
@@ -432,29 +411,7 @@ export default async function OnboardingPage() {
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-muted">{o.sellerGuide.lead}</p>
         </div>
-        <div className="mt-10 border-t border-line">
-          {o.sellerGuide.steps.map((step, i) => (
-            <Reveal key={step.title}>
-              <div className="grid gap-5 border-b border-line py-10 md:grid-cols-[0.42fr_1.58fr] md:gap-12">
-                <div>
-                  <p className="font-serif text-4xl text-pine">{n2(i)}</p>
-                  <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">{step.title.replace(/^第.+步\s*—\s*|^\d+\s*—\s*/, "")}</h3>
-                </div>
-                <div>
-                  <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
-                  <ul className="mt-5 space-y-3">
-                    {step.items.map((it) => (
-                      <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
-                        <Check />
-                        <span>{it}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
+        <GuideAccordion steps={o.sellerGuide.steps} accentColor="pine" />
       </Container>
 
       {/* Closing */}
