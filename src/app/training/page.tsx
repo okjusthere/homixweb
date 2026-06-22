@@ -29,6 +29,15 @@ type Program = {
   lessons: Lesson[];
 };
 
+type Bootcamp = {
+  badge: string;
+  title: string;
+  subtitle: string;
+  tagline: string;
+  meta: { label: string; value: string }[];
+  lessons: string[];
+};
+
 const copy: Record<
   Locale,
   {
@@ -46,6 +55,12 @@ const copy: Record<
     outcomeLabel: string;
     cloudflareNote: string;
     programs: Program[];
+    bootcampEyebrow: string;
+    bootcampTitle: string;
+    bootcampLead: string;
+    bootcampOutlineLabel: string;
+    bootcampCta: string;
+    bootcamps: Bootcamp[];
   }
 > = {
   en: {
@@ -55,8 +70,8 @@ const copy: Record<
     primaryCta: "Start with onboarding",
     secondaryCta: "Talk to operations",
     stats: [
-      { value: "4", label: "Programs" },
-      { value: "12", label: "Core lessons" },
+      { value: "4", label: "Video programs" },
+      { value: "2", label: "Live bootcamps" },
       { value: "Cloudflare", label: "Stream-ready" },
     ],
     featuredLabel: "Featured lesson",
@@ -193,6 +208,66 @@ const copy: Record<
         ],
       },
     ],
+    bootcampEyebrow: "Live bootcamps",
+    bootcampTitle: "Six-week intensives, led by senior brokers.",
+    bootcampLead:
+      "Cohort-based bootcamps led by Sunny Zhang and Heidi Liu — 12 hands-on sessions each, online plus in-person Q&A, built to take you from zero to closing.",
+    bootcampOutlineLabel: "12-session outline",
+    bootcampCta: "Apply to join",
+    bootcamps: [
+      {
+        badge: "Buyer track",
+        title: "Buyer Boot Camp",
+        subtitle: "买家精英实战营",
+        tagline: "6 weeks · 12 practical sessions · senior broker mentorship — become a buyer-side pro.",
+        meta: [
+          { label: "Schedule", value: "Mon & Wed · 6 weeks" },
+          { label: "Time", value: "1:00 – 2:30 PM" },
+          { label: "Dates", value: "May 18 – Jun 24" },
+          { label: "Format", value: "Online + in-person Q&A" },
+        ],
+        lessons: [
+          "Break the referral habit — switch to hunter mode",
+          "The \"Yes\" principle of discovery calls",
+          "The golden 12-hour rapid follow-up",
+          "Rebuilding the buyer relationship & the second touch",
+          "The 3–5 rule for sending listings",
+          "The six-step feedback method & market touchpoints",
+          "The three real purposes of a showing",
+          "Handling a Listing Agent (LA) crisis",
+          "Side by side: building the offer foundation",
+          "Role reversal: leveraging the LA and the owner",
+          "The final close: the 95% win-rate push",
+          "Beating the stall — Boot Camp wrap-up",
+        ],
+      },
+      {
+        badge: "Seller track",
+        title: "The Listing Mastery Bootcamp",
+        subtitle: "6 周系统训练营 · 从 0 到 1 拿下你的第一个 Listing",
+        tagline: "The complete system from developing sellers to closing — prospect, win the mandate, get it to market.",
+        meta: [
+          { label: "Schedule", value: "Mon & Wed · 6 weeks" },
+          { label: "Time", value: "Mon 11 AM–1 PM · Wed 1–3 PM" },
+          { label: "Dates", value: "Mar 23 – Apr 27" },
+          { label: "Format", value: "Online + in-person Q&A" },
+        ],
+        lessons: [
+          "Where listings come from: the seller-development map & lead channels",
+          "Proactively developing listing sellers: practical lead-gen",
+          "Community farming: cultivating a neighborhood for listings",
+          "Market resources: building a steady source of seller leads",
+          "Cold calling & door knocking: cold-outreach skills",
+          "Booking the listing appointment: high-conversion invitations",
+          "Building a professional CMA: market analysis & pricing strategy",
+          "The listing presentation: professional delivery & signing logic",
+          "Answering the owner's price question: pricing communication",
+          "Handling owner objections: common rejection responses",
+          "After the listing signs: getting it to market",
+          "Showing / Closing / Pre-Closing: from tour to closed deal",
+        ],
+      },
+    ],
   },
   zh: {
     eyebrow: "经纪人门户 · 培训",
@@ -201,8 +276,8 @@ const copy: Record<
     primaryCta: "先看入职课程",
     secondaryCta: "联系运营",
     stats: [
-      { value: "4", label: "课程模块" },
-      { value: "12", label: "核心视频" },
+      { value: "4", label: "视频课程模块" },
+      { value: "2", label: "实战训练营" },
       { value: "Cloudflare", label: "视频源已预留" },
     ],
     featuredLabel: "推荐课程",
@@ -315,6 +390,66 @@ const copy: Record<
             duration: "21 分钟",
             level: "必修",
           },
+        ],
+      },
+    ],
+    bootcampEyebrow: "实战训练营",
+    bootcampTitle: "6 周系统训练营，资深 Broker 亲自带队。",
+    bootcampLead:
+      "由 Sunny Zhang 与 Heidi Liu 带队的小班训练营——每营 12 节实战课程，线上 + 线下互动答疑，带你从 0 到成交。",
+    bootcampOutlineLabel: "12 节课程大纲",
+    bootcampCta: "申请加入",
+    bootcamps: [
+      {
+        badge: "买家方向",
+        title: "买家精英实战营",
+        subtitle: "Buyer Boot Camp",
+        tagline: "6 周系统性学习 · 12 节实战课程 · 专业带领，助你成为买家精英。",
+        meta: [
+          { label: "上课时间", value: "每周一 / 三（6 周）" },
+          { label: "时段", value: "13:00 – 14:30" },
+          { label: "开课日期", value: "5月18日 – 6月24日" },
+          { label: "课程形式", value: "线上 + 线下互动答疑" },
+        ],
+        lessons: [
+          "告别熟人依赖，开启猎人模式",
+          "探寻电话的 Yes 原则",
+          "黄金 12 小时快速跟进法",
+          "与买家的关系重建与二次触达",
+          "房源发送的 3–5 规则",
+          "六步反馈法与市场触点",
+          "秀房的三大真实目的",
+          "Listing Agent (LA) 危机处理",
+          "并肩作战：建立出价基础",
+          "角色置换：借力 LA 与屋主",
+          "最终闭环：95% 成功率的临门一脚",
+          "如何对抗停滞期与 Boot Camp 总结",
+        ],
+      },
+      {
+        badge: "卖家方向",
+        title: "6 周系统训练营",
+        subtitle: "The Listing Mastery Bootcamp · 从 0 到 1 拿下你的第一个 Listing",
+        tagline: "从开发卖家到成交的完整系统——开发卖家、拿下委托、成功上市。",
+        meta: [
+          { label: "上课时间", value: "每周一 & 周三（6 周）" },
+          { label: "时段", value: "周一 11:00–13:00 · 周三 13:00–15:00" },
+          { label: "开课日期", value: "3月23日 – 4月27日" },
+          { label: "课程形式", value: "线上 + 线下互动答疑" },
+        ],
+        lessons: [
+          "房源从哪里来：卖家开发地图与获客渠道",
+          "主动开发 Listing 卖家：实战获客技巧",
+          "社区开发策略：如何深耕社区获取房源",
+          "市场资源获取：建立稳定的 Seller Leads 来源",
+          "Cold Calling & Door Knocking：陌生开发实战技巧",
+          "如何约到 Listing Appointment：高转化邀约方法",
+          "如何做专业 CMA：市场分析与定价策略",
+          "Listing Presentation：专业展示与签约逻辑",
+          "如何回答屋主价格问题：定价沟通技巧",
+          "如何处理屋主拒绝：常见 Objection 应对方法",
+          "Listing 签约后如何上市：上市准备",
+          "Showing / Closing / Pre-Closing：从带看到成交的完整流程",
         ],
       },
     ],
@@ -520,6 +655,76 @@ export default async function TrainingPage() {
                       ))}
                     </div>
                   </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-t border-line bg-surface py-16 sm:py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <Eyebrow>{t.bootcampEyebrow}</Eyebrow>
+            <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.65rem]">
+              {t.bootcampTitle}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted">{t.bootcampLead}</p>
+          </div>
+
+          <div className="mt-12 space-y-10">
+            {t.bootcamps.map((bootcamp, bootcampIndex) => (
+              <Reveal key={bootcamp.title}>
+                <article className="overflow-hidden rounded-sm border border-line bg-paper">
+                  <div className="grid gap-8 p-7 sm:p-9 lg:grid-cols-[0.92fr_1.08fr] lg:gap-12">
+                    <div>
+                      <span className="inline-flex rounded-sm bg-bronze/12 px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+                        {bootcamp.badge}
+                      </span>
+                      <h3 className="mt-5 font-serif text-3xl leading-tight text-ink">
+                        {bootcamp.title}
+                      </h3>
+                      <p className="mt-2 text-sm font-medium uppercase tracking-[0.08em] text-muted">
+                        {bootcamp.subtitle}
+                      </p>
+                      <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                        {bootcamp.tagline}
+                      </p>
+
+                      <dl className="mt-7 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-line bg-line">
+                        {bootcamp.meta.map((m) => (
+                          <div key={m.label} className="bg-surface p-4">
+                            <dt className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
+                              {m.label}
+                            </dt>
+                            <dd className="mt-1.5 text-sm leading-snug text-ink">{m.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+
+                      <div className="mt-7">
+                        <Button href="/join">{t.bootcampCta}</Button>
+                      </div>
+                    </div>
+
+                    <div>
+                      <p className="mb-4 text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+                        {t.bootcampOutlineLabel}
+                      </p>
+                      <ol className="grid gap-x-8 gap-y-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 sm:gap-x-px">
+                        {bootcamp.lessons.map((lesson, lessonIndex) => (
+                          <li key={lesson} className="flex gap-3 bg-surface p-4">
+                            <span className="font-serif text-lg leading-none text-bronze/70">
+                              {n2(lessonIndex)}
+                            </span>
+                            <span className="text-sm leading-snug text-ink/85">{lesson}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </div>
+                  <div className="h-1 bg-gradient-to-r from-bronze/60 to-bronze/10" aria-hidden />
+                  <span className="sr-only">{n2(bootcampIndex)}</span>
                 </article>
               </Reveal>
             ))}
