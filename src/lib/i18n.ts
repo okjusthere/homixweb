@@ -343,6 +343,182 @@ const en = {
     eyebrow: "Agent Onboarding",
     title: "Your first 90 days at Homix, mapped out",
     lead: "Joining a brokerage should feel like joining a team that has already cleared the runway for you. This is the full picture of what onboarding at Homix Realty involves — from the moment you accept our offer in Flushing to the day you close your first deal. Six phases, no guesswork: licensing and compliance handled correctly under New York law, every account and system set up, a media kit and personal brand built in our in-house studio, and a bilingual mentor walking beside you the whole way.",
+    visionMission: {
+      eyebrow: "Homix Vision & Mission",
+      title: "Build the most agent-forward real estate media company in New York.",
+      lead: "Homix exists to give ambitious agents the platform, audience, systems, and mentorship that used to be reserved for large teams. We combine brokerage discipline with modern media so agents can grow faster, serve clients better, and become trusted local voices.",
+      items: [
+        {
+          title: "Vision",
+          body: "A brokerage where every serious agent can become a recognized expert, not just another name on a roster.",
+        },
+        {
+          title: "Mission",
+          body: "Help agents win with bilingual client service, compliant operations, AI-assisted tools, and a media engine that turns local expertise into real opportunity.",
+        },
+      ],
+    },
+    leadership: {
+      eyebrow: "Leadership",
+      title: "The people setting the standard.",
+      lead: "You are joining a team led by operators who have built both production and attention: real estate performance, media reach, and hands-on mentorship under one roof.",
+      people: [
+        {
+          name: "Si Zhang (Sunny)",
+          role: "Founder · Licensed Real Estate Broker",
+          image: "https://static1.squarespace.com/static/686fe7f9a969e208b5dce2a0/t/68e7219b0c15f80109a40192/1759977883279/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-07-11_221820_990.jpg?format=1500w",
+          bio: "Sunny began his real estate career in 2013, built a record of top sales performance in China, and quickly became a top-producing New York broker after relocating to the United States. Before launching Homix in 2025, he built a digital media community of more than 400,000 followers and proved that trusted content can create real market leverage for agents and sellers.",
+          focus: ["Brokerage strategy", "Media engine", "Agent personal brand"],
+        },
+        {
+          name: "Heidi Liu",
+          role: "Co-Founder · Broker & Branch Manager",
+          image: "https://static1.squarespace.com/static/686fe7f9a969e208b5dce2a0/t/68e71c9abfacfd51a5dec3e6/1767633730997/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-07-11_222016_452.jpg?format=1500w",
+          bio: "Heidi brings 13+ years of full-time New York real estate experience as a broker, branch manager, coach, mentor, investor, and homeowner. Known for relentless follow-up, market expertise, staging and marketing judgment, and a long Top Producer track record, she helps agents learn the practical standard behind a clean client experience and a strong transaction.",
+          focus: ["Mentorship", "Transaction standards", "Client experience"],
+        },
+      ],
+    },
+    adminTeam: {
+      eyebrow: "In-house admins",
+      title: "The support desk behind your first deals.",
+      lead: "Onboarding is not just training videos. These are the people who keep the office, marketing, and money flow organized while you learn the business.",
+      members: [
+        {
+          name: "Grace",
+          role: "Office Manager",
+          body: "Your first stop for office coordination, onboarding checklists, account setup, scheduling, paperwork routing, and making sure the right person sees the right issue.",
+        },
+        {
+          name: "Zoey",
+          role: "Marketing Coordinator",
+          image: "/onboarding/zoey.jpg",
+          body: "Supports agent profiles, content calendars, listing marketing requests, social media coordination, and the brand details that keep every agent looking consistent.",
+        },
+        {
+          name: "Henry",
+          role: "Accounting / Finance",
+          body: "Helps keep commissions, reimbursements, invoices, deal-related payments, and finance questions moving with clear records and timely follow-up.",
+        },
+      ],
+    },
+    adminChecklist: {
+      eyebrow: "Admin onboarding checklist",
+      title: "The internal checklist that keeps every new agent moving.",
+      lead: "Use this as the office-side tracker for each new Homix agent. Every item has one owner, a clear handoff, and a reason it matters before the agent starts working leads.",
+      groups: [
+        {
+          title: "Paperwork & license file",
+          owner: "Office Manager",
+          items: [
+            "Signed Independent Contractor Agreement and commission tier recorded.",
+            "W-9, direct deposit, emergency contact, and internal profile created.",
+            "License transfer or sponsorship steps confirmed in eAccessNY.",
+            "E&O coverage, Fair Housing acknowledgment, and policy manual receipt logged.",
+          ],
+        },
+        {
+          title: "Systems access",
+          owner: "Office Manager + Operations",
+          items: [
+            "@homix email, agent portal, CRM, AI workspace, and shared drive access issued.",
+            "OneKey MLS onboarding status tracked and MLS rules orientation scheduled.",
+            "Transaction tools, e-signature access, and compliant forms library bookmarked.",
+            "Private website edit link sent and confirmed working.",
+          ],
+        },
+        {
+          title: "Branding & marketing",
+          owner: "Marketing Coordinator",
+          items: [
+            "Headshot and intro reel session scheduled with the media team.",
+            "Agent bio rewritten, translated where needed, and approved for the website.",
+            "Business cards, email signature, social bios, and license/EHO disclosures prepared.",
+            "For Sale sign, Open House sign, riders, QR codes, and print templates ready for first listing.",
+          ],
+        },
+        {
+          title: "Training & mentor handoff",
+          owner: "Leadership + Mentor",
+          items: [
+            "Mentor assigned and first 30/60/90-day check-ins scheduled.",
+            "Training video path assigned: foundations, buyer/seller playbooks, compliance, and media.",
+            "Shadowing appointments, role-play sessions, and first consultation review scheduled.",
+            "First-deal support path documented: who reviews offer terms, files, and timelines.",
+          ],
+        },
+        {
+          title: "Finance setup",
+          owner: "Accounting / Finance",
+          items: [
+            "Commission split, payout method, and deal accounting notes entered.",
+            "Invoice, reimbursement, and referral fee process explained.",
+            "Agent understands what documents accounting needs before commission release.",
+            "Finance contact and escalation path shared with the agent.",
+          ],
+        },
+      ],
+    },
+    resources: {
+      eyebrow: "How Homix helps",
+      title: "Onboarding resources you can actually use.",
+      lead: "From your first login to your first closing, Homix gives you a working toolkit rather than a stack of PDFs.",
+      items: [
+        {
+          title: "Brokerage operations",
+          body: "License sponsorship steps, compliance reminders, E&O guidance, forms, disclosure standards, and a clear escalation path when something feels sensitive.",
+        },
+        {
+          title: "Marketing & media",
+          body: "Profile setup, headshots, intro reels, listing content, bilingual captions, social templates, and help turning neighborhood knowledge into publishable content.",
+        },
+        {
+          title: "Self branding procedure",
+          body: "Custom business cards, compliant email signature updates, agent bio polish, For Sale signs, Open House signs, social profile cleanup, and listing-ready brand templates coordinated through the office and marketing team.",
+        },
+        {
+          title: "Training library",
+          body: "Foundations, buyer and seller playbooks, media lessons, compliance refreshers, and field-ready scripts for consultations, offers, and follow-up.",
+        },
+        {
+          title: "Mentorship & deal support",
+          body: "Shadowing, role-play, first-call review, listing presentation prep, transaction timeline support, and post-deal debriefs so every close becomes a lesson.",
+        },
+      ],
+      socialPlatformsTitle: "Social media setup",
+      socialPlatforms: [
+        {
+          key: "google",
+          name: "Google Business",
+          body: "Business profile setup, service area, photos, review link, and compliant contact details.",
+        },
+        {
+          key: "instagram",
+          name: "Instagram",
+          body: "Professional bio, highlights, listing reels, local content cadence, and Homix brand alignment.",
+        },
+        {
+          key: "facebook",
+          name: "Facebook Business Page",
+          body: "Business page basics, profile assets, contact buttons, posts, and open house promotion.",
+        },
+        {
+          key: "linkedin",
+          name: "LinkedIn",
+          body: "Professional headline, brokerage role, credibility copy, and client-safe market updates.",
+        },
+        {
+          key: "tiktok",
+          name: "TikTok",
+          body: "Short-form video profile, neighborhood hooks, listing-safe captions, and posting rhythm.",
+        },
+        {
+          key: "red",
+          name: "RED / Xiaohongshu",
+          body: "Chinese-language profile setup, local lifestyle content, buyer education posts, and listing storytelling.",
+        },
+      ],
+    },
     phases: [
       {
         title: "Phase 1 — Offer & Paperwork",
@@ -383,7 +559,8 @@ const en = {
         items: [
           "Book your in-house studio session: professional headshots, a short intro reel, and on-brand profile photography.",
           "Publish your agent profile on the Homix website and connect it to your listings.",
-          "Receive your branded media kit — business cards, email signature, social templates, and EHO/license disclosures built in.",
+          "Complete your self-branding procedure: custom business cards, compliant email signature rewrite, agent bio polish, and social profile cleanup.",
+          "Order field marketing assets for listings and events: For Sale signs, Open House signs, directional riders, QR codes, and branded print templates.",
           "Plan your first content with the media team: a Flushing/Queens neighborhood feature or a listing tour for our channels.",
           "Set up your social handles to brand standards, with bilingual captions ready to go.",
         ],
@@ -894,6 +1071,182 @@ const zh: Dict = {
     eyebrow: "经纪人入职",
     title: "在 Homix 的前 90 天，为你铺好每一步",
     lead: "加入一家经纪公司，应当像加入一支早已为你扫清跑道的团队。这里是 Homix Realty 入职流程的完整图景——从你在法拉盛接受我们的 offer，到成交第一单。六个阶段，无需自己摸索：依据纽约州法律正确办妥执照与合规、配齐所有账户与系统、在自有摄影棚打造你的媒体素材包与个人品牌，并由一位中英双语导师全程陪你同行。",
+    visionMission: {
+      eyebrow: "Homix 愿景与使命",
+      title: "打造纽约最以经纪人为核心的地产媒体公司。",
+      lead: "Homix 的存在，是为了把平台、流量、系统与导师资源交到有野心的经纪人手上。我们把经纪业务的专业标准与现代媒体能力结合起来，让经纪人成长更快、服务更稳，并成为本地市场值得信任的声音。",
+      items: [
+        {
+          title: "愿景",
+          body: "成为一家让每一位认真投入的经纪人都能被看见、被信任、被市场记住的经纪公司。",
+        },
+        {
+          title: "使命",
+          body: "用双语服务、合规运营、AI 工具与媒体引擎，帮助经纪人把专业能力转化为真实机会。",
+        },
+      ],
+    },
+    leadership: {
+      eyebrow: "领导团队",
+      title: "由真正做过业绩、做过团队、做过内容的人带队。",
+      lead: "加入 Homix，你不是只拿到一个品牌名，而是进入一个由实战型领导者搭建的平台：地产成交、媒体流量与带教体系在同一个屋檐下运转。",
+      people: [
+        {
+          name: "Si Zhang (Sunny)",
+          role: "创始人 · 持牌地产经纪",
+          image: "https://static1.squarespace.com/static/686fe7f9a969e208b5dce2a0/t/68e7219b0c15f80109a40192/1759977883279/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-07-11_221820_990.jpg?format=1500w",
+          bio: "Sunny 于 2013 年进入房地产行业，曾在中国头部房企取得全国级销售成绩，来到美国后迅速转入纽约地产市场并成为高产经纪人。创立 Homix 之前，他打造了超过 40 万粉丝的个人媒体社区，证明了可信内容可以为经纪人和卖家带来真实的市场杠杆。",
+          focus: ["公司战略", "媒体引擎", "经纪人个人品牌"],
+        },
+        {
+          name: "Heidi Liu",
+          role: "联合创始人 · Broker & Branch Manager",
+          image: "https://static1.squarespace.com/static/686fe7f9a969e208b5dce2a0/t/68e71c9abfacfd51a5dec3e6/1767633730997/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_2025-07-11_222016_452.jpg?format=1500w",
+          bio: "Heidi 拥有 13 年以上纽约地产全职经验，曾担任 broker、branch manager、coach 与 mentor，同时也是投资人与业主。她以市场判断、持续跟进、空间审美、营销能力和长期 Top Producer 记录著称，帮助经纪人学会一笔干净交易背后的服务标准。",
+          focus: ["导师带教", "交易标准", "客户体验"],
+        },
+      ],
+    },
+    adminTeam: {
+      eyebrow: "内部行政团队",
+      title: "你第一批交易背后的支持台。",
+      lead: "入职不是只看几支视频。办公室、营销与财务有人协同，才能让新经纪人真正把精力放在学习市场和服务客户上。",
+      members: [
+        {
+          name: "Grace",
+          role: "Office Manager",
+          body: "负责办公室协调、入职清单、账号开通、日程安排、文件流转，以及把问题及时交到对的人手上。",
+        },
+        {
+          name: "Zoey",
+          role: "Marketing Coordinator",
+          image: "/onboarding/zoey.jpg",
+          body: "支持经纪人主页、内容日历、房源营销需求、社交媒体协调，以及确保每位经纪人的对外形象保持品牌一致。",
+        },
+        {
+          name: "Henry",
+          role: "Accounting / 财务",
+          body: "协助佣金、报销、发票、交易相关款项与财务问题，确保记录清楚、跟进及时。",
+        },
+      ],
+    },
+    adminChecklist: {
+      eyebrow: "Admin onboarding checklist",
+      title: "内部行政入职清单，确保每位新经纪人顺利推进。",
+      lead: "这是一份办公室端使用的 tracker。每一项都有负责人、交接节点和明确目的，确保经纪人在开始跟进线索前，执照、系统、品牌和支持路径都已经准备好。",
+      groups: [
+        {
+          title: "文件与执照档案",
+          owner: "Office Manager",
+          items: [
+            "签署 Independent Contractor Agreement，并记录佣金档位。",
+            "完成 W-9、direct deposit、紧急联系人与内部档案建立。",
+            "确认 eAccessNY 中的执照转挂靠或 sponsorship 步骤。",
+            "记录 E&O 保险、公平住房确认、政策手册签收。",
+          ],
+        },
+        {
+          title: "系统权限",
+          owner: "Office Manager + Operations",
+          items: [
+            "开通 @homix 邮箱、agent portal、CRM、AI workspace 与 shared drive 权限。",
+            "跟进 OneKey MLS onboarding 状态，并安排 MLS rules orientation。",
+            "开通交易工具、电子签名权限，并收藏合规表单库。",
+            "发送个人网站编辑链接，并确认可正常使用。",
+          ],
+        },
+        {
+          title: "品牌与营销",
+          owner: "Marketing Coordinator",
+          items: [
+            "预约形象照与 intro reel 拍摄。",
+            "经纪人 bio 改写、必要时翻译，并确认官网版本。",
+            "准备名片、邮件签名、社交账号 bio、执照与 EHO 披露。",
+            "准备 For Sale sign、Open House sign、riders、二维码与首个房源可用的印刷模板。",
+          ],
+        },
+        {
+          title: "培训与导师交接",
+          owner: "Leadership + Mentor",
+          items: [
+            "指定导师，并安排 30/60/90 天 check-in。",
+            "分配培训视频路径：基础课程、买卖双方流程、合规与媒体课程。",
+            "安排 shadowing、话术演练与第一次客户咨询复盘。",
+            "明确第一单支持路径：报价条款、文件与时间线由谁复核。",
+          ],
+        },
+        {
+          title: "财务设置",
+          owner: "Accounting / Finance",
+          items: [
+            "录入佣金分成、付款方式与交易财务备注。",
+            "说明 invoice、报销与 referral fee 流程。",
+            "确认经纪人了解 commission release 前财务需要哪些文件。",
+            "告知财务联系人与问题升级路径。",
+          ],
+        },
+      ],
+    },
+    resources: {
+      eyebrow: "Homix 如何帮助你",
+      title: "真正能用起来的入职资源。",
+      lead: "从第一次登录系统到第一笔成交，Homix 给你的不是一叠文件，而是一套可以直接开始工作的工具箱。",
+      items: [
+        {
+          title: "经纪公司运营支持",
+          body: "执照挂靠步骤、合规提醒、E&O 指引、表单、披露标准，以及遇到敏感问题时清晰的升级路径。",
+        },
+        {
+          title: "营销与媒体支持",
+          body: "经纪人主页、形象照、自我介绍短片、房源内容、中英双语文案、社交模板，以及把社区知识变成内容的协助。",
+        },
+        {
+          title: "个人品牌流程",
+          body: "定制名片、合规邮件签名/后缀改写、经纪人 bio 润色、For Sale sign、Open House sign、社交账号整理，以及可直接用于房源推广的品牌模板，由办公室和营销团队协同完成。",
+        },
+        {
+          title: "培训视频库",
+          body: "基础课程、买卖双方流程、媒体课程、合规复习，以及可直接用于咨询、报价与跟进的实战话术。",
+        },
+        {
+          title: "导师与交易支持",
+          body: "跟单 shadowing、话术演练、首次客户电话复盘、listing presentation 准备、交易时间线支持，以及成交后的复盘。",
+        },
+      ],
+      socialPlatformsTitle: "社交媒体账号搭建",
+      socialPlatforms: [
+        {
+          key: "google",
+          name: "Google Business",
+          body: "商家主页、服务区域、照片、评价链接与合规联系方式设置。",
+        },
+        {
+          key: "instagram",
+          name: "Instagram",
+          body: "专业 bio、精选集、房源 reels、本地内容节奏与 Homix 品牌统一。",
+        },
+        {
+          key: "facebook",
+          name: "Facebook Business Page",
+          body: "商业主页基础设置、头像与封面、联系按钮、帖子与 open house 推广。",
+        },
+        {
+          key: "linkedin",
+          name: "LinkedIn",
+          body: "专业标题、公司身份、可信履历文案，以及适合客户阅读的市场更新。",
+        },
+        {
+          key: "tiktok",
+          name: "TikTok",
+          body: "短视频账号定位、社区内容 hook、合规房源文案与更新节奏。",
+        },
+        {
+          key: "red",
+          name: "RED / 小红书",
+          body: "中文主页搭建、本地生活内容、买家教育笔记与房源故事化表达。",
+        },
+      ],
+    },
     phases: [
       {
         title: "第一阶段 · Offer 与签约文件",
@@ -934,7 +1287,8 @@ const zh: Dict = {
         items: [
           "预约自有摄影棚拍摄：专业形象照、一段简短自我介绍影片，以及契合品牌的个人照片。",
           "在 Homix 官网发布你的经纪人主页，并关联到你的房源。",
-          "领取品牌媒体素材包——名片、邮件签名、社交模板，并已内置平等住房机会（EHO）与执照披露。",
+          "完成个人品牌流程：定制名片、合规邮件签名/后缀改写、经纪人 bio 润色，以及社交账号整理。",
+          "为房源与活动准备线下物料：For Sale sign、Open House sign、指示牌、二维码与品牌印刷模板。",
           "与媒体团队规划你的首批内容：一期法拉盛/皇后区社区特辑，或一支登上我们频道的房源导览。",
           "按品牌规范建立你的社交账号，并备好中英双语文案。",
         ],
