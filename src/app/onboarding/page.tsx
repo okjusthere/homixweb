@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { GuideAccordion } from "@/components/ui/GuideAccordion";
 import { getT } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -388,31 +388,46 @@ export default async function OnboardingPage() {
         </div>
       </Container>
 
-      {/* Buyer Guide */}
+      {/* Guides */}
       <section className="border-t border-line bg-surface py-16 sm:py-20">
         <Container>
-          <div className="max-w-3xl">
-            <Eyebrow>{o.buyerGuide.eyebrow}</Eyebrow>
-            <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
-              {o.buyerGuide.title}
-            </h2>
-            <p className="mt-5 text-lg leading-relaxed text-muted">{o.buyerGuide.lead}</p>
+          <Eyebrow>Client Guides · New York · OneKey MLS</Eyebrow>
+          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
+            Buyer & Seller playbooks
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+            Step-by-step guides grounded in New York Real Property Law and OneKey MLS standards — ready to share with clients or use as a reference in consultations.
+          </p>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+            <Reveal className="bg-paper">
+              <Link href="/onboarding/buyer-guide" className="group flex h-full flex-col p-8 transition-colors hover:bg-surface">
+                <p className="font-serif text-4xl text-bronze">01</p>
+                <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.buyerGuide.title}</h3>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{o.buyerGuide.lead}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-bronze transition-gap group-hover:gap-3">
+                  Read the buyer guide
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </Reveal>
+            <Reveal className="bg-paper" delay={60}>
+              <Link href="/onboarding/seller-guide" className="group flex h-full flex-col p-8 transition-colors hover:bg-surface">
+                <p className="font-serif text-4xl text-pine">02</p>
+                <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.sellerGuide.title}</h3>
+                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{o.sellerGuide.lead}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-pine transition-gap group-hover:gap-3">
+                  Read the seller guide
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
+            </Reveal>
           </div>
-          <GuideAccordion steps={o.buyerGuide.steps} accentColor="bronze" />
         </Container>
       </section>
-
-      {/* Seller Guide */}
-      <Container className="py-16 sm:py-20">
-        <div className="max-w-3xl">
-          <Eyebrow>{o.sellerGuide.eyebrow}</Eyebrow>
-          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
-            {o.sellerGuide.title}
-          </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted">{o.sellerGuide.lead}</p>
-        </div>
-        <GuideAccordion steps={o.sellerGuide.steps} accentColor="pine" />
-      </Container>
 
       {/* Closing */}
       <section className="bg-ink py-20 text-paper sm:py-28">
