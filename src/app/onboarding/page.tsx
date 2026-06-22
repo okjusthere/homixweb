@@ -387,6 +387,76 @@ export default async function OnboardingPage() {
         </div>
       </Container>
 
+      {/* Buyer Guide */}
+      <section className="border-t border-line bg-surface py-16 sm:py-20">
+        <Container>
+          <div className="max-w-3xl">
+            <Eyebrow>{o.buyerGuide.eyebrow}</Eyebrow>
+            <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
+              {o.buyerGuide.title}
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted">{o.buyerGuide.lead}</p>
+          </div>
+          <div className="mt-10 border-t border-line">
+            {o.buyerGuide.steps.map((step, i) => (
+              <Reveal key={step.title}>
+                <div className="grid gap-5 border-b border-line py-10 md:grid-cols-[0.42fr_1.58fr] md:gap-12">
+                  <div>
+                    <p className="font-serif text-4xl text-bronze">{n2(i)}</p>
+                    <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">{step.title.replace(/^\d+\s*—\s*/, "")}</h3>
+                  </div>
+                  <div>
+                    <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
+                    <ul className="mt-5 space-y-3">
+                      {step.items.map((it) => (
+                        <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
+                          <Check />
+                          <span>{it}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Seller Guide */}
+      <Container className="py-16 sm:py-20">
+        <div className="max-w-3xl">
+          <Eyebrow>{o.sellerGuide.eyebrow}</Eyebrow>
+          <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
+            {o.sellerGuide.title}
+          </h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted">{o.sellerGuide.lead}</p>
+        </div>
+        <div className="mt-10 border-t border-line">
+          {o.sellerGuide.steps.map((step, i) => (
+            <Reveal key={step.title}>
+              <div className="grid gap-5 border-b border-line py-10 md:grid-cols-[0.42fr_1.58fr] md:gap-12">
+                <div>
+                  <p className="font-serif text-4xl text-pine">{n2(i)}</p>
+                  <h3 className="mt-3 font-serif text-2xl leading-snug text-ink">{step.title.replace(/^第.+步\s*—\s*|^\d+\s*—\s*/, "")}</h3>
+                </div>
+                <div>
+                  <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
+                  <ul className="mt-5 space-y-3">
+                    {step.items.map((it) => (
+                      <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
+                        <Check />
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+
       {/* Closing */}
       <section className="bg-ink py-20 text-paper sm:py-28">
         <Container>

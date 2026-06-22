@@ -590,6 +590,220 @@ const en = {
     ],
     closingTitle: "You're never onboarding alone",
     closingBody: "Every phase here is something Homix does with you, not a checklist we hand off and forget. By the time you finish, you have an active New York license sponsored by Homix Realty, full OneKey MLS access, a complete tech and AI stack, a studio-built personal brand in front of a 1M+ audience, and a mentor who has already walked the same road. That is the difference between getting a job and being set up to win. Welcome to Homix.",
+    buyerGuide: {
+      eyebrow: "New York Buyer Guide · OneKey MLS",
+      title: "How to buy a home in New York State",
+      lead: "A step-by-step overview of the New York residential purchase process — from first conversation to keys in hand. Grounded in New York State law, Real Property Law requirements, and OneKey MLS standards so your clients always know exactly where they stand.",
+      steps: [
+        {
+          title: "01 — Get Pre-Approved",
+          body: "Before touring any home, buyers need a mortgage pre-approval letter from a licensed lender — or documented proof of funds for a cash purchase. In the New York metro market, sellers and listing agents will not take an offer seriously without one.",
+          items: [
+            "Choose a lender and submit income, asset, and credit documentation.",
+            "Receive a written pre-approval letter stating the approved loan amount and program.",
+            "For cash purchases, prepare a recent bank or investment statement as proof of funds.",
+            "Understand the difference between pre-qualification (informal estimate) and pre-approval (underwritten commitment) — only pre-approval carries weight in a competitive offer.",
+          ],
+        },
+        {
+          title: "02 — Agency Disclosure & Buyer Representation",
+          body: "New York State law requires agents to present the \"Disclosure Regarding Real Estate Agency Relationships\" form at the first substantive contact and obtain a signed acknowledgment. Since August 17, 2024, a written Buyer Representation Agreement must also be signed before an agent shows a buyer any property.",
+          items: [
+            "Review and sign the NY Department of State Agency Disclosure form — it explains buyer's agent, seller's agent, and dual agency relationships.",
+            "Execute the Buyer Representation Agreement that sets out the agent's obligations, compensation, and the scope of representation.",
+            "Understand that your Homix advisor works exclusively in your interest as a buyer's agent, unless you explicitly consent to dual agency.",
+            "Dual agency (where one agent represents both buyer and seller) requires written informed consent from both parties and is strictly limited under NY law.",
+          ],
+        },
+        {
+          title: "03 — Define Your Search",
+          body: "Clarify needs, budget, and geography before activating a full search. OneKey MLS covers New York City, Long Island, Westchester, and the Hudson Valley — the most comprehensive listing database for the NYC metro.",
+          items: [
+            "Establish a realistic budget: purchase price, estimated closing costs (typically 2–5% for buyers in New York), and monthly carrying costs.",
+            "Decide on property type: single-family, condo, co-op, or multi-family. Co-ops require board approval and have additional financial requirements.",
+            "Select target neighborhoods and school districts — especially important on Long Island, where district lines directly affect value.",
+            "Set up a live OneKey MLS saved search so new listings and price changes reach you the moment they are entered.",
+          ],
+        },
+        {
+          title: "04 — Tour Properties",
+          body: "Private showings, open houses, and broker tours are all available through OneKey MLS. Your Homix advisor coordinates access and accompanies you — reviewing condition, layout, and comparables on-site.",
+          items: [
+            "Tour with attention to structure, systems (roof, HVAC, plumbing, electrical), and anything the Property Condition Disclosure Statement may flag.",
+            "Note any required repairs or updates and factor them into your offer strategy.",
+            "For co-ops, obtain the offering plan, house rules, recent board minutes, and financial statements before getting serious.",
+            "Keep records of each visit — notes and photos help when comparing multiple properties.",
+          ],
+        },
+        {
+          title: "05 — Make an Offer",
+          body: "In New York, purchase offers are not binding until a fully executed contract of sale is signed by both parties. An accepted offer is an agreement to agree — not a legal obligation — so move quickly once terms are accepted.",
+          items: [
+            "Submit a written offer letter with price, financing terms, proposed closing date, and any contingencies.",
+            "Attach your pre-approval letter or proof of funds.",
+            "Understand that New York is an attorney-review state: the contract of sale is drafted and negotiated by attorneys, not agents.",
+            "Identify a New York-licensed real estate attorney before making your offer so you can act fast once terms are agreed.",
+          ],
+        },
+        {
+          title: "06 — Contract of Sale",
+          body: "Once the seller accepts your offer, attorneys for both sides negotiate and execute the contract of sale. In New York, this is the binding document — and it is handled exclusively by attorneys, not agents.",
+          items: [
+            "Your attorney reviews the seller's draft contract, title report, and any co-op or condo documents.",
+            "Negotiate contingencies: mortgage, inspection, and lead-paint (required for pre-1978 homes).",
+            "Upon signing the contract, the buyer typically delivers an earnest money deposit of 5–10% of the purchase price, held in escrow.",
+            "For co-ops, the board application package is prepared after contract execution — board approval is a separate process that can take 4–8 weeks.",
+          ],
+        },
+        {
+          title: "07 — Due Diligence: Inspection & Title",
+          body: "Even in competitive markets, inspection and title due diligence protect buyers from costly surprises. New York sellers must complete a Property Condition Disclosure Statement or credit the buyer $500 — but the disclosure is not a substitute for an independent inspection.",
+          items: [
+            "Hire a licensed New York home inspector to conduct a full inspection of structure, systems, and environmental factors.",
+            "Review the Property Condition Disclosure Statement alongside — note any items that warrant follow-up.",
+            "For properties built before 1978, a lead-paint inspection and disclosure under federal law are required.",
+            "Your attorney orders a title search to verify clear ownership, identify liens, and issue a title insurance commitment.",
+          ],
+        },
+        {
+          title: "08 — Mortgage Commitment",
+          body: "After the contract is signed, your lender moves from pre-approval to full underwriting. The mortgage commitment letter is the formal approval — and the contract typically gives buyers 30–45 days to obtain it.",
+          items: [
+            "Submit all additional documentation requested by the underwriter promptly to avoid delays.",
+            "The lender orders an appraisal to confirm the property value supports the loan amount.",
+            "A loan-to-value gap (appraisal below purchase price) may require renegotiation or additional cash.",
+            "Do not make large purchases, open new credit accounts, or change jobs between contract and closing — these can jeopardize final approval.",
+          ],
+        },
+        {
+          title: "09 — Final Walkthrough",
+          body: "Typically 24–48 hours before closing, buyers conduct a final walkthrough to confirm the property is in agreed-upon condition and that any negotiated repairs have been completed.",
+          items: [
+            "Verify all agreed repairs are done and any seller-owned personal property has been removed.",
+            "Test appliances, HVAC, plumbing, and electrical systems.",
+            "Confirm the property is empty (or occupied per the contract) and in broom-clean condition.",
+            "Note any discrepancies and address them with your attorney before the closing table.",
+          ],
+        },
+        {
+          title: "10 — Closing",
+          body: "New York residential closings are attorney-conducted and typically take 1–2 hours. The deed transfers, funds are disbursed, and the buyer receives the keys. Be prepared for closing costs on top of the purchase price.",
+          items: [
+            "Typical buyer closing costs in New York: attorney fees, title insurance, mortgage recording tax, bank fees, and pro-rated property taxes.",
+            "The Mansion Tax applies to purchases of $1,000,000 or more — a graduated tax paid by the buyer, ranging from 1% to 3.9%.",
+            "Bring a cashier's check or arrange a wire transfer for all funds due at closing — personal checks are not accepted.",
+            "After closing, your attorney records the deed with the county clerk, completing your legal ownership.",
+          ],
+        },
+      ],
+    },
+    sellerGuide: {
+      eyebrow: "New York Seller Guide · OneKey MLS",
+      title: "How to sell a home in New York State",
+      lead: "A step-by-step overview of the New York residential listing and sale process — from pricing strategy to closing table. Built on New York Real Property Law, Attorney General guidelines, OneKey MLS rules, and the practical knowledge of a team that has closed in this market.",
+      steps: [
+        {
+          title: "01 — Valuation & Pricing Strategy",
+          body: "Accurate pricing is the single most important factor in a successful sale. A home priced correctly from day one generates more showings, stronger offers, and less negotiating time than one that starts too high and then chases the market down.",
+          items: [
+            "Your Homix advisor prepares a Comparative Market Analysis (CMA) using recent, genuinely comparable sales from OneKey MLS — adjusted for condition, size, floor, and features.",
+            "We cross-reference multiple automated valuation models against hand-built local comps and current demand signals.",
+            "We provide a net-proceeds estimate so you know what you will actually walk away with, before you list.",
+            "Pricing below, at, or above market each has trade-offs — we walk you through the strategy that fits your timeline and goals.",
+          ],
+        },
+        {
+          title: "02 — Listing Agreement & Agency Disclosure",
+          body: "Before any marketing begins, you and Homix execute a listing agreement that defines the listing price, term, commission, and marketing plan. New York State also requires sellers to receive the Agency Disclosure form at first substantive contact.",
+          items: [
+            "Review and sign the NY Agency Disclosure form — it explains seller's agency, buyer's agency, and dual agency.",
+            "Execute the Exclusive Right to Sell listing agreement, which authorizes Homix to market and cooperate with OneKey MLS buyer's agents.",
+            "Listing term, commission rate, and any exclusions (such as a buyer you already have) are negotiated and documented in the agreement.",
+            "Understand your agent's fiduciary duties: loyalty, confidentiality, disclosure, obedience, reasonable care, and accounting.",
+          ],
+        },
+        {
+          title: "03 — Property Condition Disclosure Statement",
+          body: "Under New York Real Property Law § 462, sellers of 1–4 family residential properties must complete a Property Condition Disclosure Statement and deliver it to buyers before the contract of sale is signed, or credit the buyer $500 at closing.",
+          items: [
+            "Complete the NY PCDS honestly and completely — it covers structure, systems, environmental conditions, and known defects.",
+            "Disclosing known defects does not necessarily kill deals; buyers respect transparency and price accordingly.",
+            "For pre-1978 homes, a separate Lead-Based Paint Disclosure is required under federal law (42 U.S.C. § 4852d) — buyers have 10 days to test.",
+            "Your attorney and your Homix advisor review the PCDS together to ensure completeness and accuracy.",
+          ],
+        },
+        {
+          title: "04 — Prepare the Property",
+          body: "First impressions drive showings, and showings drive offers. Preparation before photos and listing entry can meaningfully increase both the speed of sale and the final price.",
+          items: [
+            "Your advisor provides a staging and preparation checklist tailored to the property — addressing repairs, declutter, and curb appeal.",
+            "Homix's in-house studio photographs and films the property after preparation — professional photography is required for OneKey MLS listings.",
+            "For properties that will be vacant, virtual staging is an option to help buyers visualize the space.",
+            "Address any items that would surface in a buyer's inspection and give a buyer grounds to renegotiate — small repairs upfront prevent larger concessions later.",
+          ],
+        },
+        {
+          title: "05 — List on OneKey MLS",
+          body: "OneKey MLS is the authoritative listing database for Queens, Long Island, Westchester, and the greater NYC metro. Correct, complete MLS entry is both a compliance requirement and the foundation of maximum market exposure.",
+          items: [
+            "OneKey MLS requires: accurate address, legal description, at least one photo, list price, property type, and all mandatory data fields — errors or omissions can result in fines.",
+            "The listing is co-brokered: buyer's agents across all member brokerages see it immediately and can show it to their clients.",
+            "Your listing syndicates automatically to Zillow, Realtor.com, Homes.com, and dozens of partner portals.",
+            "Homix layers on its own media distribution: bilingual social content, short-form video, and outreach to its 1M+ audience on 抖音, 小红书, and Instagram.",
+          ],
+        },
+        {
+          title: "06 — Showings & Open Houses",
+          body: "The showing period is where buyer demand is tested. Your advisor manages access, feedback, and strategy — keeping you informed without the noise, and using showing data to refine pricing if needed.",
+          items: [
+            "Showings are scheduled through OneKey MLS ShowingTime — buyers' agents request appointment windows that you approve.",
+            "Your advisor collects feedback after each showing and reports patterns: price concerns, condition issues, or strong interest.",
+            "Open houses are listed in OneKey MLS and promoted across Homix's social channels for maximum attendance.",
+            "If showing volume is low in the first two weeks, we review pricing and presentation before the listing goes stale.",
+          ],
+        },
+        {
+          title: "07 — Review Offers & Negotiate",
+          body: "In New York, all offers must be presented to the seller promptly. Your advisor presents every offer, explains the terms, and helps you evaluate price, financing strength, contingencies, and timeline together.",
+          items: [
+            "Review offer price alongside financing type (cash vs. mortgage), pre-approval strength, contingencies, and proposed closing date.",
+            "A higher price with weak financing or many contingencies may be less valuable than a slightly lower all-cash or well-qualified offer.",
+            "Counter-offers are common — your advisor negotiates on your behalf with a clear understanding of your priorities.",
+            "In multiple-offer situations, your advisor can call for highest and best offers or negotiate selectively, depending on the market dynamic.",
+          ],
+        },
+        {
+          title: "08 — Contract of Sale",
+          body: "Once price and terms are agreed, your attorney drafts the contract of sale. In New York, the contract is a legal document prepared and negotiated by attorneys — not a standard form signed at the table. Expect 1–2 weeks for contract negotiation and execution.",
+          items: [
+            "Your attorney drafts the contract incorporating agreed terms, contingencies, and any included or excluded personal property.",
+            "The buyer's attorney reviews, redlines, and negotiates the draft — this is the phase where most deal points are formally set.",
+            "Upon execution, the buyer delivers the contract deposit (typically 5–10% of purchase price) to your attorney's escrow account.",
+            "For co-ops, the buyer also begins the board application process after contract execution.",
+          ],
+        },
+        {
+          title: "09 — Due Diligence & Mortgage Contingency",
+          body: "After contract execution, the buyer conducts their inspection and works toward mortgage commitment. The contract sets deadlines — typically 30–45 days for mortgage commitment. Your advisor monitors progress and keeps the deal on track.",
+          items: [
+            "Be prepared for the buyer to request repairs or a credit based on inspection findings — your attorney advises on how to respond.",
+            "The lender appraises the property; if the appraisal comes in below purchase price, renegotiation may be required.",
+            "If the buyer cannot obtain a mortgage commitment by the contract deadline, they may have the right to cancel and recover their deposit.",
+            "Your attorney confirms satisfaction or waiver of all contingencies before proceeding to closing.",
+          ],
+        },
+        {
+          title: "10 — Closing",
+          body: "New York closings are held at a title company or attorney's office, attended by both attorneys and typically both parties. The deed transfers, you receive the net proceeds, and the transaction is complete.",
+          items: [
+            "Typical seller closing costs in New York: attorney fees, NY State and City transfer taxes, broker commission, and any outstanding liens or mortgage payoff.",
+            "New York State Transfer Tax: 0.4% of the sale price. NYC also imposes an additional transfer tax on properties over $500,000.",
+            "For sales of $1,000,000 or more, the buyer pays the Mansion Tax — this does not affect seller proceeds but may affect negotiating dynamics.",
+            "After closing, your attorney disburses net proceeds and handles the recording of the deed transfer with the county clerk.",
+          ],
+        },
+      ],
+    },
   },
   agentsPage: {
     eyebrow: "The team",
@@ -1318,6 +1532,220 @@ const zh: Dict = {
     ],
     closingTitle: "入职路上，你从不孤单",
     closingBody: "这里的每一个阶段，都是 Homix 与你一起完成的，而非交出一张清单便不再过问。当你走完全程，你将拥有：由 Homix Realty 挂靠的有效纽约执照、完整的 OneKey MLS 权限、一整套技术与 AI 工具、在摄影棚打造并面向百万级受众的个人品牌，以及一位早已走过同一条路的导师。这正是\"找到一份工作\"与\"被托举着去赢\"之间的差别。欢迎加入 Homix。",
+    buyerGuide: {
+      eyebrow: "纽约州买家指南 · OneKey MLS",
+      title: "在纽约州买房，完整流程详解",
+      lead: "从首次沟通到拿到钥匙，完整梳理纽约州住宅购房全流程。内容基于纽约州法律、《不动产法》要求与 OneKey MLS 规范，确保你的客户随时清楚自己身在何处。",
+      steps: [
+        {
+          title: "第一步 — 获得贷款预批",
+          body: "在看任何房子之前，买家需要先取得持牌贷款机构出具的抵押贷款预批信——或全现金买家的资金证明。在纽约都会圈市场，没有预批信，卖家和挂牌经纪人不会认真对待你的报价。",
+          items: [
+            "选择贷款机构，提交收入、资产与信用文件。",
+            "取得书面预批信，注明批准的贷款金额与贷款产品。",
+            "全现金买家需准备近期银行或投资账户对账单作为资金证明。",
+            "区分「预资格」（非正式估算）与「预批」（经过核保的承诺）——只有预批信在竞争性报价中才有分量。",
+          ],
+        },
+        {
+          title: "第二步 — 代理关系披露与买方代理协议",
+          body: "纽约州法律要求经纪人在首次实质性接触时向买家出示并签收《房地产代理关系披露》表格。自 2024 年 8 月 17 日起，经纪人在带买家看任何房屋之前，还必须先签署书面《买方代理协议》。",
+          items: [
+            "审阅并签署纽约州务厅的代理关系披露表——说明买方代理、卖方代理与双重代理的区别。",
+            "签署《买方代理协议》，明确经纪人义务、佣金安排与代理范围。",
+            "了解：你的 Homix 顾问作为买方代理，完全代表你的利益——除非你书面同意双重代理。",
+            "双重代理（同一经纪人同时代理买卖双方）须取得双方书面知情同意，纽约州法律对此有严格限制。",
+          ],
+        },
+        {
+          title: "第三步 — 明确搜索范围",
+          body: "在全面启动搜索前，先厘清需求、预算与地理范围。OneKey MLS 覆盖纽约市、长岛、威彻斯特和哈德逊河谷，是纽约都会圈最全面的房源数据库。",
+          items: [
+            "确定实际购买预算：房价、预估过户费用（纽约买方通常为房价的 2–5%）与每月持有成本。",
+            "确定房产类型：独栋、共管公寓（Condo）、合作公寓（Co-op）或多户住宅。Co-op 需通过董事会审批，并有额外财务要求。",
+            "选择目标社区与学区——尤其是长岛，学区线直接影响房产价值。",
+            "在 OneKey MLS 设置实时保存搜索，第一时间收到新房源与价格变动通知。",
+          ],
+        },
+        {
+          title: "第四步 — 看房",
+          body: "私人带看、开放看房与经纪人联合看房均可通过 OneKey MLS 安排。你的 Homix 顾问全程陪同，现场评估房屋状况、格局与周边可比成交。",
+          items: [
+            "重点关注结构与系统（屋顶、HVAC、管道、电气），以及《房屋状况披露声明》中可能标注的问题。",
+            "记录需要维修或更新的项目，并将其纳入报价策略。",
+            "Co-op 房屋：在认真考虑前，务必取得公开发售计划、房屋规则、近期董事会会议纪要与财务报表。",
+            "做好每次看房记录——笔记和照片有助于后期对比多套房源。",
+          ],
+        },
+        {
+          title: "第五步 — 提交报价",
+          body: "在纽约，购房报价在双方正式签署《买卖合同》之前不具有法律约束力。接受报价只是达成协议的意向，并非法律义务——因此一旦条款谈妥，务必迅速行动。",
+          items: [
+            "以书面形式提交报价，包括价格、融资条件、建议过户日期及任何附加条件。",
+            "附上预批信或资金证明。",
+            "了解：纽约是律师审查州，《买卖合同》由双方律师起草与谈判，而非经纪人。",
+            "在提交报价前确定好一位纽约州持牌房产律师，以便在条款达成后迅速行动。",
+          ],
+        },
+        {
+          title: "第六步 — 签署买卖合同",
+          body: "卖家接受报价后，双方律师协商并签署《买卖合同》。在纽约，这是具有法律约束力的文件，由律师全权负责，经纪人不参与起草。",
+          items: [
+            "你的律师审阅卖方草拟的合同、产权报告，以及 Co-op 或 Condo 相关文件。",
+            "谈判附加条件：贷款条件、房屋检查，以及 1978 年前建造房屋的铅漆条款（联邦法规要求）。",
+            "签署合同时，买方通常需支付房价 5–10% 的诚意金，由律师托管。",
+            "Co-op 房屋：合同执行后开始准备董事会申请材料——审批流程通常需要 4–8 周。",
+          ],
+        },
+        {
+          title: "第七步 — 尽职调查：房屋检查与产权",
+          body: "即使在竞争激烈的市场，房屋检查与产权尽职调查也能保护买家免受高额损失。纽约卖家须提交《房屋状况披露声明》或在过户时给买家 500 美元信用——但该声明不能替代独立的房屋检查。",
+          items: [
+            "聘请纽约州持牌房屋检查员对结构、系统与环境因素进行全面检查。",
+            "将检查结果与《房屋状况披露声明》对照阅读，关注需要跟进的项目。",
+            "1978 年前建造的房屋：联邦法律（42 U.S.C. § 4852d）要求进行铅漆检查与披露，买家有 10 天检测时间。",
+            "你的律师委托产权公司进行产权搜查，核实清晰所有权、查明留置权，并出具产权保险承诺书。",
+          ],
+        },
+        {
+          title: "第八步 — 获得贷款承诺书",
+          body: "合同签署后，贷款机构从预批进入完整核保阶段。贷款承诺书是正式批准文件——合同通常给买家 30–45 天时间获取。",
+          items: [
+            "及时提交核保方要求的所有补充文件，避免延误。",
+            "贷款机构委托评估公司对房产进行估价，确认房产价值支撑贷款金额。",
+            "若评估价低于购买价格，可能需要重新谈判或额外支付现金弥补差额。",
+            "合同签署到过户期间，切勿进行大额消费、开设新信用账户或更换工作——这些都可能危及最终批准。",
+          ],
+        },
+        {
+          title: "第九步 — 最终验房",
+          body: "通常在过户前 24–48 小时，买家进行最终验房，确认房产状况符合合同约定，且谈定的维修已完成。",
+          items: [
+            "确认所有约定的维修已完工，卖家自有物品已全部搬走。",
+            "测试电器、暖通空调、管道与电气系统。",
+            "确认房产已清空（或按合同约定状态占用），保持基本清洁。",
+            "发现任何不符之处，立即通知律师在过户前解决。",
+          ],
+        },
+        {
+          title: "第十步 — 过户",
+          body: "纽约住宅过户由律师主持，通常耗时 1–2 小时。产权完成转移，资金完成拨付，买家拿到钥匙。请注意，过户费用是购房价格之外的额外支出。",
+          items: [
+            "纽约买家典型过户费用：律师费、产权保险、抵押贷款登记税、银行手续费与预付房产税。",
+            "豪宅税（Mansion Tax）：适用于成交价在 100 万美元及以上的房产，由买家缴纳，税率从 1% 到 3.9% 不等，按梯度累进。",
+            "携带银行本票或安排电汇支付所有到期款项——个人支票不被接受。",
+            "过户完成后，你的律师将产权变更记录提交至县书记官处，完成法律意义上的所有权转移。",
+          ],
+        },
+      ],
+    },
+    sellerGuide: {
+      eyebrow: "纽约州卖房指南 · OneKey MLS",
+      title: "在纽约州卖房，完整流程详解",
+      lead: "从定价策略到过户桌，完整梳理纽约州住宅挂牌与出售全流程。基于纽约州《不动产法》、司法长办公室规定、OneKey MLS 规范，以及一支在本地市场真正成交过的团队的实战经验。",
+      steps: [
+        {
+          title: "第一步 — 估价与定价策略",
+          body: "准确定价是成功出售最关键的单一因素。从第一天就定对价格，能带来更多带看、更强劲的报价，以及更少的谈判时间——远胜于开价过高后被动追市。",
+          items: [
+            "你的 Homix 顾问利用 OneKey MLS 中近期、真正可比的成交记录，按房况、面积、楼层与配置逐项调整，出具《市场比较分析报告》（CMA）。",
+            "我们将多个自动估价模型与手工筛选的本地可比成交及实时市场需求信号交叉核对。",
+            "我们在挂牌前提供到手净收益预估，让你清楚最终实际收入。",
+            "低于市场价、平市价、高于市场价各有利弊——我们结合你的时间要求与目标，共同制定合适的定价策略。",
+          ],
+        },
+        {
+          title: "第二步 — 委托协议与代理关系披露",
+          body: "营销开始前，你与 Homix 签署委托协议，明确挂牌价格、委托期限、佣金与营销方案。纽约州还要求在首次实质性接触时向卖家出示代理关系披露表。",
+          items: [
+            "审阅并签署纽约州代理关系披露表——说明卖方代理、买方代理与双重代理的区别。",
+            "签署《独家出售委托协议》，授权 Homix 开展营销并通过 OneKey MLS 与买方经纪人合作。",
+            "委托期限、佣金比例及任何排除条款（如你已有意向买家）均在协议中谈妥并书面确认。",
+            "了解经纪人的信义义务：忠诚、保密、披露、服从、合理谨慎与如实报告。",
+          ],
+        },
+        {
+          title: "第三步 — 房屋状况披露声明",
+          body: "依据纽约州《不动产法》第 462 条，出售 1–4 套家庭住宅的卖家，须在签署买卖合同前向买家提供《房屋状况披露声明》（PCDS），或在过户时给予买家 500 美元信用抵扣。",
+          items: [
+            "诚实、完整地填写纽约州 PCDS——涵盖结构、系统、环境状况与已知缺陷。",
+            "披露已知缺陷不一定会导致交易失败；买家重视透明，并会据此调整出价。",
+            "1978 年前建造的房屋：联邦法律（42 U.S.C. § 4852d）要求提供独立的《铅漆披露》——买家有 10 天检测权。",
+            "你的律师与 Homix 顾问共同审核 PCDS，确保内容完整准确。",
+          ],
+        },
+        {
+          title: "第四步 — 房屋准备与布置",
+          body: "第一印象决定带看率，带看率决定报价数量。在拍照和挂牌前做好充分准备，可以显著提升成交速度与最终价格。",
+          items: [
+            "你的顾问针对该房产提供量身定制的布置与准备清单——涵盖维修、杂物清理与外观整洁度。",
+            "准备工作完成后，Homix 自有工作室为房产拍摄照片与影片——OneKey MLS 挂牌要求必须提供专业照片。",
+            "空置房产可采用虚拟布置，帮助买家感受空间。",
+            "提前处理可能在买家检查中暴露、并给买家重新谈判借口的问题——事前小修远胜事后大幅让步。",
+          ],
+        },
+        {
+          title: "第五步 — 在 OneKey MLS 挂牌",
+          body: "OneKey MLS 是皇后区、长岛、威彻斯特及大纽约都会圈权威的房源数据库。准确、完整的 MLS 录入既是合规要求，也是最大化市场曝光的基础。",
+          items: [
+            "OneKey MLS 要求：准确地址、法律描述、至少一张照片、挂牌价格、房产类型及所有必填数据字段——错误或遗漏可能导致处罚。",
+            "房源实现联合经纪：所有会员经纪公司的买方经纪人可立即看到并向其客户推荐。",
+            "房源自动同步至 Zillow、Realtor.com、Homes.com 及数十个合作门户网站。",
+            "Homix 在此基础上叠加自有媒体传播：中英双语社交内容、短视频，以及向抖音、小红书、Instagram 上 100 万+ 粉丝的定向推广。",
+          ],
+        },
+        {
+          title: "第六步 — 带看与开放看房",
+          body: "带看阶段是检验买家需求的窗口。你的顾问负责安排进场、收集反馈、把控策略——让你掌握核心信息，而不被繁琐细节淹没；并在必要时利用带看数据优化定价。",
+          items: [
+            "带看通过 OneKey MLS ShowingTime 预约——买方经纪人申请时间段，由你确认。",
+            "顾问在每次带看后收集反馈，汇报规律性问题：价格疑虑、房况问题或浓厚兴趣信号。",
+            "开放看房在 OneKey MLS 中发布，并通过 Homix 社交渠道推广以最大化到访量。",
+            "若前两周带看量偏低，我们在房源变冷之前主动评估定价与呈现策略。",
+          ],
+        },
+        {
+          title: "第七步 — 评估报价与谈判",
+          body: "在纽约，经纪人必须及时将所有报价呈报给卖家。你的顾问会逐一呈现每份报价，解读条款，并协助你综合评估价格、融资质量、附加条件与时间安排。",
+          items: [
+            "综合评估报价价格、融资类型（现金还是贷款）、预批强度、附加条件与建议过户日期。",
+            "融资薄弱或附加条件多的高价报价，可能不如条件更干净的略低全现金报价更有价值。",
+            "还价谈判十分常见——你的顾问代表你进行谈判，始终以你的核心利益为重。",
+            "多方竞价时，顾问可视市场动态决定是否发起最高价征集，或进行选择性谈判。",
+          ],
+        },
+        {
+          title: "第八步 — 签署买卖合同",
+          body: "价格与条件谈妥后，你的律师起草《买卖合同》。在纽约，合同是由律师准备和谈判的法律文件，而非现场签署的标准表格。合同谈判与签署通常需要 1–2 周时间。",
+          items: [
+            "你的律师将谈定的条款、附加条件及任何包含或排除的个人动产写入合同草稿。",
+            "买方律师审阅合同、提出修改意见并进行谈判——大多数交易细节在此阶段正式确定。",
+            "合同执行后，买方将合同定金（通常为房价的 5–10%）支付至你律师的托管账户。",
+            "Co-op 房屋：合同执行后，买方同时开始准备董事会申请材料。",
+          ],
+        },
+        {
+          title: "第九步 — 尽职调查期与贷款条件",
+          body: "合同执行后，买方进行房屋检查，同时推进贷款承诺。合同设定截止时间——通常为 30–45 天内取得贷款承诺书。你的顾问全程跟进，确保交易按计划推进。",
+          items: [
+            "做好准备：买家可能根据检查结果要求维修或信用抵扣——你的律师将就如何回应提供建议。",
+            "贷款机构对房产进行评估；若评估价低于成交价，可能需要重新谈判。",
+            "若买家在合同截止日期前无法取得贷款承诺书，其可能有权取消合同并追回定金。",
+            "你的律师在推进过户前确认所有附加条件已满足或已放弃。",
+          ],
+        },
+        {
+          title: "第十步 — 过户",
+          body: "纽约过户在产权公司或律师事务所举行，双方律师及通常双方当事人均出席。产权完成转移，你收到净所得款项，交易正式完成。",
+          items: [
+            "纽约卖家典型过户费用：律师费、纽约州及市转让税、经纪人佣金，以及任何未结留置权或贷款还清款项。",
+            "纽约州转让税：成交价的 0.4%。纽约市对 50 万美元以上的房产还额外征收市级转让税。",
+            "成交价在 100 万美元以上时，买方需缴纳豪宅税——不影响卖家收益，但可能影响谈判动态。",
+            "过户完成后，你的律师负责将产权转让记录提交至县书记官处，并拨付净所得款项。",
+          ],
+        },
+      ],
+    },
   },
   agentsPage: {
     eyebrow: "团队",
