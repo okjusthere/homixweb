@@ -12,6 +12,7 @@ export interface ActionState {
   error?: string;
   editUrl?: string;
   name?: string;
+  message?: string;
 }
 
 function kebab(s: string): string {
@@ -92,6 +93,49 @@ export async function toggleVisibleAction(formData: FormData): Promise<void> {
   await sb.from("agents").update({ visible: !visible }).eq("id", id);
   revalidatePath("/agents");
   revalidatePath("/admin");
+}
+
+export async function updateAgentOrderAction(
+  _prev: ActionState | null,
+  formData: FormData,
+): Promise<ActionState> {
+  if (!(await isAdmin())) return { ok: false, error: "Not authorized." };
+  const sb = getSupabase();
+  if (!sb) return { ok: false, error: "Supabase not configured." };
+
+  const ids = formData
+    .getAll("ids")
+    .map((id) => String(id).trim())
+    .filter(Boolean);
+  const uniqueIds = Array.from(new Set(ids));
+
+  if (ids.length === 0) return { ok: false, error: "No advisors to reorder." };
+  if (uniqueIds.length !== ids.length) {
+    return { ok: false, error: "Duplicate advisor in order. Refresh and try again." };
+  }
+
+  const { data: existing, error: loadError } = await sb.from("agents").select("id");
+  if (loadError) return { ok: false, error: loadError.message };
+
+  const existingIds = new Set((existing ?? []).map((row) => row.id));
+  if (existingIds.size !== uniqueIds.length || uniqueIds.some((id) => !existingIds.has(id))) {
+    return { ok: false, error: "Advisor list changed. Refresh and try again." };
+  }
+
+  const updates = await Promise.all(
+    uniqueIds.map((id, index) =>
+      sb
+        .from("agents")
+        .update({ sort: (index + 1) * 10 })
+        .eq("id", id),
+    ),
+  );
+  const failed = updates.find((result) => result.error);
+  if (failed?.error) return { ok: false, error: failed.error.message };
+
+  revalidatePath("/agents");
+  revalidatePath("/admin");
+  return { ok: true, message: "Order saved." };
 }
 
 export async function deleteAgentAction(formData: FormData): Promise<void> {

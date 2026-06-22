@@ -37,6 +37,7 @@ const en = {
     buyercoach: "Buyer coach",
     tools: "Agents Portal",
     onboarding: "Onboarding",
+    training: "Training",
     privacy: "Privacy",
     terms: "Terms",
     accessibility: "Accessibility",
@@ -331,6 +332,7 @@ const en = {
     offer: "Submit an offer on a home",
     buyercoach: "AI answers for home buyers",
     onboarding: "How joining Homix works",
+    training: "Training videos for agents",
   },
   buyMenu: [
     { title: "Browse homes", desc: "Search every home for sale" },
@@ -586,6 +588,7 @@ const zh: Dict = {
     buyercoach: "买家教练",
     tools: "经纪人门户",
     onboarding: "入职",
+    training: "培训",
     privacy: "隐私政策",
     terms: "服务条款",
     accessibility: "无障碍",
@@ -880,6 +883,7 @@ const zh: Dict = {
     offer: "在线提交购房报价",
     buyercoach: "AI 买房问答",
     onboarding: "加入 Homix 的全流程",
+    training: "经纪人视频培训",
   },
   buyMenu: [
     { title: "搜索房源", desc: "查找全部在售房源" },

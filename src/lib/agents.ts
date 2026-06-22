@@ -50,7 +50,8 @@ export async function getAgents(): Promise<Agent[]> {
     .from("agents")
     .select("*")
     .eq("visible", true)
-    .order("sort", { ascending: true });
+    .order("sort", { ascending: true })
+    .order("name", { ascending: true });
   if (error || !data || data.length === 0) return MOCK_AGENTS;
   return (data as AgentRow[]).map(rowToAgent);
 }

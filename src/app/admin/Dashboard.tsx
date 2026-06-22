@@ -7,6 +7,7 @@ import {
   deleteAgentAction,
   logoutAction,
   toggleVisibleAction,
+  updateAgentOrderAction,
   type ActionState,
 } from "./actions";
 
@@ -26,6 +27,37 @@ export function Dashboard({ agents }: { agents: AdminAgent[] }) {
     addAgentAction,
     null,
   );
+  const [orderState, orderAction, orderPending] = useActionState<
+    ActionState | null,
+    FormData
+  >(updateAgentOrderAction, null);
+  const sourceOrderKey = agents.map((agent) => agent.id).join("|");
+  const [orderDraft, setOrderDraft] = useState({
+    agents,
+    sourceOrderKey,
+  });
+  const orderedAgents =
+    orderDraft.sourceOrderKey === sourceOrderKey ? orderDraft.agents : agents;
+
+  const orderChanged =
+    orderedAgents.length === agents.length &&
+    orderedAgents.some((agent, index) => agent.id !== agents[index]?.id);
+
+  function moveAgent(id: string, direction: -1 | 1) {
+    setOrderDraft((currentDraft) => {
+      const current =
+        currentDraft.sourceOrderKey === sourceOrderKey ? currentDraft.agents : agents;
+      const index = current.findIndex((agent) => agent.id === id);
+      const nextIndex = index + direction;
+      if (index < 0 || nextIndex < 0 || nextIndex >= current.length) {
+        return { agents: current, sourceOrderKey };
+      }
+
+      const next = [...current];
+      [next[index], next[nextIndex]] = [next[nextIndex], next[index]];
+      return { agents: next, sourceOrderKey };
+    });
+  }
 
   return (
     <div className="space-y-12">
@@ -54,20 +86,67 @@ export function Dashboard({ agents }: { agents: AdminAgent[] }) {
 
       {/* Roster */}
       <section>
-        <div className="flex items-center justify-between">
-          <h2 className="font-serif text-xl text-ink">
-            Advisors / 经纪人 ({agents.length})
-          </h2>
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <h2 className="font-serif text-xl text-ink">
+              Advisors / 经纪人 ({orderedAgents.length})
+            </h2>
+            <p className="mt-1 text-sm text-muted">
+              This order controls the public /agents page.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <form action={orderAction}>
+              {orderedAgents.map((agent) => (
+                <input key={agent.id} type="hidden" name="ids" value={agent.id} />
+              ))}
+              <button
+                disabled={!orderChanged || orderPending}
+                className="rounded-sm bg-ink px-4 py-2 text-sm font-medium text-paper transition-colors hover:bg-bronze disabled:pointer-events-none disabled:opacity-40"
+              >
+                {orderPending ? "Saving…" : "Save order"}
+              </button>
+            </form>
+            {orderChanged && (
+              <button
+                type="button"
+                onClick={() => setOrderDraft({ agents, sourceOrderKey })}
+                className="text-sm text-muted underline-offset-4 hover:text-bronze hover:underline"
+              >
+                Reset
+              </button>
+            )}
+          </div>
           <form action={logoutAction}>
             <button className="text-sm text-muted underline-offset-4 hover:text-bronze hover:underline">
               Sign out / 退出
             </button>
           </form>
         </div>
+        {orderState?.error && (
+          <p className="mt-3 text-sm text-bronze-dark">{orderState.error}</p>
+        )}
+        {orderState?.ok && orderState.message && (
+          <p className="mt-3 text-sm text-pine">{orderState.message}</p>
+        )}
 
         <div className="mt-5 divide-y divide-line border-y border-line">
-          {agents.map((a) => (
+          {orderedAgents.map((a, index) => (
             <div key={a.id} className="flex flex-wrap items-center gap-3 py-4">
+              <div className="flex w-16 items-center gap-1">
+                <span className="w-6 text-xs tabular-nums text-muted">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <button
+                  type="button"
+                  aria-label={`Move ${a.name} up`}
+                  disabled={index === 0}
+                  onClick={() => moveAgent(a.id, -1)}
+                  className="rounded-sm border border-line px-2 py-1 text-xs text-ink hover:border-bronze hover:text-bronze disabled:pointer-events-none disabled:opacity-30"
+                >
+                  Up
+                </button>
+              </div>
               <div className="min-w-48 flex-1">
                 <p className="text-sm font-medium text-ink">
                   {a.name}
@@ -87,6 +166,15 @@ export function Dashboard({ agents }: { agents: AdminAgent[] }) {
                   {a.visible ? "Hide" : "Show"}
                 </button>
               </form>
+              <button
+                type="button"
+                aria-label={`Move ${a.name} down`}
+                disabled={index === orderedAgents.length - 1}
+                onClick={() => moveAgent(a.id, 1)}
+                className="rounded-sm border border-line px-3 py-1.5 text-xs text-ink hover:border-bronze hover:text-bronze disabled:pointer-events-none disabled:opacity-30"
+              >
+                Down
+              </button>
               <DeleteButton id={a.id} name={a.name} />
             </div>
           ))}

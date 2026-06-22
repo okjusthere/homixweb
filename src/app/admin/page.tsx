@@ -54,7 +54,8 @@ export default async function AdminPage() {
   const { data } = await sb
     .from("agents")
     .select("id, name, slug, visible, edit_token")
-    .order("sort", { ascending: true });
+    .order("sort", { ascending: true })
+    .order("name", { ascending: true });
 
   const base = await getOrigin();
   const agents: AdminAgent[] = (data ?? []).map((r) => ({
@@ -73,8 +74,8 @@ export default async function AdminPage() {
           Advisors
         </h1>
         <p className="mt-4 text-muted">
-          Add advisors and copy their private edit links. Each advisor fills in
-          their own photo and details.
+          Add advisors, copy their private edit links, and control the public
+          advisor order.
         </p>
         <div className="mt-10">
           <Dashboard agents={agents} />
