@@ -390,6 +390,30 @@ export default async function OnboardingPage() {
                       </li>
                     ))}
                   </ul>
+                  {p.visuals ? (
+                    <div className="mt-8 grid gap-5 sm:grid-cols-2">
+                      {p.visuals.map((visual) => (
+                        <figure key={visual.image}>
+                          <div className="overflow-hidden rounded-sm border border-line bg-paper">
+                            <Image
+                              src={visual.image}
+                              alt={visual.alt}
+                              width={visual.width}
+                              height={visual.height}
+                              sizes="(min-width: 768px) 34vw, 100vw"
+                              className="h-auto w-full"
+                            />
+                          </div>
+                          <figcaption className="mt-3">
+                            <p className="font-serif text-lg leading-tight text-ink">
+                              {visual.title}
+                            </p>
+                            <p className="mt-1 text-sm text-muted">{visual.subtitle}</p>
+                          </figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </Reveal>

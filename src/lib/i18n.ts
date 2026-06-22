@@ -23,6 +23,485 @@ export async function getT() {
   return { locale, t: messages[locale] };
 }
 
+const brokerageFormsSheetUrl =
+  "https://docs.google.com/spreadsheets/d/1O_-CECoofUNZu3Zfjw7Ey6gn6yL7wbNhBXyXksRQx4c/edit?gid=0#gid=0";
+
+const brokerageFormGroups = [
+  {
+    title: "Buyer side / Selling Agent",
+    description: "Forms commonly used when representing a buyer.",
+    forms: [
+      {
+        name: "Selling Agent Package",
+        blankLink:
+          "https://drive.google.com/file/d/1Gb-OyFWSwfo2KoGTaWeRefbfhyQLHgYG/view?usp=share_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1Gx7-6w-xX98WAoQOxRSaBhfbin8l5eG9/view?usp=drive_link",
+      },
+      {
+        name: "Binder",
+        blankLink:
+          "https://drive.google.com/file/d/1CksGiUnkRwGVcpjVg6WiLTebjEKosxAn/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1MIUpZVnN-_XwQfGExbR_eCgPeXxSBTRe/view?usp=drive_link",
+      },
+      {
+        name: "Exclusive Buyer Representation Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/15Tq18WOxvhc_4vMBCNbK0yfBvtU0ItXP/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1MIUpZVnN-_XwQfGExbR_eCgPeXxSBTRe/view?usp=drive_link",
+      },
+      {
+        name: "Non-Exclusive Buyer Representation Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1zVb0shEvDH4RnDBlrfUQKFZAlS5wpNCQ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1kPijXNbFPcfaQU8FA2P1rnUuZK5G_moJ/view?usp=drive_link",
+      },
+      {
+        name: "Memorandum of Offer to Purchase/Sell",
+        blankLink:
+          "https://drive.google.com/file/d/1eFzb6GOHtqYuMfPtdZDxKs_q3vJEiaZd/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1H-J5tGn1hhC1bTilj725rimhF7x2PXCQ/view?usp=drive_link",
+      },
+      {
+        name: "Agency Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1P31r8xqNeBhUMwiKDMTzCLACUnzAdaW_/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1HNxLkh8e4zxRk3-GfGdZ1lp6O_1RW_2t/view?usp=drive_link",
+      },
+      {
+        name: "Lead Paint Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1TrKEITGPG4HaAE_uGfRhpfihDK_PljzJ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1tf4UzrKEUkxk97VevcLV7oGCRb7s_lev/view?usp=drive_link",
+      },
+      {
+        name: "Fair Housing Discrimination Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1eOM22cT3wzDSdI1kDAwIOI7-9CGyF7iJ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1SJ5ibvDl1rFPt-kBs8W2ucQBOPpOzHQi/view?usp=drive_link",
+      },
+      {
+        name: "Deal Sheet",
+        blankLink:
+          "https://drive.google.com/file/d/1ln3Lr0mT7bQdWaUQF2o5qcBCo-OSUtHo/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1xDuJk9qyG7LhWiz6HYS8xsiP_bw9bqzE/view?usp=drive_link",
+      },
+      {
+        name: "Confirmation of Seller's Agreement to Pay Buyer Broker",
+        blankLink:
+          "https://drive.google.com/file/d/1OX7fhR6m4kZc645UFHWk3HJkk-N9ek7U/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1LT0UubPkVBXyYP0FkINlqPDrfQP1mkb2/view?usp=drive_link",
+      },
+      {
+        name: "Buyer Commission Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1sEopgpGI-qEoMKxsxUJr2GsHIG-M8cHC/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/19wUqJmWn3unxiGDEtTUznTC45KWWksH6/view?usp=drive_link",
+      },
+      {
+        name: "Buyer Agreement Shown Properties",
+        blankLink:
+          "https://drive.google.com/file/d/1Z9vXqDcCyKxSoCzmbJ0TwxH1CR35zxHY/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1Hcm3uxEqj1goUjgrsyaHPapgENcKShyo/view?usp=drive_link",
+      },
+      {
+        name: "Commission Report",
+        blankLink:
+          "https://drive.google.com/file/d/1lz9W43zT-lx6Y44-td73ok7QIdfQobG0/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Seller side / Listing Agent",
+    description: "Residential listing, disclosure, MLS, and seller-side transaction forms.",
+    forms: [
+      {
+        name: "Residential Listing Package",
+        blankLink:
+          "https://drive.google.com/file/d/1ubJDoYJ27_SC_QP-hGfo2yc2eVQz2ctO/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1-B6mtw_oc1GS8sfu1W9c_vOIGxdPo0_3/view?usp=drive_link",
+      },
+      {
+        name: "Condo / Coop Listing Package",
+        blankLink:
+          "https://drive.google.com/file/d/1ZVNgbzIzAs10YpuV__gMyqEW9VJinxYz/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1E4LhXbdiAvIshpy0vCgwtBzjeLajrSpM/view?usp=drive_link",
+      },
+      {
+        name: "Confirmation of Seller's Agreement to Pay Buyer Broker",
+        blankLink:
+          "https://drive.google.com/file/d/1OX7fhR6m4kZc645UFHWk3HJkk-N9ek7U/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1HRkxf7qVtPcat1rCALsJzE604kOnUJDE/view?usp=drive_link",
+      },
+      {
+        name: "Agency Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1P31r8xqNeBhUMwiKDMTzCLACUnzAdaW_/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1HNxLkh8e4zxRk3-GfGdZ1lp6O_1RW_2t/view?usp=drive_link",
+      },
+      {
+        name: "Lead Paint Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1TrKEITGPG4HaAE_uGfRhpfihDK_PljzJ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1tf4UzrKEUkxk97VevcLV7oGCRb7s_lev/view?usp=drive_link",
+      },
+      {
+        name: "Fair Housing Discrimination Disclosure",
+        blankLink:
+          "https://drive.google.com/file/d/1eOM22cT3wzDSdI1kDAwIOI7-9CGyF7iJ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1SJ5ibvDl1rFPt-kBs8W2ucQBOPpOzHQi/view?usp=drive_link",
+      },
+      {
+        name: "Offer Presentation and Negotiation Authorization Form",
+        blankLink:
+          "https://drive.google.com/file/d/1GDXfoBP9gHDklNRYHoBN47U5FLUH8VU2/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/11x-UJxCN10A6S2qoeCFfJ2oX8tq5xPU7/view?usp=drive_link",
+      },
+      {
+        name: "Deal Sheet",
+        blankLink:
+          "https://drive.google.com/file/d/1ln3Lr0mT7bQdWaUQF2o5qcBCo-OSUtHo/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1xDuJk9qyG7LhWiz6HYS8xsiP_bw9bqzE/view?usp=drive_link",
+      },
+      {
+        name: "Property Condition Disclosure Statement (PCDS)",
+        blankLink:
+          "https://drive.google.com/file/d/1N3zL9VWh9ec483JYFKx41OadIaaotB5U/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1q-MvkN7gYFZdzQf09L0DMVucrjMUrBIS/view?usp=drive_link",
+      },
+      {
+        name: "Office Exclusive Seller Disclosure (Private listing only)",
+        blankLink:
+          "https://drive.google.com/file/d/14QCxZukq7k_Nj67brNIyL1U6p7QCG8Fs/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1MqpXqKN7crAHHCE1qN-qFBQ1sEBhTutU/view?usp=drive_link",
+      },
+      {
+        name: "Extension Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1uzFvcbX6zx3tMfyLa2lbty7LMh2r5rns/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1CnO4a_CwJ8JJDXOS4UBlKdCB7C0mSW0O/view?usp=drive_link",
+      },
+      {
+        name: "Coming Soon Authorization Form",
+        blankLink:
+          "https://drive.google.com/file/d/1ZedytkrgqjMLXYfYu-Hunqrk7lSSyikP/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/160JigRJ80ULnBQWYnEVoo5AxL59MMTc_/view?usp=drive_link",
+      },
+      {
+        name: "Required Fields for MLS Listing Property Data Section",
+        blankLink:
+          "https://drive.google.com/file/d/1B0MPihrtXfmzk2msGg6LMjm7Ws07NSGd/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1QSNntxWy62IBkQ1DOlR9eGKsZkCIBvvT/view?usp=drive_link",
+      },
+      {
+        name: "Commission Report",
+        blankLink:
+          "https://drive.google.com/file/d/1lz9W43zT-lx6Y44-td73ok7QIdfQobG0/view?usp=drive_link",
+      },
+      {
+        name: "Brokerage Commission Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1RVRrj3HBplivabrW2cPvPNOxDm2YrFXe/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Co-Broker / Collaboration",
+    description: "Referral, collaboration, open house, and off-market cooperation paperwork.",
+    forms: [
+      {
+        name: "General Agent Collaboration Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1rEDd5XDTy9OhuV56014VxZZkMolujb7D/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1UoW_Lg2oJNuAGaY43Tvaj6SkUS7vbLrs/view?usp=drive_link",
+      },
+      {
+        name: "Referral Form",
+        blankLink:
+          "https://drive.google.com/file/d/1Rxe8StB_gD5loIn_VL4Y1Lb20BRKd-Kj/view?usp=drive_link",
+      },
+      {
+        name: "Seller Referral Form",
+        blankLink:
+          "https://drive.google.com/file/d/1-7BCPEoKTpeUsUcGP2jhETA3p2sM-3nO/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1e8jugzlbO3CV26L4W_mdqYFjJNiybsdG/view?usp=drive_link",
+      },
+      {
+        name: "Open House Agent Collaboration Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1or2ef0hDxC17NO4Tlfge19bkfTZpFcqr/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1W2cfpvYnD9716lXM80mo4Men5jJuxGTP/view?usp=drive_link",
+      },
+      {
+        name: "Co-broke Agreement (Off-market listing only)",
+        blankLink:
+          "https://drive.google.com/file/d/1OEJZqk9rqbf4ZkdOLvsnfWG2bT_bm10y/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1BILPEYJwlSA1xnf0wSVAGQxkW-VFB8J_/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Commercial",
+    description: "Commercial listing, lease, sale, NDA, and worksheet forms.",
+    forms: [
+      {
+        name: "LOI",
+        blankLink:
+          "https://drive.google.com/file/d/1azL0ru809rkoecHzUtIuuQoJcmYIigrl/view?usp=sharing",
+      },
+      {
+        name: "Commercial Data Section",
+        blankLink:
+          "https://drive.google.com/file/d/1gt4BDW1l4QXFZmEzrCpc1Wa-5IsM36tv/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1qVHdebw70rIDa8KS-WKsNnVYuLFA-Fen/view?usp=drive_link",
+      },
+      {
+        name: "NDA",
+        blankLink:
+          "https://drive.google.com/file/d/1FHJKpKYC2Wcw407zaJojkV1EdXR0m8Jg/view?usp=drive_link",
+      },
+      {
+        name: "Business For Sale Worksheet",
+        blankLink:
+          "https://drive.google.com/file/d/1tJEcHLQMxakHdNzcidzKXo038_7hXQsN/view?usp=drive_link",
+      },
+      {
+        name: "Land Form",
+        blankLink:
+          "https://drive.google.com/file/d/1aZ6pi2Ix5ggdzpe206N9TGpWGfrgcTsh/view?usp=drive_link",
+      },
+      {
+        name: "Commercial (Sale) Listing Package",
+        blankLink:
+          "https://drive.google.com/file/d/1gt4BDW1l4QXFZmEzrCpc1Wa-5IsM36tv/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1gp9ztVz2JC_iaoipN_737p0PCbTSueSk/view?usp=drive_link",
+      },
+      {
+        name: "Commercial (Lease) Listing Package",
+        blankLink:
+          "https://drive.google.com/file/d/1yIROUENqJeSPeUJTGTf_SmQAq27tu8Ug/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1aagb5HpzCa8ADsLrwA_Cris8jH5Uj9YJ/view?usp=drive_link",
+      },
+      {
+        name: "Commercial Offer",
+        blankLink:
+          "https://drive.google.com/file/d/1irZMZk7eGlDGkfbDafH-wgKMm8CfoJYJ/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Rental",
+    description: "Rental listing, agency, lead paint, commission, and tenant application forms.",
+    forms: [
+      {
+        name: "Rental Listing Package",
+        blankLink:
+          "https://drive.google.com/file/d/158Teb9XRcc5jQy-mN-u89aCkBbxBwQR5/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1v9NYBhr_X8-vkjQtrmqsItmi5THRWb0m/view?usp=drive_link",
+      },
+      {
+        name: "Agency Disclosure (Landlord/Tenant)",
+        blankLink:
+          "https://drive.google.com/file/d/1eJJKY3m6QBZDzdpJ2oke71Smf9AyWrUZ/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/10GFwI6PzVSw4CAhHVBwRHWld1Nz30gHt/view?usp=drive_link",
+      },
+      {
+        name: "Lead Paint Disclosure (Landlord/Tenant)",
+        blankLink:
+          "https://drive.google.com/file/d/1OBbRZLjp-lDZxezOjp2w0mUn7_J3_806/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1Z3b8QeB6CzCfWjQc61bRjRxPDNBmLLsq/view?usp=drive_link",
+      },
+      {
+        name: "Tenants Pay Rental Commission Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1ieQMZLYK9ZSB2BWz_7v8z6KzYdRYe-eo/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1VsZQ8vcANgrtr3GPRrS4Xp45tr202SOE/view?usp=drive_link",
+      },
+      {
+        name: "Landlord Pay Rental Commission Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1JMnH4GYaGRB9EdQ7xUCASluDzZWiGdhD/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1NFSPcNAfTrFsbonXqtlMPo4eu3t5Jce2/view?usp=drive_link",
+      },
+      {
+        name: "Tenant Application Form",
+        blankLink:
+          "https://drive.google.com/file/d/14EUve6ZKj5c4l2SqNy7yDwgQST8ptL-O/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Open House",
+    description: "Open house registration and package forms.",
+    forms: [
+      {
+        name: "Open House Registration",
+        blankLink:
+          "https://drive.google.com/file/d/1-IdSkPJnnD7k6G4qpuCv3BPzW5q3_pBa/view?usp=drive_link",
+      },
+      {
+        name: "Open House Package",
+        blankLink:
+          "https://drive.google.com/file/d/1n2zDp2lrTtzZGsTu-GhUi5b4SKJd-FZQ/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Other",
+    description: "Accounting, status change, withdrawal, net sheet, and Manhattan-specific forms.",
+    forms: [
+      {
+        name: "Brokerage Bill / Commission Invoice",
+        blankLink:
+          "https://drive.google.com/file/d/1lUNC6XxQOfF7ffTJAslZAZhN-JyDDC-F/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/13mckhM-IhsJF33BX0xURvvbRsLwKIizM/view?usp=drive_link",
+      },
+      {
+        name: "Status Change",
+        blankLink:
+          "https://drive.google.com/file/d/1i8x3StbI7JT9CC9YyC2NXQl3qu1ZMdQW/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1V7puD72ifyKUoJ5Fffr1SVRl6UOv4nnr/view?usp=drive_link",
+      },
+      {
+        name: "Withdrawal Form",
+        blankLink:
+          "https://drive.google.com/file/d/1Lf9gqfU-jFH8FYRD3fLkHRCksKebhv7T/view?usp=drive_link",
+        sampleLink:
+          "https://drive.google.com/file/d/1WYBvIEixcpXvw36O0SrDqlJbEHHWgBQf/view?usp=drive_link",
+      },
+      {
+        name: "Listing",
+        blankLink:
+          "https://drive.google.com/file/d/15h_AIaLLaHbwWOk2dfKMjzcmouvdpIDc/view?usp=drive_link",
+      },
+      {
+        name: "Net Sheet",
+        blankLink:
+          "https://drive.google.com/file/d/1D1MCT1uJnsy8kjHgakX85d9CCnUpzxCC/view?usp=drive_link",
+      },
+      {
+        name: "Manhattan-Rental Listing Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1HW4q3DAxyzMop20LNBQif6N6S7hjJyR_/view?usp=drive_link",
+      },
+      {
+        name: "Manhattan-Condo Listing Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1jWsjxBU6B62_FgI3dVWx8tj7StChtNti/view?usp=drive_link",
+      },
+    ],
+  },
+  {
+    title: "Homix Living",
+    description: "Homix Living forms from the shared operations sheet.",
+    forms: [
+      {
+        name: "Agent Enrolls Package",
+        blankLink:
+          "https://drive.google.com/file/d/1Cl8inXd6JFTtBf7c_2aM3U-cT5yuQ45t/view?usp=drive_link",
+      },
+      {
+        name: "Manhattan-Condo List Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1fZqoMDDNlPLGl2pf_jtmKOI2pbLMIUgx/view?usp=drive_link",
+      },
+      {
+        name: "Manhattan-Rental Listing Agreement",
+        blankLink:
+          "https://drive.google.com/file/d/1PlNunVcCUibkiOm7bX1hsSRdt7r-iECQ/view?usp=drive_link",
+      },
+    ],
+  },
+];
+
+const brokerageSubmissionGroups = [
+  {
+    title: "New Listing (Residential)",
+    items: [
+      "Listing Agreement",
+      "Agency Disclosure",
+      "Lead Paint Disclosure",
+      "Property Disclosure Statement",
+      "Fair Housing Disclosure",
+    ],
+  },
+  {
+    title: "Pending / Under Contract",
+    items: [
+      "Agency Disclosure signed by buyer",
+      "Lead Paint signed by buyer",
+      "Lead Paint Booklet for buyer to keep",
+      "Fair Housing Disclosure signed by buyer",
+      "Deal Sheet / control card to office",
+    ],
+  },
+  {
+    title: "Closing",
+    items: ["Commission Check", "Commission Report"],
+  },
+  {
+    title: "New Listing (Rental)",
+    items: [
+      "Listing Data Section",
+      "Listing Agreement Contract Page",
+      "Agency Disclosure",
+      "Lead Paint Disclosure",
+      "Fair Housing Disclosure",
+    ],
+  },
+  {
+    title: "Rented / Leased",
+    items: [
+      "Signed Lease",
+      "Agency Disclosure for Rental signed by tenant",
+      "Lead Paint Disclosure for Rental signed by tenant",
+      "Lead Paint Booklet for tenant",
+      "Fair Housing Disclosure signed by tenant",
+      "Copy of Rental Check",
+      "Commission Check",
+      "Commission Report",
+    ],
+  },
+];
+
 const en = {
   common: {
     listings: "Buy",
@@ -385,6 +864,7 @@ const en = {
         {
           name: "Grace",
           role: "Office Manager",
+          image: "/onboarding/grace.jpg",
           body: "Your first stop for office coordination, onboarding checklists, account setup, scheduling, paperwork routing, and making sure the right person sees the right issue.",
         },
         {
@@ -477,7 +957,7 @@ const en = {
         {
           slug: "self-branding",
           title: "Self branding procedure",
-          body: "Custom business cards, compliant email signature updates, agent bio polish, For Sale signs, Open House signs, social profile cleanup, and listing-ready brand templates coordinated through the office and marketing team.",
+          body: "Business cards, email signature setup, Open House and For Sale sign designs, Homix domain presence, welcome/birthday/listing flyers, and optional custom media packages coordinated through marketing.",
         },
         {
           slug: "training-library",
@@ -490,6 +970,79 @@ const en = {
           body: "Shadowing, role-play, first-call review, listing presentation prep, transaction timeline support, and post-deal debriefs so every close becomes a lesson.",
         },
       ],
+      brokerageOperationsDetail: {
+        eyebrow: "Brokerage operations",
+        title: "Forms, systems, and deal support in one operating hub.",
+        lead: "Use this page to find the correct brokerage form, confirm what must be submitted to the office, and understand which operating systems Homix agents may use during onboarding and active transactions.",
+        masterSheetLabel: "Open master forms sheet",
+        masterSheetUrl: brokerageFormsSheetUrl,
+        workflowTitle: "How operations supports a deal",
+        workflows: [
+          {
+            title: "Before paperwork",
+            body: "Confirm the deal type, agency relationship, property type, and client role before selecting forms.",
+            items: [
+              "Ask operations when the situation is unusual or sensitive.",
+              "Use the current master sheet instead of old downloaded copies.",
+              "Confirm whether the blank form or a sample is needed.",
+            ],
+          },
+          {
+            title: "During the transaction",
+            body: "Keep signatures, disclosures, deal sheets, and status updates clean so broker review can move quickly.",
+            items: [
+              "Upload or route signed documents as soon as they are ready.",
+              "Flag missing disclosures before the file reaches closing.",
+              "Keep notes clear enough for admin, accounting, and broker review.",
+            ],
+          },
+          {
+            title: "Before commission release",
+            body: "Accounting needs the right closing documents, commission paperwork, and checks before payout can be processed.",
+            items: [
+              "Submit commission report and required checks promptly.",
+              "Confirm referral, co-broke, or rental commission agreements.",
+              "Escalate any commission split or invoice issue to accounting.",
+            ],
+          },
+        ],
+        toolsTitle: "Tools & systems",
+        toolsLead: "Admin will confirm which logins apply to each agent. Keep credentials private and ask the office before adding client or transaction data into a new system.",
+        tools: [
+          {
+            name: "Kevv",
+            body: "Internal operating system used for assigned brokerage workflows, records, and agent-facing tasks when operations enables access.",
+          },
+          {
+            name: "Keystory",
+            body: "Listing and property-story workflow support for preparing listing information, property narratives, and client-facing presentation materials.",
+          },
+          {
+            name: "Rescript",
+            body: "Writing and script support for compliant client communication, listing copy, follow-up templates, and media-ready talking points.",
+          },
+          {
+            name: "Google Drive forms library",
+            body: "The live source for Homix forms, blank templates, sample documents, and office submission checklists.",
+          },
+          {
+            name: "Transaction & e-signature tools",
+            body: "Used for signatures, disclosures, file routing, and broker review when the deal requires formal document execution.",
+          },
+          {
+            name: "MLS / listing systems",
+            body: "Used for listing data, status changes, required fields, and property information that must match the signed paperwork.",
+          },
+        ],
+        formsTitle: "Forms library",
+        formsLead: "These forms come from the shared Homix forms sheet. Use Blank for a fresh form, Sample for a reference version, and check with operations before changing required language.",
+        blankLabel: "Blank",
+        sampleLabel: "Sample",
+        formGroups: brokerageFormGroups,
+        submissionTitle: "Documents to submit to the office",
+        submissionLead: "Use these checklists to prepare files for listing, pending, closing, and rental milestones.",
+        submissionGroups: brokerageSubmissionGroups,
+      },
       socialPlatformsTitle: "Social media setup",
       socialPlatforms: [
         {
@@ -523,6 +1076,106 @@ const en = {
           body: "Chinese-language profile setup, local lifestyle content, buyer education posts, and listing storytelling.",
         },
       ],
+      selfBrandingDetail: {
+        eyebrow: "Self branding procedure",
+        title: "A polished agent identity before the first client call.",
+        lead: "Homix gives each agent a consistent brand foundation: print templates, digital signatures, social-ready flyers, a Homix domain presence, and optional custom media packages for agents who want a stronger personal channel.",
+        stepsTitle: "Company-provided brand assets",
+        steps: [
+          {
+            title: "Business cards",
+            body: "The office provides Homix business card design support with agent name, English display name, title, phone, email, office address, license disclosure, and QR/social placements.",
+            items: [
+              "Agent confirms name, title, phone, email, license information, and preferred social handles.",
+              "Marketing prepares the proof and routes it for approval before printing.",
+              "Final files stay on brand so every agent looks consistent in front of clients.",
+            ],
+          },
+          {
+            title: "Email signature",
+            body: "Every agent should update the signature in their email settings so client communication looks complete and professional.",
+            items: [
+              "Name, title, direct number, Homix Realty line, and office address.",
+              "License and fair housing/equal opportunity language where needed.",
+              "Clean formatting that works on Gmail, mobile mail, and desktop mail clients.",
+            ],
+            examples: [
+              {
+                title: "Email signature setup",
+                body: "Recommended email signature structure for professional client communication.",
+                image: "/onboarding/self-branding-email-signature.svg",
+                alt: "Email signature setup example for Homix agent onboarding",
+                width: 1600,
+                height: 720,
+              },
+            ],
+          },
+          {
+            title: "Open House & For Sale signs",
+            body: "Homix provides Open House and For Sale sign designs that can be customized with agent headshot, contact details, QR code, property flyer space, and required disclosures.",
+            items: [
+              "Open House sign layout with agent photo and printable A4 flyer area.",
+              "For Sale sign layout with agent profile, property contact path, QR code, and social icons.",
+              "Marketing reviews placement, legibility, and compliance before production.",
+            ],
+            examples: [
+              {
+                title: "Open House sign",
+                body: "Company-provided Open House sign design with headshot and flyer area.",
+                image: "/onboarding/self-branding-open-house-sign.jpg",
+                alt: "Homix Open House sign design template",
+                width: 1600,
+                height: 980,
+              },
+              {
+                title: "For Sale sign",
+                body: "Company-provided For Sale sign design with agent contact and QR placement.",
+                image: "/onboarding/self-branding-for-sale-sign.jpg",
+                alt: "Homix For Sale sign design template",
+                width: 1600,
+                height: 982,
+              },
+            ],
+          },
+          {
+            title: "Flyer templates",
+            body: "The company provides repeatable flyer templates for common agent touchpoints so the agent can stay visible without rebuilding design from scratch.",
+            items: [
+              "Welcome flyer and birthday flyer.",
+              "Just Listed, Under Contract, and Closed flyers.",
+              "Social-ready and print-ready exports coordinated by marketing.",
+            ],
+          },
+          {
+            title: "Homix domain & custom package",
+            body: "Agents can build a stronger online presence through Homix domain support and a private custom package for personal-brand content.",
+            items: [
+              "Homix domain/profile presence for a cleaner client link.",
+              "Custom package options for personal brand assets, social content, and listing-ready design.",
+              "Opportunity to appear on the company account when the topic and production plan fit the Homix media calendar.",
+            ],
+          },
+        ],
+        signatureTitle: "Suggested email signature fields",
+        signatureLines: [
+          "Name",
+          "Licensed Real Estate Salesperson",
+          "Direct: personal number",
+          "Homix Realty",
+          "Tel: (929) 666-9886",
+          "37-20 Prince St, Suite 3H, Flushing, NY 11354",
+        ],
+        flyerTitle: "Available flyer types",
+        flyerTypes: [
+          "Welcome flyer",
+          "Birthday flyer",
+          "Just Listed flyer",
+          "Under Contract / UC flyer",
+          "Closed flyer",
+        ],
+        packageTitle: "Private custom package",
+        packageBody: "For agents who want a stronger personal brand, Homix can coordinate a custom package that may include profile polish, social templates, short-form video planning, and approved appearances on the company account.",
+      },
     },
     phases: [
       {
@@ -579,6 +1232,104 @@ const en = {
           "Run role-play scripts for buyer consultations and listing presentations in English and 中文.",
           "Build your 90-day business plan: lead sources, content cadence, and weekly activity targets.",
           "Learn the compliance essentials in practice — agency disclosure, Fair Housing in conversation, and accurate listing attribution.",
+        ],
+        visuals: [
+          {
+            title: "Buyer Boot Camp",
+            subtitle: "买家精英实战营 · 6 weeks · 12 sessions",
+            image: "/training/buyer-bootcamp.jpg",
+            alt: "Buyer Boot Camp training poster",
+            width: 1280,
+            height: 2134,
+          },
+          {
+            title: "The Listing Mastery Bootcamp",
+            subtitle: "6 周系统训练营 · 6 weeks · 12 sessions",
+            image: "/training/listing-bootcamp.jpg",
+            alt: "The Listing Mastery Bootcamp training poster",
+            width: 1080,
+            height: 1920,
+          },
+          {
+            title: "New York transaction pitfalls",
+            subtitle: "Attorney Chen Heng · Apr 15, 2026 · 12 PM",
+            image: "/training/ny-transaction-pitfalls.jpg",
+            alt: "Flyer for Homix seminar on common issues in New York real estate transactions",
+            width: 1131,
+            height: 1600,
+          },
+          {
+            title: "Mortgage process notes",
+            subtitle: "Jing Rao mortgage team · Feb 13",
+            image: "/training/mortgage-process-notes.jpg",
+            alt: "Flyer for Homix mortgage process and risk notes seminar",
+            width: 1079,
+            height: 1600,
+          },
+          {
+            title: "AI media event",
+            subtitle: "Sunny Zhang & Eric Wei · Jan 22, 2026",
+            image: "/training/ai-media-event.jpg",
+            alt: "Flyer for Homix AI media and content operations event",
+            width: 900,
+            height: 1600,
+          },
+          {
+            title: "Listing appointment week 3",
+            subtitle: "Judy Markowitz · Apr 8 · 1 PM",
+            image: "/training/listing-appointment-week3.jpg",
+            alt: "Flyer for Homix week 3 listing appointment training",
+            width: 898,
+            height: 1600,
+          },
+          {
+            title: "Loan strategy seminar",
+            subtitle: "David Wu · Apr 10 · 11 AM",
+            image: "/training/loan-seminar-david-wu.jpg",
+            alt: "Flyer for Homix loan strategy seminar with David Wu",
+            width: 1280,
+            height: 1600,
+          },
+          {
+            title: "No-income loan week 4",
+            subtitle: "Li Li · Apr 13 · 11 AM",
+            image: "/training/no-income-loan-week4.jpg",
+            alt: "Flyer for Homix week 4 no-income loan training",
+            width: 899,
+            height: 1600,
+          },
+          {
+            title: "Live workshop session",
+            subtitle: "In-person scripts, Q&A, and deal practice",
+            image: "/training/live-workshop.jpg",
+            alt: "Homix agents studying scripts during a live workshop session",
+            width: 908,
+            height: 1600,
+          },
+          {
+            title: "Cohort team session",
+            subtitle: "Office training and team learning",
+            image: "/training/training-team.jpg",
+            alt: "Homix team members gathered in the office during training",
+            width: 1600,
+            height: 1199,
+          },
+          {
+            title: "Office coaching moment",
+            subtitle: "Hands-on support and milestone check-ins",
+            image: "/training/training-milestone.jpg",
+            alt: "Homix office coaching moment with agents after training",
+            width: 1200,
+            height: 1600,
+          },
+          {
+            title: "Window roundtable session",
+            subtitle: "In-office group coaching and discussion",
+            image: "/training/roundtable-window-session.jpg",
+            alt: "Homix agents gathered around the conference table for a training roundtable",
+            width: 1199,
+            height: 1600,
+          },
         ],
       },
       {
@@ -1342,6 +2093,7 @@ const zh: Dict = {
         {
           name: "Grace",
           role: "Office Manager",
+          image: "/onboarding/grace.jpg",
           body: "负责办公室协调、入职清单、账号开通、日程安排、文件流转，以及把问题及时交到对的人手上。",
         },
         {
@@ -1434,7 +2186,7 @@ const zh: Dict = {
         {
           slug: "self-branding",
           title: "个人品牌流程",
-          body: "定制名片、合规邮件签名/后缀改写、经纪人 bio 润色、For Sale sign、Open House sign、社交账号整理，以及可直接用于房源推广的品牌模板，由办公室和营销团队协同完成。",
+          body: "名片、邮件签名设置、Open House 和 For Sale sign 设计、Homix 域名入口、welcome/birthday/listing flyer，以及可选私人定制媒体 package，由 marketing 协同完成。",
         },
         {
           slug: "training-library",
@@ -1447,6 +2199,79 @@ const zh: Dict = {
           body: "跟单 shadowing、话术演练、首次客户电话复盘、listing presentation 准备、交易时间线支持，以及成交后的复盘。",
         },
       ],
+      brokerageOperationsDetail: {
+        eyebrow: "Brokerage operations",
+        title: "表格、系统、交易支持，集中放在一个运营中心。",
+        lead: "这个页面用于帮助经纪人快速找到正确表格，确认哪些 documents 需要交给公司，并了解 Homix 在 onboarding 和实际做单中会用到的不同系统。",
+        masterSheetLabel: "打开完整 forms 表格",
+        masterSheetUrl: brokerageFormsSheetUrl,
+        workflowTitle: "Operations 如何支持每一单",
+        workflows: [
+          {
+            title: "填写文件前",
+            body: "先确认交易类型、代理关系、房产类型和客户身份，再选择对应表格。",
+            items: [
+              "情况特殊或敏感时，先问 operations 再发给客户。",
+              "使用最新 master sheet，不使用旧下载版本。",
+              "确认当前需要的是空白表格、样本，还是已签版本。",
+            ],
+          },
+          {
+            title: "交易进行中",
+            body: "签字、披露、deal sheet、状态更新都要清楚完整，方便 broker review 和办公室跟进。",
+            items: [
+              "签好文件后尽快上传或交给办公室。",
+              "文件进入 closing 前先检查 disclosure 是否缺漏。",
+              "交易备注要让 admin、accounting 和 broker review 都能看懂。",
+            ],
+          },
+          {
+            title: "佣金发放前",
+            body: "Accounting 需要完整 closing documents、commission paperwork 和 check 信息，才能处理 payout。",
+            items: [
+              "及时提交 commission report 和需要的 check。",
+              "确认 referral、co-broke 或 rental commission agreement。",
+              "佣金分成、invoice 或付款问题直接升级给 accounting。",
+            ],
+          },
+        ],
+        toolsTitle: "经纪人会用到的 Tools & Systems",
+        toolsLead: "Admin 会根据经纪人的角色和业务需要开通对应系统。账号密码请自行保管；在新系统录入客户或交易资料前，先确认该系统适用场景。",
+        tools: [
+          {
+            name: "Kevv",
+            body: "用于公司指定 brokerage workflow、记录和经纪人任务的内部运营系统，具体权限由 operations 开通。",
+          },
+          {
+            name: "Keystory",
+            body: "用于 listing 与 property story 支持，帮助整理房源信息、房屋卖点和给客户看的 presentation material。",
+          },
+          {
+            name: "Rescript",
+            body: "用于文案和话术支持，可协助整理合规客户沟通、listing copy、follow-up 模板和出镜脚本要点。",
+          },
+          {
+            name: "Google Drive forms library",
+            body: "Homix forms 的实时来源，包含空白模板、sample documents 和需要交公司的 documents checklist。",
+          },
+          {
+            name: "Transaction & e-signature tools",
+            body: "用于签字、disclosure、文件流转和 broker review，适用于需要正式签署的交易文件。",
+          },
+          {
+            name: "MLS / listing systems",
+            body: "用于 listing data、status change、required fields 和必须与签署文件一致的房源信息。",
+          },
+        ],
+        formsTitle: "Forms library",
+        formsLead: "以下表格来自 Homix 共享 forms sheet。Blank 是空白表格，Sample 是填写参考；如需修改固定条款或披露语言，请先跟 operations 确认。",
+        blankLabel: "空白表格",
+        sampleLabel: "Sample",
+        formGroups: brokerageFormGroups,
+        submissionTitle: "需要交给公司的 Documents",
+        submissionLead: "以下 checklist 可用于 new listing、pending、closing 和 rental 节点，帮助经纪人提前准备完整文件。",
+        submissionGroups: brokerageSubmissionGroups,
+      },
       socialPlatformsTitle: "社交媒体账号搭建",
       socialPlatforms: [
         {
@@ -1480,6 +2305,106 @@ const zh: Dict = {
           body: "中文主页搭建、本地生活内容、买家教育笔记与房源故事化表达。",
         },
       ],
+      selfBrandingDetail: {
+        eyebrow: "Self branding procedure",
+        title: "每位经纪人上手前，都要先拥有专业统一的个人品牌形象。",
+        lead: "Homix 会为经纪人提供基础品牌物料、邮件签名建议、常用 flyer 模板、Homix 域名入口，以及可选的私人定制 package。目的很简单：让客户第一次看到你，就感到专业、可信、完整。",
+        stepsTitle: "公司提供的个人品牌物料",
+        steps: [
+          {
+            title: "名片设计",
+            body: "公司提供 Homix 品牌名片设计，包含经纪人姓名、英文名、title、电话、邮箱、办公室地址、执照披露、二维码和社交媒体信息。",
+            items: [
+              "经纪人确认姓名、title、电话、邮箱、执照信息和常用社交账号。",
+              "Marketing 团队制作 proof，并在印刷前交由经纪人确认。",
+              "所有名片保持 Homix 品牌一致，让经纪人对外形象更统一。",
+            ],
+          },
+          {
+            title: "邮件签名设置",
+            body: "我们建议每位经纪人在邮件 setting 里填写自己的专业后缀，让客户收到邮件时第一眼就知道你的身份、联系方式和公司信息。",
+            items: [
+              "姓名、职位、direct number、Homix Realty 电话与办公室地址。",
+              "需要时加入 license、公平住房和平等机会相关披露。",
+              "格式保持干净，适配 Gmail、手机邮箱和电脑端邮箱。",
+            ],
+            examples: [
+              {
+                title: "邮件签名设置",
+                body: "建议每位经纪人按统一格式设置邮件签名，提升客户沟通的专业感。",
+                image: "/onboarding/self-branding-email-signature.svg",
+                alt: "Homix 经纪人邮件签名设置示例",
+                width: 1600,
+                height: 720,
+              },
+            ],
+          },
+          {
+            title: "Open House & For Sale sign",
+            body: "公司提供 Open House 和 For Sale sign 的设计，可加入经纪人头像、联系方式、二维码、房源 flyer 区域和必要披露。",
+            items: [
+              "Open House sign 预留头像位置和 A4 flyer 展示区域。",
+              "For Sale sign 包含经纪人资料、联系方式、二维码和社交媒体图标。",
+              "Marketing 会检查视觉清晰度、信息完整度和合规披露。",
+            ],
+            examples: [
+              {
+                title: "Open House sign",
+                body: "公司提供的 Open House sign 设计，预留头像与 flyer 展示位置。",
+                image: "/onboarding/self-branding-open-house-sign.jpg",
+                alt: "Homix Open House sign 设计模板",
+                width: 1600,
+                height: 980,
+              },
+              {
+                title: "For Sale sign",
+                body: "公司提供的 For Sale sign 设计，包含经纪人联系方式与二维码位置。",
+                image: "/onboarding/self-branding-for-sale-sign.jpg",
+                alt: "Homix For Sale sign 设计模板",
+                width: 1600,
+                height: 982,
+              },
+            ],
+          },
+          {
+            title: "常用 flyer 模板",
+            body: "公司提供常用节点的 flyer 模板，帮助经纪人保持曝光，不需要每次从零开始设计。",
+            items: [
+              "Welcome flyer 和 birthday flyer。",
+              "Just Listed、Under Contract / UC 和 Closed flyer。",
+              "Marketing 可协助导出适合社交媒体和打印使用的版本。",
+            ],
+          },
+          {
+            title: "Homix 域名与私人定制 package",
+            body: "经纪人可以通过 Homix 域名入口建立更专业的客户链接，也可以选择私人定制 package 做更完整的个人品牌内容。",
+            items: [
+              "Homix 域名/个人主页入口，让客户更容易记住和打开。",
+              "私人定制 package 可包含个人主页润色、社交模板、短视频策划和房源营销物料。",
+              "符合公司内容规划的经纪人，也可以安排出镜 Homix 公司号。",
+            ],
+          },
+        ],
+        signatureTitle: "建议填写的邮件后缀字段",
+        signatureLines: [
+          "姓名",
+          "Licensed Real Estate Salesperson",
+          "Direct: 个人电话",
+          "Homix Realty",
+          "Tel: (929) 666-9886",
+          "37-20 Prince St, Suite 3H, Flushing, NY 11354",
+        ],
+        flyerTitle: "可提供的 flyer 类型",
+        flyerTypes: [
+          "Welcome flyer",
+          "Birthday flyer",
+          "Just Listed flyer",
+          "Under Contract / UC flyer",
+          "Closed flyer",
+        ],
+        packageTitle: "私人定制 package",
+        packageBody: "如果经纪人想进一步打造个人品牌，Homix 可以协助定制个人主页、社交媒体模板、短视频内容计划、房源营销物料，并在合适选题下安排出镜公司号。",
+      },
     },
     phases: [
       {
@@ -1536,6 +2461,104 @@ const zh: Dict = {
           "用中英双语演练买方咨询与房源推介的话术剧本。",
           "制定你的 90 天业务计划：线索来源、内容节奏与每周行动目标。",
           "在实操中掌握合规要点——代理关系披露、对话中的公平住房原则，以及准确的房源署名。",
+        ],
+        visuals: [
+          {
+            title: "Buyer Boot Camp",
+            subtitle: "买家精英实战营 · 6 weeks · 12 sessions",
+            image: "/training/buyer-bootcamp.jpg",
+            alt: "Buyer Boot Camp 买家精英实战营培训海报",
+            width: 1280,
+            height: 2134,
+          },
+          {
+            title: "The Listing Mastery Bootcamp",
+            subtitle: "6 周系统训练营 · 6 weeks · 12 sessions",
+            image: "/training/listing-bootcamp.jpg",
+            alt: "The Listing Mastery Bootcamp 培训海报",
+            width: 1080,
+            height: 1920,
+          },
+          {
+            title: "纽约地产交易常见问题",
+            subtitle: "陈恒律师 · 2026 年 4 月 15 日 · 12 PM",
+            image: "/training/ny-transaction-pitfalls.jpg",
+            alt: "Homix 纽约地产交易常见问题讲座 flyer",
+            width: 1131,
+            height: 1600,
+          },
+          {
+            title: "房贷过程注意事项",
+            subtitle: "Jing Rao mortgage team · 2 月 13 日",
+            image: "/training/mortgage-process-notes.jpg",
+            alt: "Homix 房贷流程与风险提示讲座 flyer",
+            width: 1079,
+            height: 1600,
+          },
+          {
+            title: "自媒体变现与 AI 运用",
+            subtitle: "Sunny Zhang & Eric Wei · 2026 年 1 月 22 日",
+            image: "/training/ai-media-event.jpg",
+            alt: "Homix 自媒体变现与 AI 运用公开课 flyer",
+            width: 900,
+            height: 1600,
+          },
+          {
+            title: "Listing Appointment Week 3",
+            subtitle: "Judy Markowitz · 4 月 8 日 · 1 PM",
+            image: "/training/listing-appointment-week3.jpg",
+            alt: "Homix 6 周系统训练营 Week 3 listing appointment flyer",
+            width: 898,
+            height: 1600,
+          },
+          {
+            title: "贷款如何帮助经纪人成单",
+            subtitle: "David Wu · 4 月 10 日 · 11 AM",
+            image: "/training/loan-seminar-david-wu.jpg",
+            alt: "Homix 贷款如何帮助地产经纪人成单讲座 flyer",
+            width: 1280,
+            height: 1600,
+          },
+          {
+            title: "不查收入贷款 Week 4",
+            subtitle: "Li Li · 4 月 13 日 · 11 AM",
+            image: "/training/no-income-loan-week4.jpg",
+            alt: "Homix 不查收入贷款项目类别和优势 Week 4 flyer",
+            width: 899,
+            height: 1600,
+          },
+          {
+            title: "线下实战课现场",
+            subtitle: "话术、答疑与交易演练",
+            image: "/training/live-workshop.jpg",
+            alt: "Homix 经纪人在线下 workshop 中学习话术与交易流程",
+            width: 908,
+            height: 1600,
+          },
+          {
+            title: "班级合影",
+            subtitle: "办公室培训与团队学习",
+            image: "/training/training-team.jpg",
+            alt: "Homix 团队成员在办公室培训期间合影",
+            width: 1600,
+            height: 1199,
+          },
+          {
+            title: "办公室带教时刻",
+            subtitle: "实战支持与阶段性 check-in",
+            image: "/training/training-milestone.jpg",
+            alt: "Homix 办公室培训后的带教与交流时刻",
+            width: 1200,
+            height: 1600,
+          },
+          {
+            title: "会议室圆桌培训",
+            subtitle: "办公室集体带教与讨论",
+            image: "/training/roundtable-window-session.jpg",
+            alt: "Homix 经纪人在会议室参加圆桌培训",
+            width: 1199,
+            height: 1600,
+          },
         ],
       },
       {

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="720" viewBox="0 0 1600 720" role="img" aria-labelledby="title desc">
+  <title id="title">Homix email signature setup example</title>
+  <desc id="desc">A clean professional email signature template for Homix agent onboarding.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f3eadc"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#3c2c1f" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="720" fill="#eee8df"/>
+  <rect x="110" y="88" width="1380" height="544" rx="18" fill="url(#paper)" filter="url(#softShadow)"/>
+  <rect x="110" y="88" width="1380" height="94" rx="18" fill="#9f753f"/>
+  <rect x="110" y="150" width="1380" height="32" fill="#9f753f"/>
+
+  <text x="154" y="150" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">EMAIL SIGNATURE</text>
+  <text x="1210" y="150" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="22" text-anchor="end">Gmail settings example</text>
+
+  <line x1="154" y1="262" x2="1446" y2="262" stroke="#d9c7aa" stroke-width="2"/>
+
+  <text x="154" y="338" fill="#1d1b18" font-family="Georgia, 'Times New Roman', serif" font-size="58">First Last</text>
+  <text x="154" y="386" fill="#6e6255" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700">Licensed Real Estate Salesperson</text>
+  <rect x="154" y="424" width="74" height="4" fill="#9f753f"/>
+
+  <text x="154" y="482" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">Direct: 123.456.7890</text>
+  <text x="154" y="524" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">Email: firstname.lastname@homixny.com</text>
+  <text x="154" y="566" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">Web: www.homixny.com/agentname</text>
+
+  <line x1="752" y1="314" x2="752" y2="578" stroke="#d9c7aa" stroke-width="2"/>
+
+  <text x="816" y="342" fill="#111" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="2">HOMIX</text>
+  <text x="818" y="383" fill="#6e6255" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Real Estate NY</text>
+  <text x="818" y="434" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">Tel: (929) 666-9886</text>
+  <text x="818" y="476" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">37-20 Prince St, Suite 3H</text>
+  <text x="818" y="518" fill="#2d2924" font-family="Arial, Helvetica, sans-serif" font-size="26">Flushing, NY 11354</text>
+
+  <g transform="translate(818 556)">
+    <rect x="0" y="0" width="36" height="36" rx="18" fill="#9f753f"/>
+    <text x="18" y="24" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" text-anchor="middle">f</text>
+    <rect x="50" y="0" width="36" height="36" rx="18" fill="#111"/>
+    <text x="68" y="24" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700" text-anchor="middle">in</text>
+    <rect x="100" y="0" width="36" height="36" rx="18" fill="#d13b56"/>
+    <text x="118" y="24" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">IG</text>
+    <rect x="150" y="0" width="36" height="36" rx="18" fill="#111"/>
+    <text x="168" y="24" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">TT</text>
+    <rect x="200" y="0" width="36" height="36" rx="18" fill="#ff2442"/>
+    <text x="218" y="24" fill="#fffaf0" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" text-anchor="middle">RED</text>
+  </g>
+
+  <rect x="1240" y="324" width="156" height="156" rx="10" fill="#fff" stroke="#d9c7aa" stroke-width="3"/>
+  <rect x="1260" y="344" width="30" height="30" fill="#111"/>
+  <rect x="1346" y="344" width="30" height="30" fill="#111"/>
+  <rect x="1260" y="430" width="30" height="30" fill="#111"/>
+  <rect x="1308" y="344" width="18" height="18" fill="#9f753f"/>
+  <rect x="1308" y="382" width="50" height="18" fill="#111"/>
+  <rect x="1298" y="418" width="28" height="18" fill="#111"/>
+  <rect x="1338" y="418" width="18" height="42" fill="#9f753f"/>
+  <rect x="1308" y="486" width="88" height="4" fill="#d9c7aa"/>
+  <text x="1318" y="526" fill="#6e6255" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle">QR / agent link</text>
+
+  <text x="154" y="650" fill="#8a8176" font-family="Arial, Helvetica, sans-serif" font-size="19">Tip: keep fonts simple, include direct contact information, and test the signature on desktop and mobile before using it with clients.</text>
+</svg>
