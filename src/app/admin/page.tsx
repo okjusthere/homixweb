@@ -4,6 +4,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { isAdmin, isAdminConfigured } from "@/lib/admin-auth";
 import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
 import { getOrigin } from "@/lib/site-url";
+import { AdminNav } from "./AdminNav";
 import { Dashboard, type AdminAgent } from "./Dashboard";
 import { LoginForm } from "./LoginForm";
 
@@ -69,6 +70,7 @@ export default async function AdminPage() {
   return (
     <Container className="py-16 sm:py-20">
       <div className="mx-auto max-w-3xl">
+        <AdminNav active="advisors" />
         <Eyebrow>Homix Admin</Eyebrow>
         <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
           Advisors
