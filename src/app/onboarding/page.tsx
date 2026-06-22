@@ -314,13 +314,22 @@ export default async function OnboardingPage() {
         <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-5">
           {o.resources.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 45} className="bg-surface">
-              <div className="h-full p-6">
+              <Link
+                href={`/onboarding/resources/${item.slug}`}
+                className="group flex h-full flex-col p-6 transition-colors hover:bg-paper"
+              >
                 <p className="font-serif text-3xl text-bronze/70">{n2(i)}</p>
                 <h3 className="mt-4 font-serif text-xl leading-tight text-ink">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
-              </div>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{item.body}</p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-bronze transition-[gap] group-hover:gap-2.5">
+                  {t.common.explore}
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>

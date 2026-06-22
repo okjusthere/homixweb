@@ -463,24 +463,31 @@ const en = {
       eyebrow: "How Homix helps",
       title: "Onboarding resources you can actually use.",
       lead: "From your first login to your first closing, Homix gives you a working toolkit rather than a stack of PDFs.",
+      detailComingTitle: "Detailed guide coming soon",
+      detailComingBody: "We're putting together the full walkthrough for this resource. In the meantime, reach out and the office team will help you directly.",
       items: [
         {
+          slug: "brokerage-operations",
           title: "Brokerage operations",
           body: "License sponsorship steps, compliance reminders, E&O guidance, forms, disclosure standards, and a clear escalation path when something feels sensitive.",
         },
         {
+          slug: "marketing-media",
           title: "Marketing & media",
           body: "Profile setup, headshots, intro reels, listing content, bilingual captions, social templates, and help turning neighborhood knowledge into publishable content.",
         },
         {
+          slug: "self-branding",
           title: "Self branding procedure",
           body: "Custom business cards, compliant email signature updates, agent bio polish, For Sale signs, Open House signs, social profile cleanup, and listing-ready brand templates coordinated through the office and marketing team.",
         },
         {
+          slug: "training-library",
           title: "Training library",
           body: "Foundations, buyer and seller playbooks, media lessons, compliance refreshers, and field-ready scripts for consultations, offers, and follow-up.",
         },
         {
+          slug: "mentorship-deal-support",
           title: "Mentorship & deal support",
           body: "Shadowing, role-play, first-call review, listing presentation prep, transaction timeline support, and post-deal debriefs so every close becomes a lesson.",
         },
@@ -1415,24 +1422,31 @@ const zh: Dict = {
       eyebrow: "Homix 如何帮助你",
       title: "真正能用起来的入职资源。",
       lead: "从第一次登录系统到第一笔成交，Homix 给你的不是一叠文件，而是一套可以直接开始工作的工具箱。",
+      detailComingTitle: "详细指南即将上线",
+      detailComingBody: "我们正在整理这项资源的完整说明。在此之前，欢迎联系我们，办公室团队会直接为你提供协助。",
       items: [
         {
+          slug: "brokerage-operations",
           title: "经纪公司运营支持",
           body: "执照挂靠步骤、合规提醒、E&O 指引、表单、披露标准，以及遇到敏感问题时清晰的升级路径。",
         },
         {
+          slug: "marketing-media",
           title: "营销与媒体支持",
           body: "经纪人主页、形象照、自我介绍短片、房源内容、中英双语文案、社交模板，以及把社区知识变成内容的协助。",
         },
         {
+          slug: "self-branding",
           title: "个人品牌流程",
           body: "定制名片、合规邮件签名/后缀改写、经纪人 bio 润色、For Sale sign、Open House sign、社交账号整理，以及可直接用于房源推广的品牌模板，由办公室和营销团队协同完成。",
         },
         {
+          slug: "training-library",
           title: "培训视频库",
           body: "基础课程、买卖双方流程、媒体课程、合规复习，以及可直接用于咨询、报价与跟进的实战话术。",
         },
         {
+          slug: "mentorship-deal-support",
           title: "导师与交易支持",
           body: "跟单 shadowing、话术演练、首次客户电话复盘、listing presentation 准备、交易时间线支持，以及成交后的复盘。",
         },
