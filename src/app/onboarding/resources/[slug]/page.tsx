@@ -82,8 +82,6 @@ export default async function ResourcePage({
                   </p>
                   <a
                     href={brokerageOperations.masterSheetUrl}
-                    target="_blank"
-                    rel="noreferrer"
                     className="mt-7 inline-flex items-center rounded-sm bg-ink px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
                   >
                     {brokerageOperations.masterSheetLabel}
@@ -149,8 +147,6 @@ export default async function ResourcePage({
                 </div>
                 <a
                   href={brokerageOperations.masterSheetUrl}
-                  target="_blank"
-                  rel="noreferrer"
                   className="inline-flex w-fit items-center rounded-sm border border-line px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
                 >
                   {brokerageOperations.masterSheetLabel}
@@ -177,8 +173,6 @@ export default async function ResourcePage({
                           <div className="flex shrink-0 flex-wrap gap-2">
                             <a
                               href={form.blankLink}
-                              target="_blank"
-                              rel="noreferrer"
                               className="rounded-sm bg-surface px-3 py-2 text-xs font-medium text-ink transition-colors hover:bg-ink hover:text-paper"
                             >
                               {brokerageOperations.blankLabel}
@@ -186,8 +180,6 @@ export default async function ResourcePage({
                             {"sampleLink" in form && form.sampleLink ? (
                               <a
                                 href={form.sampleLink}
-                                target="_blank"
-                                rel="noreferrer"
                                 className="rounded-sm border border-line px-3 py-2 text-xs font-medium text-ink transition-colors hover:border-ink"
                               >
                                 {brokerageOperations.sampleLabel}
