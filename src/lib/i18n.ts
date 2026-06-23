@@ -1053,6 +1053,34 @@ const en = {
           body: "Shadowing, role-play, first-call review, listing presentation prep, transaction timeline support, and post-deal debriefs so every close becomes a lesson.",
         },
       ],
+      mentorshipDealSupportDetail: {
+        eyebrow: "Mentorship & deal support",
+        title: "Everything you need to get started.",
+        lead: "From your first day, you are paired with experienced agents and a system built to help you learn faster, build confidence, and close more deals.",
+        items: [
+          {
+            title: "AI Tools & Systems",
+            body: "Access cutting-edge AI tools to streamline marketing, content creation, lead management, and client communication.",
+          },
+          {
+            title: "Social Media Growth",
+            body: "Learn how to build your personal brand and generate business through social media strategies developed from Sunny's 300K+ audience across multiple platforms.",
+          },
+          {
+            title: "One-on-One Mentorship",
+            body: "Work closely with experienced agents through shadowing, role-playing, script practice, and real-life deal reviews.",
+          },
+          {
+            title: "Transaction Support",
+            body: "Receive guidance from contract to closing, ensuring every transaction becomes a valuable learning experience.",
+          },
+          {
+            title: "Sales & Business Development",
+            body: "Master lead generation, listing presentations, buyer consultations, negotiation skills, and business planning to accelerate your growth.",
+          },
+        ],
+        closing: "Our goal is simple: help agents learn faster, build confidence, and close more deals.",
+      },
       marketingMediaDetail: {
         eyebrow: "Marketing & media",
         title: "From profile setup to publish-ready content.",
@@ -2411,6 +2439,34 @@ const zh: Dict = {
           body: "跟单 shadowing、话术演练、首次客户电话复盘、listing presentation 准备、交易时间线支持，以及成交后的复盘。",
         },
       ],
+      mentorshipDealSupportDetail: {
+        eyebrow: "导师与交易支持",
+        title: "开始所需的一切。",
+        lead: "从第一天起，你就与资深经纪人结对，并接入一套帮助你学得更快、更有信心、成交更多的系统。",
+        items: [
+          {
+            title: "AI 工具与系统",
+            body: "使用前沿的 AI 工具，简化营销、内容创作、客户线索管理与客户沟通。",
+          },
+          {
+            title: "社媒成长",
+            body: "学习如何打造个人品牌，并借助源自 Sunny 全平台 30 万+ 粉丝沉淀出的社媒策略，把流量转化为生意。",
+          },
+          {
+            title: "一对一带教",
+            body: "与资深经纪人紧密合作——跟单 shadowing、角色扮演、话术演练，以及真实成交复盘。",
+          },
+          {
+            title: "交易支持",
+            body: "从合同到过户全程指导，让每一笔交易都成为一次有价值的学习。",
+          },
+          {
+            title: "销售与业务拓展",
+            body: "掌握线索开发、Listing Presentation、买家咨询、谈判技巧与业务规划，加速你的成长。",
+          },
+        ],
+        closing: "我们的目标很简单：帮助经纪人学得更快、更有信心、成交更多。",
+      },
       marketingMediaDetail: {
         eyebrow: "营销与媒体支持",
         title: "从主页搭建到可发布内容，帮经纪人真正被看见。",

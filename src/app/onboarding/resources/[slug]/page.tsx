@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { SocialPlatformIcon } from "@/components/ui/SocialPlatformIcon";
 import { getT, messages } from "@/lib/i18n";
 
 export async function generateStaticParams() {
@@ -42,8 +43,12 @@ export default async function ResourcePage({
       : [];
   const brokerageOperations =
     slug === "brokerage-operations" ? o.resources.brokerageOperationsDetail : null;
+  const marketingMedia =
+    slug === "marketing-media" ? o.resources.marketingMediaDetail : null;
   const selfBranding =
     slug === "self-branding" ? o.resources.selfBrandingDetail : null;
+  const mentorshipDealSupport =
+    slug === "mentorship-deal-support" ? o.resources.mentorshipDealSupportDetail : null;
 
   return (
     <>
@@ -67,7 +72,114 @@ export default async function ResourcePage({
         </div>
       </Container>
 
-      {brokerageOperations ? (
+      {marketingMedia ? (
+        <>
+          <section className="border-t border-line bg-surface py-16 sm:py-20">
+            <Container>
+              <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+                <div className="max-w-xl">
+                  <Eyebrow>{marketingMedia.eyebrow}</Eyebrow>
+                  <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
+                    {marketingMedia.workflowTitle}
+                  </h2>
+                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                    {marketingMedia.lead}
+                  </p>
+                </div>
+                <div className="divide-y divide-line border-y border-line">
+                  {marketingMedia.workflows.map((workflow, i) => (
+                    <div key={workflow.title} className="grid gap-5 py-7 md:grid-cols-[0.34fr_0.66fr]">
+                      <div>
+                        <p className="font-serif text-3xl text-bronze/70">
+                          {String(i + 1).padStart(2, "0")}
+                        </p>
+                        <h3 className="mt-3 font-serif text-xl leading-tight text-ink">
+                          {workflow.title}
+                        </h3>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">
+                          {workflow.body}
+                        </p>
+                      </div>
+                      <ul className="space-y-3">
+                        {workflow.items.map((entry) => (
+                          <li key={entry} className="flex gap-3 text-sm leading-relaxed text-ink/85">
+                            <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-bronze" />
+                            <span>{entry}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          <section className="border-t border-line bg-paper py-16 sm:py-20">
+            <Container>
+              <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+                <div className="max-w-xl">
+                  <Eyebrow>{marketingMedia.eyebrow}</Eyebrow>
+                  <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
+                    {marketingMedia.socialTitle}
+                  </h2>
+                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                    {marketingMedia.socialLead}
+                  </p>
+                </div>
+                <div className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+                  {o.resources.socialPlatforms.map((platform) => (
+                    <article key={platform.key} className="bg-surface p-5">
+                      <div className="flex size-12 items-center justify-center rounded-sm border border-line bg-paper shadow-sm">
+                        <SocialPlatformIcon platform={platform.key} />
+                      </div>
+                      <p className="mt-4 font-medium text-ink">{platform.name}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted">
+                        {platform.body}
+                      </p>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </Container>
+          </section>
+
+          <section className="border-t border-line bg-surface py-16 sm:py-20">
+            <Container>
+              <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr]">
+                <div className="max-w-xl">
+                  <Eyebrow>{marketingMedia.eyebrow}</Eyebrow>
+                  <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
+                    {marketingMedia.supportTitle}
+                  </h2>
+                </div>
+                <div className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+                  {marketingMedia.supportItems.map((entry) => (
+                    <div key={entry} className="flex gap-3 bg-paper p-5 text-sm leading-relaxed text-ink/85">
+                      <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-bronze" />
+                      <span>{entry}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
+                >
+                  {t.common.contact}
+                </Link>
+                <Link
+                  href="/onboarding"
+                  className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
+                >
+                  {o.eyebrow}
+                </Link>
+              </div>
+            </Container>
+          </section>
+        </>
+      ) : brokerageOperations ? (
         <>
           <section className="border-t border-line bg-surface py-16 sm:py-20">
             <Container>
@@ -368,6 +480,52 @@ export default async function ResourcePage({
             </Container>
           </section>
         </>
+      ) : mentorshipDealSupport ? (
+        <section className="border-t border-line bg-surface py-16 sm:py-20">
+          <Container>
+            <div className="max-w-3xl">
+              <Eyebrow>{mentorshipDealSupport.eyebrow}</Eyebrow>
+              <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
+                {mentorshipDealSupport.title}
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-muted">
+                {mentorshipDealSupport.lead}
+              </p>
+            </div>
+            <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+              {mentorshipDealSupport.items.map((entry, i) => (
+                <article key={entry.title} className="flex h-full flex-col bg-paper p-7">
+                  <p className="font-serif text-3xl text-bronze/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-4 font-serif text-xl leading-tight text-ink">
+                    {entry.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{entry.body}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-10 rounded-sm border border-line bg-paper p-8 sm:p-10">
+              <p className="font-serif text-2xl leading-snug text-ink sm:text-[1.7rem]">
+                {mentorshipDealSupport.closing}
+              </p>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
+              >
+                {t.common.contact}
+              </Link>
+              <Link
+                href="/onboarding"
+                className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
+              >
+                {o.eyebrow}
+              </Link>
+            </div>
+          </Container>
+        </section>
       ) : trainingVisuals.length ? (
         <section className="border-t border-line bg-surface py-16 sm:py-20">
           <Container>
