@@ -347,13 +347,13 @@ export default async function OnboardingPage() {
                             </a>
                           ) : null}
                         </div>
-                        <div className="relative h-52 overflow-hidden rounded-sm border border-line bg-surface sm:h-48 lg:h-44">
+                        <div className="relative h-52 overflow-hidden rounded-sm border border-line bg-white p-3 sm:h-48 lg:h-44">
                           <Image
                             src={channel.image}
                             alt={channel.alt}
                             fill
                             sizes="(min-width: 1024px) 210px, (min-width: 640px) 35vw, 80vw"
-                            className="object-cover object-center"
+                            className="object-contain"
                           />
                         </div>
                       </article>
