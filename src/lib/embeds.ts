@@ -21,3 +21,8 @@ export const offerTallyIdZh =
 export const buyerCoachUrl =
   process.env.NEXT_PUBLIC_BUYERCOACH_URL?.trim() ||
   "https://cloud.fastgpt.io/chat/share?shareId=eQARSV3riLnetFY59kTaniRg";
+
+export function cloudflareStreamIframeUrl(videoUid: string) {
+  const uid = videoUid.trim();
+  return uid ? `https://iframe.videodelivery.net/${uid}` : "";
+}
