@@ -1246,6 +1246,16 @@ const en = {
               "Marketing prepares the proof and routes it for approval before printing.",
               "Final files stay on brand so every agent looks consistent in front of clients.",
             ],
+            examples: [
+              {
+                title: "Homix business card",
+                body: "Branded business card template with agent name, license disclosure, contact details, QR code, and headshot area.",
+                image: "/onboarding/self-branding-business-card.png",
+                alt: "Homix branded business card template for agent onboarding",
+                width: 1044,
+                height: 600,
+              },
+            ],
           },
           {
             title: "Email signature",
@@ -2631,6 +2641,16 @@ const zh: Dict = {
               "经纪人确认姓名、title、电话、邮箱、执照信息和常用社交账号。",
               "Marketing 团队制作 proof，并在印刷前交由经纪人确认。",
               "所有名片保持 Homix 品牌一致，让经纪人对外形象更统一。",
+            ],
+            examples: [
+              {
+                title: "Homix 名片",
+                body: "Homix 品牌名片模板，含经纪人姓名、执照披露、联系方式、二维码和照片区域。",
+                image: "/onboarding/self-branding-business-card.png",
+                alt: "Homix 经纪人入职品牌名片模板",
+                width: 1044,
+                height: 600,
+              },
             ],
           },
           {
