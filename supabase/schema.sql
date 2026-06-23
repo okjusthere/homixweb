@@ -63,39 +63,3 @@ create table if not exists public.inquiries (
 );
 
 alter table public.inquiries enable row level security;
-
--- Agent-portal training videos: Cloudflare Stream UIDs + metadata. Managed in
--- /admin, read server-side for the gated /portal/training. RLS is on with no
--- policy, so the anon key sees nothing; the server (service role) bypasses it.
-create table if not exists public.training_videos (
-  id text primary key,
-  title text not null,
-  summary text,
-  category text not null default 'Training',
-  cloudflare_uid text,
-  duration text,
-  level text,
-  sort int not null default 100,
-  visible boolean not null default true,
-  created_at timestamptz not null default now()
-);
-alter table public.training_videos enable row level security;
-
--- Agent-portal resource library: links to SOPs, scripts, templates, assets.
-create table if not exists public.resources (
-  id text primary key,
-  title text not null,
-  description text,
-  category text not null default 'Resources',
-  url text not null,
-  sort int not null default 100,
-  visible boolean not null default true,
-  created_at timestamptz not null default now()
-);
-alter table public.resources enable row level security;
-
--- Private bucket for resource files uploaded later (no public read policy; the
--- portal serves them via short-lived signed URLs once the agent is logged in).
-insert into storage.buckets (id, name, public)
-values ('portal-files', 'portal-files', false)
-on conflict (id) do nothing;

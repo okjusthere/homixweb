@@ -402,9 +402,7 @@ export const heroImage = {
 
 /** Agents Portal dropdown in the header nav (labels via i18n common.*). */
 export const toolsNav: NavItem[] = [
-  { key: "portal", href: "/portal" },
   { key: "onboarding", href: "/onboarding" },
-  { key: "training", href: "/training" },
   { key: "offer", href: "/offer" },
   { key: "buyercoach", href: "/buyercoach" },
 ];
