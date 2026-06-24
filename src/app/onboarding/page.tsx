@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -482,18 +483,12 @@ export default async function OnboardingPage() {
               {o.closingBody}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="/join"
-                className="inline-flex items-center rounded-sm bg-bronze px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze-dark"
-              >
+              <Button href="/join" onDark>
                 {t.join.heroCta}
-              </a>
-              <a
-                href="/contact"
-                className="inline-flex items-center rounded-sm border border-paper/30 px-6 py-3 text-sm font-medium text-paper transition-colors hover:border-paper"
-              >
+              </Button>
+              <Button href="/contact" variant="outline" onDark>
                 {t.common.contact}
-              </a>
+              </Button>
             </div>
           </div>
         </Container>

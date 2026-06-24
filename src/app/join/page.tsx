@@ -14,8 +14,7 @@ export const metadata: Metadata = {
     "Join the New York brokerage that hands you an audience. A 1M+ media engine, an in-house studio, real leads, AI tools, and bilingual mentorship — Homix turns agents into local stars.",
 };
 
-const HERO =
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=80";
+const HERO = "/join/hero.jpg";
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");

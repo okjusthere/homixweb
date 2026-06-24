@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SocialPlatformIcon } from "@/components/ui/SocialPlatformIcon";
@@ -163,18 +164,8 @@ export default async function ResourcePage({
                 </div>
               </div>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-                >
-                  {t.common.contact}
-                </Link>
-                <Link
-                  href="/onboarding"
-                  className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-                >
-                  {o.eyebrow}
-                </Link>
+                <Button href="/contact">{t.common.contact}</Button>
+                <Button href="/onboarding" variant="outline">{o.eyebrow}</Button>
               </div>
             </Container>
           </section>
@@ -336,18 +327,8 @@ export default async function ResourcePage({
                 ))}
               </div>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-                >
-                  {t.common.contact}
-                </Link>
-                <Link
-                  href="/onboarding"
-                  className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-                >
-                  {o.eyebrow}
-                </Link>
+                <Button href="/contact">{t.common.contact}</Button>
+                <Button href="/onboarding" variant="outline">{o.eyebrow}</Button>
               </div>
             </Container>
           </section>
@@ -464,18 +445,8 @@ export default async function ResourcePage({
                 </div>
               </div>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-                >
-                  {t.common.contact}
-                </Link>
-                <Link
-                  href="/onboarding"
-                  className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-                >
-                  {o.eyebrow}
-                </Link>
+                <Button href="/contact">{t.common.contact}</Button>
+                <Button href="/onboarding" variant="outline">{o.eyebrow}</Button>
               </div>
             </Container>
           </section>
@@ -511,18 +482,8 @@ export default async function ResourcePage({
               </p>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-              >
-                {t.common.contact}
-              </Link>
-              <Link
-                href="/onboarding"
-                className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-              >
-                {o.eyebrow}
-              </Link>
+              <Button href="/contact">{t.common.contact}</Button>
+              <Button href="/onboarding" variant="outline">{o.eyebrow}</Button>
             </div>
           </Container>
         </section>
@@ -552,18 +513,8 @@ export default async function ResourcePage({
               ))}
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/training"
-                className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-              >
-                {t.common.training}
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-              >
-                {t.common.contact}
-              </Link>
+              <Button href="/training">{t.common.training}</Button>
+              <Button href="/contact" variant="outline">{t.common.contact}</Button>
             </div>
           </Container>
         </section>
@@ -575,12 +526,7 @@ export default async function ResourcePage({
               <p className="mt-4 text-base leading-relaxed text-muted">
                 {o.resources.detailComingBody}
               </p>
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-              >
-                {t.common.contact}
-              </Link>
+              <Button href="/contact" className="mt-8">{t.common.contact}</Button>
             </div>
           </Container>
         </section>
