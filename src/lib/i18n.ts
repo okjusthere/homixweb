@@ -528,6 +528,7 @@ const en = {
     backHome: "Back home",
     viewProfile: "View profile",
     calculator: "Mortgage calculator",
+    agentLogin: "Agent Login",
     langLabel: "中文",
   },
   footer: {
@@ -1932,6 +1933,7 @@ const zh: Dict = {
     backHome: "返回首页",
     viewProfile: "查看主页",
     calculator: "房贷计算器",
+    agentLogin: "经纪人登录",
     langLabel: "EN",
   },
   footer: {

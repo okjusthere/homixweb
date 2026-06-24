@@ -83,6 +83,8 @@ export default async function RootLayout({
           langLabel={t.common.langLabel}
           phone={siteConfig.contact.phone}
           phoneHref={siteConfig.contact.phoneHref}
+          portalLabel={t.common.agentLogin}
+          portalHref={siteConfig.portalUrl}
         />
         <main id="main" className="flex-1">
           {children}

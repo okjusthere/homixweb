@@ -49,6 +49,14 @@ export async function SiteFooter() {
                 </a>
               </p>
             </div>
+            <a
+              href={siteConfig.portalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-bronze"
+            >
+              {common.agentLogin} <span aria-hidden>→</span>
+            </a>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">

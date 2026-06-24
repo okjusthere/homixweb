@@ -30,6 +30,8 @@ export function SiteHeader({
   langLabel,
   phone,
   phoneHref,
+  portalLabel,
+  portalHref,
 }: {
   nav: HeaderNavItem[];
   buy: ToolNavItem[];
@@ -40,6 +42,8 @@ export function SiteHeader({
   langLabel: string;
   phone: string;
   phoneHref: string;
+  portalLabel: string;
+  portalHref: string;
 }) {
   const pathname = usePathname();
   const overHero = pathname === "/" || pathname === "/about";
@@ -130,6 +134,17 @@ export function SiteHeader({
               >
                 {phone}
               </a>
+              <a
+                href={portalHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "rounded-sm border px-4 py-2 text-sm font-medium transition-colors hover:border-bronze hover:bg-bronze hover:text-paper",
+                  light ? "border-paper/50 text-paper" : "border-ink/30 text-ink",
+                )}
+              >
+                {portalLabel}
+              </a>
             </div>
 
             <button
@@ -169,6 +184,16 @@ export function SiteHeader({
             </a>
             <LocaleToggle locale={locale} label={langLabel} className="text-ink" />
           </div>
+          <a
+            href={portalHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
+            className="mt-6 inline-flex items-center justify-center gap-2 rounded-sm border border-ink/30 px-5 py-3.5 text-base font-medium text-ink transition-colors hover:border-bronze hover:bg-bronze hover:text-paper"
+          >
+            {portalLabel}
+            <span aria-hidden>→</span>
+          </a>
         </div>
       )}
     </>

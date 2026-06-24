@@ -13,6 +13,8 @@ export const siteConfig = {
     "Homix is a new kind of New York real estate company — built on media. A full-service brokerage, an agent incubator, and a content studio with a 200K+ audience, powered by data and AI.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homixny.com",
   market: "New York",
+  // The agents' internal portal (homixliving CRM) — a separate deployment.
+  portalUrl: "https://agents.homixny.com",
   contact: {
     phone: "(929) 666-9886",
     phoneHref: "tel:+19296669886",
