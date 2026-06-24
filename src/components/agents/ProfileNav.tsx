@@ -31,7 +31,7 @@ export function ProfileNav({ tabs }: { tabs: { id: string; label: string }[] }) 
   }, [tabs]);
 
   return (
-    <nav className="sticky top-[68px] z-30 border-y border-line bg-surface/90 backdrop-blur-sm">
+    <nav className="sticky top-[68px] z-30 border-y border-line bg-surface/90">
       <div className="flex gap-7 overflow-x-auto py-3.5">
         {tabs.map((t) => (
           <a

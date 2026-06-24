@@ -240,7 +240,7 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
       </section>
 
       {/* Sticky action bar: strength meter + save */}
-      <div className="sticky bottom-0 z-30 space-y-3 border-t border-line bg-surface/95 py-4 backdrop-blur">
+      <div className="sticky bottom-0 z-30 space-y-3 border-t border-line bg-surface/95 py-4">
         <div>
           <div className="flex items-center justify-between text-xs">
             <span className="text-muted">Profile strength / 资料完整度 · {tier}</span>

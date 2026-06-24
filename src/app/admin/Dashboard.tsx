@@ -151,7 +151,7 @@ export function Dashboard({ agents }: { agents: AdminAgent[] }) {
                 <p className="text-sm font-medium text-ink">
                   {a.name}
                   {!a.visible && (
-                    <span className="ml-2 rounded-sm bg-line px-2 py-0.5 text-[11px] text-muted">
+                    <span className="ml-2 rounded-sm bg-line px-2 py-0.5 text-xs text-muted">
                       hidden
                     </span>
                   )}

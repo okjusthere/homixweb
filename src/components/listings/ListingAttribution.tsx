@@ -13,7 +13,7 @@ export function ListingAttribution({
 }) {
   if (!text) return null;
   return (
-    <p className={cn("text-[11px] leading-tight text-muted", className)}>
+    <p className={cn("text-xs leading-tight text-muted", className)}>
       {text}
     </p>
   );

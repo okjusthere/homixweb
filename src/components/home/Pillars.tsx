@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -24,13 +24,10 @@ export async function Pillars() {
               <div className="flex flex-col p-8 sm:p-10">
                 <Eyebrow>{p.eyebrow}</Eyebrow>
                 <h3 className="mt-4 font-serif text-2xl text-ink">{p.title}</h3>
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{p.body}</p>
-                <Link
-                  href={pillarLinks[i] ?? "/contact"}
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze hover:underline"
-                >
+                <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{p.body}</p>
+                <Button href={pillarLinks[i] ?? "/contact"} variant="ghost">
                   {p.cta} →
-                </Link>
+                </Button>
               </div>
             </Reveal>
           ))}

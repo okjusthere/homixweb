@@ -30,11 +30,11 @@ export function ListingCard({
           alt={photo.alt ?? address.full}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
           priority={priority}
         />
         {status !== "Active" && (
-          <span className="absolute left-3 top-3 rounded-sm bg-surface/95 px-2.5 py-1 text-[11px] font-medium uppercase tracking-wider text-ink">
+          <span className="absolute left-3 top-3 rounded-sm bg-surface/95 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink">
             {status}
           </span>
         )}
@@ -44,10 +44,10 @@ export function ListingCard({
         {address.neighborhood && (
           <p className="eyebrow mb-2">{address.neighborhood}</p>
         )}
-        <p className="font-serif text-[1.6rem] leading-none tabular-nums text-ink">
+        <p className="font-serif text-2xl leading-none tabular-nums text-ink">
           {formatPrice(listPrice)}
         </p>
-        <p className="mt-2.5 text-[15px] text-ink/90 underline-offset-4 transition-colors group-hover:text-bronze group-hover:underline">
+        <p className="mt-2.5 text-sm text-ink/90 underline-offset-4 transition-colors group-hover:text-bronze group-hover:underline">
           {address.street}
         </p>
         <p className="mt-1 text-sm text-muted">

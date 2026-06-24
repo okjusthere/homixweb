@@ -36,7 +36,7 @@ export default async function BuyerCoachPage() {
         ) : (
           <div className="rounded-sm border border-line bg-surface p-10 text-center">
             <p className="font-serif text-xl text-ink">{t.buyercoach.fallbackTitle}</p>
-            <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+            <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-muted">
               {t.buyercoach.fallbackBody}
             </p>
             <div className="mt-6">

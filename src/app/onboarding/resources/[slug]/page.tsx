@@ -82,7 +82,7 @@ export default async function ResourcePage({
                   <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                     {marketingMedia.workflowTitle}
                   </h2>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {marketingMedia.lead}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export default async function ResourcePage({
                   <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                     {marketingMedia.socialTitle}
                   </h2>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {marketingMedia.socialLead}
                   </p>
                 </div>
@@ -189,7 +189,7 @@ export default async function ResourcePage({
                   <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                     {brokerageOperations.workflowTitle}
                   </h2>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {brokerageOperations.lead}
                   </p>
                   <a
@@ -230,7 +230,7 @@ export default async function ResourcePage({
                 <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                   {brokerageOperations.toolsTitle}
                 </h2>
-                <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                <p className="mt-5 text-base leading-relaxed text-muted">
                   {brokerageOperations.toolsLead}
                 </p>
               </div>
@@ -253,7 +253,7 @@ export default async function ResourcePage({
                   <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                     {brokerageOperations.formsTitle}
                   </h2>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {brokerageOperations.formsLead}
                   </p>
                 </div>
@@ -314,7 +314,7 @@ export default async function ResourcePage({
                 <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                   {brokerageOperations.submissionTitle}
                 </h2>
-                <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                <p className="mt-5 text-base leading-relaxed text-muted">
                   {brokerageOperations.submissionLead}
                 </p>
               </div>
@@ -362,7 +362,7 @@ export default async function ResourcePage({
                   <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
                     {selfBranding.stepsTitle}
                   </h2>
-                  <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-5 text-base leading-relaxed text-muted">
                     {selfBranding.lead}
                   </p>
                 </div>
@@ -572,7 +572,7 @@ export default async function ResourcePage({
           <Container>
             <div className="mx-auto max-w-2xl rounded-sm border border-dashed border-line bg-paper px-8 py-16 text-center">
               <p className="font-serif text-2xl text-ink">{o.resources.detailComingTitle}</p>
-              <p className="mt-4 text-[15px] leading-relaxed text-muted">
+              <p className="mt-4 text-base leading-relaxed text-muted">
                 {o.resources.detailComingBody}
               </p>
               <Link

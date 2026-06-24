@@ -25,7 +25,7 @@ export async function BrandStory() {
           {t.valueProps.map((prop, i) => (
             <Reveal key={prop.title} delay={i * 60} className="bg-surface p-8 sm:p-10">
               <p className="font-serif text-xl text-ink">{prop.title}</p>
-              <p className="mt-3 text-[15px] leading-relaxed text-muted">{prop.body}</p>
+              <p className="mt-3 text-base leading-relaxed text-muted">{prop.body}</p>
             </Reveal>
           ))}
         </div>

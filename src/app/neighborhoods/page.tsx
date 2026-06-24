@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { PhotoCredit } from "@/components/listings/PhotoCredit";
 import { getT } from "@/lib/i18n";
 import { neighborhoods } from "@/lib/site";
 
@@ -62,11 +63,11 @@ export default async function NeighborhoodsPage() {
                         alt={`${n.name}, New York`}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                       />
                       <div
                         aria-hidden
-                        className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+                        className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
                       />
                       <div className="absolute inset-x-0 bottom-0 p-6">
                         <p className="font-serif text-2xl text-paper">{n.name}</p>
@@ -75,17 +76,11 @@ export default async function NeighborhoodsPage() {
                     </div>
                   </Link>
                   {n.photoCredit && (
-                    <p className="mt-2 text-[11px] leading-tight text-muted">
-                      {t.neighborhoodsPage.photoBy}:{" "}
-                      <a
-                        href={n.photoCreditUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline-offset-2 hover:text-bronze hover:underline"
-                      >
-                        {n.photoCredit}
-                      </a>
-                    </p>
+                    <PhotoCredit
+                      label={t.neighborhoodsPage.photoBy}
+                      credit={n.photoCredit}
+                      url={n.photoCreditUrl}
+                    />
                   )}
                 </Reveal>
               ))}

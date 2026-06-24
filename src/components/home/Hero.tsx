@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getT } from "@/lib/i18n";
 import { heroImage } from "@/lib/site";
 
@@ -18,14 +19,12 @@ export async function Hero() {
       />
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/45"
+        className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-ink/45"
       />
 
       <Container className="relative z-10 pb-20 pt-32">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-paper/75">
-          {t.hero.eyebrow}
-        </p>
-        <h1 className="mt-5 max-w-3xl font-serif text-[2.75rem] font-normal leading-[1.05] tracking-tight text-paper sm:text-6xl">
+        <Eyebrow className="text-paper/75">{t.hero.eyebrow}</Eyebrow>
+        <h1 className="mt-5 max-w-3xl font-serif text-[2.75rem] font-normal leading-[1.05] tracking-tight text-paper sm:text-[4rem]">
           {t.hero.title}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/85">

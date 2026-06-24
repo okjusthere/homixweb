@@ -67,7 +67,7 @@ export default async function AdminPage() {
   }));
 
   return (
-    <Container className="py-16 sm:py-20">
+    <Container className="py-16 md:py-24">
       <div className="mx-auto max-w-3xl">
         <Eyebrow>Homix Admin</Eyebrow>
         <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">

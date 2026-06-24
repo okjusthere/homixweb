@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { getT } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
@@ -11,9 +12,7 @@ export async function ContactBand() {
       <Container>
         <div className="grid gap-12 md:grid-cols-2 md:gap-20">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.18em] text-bronze">
-              {t.contactBand.eyebrow}
-            </p>
+            <Eyebrow className="text-paper/70">{t.contactBand.eyebrow}</Eyebrow>
             <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight sm:text-[2.6rem]">
               {t.contactBand.title}
             </h2>

@@ -37,8 +37,8 @@ export default async function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/45 to-ink/25" />
         <Container className="absolute inset-x-0 bottom-0 pb-12 sm:pb-16">
           <div className="max-w-3xl">
-            <p className="eyebrow text-paper/70">{t.about.eyebrow}</p>
-            <h1 className="mt-4 font-serif text-4xl font-normal leading-[1.05] tracking-tight text-paper sm:text-6xl">
+            <Eyebrow className="text-paper/70">{t.about.eyebrow}</Eyebrow>
+            <h1 className="mt-4 font-serif text-4xl font-normal leading-[1.05] tracking-tight text-paper sm:text-[4rem]">
               {t.about.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-paper/85">
@@ -71,7 +71,7 @@ export default async function AboutPage() {
                 <div className="h-full p-8 sm:p-10">
                   <p className="font-serif text-2xl text-bronze/60">{n2(i)}</p>
                   <p className="mt-3 font-serif text-xl text-ink">{w.title}</p>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted">{w.body}</p>
+                  <p className="mt-3 text-base leading-relaxed text-muted">{w.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -111,7 +111,7 @@ export default async function AboutPage() {
             {t.valueProps.map((p) => (
               <div key={p.title} className="bg-surface p-8 sm:p-10">
                 <p className="font-serif text-xl text-ink">{p.title}</p>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">{p.body}</p>
+                <p className="mt-3 text-base leading-relaxed text-muted">{p.body}</p>
               </div>
             ))}
           </div>

@@ -76,7 +76,7 @@ export default async function OnboardingPage() {
               <Reveal key={item.title} className="bg-paper">
                 <div className="h-full p-7 sm:p-8">
                   <p className="font-serif text-2xl text-ink">{item.title}</p>
-                  <p className="mt-4 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-4 text-base leading-relaxed text-muted">
                     {item.body}
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export default async function OnboardingPage() {
                   <h3 className="mt-3 font-serif text-2xl leading-tight text-ink">
                     {person.name}
                   </h3>
-                  <p className="mt-4 text-[15px] leading-relaxed text-muted">
+                  <p className="mt-4 text-base leading-relaxed text-muted">
                     {person.bio}
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -145,7 +145,7 @@ export default async function OnboardingPage() {
               <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.4rem]">
                 {o.adminTeam.title}
               </h2>
-              <p className="mt-5 text-[15px] leading-relaxed text-muted">
+              <p className="mt-5 text-base leading-relaxed text-muted">
                 {o.adminTeam.lead}
               </p>
             </div>
@@ -198,7 +198,7 @@ export default async function OnboardingPage() {
             <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.45rem]">
               {o.adminChecklist.title}
             </h2>
-            <p className="mt-5 text-[15px] leading-relaxed text-muted">
+            <p className="mt-5 text-base leading-relaxed text-muted">
               {o.adminChecklist.lead}
             </p>
           </div>
@@ -286,7 +286,7 @@ export default async function OnboardingPage() {
                 <h2 className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.55rem]">
                   {o.socialMedia.title}
                 </h2>
-                <p className="mt-5 text-[15px] leading-relaxed text-muted">
+                <p className="mt-5 text-base leading-relaxed text-muted">
                   {o.socialMedia.lead}
                 </p>
                 <div className="mt-7 grid grid-cols-3 gap-px overflow-hidden rounded-sm border border-line bg-line">
@@ -385,12 +385,12 @@ export default async function OnboardingPage() {
                   </h2>
                 </div>
                 <div>
-                  <p className="text-[15px] leading-relaxed text-muted">{p.blurb}</p>
+                  <p className="text-base leading-relaxed text-muted">{p.blurb}</p>
                   <ul className="mt-5 space-y-3">
                     {p.items.map((it) => (
                       <li
                         key={it}
-                        className="flex gap-3 text-[15px] leading-relaxed text-ink/85"
+                        className="flex gap-3 text-base leading-relaxed text-ink/85"
                       >
                         <Check />
                         <span>{it}</span>
@@ -445,7 +445,7 @@ export default async function OnboardingPage() {
               <Link href="/onboarding/buyer-guide" className="group flex h-full flex-col p-8 transition-colors hover:bg-surface">
                 <p className="font-serif text-4xl text-bronze">01</p>
                 <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.buyerGuide.title}</h3>
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{o.buyerGuide.lead}</p>
+                <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{o.buyerGuide.lead}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-bronze transition-gap group-hover:gap-3">
                   Read the buyer guide
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -458,7 +458,7 @@ export default async function OnboardingPage() {
               <Link href="/onboarding/seller-guide" className="group flex h-full flex-col p-8 transition-colors hover:bg-surface">
                 <p className="font-serif text-4xl text-pine">02</p>
                 <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.sellerGuide.title}</h3>
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-muted">{o.sellerGuide.lead}</p>
+                <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{o.sellerGuide.lead}</p>
                 <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-pine transition-gap group-hover:gap-3">
                   Read the seller guide
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>

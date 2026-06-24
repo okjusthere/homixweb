@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
+import { PhotoCredit } from "@/components/listings/PhotoCredit";
 import { getT } from "@/lib/i18n";
 import { neighborhoodGlance, neighborhoods, siteConfig } from "@/lib/site";
 
@@ -80,17 +81,11 @@ export default async function NeighborhoodPage({
           />
         </div>
         {n.photoCredit && (
-          <p className="mt-2 text-[11px] leading-tight text-muted">
-            {t.neighborhoodsPage.photoBy}:{" "}
-            <a
-              href={n.photoCreditUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline-offset-2 hover:text-bronze hover:underline"
-            >
-              {n.photoCredit}
-            </a>
-          </p>
+          <PhotoCredit
+            label={t.neighborhoodsPage.photoBy}
+            credit={n.photoCredit}
+            url={n.photoCreditUrl}
+          />
         )}
 
         <div className="mt-10 space-y-5">
@@ -114,10 +109,10 @@ export default async function NeighborhoodPage({
                 ] as const
               ).map(([key, val]) => (
                 <div key={key}>
-                  <dt className="text-xs uppercase tracking-[0.14em] text-muted">
+                  <dt className="eyebrow text-muted">
                     {t.neighborhoodsPage.glanceLabels[key]}
                   </dt>
-                  <dd className="mt-1.5 text-[15px] leading-relaxed text-ink/85">
+                  <dd className="mt-1.5 text-base leading-relaxed text-ink/85">
                     {val[locale]}
                   </dd>
                 </div>

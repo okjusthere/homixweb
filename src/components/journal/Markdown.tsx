@@ -22,7 +22,7 @@ const components: Components = {
   strong: ({ children }) => (
     <strong className="font-semibold text-ink">{children}</strong>
   ),
-  em: ({ children }) => <em className="text-muted">{children}</em>,
+  em: ({ children }) => <em className="italic">{children}</em>,
   a: ({ href, children }) => (
     <Link
       href={href ?? "#"}

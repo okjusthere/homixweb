@@ -175,7 +175,7 @@ export default async function AgentProfilePage({
           <div>
             {isPlaceholder ? (
               <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-sm border border-line bg-surface">
-                <span className="font-serif text-[5rem] leading-none text-bronze">
+                <span className="font-serif text-7xl leading-none text-bronze">
                   {initialsOf(agent.name)}
                 </span>
                 <span className="eyebrow mt-5">{L.advisor}</span>
@@ -188,7 +188,7 @@ export default async function AgentProfilePage({
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
               </div>
             )}
@@ -196,7 +196,7 @@ export default async function AgentProfilePage({
 
           <div>
             <Eyebrow>{agent.title}</Eyebrow>
-            <h1 className="mt-3 font-serif text-5xl font-normal leading-[1.05] tracking-tight text-ink sm:text-6xl">
+            <h1 className="mt-3 font-serif text-4xl font-normal leading-[1.05] tracking-tight text-ink sm:text-5xl">
               {agent.name}
             </h1>
 
@@ -237,20 +237,14 @@ export default async function AgentProfilePage({
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
               <Button href="#contact">{L.workWith}</Button>
               {agent.phone && (
-                <a
-                  href={`tel:${phoneDigits}`}
-                  className="text-sm text-ink underline-offset-4 transition-colors hover:text-bronze hover:underline"
-                >
+                <Button href={`tel:${phoneDigits}`} variant="ghost">
                   {L.call} {agent.phone}
-                </a>
+                </Button>
               )}
               {agent.email && (
-                <a
-                  href={`mailto:${agent.email}`}
-                  className="text-sm text-ink underline-offset-4 transition-colors hover:text-bronze hover:underline"
-                >
+                <Button href={`mailto:${agent.email}`} variant="ghost">
                   {L.email}
-                </a>
+                </Button>
               )}
             </div>
 
@@ -317,7 +311,7 @@ export default async function AgentProfilePage({
                   alt=""
                   fill
                   sizes="(max-width: 1024px) 100vw, 900px"
-                  className="object-cover transition-transform duration-[700ms] ease-out group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-ink/55 to-transparent" />
                 <div className="absolute bottom-0 left-0 p-7 sm:p-9">

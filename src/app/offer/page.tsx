@@ -29,7 +29,7 @@ export default async function OfferPage() {
       <section className="border-b border-line bg-surface py-16 sm:py-20">
         <Container>
           <Eyebrow>{t.offer.prepEyebrow}</Eyebrow>
-          <h1 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.4rem]">
+          <h1 className="mt-5 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
             {t.offer.prepTitle}
           </h1>
           <div className="mt-12 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
@@ -38,7 +38,7 @@ export default async function OfferPage() {
                 <div className="h-full p-8">
                   <p className="font-serif text-2xl text-bronze/60">{n2(i)}</p>
                   <p className="mt-3 font-serif text-xl text-ink">{p.title}</p>
-                  <p className="mt-3 text-[15px] leading-relaxed text-muted">{p.body}</p>
+                  <p className="mt-3 text-base leading-relaxed text-muted">{p.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -56,17 +56,14 @@ export default async function OfferPage() {
             ) : (
               <div className="rounded-sm border border-line bg-surface p-8 text-center sm:p-10">
                 <p className="font-serif text-xl text-ink">{t.offer.fallbackTitle}</p>
-                <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+                <p className="mx-auto mt-3 max-w-md text-base leading-relaxed text-muted">
                   {t.offer.fallbackBody}
                 </p>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
                   <Button href="/contact">{t.offer.talkToUs}</Button>
-                  <a
-                    href={phoneHref}
-                    className="text-sm font-medium text-ink underline-offset-4 hover:text-bronze hover:underline"
-                  >
+                  <Button href={phoneHref} variant="ghost">
                     {phone}
-                  </a>
+                  </Button>
                 </div>
               </div>
             )}

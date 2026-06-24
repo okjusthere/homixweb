@@ -26,7 +26,7 @@ export default async function JoinPage() {
   return (
     <>
       {/* Hero */}
-      <Container className="py-14 sm:py-20">
+      <Container className="py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
             <Eyebrow>{t.join.eyebrow}</Eyebrow>
@@ -84,7 +84,7 @@ export default async function JoinPage() {
               <div className="h-full p-8">
                 <p className="font-serif text-2xl text-bronze/60">{n2(i)}</p>
                 <p className="mt-3 font-serif text-xl leading-snug text-ink">{b.title}</p>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">{b.body}</p>
+                <p className="mt-3 text-base leading-relaxed text-muted">{b.body}</p>
               </div>
             </Reveal>
           ))}
@@ -143,7 +143,7 @@ export default async function JoinPage() {
                 className="grid gap-2 border-b border-line py-6 md:grid-cols-[0.9fr_1.1fr] md:gap-10"
               >
                 <p className="font-serif text-lg leading-snug text-ink">{f.q}</p>
-                <p className="text-[15px] leading-relaxed text-muted">{f.a}</p>
+                <p className="text-base leading-relaxed text-muted">{f.a}</p>
               </div>
             ))}
           </div>
@@ -155,9 +155,7 @@ export default async function JoinPage() {
         <Container>
           <div className="grid gap-12 md:grid-cols-2 md:gap-20">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-bronze">
-                {t.join.ctaEyebrow}
-              </p>
+              <Eyebrow className="text-paper/70">{t.join.ctaEyebrow}</Eyebrow>
               <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight sm:text-[2.6rem]">
                 {t.join.ctaTitle}
               </h2>

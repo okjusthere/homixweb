@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
+import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { ListingGallery } from "@/components/listings/ListingGallery";
 import { ListingAttribution } from "@/components/listings/ListingAttribution";
@@ -76,12 +76,9 @@ export default async function ListingDetailPage({
 
   return (
     <Container className="py-10 sm:py-14">
-      <Link
-        href="/listings"
-        className="text-sm text-muted underline-offset-4 transition-colors hover:text-bronze hover:underline"
-      >
+      <Button variant="ghost" href="/listings">
         ← All listings
-      </Link>
+      </Button>
 
       <div className="mt-6">
         <ListingGallery photos={listing.photos} alt={address.full} />
@@ -97,7 +94,7 @@ export default async function ListingDetailPage({
                   {address.neighborhood}, {address.state}
                 </p>
               )}
-              <h1 className="font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-4xl">
+              <h1 className="font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
                 {address.street}
               </h1>
               <p className="mt-1 text-muted">
@@ -108,12 +105,9 @@ export default async function ListingDetailPage({
               <p className="font-serif text-3xl tabular-nums text-ink">
                 {formatPrice(listPrice)}
               </p>
-              <Link
-                href="/calculator"
-                className="mt-1 inline-block text-sm text-bronze underline-offset-4 hover:underline"
-              >
+              <Button variant="ghost" href="/calculator" className="mt-1">
                 Estimate monthly payment →
-              </Link>
+              </Button>
             </div>
           </div>
 
@@ -141,7 +135,7 @@ export default async function ListingDetailPage({
             <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
               {specs.map((s) => (
                 <div key={s.label} className="bg-surface p-4">
-                  <dt className="text-xs uppercase tracking-wide text-muted">
+                  <dt className="eyebrow text-muted">
                     {s.label}
                   </dt>
                   <dd className="mt-1 text-sm text-ink">{s.value}</dd>
@@ -151,14 +145,9 @@ export default async function ListingDetailPage({
           </div>
 
           <div className="mt-8">
-            <a
-              href={mapHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-bronze underline-offset-4 hover:underline"
-            >
+            <Button variant="ghost" href={mapHref}>
               View on map →
-            </a>
+            </Button>
           </div>
 
           <div className="mt-10 border-t border-line pt-5">

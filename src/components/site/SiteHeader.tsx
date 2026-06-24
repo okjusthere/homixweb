@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/i18n";
+import { Eyebrow } from "@/components/ui/Eyebrow";
 import { LocaleToggle } from "./LocaleToggle";
 
 export interface HeaderNavItem {
@@ -68,7 +69,7 @@ export function SiteHeader({
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-colors duration-200",
-          solid ? "bg-surface/95 backdrop-blur-sm" : "bg-transparent",
+          solid ? "bg-surface/95" : "bg-transparent",
         )}
       >
         <div
@@ -223,7 +224,7 @@ function NavDropdown({
         </button>
       )}
       <div className="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition-opacity duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
-        <div className="overflow-hidden rounded-sm border border-line bg-surface py-1.5 shadow-lg">
+        <div className="overflow-hidden rounded-sm border border-line bg-surface py-1.5">
           {items.map((it) => (
             <Link
               key={it.href}
@@ -251,9 +252,7 @@ function MobileSection({
 }) {
   return (
     <>
-      <p className="mb-1 mt-6 text-xs uppercase tracking-[0.14em] text-muted first:mt-0">
-        {label}
-      </p>
+      <Eyebrow className="mb-1 mt-6 first:mt-0">{label}</Eyebrow>
       {items.map((it) => (
         <Link
           key={it.href}

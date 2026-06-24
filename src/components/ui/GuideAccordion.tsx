@@ -56,6 +56,7 @@ function AccordionItem({
         onClick={() => setOpen((v) => !v)}
         className="flex w-full items-center gap-4 py-6 text-left"
         aria-expanded={open}
+        aria-controls={`guide-panel-${index}`}
       >
         <span
           className={`font-serif text-2xl tabular-nums ${accentColor === "bronze" ? "text-bronze" : "text-pine"}`}
@@ -69,11 +70,11 @@ function AccordionItem({
       </button>
 
       {open && (
-        <div className="pb-7 pl-12">
-          <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
+        <div id={`guide-panel-${index}`} className="pb-7 pl-12">
+          <p className="text-base leading-relaxed text-muted">{step.body}</p>
           <ul className="mt-5 space-y-3">
             {step.items.map((it) => (
-              <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
+              <li key={it} className="flex gap-3 text-base leading-relaxed text-muted">
                 <Check />
                 <span>{it}</span>
               </li>

@@ -16,7 +16,7 @@ export function Wordmark({
       onClick={onClick}
       aria-label={`${siteConfig.name} — home`}
       className={cn(
-        "font-serif text-[1.45rem] leading-none tracking-tight transition-colors",
+        "font-serif text-2xl leading-none tracking-tight transition-colors",
         className,
       )}
     >

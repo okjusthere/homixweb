@@ -42,7 +42,7 @@ export async function TeamTeaser() {
                         alt={agent.name}
                         fill
                         sizes="(max-width: 640px) 50vw, 200px"
-                        className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                        className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                       />
                     </div>
                     <p className="mt-3 text-sm font-medium text-ink transition-colors group-hover:text-bronze">

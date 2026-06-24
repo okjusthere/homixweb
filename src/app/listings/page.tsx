@@ -85,10 +85,8 @@ export default async function ListingsPage({
           href="/sell"
           className="group block w-full shrink-0 rounded-sm border border-line bg-surface p-6 transition-colors hover:border-bronze lg:max-w-xs"
         >
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-bronze">
-            {t.sell.listingsCta.kicker}
-          </p>
-          <p className="mt-3 text-[15px] leading-relaxed text-ink/85">
+          <Eyebrow>{t.sell.listingsCta.kicker}</Eyebrow>
+          <p className="mt-3 text-base leading-relaxed text-ink/85">
             {t.sell.listingsCta.line}
           </p>
           <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors group-hover:text-bronze">

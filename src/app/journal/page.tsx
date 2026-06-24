@@ -50,7 +50,7 @@ export default async function JournalPage() {
                   alt={post.title[locale]}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
               </div>
               <p className="eyebrow mt-4">{post.category[locale]}</p>

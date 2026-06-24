@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
@@ -64,10 +65,10 @@ export default async function BuyerGuidePage() {
                   </h2>
                 </div>
                 <div>
-                  <p className="text-[15px] leading-relaxed text-muted">{step.body}</p>
+                  <p className="text-base leading-relaxed text-muted">{step.body}</p>
                   <ul className="mt-5 space-y-3">
                     {step.items.map((it) => (
-                      <li key={it} className="flex gap-3 text-[15px] leading-relaxed text-ink/85">
+                      <li key={it} className="flex gap-3 text-base leading-relaxed text-ink/85">
                         <Check />
                         <span>{it}</span>
                       </li>
@@ -86,21 +87,13 @@ export default async function BuyerGuidePage() {
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="font-serif text-2xl text-ink">Ready to find your home?</p>
-              <p className="mt-2 text-[15px] text-muted">Talk to a Homix advisor — no pressure, no obligation.</p>
+              <p className="mt-2 text-base text-muted">Talk to a Homix advisor — no pressure, no obligation.</p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link
-                href="/listings"
-                className="inline-flex items-center rounded-sm bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-bronze"
-              >
-                Browse listings
-              </Link>
-              <Link
-                href="/contact"
-                className="inline-flex items-center rounded-sm border border-line px-6 py-3 text-sm font-medium text-ink transition-colors hover:border-ink"
-              >
+              <Button href="/listings">Browse listings</Button>
+              <Button href="/contact" variant="outline">
                 Contact us
-              </Link>
+              </Button>
             </div>
           </div>
         </Container>

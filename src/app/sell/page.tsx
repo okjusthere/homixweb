@@ -33,31 +33,24 @@ export default async function SellPage() {
           <p className="mt-6 text-xl leading-relaxed text-muted">{t.sell.lead}</p>
           <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Button href="#valuation">{t.sell.heroCta}</Button>
-            <a
-              href={phoneHref}
-              className="text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze hover:underline"
-            >
+            <Button href={phoneHref} variant="ghost">
               {t.sell.orCall} {phone}
-            </a>
+            </Button>
           </div>
         </div>
       </Container>
 
       {/* Proof band */}
-      <section className="border-y border-line bg-surface py-16 text-ink sm:py-20">
+      <section className="border-y border-line bg-surface py-16 text-ink sm:py-24">
         <Container>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
-            {t.sell.proof.eyebrow}
-          </p>
+          <Eyebrow>{t.sell.proof.eyebrow}</Eyebrow>
           <div className="mt-8 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
             {t.sell.proof.items.map((s, i) => (
               <Reveal key={s.label} delay={i * 60}>
                 <p className="font-serif text-2xl leading-tight text-ink sm:text-[2rem]">
                   {s.value}
                 </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted">
-                  {s.label}
-                </p>
+                <Eyebrow className="mt-2">{s.label}</Eyebrow>
               </Reveal>
             ))}
           </div>
@@ -80,7 +73,7 @@ export default async function SellPage() {
                 <p className="mt-3 font-serif text-xl leading-snug text-ink">
                   {a.headline}
                 </p>
-                <p className="mt-3 text-[15px] leading-relaxed text-muted">{a.body}</p>
+                <p className="mt-3 text-base leading-relaxed text-muted">{a.body}</p>
               </div>
             </Reveal>
           ))}
@@ -115,9 +108,7 @@ export default async function SellPage() {
         <Container>
           <div className="grid gap-12 md:grid-cols-2 md:gap-20">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.18em] text-bronze">
-                {t.sell.valuationEyebrow}
-              </p>
+              <Eyebrow className="text-paper/70">{t.sell.valuationEyebrow}</Eyebrow>
               <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight sm:text-[2.6rem]">
                 {t.sell.valuationTitle}
               </h2>

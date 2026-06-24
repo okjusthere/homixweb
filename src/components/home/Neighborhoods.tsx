@@ -36,11 +36,11 @@ export async function Neighborhoods() {
                     alt={`${n.name}, New York`}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                   />
                   <div
                     aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent"
                   />
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <p className="font-serif text-2xl text-paper">{n.name}</p>
@@ -49,7 +49,7 @@ export async function Neighborhoods() {
                 </div>
               </Link>
               {n.photoCredit && (
-                <p className="mt-2 text-[11px] leading-tight text-muted">
+                <p className="mt-2 text-xs leading-tight text-muted">
                   Photo:{" "}
                   <a
                     href={n.photoCreditUrl}
