@@ -110,7 +110,7 @@ export default async function OnboardingPage() {
                   />
                 </div>
                 <div>
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
                     {person.role}
                   </p>
                   <h3 className="mt-3 font-serif text-2xl leading-tight text-ink">
@@ -176,7 +176,7 @@ export default async function OnboardingPage() {
                       </div>
                     )}
                     <p className="mt-5 font-serif text-xl text-ink">{member.name}</p>
-                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+                    <p className="mt-1 text-xs font-medium uppercase tracking-[0.14em] text-muted">
                       {member.role}
                     </p>
                     <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -316,7 +316,7 @@ export default async function OnboardingPage() {
                   ))}
                 </div>
                 <div className="mt-6">
-                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-bronze">
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted">
                     {o.socialMedia.channelsTitle}
                   </p>
                   <div className="mt-3 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
@@ -446,7 +446,7 @@ export default async function OnboardingPage() {
                 <p className="font-serif text-4xl text-bronze">01</p>
                 <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.buyerGuide.title}</h3>
                 <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{o.buyerGuide.lead}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-bronze transition-gap group-hover:gap-3">
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-bronze transition-[gap] group-hover:gap-3">
                   Read the buyer guide
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -459,7 +459,7 @@ export default async function OnboardingPage() {
                 <p className="font-serif text-4xl text-pine">02</p>
                 <h3 className="mt-5 font-serif text-2xl leading-tight text-ink">{o.sellerGuide.title}</h3>
                 <p className="mt-3 flex-1 text-base leading-relaxed text-muted">{o.sellerGuide.lead}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-pine transition-gap group-hover:gap-3">
+                <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-pine transition-[gap] group-hover:gap-3">
                   Read the seller guide
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
                     <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />

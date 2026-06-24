@@ -130,7 +130,7 @@ export default async function ResourcePage({
                 <div className="grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
                   {o.resources.socialPlatforms.map((platform) => (
                     <article key={platform.key} className="bg-surface p-5">
-                      <div className="flex size-12 items-center justify-center rounded-sm border border-line bg-paper shadow-sm">
+                      <div className="flex size-12 items-center justify-center rounded-sm border border-line bg-paper">
                         <SocialPlatformIcon platform={platform.key} />
                       </div>
                       <p className="mt-4 font-medium text-ink">{platform.name}</p>
