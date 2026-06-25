@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { journalPosts } from "@/content/journal/posts";
+import { featuredDevelopments } from "@/data/featured-developments";
 import { listings } from "@/lib/listings";
+import { newDevelopmentBasePath, newDevelopmentHref } from "@/lib/new-developments";
 import { neighborhoods, siteConfig } from "@/lib/site";
 
 /**
@@ -12,6 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     "",
     "/listings",
+    newDevelopmentBasePath,
     "/sell",
     "/agents",
     "/neighborhoods",
@@ -42,6 +45,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })),
     ...neighborhoods.map((n) => ({
       url: `${base}/neighborhoods/${n.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...featuredDevelopments.map((building) => ({
+      url: `${base}${newDevelopmentHref(building.slug)}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

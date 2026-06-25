@@ -816,6 +816,7 @@ const en = {
   buyMenu: [
     { title: "Browse homes", desc: "Search every home for sale" },
     { title: "Neighborhoods", desc: "Guides to the areas we cover" },
+    { title: "New Development", desc: "Shareable condo project pages" },
     { title: "Mortgage calculator", desc: "Estimate your monthly payment" },
   ],
   onboarding: {
@@ -2221,6 +2222,7 @@ const zh: Dict = {
   buyMenu: [
     { title: "搜索房源", desc: "查找全部在售房源" },
     { title: "社区指南", desc: "我们覆盖区域的本地指南" },
+    { title: "纽约新盘", desc: "可转发给客户的项目页" },
     { title: "房贷计算器", desc: "估算你的月供" },
   ],
   onboarding: {

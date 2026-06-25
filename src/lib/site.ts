@@ -60,7 +60,12 @@ export const primaryNav: NavItem[] = [
 ];
 
 /** "Buy" dropdown items (labels/descs via i18n buyMenu, hrefs here, same order). */
-export const buyNav: string[] = ["/listings", "/neighborhoods", "/calculator"];
+export const buyNav: string[] = [
+  "/listings",
+  "/neighborhoods",
+  "/NewDevelopment",
+  "/calculator",
+];
 
 export const footerNav: { headingKey: string; links: NavItem[] }[] = [
   {
