@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
+import { FeaturedDevelopments } from "@/components/neighborhoods/FeaturedDevelopments";
 import { getT } from "@/lib/i18n";
 import { neighborhoods } from "@/lib/site";
 
@@ -88,6 +89,8 @@ export default async function NeighborhoodsPage() {
           </section>
         );
       })}
+
+      <FeaturedDevelopments locale={locale} />
 
       {/* How we read a neighborhood */}
       <section className="mt-20 border-t border-line pt-16 sm:mt-24 sm:pt-20">
