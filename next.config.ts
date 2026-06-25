@@ -25,8 +25,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // /offers and /offer are the same thing.
-      { source: "/offers", destination: "/offer", permanent: true },
+      // /offer (and its /offers alias) moved into the gated agent portal.
+      { source: "/offer", destination: "https://agents.homixny.com/offer", permanent: false },
+      { source: "/offers", destination: "https://agents.homixny.com/offer", permanent: false },
     ];
   },
 };

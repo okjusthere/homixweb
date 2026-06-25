@@ -24,8 +24,6 @@ export function SiteHeader({
   nav,
   buy,
   buyLabel,
-  tools,
-  toolsLabel,
   locale,
   langLabel,
   phone,
@@ -36,8 +34,6 @@ export function SiteHeader({
   nav: HeaderNavItem[];
   buy: ToolNavItem[];
   buyLabel: string;
-  tools: ToolNavItem[];
-  toolsLabel: string;
   locale: Locale;
   langLabel: string;
   phone: string;
@@ -116,7 +112,6 @@ export function SiteHeader({
                   {link.label}
                 </Link>
               ))}
-              <NavDropdown label={toolsLabel} items={tools} light={light} />
             </nav>
 
             <div className="hidden items-center gap-5 md:flex">
@@ -176,7 +171,6 @@ export function SiteHeader({
                 {link.label}
               </Link>
             ))}
-            <MobileSection label={toolsLabel} items={tools} onNavigate={close} />
           </nav>
           <div className="mt-8 flex items-center justify-between">
             <a href={phoneHref} className="text-lg font-medium text-bronze">

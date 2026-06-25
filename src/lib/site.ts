@@ -68,7 +68,6 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "listings", href: "/listings" },
       { key: "sell", href: "/sell" },
-      { key: "offer", href: "/offer" },
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "advisors", href: "/agents" },
       { key: "journal", href: "/journal" },
@@ -79,7 +78,6 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "about", href: "/about" },
       { key: "join", href: "/join" },
-      { key: "buyercoach", href: "/buyercoach" },
       { key: "calculator", href: "/calculator" },
       { key: "contact", href: "/contact" },
     ],
@@ -402,12 +400,6 @@ export const heroImage = {
   alt: "A bright, contemporary New York home at dusk",
 };
 
-/** Agents Portal dropdown in the header nav (labels via i18n common.*). */
-export const toolsNav: NavItem[] = [
-  { key: "onboarding", href: "/onboarding" },
-  { key: "offer", href: "/offer" },
-  { key: "buyercoach", href: "/buyercoach" },
-];
 
 /** Evergreen "at a glance" facts per neighborhood (durable, not prices). */
 export const neighborhoodGlance: Record<
