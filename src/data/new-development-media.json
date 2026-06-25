@@ -1,0 +1,1157 @@
+{
+  "waldorf-astoria-residences-new-york": {
+    "images": [
+      {
+        "id": "bath-view",
+        "src": "/new-development/waldorf-astoria-residences-new-york/images/bath-view.webp",
+        "caption": "Primary bath with Park Avenue atmosphere",
+        "alt": "Primary bath with Park Avenue atmosphere",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2023/09/WANY_Primary_Bathroom_with_view_Vignette-1622648597-scaled.jpg",
+        "width": 2000,
+        "height": 2500
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/waldorf-astoria-residences-new-york/images/lobby.webp",
+        "caption": "Restored residential lobby",
+        "alt": "Restored residential lobby",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2023/09/007_Resi_Main_Lobby_001_E2_7k_CMYK-1579475147.jpg",
+        "width": 2000,
+        "height": 1125
+      },
+      {
+        "id": "terrace",
+        "src": "/new-development/waldorf-astoria-residences-new-york/images/terrace.webp",
+        "caption": "20th-floor terrace amenity",
+        "alt": "20th-floor terrace amenity",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2023/09/004_20th_Floor_Terrace_Stage_E3_7k_2-1654474919.png",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-2026-2126",
+        "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/residence-2026-2126.png",
+        "title": "Residence 2026-2126",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/04/2026-2126_Final.pdf",
+        "width": 1390,
+        "height": 1800
+      },
+      {
+        "id": "residence-2806-4306",
+        "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/residence-2806-4306.png",
+        "title": "Residence 2806-4306",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/04/2806-4306-_Final.pdf",
+        "width": 1390,
+        "height": 1800
+      },
+      {
+        "id": "residence-2911-4311",
+        "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/residence-2911-4311.png",
+        "title": "Residence 2911-4311",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/03/2911-4311_For-listings.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-4105-4505",
+        "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/residence-4105-4505.png",
+        "title": "Residence 4105-4505",
+        "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/04/4105-4505-For-Listings.pdf",
+        "width": 1600,
+        "height": 1236
+      }
+    ]
+  },
+  "the-greenwich-by-rafael-vinoly": {
+    "images": [
+      {
+        "id": "tower",
+        "src": "/new-development/the-greenwich-by-rafael-vinoly/images/tower.webp",
+        "caption": "Rafael Vinoly tower form",
+        "alt": "Rafael Vinoly tower form",
+        "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2024/01/Top-Hero.jpg",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/the-greenwich-by-rafael-vinoly/images/lobby.webp",
+        "caption": "Lobby detail",
+        "alt": "Lobby detail",
+        "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2023/12/MARCH_125GS_Lobby-Detail_FINAL-V2.jpg",
+        "width": 2000,
+        "height": 2000
+      },
+      {
+        "id": "amenity",
+        "src": "/new-development/the-greenwich-by-rafael-vinoly/images/amenity.webp",
+        "caption": "Amenity floors",
+        "alt": "Amenity floors",
+        "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2024/01/MARCH_125GS_Amenity-Floors_FINAL-V2.jpg",
+        "width": 2000,
+        "height": 800
+      }
+    ],
+    "floorPlans": []
+  },
+  "one-high-line": {
+    "images": [
+      {
+        "id": "hero-north",
+        "src": "/new-development/one-high-line/images/hero-north.webp",
+        "caption": "Two-tower skyline view",
+        "alt": "Two-tower skyline view",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/10/Hero-North-Extended-1.jpg",
+        "width": 783,
+        "height": 925
+      },
+      {
+        "id": "interior-wide",
+        "src": "/new-development/one-high-line/images/interior-wide.webp",
+        "caption": "Interior and Hudson River light",
+        "alt": "Interior and Hudson River light",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/11/04_OneHighLine_Homepage-Single-Image-Landscape-Wide.jpg",
+        "width": 2000,
+        "height": 1125
+      },
+      {
+        "id": "residence-gallery",
+        "src": "/new-development/one-high-line/images/residence-gallery.webp",
+        "caption": "Residence gallery view",
+        "alt": "Residence gallery view",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/11/05_OneHighLine_Homepage-Carousel-1.jpg",
+        "width": 2000,
+        "height": 1408
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "west-6c",
+        "src": "/new-development/one-high-line/floorplans/west-6c.png",
+        "title": "West Tower Residence W6C",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/12/OneHighLine_Interactive_West_TotalW6C.png",
+        "width": 1600,
+        "height": 1304
+      },
+      {
+        "id": "east-12f",
+        "src": "/new-development/one-high-line/floorplans/east-12f.png",
+        "title": "East Tower Residence E12F",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/12/E12F-image-pdf.jpg",
+        "width": 1408,
+        "height": 1088
+      },
+      {
+        "id": "east-15b",
+        "src": "/new-development/one-high-line/floorplans/east-15b.png",
+        "title": "East Tower Residence E15B",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2025/04/E15B.jpg",
+        "width": 1600,
+        "height": 1253
+      },
+      {
+        "id": "west-22c",
+        "src": "/new-development/one-high-line/floorplans/west-22c.png",
+        "title": "West Tower Residence W22C",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2023/06/OneHighLine_Interactive_West_Total-W22C.png",
+        "width": 1600,
+        "height": 1189
+      },
+      {
+        "id": "east-18a",
+        "src": "/new-development/one-high-line/floorplans/east-18a.png",
+        "title": "East Tower Residence E18A",
+        "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2025/07/E18A.jpg",
+        "width": 1600,
+        "height": 1369
+      }
+    ]
+  },
+  "one-manhattan-square": {
+    "images": [
+      {
+        "id": "residence-living",
+        "src": "/new-development/one-manhattan-square/images/residence-living.webp",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/190603_EJ_OMS-0451_MEDIUM-RES.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "amenity",
+        "src": "/new-development/one-manhattan-square/images/amenity.webp",
+        "caption": "Amenity interior",
+        "alt": "Amenity interior",
+        "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/3O2A0024_MEDIUM_RES-1.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "pool",
+        "src": "/new-development/one-manhattan-square/images/pool.webp",
+        "caption": "Indoor amenity pool",
+        "alt": "Indoor amenity pool",
+        "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/3O2A0273_MEDIUM_RES.jpg",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": []
+  },
+  "the-west-residence-club": {
+    "images": [
+      {
+        "id": "living-room",
+        "src": "/new-development/the-west-residence-club/images/living-room.webp",
+        "caption": "Residence 514 living room",
+        "alt": "Residence 514 living room",
+        "sourceUrl": "https://cms.547west47.com/uploads/images/_1800x1137_crop_center-center_100_line/547W47_514-Living-Room-with-Kendall_credit-Donna-Dotan_crop.jpg",
+        "width": 1800,
+        "height": 1137
+      },
+      {
+        "id": "studio-home-office",
+        "src": "/new-development/the-west-residence-club/images/studio-home-office.webp",
+        "caption": "Studio residence home office area",
+        "alt": "Studio residence home office area",
+        "sourceUrl": "https://cms.547west47.com/uploads/images/_992x1486_crop_center-center_100_line/547W47_Studio-718-Home-Office-Area_ASH-Turnkey-Model_Credit-Max-Burkhalter.jpg",
+        "width": 992,
+        "height": 1486
+      },
+      {
+        "id": "residence-club",
+        "src": "/new-development/the-west-residence-club/images/residence-club.webp",
+        "caption": "Residence Club lounge",
+        "alt": "Residence Club lounge",
+        "sourceUrl": "https://cms.547west47.com/uploads/images/Residences-Club/_1800x1200_crop_center-center_100_line/22030_press_547w47_5-18-22_0026.jpg",
+        "width": 1800,
+        "height": 1200
+      }
+    ],
+    "floorPlans": []
+  },
+  "720-west-end-avenue-new-york": {
+    "images": [
+      {
+        "id": "residence-living",
+        "src": "/new-development/720-west-end-avenue-new-york/images/residence-living.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://720westend.com/wp-content/uploads/Residences_01-1536x768.jpg",
+        "width": 1536,
+        "height": 768
+      },
+      {
+        "id": "penthouse-living",
+        "src": "/new-development/720-west-end-avenue-new-york/images/penthouse-living.webp",
+        "caption": "Penthouse living room",
+        "alt": "Penthouse living room",
+        "sourceUrl": "https://720westend.com/wp-content/uploads/720WEA-Penthouse-Living.jpg",
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "id": "penthouse-terrace",
+        "src": "/new-development/720-west-end-avenue-new-york/images/penthouse-terrace.webp",
+        "caption": "Penthouse terrace",
+        "alt": "Penthouse terrace",
+        "sourceUrl": "https://720westend.com/wp-content/uploads/720WEA-Penthouse-Terrace.jpg",
+        "width": 1350,
+        "height": 1000
+      }
+    ],
+    "floorPlans": []
+  },
+  "sutton-tower": {
+    "images": [
+      {
+        "id": "tower-hero",
+        "src": "/new-development/sutton-tower/images/tower-hero.webp",
+        "caption": "Sutton Tower exterior",
+        "alt": "Sutton Tower exterior",
+        "sourceUrl": "https://cms.suttontower.com/uploads/_1800x1000_crop_center-center_100_line/ST_Home_Hero.jpg",
+        "width": 1800,
+        "height": 1000
+      },
+      {
+        "id": "living-wide",
+        "src": "/new-development/sutton-tower/images/living-wide.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://cms.suttontower.com/uploads/_1800x1200_crop_center-center_100_line/LivingWide.jpg",
+        "width": 1800,
+        "height": 1200
+      },
+      {
+        "id": "kitchen-wide",
+        "src": "/new-development/sutton-tower/images/kitchen-wide.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://cms.suttontower.com/uploads/_1800x1500_crop_center-center_100_line/KitchenWide.jpg",
+        "width": 1800,
+        "height": 1500
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-15-18b",
+        "src": "/new-development/sutton-tower/floorplans/residence-15-18b.png",
+        "title": "Residence 15-18B",
+        "sourceUrl": "https://cms.suttontower.com/uploads/Sutton-Tower_430-East-58_15-18B.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "residence-19-31b",
+        "src": "/new-development/sutton-tower/floorplans/residence-19-31b.png",
+        "title": "Residence 19-31B",
+        "sourceUrl": "https://cms.suttontower.com/uploads/Sutton-Tower_430-East-58_19-31B.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "residence-32-46a",
+        "src": "/new-development/sutton-tower/floorplans/residence-32-46a.png",
+        "title": "Residence 32-46A",
+        "sourceUrl": "https://cms.suttontower.com/uploads/Sutton-Tower_430-East-58_32-46A.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "residence-19-31c",
+        "src": "/new-development/sutton-tower/floorplans/residence-19-31c.png",
+        "title": "Residence 19-31C",
+        "sourceUrl": "https://cms.suttontower.com/uploads/Sutton-Tower_FloorPlan_19-31C_WEB_2026-01-27-161035_eyar.pdf",
+        "width": 1600,
+        "height": 1035
+      }
+    ]
+  },
+  "the-perrie": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "/new-development/the-perrie/images/exterior.webp",
+        "caption": "Building exterior rendering",
+        "alt": "Building exterior rendering",
+        "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/e6d4afabc04e58ff4875bfda351f922cfd9fdcba-2000x1354.jpg?fit=max&auto=format",
+        "width": 2000,
+        "height": 1354
+      },
+      {
+        "id": "living-room",
+        "src": "/new-development/the-perrie/images/living-room.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/39f396ec69e29c91a4f7be6265204a0540168f79-2500x1775.jpg?fit=max&auto=format",
+        "width": 2000,
+        "height": 1420
+      },
+      {
+        "id": "amenity",
+        "src": "/new-development/the-perrie/images/amenity.webp",
+        "caption": "Amenity interior",
+        "alt": "Amenity interior",
+        "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/2d3dccf82d16d361974f699318a1f0c9f5de6590-2500x1667.jpg?fit=max&auto=format",
+        "width": 2000,
+        "height": 1334
+      }
+    ],
+    "floorPlans": []
+  },
+  "malabar-residences": {
+    "images": [
+      {
+        "id": "view-1",
+        "src": "/new-development/malabar-residences/images/view-1.webp",
+        "caption": "Midtown view study",
+        "alt": "Midtown view study",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-04-3-1.png",
+        "width": 1920,
+        "height": 1137
+      },
+      {
+        "id": "view-2",
+        "src": "/new-development/malabar-residences/images/view-2.webp",
+        "caption": "Upper-floor view study",
+        "alt": "Upper-floor view study",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-05-1-1.png",
+        "width": 1920,
+        "height": 1213
+      },
+      {
+        "id": "view-3",
+        "src": "/new-development/malabar-residences/images/view-3.webp",
+        "caption": "Skyline view study",
+        "alt": "Skyline view study",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-06-1-1.png",
+        "width": 1920,
+        "height": 2132
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-501-1101",
+        "src": "/new-development/malabar-residences/floorplans/residence-501-1101.png",
+        "title": "Residence 501-1101",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/Malabar_501-1101-1.pdf",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "id": "residence-603",
+        "src": "/new-development/malabar-residences/floorplans/residence-603.png",
+        "title": "Residence 603",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/Malabar_603.pdf",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "id": "residence-1005",
+        "src": "/new-development/malabar-residences/floorplans/residence-1005.png",
+        "title": "Residence 1005",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/Malabar_1005.pdf",
+        "width": 1600,
+        "height": 960
+      },
+      {
+        "id": "residence-2401-2801",
+        "src": "/new-development/malabar-residences/floorplans/residence-2401-2801.png",
+        "title": "Residence 2401-2601-2801",
+        "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/Malabar_2401-2601-2801.pdf",
+        "width": 1600,
+        "height": 960
+      }
+    ]
+  },
+  "monogram-new-york": {
+    "images": [
+      {
+        "id": "penthouse-living",
+        "src": "/new-development/monogram-new-york/images/penthouse-living.webp",
+        "caption": "Penthouse living room",
+        "alt": "Penthouse living room",
+        "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2023/07/47th_Street_view_17_penthouse_living-Adobe1998-Full-scaled.jpg",
+        "width": 2000,
+        "height": 1234
+      },
+      {
+        "id": "kitchen-dining",
+        "src": "/new-development/monogram-new-york/images/kitchen-dining.webp",
+        "caption": "Penthouse kitchen and dining",
+        "alt": "Penthouse kitchen and dining",
+        "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2023/07/47th_Street_view_19_penthouse_kitchen_dining-Adobe1998-Full-scaled.jpg",
+        "width": 2000,
+        "height": 1234
+      },
+      {
+        "id": "terrace",
+        "src": "/new-development/monogram-new-york/images/terrace.webp",
+        "caption": "Penthouse terrace",
+        "alt": "Penthouse terrace",
+        "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2023/07/47th_Street_view_15_penthouse_terrace-Adobe1998-Full-scaled.jpg",
+        "width": 2000,
+        "height": 1234
+      }
+    ],
+    "floorPlans": []
+  },
+  "111-murray-street": {
+    "images": [
+      {
+        "id": "penthouse-kitchen",
+        "src": "/new-development/111-murray-street/images/penthouse-kitchen.webp",
+        "caption": "Penthouse kitchen",
+        "alt": "Penthouse kitchen",
+        "sourceUrl": "https://111murray.com/wp-content/uploads/2021/10/111-Murray-Penthouse-Kitchen-Hummingbird.jpg",
+        "width": 2000,
+        "height": 1211
+      },
+      {
+        "id": "bedroom",
+        "src": "/new-development/111-murray-street/images/bedroom.webp",
+        "caption": "Residence bedroom",
+        "alt": "Residence bedroom",
+        "sourceUrl": "https://111murray.com/wp-content/uploads/2021/10/bedroom.png",
+        "width": 1386,
+        "height": 840
+      }
+    ],
+    "floorPlans": []
+  },
+  "mandarin-oriental-residences-fifth-avenue": {
+    "images": [
+      {
+        "id": "arrival",
+        "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/arrival.webp",
+        "caption": "Fifth Avenue arrival",
+        "alt": "Fifth Avenue arrival",
+        "sourceUrl": "https://cdn.prod.website-files.com/61968ba866d81909e4b7c553/61968bd9ff4de6a808e79f77_01_DBOX_SHVO_685%20Fifth%20Ave_Arrival.jpg",
+        "width": 1003,
+        "height": 1333
+      },
+      {
+        "id": "unit-16a",
+        "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/unit-16a.webp",
+        "caption": "Residence 16A interior",
+        "alt": "Residence 16A interior",
+        "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/619e5bde50307d605475ff32_07_DBOX_SHVO_685%20Fifth%20Ave_Unit%2016A.jpg",
+        "width": 1999,
+        "height": 1124
+      },
+      {
+        "id": "studio",
+        "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/studio.webp",
+        "caption": "Studio apartment vignette",
+        "alt": "Studio apartment vignette",
+        "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/619e5be28661d3f0e233f941_21_DBOX_SHVO_685%20Fifth%20Ave_Studio%20Apartment_Vignette_02.jpg",
+        "width": 1000,
+        "height": 1252
+      }
+    ],
+    "floorPlans": []
+  },
+  "vita-north-tower": {
+    "images": [
+      {
+        "id": "hero",
+        "src": "/new-development/vita-north-tower/images/hero.webp",
+        "caption": "VITA New York tower image",
+        "alt": "VITA New York tower image",
+        "sourceUrl": "https://vitanewyork.com/img/social-image-opengraph.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "floorPlans": []
+  },
+  "vita-south-tower": {
+    "images": [
+      {
+        "id": "hero",
+        "src": "/new-development/vita-south-tower/images/hero.webp",
+        "caption": "VITA New York tower image",
+        "alt": "VITA New York tower image",
+        "sourceUrl": "https://vitanewyork.com/img/social-image-opengraph.jpg",
+        "width": 1200,
+        "height": 630
+      }
+    ],
+    "floorPlans": []
+  },
+  "eastlight-condominium": {
+    "images": [
+      {
+        "id": "terrace",
+        "src": "/new-development/eastlight-condominium/images/terrace.webp",
+        "caption": "Common terrace",
+        "alt": "Common terrace",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/EastLight_CommonTerrace_final.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/eastlight-condominium/images/lobby.webp",
+        "caption": "Lobby",
+        "alt": "Lobby",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2024/04/501-3rd-Ave-Lobby1.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "id": "living",
+        "src": "/new-development/eastlight-condominium/images/living.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/EastLight_Living-Room_17B_final-full.jpg",
+        "width": 2000,
+        "height": 1143
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-10b",
+        "src": "/new-development/eastlight-condominium/floorplans/residence-10b.png",
+        "title": "Residence 10B",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/03/Eastlight-10B.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-15-22b",
+        "src": "/new-development/eastlight-condominium/floorplans/residence-15-22b.png",
+        "title": "Residence 15-22B",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/Eastlight-15-22B.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-22-27a",
+        "src": "/new-development/eastlight-condominium/floorplans/residence-22-27a.png",
+        "title": "Residence 22-27A",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/Eastlight-22-27A.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-22-27e",
+        "src": "/new-development/eastlight-condominium/floorplans/residence-22-27e.png",
+        "title": "Residence 22-27E",
+        "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/Eastlight-22-27E.pdf",
+        "width": 1600,
+        "height": 1236
+      }
+    ]
+  },
+  "565-broome-soho": {
+    "images": [
+      {
+        "id": "living-area",
+        "src": "/new-development/565-broome-soho/images/living-area.webp",
+        "caption": "North tower living area",
+        "alt": "North tower living area",
+        "sourceUrl": "https://565broomesoho.com/uploads/image/attachment/349/565_Broome_N22A_LivingArea_1170_low.jpg",
+        "width": 2000,
+        "height": 1333
+      },
+      {
+        "id": "duplex-kitchen",
+        "src": "/new-development/565-broome-soho/images/duplex-kitchen.webp",
+        "caption": "Duplex kitchen",
+        "alt": "Duplex kitchen",
+        "sourceUrl": "https://565broomesoho.com/assets/interiors/FINAL-AP08_Duplex-Kitchen_revC-d808496ec2ea2b0969e852a89d13b0972e486dac04c6c091ef7ae8f87b2890a2.jpg",
+        "width": 1400,
+        "height": 778
+      }
+    ],
+    "floorPlans": []
+  },
+  "222-les-tower-lofts": {
+    "images": [
+      {
+        "id": "kitchen",
+        "src": "/new-development/222-les-tower-lofts/images/kitchen.webp",
+        "caption": "Tower kitchen",
+        "alt": "Tower kitchen",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240731145935/222_kitchen.jpg",
+        "width": 1688,
+        "height": 1346
+      },
+      {
+        "id": "terrace",
+        "src": "/new-development/222-les-tower-lofts/images/terrace.webp",
+        "caption": "Tower terrace",
+        "alt": "Tower terrace",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240816174547/222-Tower-terrace-1-640x434.jpg",
+        "width": 640,
+        "height": 434
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/222-les-tower-lofts/images/lobby.webp",
+        "caption": "Lobby",
+        "alt": "Lobby",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240905043554/Lobby_v2.jpg",
+        "width": 1426,
+        "height": 1165
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-4a",
+        "src": "/new-development/222-les-tower-lofts/floorplans/residence-4a.png",
+        "title": "Residence 4A",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240815172814/222_LES_4A.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "residence-9b",
+        "src": "/new-development/222-les-tower-lofts/floorplans/residence-9b.png",
+        "title": "Residence 9B",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240815172848/222_LES_9B.pdf",
+        "width": 1164,
+        "height": 1800
+      },
+      {
+        "id": "residence-14a",
+        "src": "/new-development/222-les-tower-lofts/floorplans/residence-14a.png",
+        "title": "Residence 14A",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240815172913/222_LES_14A.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "loft-5d",
+        "src": "/new-development/222-les-tower-lofts/floorplans/loft-5d.png",
+        "title": "Loft 5D",
+        "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240920223909/Loft-5D-Updated-v1.pdf",
+        "width": 1390,
+        "height": 1800
+      }
+    ]
+  },
+  "155w68-condominium": {
+    "images": [
+      {
+        "id": "primary-bedroom",
+        "src": "/new-development/155w68-condominium/images/primary-bedroom.webp",
+        "caption": "Primary bedroom",
+        "alt": "Primary bedroom",
+        "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/bedroom-primary-1-scaled.jpg",
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "id": "living-kitchen",
+        "src": "/new-development/155w68-condominium/images/living-kitchen.webp",
+        "caption": "Living and kitchen view",
+        "alt": "Living and kitchen view",
+        "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/living-kitchen-view-scaled.jpg",
+        "width": 2000,
+        "height": 1334
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/155w68-condominium/images/lobby.webp",
+        "caption": "Lobby",
+        "alt": "Lobby",
+        "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/lobby-intro.jpg",
+        "width": 2000,
+        "height": 1334
+      }
+    ],
+    "floorPlans": []
+  },
+  "linden-lane": {
+    "images": [
+      {
+        "id": "penthouse-terrace",
+        "src": "/new-development/linden-lane/images/penthouse-terrace.webp",
+        "caption": "Penthouse terrace",
+        "alt": "Penthouse terrace",
+        "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/08/352_PENTHOUSE-1-1024x559.jpg",
+        "width": 1024,
+        "height": 559
+      },
+      {
+        "id": "availability-hero",
+        "src": "/new-development/linden-lane/images/availability-hero.webp",
+        "caption": "Project availability hero",
+        "alt": "Project availability hero",
+        "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/08/availability-hero-d.jpg",
+        "width": 2000,
+        "height": 519
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "penthouse-3d",
+        "src": "/new-development/linden-lane/floorplans/penthouse-3d.png",
+        "title": "Penthouse 3D floor plan",
+        "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/09/penthouse.png",
+        "width": 960,
+        "height": 1258
+      }
+    ]
+  },
+  "one11-residences": {
+    "images": [
+      {
+        "id": "living-day",
+        "src": "/new-development/one11-residences/images/living-day.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/design/living-day.jpg",
+        "width": 964,
+        "height": 1444
+      },
+      {
+        "id": "kitchen",
+        "src": "/new-development/one11-residences/images/kitchen.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/design/kitchen.jpg",
+        "width": 940,
+        "height": 592
+      },
+      {
+        "id": "bedroom",
+        "src": "/new-development/one11-residences/images/bedroom.webp",
+        "caption": "Residence bedroom",
+        "alt": "Residence bedroom",
+        "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/living/residences-bedroom.jpg",
+        "width": 2000,
+        "height": 1083
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-41k",
+        "src": "/new-development/one11-residences/floorplans/residence-41k.png",
+        "title": "Residence 41K",
+        "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/35def8f93d40af97e1b9ff6840038de7/One11_Residences_Thompson_Central_Park_Residence_41K.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "penthouse-b",
+        "src": "/new-development/one11-residences/floorplans/penthouse-b.png",
+        "title": "Penthouse B",
+        "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/44028483ef6c5e0cf7e85bfd5d8b4ec9/One11_Residences_Thompson_Central_Park_Penthouse_B.pdf",
+        "width": 1600,
+        "height": 1035
+      }
+    ]
+  },
+  "the-florian": {
+    "images": [
+      {
+        "id": "residences-hero",
+        "src": "/new-development/the-florian/images/residences-hero.webp",
+        "caption": "Residences hero",
+        "alt": "Residences hero",
+        "sourceUrl": "https://thefloriannyc.com/uploads/images/residences/residences-hero.webp",
+        "width": 2000,
+        "height": 1055
+      },
+      {
+        "id": "living-kitchen",
+        "src": "/new-development/the-florian/images/living-kitchen.webp",
+        "caption": "Living and kitchen",
+        "alt": "Living and kitchen",
+        "sourceUrl": "https://thefloriannyc.com/uploads/images/residences/living-and-kitchen.webp",
+        "width": 2000,
+        "height": 1135
+      },
+      {
+        "id": "bathroom",
+        "src": "/new-development/the-florian/images/bathroom.webp",
+        "caption": "Primary bath",
+        "alt": "Primary bath",
+        "sourceUrl": "https://thefloriannyc.com/uploads/images/residences/your-own-private-spa.webp",
+        "width": 1706,
+        "height": 1244
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-5a",
+        "src": "/new-development/the-florian/floorplans/residence-5a.png",
+        "title": "Residence 5A",
+        "sourceUrl": "https://thefloriannyc.com/uploads/application/files/5a.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-6c",
+        "src": "/new-development/the-florian/floorplans/residence-6c.png",
+        "title": "Residence 6C",
+        "sourceUrl": "https://thefloriannyc.com/uploads/application/files/6c.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-8a",
+        "src": "/new-development/the-florian/floorplans/residence-8a.png",
+        "title": "Residence 8A",
+        "sourceUrl": "https://thefloriannyc.com/uploads/application/files/8a.pdf",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "penthouse-b",
+        "src": "/new-development/the-florian/floorplans/penthouse-b.png",
+        "title": "Penthouse B",
+        "sourceUrl": "https://thefloriannyc.com/uploads/application/files/phb.pdf",
+        "width": 1600,
+        "height": 1236
+      }
+    ]
+  },
+  "linea-condominium": {
+    "images": [
+      {
+        "id": "living",
+        "src": "/new-development/linea-condominium/images/living.webp",
+        "caption": "Residence 6B living room",
+        "alt": "Residence 6B living room",
+        "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2024/12/Linea-6B-Living-01.png",
+        "width": 1920,
+        "height": 1080
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-3-6d",
+        "src": "/new-development/linea-condominium/floorplans/residence-3-6d.png",
+        "title": "Residence 3-6D",
+        "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2023/07/Linea-Residence-3%E2%80%936D-Alt-8.5x11.pdf",
+        "width": 1600,
+        "height": 1236
+      }
+    ]
+  },
+  "35-hudson-yards-manhattan": {
+    "images": [
+      {
+        "id": "penthouse-view",
+        "src": "/new-development/35-hudson-yards-manhattan/images/penthouse-view.webp",
+        "caption": "Penthouse with Hudson Yards view",
+        "alt": "Penthouse with Hudson Yards view",
+        "sourceUrl": "https://www.35hudsonyards.com/sites/default/files/inline-images/penthouse-with-view.jpg",
+        "width": 1184,
+        "height": 710
+      },
+      {
+        "id": "primary-bedroom",
+        "src": "/new-development/35-hudson-yards-manhattan/images/primary-bedroom.webp",
+        "caption": "Primary bedroom",
+        "alt": "Primary bedroom",
+        "sourceUrl": "https://www.35hudsonyards.com/sites/default/files/inline-images/master-bedroom.jpg",
+        "width": 1796,
+        "height": 1400
+      },
+      {
+        "id": "kitchen",
+        "src": "/new-development/35-hudson-yards-manhattan/images/kitchen.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/6503_Kitchen%20%281%29.jpg",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": []
+  },
+  "660-lexington": {
+    "images": [
+      {
+        "id": "living",
+        "src": "/new-development/660-lexington/images/living.webp",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://660lex.com/uploads/images/residences/660-Lexington_Interior_Livingroom_3-4-desktop.webp",
+        "width": 1920,
+        "height": 1440
+      },
+      {
+        "id": "kitchen",
+        "src": "/new-development/660-lexington/images/kitchen.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://660lex.com/uploads/images/residences/660-Lexington_Interior_Kitchen_11-19.webp",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "id": "bedroom",
+        "src": "/new-development/660-lexington/images/bedroom.webp",
+        "caption": "Residence bedroom",
+        "alt": "Residence bedroom",
+        "sourceUrl": "https://660lex.com/uploads/images/residences/660-Lexington_Interior_Bedroom_3-4-desktop(1).webp",
+        "width": 1920,
+        "height": 1440
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "line-2b",
+        "src": "/new-development/660-lexington/floorplans/line-2b.png",
+        "title": "Line 2B",
+        "sourceUrl": "https://660lex.com/uploads/application/files/660%20Lex_FP_%202B.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "line-3a",
+        "src": "/new-development/660-lexington/floorplans/line-3a.png",
+        "title": "Line 3A",
+        "sourceUrl": "https://660lex.com/uploads/application/files/660%20Lex_FP_%203A.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "line-4c",
+        "src": "/new-development/660-lexington/floorplans/line-4c.png",
+        "title": "Line 4C",
+        "sourceUrl": "https://660lex.com/uploads/application/files/660%20Lex_FP_%204C.pdf",
+        "width": 1600,
+        "height": 1035
+      },
+      {
+        "id": "penthouse-a",
+        "src": "/new-development/660-lexington/floorplans/penthouse-a.png",
+        "title": "Penthouse A",
+        "sourceUrl": "https://660lex.com/uploads/application/files/660%20Lex_FP_%20PHA.pdf",
+        "width": 1600,
+        "height": 1035
+      }
+    ]
+  },
+  "520-fifth-avenue-new-york": {
+    "images": [
+      {
+        "id": "residence",
+        "src": "/new-development/520-fifth-avenue-new-york/images/residence.webp",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/m2.jpg",
+        "width": 704,
+        "height": 520
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/520-fifth-avenue-new-york/images/lobby.webp",
+        "caption": "Residential lobby",
+        "alt": "Residential lobby",
+        "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/BINYAN_RBI2682_520FifthAve_S210_INT_ResiLobby_Final_5K.jpg",
+        "width": 2000,
+        "height": 1600
+      },
+      {
+        "id": "hero",
+        "src": "/new-development/520-fifth-avenue-new-york/images/hero.webp",
+        "caption": "520 Fifth residence hero",
+        "alt": "520 Fifth residence hero",
+        "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img_h1.jpg",
+        "width": 2000,
+        "height": 1474
+      }
+    ],
+    "floorPlans": []
+  },
+  "nolen": {
+    "images": [
+      {
+        "id": "residence-1",
+        "src": "/new-development/nolen/images/residence-1.webp",
+        "caption": "Residence rendering",
+        "alt": "Residence rendering",
+        "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/a0c2b1f8ba3adf958386a37c043c4449cb81d983-4096x2726.jpg",
+        "width": 2000,
+        "height": 1331
+      },
+      {
+        "id": "residence-2",
+        "src": "/new-development/nolen/images/residence-2.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/6533646814d2afb4a5c983b89ad22a4b5e423d09-4096x2724.jpg",
+        "width": 2000,
+        "height": 1330
+      },
+      {
+        "id": "residence-3",
+        "src": "/new-development/nolen/images/residence-3.webp",
+        "caption": "Residence bath",
+        "alt": "Residence bath",
+        "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/bbe3b9355d30e599a213d86556ce84d687e491be-4096x2724.jpg",
+        "width": 2000,
+        "height": 1330
+      }
+    ],
+    "floorPlans": []
+  },
+  "radiant-condominium": {
+    "images": [
+      {
+        "id": "living-kitchen",
+        "src": "/new-development/radiant-condominium/images/living-kitchen.webp",
+        "caption": "Radiant LIC kitchen and living room",
+        "alt": "Radiant LIC kitchen and living room",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/d120e20f-31f4-4c3b-baac-53ef8c6baf5d/Radiant+LIC+Kitchen+Living+Room+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
+        "width": 2000,
+        "height": 957
+      },
+      {
+        "id": "kitchen",
+        "src": "/new-development/radiant-condominium/images/kitchen.webp",
+        "caption": "Radiant LIC kitchen",
+        "alt": "Radiant LIC kitchen",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/3cfe3a96-332e-40d8-b334-9333c5d5d284/Radiant+LIC+Kitchen+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
+        "width": 2000,
+        "height": 1412
+      },
+      {
+        "id": "building-view",
+        "src": "/new-development/radiant-condominium/images/building-view.webp",
+        "caption": "Radiant LIC city view",
+        "alt": "Radiant LIC city view",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/13de8f3b-a53a-4d2b-88ba-5ab4f7331391/Radiant+LIC+Building+City+View+Daytime+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
+        "width": 2000,
+        "height": 2288
+      }
+    ],
+    "floorPlans": [
+      {
+        "id": "residence-206",
+        "src": "/new-development/radiant-condominium/floorplans/residence-206.png",
+        "title": "Residence 206",
+        "sourceUrl": "https://www.radiantlic.com/s/Radiant-floorplan-206_v6.jpg",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-401",
+        "src": "/new-development/radiant-condominium/floorplans/residence-401.png",
+        "title": "Residence 401",
+        "sourceUrl": "https://www.radiantlic.com/s/Radiant-floorplan-401_v6-bxwf.jpg",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-1001",
+        "src": "/new-development/radiant-condominium/floorplans/residence-1001.png",
+        "title": "Residence 1001",
+        "sourceUrl": "https://www.radiantlic.com/s/Radiant-floorplan-1001_v6.jpg",
+        "width": 1600,
+        "height": 1236
+      },
+      {
+        "id": "residence-1504",
+        "src": "/new-development/radiant-condominium/floorplans/residence-1504.png",
+        "title": "Residence 1504",
+        "sourceUrl": "https://www.radiantlic.com/s/Radiant-floorplan-1504_v5.jpg",
+        "width": 1600,
+        "height": 1236
+      }
+    ]
+  },
+  "loft-21": {
+    "images": [
+      {
+        "id": "kitchen",
+        "src": "/new-development/loft-21/images/kitchen.webp",
+        "caption": "Unit kitchen rendering",
+        "alt": "Unit kitchen rendering",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/6192a8ed-5bac-4522-9429-e1ab96d6e36e/20260219+4528_21stStreet.+UNIT+KITCHEN_CABINET+COLUMN.jpg",
+        "width": 1500,
+        "height": 1500
+      },
+      {
+        "id": "primary-bath",
+        "src": "/new-development/loft-21/images/primary-bath.webp",
+        "caption": "Primary bath rendering",
+        "alt": "Primary bath rendering",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/e1da244b-d4d8-4ade-aa16-c1dbe6f3fcb9/21stStreet_RENDERING_UNIT+BATHROOM+MASTER.jpg",
+        "width": 1200,
+        "height": 1500
+      },
+      {
+        "id": "lobby",
+        "src": "/new-development/loft-21/images/lobby.webp",
+        "caption": "Lobby rendering",
+        "alt": "Lobby rendering",
+        "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/153a9a88-3a3e-4171-98c1-a980ce9c2e33/21st+Street_APPROVED+RENDERING_LOBBY+1.jpg",
+        "width": 1500,
+        "height": 1364
+      }
+    ],
+    "floorPlans": []
+  }
+}
