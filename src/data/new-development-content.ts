@@ -149,7 +149,7 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "the-greenwich-by-rafael-vinoly": {
     "overview": {
-      "zh": "这是已故建筑大师 Rafael Viñoly（拉斐尔·维诺利）在曼哈顿的收官之作之一：金融区 125 Greenwich Street，一栋 88 层、约 912 英尺（278 米）高的玻璃幕墙住宅楼，共 272 户，从开间到三居室及顶层公寓，2025 年落成。室内由伦敦事务所 March & White（MAWD）操刀。最值得说的一点：维诺利没有去盖一根细高的\"铅笔楼\"，而是用更宽的平行四边形楼板加上两道 I 形剪力墙，把户内柱子减到只剩四根——这意味着户型方正通透、几乎无柱遮挡，且全楼采光面更大。",
+      "zh": "这是已故建筑大师 Rafael Viñoly（拉斐尔·维诺利）在曼哈顿的收官之作之一：金融区 125 Greenwich Street，一栋 88 层、约 912 英尺（278 米）高的玻璃幕墙住宅楼，共 272 户，从开间到三居室及顶层公寓，2026 年落成。室内由伦敦事务所 March & White（MAWD）操刀。最值得说的一点：维诺利没有去盖一根细高的\"铅笔楼\"，而是用更宽的平行四边形楼板加上两道 I 形剪力墙，把户内柱子减到只剩四根——这意味着户型方正通透、几乎无柱遮挡，且全楼采光面更大。",
       "en": "125 Greenwich Street is one of the final Manhattan works by the late architect Rafael Viñoly: an 88-story, roughly 912-foot glass tower in the Financial District with 272 residences, from studios to three-bedrooms and penthouses, completed in 2025. Interiors are by London firm March & White (MAWD). The headline: instead of a pencil-thin tower, Viñoly used a wider parallelogram floor plate and two I-shaped shear walls that cut interior columns down to just four — meaning open, near column-free layouts and more glass per floor."
     },
     "highlights": [
@@ -503,9 +503,9 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "白橡 + 大理石的高完成度室内",
-        "bodyZh": "宽板白橡木地板、烟灰色石英台面配大理石墙面、定制橱柜，厨房用 Bosch 烤箱燃气灶、嵌入式冰箱、Bosch 洗碗机，并标配 Bosch 叠放洗烘；浴室通铺到顶的意大利白大理石，搭 Kohler、Toto、Grohe 五金。Studio EKB 把材料和品牌做到了真豪宅的级别。",
+        "bodyZh": "宽板白橡木地板、烟灰色石英台面配大理石墙面、定制橱柜，厨房用 Bosch 烤箱燃气灶、嵌入式冰箱、Bosch 洗碗机，并标配 Bosch 叠放洗烘；浴室通铺到顶的意大利白大理石，配高规格卫浴五金。Studio EKB 把材料和品牌做到了真豪宅的级别。",
         "titleEn": "White oak and marble, finished to a real luxury spec",
-        "bodyEn": "Wide-plank white oak floors, smokey-gray quartz counters with marble backsplash, and custom cabinetry; kitchens carry a Bosch oven and gas cooktop, integrated paneled refrigerator, Bosch dishwasher, and a Bosch stacked washer/dryer. Baths are clad floor-to-ceiling in Italian white marble with Kohler, Toto, and Grohe fittings — Studio EKB specced materials at a genuine luxury level."
+        "bodyEn": "Wide-plank white oak floors, smokey-gray quartz counters with marble backsplash, and custom cabinetry; kitchens carry a Bosch oven and gas cooktop, integrated paneled refrigerator, Bosch dishwasher, and a Bosch stacked washer/dryer. Baths are clad floor-to-ceiling in Italian white marble with premium bath fittings — Studio EKB specced materials at a genuine luxury level."
       },
       {
         "titleZh": "两座花园 + 双层挑高的健身房与大堂",
@@ -725,8 +725,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "mandarin-oriental-residences-fifth-avenue": {
     "overview": {
-      "zh": "这是 SHVO 把 1926 年那栋曾做过 Gucci 全球总部的第五大道地标，整栋改造而成的 Mandarin Oriental（文华东方）品牌公寓——保留 15 层老楼、向上加建 8 层，最终 29 层、69 套全装修 turnkey 住宅。建筑由 Marin Architects 操刀，室内由 March and White Design 主导，住户享有文华东方酒店级管家与礼宾服务。最值得一提的：顶层是米其林星厨 Daniel Boulud 的私人餐饮概念 Boulud Privé，以及由它服务的屋顶泳池与卡座——这是这栋楼独有的、别处复制不了的配置。",
-      "en": "SHVO's full-building conversion of the landmark 1926 tower at 685 Fifth Avenue — once Gucci's global headquarters — into 69 fully-furnished, turnkey Mandarin Oriental–branded residences. Marin Architects kept 15 existing floors and added 8 above for a 29-story building, with interiors led by March and White Design and legendary Mandarin Oriental hotel service for residents. The signature draw: a rooftop crowned by Boulud Privé, Michelin-starred chef Daniel Boulud's first private dining concept, and a rooftop pool and cabanas serviced by it — an amenity package no other Fifth Avenue building can replicate."
+      "zh": "这是 SHVO 把 1926 年那栋曾做过 Gucci 全球总部的第五大道地标，整栋改造而成的 Mandarin Oriental（文华东方）品牌公寓——保留 15 层老楼、向上加建 8 层，最终 29 层、65 套全装修 turnkey 住宅。建筑由 Marin Architects 操刀，室内由 March and White Design 主导，住户享有文华东方酒店级管家与礼宾服务。最值得一提的：顶层是米其林星厨 Daniel Boulud 的私人餐饮概念 Boulud Privé，以及由它服务的屋顶泳池与卡座——这是这栋楼独有的、别处复制不了的配置。",
+      "en": "SHVO's full-building conversion of the landmark 1926 tower at 685 Fifth Avenue — once Gucci's global headquarters — into 65 fully-furnished, turnkey Mandarin Oriental–branded residences. Marin Architects kept 15 existing floors and added 8 above for a 29-story building, with interiors led by March and White Design and legendary Mandarin Oriental hotel service for residents. The signature draw: a rooftop crowned by Boulud Privé, Michelin-starred chef Daniel Boulud's first private dining concept, and a rooftop pool and cabanas serviced by it — an amenity package no other Fifth Avenue building can replicate."
     },
     "highlights": [
       {
@@ -1061,7 +1061,7 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "linden-lane": {
     "overview": {
-      "zh": "Linden Lane 是地狱厨房（Hell's Kitchen）West 51st Street 上的一栋 7 层精品公寓，由 Cadence Property Group 开发、纽约本地事务所 Architecture Outfit 一手操刀建筑与室内，全楼仅 32 户，2025 年落成、2026 年交付。它最大的特色是几乎贯穿整个街区的私家景观长廊\"The Lane\"——红砖立面配高瘦竖窗，把曼哈顿罕见的\"室内外连续生活\"做成了这栋楼真正的主线，而不是堆砌成又一个普通的中城公寓。",
+      "zh": "Linden Lane 是地狱厨房（Hell's Kitchen）West 51st Street 上的一栋 7 层精品公寓，由 Cadence Property Group 开发、纽约本地事务所 Architecture Outfit 一手操刀建筑与室内，全楼仅 32 户，2026 年落成、即时入住。它最大的特色是几乎贯穿整个街区的私家景观长廊\"The Lane\"——红砖立面配高瘦竖窗，把曼哈顿罕见的\"室内外连续生活\"做成了这栋楼真正的主线，而不是堆砌成又一个普通的中城公寓。",
       "en": "Linden Lane is a seven-story, 32-unit boutique condominium on West 51st Street in Hell's Kitchen, developed by Cadence Property Group and designed inside and out by local firm Architecture Outfit. Completed in 2025 with 2026 closings, its defining move is \"The Lane\"—a nearly block-long private landscaped courtyard that makes indoor-outdoor living the building's real organizing idea rather than a marketing afterthought."
     },
     "highlights": [
@@ -1301,8 +1301,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "the-florian": {
     "overview": {
-      "zh": "The Florian 是 Gramercy Park 边上一栋全新精装公寓楼（350 East 18th Street），由 T&E Development 与以色列 Minrav 联合开发、ARC Architecture（主创 Robert Bianchini）设计、7Haus（主创 Chen I. Tal）操刀室内，13 层共 54 户，2025 年落成、可即时入住。它把 Art Deco、Moderne 与日式细部糅进 RockCast 白砖加青铜窗框的外立面，是一栋\"低调但用料极重\"的精品楼——全楼按超低能耗标准（ULEB）建造，比一般新房省约 20% 能耗。",
-      "en": "The Florian is a brand-new, finished-and-ready condominium beside Gramercy Park at 350 East 18th Street, developed by T&E Development with Israel's Minrav, designed by ARC Architecture (principal Robert Bianchini) with interiors by 7Haus (Chen I. Tal): 54 homes over 13 floors, completed 2025 with immediate occupancy. Its RockCast white-brick-and-bronze facade folds together Art Deco, Moderne and Japanese detailing, and the whole building is engineered to Ultra-Low-Energy (ULEB) standard, using roughly 20% less energy than typical new construction."
+      "zh": "The Florian 是 Gramercy Park 边上一栋全新精装公寓楼（350 East 18th Street），由 T&E Development 与以色列 Minrav 联合开发、ARC Architecture（主创 Robert Bianchini）设计、7Haus（主创 Chen I. Tal）操刀室内，13 层共 54 户，2026 年落成、可即时入住。它把 Art Deco、Moderne 与日式细部糅进 RockCast 白砖加青铜窗框的外立面，是一栋\"低调但用料极重\"的精品楼——全楼按超低能耗标准（ULEB）建造，比一般新房省约 20% 能耗。",
+      "en": "The Florian is a brand-new, finished-and-ready condominium beside Gramercy Park at 350 East 18th Street, developed by T&E Development with Israel's Minrav, designed by ARC Architecture (principal Robert Bianchini) with interiors by 7Haus (Chen I. Tal): 54 homes over 13 floors, completed 2026 with immediate occupancy. Its RockCast white-brick-and-bronze facade folds together Art Deco, Moderne and Japanese detailing, and the whole building is engineered to Ultra-Low-Energy (ULEB) standard, using roughly 20% less energy than typical new construction."
     },
     "highlights": [
       {
@@ -1607,9 +1607,9 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "厨房卫浴用料实在",
-        "bodyZh": "厨房配 Bosch 电器、Kohler 龙头，卫浴同样是 Kohler 五金，户内自带洗烘一体机。部分户型带私人阳台，省去了 LIC 不少楼盘要靠公共露台才有的户外空间。",
+        "bodyZh": "厨房配定制橱柜与高规格电器，卫浴用料讲究，户内自带洗烘一体机。部分户型带私人阳台，省去了 LIC 不少楼盘要靠公共露台才有的户外空间。",
         "titleEn": "Bosch kitchens, Kohler baths, in-unit laundry",
-        "bodyEn": "Kitchens come with Bosch appliances and Kohler fixtures, baths are finished in Kohler hardware, and every home has its own washer/dryer. Select units add private balconies — real outdoor space many LIC buildings only offer on a shared roof."
+        "bodyEn": "Kitchens feature custom cabinetry with high-spec appliances and fixtures, and every home has its own washer/dryer. Select units add private balconies — real outdoor space many LIC buildings only offer on a shared roof."
       },
       {
         "titleZh": "自带 27 个车位 + 储物 + 自行车房",
@@ -1625,9 +1625,9 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "获奖品质 + 现房交付节点",
-        "bodyZh": "Lu Ning Architecture 操刀、Century Development Group 开发，项目。新盘已进入交房阶段，户型从一房到三房（约 $106 万起），买家看得到实物、交付时间明确。",
-        "titleEn": "Award-winning, and delivering now",
-        "bodyEn": "Designed by Lu Ning Architecture and developed by Century Development Group, It's a new development already moving into closings, with one- to three-bedroom homes (from roughly $1.06M) — buyers get a clear delivery timeline and a building they can see in person."
+        "bodyZh": "Lu Ning Architecture 操刀、Century Development Group 开发，项目。新盘在售中，户型从一房到三房（约 $106 万起），买家看得到实物、交付时间明确。",
+        "titleEn": "Award-winning, and now selling",
+        "bodyEn": "Designed by Lu Ning Architecture and developed by Century Development Group, It's a new development in active sales, with one- to three-bedroom homes (from roughly $1.06M) — buyers get a clear delivery timeline and a building they can see in person."
       }
     ],
     "location": {
