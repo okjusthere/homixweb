@@ -101,7 +101,7 @@ export const featuredDevelopments = [
     facts: {
       units: "236",
       stories: "36",
-      built: "2022",
+      built: "2023",
       status: "New development; closings commenced",
       developer: "Witkoff and Access Industries",
       architect: "Bjarke Ingels Group",
@@ -240,7 +240,7 @@ export const featuredDevelopments = [
       "East Side waterfront pocket near Sutton Place, Queensboro Bridge access, Midtown East, and Lexington/Second Avenue transit.",
     facts: {
       units: "120",
-      stories: "80",
+      stories: "62",
       built: "2022",
       status: "New development",
       developer: "Gamma Real Estate; JVP Development",
@@ -324,7 +324,7 @@ export const featuredDevelopments = [
     facts: {
       units: "131",
       stories: "23",
-      built: "2022",
+      built: "2023",
       status: "New development",
       developer: "JVP Development",
       architect: "Stephen B. Jacobs Group PC",
@@ -438,7 +438,7 @@ export const featuredDevelopments = [
     transit:
       "Hudson Yards/Midtown West location near the 7 train, Penn Station, Port Authority, High Line, and west-side offices.",
     facts: {
-      units: "63",
+      units: "61",
       stories: "12",
       built: "2025",
       status: "New development; Passive House design",
@@ -467,7 +467,7 @@ export const featuredDevelopments = [
       "Hudson Yards/Midtown West location near the 7 train, Penn Station, Port Authority, High Line, and west-side offices.",
     facts: {
       units: "59",
-      stories: "11",
+      stories: "12",
       built: "2025",
       status: "New development; Passive House design",
       sales: "SERHANT. New Development",
@@ -497,7 +497,7 @@ export const featuredDevelopments = [
       developer: "COA 200 E 34th LLC",
       architect: "CetraRuddy",
       interiors: "CetraRuddy",
-      sales: "Douglas Elliman",
+      sales: "Corcoran Sunshine Marketing Group",
     },
     priceBands: [
       { layout: "Studio", price: "$765,000 - $988,000", availability: "3 available" },
@@ -518,14 +518,14 @@ export const featuredDevelopments = [
     transit:
       "SoHo/Hudson Square location near the Hudson River, Canal Street, Spring Street, Holland Tunnel, and A/C/E/1 transit.",
     facts: {
-      units: "112",
+      units: "115",
       stories: "30",
-      built: "2016",
+      built: "2019",
       status: "New development; green building",
       developer: "Bizzi & Partners Development",
       architect: "Renzo Piano Building Workshop",
       interiors: "RDAI",
-      sales: "Bizzi & Partners Development",
+      sales: "Douglas Elliman Development Marketing",
     },
     priceBands: [
       { layout: "Studio", price: "$1,480,000", availability: "1 available" },
@@ -550,9 +550,9 @@ export const featuredDevelopments = [
     facts: {
       units: "70",
       stories: "28",
-      built: "2022",
+      built: "2025",
       status: "New development",
-      developer: "Optimum USA",
+      developer: "Optimum Asset Management",
       architect: "SLCE and S4 Architecture",
       interiors: "Paris Forino",
       sales: "Corcoran Sunshine Marketing Group",
@@ -584,7 +584,7 @@ export const featuredDevelopments = [
       status: "New development; sponsor residences",
       developer: "Ogden CAP Properties",
       architect: "Philip Birnbaum",
-      interiors: "Model residences by Rebecca Roberston",
+      interiors: "Model residences by Rebecca Robertson",
       sales: "Brown Harris Stevens Development Marketing",
     },
     priceBands: [
@@ -647,7 +647,7 @@ export const featuredDevelopments = [
     },
     priceBands: [
       { layout: "1 bed", price: "$1,175,000 - $2,595,000", availability: "7 available" },
-      { layout: "2 beds", price: "$2,695,000 - $4,250,000", availability: "5 available" },
+      { layout: "2 beds", price: "$2,695,000 - $3,450,000", availability: "5 available" },
       { layout: "3 beds", price: "$4,550,000", availability: "1 available" },
     ],
   },
@@ -703,8 +703,7 @@ export const featuredDevelopments = [
     priceBands: [
       { layout: "1 bed", price: "$1,350,000 - $2,995,000", availability: "3 available" },
       { layout: "2 beds", price: "$3,200,000 - $4,500,000", availability: "2 available" },
-      { layout: "Studio", price: "$1,150,000", availability: "0 available" },
-      { layout: "4+ beds", price: "$14,950,000", availability: "0 available" },
+        { layout: "4+ beds", price: "$14,950,000", availability: "0 available" },
     ],
   },
   {
@@ -751,7 +750,7 @@ export const featuredDevelopments = [
     facts: {
       units: "54",
       stories: "13",
-      built: "2025",
+      built: "2026",
       status: "New development; immediate occupancy",
       developer: "T&E Development",
       architect: "ARC Architecture + Design",
@@ -807,7 +806,7 @@ export const featuredDevelopments = [
       "Hudson Yards address near the 7 train, High Line, Hudson Boulevard Park, Penn Station, and west-side office towers.",
     facts: {
       units: "143",
-      stories: "92",
+      stories: "72",
       built: "2019",
       status: "Completed condominium",
       architect: "David Childs / Skidmore, Owings & Merrill",
@@ -827,7 +826,7 @@ export const featuredDevelopments = [
     area: "Midtown",
     address: "660 Lexington Avenue, New York, NY 10022",
     sourceUrl: "https://streeteasy.com/building/660-lexington",
-    officialUrl: "https://www.35hudsonyards.com",
+    officialUrl: "https://660lex.com",
     galleryCount: 12,
     sourceUpdated: "1/18/2022",
     transit:
@@ -894,7 +893,7 @@ export const featuredDevelopments = [
       stories: "34",
       built: "2017",
       status: "Completed condominium",
-      developer: "Bryant Park Owner LLC",
+      developer: "HFZ Capital Group",
       architect: "David Chipperfield Architects",
       interiors: "David Chipperfield Architects",
     },
@@ -912,7 +911,7 @@ export const featuredDevelopments = [
     area: "Kips Bay",
     address: "609 2nd Avenue, New York, NY 10016",
     sourceUrl: "https://streeteasy.com/building/nolen",
-    officialUrl: "https://thebryantnyc.com",
+    officialUrl: "https://www.nolencondosnyc.com",
     galleryCount: 13,
     sourceUpdated: "11/17/2025",
     transit:
@@ -944,7 +943,7 @@ export const featuredDevelopments = [
     galleryCount: 9,
     sourceUpdated: "11/15/2025",
     transit:
-      "Queens Plaza location with immediate E/M/R, 7, G, Queensboro Plaza, Court Square, and Midtown access.",
+      "Queens Plaza location with immediate E/R/F, 7, Queensboro Plaza, Court Square, and Midtown access.",
     facts: {
       units: "117",
       stories: "19",

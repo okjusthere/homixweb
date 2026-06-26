@@ -89,14 +89,14 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "Queens Plaza 多线地铁枢纽",
-        "bodyZh": "门口即 Queens Plaza / Queensboro Plaza 站，E、M、R、7、N、W、G 多线交汇，一站进曼哈顿中城。通勤时间和换乘便利直接决定出租回报与自住效率。",
+        "bodyZh": "门口即 Queens Plaza / Queensboro Plaza 站，E、R、F（Queens Plaza）与 7、N、W（Queensboro Plaza）交汇，一站进曼哈顿中城。通勤时间和换乘便利直接决定出租回报与自住效率。",
         "titleEn": "Multi-line subway hub at Queens Plaza",
-        "bodyEn": "Steps from Queens Plaza / Queensboro Plaza stations — E, M, R, 7, N, W, and G lines converge here, putting Midtown Manhattan one stop away, which drives both rental yield and daily convenience."
+        "bodyEn": "Steps from Queens Plaza / Queensboro Plaza stations — E, R, F (at Queens Plaza) and 7, N, W (at Queensboro Plaza) converge here, putting Midtown Manhattan one stop away, which drives both rental yield and daily convenience."
       }
     ],
     "location": {
-      "zh": "位于长岛市 Queens Plaza North，紧邻 Queens Plaza（E/M/R/G）与 Queensboro Plaza（7/N/W）双站，过桥即曼哈顿中城；步行可达 Court Square、Gantry Plaza 滨水公园、LIC 餐饮与艺术区。",
-      "en": "On Queens Plaza North in Long Island City, beside the Queens Plaza (E/M/R/G) and Queensboro Plaza (7/N/W) stations with Midtown Manhattan one stop over the bridge; walkable to Court Square, the Gantry Plaza waterfront parks, and LIC's dining and arts district."
+      "zh": "位于长岛市 Queens Plaza North，紧邻 Queens Plaza（E/R/F）与 Queensboro Plaza（7/N/W）双站，过桥即曼哈顿中城；步行可达 Court Square、Gantry Plaza 滨水公园、LIC 餐饮与艺术区。",
+      "en": "On Queens Plaza North in Long Island City, beside the Queens Plaza (E/R/F) and Queensboro Plaza (7/N/W) stations with Midtown Manhattan one stop over the bridge; walkable to Court Square, the Gantry Plaza waterfront parks, and LIC's dining and arts district."
     }
   },
   "waldorf-astoria-residences-new-york": {
@@ -503,9 +503,9 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "白橡 + 大理石的高完成度室内",
-        "bodyZh": "宽板白橡木地板、烟灰色石英台面配大理石墙面、定制橱柜，厨房用 Bosch 烤箱燃气灶、嵌入式 Liebherr 冰箱、Fisher & Paykel 洗碗机，并标配 Bosch 叠放洗烘；浴室通铺到顶的意大利白大理石，搭 Kohler、Toto、Grohe 五金。Studio EKB 把材料和品牌做到了真豪宅的级别。",
+        "bodyZh": "宽板白橡木地板、烟灰色石英台面配大理石墙面、定制橱柜，厨房用 Bosch 烤箱燃气灶、嵌入式冰箱、Bosch 洗碗机，并标配 Bosch 叠放洗烘；浴室通铺到顶的意大利白大理石，搭 Kohler、Toto、Grohe 五金。Studio EKB 把材料和品牌做到了真豪宅的级别。",
         "titleEn": "White oak and marble, finished to a real luxury spec",
-        "bodyEn": "Wide-plank white oak floors, smokey-gray quartz counters with marble backsplash, and custom cabinetry; kitchens carry a Bosch oven and gas cooktop, integrated Liebherr refrigerator, Fisher & Paykel dishwasher, and a Bosch stacked washer/dryer. Baths are clad floor-to-ceiling in Italian white marble with Kohler, Toto, and Grohe fittings — Studio EKB specced materials at a genuine luxury level."
+        "bodyEn": "Wide-plank white oak floors, smokey-gray quartz counters with marble backsplash, and custom cabinetry; kitchens carry a Bosch oven and gas cooktop, integrated paneled refrigerator, Bosch dishwasher, and a Bosch stacked washer/dryer. Baths are clad floor-to-ceiling in Italian white marble with Kohler, Toto, and Grohe fittings — Studio EKB specced materials at a genuine luxury level."
       },
       {
         "titleZh": "两座花园 + 双层挑高的健身房与大堂",
@@ -751,7 +751,7 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
         "titleZh": "室内用料：March and White + 高定厨卫",
         "titleEn": "Interiors: March and White, custom kitchens and baths",
         "bodyZh": "5 英寸欧洲白橡人字拼地板嵌青铜线、凹槽天花暗藏灯带（Tillotson 灯光设计）、Molteni 定制厨房配 Miele 整套嵌入式电器；浴室用 22K 香槟金 Dornbracht 龙头、French Vanilla 大理石地暖与超大浸浴缸。买家在意的不是品牌堆砌，而是这些都是真正的定制与硬装级别，住进去手感对得起价格。",
-        "bodyEn": "Five-inch European white-oak chevron floors with bronze inlay, cove ceilings with integrated lighting (Tillotson Design), custom Molteni kitchens with fully-integrated Miele appliances; baths with 22-karat champagne-gold Dornbracht fixtures, radiant-heated French Vanilla marble floors and oversized soaking tubs. Not brand-name box-ticking but genuinely custom, hard-finish quality you feel underfoot."
+        "bodyEn": "Five-inch European white-oak herringbone floors with bronze inlay, cove ceilings with integrated lighting (Tillotson Design), custom Molteni kitchens with fully-integrated Miele appliances; baths with 22-karat champagne-gold Dornbracht fixtures, radiant-heated French Vanilla marble floors and oversized soaking tubs. Not brand-name box-ticking but genuinely custom, hard-finish quality you feel underfoot."
       },
       {
         "titleZh": "地标历史 + 第五大道正门牌",
@@ -917,8 +917,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "565-broome-soho": {
     "overview": {
-      "zh": "565 Broome Soho 是普利兹克奖得主 Renzo Piano（伦佐·皮亚诺）在纽约的首个、也很可能是唯一一个住宅项目。30 层的双子塔在 17 层处一分为二，通体包裹定制低铁超白玻璃、四角做成柔和的弧形，由开发商 Bizzi & Partners 操盘，室内交给爱马仕御用的巴黎事务所 RDAI 打磨。它坐落在 SoHo 西缘、哈德逊河旁，落地窗把河景、世贸中心和下城天际线一并收进室内——是少数能让你“住进一件建筑作品里”的纽约新盘。",
-      "en": "565 Broome Soho is Renzo Piano's first — and likely only — residential building in New York. The Pritzker laureate designed a pair of glass towers that split above the 17th floor, wrapped in custom low-iron, ultra-clear glass with softly curved corners; developed by Bizzi & Partners with interiors by the Hermès-pedigreed Paris firm RDAI. Set on SoHo's western edge by the Hudson, its floor-to-ceiling glass pulls in river, World Trade Center and downtown-skyline views — one of the rare new developments where you genuinely live inside a work of architecture."
+      "zh": "565 Broome Soho 是普利兹克奖得主 Renzo Piano（伦佐·皮亚诺）在纽约的首个、也很可能是唯一一个住宅项目。30 层的双子塔在 16 层处一分为二，通体包裹定制低铁超白玻璃、四角做成柔和的弧形，由开发商 Bizzi & Partners 操盘，室内交给爱马仕御用的巴黎事务所 RDAI 打磨。它坐落在 SoHo 西缘、哈德逊河旁，落地窗把河景、世贸中心和下城天际线一并收进室内——是少数能让你“住进一件建筑作品里”的纽约新盘。",
+      "en": "565 Broome Soho is Renzo Piano's first — and likely only — residential building in New York. The Pritzker laureate designed a pair of glass towers that split above the 16th floor, wrapped in custom low-iron, ultra-clear glass with softly curved corners; developed by Bizzi & Partners with interiors by the Hermès-pedigreed Paris firm RDAI. Set on SoHo's western edge by the Hudson, its floor-to-ceiling glass pulls in river, World Trade Center and downtown-skyline views — one of the rare new developments where you genuinely live inside a work of architecture."
     },
     "highlights": [
       {
@@ -930,8 +930,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       {
         "titleZh": "弧角全玻璃幕墙 + 河景",
         "titleEn": "Curved-corner glass, river views",
-        "bodyZh": "双塔在 17 层裂开，四角做成无缝弧形，定制低铁超白玻璃从地板包到天花板。高层户型可享近 360 度全景，哈德逊河、世贸中心与下城天际线尽收眼底——同片区少有楼盘能给到这种通透与开阔。",
-        "bodyEn": "The twin towers split at the 17th floor with seamless curved corners and custom low-iron glass running floor to ceiling. Upper residences command near-360-degree panoramas of the Hudson, the World Trade Center and the downtown skyline — an openness few buildings in the area can match."
+        "bodyZh": "双塔在 16 层裂开，四角做成无缝弧形，定制低铁超白玻璃从地板包到天花板。高层户型可享近 360 度全景，哈德逊河、世贸中心与下城天际线尽收眼底——同片区少有楼盘能给到这种通透与开阔。",
+        "bodyEn": "The twin towers split at the 16th floor with seamless curved corners and custom low-iron glass running floor to ceiling. Upper residences command near-360-degree panoramas of the Hudson, the World Trade Center and the downtown skyline — an openness few buildings in the area can match."
       },
       {
         "titleZh": "RDAI 室内 + 诚实的材料",
@@ -1055,8 +1055,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       }
     ],
     "location": {
-      "zh": "位于上西区 Lincoln Square，西 68 街、Broadway 与 Amsterdam Avenue 之间；步行一个街区到 Lincoln Center，东到中央公园、西到河滨公园都是几分钟路程。地铁 1/2/3 线在 66 街-Lincoln Center 站、B/C 线在 72 街站，去 Columbus Circle、时代广场和中城都很直接。周边 Broadway 沿线满是餐厅、Trader Joe's、影院和日常商铺。",
-      "en": "In Lincoln Square on the Upper West Side, on West 68th Street between Broadway and Amsterdam Avenue — one block to Lincoln Center, and a few minutes' walk to either Central Park or Riverside Park. The 1/2/3 at 66th St–Lincoln Center and the B/C at 72nd St put Columbus Circle, Times Square, and Midtown within an easy ride, with Broadway's restaurants, Trader Joe's, cinemas, and everyday shops right outside."
+      "zh": "位于上西区 Lincoln Square，西 68 街、Broadway 与 Amsterdam Avenue 之间；步行一个街区到 Lincoln Center，东到中央公园、西到河滨公园都是几分钟路程。地铁 1 号线在 66 街-Lincoln Center 站（2/3 为快车不停靠）、B/C 线在 72 街站，去 Columbus Circle、时代广场和中城都很直接。周边 Broadway 沿线满是餐厅、Trader Joe's、影院和日常商铺。",
+      "en": "In Lincoln Square on the Upper West Side, on West 68th Street between Broadway and Amsterdam Avenue — one block to Lincoln Center, and a few minutes' walk to either Central Park or Riverside Park. The 1 train at 66th St–Lincoln Center (the 2/3 express bypass it) and the B/C at 72nd St put Columbus Circle, Times Square, and Midtown within an easy ride, with Broadway's restaurants, Trader Joe's, cinemas, and everyday shops right outside."
     }
   },
   "linden-lane": {
@@ -1157,8 +1157,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "bloom-on-forty-fifth": {
     "overview": {
-      "zh": "Bloom on Forty Fifth 是 Xin Development 开发、Marvel Architects 设计的 7 层精品公寓，位于地狱厨房 500 West 45th Street(第十、十一大道之间),共 92 套住宅、2020 年落成。最大的特色是楼体中央一个抬升的 8,000 平方英尺景观庭院——种着成排的全冠乔木和绿植，带天窗，等于把一座私家花园嵌进了寸土寸金的曼哈顿西区，几乎每户的采光和视野都对着它。",
-      "en": "Bloom on Forty Fifth is a 92-unit, 7-story boutique condominium at 500 West 45th Street in Hell's Kitchen (between Tenth and Eleventh Avenues), developed by Xin Development and designed inside and out by Marvel Architects, completed in 2020. Its signature move is an elevated 8,000-square-foot landscaped courtyard at the heart of the building — full-grown trees, planting and skylights — a private garden carved into the dense West Side that most homes look onto for light and outlook."
+      "zh": "Bloom on Forty Fifth 是 Xin Development 开发、Marvel Architects 设计的 7 层精品公寓，位于地狱厨房 500 West 45th Street(第十、十一大道之间),共 92 套住宅、2020 年落成。最大的特色是两座塔楼之间一个抬升的 8,000 平方英尺景观庭院——种着成排的全冠乔木和绿植，带天窗，等于把一座私家花园嵌进了寸土寸金的曼哈顿西区，几乎每户的采光和视野都对着它。",
+      "en": "Bloom on Forty Fifth is a 92-unit, 7-story boutique condominium at 500 West 45th Street in Hell's Kitchen (between Tenth and Eleventh Avenues), developed by Xin Development and designed inside and out by Marvel Architects, completed in 2020. Its signature move is an elevated 8,000-square-foot landscaped courtyard between its two towers — full-grown trees, planting and skylights — a private garden carved into the dense West Side that most homes look onto for light and outlook."
     },
     "highlights": [
       {
@@ -1391,8 +1391,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       }
     ],
     "location": {
-      "zh": "位于西切尔西 West 19th Street(第十、十一大道之间)，紧邻 High Line 高线公园，步行可达切尔西画廊区、Hudson River Park 与 Chelsea Market;最近地铁为 14 街的 A/C/E 与 L 线，以及 23 街的 C/E 线，几个街区即到。",
-      "en": "In West Chelsea on West 19th Street between Tenth and Eleventh Avenues, steps from the High Line and within an easy walk of the Chelsea galleries, Hudson River Park and Chelsea Market; the nearest trains are the A/C/E and L at 14th Street and the C/E at 23rd Street, a few blocks away."
+      "zh": "位于西切尔西 West 19th Street（第九、十大道之间），紧邻 High Line 高线公园，步行可达切尔西画廊区、Hudson River Park 与 Chelsea Market;最近地铁为 14 街的 A/C/E 与 L 线，以及 23 街的 C/E 线，几个街区即到。",
+      "en": "In West Chelsea on West 19th Street between Ninth and Tenth Avenues, steps from the High Line and within an easy walk of the Chelsea galleries, Hudson River Park and Chelsea Market; the nearest trains are the A/C/E and L at 14th Street and the C/E at 23rd Street, a few blocks away."
     }
   },
   "35-hudson-yards-manhattan": {
@@ -1475,7 +1475,7 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "Paris Forino 定制内饰：人字拼地板、Calacatta 大理石",
-        "bodyZh": "室内用人字拼（chevron）木地板、Calacatta 大理石、拱形门洞、磨砂玻璃和超大窗，暖色自然质感。这些是真材实料的高定级别完成度，不是开发商常见的标配套餐。",
+        "bodyZh": "室内用人字拼（herringbone）木地板、Calacatta 大理石、拱形门洞、磨砂玻璃和超大窗，暖色自然质感。这些是真材实料的高定级别完成度，不是开发商常见的标配套餐。",
         "titleEn": "Paris Forino interiors: chevron floors, Calacatta marble",
         "bodyEn": "Interiors feature chevron wood floors, Calacatta marble baths, arched doorways, fluted glass, and oversized windows in a warm natural palette — genuine couture-level finishes, not a developer's standard package."
       },
@@ -1589,8 +1589,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "loft-21": {
     "overview": {
-      "zh": "Loft 21 是 Long Island City 核心 Hunters Point 的一栋全新精装公寓，由 Century Development Group 开发、Lu Ning Architecture 设计，7 层、67 户，独家销售为 SERHANT 新盘部 Kayla Lee 团队。最值得一提的是：作为一栋低层小盘，它配了 20,000 多平尺的酒店级公共空间——带壁炉的双层挑高大堂、健身房加瑜伽露台、园景中庭烧烤区，这种配套密度在 LIC 同尺寸的楼里很少见，也让它拿下了 6sqft 2024 年度建筑奖。",
-      "en": "Loft 21 is a brand-new condominium in the heart of Hunters Point, Long Island City — a 7-story, 67-residence building developed by Century Development Group, designed by Lu Ning Architecture, and sold by the Kayla Lee Team at SERHANT New Development. What stands out: for a low-rise boutique building, it packs in 20,000+ SF of hotel-grade amenities — a double-height lobby with fireplace, a fitness center with its own yoga terrace, and a landscaped courtyard with grilling stations — a level of amenity density rarely seen in LIC buildings of this size, and the reason it was named 6sqft's 2024 Building of the Year."
+      "zh": "Loft 21 是 Long Island City 核心 Hunters Point 的一栋全新精装公寓，由 Century Development Group 开发、Lu Ning Architecture 设计，7 层、67 户，独家销售为 SERHANT 新盘部 Kayla Lee 团队。最值得一提的是：作为一栋低层小盘，它配了 20,000 多平尺的酒店级公共空间——带壁炉的双层挑高大堂、健身房加瑜伽露台、园景中庭烧烤区，这种配套密度在 LIC 同尺寸的楼里很少见。",
+      "en": "Loft 21 is a brand-new condominium in the heart of Hunters Point, Long Island City — a 7-story, 67-residence building developed by Century Development Group, designed by Lu Ning Architecture, and sold by the Kayla Lee Team at SERHANT New Development. What stands out: for a low-rise boutique building, it packs in 20,000+ SF of hotel-grade amenities — a double-height lobby with fireplace, a fitness center with its own yoga terrace, and a landscaped courtyard with grilling stations — a level of amenity density rarely seen in LIC buildings of this size,."
     },
     "highlights": [
       {
@@ -1625,9 +1625,9 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       },
       {
         "titleZh": "获奖品质 + 现房交付节点",
-        "bodyZh": "Lu Ning Architecture 操刀、Century Development Group 开发，项目曾获 6sqft 评选的 2024 年度建筑奖。新盘已进入交房阶段，户型从一房到三房（约 $106 万起），买家看得到实物、交付时间明确。",
+        "bodyZh": "Lu Ning Architecture 操刀、Century Development Group 开发，项目。新盘已进入交房阶段，户型从一房到三房（约 $106 万起），买家看得到实物、交付时间明确。",
         "titleEn": "Award-winning, and delivering now",
-        "bodyEn": "Designed by Lu Ning Architecture and developed by Century Development Group, the project was named 6sqft's 2024 Building of the Year. It's a new development already moving into closings, with one- to three-bedroom homes (from roughly $1.06M) — buyers get a clear delivery timeline and a building they can see in person."
+        "bodyEn": "Designed by Lu Ning Architecture and developed by Century Development Group, It's a new development already moving into closings, with one- to three-bedroom homes (from roughly $1.06M) — buyers get a clear delivery timeline and a building they can see in person."
       }
     ],
     "location": {
