@@ -1328,5 +1328,55 @@
   "77-greenwich": {
     "images": [],
     "floorPlans": []
+  },
+  "the-bryant": {
+    "images": [
+      {
+        "id": "the-bryant-img-1",
+        "src": "https://thebryantnyc.com/wp-content/uploads/2023/09/The-Bryant_Hero_credit-Evan-Joseph1.jpg",
+        "caption": "布莱恩特公园对面的大理石水磨石外立面（摄影 Evan Joseph）",
+        "alt": "",
+        "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2023/09/The-Bryant_Hero_credit-Evan-Joseph1.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "the-bryant-img-2",
+        "src": "https://thebryantnyc.com/wp-content/uploads/2015/08/The-Bryant_Penthouse_North-View_credit-Donna-Dotan-1.jpg",
+        "caption": "顶层复式北向视野，正对布莱恩特公园与中城天际线",
+        "alt": "",
+        "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/08/The-Bryant_Penthouse_North-View_credit-Donna-Dotan-1.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "the-bryant-img-3",
+        "src": "https://thebryantnyc.com/wp-content/uploads/2024/01/The-Bryant-Penthouse-North-Living-Room-scaled.jpg",
+        "caption": "顶层起居室，落地窗与人字拼橡木地板",
+        "alt": "",
+        "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2024/01/The-Bryant-Penthouse-North-Living-Room-scaled.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "the-bryant-img-4",
+        "src": "https://thebryantnyc.com/wp-content/uploads/2024/01/The-Bryant-Penthouse-North-Kitchen-and-Dining-scaled.jpg",
+        "caption": "厨房与餐厅，整石台面与定制木作",
+        "alt": "",
+        "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2024/01/The-Bryant-Penthouse-North-Kitchen-and-Dining-scaled.jpg",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "the-bryant-img-5",
+        "src": "https://thebryantnyc.com/wp-content/uploads/2015/08/The-Bryant-Double-Height-Lounge1.jpg",
+        "caption": "专属 Terrace Club 双层挑高会所",
+        "alt": "",
+        "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/08/The-Bryant-Double-Height-Lounge1.jpg",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": []
   }
 }

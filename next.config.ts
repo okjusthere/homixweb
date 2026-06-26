@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       // New-development official marketing images (developer CMS CDNs).
       { protocol: "https", hostname: "cdn.sanity.io" },
       { protocol: "https", hostname: "media-production.lp-cdn.com" },
+      { protocol: "https", hostname: "thebryantnyc.com" },
     ],
   },
   experimental: {
