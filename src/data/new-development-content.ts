@@ -3,6 +3,54 @@
 export type DevelopmentHighlight = { titleZh: string; bodyZh: string; titleEn: string; bodyEn: string };
 export type DevelopmentContent = { overview: { zh: string; en: string }; highlights: DevelopmentHighlight[]; location: { zh: string; en: string } };
 export const newDevelopmentContent: Record<string, DevelopmentContent> = {
+  "the-bryant": {
+    "overview": {
+      "zh": "The Bryant 坐落于曼哈顿中城 16 West 40th Street,正门正对布莱恩特公园(Bryant Park)与纽约公共图书馆主馆——这是普利兹克奖得主 David Chipperfield(大卫·奇普菲尔德)在纽约的首个住宅作品。整栋 34 层混合用途塔楼,2 至 15 层为精品酒店,16 至 34 层为 57 套产权公寓,住户日常起居即以这片曼哈顿中城最稀缺的永久开放绿地为前景。最具辨识度的是它通体的白色大理石水磨石(marble terrazzo)外立面:同一种材质从街面一路延伸进入大堂室内,配以规整的网格窗洞与内嵌式法式小阳台,在一众玻璃幕墙塔楼中显得克制而经久。室内由 Chipperfield 团队亲自操刀,人字拼地暖橡木地板、落地窗、Statuarietto/Calacatta 大理石与 Gaggenau 厨电,设计语言与建筑外观一脉相承。对买家而言,这意味着一处由建筑大师从外到内统一掌控、且坐拥不可复制公园正景的中城收藏级住宅。",
+      "en": "The Bryant sits at 16 West 40th Street in Midtown Manhattan, facing Bryant Park and the main branch of the New York Public Library head-on. It is the first residential project in New York by Pritzker Prize laureate David Chipperfield. The 34-story mixed-use tower places a boutique hotel on floors 2-15 and 57 condominium residences on floors 16-34. Its signature is a marble-terrazzo facade that carries the same material from the street into the lobby, set off by a disciplined grid of windows and recessed Juliet balconies. Interiors, by Chipperfield's own team, continue that language with fumed-oak herringbone floors over radiant heat, floor-to-ceiling windows, Statuarietto and Calacatta marble, and Gaggenau appliances. For a buyer, a collector-grade Midtown home controlled inside and out by a master architect, fronting a park view that cannot be reproduced."
+    },
+    "highlights": [
+      {
+        "titleZh": "奇普菲尔德的纽约首作,从立面到室内一手把控",
+        "bodyZh": "建筑、立面与室内均由 David Chipperfield Architects 完成,标志性的白色大理石水磨石材质从外墙延续到大堂,内里是人字拼橡木地暖地板、落地窗与整石卫浴。对买家的意义:这是一栋有明确设计署名、且品质统一到细节的房子,经得起时间,也更易在二级市场被认出价值。",
+        "titleEn": "Chipperfield's NYC debut, controlled facade to interior",
+        "bodyEn": "Architecture, facade, and interiors are all by David Chipperfield Architects; the signature white marble-terrazzo runs from the exterior into the lobby, while residences feature herringbone oak floors over radiant heat, floor-to-ceiling windows, and stone-clad baths. For a buyer: a home with a clear design signature and consistency down to the detail."
+      },
+      {
+        "titleZh": "正对布莱恩特公园,景观永久不被遮挡",
+        "bodyZh": "住宅正门面向布莱恩特公园与纽约公共图书馆,公园是受保护的城市开放空间,前方视野不会被未来新楼挡住;高层还可远眺帝国大厦与中城天际线。对买家的意义:在寸土寸金的中城,这种'买到的就是永远'的公园正景极为稀缺,是真正的硬资产。",
+        "titleEn": "Facing Bryant Park, with protected open views",
+        "bodyEn": "The residences front Bryant Park and the New York Public Library. The park is protected open space, so the view cannot be built out by a future tower; higher floors look toward the Empire State Building. For a buyer: a permanent park-front view is genuinely scarce in dense Midtown."
+      },
+      {
+        "titleZh": "酒店级服务,住户直接享用",
+        "bodyZh": "住宅之下即是精品酒店,住户可使用酒店服务,并享有楼内餐厅的优先预订。配套含 24 小时门房与礼宾、带桑拿的健身房,以及俯瞰公园、设壁炉与全套酒吧的专属 Terrace Club 会所。对买家的意义:既有私宅的私密,又有酒店的即时服务,自住省心,出租或自用切换也灵活。",
+        "titleEn": "Hotel-grade service, on tap for residents",
+        "bodyEn": "A boutique hotel occupies the floors below; residents get hotel services and priority reservations at the in-building restaurant. Amenities include a 24-hour doorman, a fitness center with sauna, and the private Terrace Club with a fireplace and bar overlooking the park."
+      },
+      {
+        "titleZh": "户型精炼,单层户数少",
+        "bodyZh": "全楼仅 57 套,分布在 16-34 层,户型从一/两居到顶层复式 penthouse,落地窗采光、户内多为石材壁炉与定制木作。对买家的意义:单层户数少意味着更高私密性与更安静的居住体验,稀少的套数也支撑长期保值与转手议价空间。",
+        "titleEn": "A tight unit count, few homes per floor",
+        "bodyEn": "Just 57 residences across floors 16-34, from one- and two-bedrooms to penthouse duplexes, with floor-to-ceiling light, stone fireplaces, and custom millwork. For a buyer: more privacy, a quieter building, and pricing leverage on resale."
+      },
+      {
+        "titleZh": "中城交通枢纽,通勤与出行都在脚下",
+        "bodyZh": "楼下即第五大道,步行可达布莱恩特公园站(B/D/F/M、7 号线)、中央车站(4/5/6、Metro-North)与时代广场。对买家的意义:无论上班族还是常往返机场/郊区的家庭,这个位置把通勤时间压到最低,也让物业更好出租。",
+        "titleEn": "A Midtown transit hub right downstairs",
+        "bodyEn": "Fifth Avenue is at the door, with Bryant Park station (B/D/F/M, 7), Grand Central (4/5/6, Metro-North), and Times Square within walking distance. For a buyer: minimal commute time and a highly rentable home."
+      },
+      {
+        "titleZh": "成熟现房,即买即住、产权清晰",
+        "bodyZh": "项目 2017 年建成,是已交付的成熟产权公寓,可实地看房、即时入住,没有期房的交付与变更风险。对买家的意义:你看到的就是你买到的,适合追求确定性、希望尽快落定的自住或投资买家。",
+        "titleEn": "A move-in-ready, completed condominium",
+        "bodyEn": "Completed in 2017, The Bryant is a delivered condominium; you can tour in person and move in immediately, with none of the pre-construction risk. For a buyer: certainty and a fast close, to live in or invest."
+      }
+    ],
+    "location": {
+      "zh": "The Bryant 位于曼哈顿中城南 16 West 40th Street,第五大道与第六大道之间,正面即布莱恩特公园与纽约公共图书馆主馆。步行几分钟可达第五大道零售、洛克菲勒中心、中央车站与时代广场;布莱恩特公园站(B/D/F/M)与第五大道-布莱恩特公园站(7 号线)就在楼下,中央车站 4/5/6 与 Metro-North、时代广场各线均在步行范围。对买家的意义:出门即繁华、回家即公园的稀缺位置,自住半径短,出租与转手需求面广。",
+      "en": "The Bryant is at 16 West 40th Street in Midtown South, between Fifth and Sixth, facing Bryant Park and the main New York Public Library. Fifth Avenue retail, Rockefeller Center, Grand Central, and Times Square are a short walk away; Bryant Park (B/D/F/M), Fifth Av-Bryant Park (7), and Grand Central's 4/5/6 and Metro-North are all within reach. For a buyer: a rare 'step out to the buzz, come home to the park' address with broad rental and resale demand."
+    }
+  },
   "radiant-condominium": {
     "overview": {
       "zh": "Radiant 是长岛市 Queens Plaza North 上一栋 19 层、117 户的全新精装公寓，2026 年入住。由曼哈顿知名事务所 ODA 操刀建筑、Paris Forino 主理室内，外立面采用圆弧曲线与环绕大窗——这意味着更多转角户型、更多采光面，以及直面曼哈顿天际线和东河的开阔景观。户型从开间到三居，外加一套复式 maisonette 和一套顶层 penthouse，开间约 61 万美元起。",

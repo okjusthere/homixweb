@@ -912,7 +912,7 @@ export const featuredDevelopments = [
     area: "Kips Bay",
     address: "609 2nd Avenue, New York, NY 10016",
     sourceUrl: "https://streeteasy.com/building/nolen",
-    officialUrl: "https://www.nolencondosnyc.com",
+    officialUrl: "https://thebryantnyc.com",
     galleryCount: 13,
     sourceUpdated: "11/17/2025",
     transit:
