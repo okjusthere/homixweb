@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentMedia } from "@/data/new-development-media";
+import { getDevelopmentContent } from "@/data/new-development-content";
 import { getT } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import {
@@ -61,11 +62,12 @@ export default async function NewDevelopmentDetailPage({
   const checklist = buyerChecklist(building, locale);
   const media = getDevelopmentMedia(building.slug);
   const cover = media.images[0];
+  const content = getDevelopmentContent(building.slug);
 
   const copy = {
     back: zh ? "全部新盘" : "All new developments",
     overview: zh ? "项目背景" : "Project Background",
-    why: zh ? "为什么值得看" : "Why It Matters",
+    why: zh ? "项目亮点" : "Highlights",
     fit: zh ? "适合什么买家" : "Buyer Fit",
     location: zh ? "地段与交通" : "Location",
     budget: zh ? "户型与预算" : "Plans & Budget",
@@ -159,8 +161,8 @@ export default async function NewDevelopmentDetailPage({
               </div>
               <p className="mt-5 text-sm leading-relaxed text-muted">
                 {zh
-                  ? "这页的作用是让客户先看懂项目，不需要先跳去英文平台。官方图片与户型图会优先展示；具体单元税费以我们后续核验资料为准。"
-                  : "This page is designed for first-pass client understanding before a unit-level verification package."}
+                  ? "官方图片与户型图优先展示；具体单元的物业费、税费和库存以后续核验资料为准。"
+                  : "Official photos and floor plans where available; common charges, taxes, and inventory are verified by unit."}
               </p>
             </div>
           </div>
@@ -195,32 +197,45 @@ export default async function NewDevelopmentDetailPage({
             <section>
               <Eyebrow>{copy.overview}</Eyebrow>
               <p className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.25rem]">
-                {developmentIntro(building, locale)}
+                {content ? content.overview[locale] : developmentIntro(building, locale)}
               </p>
             </section>
 
             <section className="mt-14">
               <Eyebrow>{copy.why}</Eyebrow>
-              <div className="mt-5 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
-                {angles.map((angle) => (
-                  <div key={angle.title} className="bg-surface p-6">
-                    <h2 className="font-serif text-xl font-normal text-ink">{angle.title}</h2>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{angle.body}</p>
+              {content ? (
+                <div className="mt-5 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
+                  {content.highlights.map((h) => (
+                    <div key={zh ? h.titleZh : h.titleEn} className="bg-surface p-6">
+                      <h2 className="font-serif text-xl font-normal text-ink">
+                        {zh ? h.titleZh : h.titleEn}
+                      </h2>
+                      <p className="mt-3 text-sm leading-relaxed text-muted">
+                        {zh ? h.bodyZh : h.bodyEn}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <div className="mt-5 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
+                    {angles.map((angle) => (
+                      <div key={angle.title} className="bg-surface p-6">
+                        <h2 className="font-serif text-xl font-normal text-ink">{angle.title}</h2>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">{angle.body}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </section>
-
-            <section className="mt-14">
-              <Eyebrow>{copy.checklist}</Eyebrow>
-              <div className="mt-5 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
-                {checklist.map((item) => (
-                  <div key={item.title} className="bg-surface p-6">
-                    <h2 className="font-serif text-xl font-normal text-ink">{item.title}</h2>
-                    <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                  <div className="mt-8 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
+                    {checklist.map((item) => (
+                      <div key={item.title} className="bg-surface p-6">
+                        <h2 className="font-serif text-xl font-normal text-ink">{item.title}</h2>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
             </section>
 
             {media.images.length > 0 && (
@@ -267,7 +282,9 @@ export default async function NewDevelopmentDetailPage({
               </div>
               <div>
                 <Eyebrow>{copy.location}</Eyebrow>
-                <p className="mt-4 text-sm leading-relaxed text-muted">{building.transit}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">
+                  {content ? content.location[locale] : building.transit}
+                </p>
                 <div className="mt-4 overflow-hidden rounded-sm border border-line bg-paper">
                   <iframe
                     title={`${building.name} map`}

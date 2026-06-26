@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "upload.wikimedia.org" },
       // Supabase Storage — advisor-uploaded headshots.
       { protocol: "https", hostname: "*.supabase.co" },
+      // New-development official marketing images (developer CMS CDNs).
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      { protocol: "https", hostname: "media-production.lp-cdn.com" },
     ],
   },
   experimental: {

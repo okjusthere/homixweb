@@ -360,7 +360,16 @@
         "height": 1334
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "the-perrie-fp-1",
+        "src": "https://cdn.sanity.io/images/ocxfzm61/full-website/8e6e3ef25517028f22a31627705e4e387a44b027-2763x3333.png",
+        "title": "一居室典型户型平面（官网交互户型图）",
+        "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/8e6e3ef25517028f22a31627705e4e387a44b027-2763x3333.png",
+        "width": 1200,
+        "height": 1500
+      }
+    ]
   },
   "malabar-residences": {
     "images": [
@@ -1152,6 +1161,172 @@
         "height": 1364
       }
     ],
+    "floorPlans": []
+  },
+  "central-park-tower": {
+    "images": [],
+    "floorPlans": []
+  },
+  "250-west-96-street": {
+    "images": [
+      {
+        "id": "250-west-96-street-img-1",
+        "src": "https://media-production.lp-cdn.com/media/73cb9d6e-2390-4bb2-899c-ef99c65a7bc5",
+        "caption": "250 West 96th Street 官方主视觉。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/73cb9d6e-2390-4bb2-899c-ef99c65a7bc5",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-2",
+        "src": "https://media-production.lp-cdn.com/media/553938bf-9d6d-48f8-9234-46cab2268b7f",
+        "caption": "室内场景，Thomas Juul-Hansen 操刀的精装调性。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/553938bf-9d6d-48f8-9234-46cab2268b7f",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-3",
+        "src": "https://media-production.lp-cdn.com/media/1ad034d2-50d7-473a-b6be-ab189ad17a8e",
+        "caption": "住宅空间一隅，超大平开窗带来开阔采光。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/1ad034d2-50d7-473a-b6be-ab189ad17a8e",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-4",
+        "src": "https://media-production.lp-cdn.com/media/3a5620e1-61dd-46ae-80f3-59a25b0a5c08",
+        "caption": "75 英尺盐水泳池所在的水疗中心。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/3a5620e1-61dd-46ae-80f3-59a25b0a5c08",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-5",
+        "src": "https://media-production.lp-cdn.com/media/3d7e30e5-ecc7-4d9f-ac20-8846a88edebe",
+        "caption": "水疗区，含水疗池、桑拿与蒸汽房。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/3d7e30e5-ecc7-4d9f-ac20-8846a88edebe",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-6",
+        "src": "https://media-production.lp-cdn.com/media/42b3f05d-5956-4a2b-92e7-3231715879ae",
+        "caption": "健身中心，配普拉提室与正规壁球场。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/42b3f05d-5956-4a2b-92e7-3231715879ae",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-7",
+        "src": "https://media-production.lp-cdn.com/media/1d3aa149-c461-4575-86cb-00f3455ef921",
+        "caption": "屋顶露台，设烧烤餐区与露天影院。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/1d3aa149-c461-4575-86cb-00f3455ef921",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-8",
+        "src": "https://media-production.lp-cdn.com/media/60a01c0d-2e16-45ed-bcf7-2491de038408",
+        "caption": "屋顶户外空间，可眺望城市景观。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/60a01c0d-2e16-45ed-bcf7-2491de038408",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-9",
+        "src": "https://media-production.lp-cdn.com/media/590ff5f2-3ee2-450e-b10d-e41737e84adf",
+        "caption": "会客与娱乐空间，含正式餐厅与俱乐部室。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/590ff5f2-3ee2-450e-b10d-e41737e84adf",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "250-west-96-street-img-10",
+        "src": "https://media-production.lp-cdn.com/media/64e1764f-c57b-4e5c-9f88-0fb3ae0cd095",
+        "caption": "儿童游戏室，面向家庭住户。",
+        "alt": "",
+        "sourceUrl": "https://media-production.lp-cdn.com/media/64e1764f-c57b-4e5c-9f88-0fb3ae0cd095",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": []
+  },
+  "parc-beaufort": {
+    "images": [
+      {
+        "id": "parc-beaufort-img-1",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/2ed4fea872745c46bf4eab78847d31a05b96ee34-4096x3243.jpg?rect=0,283,4096,2703&w=1600&fit=crop&auto=format",
+        "caption": "保留原始双层高窗与近 20 英尺层高的 loft 起居空间,沿袭当年艺术家工作室的采光格局。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/2ed4fea872745c46bf4eab78847d31a05b96ee34-4096x3243.jpg?rect=0,283,4096,2703&w=1600&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "parc-beaufort-img-2",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/1c365ada2256112c15bc5e7c19b2f59cff41f986-4096x2731.jpg?w=2400&fit=crop&auto=format",
+        "caption": "Stephen Sills 操刀的起居空间,材质与陈设由设计师统一定调。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/1c365ada2256112c15bc5e7c19b2f59cff41f986-4096x2731.jpg?w=2400&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "parc-beaufort-img-3",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/81f573f1df69126f72977e55c1c3ff407eeb0edd-2731x4096.jpg?rect=12,1430,2709,1524&w=1600&h=900&fit=crop&auto=format",
+        "caption": "定制厨房采用哑光 Emperador 大理石台面与同材质背板。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/81f573f1df69126f72977e55c1c3ff407eeb0edd-2731x4096.jpg?rect=12,1430,2709,1524&w=1600&h=900&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "parc-beaufort-img-4",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/ccd030513f1617452b456d4616c30edfe3dcd81c-2731x4096.jpg?rect=0,1429,2731,1536&w=1600&h=900&fit=crop&auto=format",
+        "caption": "厨房配白橡木橱柜,延续室内整体的暖色木质调。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/ccd030513f1617452b456d4616c30edfe3dcd81c-2731x4096.jpg?rect=0,1429,2731,1536&w=1600&h=900&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "parc-beaufort-img-5",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/810c9bd5f81959374a5829e709c08183bb84b494-2731x4096.jpg?rect=18,1294,2697,1517&w=1600&h=900&fit=crop&auto=format",
+        "caption": "主浴室以哑光 travertine 铺设地墙,搭配白橡木浴柜与暖铜色 Gessi 五金。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/810c9bd5f81959374a5829e709c08183bb84b494-2731x4096.jpg?rect=18,1294,2697,1517&w=1600&h=900&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      },
+      {
+        "id": "parc-beaufort-img-6",
+        "src": "https://cdn.sanity.io/images/tm6xrukv/production/a67dd615df9f0e01c52170f93ab8a63476c25731-4096x2731.jpg?rect=82,519,3932,2212&w=1600&h=900&fit=crop&auto=format",
+        "caption": "浴室细部:暖铜色 Gessi 龙头与 travertine 台面的材质组合。",
+        "alt": "",
+        "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/a67dd615df9f0e01c52170f93ab8a63476c25731-4096x2731.jpg?rect=82,519,3932,2212&w=1600&h=900&fit=crop&auto=format",
+        "width": 1600,
+        "height": 1067
+      }
+    ],
+    "floorPlans": []
+  },
+  "bloom-on-forty-fifth": {
+    "images": [],
+    "floorPlans": []
+  },
+  "77-greenwich": {
+    "images": [],
     "floorPlans": []
   }
 }
