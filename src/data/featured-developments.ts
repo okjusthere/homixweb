@@ -827,7 +827,7 @@ export const featuredDevelopments = [
     area: "Midtown",
     address: "660 Lexington Avenue, New York, NY 10022",
     sourceUrl: "https://streeteasy.com/building/660-lexington",
-    officialUrl: "https://660lex.com",
+    officialUrl: "https://www.35hudsonyards.com",
     galleryCount: 12,
     sourceUpdated: "1/18/2022",
     transit:
