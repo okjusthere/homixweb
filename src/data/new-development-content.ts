@@ -3,6 +3,54 @@
 export type DevelopmentHighlight = { titleZh: string; bodyZh: string; titleEn: string; bodyEn: string };
 export type DevelopmentContent = { overview: { zh: string; en: string }; highlights: DevelopmentHighlight[]; location: { zh: string; en: string } };
 export const newDevelopmentContent: Record<string, DevelopmentContent> = {
+  "radiant-condominium": {
+    "overview": {
+      "zh": "Radiant 是长岛市 Queens Plaza North 上一栋 19 层、117 户的全新精装公寓，2026 年入住。由曼哈顿知名事务所 ODA 操刀建筑、Paris Forino 主理室内，外立面采用圆弧曲线与环绕大窗——这意味着更多转角户型、更多采光面，以及直面曼哈顿天际线和东河的开阔景观。户型从开间到三居，外加一套复式 maisonette 和一套顶层 penthouse，开间约 61 万美元起。",
+      "en": "Radiant is a brand-new, 19-story, 117-unit condominium on Queens Plaza North in Long Island City, with 2026 occupancy. Architecture is by ODA New York with interiors by Paris Forino; the curved facade and wraparound oversized windows mean more corner layouts, more light, and open views of the Manhattan skyline and the East River. Homes range from studios to three-bedrooms, plus a duplex maisonette and a one-of-a-kind penthouse, with studios starting around $610K."
+    },
+    "highlights": [
+      {
+        "titleZh": "ODA 建筑 + Paris Forino 室内",
+        "bodyZh": "建筑由曼哈顿一线事务所 ODA 设计，室内由 Paris Forino 主理。对买家来说，这是设计有签名、转手时有故事和溢价支撑的房子，而非千篇一律的玻璃盒子。",
+        "titleEn": "ODA architecture, Paris Forino interiors",
+        "bodyEn": "Designed by Manhattan firm ODA with interiors by Paris Forino — a building with a real design signature, which supports both livability and resale story rather than a generic glass box."
+      },
+      {
+        "titleZh": "圆弧外立面 = 更多转角与采光",
+        "bodyZh": "曲线建筑配环绕大窗，做出比同区直角楼更多的转角户和采光面，正面对准曼哈顿天际线与东河。景观和通透感直接体现在日后转手价上。",
+        "titleEn": "Curved facade means more corners and light",
+        "bodyEn": "The rounded form with wraparound windows yields more corner units and light exposures than typical right-angle towers nearby, facing the Manhattan skyline and East River — views that translate directly into resale value."
+      },
+      {
+        "titleZh": "顶层会客阁 + 室外露台",
+        "bodyZh": "19 层塔顶设玻璃幕会客厅、主厨厨房、台球室与配烧烤站的室外露台，俯瞰皇后区与曼哈顿。这是日常待客和宴请的真实使用空间，不只是售楼噱头。",
+        "titleEn": "Rooftop social parlor with terrace",
+        "bodyEn": "The 19th-floor pinnacle has a glass-enclosed lounge, chef's kitchen, billiards room, and an outdoor terrace with a grilling station overlooking Queens and Manhattan — a space you'll actually use for hosting."
+      },
+      {
+        "titleZh": "配套覆盖全家与全场景",
+        "bodyZh": "双层挑高健身房带自然采光、芬兰桑拿、宠物 spa、篮球场、室内外乒乓中庭、高尔夫模拟器、KTV、放映室，还有儿童攀岩区。家庭、单身、养宠都能用得上。",
+        "titleEn": "Amenities for every household",
+        "bodyEn": "Double-height fitness center with natural light, Finnish sauna, pet spa, basketball court, indoor-outdoor ping pong courtyard, golf simulator, karaoke and screening rooms, plus a kids' rock-climbing area — covers families, singles, and pet owners alike."
+      },
+      {
+        "titleZh": "精装到位的厨卫与私人露台",
+        "bodyZh": "白橡木定制橱柜配大理石台面、全套博世 Bosch 嵌入式电器、8 英寸宽白橡木地板；卫浴地暖、智能马桶、雨淋花洒。多套户型自带私人露台或阳台，在本区属稀缺。",
+        "titleEn": "Move-in-ready kitchens, baths, private terraces",
+        "bodyEn": "White-oak cabinetry with marble counters, fully integrated Bosch appliances, 8-inch white-oak plank floors; baths have radiant heated floors, smart toilets, and rain showers. Many homes include private terraces or balconies — a rarity in this neighborhood."
+      },
+      {
+        "titleZh": "Queens Plaza 多线地铁枢纽",
+        "bodyZh": "门口即 Queens Plaza / Queensboro Plaza 站，E、M、R、7、N、W、G 多线交汇，一站进曼哈顿中城。通勤时间和换乘便利直接决定出租回报与自住效率。",
+        "titleEn": "Multi-line subway hub at Queens Plaza",
+        "bodyEn": "Steps from Queens Plaza / Queensboro Plaza stations — E, M, R, 7, N, W, and G lines converge here, putting Midtown Manhattan one stop away, which drives both rental yield and daily convenience."
+      }
+    ],
+    "location": {
+      "zh": "位于长岛市 Queens Plaza North，紧邻 Queens Plaza（E/M/R/G）与 Queensboro Plaza（7/N/W）双站，过桥即曼哈顿中城；步行可达 Court Square、Gantry Plaza 滨水公园、LIC 餐饮与艺术区。",
+      "en": "On Queens Plaza North in Long Island City, beside the Queens Plaza (E/M/R/G) and Queensboro Plaza (7/N/W) stations with Midtown Manhattan one stop over the bridge; walkable to Court Square, the Gantry Plaza waterfront parks, and LIC's dining and arts district."
+    }
+  },
   "waldorf-astoria-residences-new-york": {
     "overview": {
       "zh": "纽约华尔道夫·阿斯托利亚公寓（The Towers）位于公园大道上、1931 年落成的装饰艺术（Art Deco）地标里，这栋楼曾是世界最高酒店。经过约十年、由 Dajia US 投资、SOM 主持的整体修复改造，塔楼高区辟出 375 套产权公寓，室内由巴黎设计师 Jean-Louis Deniot 操刀。整栋楼的外立面与主要公共空间均受纽约市地标保护，住户共享一座 5 万多平方英尺的私人会所，并直通楼下 2025 年 7 月重新开业的华尔道夫酒店。最值得一提的一点：这是市面上极少见的、住进一座受保护地标又配齐当代顶奢系统与品牌酒店服务的机会。",
