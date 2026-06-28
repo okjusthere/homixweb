@@ -234,13 +234,17 @@ function toListing(dto: BboListingDTO): Listing | null {
   const listingKey = trim(dto.listingKey);
   if (!listingKey) return null;
 
-  const street = trim(dto.unparsedAddress) || listingKey;
+  const unparsed = trim(dto.unparsedAddress);
   const city = trim(dto.city);
   const state = trim(dto.stateOrProvince) || "NY";
   const postalCode = trim(dto.postalCode);
-  const full = [street, [city, state, postalCode].filter(Boolean).join(" ")]
-    .filter(Boolean)
-    .join(", ");
+  const cityLine = [city, state, postalCode].filter(Boolean).join(" ");
+  // Never surface the raw listing key as an address — it means nothing to a
+  // buyer. Prefer the street line; otherwise fall back to city/state/zip, then
+  // a neutral label. (When the feed omits the street, BBO is the real fix.)
+  const hasStreet = unparsed.length > 0;
+  const street = hasStreet ? unparsed : cityLine || "Address available on request";
+  const full = hasStreet ? [unparsed, cityLine].filter(Boolean).join(", ") : street;
   const officeName = trim(dto.listOfficeName);
   const images = dto.imageUrls?.length
     ? dto.imageUrls
@@ -263,7 +267,8 @@ function toListing(dto: BboListingDTO): Listing | null {
       city,
       state,
       postalCode,
-      neighborhood: city || undefined,
+      // Skip the city eyebrow when the city is already standing in as the street.
+      neighborhood: hasStreet ? city || undefined : undefined,
     },
     beds: toInteger(dto.bedroomsTotal),
     baths: toInteger(dto.bathroomsFull ?? dto.bathroomsTotalInteger),
