@@ -507,7 +507,48 @@
     "height": 1234
    }
   ],
-  "floorPlans": []
+  "floorPlans": [
+   {
+    "id": "res-9a",
+    "src": "/new-development/monogram-new-york/floorplans/res-9a.jpg",
+    "title": "Residence 9A",
+    "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/89fc8439473122b207d481a83dec2020/Monogram-BHSDM-unit-3-9A.pdf",
+    "width": 1224,
+    "height": 1512
+   },
+   {
+    "id": "res-19c",
+    "src": "/new-development/monogram-new-york/floorplans/res-19c.jpg",
+    "title": "Residence 19C",
+    "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/1b7fdc9bf065575ade193622a13e8b23/Monogram-BHSDM-unit-3-19C.pdf",
+    "width": 1224,
+    "height": 1512
+   },
+   {
+    "id": "res-20a",
+    "src": "/new-development/monogram-new-york/floorplans/res-20a.jpg",
+    "title": "Residence 20A",
+    "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/0dc04ec0900f26c8d2b906114a0b97af/Monogram-BHSDM-unit-20A.pdf",
+    "width": 1224,
+    "height": 1512
+   },
+   {
+    "id": "res-10-19g",
+    "src": "/new-development/monogram-new-york/floorplans/res-10-19g.jpg",
+    "title": "Residences 10–19G",
+    "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/0e6d0fa3d038c1a309b7fc33912549b2/Monogram-BHSDM-unit-10-19G.pdf",
+    "width": 1224,
+    "height": 1512
+   },
+   {
+    "id": "res-21-34f",
+    "src": "/new-development/monogram-new-york/floorplans/res-21-34f.jpg",
+    "title": "Residences 21–34F",
+    "sourceUrl": "https://cdn.spark.re/uploads/floorplan/file/bf88d6d4635e5c060232a0d4e18ddbfd/Monogram-BHSDM-unit-21-34F.pdf",
+    "width": 1224,
+    "height": 1512
+   }
+  ]
  },
  "111-murray-street": {
   "images": [
@@ -1497,6 +1538,23 @@
     "height": 1067
    }
   ],
-  "floorPlans": []
+  "floorPlans": [
+   {
+    "id": "penthouse-north",
+    "src": "/new-development/the-bryant/floorplans/penthouse-north.jpg",
+    "title": "Penthouse North",
+    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2023/11/TheBryant_Floorplans_PHN_V18.png",
+    "width": 1446,
+    "height": 1900
+   },
+   {
+    "id": "penthouse-south",
+    "src": "/new-development/the-bryant/floorplans/penthouse-south.jpg",
+    "title": "Penthouse South",
+    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/10/TheBryant_Floorplans_PHS_V18.png",
+    "width": 1446,
+    "height": 1900
+   }
+  ]
  }
 }
