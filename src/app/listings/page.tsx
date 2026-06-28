@@ -66,11 +66,8 @@ export default async function ListingsPage({
         <div className="max-w-2xl">
           <Eyebrow>Listings</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
-            Homes for sale in New York
+            Homes for sale
           </h1>
-          <p className="mt-4 text-muted">
-            Live OneKey® MLS listings served through the Homix BBO data desk.
-          </p>
           <Link
             href="/calculator"
             className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
@@ -83,13 +80,13 @@ export default async function ListingsPage({
         {/* Sell-side CTA */}
         <Link
           href="/sell"
-          className="group block w-full shrink-0 rounded-sm border border-line bg-surface p-6 transition-colors hover:border-bronze lg:max-w-xs"
+          className="group block w-full shrink-0 rounded-sm border border-line bg-surface px-6 py-4 transition-colors hover:border-bronze lg:max-w-md"
         >
           <Eyebrow>{t.sell.listingsCta.kicker}</Eyebrow>
-          <p className="mt-3 text-base leading-relaxed text-ink/85">
+          <p className="mt-2 text-sm leading-relaxed text-ink/85">
             {t.sell.listingsCta.line}
           </p>
-          <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors group-hover:text-bronze">
+          <span className="mt-2.5 inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors group-hover:text-bronze">
             {t.sell.listingsCta.button}
             <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
               →
