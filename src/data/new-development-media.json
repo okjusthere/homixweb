@@ -1490,7 +1490,8 @@
     "caption": "Bloom on Forty Fifth, Hell's Kitchen",
     "alt": "Bloom on Forty Fifth, Hell's Kitchen",
     "width": 1406,
-    "height": 1125
+    "height": 1125,
+    "sourceUrl": ""
    },
    {
     "id": "bloom-street",
@@ -1498,7 +1499,8 @@
     "caption": "Corner at 10th Avenue",
     "alt": "Corner at 10th Avenue",
     "width": 1004,
-    "height": 729
+    "height": 729,
+    "sourceUrl": ""
    },
    {
     "id": "bloom-rendering",
@@ -1506,7 +1508,8 @@
     "caption": "Two-tower design",
     "alt": "Two-tower design",
     "width": 578,
-    "height": 399
+    "height": 399,
+    "sourceUrl": ""
    }
   ],
   "floorPlans": []
@@ -1519,7 +1522,8 @@
     "caption": "77 Greenwich tower with One World Trade Center",
     "alt": "77 Greenwich tower with One World Trade Center",
     "width": 1600,
-    "height": 2450
+    "height": 2450,
+    "sourceUrl": ""
    },
    {
     "id": "77-greenwich-exterior",
@@ -1527,7 +1531,8 @@
     "caption": "77 Greenwich exterior",
     "alt": "77 Greenwich exterior",
     "width": 600,
-    "height": 800
+    "height": 800,
+    "sourceUrl": ""
    }
   ],
   "floorPlans": []
