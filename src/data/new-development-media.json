@@ -1252,7 +1252,40 @@
     "height": 1000
    }
   ],
-  "floorPlans": []
+  "floorPlans": [
+   {
+    "id": "res-33d",
+    "src": "/new-development/central-park-tower/floorplans/res-33d.jpg",
+    "title": "Residence 33D",
+    "sourceUrl": "https://centralparktower.com/uploads/availability/33D.pdf",
+    "width": 1900,
+    "height": 1068
+   },
+   {
+    "id": "res-46b",
+    "src": "/new-development/central-park-tower/floorplans/res-46b.jpg",
+    "title": "Residence 46B",
+    "sourceUrl": "https://centralparktower.com/uploads/availability/46B.pdf",
+    "width": 1900,
+    "height": 1068
+   },
+   {
+    "id": "res-67n",
+    "src": "/new-development/central-park-tower/floorplans/res-67n.jpg",
+    "title": "Residence 67N",
+    "sourceUrl": "https://centralparktower.com/uploads/availability/67N.pdf",
+    "width": 1900,
+    "height": 1068
+   },
+   {
+    "id": "res-69e",
+    "src": "/new-development/central-park-tower/floorplans/res-69e.jpg",
+    "title": "Residence 69E",
+    "sourceUrl": "https://centralparktower.com/uploads/availability/69E.pdf",
+    "width": 1900,
+    "height": 1068
+   }
+  ]
  },
  "250-west-96-street": {
   "images": [
