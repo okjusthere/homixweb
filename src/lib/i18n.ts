@@ -512,6 +512,7 @@ const en = {
     about: "About",
     contact: "Contact",
     neighborhoods: "Neighborhoods",
+    communities: "Gated communities",
     offer: "Make an offer",
     buyercoach: "Buyer coach",
     tools: "Agents Portal",
@@ -816,6 +817,7 @@ const en = {
   buyMenu: [
     { title: "Browse homes", desc: "Search every home for sale" },
     { title: "Neighborhoods", desc: "Guides to the areas we cover" },
+    { title: "Gated communities", desc: "Nassau's gated & private enclaves" },
     { title: "New Development", desc: "Shareable condo project pages" },
     { title: "Mortgage calculator", desc: "Estimate your monthly payment" },
   ],
@@ -1799,6 +1801,33 @@ const en = {
       bestFor: "Best for",
     },
   },
+  communitiesPage: {
+    eyebrow: "Long Island",
+    title: "Nassau gated & private communities",
+    lead: "What's behind the gate, what the HOA actually covers, and the real monthly cost — plain-language guides to Nassau County's gated and private communities.",
+    backToAll: "All communities",
+    whyEyebrow: "How we read a gated community",
+    whyTitle: "A gate is the start of the question, not the answer.",
+    whyBody: "From the guard-gated estates of North Hills and Muttontown to the private townhome enclaves near the water, Nassau's gated communities trade on privacy, low-maintenance living, and a short ride to Manhattan. We read each one the way a buyer should: not by the gate alone, but by what you actually pay to live there each month, what the homeowners' association takes off your plate, how the commute really works, and how easily the next buyer will understand the address.",
+    methodology: [
+      {
+        title: "The real carrying cost",
+        body: "The sticker price is only the start. HOA dues, property taxes, and any special assessment decide your true monthly cost — and dues vary by unit and floor plan, so we confirm them per home, never from a brochure.",
+      },
+      {
+        title: "What's behind the gate",
+        body: "A 24-hour manned gatehouse, a coded gate, or simply a private association are very different things. We say plainly which one a community has, and what the dues cover — landscaping, snow, security, amenities — so there are no surprises.",
+      },
+      {
+        title: "Commute & access",
+        body: "We map the real commute: the nearest LIRR station and branch, typical minutes to Penn Station or Grand Central, and the drive into the city. For a Long Island address, that ride is a durable part of the value.",
+      },
+      {
+        title: "Resale story",
+        body: "Builder, era, home type, and the strength of the address all shape how easily the next buyer understands the home. We weigh resale the way the market will — not just how the home shows today.",
+      },
+    ],
+  },
   notFound: {
     eyebrow: "404",
     title: "This page has moved on.",
@@ -1918,6 +1947,7 @@ const zh: Dict = {
     about: "关于",
     contact: "联系",
     neighborhoods: "社区",
+    communities: "封闭社区",
     offer: "提交报价",
     buyercoach: "买家教练",
     tools: "经纪人门户",
@@ -2222,6 +2252,7 @@ const zh: Dict = {
   buyMenu: [
     { title: "搜索房源", desc: "查找全部在售房源" },
     { title: "社区指南", desc: "我们覆盖区域的本地指南" },
+    { title: "封闭社区", desc: "Nassau 封闭与私密社区" },
     { title: "纽约新盘", desc: "可转发给客户的项目页" },
     { title: "房贷计算器", desc: "估算你的月供" },
   ],
@@ -3204,6 +3235,33 @@ const zh: Dict = {
       character: "社区气质",
       bestFor: "适合人群",
     },
+  },
+  communitiesPage: {
+    eyebrow: "长岛",
+    title: "Nassau 封闭与私密社区",
+    lead: "门后是什么、HOA 到底管哪些、每月真实持有成本是多少——用人话讲清楚 Nassau County 的封闭式与私密社区。",
+    backToAll: "全部社区",
+    whyEyebrow: "我们怎么看一个 gated community",
+    whyTitle: "门禁是问题的开始，不是答案。",
+    whyBody: "从 North Hills、Muttontown 的人工岗哨独栋庄园，到近水的私密联排社区，Nassau 的封闭社区卖的是私密、省心和到曼哈顿的短途通勤。我们替买家这样看它：不只看一道门，而是看你住进去每月真实要付多少、业主协会替你打理了哪些、通勤到底方不方便、以及下一个买家是否能一眼读懂这个地址。",
+    methodology: [
+      {
+        title: "真实持有成本",
+        body: "标价只是开始。HOA 月费、地产税、以及可能的特别摊派，才决定你每月真正的开销——而且月费按户型和楼层浮动，我们逐套核实，不照搬宣传册。",
+      },
+      {
+        title: "门后是什么",
+        body: "24 小时人工岗、密码门、还是只是一个私密协会，差别很大。我们直说每个社区是哪一种、月费覆盖什么——绿化、铲雪、安保、会所配套——不留意外。",
+      },
+      {
+        title: "通勤与可达",
+        body: "我们把通勤讲实：最近的 LIRR 车站和支线、到 Penn Station 或 Grand Central 的常规时长、以及开车进城的情况。长岛地址，这趟车程是价值里很实在的一部分。",
+      },
+      {
+        title: "转售逻辑",
+        body: "开发商、年代、户型、地址的辨识度，共同决定下一个买家好不好理解这套房。我们按市场会怎么看来权衡转售，而不只看它今天好不好看。",
+      },
+    ],
   },
   notFound: {
     eyebrow: "404",

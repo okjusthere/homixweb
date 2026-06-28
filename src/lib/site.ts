@@ -63,6 +63,7 @@ export const primaryNav: NavItem[] = [
 export const buyNav: string[] = [
   "/listings",
   "/neighborhoods",
+  "/communities",
   "/NewDevelopment",
   "/calculator",
 ];
@@ -74,6 +75,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "listings", href: "/listings" },
       { key: "sell", href: "/sell" },
       { key: "neighborhoods", href: "/neighborhoods" },
+      { key: "communities", href: "/communities" },
       { key: "advisors", href: "/agents" },
       { key: "journal", href: "/journal" },
     ],
