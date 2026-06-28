@@ -74,10 +74,10 @@ export const featuredDevelopments = [
       stories: "88",
       built: "2025",
       status: "New development",
-      developer: "Fortress Investment Group, Bizzi & Partners, Bilgili",
+      developer: "Bizzi & Partners Development; Bilgili Holdings",
       architect: "Rafael Viñoly Architects",
       interiors: "MAWD",
-      sales: "The Greenwich by Rafael Viñoly",
+      sales: "Douglas Elliman Development Marketing",
     },
     priceBands: [
       { layout: "Studio", price: "$1,110,000 - $1,370,000", availability: "3 available" },
@@ -134,6 +134,7 @@ export const featuredDevelopments = [
       status: "New development",
       developer: "Extell Development",
       architect: "Adrian Smith + Gordon Gill Architecture",
+      interiors: "Rottet Studio",
       sales: "Extell Marketing Group",
     },
     priceBands: [
@@ -188,6 +189,8 @@ export const featuredDevelopments = [
       stories: "12",
       built: "2022",
       status: "New development; immediate occupancy",
+      developer: "CBSK Ironstate",
+      architect: "Concrete; GreenbergFarrow",
       sales: "Corcoran Sunshine Marketing Group",
     },
     priceBands: [
@@ -269,7 +272,7 @@ export const featuredDevelopments = [
       "Turtle Bay location between Grand Central, United Nations, Midtown East offices, and Lexington Avenue subway service.",
     facts: {
       units: "95",
-      stories: "20",
+      stories: "21",
       built: "1986",
       status: "New development; immediate occupancy",
       developer: "Cape Advisors",
@@ -298,6 +301,7 @@ export const featuredDevelopments = [
       stories: "28",
       built: "2026",
       status: "New development",
+      developer: "MRR Development (Anand Mahindra, Rotem Rosen); Zahi Hagag",
       architect: "ODA Architecture",
       interiors: "ODA Architecture",
       sales: "Douglas Elliman Development Marketing",
