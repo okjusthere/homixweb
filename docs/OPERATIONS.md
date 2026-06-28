@@ -10,6 +10,10 @@ Set these in Vercel for Production, Preview, and Development as appropriate.
 Required for public launch:
 
 - `NEXT_PUBLIC_SITE_URL`: canonical origin, for example `https://www.homixny.com`.
+- `BBO_API_URL`: BBO backend origin, currently `https://onekey.kevv.ai`.
+- `BBO_API_KEY`: server-only read key for BBO listings. Use a DB-backed key with `["listings:read","sync:read"]` scopes.
+- `BBO_HOMIX_LIST_OFFICE_MLS_ID`: `KEYHRMI01`.
+- `BBO_HOMIX_LIST_OFFICE_KEY`: `KEY421354028`.
 - `SUPABASE_URL`: Supabase Project URL.
 - `SUPABASE_SERVICE_ROLE_KEY`: server-only Supabase service-role key.
 - `ADMIN_SECRET`: long random secret for `/api/admin/*` utility endpoints.
@@ -21,12 +25,10 @@ Required for public launch:
 Optional:
 
 - `INQUIRY_BCC_EMAIL`: comma-separated internal BCC recipients.
-- `LISTINGS_PROVIDER`: `mock` or `onekey`; leave specialist-owned if MLS work is paused.
-- `ONEKEY_API_BASE`, `ONEKEY_TOKEN`, `ONEKEY_OFFICE_ID`: MLS/IDX feed credentials.
-- `CRON_SECRET`, `DEPLOY_HOOK_URL`: optional listing refresh automation.
+- `BBO_REVALIDATE_SECONDS`: server-side listing fetch revalidation window; default `300`.
 
 Never expose `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_SECRET`, `ADMIN_PASSWORD`,
-`RESEND_API_KEY`, or `ONEKEY_TOKEN` with a `NEXT_PUBLIC_` prefix.
+`RESEND_API_KEY`, or `BBO_API_KEY` with a `NEXT_PUBLIC_` prefix.
 
 ## Supabase Setup
 
@@ -125,6 +127,8 @@ Then verify:
 - `/privacy`, `/terms`, `/fair-housing`, `/standard-operating-procedures`;
 - footer license, Equal Housing language, and legal links;
 - no obvious red/green/purple palette drift outside brand tokens;
+- `/listings` loads from BBO or displays the formal temporary-unavailable state;
+- listing image URLs come from BBO/R2 domains, not `media.mlsgrid.com`;
 - `NEXT_PUBLIC_SITE_URL` points at the production domain.
 
 ## Visual Direction
@@ -142,13 +146,26 @@ stock real estate patterns, or heavy shadows. If a new section needs contrast,
 prefer `bg-surface`, `bg-paper`, `border-line`, `text-ink`, and small bronze
 accents.
 
-## Listings Notes
+## Listings Operations
 
-MLS/listing image hardening is intentionally deferred. Do not refactor the
-listing provider, image proxying, or MLS media handling as part of brand/content
-work. When the MLS specialist resumes:
+The website does not store MLS listings, does not run a listing sync script, and
+does not call OneKey/MLSGrid directly. The only supported path is:
 
-- validate OneKey/MLS Grid display rules;
-- solve signed media URL durability;
-- confirm attribution and noindex behavior;
-- verify image loading in production, not only local dev.
+```text
+Homix website -> BBO API -> OneKey MLS
+```
+
+Default public listing search sends `listOfficeMlsId=KEYHRMI01`, which maps to
+`Homix Realty Inc` / `officeKey=KEY421354028` in BBO. The `/listings?scope=all`
+view searches the wider BBO/OneKey set through the same API key.
+
+If listings fail:
+
+1. confirm `BBO_API_URL` and `BBO_API_KEY` are set in Vercel;
+2. smoke test `GET /api/v1/listings/search?listOfficeMlsId=KEYHRMI01&limit=1` against BBO;
+3. smoke test `GET /api/v1/sync/status` against BBO;
+4. check BBO Railway logs and `syncLog` for `Property` sync status;
+5. confirm media URLs are served from the BBO proxy or R2 public media domain.
+
+Do not reintroduce local cache files, mock listing data, Vercel cron deploy
+hooks, or direct OneKey/MLSGrid credentials in this website.

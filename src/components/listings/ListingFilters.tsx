@@ -17,7 +17,15 @@ const PRICES = [
   { label: "$5M", value: "5000000" },
 ];
 
-const TYPES = ["Single Family", "Condo", "Townhouse", "Multi-Family", "Land"];
+const TYPES = [
+  "Single Family",
+  "Condo",
+  "Co-op",
+  "Townhouse",
+  "Multi-Family",
+  "Land",
+  "Residential",
+];
 
 export function ListingFilters({ cities }: { cities: string[] }) {
   const router = useRouter();
@@ -38,6 +46,16 @@ export function ListingFilters({ cities }: { cities: string[] }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3">
+      <select
+        aria-label="Listing source"
+        className={selectClass}
+        value={val("scope")}
+        onChange={(e) => update("scope", e.target.value)}
+      >
+        <option value="">Homix listings</option>
+        <option value="all">All OneKey listings</option>
+      </select>
+
       <select
         aria-label="City"
         className={selectClass}

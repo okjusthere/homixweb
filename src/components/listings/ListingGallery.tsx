@@ -13,7 +13,13 @@ export function ListingGallery({
   alt: string;
 }) {
   const [active, setActive] = useState(0);
-  if (!photos.length) return null;
+  if (!photos.length) {
+    return (
+      <div className="flex aspect-[16/10] items-center justify-center rounded-sm border border-line bg-surface text-xs uppercase tracking-[0.18em] text-muted">
+        Homix listing media coming soon
+      </div>
+    );
+  }
   const current = photos[active] ?? photos[0];
 
   return (

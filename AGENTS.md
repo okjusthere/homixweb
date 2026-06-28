@@ -17,9 +17,11 @@ deploys to Vercel.
 **Listings data layer (`src/lib/listings/`)** — the most important convention:
 - UI imports the `listings` singleton from `@/lib/listings` and the
   `ListingsProvider` interface. **Never import a concrete provider in UI code.**
-- Source is chosen by `LISTINGS_PROVIDER` (`mock` default, `simplyrets` for the
-  real MLS/IDX feed). Mock data lives in `mock-data.ts` and is placeholder.
-- Going live needs a real MLS membership + approved IDX feed; see `.env.example`.
+- BBO is the only MLS data source. The website never imports a mock/cache
+  listings provider and never calls OneKey/MLSGrid directly.
+- Production requires `BBO_API_URL`, `BBO_API_KEY`,
+  `BBO_HOMIX_LIST_OFFICE_MLS_ID=KEYHRMI01`, and
+  `BBO_HOMIX_LIST_OFFICE_KEY=KEY421354028`; see `.env.example`.
 
 **Compliance is not optional** (US real estate): Equal Housing Opportunity logo
 & language in the footer, MLS listing attribution ("Listing courtesy of …"),

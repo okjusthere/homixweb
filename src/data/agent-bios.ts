@@ -1,6 +1,6 @@
 /**
  * Real agent bios migrated VERBATIM from homixny.com (some bilingual).
- * Generated from the content scrape; overlaid onto MOCK_AGENTS in mock-data.ts.
+ * Generated from the content scrape; overlaid onto STATIC_AGENTS in static-roster.ts.
  * Only agents whose source profile actually has a bio appear here.
  */
 

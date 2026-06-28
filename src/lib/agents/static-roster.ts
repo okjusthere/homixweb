@@ -1,23 +1,14 @@
 /**
- * Homix data: REAL agents (migrated from homixny.com) + SYNTHETIC listings.
- *
- * Agents are real people pulled from the legacy site — names, titles, photos,
- * phones, emails. License numbers were NOT published on the old site and are
- * left blank; collect them from each agent before showing license disclosures.
- *
- * Listings are 100% placeholder (Unsplash photos, invented addresses) standing
- * in for the OneKey MLS / IDX feed. Do not present them as real inventory.
+ * Static Homix advisor roster used only when Supabase is not configured.
+ * Listing data must come from BBO and must not import this file.
  */
 
 import { REAL_BIOS } from "@/data/agent-bios";
-import type { Agent, Listing } from "./types";
-
-const img = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`;
+import type { Agent } from "@/lib/listings/types";
 
 const PLACEHOLDER_PORTRAIT = "/agent-placeholder-logo.png";
 
-export const MOCK_AGENTS: Agent[] = [
+export const STATIC_AGENTS: Agent[] = [
   {
     id: "sunny",
     slug: "sunny",
@@ -199,208 +190,10 @@ export const MOCK_AGENTS: Agent[] = [
 ];
 
 // Overlay real bios scraped verbatim from homixny.com (only agents that have one).
-for (const agent of MOCK_AGENTS) {
+for (const agent of STATIC_AGENTS) {
   const real = REAL_BIOS[agent.slug];
   if (real) {
     agent.bio = real.bio;
     if (real.specialties.length) agent.specialties = real.specialties;
   }
 }
-
-export const MOCK_LISTINGS: Listing[] = [
-  {
-    id: "l-1",
-    mlsNumber: "OK-3412887",
-    slug: "133-37-sanford-ave-7g-flushing",
-    status: "Active",
-    propertyType: "Condo",
-    listPrice: 1280000,
-    address: {
-      full: "133-37 Sanford Ave #7G, Flushing, NY 11355",
-      street: "133-37 Sanford Ave #7G",
-      city: "Flushing",
-      state: "NY",
-      postalCode: "11355",
-      neighborhood: "Flushing",
-    },
-    coords: { lat: 40.7561, lng: -73.8268 },
-    beds: 2,
-    baths: 2,
-    sqft: 1080,
-    yearBuilt: 2021,
-    description:
-      "A bright corner residence in the heart of downtown Flushing, steps from the 7 train and Main Street. Floor-to-ceiling windows, a chef's kitchen, and full-service amenities.",
-    features: ["Floor-to-ceiling windows", "Doorman", "Fitness center", "Parking available"],
-    photos: [
-      { url: img("photo-1600210492486-724fe5c67fb0"), alt: "Bright high-rise living room" },
-      { url: img("photo-1600566753190-17f0baa2a6c3"), alt: "Modern kitchen" },
-    ],
-    listingAgentId: "sunny",
-    listDate: "2026-06-08",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-    isFeatured: true,
-  },
-  {
-    id: "l-2",
-    mlsNumber: "OK-3401220",
-    slug: "4540-center-blvd-2210-lic",
-    status: "Active",
-    propertyType: "Condo",
-    listPrice: 1650000,
-    address: {
-      full: "4540 Center Blvd #2210, Long Island City, NY 11109",
-      street: "4540 Center Blvd #2210",
-      city: "Long Island City",
-      state: "NY",
-      postalCode: "11109",
-      neighborhood: "Long Island City",
-    },
-    coords: { lat: 40.7445, lng: -73.9586 },
-    beds: 2,
-    baths: 2,
-    sqft: 1190,
-    yearBuilt: 2018,
-    description:
-      "Waterfront living with unobstructed Manhattan skyline views from a high floor. Resort-level amenities and a five-minute ride to Grand Central.",
-    features: ["Skyline views", "Resort amenities", "Concierge", "Roof deck"],
-    photos: [
-      { url: img("photo-1600585152220-90363fe7e115"), alt: "Skyline view from condo" },
-      { url: img("photo-1600607687939-ce8a6c25118c"), alt: "Open living space" },
-    ],
-    listingAgentId: "michelleli",
-    listDate: "2026-06-02",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-    isFeatured: true,
-  },
-  {
-    id: "l-3",
-    mlsNumber: "OK-3399410",
-    slug: "12-kings-point-rd-great-neck",
-    status: "Active",
-    propertyType: "Single Family",
-    listPrice: 2480000,
-    address: {
-      full: "12 Kings Point Rd, Great Neck, NY 11024",
-      street: "12 Kings Point Rd",
-      city: "Great Neck",
-      state: "NY",
-      postalCode: "11024",
-      neighborhood: "Great Neck",
-    },
-    coords: { lat: 40.8126, lng: -73.7401 },
-    beds: 5,
-    baths: 4,
-    halfBaths: 1,
-    sqft: 4200,
-    lotSqft: 14000,
-    yearBuilt: 2016,
-    description:
-      "A modern colonial on a quiet Great Neck street within a top-rated school district. Open-plan living, a chef's kitchen, and a landscaped backyard built for entertaining.",
-    features: ["Top-rated schools", "Chef's kitchen", "Finished basement", "Two-car garage"],
-    photos: [
-      { url: img("photo-1568605114967-8130f3a36994"), alt: "Modern colonial exterior" },
-      { url: img("photo-1600585154526-990dced4db0d"), alt: "Dining room" },
-      { url: img("photo-1600047509807-ba8f99d2cdde"), alt: "Backyard" },
-    ],
-    listingAgentId: "heidi",
-    listDate: "2026-05-21",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-    isFeatured: true,
-  },
-  {
-    id: "l-4",
-    mlsNumber: "OK-3388705",
-    slug: "110-15-71st-ave-forest-hills",
-    status: "Active",
-    propertyType: "Condo",
-    listPrice: 899000,
-    address: {
-      full: "110-15 71st Ave #5C, Forest Hills, NY 11375",
-      street: "110-15 71st Ave #5C",
-      city: "Forest Hills",
-      state: "NY",
-      postalCode: "11375",
-      neighborhood: "Forest Hills",
-    },
-    coords: { lat: 40.7197, lng: -73.8448 },
-    beds: 3,
-    baths: 2,
-    sqft: 1320,
-    yearBuilt: 1999,
-    description:
-      "A spacious three-bedroom in prime Forest Hills, moments from Austin Street's shops and the express train. Pre-war charm meets a renovated, light-filled interior.",
-    features: ["Renovated interior", "Pre-war details", "Express train", "Storage"],
-    photos: [
-      { url: img("photo-1600566753086-00f18fb6b3ea"), alt: "Renovated living room" },
-      { url: img("photo-1600585154340-be6161a56a0c"), alt: "Building exterior" },
-    ],
-    listingAgentId: "jingjingfeng",
-    listDate: "2026-06-11",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-  },
-  {
-    id: "l-5",
-    mlsNumber: "OK-3375533",
-    slug: "215-bell-blvd-bayside",
-    status: "Coming Soon",
-    propertyType: "Single Family",
-    listPrice: 1750000,
-    address: {
-      full: "215 Bell Blvd, Bayside, NY 11361",
-      street: "215 Bell Blvd",
-      city: "Bayside",
-      state: "NY",
-      postalCode: "11361",
-      neighborhood: "Bayside",
-    },
-    coords: { lat: 40.7686, lng: -73.7715 },
-    beds: 4,
-    baths: 3,
-    sqft: 2600,
-    lotSqft: 4000,
-    yearBuilt: 2009,
-    description:
-      "A center-hall brick colonial in the sought-after Bayside school district, with a sun-filled layout, finished basement, and a private garden.",
-    features: ["Bayside schools", "Finished basement", "Private garden", "Detached garage"],
-    photos: [
-      { url: img("photo-1570129477492-45c003edd2be"), alt: "Brick colonial" },
-      { url: img("photo-1600566753086-00f18fb6b3ea"), alt: "Interior" },
-    ],
-    listingAgentId: "davidhu",
-    listDate: "2026-06-14",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-  },
-  {
-    id: "l-6",
-    mlsNumber: "OK-3360118",
-    slug: "girard-st-200-uws-manhattan",
-    status: "Active",
-    propertyType: "Condo",
-    listPrice: 3200000,
-    address: {
-      full: "200 W 86th St #14A, New York, NY 10024",
-      street: "200 W 86th St #14A",
-      city: "New York",
-      state: "NY",
-      postalCode: "10024",
-      neighborhood: "Upper West Side",
-    },
-    coords: { lat: 40.7873, lng: -73.9754 },
-    beds: 3,
-    baths: 3,
-    sqft: 1850,
-    yearBuilt: 2015,
-    description:
-      "A refined three-bedroom on the Upper West Side, a block from Central Park and Riverside. Quarter-sawn oak floors, a windowed chef's kitchen, and full-service luxury.",
-    features: ["Near Central Park", "Full-service building", "Chef's kitchen", "Private storage"],
-    photos: [
-      { url: img("photo-1600607687939-ce8a6c25118c"), alt: "Elegant living room" },
-      { url: img("photo-1600210492486-724fe5c67fb0"), alt: "City view" },
-      { url: img("photo-1600566753190-17f0baa2a6c3"), alt: "Kitchen" },
-    ],
-    listingAgentId: "queenie",
-    listDate: "2026-05-30",
-    attribution: "Listing courtesy of Homix Realty Inc.",
-    isFeatured: true,
-  },
-];

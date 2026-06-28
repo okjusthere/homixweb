@@ -11,8 +11,9 @@ const nextConfig: NextConfig = {
       // Homix legacy site (Squarespace) — agent & founder photos.
       { protocol: "https", hostname: "images.squarespace-cdn.com" },
       { protocol: "https", hostname: "static1.squarespace.com" },
-      // OneKey / MLS Grid listing photos (time-limited signed URLs).
-      { protocol: "https", hostname: "media.mlsgrid.com" },
+      // BBO listing media proxy and R2 public media.
+      { protocol: "https", hostname: "onekey.kevv.ai" },
+      { protocol: "https", hostname: "onekeymls.kevv.ai" },
       // Wikimedia Commons — real, freely-licensed neighborhood photos.
       { protocol: "https", hostname: "upload.wikimedia.org" },
       // Supabase Storage — advisor-uploaded headshots.

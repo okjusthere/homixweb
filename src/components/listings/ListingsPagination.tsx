@@ -5,13 +5,15 @@ import { cn } from "@/lib/cn";
 export function ListingsPagination({
   page,
   pages,
+  hasMore = false,
   baseParams,
 }: {
   page: number;
   pages: number;
+  hasMore?: boolean;
   baseParams: Record<string, string>;
 }) {
-  if (pages <= 1) return null;
+  if (pages <= 1 && !hasMore && page <= 1) return null;
 
   const href = (p: number) => {
     const sp = new URLSearchParams(baseParams);
@@ -23,8 +25,9 @@ export function ListingsPagination({
 
   // Compact page window around the current page.
   const windowSize = 5;
+  const visiblePages = Math.max(pages, hasMore ? page + 1 : pages);
   let start = Math.max(1, page - Math.floor(windowSize / 2));
-  const end = Math.min(pages, start + windowSize - 1);
+  const end = Math.min(visiblePages, start + windowSize - 1);
   start = Math.max(1, end - windowSize + 1);
   const nums = Array.from({ length: end - start + 1 }, (_, i) => start + i);
 
@@ -57,8 +60,8 @@ export function ListingsPagination({
           {n}
         </Link>
       ))}
-      {end < pages && <span className="px-1 text-muted">…</span>}
-      {page < pages && (
+      {end < visiblePages && <span className="px-1 text-muted">…</span>}
+      {(page < pages || hasMore) && (
         <Link href={href(page + 1)} className={cn(cell, "border-line text-ink hover:border-bronze hover:text-bronze")}>
           Next →
         </Link>

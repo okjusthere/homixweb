@@ -10,6 +10,10 @@ import { listings } from "@/lib/listings";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
 import { siteConfig } from "@/lib/site";
 
+function displayPrice(value: number): string {
+  return value > 0 ? formatPrice(value) : "Price upon request";
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -39,11 +43,11 @@ export default async function ListingDetailPage({
   const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.full)}`;
 
   const specs: { label: string; value: string }[] = [
-    { label: "Price", value: formatPrice(listPrice) },
+    { label: "Price", value: displayPrice(listPrice) },
     { label: "Type", value: listing.propertyType },
     { label: "Status", value: status },
-    { label: "Bedrooms", value: String(beds) },
-    { label: "Bathrooms", value: formatBaths(baths, halfBaths) },
+    { label: "Bedrooms", value: beds > 0 ? String(beds) : "—" },
+    { label: "Bathrooms", value: baths > 0 ? formatBaths(baths, halfBaths) : "—" },
     { label: "Interior", value: sqft ? `${formatNumber(sqft)} sq ft` : "—" },
     ...(listing.lotSqft
       ? [{ label: "Lot", value: `${formatNumber(listing.lotSqft)} sq ft` }]
@@ -103,7 +107,7 @@ export default async function ListingDetailPage({
             </div>
             <div className="text-left sm:text-right">
               <p className="font-serif text-3xl tabular-nums text-ink">
-                {formatPrice(listPrice)}
+                {displayPrice(listPrice)}
               </p>
               <Button variant="ghost" href="/calculator" className="mt-1">
                 Estimate monthly payment →
@@ -112,8 +116,8 @@ export default async function ListingDetailPage({
           </div>
 
           <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-sm text-ink">
-            <span>{beds} Bedrooms</span>
-            <span>{formatBaths(baths, halfBaths)} Bathrooms</span>
+            <span>{beds || "—"} Bedrooms</span>
+            <span>{baths > 0 ? formatBaths(baths, halfBaths) : "—"} Bathrooms</span>
             {sqft > 0 && <span>{formatNumber(sqft)} sq ft</span>}
             {listing.daysOnMarket != null && (
               <span className="text-muted">{listing.daysOnMarket} days on market</span>

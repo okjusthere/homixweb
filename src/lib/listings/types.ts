@@ -1,9 +1,8 @@
 /**
  * Listing & agent domain types.
  *
- * Field names follow the RESO Data Dictionary loosely so that swapping the mock
- * provider for a real MLS/IDX feed (SimplyRETS, Spark API, RESO Web API) is a
- * mapping job, not a redesign. Keep this file provider-agnostic.
+ * Field names follow the RESO Data Dictionary loosely. UI code depends on these
+ * provider-agnostic types; BBO owns MLS/OneKey normalization upstream.
  */
 
 export type ListingStatus = "Active" | "Coming Soon" | "Pending" | "Sold";
@@ -11,9 +10,12 @@ export type ListingStatus = "Active" | "Coming Soon" | "Pending" | "Sold";
 export type PropertyType =
   | "Single Family"
   | "Condo"
+  | "Co-op"
   | "Townhouse"
   | "Multi-Family"
-  | "Land";
+  | "Land"
+  | "Residential"
+  | "Other";
 
 export interface ListingAddress {
   /** Pretty single-line address, e.g. "1204 W 9th St, Austin, TX 78703". */
@@ -104,6 +106,8 @@ export interface Agent {
 
 /** Query / filter shape accepted by every provider. */
 export interface ListingQuery {
+  /** Default is Homix office listings; "all" searches the wider BBO/OneKey set. */
+  scope?: "homix" | "all";
   city?: string;
   status?: ListingStatus;
   propertyType?: PropertyType;
@@ -122,11 +126,15 @@ export interface ListingResult {
   listings: Listing[];
   /** Total matches before limit/offset — for pagination. */
   total: number;
+  /** BBO returns this for cursor-like next-page behavior on large searches. */
+  hasMore?: boolean;
+  totalIsEstimate?: boolean;
+  unavailable?: boolean;
+  message?: string;
 }
 
 /**
- * The single seam between the UI and any data source. The mock provider and a
- * future SimplyRETS / RESO Web API provider both implement this.
+ * The single seam between the UI and the BBO listing backend.
  */
 export interface ListingsProvider {
   readonly name: string;
@@ -135,8 +143,6 @@ export interface ListingsProvider {
   getListings(query?: ListingQuery): Promise<ListingResult>;
   getListingBySlug(slug: string): Promise<Listing | null>;
   getFeaturedListings(limit?: number): Promise<Listing[]>;
-  getAgents(): Promise<Agent[]>;
-  getAgentBySlug(slug: string): Promise<Agent | null>;
   /** Distinct cities for filter facets, if supported. */
   cities?(limit?: number): string[];
 }

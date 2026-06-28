@@ -9,6 +9,7 @@ import { listings } from "@/lib/listings";
 export async function FeaturedListings() {
   const { t } = await getT();
   const featured = await listings.getFeaturedListings(3);
+  if (featured.length === 0) return null;
 
   return (
     <section className="py-24 sm:py-32">

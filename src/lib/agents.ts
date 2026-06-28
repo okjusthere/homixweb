@@ -1,4 +1,4 @@
-import { MOCK_AGENTS } from "./listings/mock-data";
+import { STATIC_AGENTS } from "./agents/static-roster";
 import { getSupabase } from "./supabase";
 import type { Agent } from "./listings/types";
 
@@ -45,22 +45,22 @@ function rowToAgent(r: AgentRow): Agent {
 
 export async function getAgents(): Promise<Agent[]> {
   const sb = getSupabase();
-  if (!sb) return MOCK_AGENTS;
+  if (!sb) return STATIC_AGENTS;
   const { data, error } = await sb
     .from("agents")
     .select("*")
     .eq("visible", true)
     .order("sort", { ascending: true })
     .order("name", { ascending: true });
-  if (error || !data || data.length === 0) return MOCK_AGENTS;
+  if (error || !data || data.length === 0) return STATIC_AGENTS;
   return (data as AgentRow[]).map(rowToAgent);
 }
 
 export async function getAgentBySlug(slug: string): Promise<Agent | null> {
   const sb = getSupabase();
-  if (!sb) return MOCK_AGENTS.find((a) => a.slug === slug) ?? null;
+  if (!sb) return STATIC_AGENTS.find((a) => a.slug === slug) ?? null;
   const { data } = await sb.from("agents").select("*").eq("slug", slug).maybeSingle();
-  return data ? rowToAgent(data as AgentRow) : (MOCK_AGENTS.find((a) => a.slug === slug) ?? null);
+  return data ? rowToAgent(data as AgentRow) : (STATIC_AGENTS.find((a) => a.slug === slug) ?? null);
 }
 
 /** Load an advisor by their secret edit token (for the self-edit page). */

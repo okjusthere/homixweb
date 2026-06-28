@@ -7,7 +7,6 @@ import { ListingFilters } from "@/components/listings/ListingFilters";
 import { ListingsPagination } from "@/components/listings/ListingsPagination";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
 import { listings, type ListingQuery, type PropertyType } from "@/lib/listings";
-import { cityFacets } from "@/lib/listings/search";
 import { formatNumber } from "@/lib/format";
 import { getT } from "@/lib/i18n";
 
@@ -33,8 +32,10 @@ export default async function ListingsPage({
   const sp = await searchParams;
   const { t } = await getT();
   const page = Math.max(1, parseInt(one(sp.page), 10) || 1);
+  const scope = one(sp.scope) === "all" ? "all" : "homix";
 
   const query: ListingQuery = {
+    scope,
     city: one(sp.city) || undefined,
     propertyType: (one(sp.type) as PropertyType) || undefined,
     minPrice: one(sp.minPrice) ? Number(one(sp.minPrice)) : undefined,
@@ -46,16 +47,15 @@ export default async function ListingsPage({
     offset: (page - 1) * PER_PAGE,
   };
 
-  const { listings: results, total } = await listings.getListings(query);
-  const pages = Math.ceil(total / PER_PAGE);
+  const result = await listings.getListings(query);
+  const { listings: results, total, hasMore, totalIsEstimate, unavailable } = result;
+  const pages = hasMore && totalIsEstimate ? page + 1 : Math.max(1, Math.ceil(total / PER_PAGE));
 
-  const cities = listings.cities
-    ? listings.cities(30)
-    : cityFacets((await listings.getListings({})).listings, 30);
+  const cities = listings.cities ? listings.cities(30) : [];
 
   // Preserve active filters in pagination links.
   const baseParams: Record<string, string> = {};
-  for (const k of ["city", "type", "minPrice", "maxPrice", "beds", "q", "sort"]) {
+  for (const k of ["scope", "city", "type", "minPrice", "maxPrice", "beds", "q", "sort"]) {
     const v = one(sp[k]);
     if (v) baseParams[k] = v;
   }
@@ -69,7 +69,7 @@ export default async function ListingsPage({
             Homes for sale in New York
           </h1>
           <p className="mt-4 text-muted">
-            Live listings from the OneKey® MLS, presented by Homix.
+            Live OneKey® MLS listings served through the Homix BBO data desk.
           </p>
           <Link
             href="/calculator"
@@ -105,9 +105,17 @@ export default async function ListingsPage({
       <p className="mt-6 text-sm text-muted">
         {formatNumber(total)} {total === 1 ? "home" : "homes"}
         {query.city ? ` in ${query.city}` : ""} · page {page} of {pages || 1}
+        {scope === "homix" ? " · Homix Realty Inc." : " · All OneKey"}
       </p>
 
-      {results.length === 0 ? (
+      {unavailable ? (
+        <div className="py-24 text-center">
+          <p className="font-serif text-2xl text-ink">Listings are temporarily unavailable.</p>
+          <p className="mt-2 text-muted">
+            Please contact Homix for current inventory while the MLS feed is restored.
+          </p>
+        </div>
+      ) : results.length === 0 ? (
         <div className="py-24 text-center">
           <p className="font-serif text-2xl text-ink">No homes match those filters.</p>
           <p className="mt-2 text-muted">Try widening your price range or location.</p>
@@ -120,7 +128,12 @@ export default async function ListingsPage({
         </div>
       )}
 
-      <ListingsPagination page={page} pages={pages} baseParams={baseParams} />
+      <ListingsPagination
+        page={page}
+        pages={pages}
+        hasMore={hasMore}
+        baseParams={baseParams}
+      />
 
       <div className="mt-16 border-t border-line pt-8">
         <MlsDisclaimer syncedAt={listings.lastSyncedAt} />
