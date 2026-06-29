@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { Reveal } from "@/components/ui/Reveal";
 import { journalPosts } from "@/content/journal/posts";
+import { JournalList, type JournalCardData } from "@/components/journal/JournalList";
 import { getAgents } from "@/lib/agents";
 import { getT } from "@/lib/i18n";
 
@@ -25,6 +23,34 @@ export default async function JournalPage() {
     day: "numeric",
   });
 
+  const CAT_ORDER = [
+    "Market Data", "Buyer Guide", "Selling", "Neighborhood", "Investing",
+    "Law & Taxes", "Immigrant Life", "Students & Families", "Policy & News",
+    "Media", "Guide",
+  ];
+  const cards: JournalCardData[] = [...journalPosts]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .map((post) => ({
+      slug: post.slug,
+      cover: post.cover,
+      catKey: post.category.en,
+      catLabel: post.category[locale],
+      title: post.title[locale],
+      excerpt: post.excerpt[locale],
+      author: authorName(post.authorSlug),
+      date: df.format(new Date(post.date)),
+      readMinutes: post.readMinutes,
+    }));
+  const categories = Array.from(
+    new Map(cards.map((c) => [c.catKey, c.catLabel])).entries(),
+  )
+    .map(([key, label]) => ({ key, label }))
+    .sort((a, b) => {
+      const ai = CAT_ORDER.indexOf(a.key);
+      const bi = CAT_ORDER.indexOf(b.key);
+      return (ai < 0 ? 99 : ai) - (bi < 0 ? 99 : bi) || a.label.localeCompare(b.label);
+    });
+
   return (
     <Container className="py-12 sm:py-16">
       <div className="max-w-2xl">
@@ -35,39 +61,12 @@ export default async function JournalPage() {
         <p className="mt-4 text-lg leading-relaxed text-muted">{t.journal.lead}</p>
       </div>
 
-      <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-        {[...journalPosts]
-          .sort((a, b) => b.date.localeCompare(a.date))
-          .map((post, i) => (
-          <Reveal key={post.slug} delay={(i % 3) * 60}>
-            <Link
-              href={`/journal/${post.slug}`}
-              className="group block focus-visible:outline-none"
-            >
-              <div className="relative aspect-[3/2] overflow-hidden rounded-sm bg-line/50">
-                <Image
-                  src={post.cover}
-                  alt={post.title[locale]}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-                />
-              </div>
-              <p className="eyebrow mt-4">{post.category[locale]}</p>
-              <h2 className="mt-2 font-serif text-xl text-ink transition-colors group-hover:text-bronze">
-                {post.title[locale]}
-              </h2>
-              <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">
-                {post.excerpt[locale]}
-              </p>
-              <p className="mt-3 text-xs text-muted">
-                {authorName(post.authorSlug)} · {df.format(new Date(post.date))} ·{" "}
-                {post.readMinutes} {t.journal.minRead}
-              </p>
-            </Link>
-          </Reveal>
-        ))}
-      </div>
+      <JournalList
+        posts={cards}
+        categories={categories}
+        allLabel={locale === "zh" ? "全部" : "All"}
+        minRead={t.journal.minRead}
+      />
     </Container>
   );
 }
