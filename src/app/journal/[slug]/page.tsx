@@ -103,6 +103,11 @@ export default async function JournalArticlePage({
             className="object-cover"
           />
         </div>
+        {post.coverCredit && (
+          <p className="mt-2 text-right text-[11px] leading-relaxed text-muted/70">
+            {post.coverCredit}
+          </p>
+        )}
 
         <div className="mt-10">
           <Markdown>{post.body[locale]}</Markdown>
