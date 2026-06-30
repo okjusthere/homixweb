@@ -60,6 +60,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "The Bryant 位于曼哈顿中城南 16 West 40th Street,第五大道与第六大道之间,正面即布莱恩特公园与纽约公共图书馆主馆。步行几分钟可达第五大道零售、洛克菲勒中心、中央车站与时代广场;布莱恩特公园站(B/D/F/M)与第五大道-布莱恩特公园站(7 号线)就在楼下,中央车站 4/5/6 与 Metro-North、时代广场各线均在步行范围。对买家的意义:出门即繁华、回家即公园的稀缺位置,自住半径短,出租与转手需求面广。",
       "en": "The Bryant is at 16 West 40th Street in Midtown South, between Fifth and Sixth, facing Bryant Park and the main New York Public Library. Fifth Avenue retail, Rockefeller Center, Grand Central, and Times Square are a short walk away; Bryant Park (B/D/F/M), Fifth Av-Bryant Park (7), and Grand Central's 4/5/6 and Metro-North are all within reach. For a buyer: a rare 'step out to the buzz, come home to the park' address with broad rental and resale demand."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为约数估算，会因户型线、楼层、景观及具体单元而异，须按单元结合最新房源与发售计划书逐一核验。The Bryant（2017 年竣工）似乎不享有 421-a 或其他房产税减免，故按全额税率征税；三居和四居数据对应顶层复式（该卧室数下仅有此类房源）。租赁情形下，公摊费与房产税由业主承担，非租客负担。",
+        "en": "These are approximate estimates that vary by line, floor, view, and unit, and must be verified per unit against the current listing and offering plan. The Bryant (completed 2017) does NOT appear to carry a 421-a or other property-tax abatement, so taxes run at full unabated rates; the 3-bed and 4-bed figures reflect penthouse units, the only inventory at those bedroom counts. For rentals, common charges and taxes are the owner's expense, not the tenant's."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,700/月",
+            "en": "~$2,100–$2,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,700–$2,100/月（无减免，全额征税）",
+            "en": "~$1,700–$2,100 / mo (no abatement, full taxes)"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $9,000–$9,800/月（仅顶层复式）",
+            "en": "~$9,000–$9,800 / mo (penthouse-level only)"
+          },
+          "taxes": {
+            "zh": "约 $7,000–$7,500/月（无减免，全额征税）",
+            "en": "~$7,000–$7,500 / mo (no abatement, full taxes)"
+          }
+        },
+        {
+          "layout": "4 beds",
+          "commonCharges": {
+            "zh": "约 $9,500–$10,000/月（仅顶层复式）",
+            "en": "~$9,500–$10,000 / mo (penthouse-level only)"
+          },
+          "taxes": {
+            "zh": "约 $7,000–$7,500/月（无减免，全额征税）",
+            "en": "~$7,000–$7,500 / mo (no abatement, full taxes)"
+          }
+        },
+        {
+          "layout": "1 bed rental",
+          "commonCharges": {
+            "zh": "按单元核验（租金约 $5,500–$6,200/月；公摊费由业主承担）",
+            "en": "By unit (rent ~$5,500–$6,200 / mo; charges paid by owner)"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "radiant-condominium": {
@@ -108,6 +160,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于长岛市 Queens Plaza North，紧邻 Queens Plaza（E/R/F）与 Queensboro Plaza（7/N/W）双站，过桥即曼哈顿中城；步行可达 Court Square、Gantry Plaza 滨水公园、LIC 餐饮与艺术区。",
       "en": "On Queens Plaza North in Long Island City, beside the Queens Plaza (E/R/F) and Queensboro Plaza (7/N/W) stations with Midtown Manhattan one stop over the bridge; walkable to Court Square, the Gantry Plaza waterfront parks, and LIC's dining and arts district."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 Radiant（24-01 Queens Plaza North）在售及已进入合同的实际房源估算的近似值；具体金额因户型线、楼层、面积和朝向而异，须按单元逐一核实。未在任何房源中发现 421-a / 485-x 房产税减免，故物业税应按全额（无减免）税率计征。",
+        "en": "These are approximate estimates drawn from actual active and in-contract unit listings at Radiant (24-01 Queens Plaza North); figures vary by line, floor, square footage, and exposure and must be verified per unit. No 421-a / 485-x tax abatement was found on any listing, so property taxes appear to run at full (non-abated) rates."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $450–$550/月",
+            "en": "~$450–$550 / mo"
+          },
+          "taxes": {
+            "zh": "约 $375–$450/月",
+            "en": "~$375–$450 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $600–$800/月",
+            "en": "~$600–$800 / mo"
+          },
+          "taxes": {
+            "zh": "约 $500–$650/月",
+            "en": "~$500–$650 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,250–$1,550/月",
+            "en": "~$1,250–$1,550 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$1,250/月",
+            "en": "~$1,000–$1,250 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $1,550–$1,850/月",
+            "en": "~$1,550–$1,850 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,250–$1,500/月",
+            "en": "~$1,250–$1,500 / mo"
+          }
+        }
+      ]
     }
   },
   "waldorf-astoria-residences-new-york": {
@@ -267,6 +371,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于下城金融区 Greenwich Street 与 Thames Street 转角，紧邻世贸中心。步行几分钟即到 Fulton Center 与 WTC/PATH 枢纽，楼下有 Rector Street（R/W）和 Wall Street（2/3、4/5）地铁，三一教堂、Westfield World Trade Center 商场、海港区与滨河公园都在步行圈内。",
       "en": "On the corner of Greenwich and Thames Streets in the downtown Financial District, steps from the World Trade Center. It's a few minutes' walk to the Fulton Center and WTC/PATH hub, with Rector Street (R/W) and Wall Street (2/3, 4/5) trains right nearby; Trinity Church, the Westfield World Trade Center mall, the Seaport and waterfront parks are all within walking distance."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为依据 125 Greenwich Street 多套在售及近期成交房源样本得出的近似估算；实际公共维护费与地税会因线号、楼层、朝向和面积差异显著，须按具体单元核验。该楼盘没有 421-a/485-x 地税减免（代表性房源明确标注\"无地税减免\"，且月度地税与公共维护费大致持平），因此地税按全额、未减免税率征收。",
+        "en": "Figures are approximate estimates drawn from a sample of active and recent unit listings at 125 Greenwich Street; actual common charges and taxes vary materially by line, floor, exposure, and square footage and must be verified per unit. This building does NOT carry a 421-a/485-x tax abatement (a representative listing explicitly shows \"Tax Abatement: false,\" and monthly taxes run roughly on par with common charges), so property taxes are billed at full, unabated rates."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $800–$1,100/月",
+            "en": "~$800–$1,100 / mo"
+          },
+          "taxes": {
+            "zh": "约 $800–$1,200/月",
+            "en": "~$800–$1,200 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,350–$1,600/月",
+            "en": "~$1,350–$1,600 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,500–$1,750/月",
+            "en": "~$1,500–$1,750 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,200–$2,900/月",
+            "en": "~$2,200–$2,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,100–$2,800/月",
+            "en": "~$2,100–$2,800 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $3,500–$5,600/月",
+            "en": "~$3,500–$5,600 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,500–$5,000/月",
+            "en": "~$3,500–$5,000 / mo"
+          }
+        }
+      ]
     }
   },
   "one-high-line": {
@@ -315,6 +471,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于西切尔西（West Chelsea）500 West 18th Street（亦标 76 Eleventh Avenue），整座楼骑跨在 High Line 高线公园之上、正面哈德逊河。最近地铁是 14 街的 A/C/E 与 L 线（约 8–10 分钟步行），向北步行可达 Hudson Yards 的 7 号线；周边即切尔西画廊区、哈德逊河滨水公园与肉库区餐饮。",
       "en": "In West Chelsea at 500 West 18th Street (also 76 Eleventh Avenue), the building straddles the High Line and faces the Hudson River. Closest trains are the A/C/E and L at 14th Street (about an 8–10 minute walk), with the 7 at Hudson Yards a short walk north; the Chelsea galleries, Hudson River Park, and Meatpacking dining are all at the doorstep."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于 One High Line 部分在售及已成交房源样本的大致估算；实际公共维护费与地税因塔楼、户型线、楼层及面积差异很大，须按具体单元逐一核实。该楼享有 421-a 地税减免（在 2022 年 6 月项目截止前取得，减免期延续至 2040 年代），因此所示地税为减免后的较低金额，会随时间逐步上调，并在减免期结束后大幅上升。",
+        "en": "These are approximate estimates drawn from a sample of active and closed One High Line listings; actual common charges and taxes vary significantly by tower, line, floor, and unit size and must be verified per unit. One High Line carries a 421-a tax abatement (secured before the June 2022 program deadline, with the term running into the 2040s), so the tax figures shown reflect reduced abated amounts that will step up over time and rise substantially once the abatement phases out."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,700/月",
+            "en": "~$2,100–$2,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,400–$3,000/月",
+            "en": "~$2,400–$3,000 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,500–$3,700/月",
+            "en": "~$2,500–$3,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,900–$4,300/月",
+            "en": "~$2,900–$4,300 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $4,600–$5,500/月",
+            "en": "~$4,600–$5,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $5,300–$6,400/月",
+            "en": "~$5,300–$6,400 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $7,000–$9,500/月",
+            "en": "~$7,000–$9,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $8,000–$11,000/月",
+            "en": "~$8,000–$11,000 / mo"
+          }
+        }
+      ]
     }
   },
   "central-park-tower": {
@@ -363,6 +571,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落于中城 57 街、亿万富翁街核心地段，南邻哥伦布转盘（Columbus Circle）和卡内基音乐厅，正对中央公园西南角。步行几分钟可达 N/Q/R/W 与 A/C/B/D、1 号线（59 St-Columbus Circle 与 57 St-7 Av 站），北上就是中央公园，往西是林肯中心，往东是第五大道高端零售。",
       "en": "In the heart of Midtown's West 57th Street on Billionaires' Row, steps from Columbus Circle and Carnegie Hall and directly facing the southwest corner of Central Park. The N/Q/R/W and A/C/B/D and 1 trains at 59 St-Columbus Circle and 57 St-7 Av are a few minutes' walk, with the park to the north, Lincoln Center to the west, and Fifth Avenue luxury retail to the east."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于少量在售/成交单元观测值的近似估算，会因户型线、楼层、景观和面积差异很大，签约前请按具体单元核验实际数字。Central Park Tower 享有 421-a 物业税减免（约延续至 2040 年代初中期），因此上述房产税为减免期内的较低水平，减免逐步退出后税额将大幅上升。",
+        "en": "These are approximate estimates drawn from a handful of observed unit listings and vary significantly by line, floor, view, and square footage — verify the exact figures per unit before relying on them. Central Park Tower carries a 421-a tax abatement (running into the early-to-mid 2040s), so the property taxes above are reduced for the abatement term and will step up substantially as the abatement phases out."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $2,000–$2,900/月",
+            "en": "~$2,000–$2,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,400–$5,000/月",
+            "en": "~$3,400–$5,000 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,400–$3,500/月",
+            "en": "~$2,400–$3,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $4,200–$6,200/月",
+            "en": "~$4,200–$6,200 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $3,100–$5,500/月",
+            "en": "~$3,100–$5,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $5,500–$9,500/月",
+            "en": "~$5,500–$9,500 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $6,500–$20,000+/月",
+            "en": "~$6,500–$20,000+ / mo"
+          },
+          "taxes": {
+            "zh": "约 $10,000–$27,000+/月",
+            "en": "~$10,000–$27,000+ / mo"
+          }
+        }
+      ]
     }
   },
   "one-manhattan-square": {
@@ -411,6 +671,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于下东城 / Two Bridges 东河滨水段（南街 252 号，樱桃街入口），紧邻东河绿道，步行可达地铁 F 线 East Broadway 站；Delancey/Essex 的 F/M/J/Z 换乘略远一些。出门即是滨河跑步骑行道，往北是历史悠久的下东城餐饮与夜生活街区。",
       "en": "On the Lower East Side / Two Bridges waterfront (252 South Street, entrance on Cherry Street), right on the East River greenway. The F train at East Broadway is the closest subway; the F/M/J/Z transfer at Delancey/Essex is a longer walk. You step out onto the riverside run/bike path, with the Lower East Side's restaurant and nightlife blocks just north."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为依据在售/成交单元观察到的近似估算，实际数额因户型线、楼层和具体单元而异，须按单元逐一核验。One Manhattan Square 享有曼哈顿少有的 20 年 421-a 房产税减免（约 2039 年到期），因此减免期内月度房产税极低，待减免逐步退出后税额将上调。",
+        "en": "These are approximate estimates drawn from observed unit listings; actual figures vary by line, floor, and unit and must be verified per unit. One Manhattan Square carries one of Manhattan's last 20-year 421-a tax abatements (expiring ~2039), so monthly property taxes are nominal during the abatement term and will step up as the abatement phases out."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $750–$1,000/月",
+            "en": "~$750–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $10–$30/月（421-a 减免期内）",
+            "en": "~$10–$30 / mo (during 421-a abatement)"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $800–$1,500/月",
+            "en": "~$800–$1,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $15–$40/月（421-a 减免期内）",
+            "en": "~$15–$40 / mo (during 421-a abatement)"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $1,900–$3,400/月",
+            "en": "~$1,900–$3,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $30–$60/月（421-a 减免期内）",
+            "en": "~$30–$60 / mo (during 421-a abatement)"
+          }
+        }
+      ]
     }
   },
   "the-west-residence-club": {
@@ -459,6 +760,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于地狱厨房（Midtown West）靠西临河一段，547 West 47th Street（第十/第十一大道之间），步行几分钟即到哈德逊河公园绿道与 Pier 84/86；向东步行可达剧院区与时报广场。最近的地铁是 50th St 的 C/E 线，以及 42nd St–Port Authority 的 A/C/E 枢纽，配合 M11/M50 等横向与南北公交；离地铁略有一段步行，但换来的是临河、安静、低密度的居住氛围。",
       "en": "On the far-western, river-leaning edge of Hell's Kitchen (Midtown West), 547 West 47th Street (between 10th and 11th Avenues) is a few minutes' walk from the Hudson River Park greenway and Piers 84/86, with the Theater District and Times Square an easy walk east. The nearest trains are the C/E at 50th St and the A/C/E hub at 42nd St–Port Authority, backed by the M11/M50 crosstown and avenue buses — a slightly longer walk to the subway in exchange for a quieter, lower-density block by the water.</locationEn>"
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于 547 West 47th Street 数套实际开间、一居及两居在售/成交房源得出的近似估算；具体金额因户型线、楼层、朝向及单元而异，须按单元逐一核实。该楼盘享有 421-a 房产税减免（部分单元为可负担房），故减免期内房产税偏低，期满后将逐步上调；三居数据不足（全楼仅 6 套三居），故该档留作按单元核验。",
+        "en": "These are approximate estimates drawn from a handful of actual studio, one- and two-bedroom listings at 547 West 47th Street; figures vary by line, floor, exposure and unit and must be verified per unit. The building was developed under a 421-a tax abatement (a portion of units affordable), so property taxes are abated and run low during the abatement term and will step up as it phases out; no reliable three-bedroom data was available (only six 3BR units exist), so that band is left for per-unit verification."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $750–$1,000/月",
+            "en": "~$750–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,100–$1,550/月",
+            "en": "~$1,100–$1,550 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $900–$1,200/月",
+            "en": "~$900–$1,200 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,200–$1,800/月",
+            "en": "~$1,200–$1,800 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,250–$1,650/月",
+            "en": "~$1,250–$1,650 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,900–$2,500/月",
+            "en": "~$1,900–$2,500 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "720-west-end-avenue-new-york": {
@@ -507,6 +860,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "上西区（Upper West Side），位于 West End Avenue 95–96 街之间：向西过一条街就是河滨公园和哈德逊河岸，向东到百老汇是密集的菜场与餐饮，96 街 1/2/3 号线地铁站约一个街区可达；步行可至中央公园、Whole Foods 与河滨大道沿线绿地。",
       "en": "Upper West Side, on West End Avenue between 95th and 96th Streets: one block west to Riverside Park and the Hudson, east to Broadway's dense grocery and dining strip, and about one block to the 1/2/3 trains at 96th Street. Central Park, Whole Foods and the Riverside Drive greenway are all an easy walk."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 720 West End Avenue 实际在售及近期成交房源测算的近似估值，会因朝向、楼层、户型线和面积不同而变化，签约前请按具体单元核验物业费与地税。该楼（由历史建筑 Hotel Marcy 改建的战前公寓）未发现 421-a/485-x 或其他地税减免，所列地税应为未减免的全额征收。",
+        "en": "These are approximate estimates derived from actual active and recent unit listings at 720 West End Avenue and vary by line, floor, exposure, and square footage — verify the exact common charges and taxes per unit before relying on them. No 421-a/485-x or other property-tax abatement was found for this building (a pre-war conversion of the former Hotel Marcy), and the listed taxes appear to run at full, unabated rates."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $850–$1,050/月",
+            "en": "~$850–$1,050 / mo"
+          },
+          "taxes": {
+            "zh": "约 $850–$1,450/月",
+            "en": "~$850–$1,450 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,400/月",
+            "en": "~$2,100–$2,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,100–$2,400/月",
+            "en": "~$2,100–$2,400 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,800–$3,500/月",
+            "en": "~$2,800–$3,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,500–$3,400/月",
+            "en": "~$2,500–$3,400 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $4,200–$5,300/月",
+            "en": "~$4,200–$5,300 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,800–$6,900/月",
+            "en": "~$3,800–$6,900 / mo"
+          }
+        }
+      ]
     }
   },
   "sutton-tower": {
@@ -555,6 +960,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于 Sutton Place，East 58th Street 临东河尽头——曼哈顿最安静的住宅口袋之一，门口即 Sutton Place Park 与东河滨水步道。步行可达 Midtown East 餐饮与办公，临近 Lexington/59 St 与 59 St 地铁站（N/R/W、4/5/6 线）以及 Queensboro 大桥进出。",
       "en": "In Sutton Place at the East River end of East 58th Street — one of Manhattan's quietest residential pockets, with Sutton Place Park and the riverfront promenade at the door. Walkable to Midtown East dining and offices, near the Lexington Av/59 St and 59 St subway stations (N/R/W and 4/5/6) and Queensboro Bridge access."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为近似估算，依据 Sutton Tower 少量房源（如一居 #32A 公共维护费约 $1,313／税约 $1,680；四居 #16A 约 $3,671／约 $3,832；四居 #PH71 约 $7,363／约 $8,420；五居 #PH80 约 $11,622／约 $14,873）；“4居及以上”涵盖大户型四居至顶层公寓，故区间较宽。具体数额随户型线、楼层与面积而异，须按单元逐一核验。MLS 房源数据显示无税收减免（地税基本为全额）；部分第三方楼盘介绍提及 20 年 421-a 减免，因此减免状态应对照发售计划（File No. CD-210271）逐套确认。我们未能确认任何具体二居或三居单元的公共维护费／地税分项金额，故该两档标注为按单元核验。",
+        "en": "Approximate estimates only, drawn from a handful of Sutton Tower listings (e.g. 1-bed #32A ~$1,313 common charges / ~$1,680 taxes; 4-bed #16A ~$3,671 / ~$3,832; 4-bed #PH71 ~$7,363 / ~$8,420; 5-bed #PH80 ~$11,622 / ~$14,873); the 4+ band spans large 4-bed through penthouse units, so its range is wide. Figures vary by line, floor and square footage and must be verified per unit. MLS-fed listing data flags no tax abatement (taxes appear to run essentially full); some third-party building blurbs reference a 20-year 421-a abatement, so abatement status should be confirmed against the offering plan (File No. CD-210271) for each unit. We could not confirm per-line common-charge or tax figures for any specific 2-bed or 3-bed unit, so those bands are marked by unit."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,300–$1,700/月",
+            "en": "~$1,300–$1,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,650–$2,100/月",
+            "en": "~$1,650–$2,100 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $3,600–$11,600/月",
+            "en": "~$3,600–$11,600 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,800–$14,900/月",
+            "en": "~$3,800–$14,900 / mo"
+          }
+        }
+      ]
     }
   },
   "the-perrie": {
@@ -603,6 +1060,25 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于 Turtle Bay（龟湾）234 East 46th Street，2 大道与 3 大道之间，恰好在大中央车站与联合国总部中间的林荫街区。步行几分钟可达大中央车站，换乘 4/5/6/7 号线与 S 线（42 街），北侧 51 街还有 6 号线，到 Midtown East 各大写字楼基本步行可达。",
       "en": "On a tree-lined block at 234 East 46th Street in Turtle Bay, between Second and Third Avenues, sitting midway between Grand Central Terminal and the UN. Grand Central — with the 4/5/6/7 and S trains at 42nd Street — is a few minutes' walk, the 6 stops at 51st Street to the north, and the Midtown East office core is largely walkable."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为约略估算——具体数字因楼层、朝向、面积及单元而异，须按单元结合最新房源与发售计划书逐一核验。数据来源于 Perrie 实际一居室房源（如 639 平方英尺单元公共费约 $1,446/月、地税约 $662/月；652 平方英尺单元约 $1,617/月、约 $741/月）；高楼层及顶层（penthouse）大户型会更高。该楼为 1986 年由租赁改建的共管公寓，未见任何房产税减免（421-a/485-x/J-51），故地税按全额计征；另注：开发商单独提供「24 个月公共费由 sponsor 代付」的销售优惠，属临时性优惠，并非税务减免。",
+        "en": "Approximate estimates only — these figures vary by floor, exposure, square footage and specific unit and must be verified per unit against the current listing and offering plan. Based on actual Perrie 1-bed listings (e.g. 639 sf at ~$1,446/mo common charges and ~$662/mo taxes; 652 sf at ~$1,617/mo and ~$741/mo); larger high-floor and penthouse units run higher. No property-tax abatement (421-a/485-x/J-51) is indicated for this 1986 rental-to-condo conversion, so taxes run at full rates; note the sponsor is separately offering 24 months of sponsor-paid common charges as a sales incentive, which is temporary and not a tax abatement."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,400–$1,800/月",
+            "en": "~$1,400–$1,800 / mo"
+          },
+          "taxes": {
+            "zh": "约 $650–$850/月",
+            "en": "~$650–$850 / mo"
+          }
+        }
+      ]
     }
   },
   "malabar-residences": {
@@ -651,6 +1127,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于中城东 57 街走廊，紧邻 Billionaires' Row、Park 与 Lexington 大道，步行可达 Central Park、Plaza、Bergdorf Goodman 及 57 街一线奢侈品旗舰店；零售入口设在 Lexington 大道与 56 街。地铁出行极方便：步行几分钟即到 Lexington Av/59 St（N/R/W、4/5/6）、59 St（F）与 Lexington Av/53 St（E/M），换乘几乎覆盖全城。",
       "en": "On the Midtown East 57th Street corridor, next to Billionaires' Row and Park/Lexington Avenue, within an easy walk of Central Park, The Plaza, Bergdorf Goodman, and the 57th Street flagship-retail strip; retail entrances sit on Lexington Avenue and 56th Street. Transit is excellent — a few minutes' walk to Lexington Av/59 St (N/R/W, 4/5/6), 57 St (F), and Lexington Av/53 St (E/M), connecting almost anywhere in the city."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为近似估算——公共维护费与地税因户型线、楼层、朝向及户外空间而异，须按单元结合当前房源与发售计划书（纽约州总检察长备案号 CD24-0247）逐一核验。Malabar Residences 以\"享有地税减免（tax-abated）\"的共管公寓销售，故此处为减免期内的较低地税，期满后将逐步上调；Studio 与一居室数据来自实际在售单元（如 #901 Studio 约 $959 维护费/约 $790 地税；#603 一居室 $1,049 维护费/$865 地税），二居室与三居室区间则依据本楼实测的每平方英尺费率推算，须按单元核验。",
+        "en": "Approximate estimates only — common charges and taxes vary by line, floor, exposure, and outdoor space, and must be verified per unit against the current listing and offering plan (NY AG File No. CD24-0247). Malabar Residences is marketed as a tax-abated condominium, so these are reduced abated taxes that will step up over the abatement term; studio and 1-bed figures are anchored to actual listed units (e.g., #901 studio ~$959 CC / ~$790 tax; #603 one-bed $1,049 CC / $865 tax), while 2-bed and 3-bed ranges are extrapolated from the building's observed per-square-foot rates and should be confirmed unit-by-unit."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $900–$1,100/月",
+            "en": "~$900–$1,100 / mo"
+          },
+          "taxes": {
+            "zh": "约 $750–$900/月",
+            "en": "~$750–$900 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,500/月",
+            "en": "~$1,000–$1,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $800–$1,250/月",
+            "en": "~$800–$1,250 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,700/月",
+            "en": "~$2,100–$2,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,700–$2,300/月",
+            "en": "~$1,700–$2,300 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,900–$5,500/月",
+            "en": "~$2,900–$5,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,400–$4,500/月",
+            "en": "~$2,400–$4,500 / mo"
+          }
+        }
+      ]
     }
   },
   "250-west-96-street": {
@@ -699,6 +1227,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于上西区百老汇与西 96 街转角，步行即达 Riverside Park 的河滨步道与 Central Park，96 街地铁站（1/2/3 线，含 2/3 快车）就在门口；百老汇一线超市、餐厅与日常零售密集，是兼顾通勤效率与公园生活的成熟住宅地段。",
       "en": "On the Broadway-and-96th-Street corner of the Upper West Side, within walking distance of Riverside Park's waterfront paths and Central Park, with the 96th Street station (1/2/3 trains, including the 2/3 express) right outside. Broadway's grocers, restaurants, and everyday retail are steps away - an established residential pocket that balances commute speed with park-side living."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据若干在售及近期成交房源样本得出的近似估算；实际公共费与房产税因户型线、楼层、面积及具体单元而异，须按单元逐一核验。该楼盘（2021年落成）无 421-a/485-x 房产税减免，故房产税按全额征收；开发商提供的\"12个月免公共费\"为临时销售优惠，并非税收减免。",
+        "en": "These are approximate estimates drawn from a sample of active and recent listings; actual common charges and property taxes vary by line, floor, square footage, and unit and must be verified per unit. The building (completed 2021) carries no 421-a/485-x tax abatement, so property taxes run at full rates; the sponsor's \"12 months free common charges\" is a temporary sales incentive, not a tax abatement."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,400/月",
+            "en": "~$1,000–$1,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,400–$1,800/月",
+            "en": "~$1,400–$1,800 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,050–$1,700/月",
+            "en": "~$1,050–$1,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,400–$3,300/月",
+            "en": "~$2,400–$3,300 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $1,450–$2,400/月",
+            "en": "~$1,450–$2,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,400–$4,500/月",
+            "en": "~$3,400–$4,500 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "约 $4,900–$5,200+/月",
+            "en": "~$4,900–$5,200+ / mo"
+          }
+        }
+      ]
     }
   },
   "monogram-new-york": {
@@ -747,6 +1327,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于中城东 Turtle Bay,135 East 47th Street,夹在莱克星顿与第三大道之间。步行约 5 分钟到大中央车站(4/5/6/7/S 及 Metro-North),街角即莱克星顿大道 6 号线,五大道精品商业、洛克菲勒中心、联合国总部都在步行范围内。",
       "en": "In Turtle Bay / Midtown East at 135 East 47th Street, between Lexington and Third Avenues. It's about a 5-minute walk to Grand Central (4/5/6/7/S and Metro-North), with the Lexington Ave 6 train on the corner; Fifth Avenue shopping, Rockefeller Center, and the UN are all within walking distance."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为约数估算——实际公共维护费与房产税因户型线、楼层、朝向及具体面积差异显著，须按单元对照发售计划或在售房源逐一核验。数据基于 Monogram 实际在售房源（例如一居室公共维护费约 $950–$1,350/月、房产税约 $770–$1,100/月），studio 与两居室区间在此基础上保守推算。该楼（2024 年竣工）无 421-a/485-x 税收减免，故房产税按全额征收。另注：开发商目前对在售单元提供最长两年免公共维护费的优惠，可暂时降低买家的实际月持有成本。",
+        "en": "Approximate estimates only — actual common charges and taxes vary significantly by line, floor, exposure and exact square footage, and must be verified per unit against the offering plan or active listing. Figures are grounded in observed Monogram listings (e.g., one-bedrooms showing roughly $950–$1,350/mo common charges and $770–$1,100/mo taxes); studio and two-bedroom ranges are scaled conservatively from those. The building (completed 2024) has NO 421-a/485-x tax abatement, so property taxes run at the full unabated rate. Note: the sponsor is currently offering up to two years of complimentary common charges on available residences, which can temporarily reduce a buyer's effective monthly carrying cost."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $700–$1,000/月",
+            "en": "~$700–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $550–$850/月",
+            "en": "~$550–$850 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $950–$1,350/月",
+            "en": "~$950–$1,350 / mo"
+          },
+          "taxes": {
+            "zh": "约 $750–$1,150/月",
+            "en": "~$750–$1,150 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,400–$2,400/月",
+            "en": "~$1,400–$2,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,300–$2,500/月",
+            "en": "~$1,300–$2,500 / mo"
+          }
+        }
+      ]
     }
   },
   "111-murray-street": {
@@ -795,6 +1416,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于 Tribeca 西侧 Murray Street，步行几分钟即到 Hudson River Park 滨水绿带与 Whole Foods，餐饮、画廊、石板路街区环绕；交通上紧邻 Chambers St 的 1/2/3 与 A/C 线、以及 World Trade Center 的 E 线与 PATH，往金融区、世贸中心、SoHo 都是步行可达的距离。",
       "en": "The tower sits on Murray Street in western Tribeca, a few minutes' walk from Hudson River Park's waterfront and a Whole Foods, ringed by restaurants, galleries and cobblestone streets. For transit it's beside the 1/2/3 and A/C at Chambers St and the E and PATH at the World Trade Center hub, with the Financial District, the WTC complex and SoHo all within walking distance."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为依据 111 Murray Street 在售及成交房源观察值得出的近似估算；实际公共维护费与地税因户型线、楼层、朝向及面积而异，须按具体单元核验。该楼（2018 年竣工）不享有 421-a 或其他地税减免，故各单元按全额缴纳地税，请据此预算，勿期待减免折扣。",
+        "en": "These are approximate estimates drawn from observed active and closed listings at 111 Murray Street; actual common charges and taxes vary by line, floor, exposure, and square footage and must be verified per unit. The building (completed 2018) carries no 421-a or other property-tax abatement, so units pay full taxes—budget accordingly rather than expecting an abatement discount."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $1,200–$2,300/月",
+            "en": "~$1,200–$2,300 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$2,200/月",
+            "en": "~$1,000–$2,200 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $2,400–$3,300/月",
+            "en": "~$2,400–$3,300 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,800–$2,900/月",
+            "en": "~$1,800–$2,900 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $3,200–$5,000/月",
+            "en": "~$3,200–$5,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,100–$4,200/月",
+            "en": "~$2,100–$4,200 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $3,800–$7,000/月",
+            "en": "~$3,800–$7,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,500–$8,000/月",
+            "en": "~$3,500–$8,000 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $7,000–$20,000/月",
+            "en": "~$7,000–$20,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $7,000–$16,000/月",
+            "en": "~$7,000–$16,000 / mo"
+          }
+        }
+      ]
     }
   },
   "mandarin-oriental-residences-fifth-avenue": {
@@ -843,6 +1527,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于曼哈顿中城东（Midtown East）第五大道与 54 街口，门牌 685 Fifth Avenue，正处第五大道顶级名店带。E、M 线「5 Av/53 St」站就在门口（约 60 米），步行可达 MoMA、Rockefeller Center 与第五大道精品旗舰店；往北约 10 个街区即到中央公园南端。",
       "en": "In Midtown East at Fifth Avenue and 54th Street (685 Fifth Avenue), in the heart of the Fifth Avenue luxury-retail corridor. The E and M trains at 5 Av/53 St are right at the door (about 200 ft); MoMA, Rockefeller Center and the Fifth Avenue flagships are an easy walk, and Central Park's southern edge is roughly ten blocks north."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为近似估算，会因户型线、楼层、朝向及具体单元而异，须按单元并对照官方销售计划书逐一核实。公共维护费区间取自实际在售房源（如studio 7E约$3,037；一居6B $3,675、22A $5,386；两居8A $6,261）；房产税区间以唯一已披露数据（一居6B约$2,036/月）为锚点按价格推算，仅供参考。该楼为685 Fifth Avenue于2023年的改建项目，未见住宅类421-a税收减免——已披露税额接近全额而非近乎为零，请勿假定享有减免。楼盘公布的户型为开间、一居与两居（外加两居顶层公寓），基本没有独立三居单元，故三居一栏标注为按单元核验。",
+        "en": "Figures are approximate estimates that vary by line, floor, exposure, and unit, and must be verified per unit and against the offering plan. Common-charge ranges are drawn from actual active listings (e.g. studio 7E ~$3,037; 1-bed 6B $3,675 and 22A $5,386; 2-bed 8A $6,261); tax ranges are anchored to the one confirmed disclosure (1-bed 6B ~$2,036/mo) and scaled by price, so treat them as indicative only. This 2023 conversion of 685 Fifth Avenue does not appear to carry a residential 421-a tax abatement — disclosed taxes run roughly full, not near-zero — so do not assume abated taxes. The building's published unit mix is studios, 1-beds and 2-beds (plus 2-bed penthouses) with essentially no standalone 3-bedroom residences, so 3-bed figures are listed as By unit."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $3,000–$3,300/月",
+            "en": "~$3,000–$3,300 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$1,500/月",
+            "en": "~$1,000–$1,500 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $3,700–$5,400/月",
+            "en": "~$3,700–$5,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,000–$3,200/月",
+            "en": "~$2,000–$3,200 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $6,000–$8,000/月（顶层公寓更高）",
+            "en": "~$6,000–$8,000 / mo (penthouses higher)"
+          },
+          "taxes": {
+            "zh": "约 $3,000–$5,500/月",
+            "en": "~$3,000–$5,500 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "vita-north-tower": {
@@ -891,6 +1627,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于 Hudson Yards 与地狱厨房（Hell's Kitchen）交界、West 38th 街与第九大道路口，步行可达 Hudson Yards、Manhattan West 与 High Line；A/C/E 线 34 街站约 0.26 英里、7/1/2/3/N/Q/R/S 多线与 Moynihan 火车大厅、Port Authority 巴士总站都在步行圈内，去中城西办公区、剧院区和宾州车站都很快。",
       "en": "On the Hudson Yards / Hell's Kitchen edge at West 38th Street and Ninth Avenue, within walking distance of Hudson Yards, Manhattan West, and the High Line. The A/C/E at 34th Street is about 0.26 miles away, with the 7/1/2/3/N/Q/R/S, Moynihan Train Hall, and Port Authority all within an easy walk — quick access to West Side offices, the Theater District, and Penn Station."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为近似估算——管理费与房产税因户型线、楼层、朝向及具体单元而异，须按单元对照发售计划（File No. CD23-0321）及 StreetEasy/销售办公室的最新数据逐户核验。VITA 为 2025 年新建的曼哈顿公寓，无房产税减免（421-a 已到期，485-x 通常不适用于曼哈顿共有公寓），故房产税按全额征收；管理费区间依据某约 600 平方英尺单元约 $572/月的实际数据按面积推算，开发商另行提供的\"两年管理费\"优惠并不降低基础管理费金额。",
+        "en": "Approximate estimates only — common charges and taxes vary by line, floor, exposure, and unit, and must be verified per unit against the offering plan (File No. CD23-0321) and the current StreetEasy/sales-office figures. As a 2025 new-construction Manhattan condominium, VITA carries NO property-tax abatement (421-a expired and 485-x generally excludes Manhattan condos), so taxes are billed at full rates; common-charge figures are scaled from an observed ~$572/mo on a ~600 sf unit and the sponsor's separate \"2 years of common charges\" incentive does not reduce the underlying charge."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $550–$650/月",
+            "en": "~$550–$650 / mo"
+          },
+          "taxes": {
+            "zh": "约 $900–$1,300/月",
+            "en": "~$900–$1,300 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $800–$1,050/月",
+            "en": "~$800–$1,050 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,400–$2,200/月",
+            "en": "~$1,400–$2,200 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $1,200–$2,000/月",
+            "en": "~$1,200–$2,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,200–$4,000/月",
+            "en": "~$2,200–$4,000 / mo"
+          }
+        }
+      ]
     }
   },
   "vita-south-tower": {
@@ -939,6 +1716,36 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于第九大道、West 37th 与 38th 街之间，处于 Hudson Yards、Garment District 和 Hell's Kitchen 的交界地带。步行几分钟即到 7 号线（34 St–Hudson Yards 站）、Penn Station 与 Port Authority 长途/地铁枢纽，A/C/E 等多条线路在侧；High Line、Hudson Yards 商场、Whole Foods 和剧院区都在步行范围内。",
       "en": "On Ninth Avenue between West 37th and 38th Streets, where Hudson Yards, the Garment District, and Hell's Kitchen meet. It's a short walk to the 7 train at 34 St–Hudson Yards, plus Penn Station and the Port Authority hub (A/C/E and more nearby) — with the High Line, Hudson Yards shops, Whole Foods, and the Theater District all on foot."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为约略估算——公共费用与房产税因户型线、楼层、朝向和具体单元而异，须逐户并对照发售计划书（offering plan）核验。公共费区间以已观察到的挂牌（如某两居约 $1,248/月）按面积推算；房产税为估算值，因各单元税额未公开。VITA 为 2025 年落成的公寓，未发现 421-a/485-x 等房产税减免，故按纽约全额（未减免）公寓税率计算；开发商目前提供两年公共费的优惠。",
+        "en": "Approximate estimates only — common charges and taxes vary by line, floor, exposure, and unit and must be verified per unit and against the offering plan. Common-charge ranges are anchored to an observed listing (e.g. a 2-bed at ~$1,248/mo) scaled by unit size; tax ranges are estimated because per-unit tax figures were not published. VITA is a 2025-completed condo with no 421-a/485-x tax abatement found, so taxes run at full (unabated) NYC condo rates; the sponsor is currently offering an incentive of two years of common charges."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $600–$800/月",
+            "en": "~$600–$800 / mo"
+          },
+          "taxes": {
+            "zh": "约 $700–$1,300/月",
+            "en": "~$700–$1,300 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,150–$1,450/月",
+            "en": "~$1,150–$1,450 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,500–$2,600/月",
+            "en": "~$1,500–$2,600 / mo"
+          }
+        }
+      ]
     }
   },
   "eastlight-condominium": {
@@ -987,6 +1794,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于 Third Avenue 与 East 34th Street 街角，正好压在 Kips Bay、Murray Hill 和 NoMad 三个社区的交界处；往北步行约 10–15 分钟到 Grand Central（4/5/6/7 及 Metro-North），门口 East 34th Street 上有 6 号线 33rd St 站和往返皇后区的过河巴士，往南即 NoMad、Madison Square Park 的餐饮购物。",
       "en": "The building stands on the corner of Third Avenue and East 34th Street, right where Kips Bay, Murray Hill, and NoMad meet. Grand Central (4/5/6/7 and Metro-North) is a 10-15 minute walk north, the 6 train at 33rd Street and East River crosstown buses are at the door on East 34th Street, and NoMad and Madison Square Park's dining and shopping sit just to the south."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 Eastlight 多套在售及历史房源估算的近似区间；公共维护费与房产税会因朝向、楼层、面积和景观差异较大，须按具体单元核实。该楼暂未发现 421-a 或其他房产税减免（abatement），房产税应按全额计征——请逐套核对当前税单及开发商可能提供的公共维护费补贴。",
+        "en": "These are approximate estimates drawn from a sample of active and past Eastlight listings; common charges and taxes vary significantly by line, floor, square footage, and view, so verify the exact figures per unit. No 421-a or other property-tax abatement was confirmed for this building, so taxes appear to run at full (non-abated) levels — confirm the current tax bill and any sponsor common-charge credit on each unit."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $650–$1,000/月",
+            "en": "~$650–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $700–$1,100/月",
+            "en": "~$700–$1,100 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,600/月",
+            "en": "~$1,000–$1,600 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,100–$1,800/月",
+            "en": "~$1,100–$1,800 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,400–$2,100/月",
+            "en": "~$1,400–$2,100 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,800–$2,400/月",
+            "en": "~$1,800–$2,400 / mo"
+          }
+        }
+      ]
     }
   },
   "565-broome-soho": {
@@ -1035,6 +1883,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于 SoHo 最西端、Broome 街临近哈德逊河与 Hudson Square 交界处，步行可达 Spring Street（C/E）与 Canal Street（A/C/E、1、N/Q/R/W、J/Z）多条地铁线，向西即哈德逊河滨公园，紧邻 Holland Tunnel 出城口，自驾进出新泽西方便；周边是 SoHo 铸铁建筑区的画廊、设计店与高端餐饮。",
       "en": "On SoHo's far western edge along Broome Street where the neighborhood meets the Hudson and Hudson Square, it's a short walk to Spring Street (C/E) and Canal Street (A/C/E, 1, N/Q/R/W, J/Z), with the Hudson River Park waterfront a block west and the Holland Tunnel right there for quick drives to New Jersey — all within SoHo's cast-iron district of galleries, design shops and high-end dining."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 565 Broome Soho 在售及近期成交房源观察到的近似估值；实际金额因户型线、楼层、面积和具体单元而异，须逐套对照发售计划书及当前房源核实。该楼盘无 421-a 或其他房产税减免，故地税按全额（无减免）征收。",
+        "en": "These are approximate estimates drawn from observed active and recent listings at 565 Broome Soho; actual figures vary by line, floor, square footage, and unit, and must be verified per unit against the offering plan and current listing. The building has no 421-a or other property-tax abatement, so taxes run at full (unabated) rates."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,400/月",
+            "en": "~$1,000–$1,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $850–$1,200/月",
+            "en": "~$850–$1,200 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,600–$2,300/月",
+            "en": "~$1,600–$2,300 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,200–$1,700/月",
+            "en": "~$1,200–$1,700 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $3,000–$4,900/月",
+            "en": "~$3,000–$4,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,700–$4,700/月",
+            "en": "~$2,700–$4,700 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $3,100–$4,900/月",
+            "en": "~$3,100–$4,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,400–$4,500/月",
+            "en": "~$3,400–$4,500 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $9,000–$10,500/月",
+            "en": "~$9,000–$10,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $8,000–$10,100/月",
+            "en": "~$8,000–$10,100 / mo"
+          }
+        }
+      ]
     }
   },
   "222-les-tower-lofts": {
@@ -1083,6 +1994,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于下东城东百老汇 222 号，紧邻 Seward Park 与东河滨水绿地；East Broadway F 线地铁站仅一个街区，Essex/Delancey 的 J/M/Z/F 换乘约 0.26 英里。步行可达 Essex Crossing（市场、影院、公园）、唐人街与下东城的餐饮酒吧带，是闹中取静、又一脚踏进 downtown 的位置。",
       "en": "At 222 East Broadway on the Lower East Side, steps from Seward Park and the East River waterfront. The East Broadway F train is one block away, with the J/M/Z/F interchange at Essex/Delancey about 0.26 miles off. Walkable to Essex Crossing (market, cinema, park), Chinatown, and the Lower East Side's dining-and-bar strip — quiet at the door, but one step into downtown."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于 222 East Broadway 数个真实在售/成交单元的近似估算，会因户型线、楼层、面积与朝向而异，使用前请按单元核实实际公共维护费与地税。该楼盘没有 421-a/485-x 地税减免（房源显示\"Tax Abatement: false\"），因此地税按全额（无减免）计征。开间与 4 居及以上因缺乏可靠的单元费用数据，标注为\"按单元核验\"。",
+        "en": "These are approximate estimates drawn from a handful of actual unit listings at 222 East Broadway and vary by line, floor, square footage, and exposure; verify the exact common charges and taxes per unit before relying on them. This building does NOT carry a 421-a/485-x tax abatement (listings show \"Tax Abatement: false\"), so property taxes are billed at the full unabated rate. Studio and 4+ bedroom figures are marked \"By unit\" because reliable per-unit charge data was not available at the time of research."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,750/月",
+            "en": "~$1,000–$1,750 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,200–$2,350/月",
+            "en": "~$1,200–$2,350 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,400/月",
+            "en": "~$2,100–$2,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,650–$2,900/月",
+            "en": "~$2,650–$2,900 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $3,400–$3,900/月",
+            "en": "~$3,400–$3,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $4,200–$4,700/月",
+            "en": "~$4,200–$4,700 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "155w68-condominium": {
@@ -1131,6 +2105,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于上西区 Lincoln Square，西 68 街、Broadway 与 Amsterdam Avenue 之间；步行一个街区到 Lincoln Center，东到中央公园、西到河滨公园都是几分钟路程。地铁 1 号线在 66 街-Lincoln Center 站（2/3 为快车不停靠）、B/C 线在 72 街站，去 Columbus Circle、时代广场和中城都很直接。周边 Broadway 沿线满是餐厅、Trader Joe's、影院和日常商铺。",
       "en": "In Lincoln Square on the Upper West Side, on West 68th Street between Broadway and Amsterdam Avenue — one block to Lincoln Center, and a few minutes' walk to either Central Park or Riverside Park. The 1 train at 66th St–Lincoln Center (the 2/3 express bypass it) and the B/C at 72nd St put Columbus Circle, Times Square, and Midtown within an easy ride, with Broadway's restaurants, Trader Joe's, cinemas, and everyday shops right outside."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为依据 155W68（155 West 68th Street，原 Dorchester Towers）实际在售/近期发起方房源得出的近似月度数字；开间至两居室区间反映观察到的公共维护费与地税，三居室区间按该楼每平方英尺费率推算，该楼不提供四居室及以上户型。各项费用随楼层、朝向与具体单元而异，须以该单元的销售计划书及最新地税账单为准核验——包括是否适用 421-a 或合作公寓/共管公寓地税减免（可显著降低地税），买方应逐套核实。",
+        "en": "These are approximate monthly figures drawn from actual active/recent sponsor-unit listings at 155W68 (155 West 68th Street, the former Dorchester Towers); studio–2BR ranges reflect observed common charges and taxes, the 3BR range is extrapolated from the building's per-square-foot rates, and the building offers no 4+ bedroom layouts. Every line varies by floor, exposure, and unit and must be confirmed against the specific unit's offering plan and current tax bill — including whether any 421-a / co-op-condo tax abatement applies, which buyers should verify per unit as it can materially lower the tax figure."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $550–$750/月",
+            "en": "~$550–$750 / mo"
+          },
+          "taxes": {
+            "zh": "约 $640–$800/月",
+            "en": "~$640–$800 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $700–$1,400/月",
+            "en": "~$700–$1,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $800–$1,500/月",
+            "en": "~$800–$1,500 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,400–$2,500/月",
+            "en": "~$1,400–$2,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,500–$2,700/月",
+            "en": "~$1,500–$2,700 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,000–$3,200/月（估算，需按单元核验）",
+            "en": "~$2,000–$3,200 / mo (approx., by unit)"
+          },
+          "taxes": {
+            "zh": "约 $2,100–$3,500/月（估算，需按单元核验）",
+            "en": "~$2,100–$3,500 / mo (approx., by unit)"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "linden-lane": {
@@ -1179,6 +2216,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于地狱厨房 West 51st Street（第八与第九大道之间），步行可达百老汇剧院区、Restaurant Row（西 46 街餐厅一条街）以及哥伦布圆环和中央公园西南角；最近的地铁是 50th St 的 C/E 线，第八大道沿线 A/B/C/D/E/1 等多线也都在步行范围内，去中城与西区通勤都很直接。",
       "en": "On West 51st Street between Eighth and Ninth Avenues in Hell's Kitchen, walkable to the Broadway Theater District, Restaurant Row on West 46th, and Columbus Circle/southwest Central Park. The nearest subway is the C/E at 50th Street, with the broader Eighth Avenue lines (A/B/C/D/E/1) within walking distance for direct Midtown and West Side commutes."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上仅为约略估算，依据开发商公布的 Linden Lane 各户型可售房源数据；实际的公共维护费与房产税会因线位、楼层、面积及具体单元而异（面积更大、顶层及带\"家庭办公室\"的户型在同一卧室档内偏高），须按单元并对照发售计划书逐一核验。未发现该 2026 年新建公寓享有 421-a 或 485-x 税收减免，故房产税应按全额（无减免）征收。",
+        "en": "Approximate estimates only, drawn from the developer's published availability figures for individual Linden Lane units; actual common charges and taxes vary by line, floor, square footage, and unit (larger/penthouse and \"+home office\" units run higher within each band) and must be verified per unit and against the offering plan. No 421-a or 485-x tax abatement was found for this 2026 new-construction condo, so property taxes appear to run at full (unabated) rates."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,150/月",
+            "en": "~$1,000–$1,150 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,250–$1,400/月",
+            "en": "~$1,250–$1,400 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,580–$2,500/月",
+            "en": "~$1,580–$2,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,900–$3,100/月",
+            "en": "~$1,900–$3,100 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,350–$3,000/月",
+            "en": "~$2,350–$3,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,850–$3,700/月",
+            "en": "~$2,850–$3,700 / mo"
+          }
+        }
+      ]
     }
   },
   "parc-beaufort": {
@@ -1227,6 +2305,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落于 Midtown 的 West 57th Street(Billionaires' Row),卡内基音乐厅在半个街区外、中央公园南缘两个街区可达,MoMA 与 Fifth Avenue 旗舰店均为步行级。地铁极密:57 St 站的 F、57 St–7 Av 站的 N/Q/R/W,以及 7 Av 站的 B/D/E 都在数分钟步行圈内。",
       "en": "On West 57th Street in Midtown — Billionaires' Row — half a block from Carnegie Hall, two blocks from the southern edge of Central Park, and an easy walk to MoMA and the Fifth Avenue flagships. Transit is dense: the F at 57 St, the N/Q/R/W at 57 St–7 Av, and the B/D/E at 7 Av are all within a few minutes' walk."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上仅为粗略估算值——该 2026 年四季度交付的改建项目尚未公布任何单元级物业费或税费数据，该区间依据单元面积与同类全额税豪华新盘的常规推算而得，必须按具体单元、楼层与朝向对照招股说明书（CD25-0149）逐一核验。Parc Beaufort 不享有 421-a/485-x 税收减免（该项目于 2022 年到期，其后继的 485-x 基本不适用于曼哈顿公寓），因此物业税按全额未减免税率计征。",
+        "en": "These are rough, approximate estimates only — no per-unit common-charge or tax figures have been published yet for this new Q4-2026 conversion, so the ranges are derived from unit square footage and typical full-tax new-luxury-condo norms and must be verified per unit, floor, and line against the offering plan (CD25-0149). Parc Beaufort carries no 421-a/485-x tax abatement (the program expired in 2022 and its successor 485-x largely excludes Manhattan condos), so property taxes run at full unabated rates."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,800/月（估算，依面积约 670–1,100 平方英尺）",
+            "en": "~$1,000–$1,800 / mo (approx., est. from unit size ~670–1,100 sf)"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$1,900/月（估算，无减免、全额税）",
+            "en": "~$1,000–$1,900 / mo (approx., full/unabated)"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,900–$2,800/月（估算，依面积约 1,250–1,520 平方英尺）",
+            "en": "~$1,900–$2,800 / mo (approx., est. from unit size ~1,250–1,520 sf)"
+          },
+          "taxes": {
+            "zh": "约 $1,900–$3,000/月（估算，无减免、全额税）",
+            "en": "~$1,900–$3,000 / mo (approx., full/unabated)"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,700–$3,800/月（估算，依面积约 1,780 平方英尺）",
+            "en": "~$2,700–$3,800 / mo (approx., est. from unit size ~1,780 sf)"
+          },
+          "taxes": {
+            "zh": "约 $2,700–$4,000/月（估算，无减免、全额税）",
+            "en": "~$2,700–$4,000 / mo (approx., full/unabated)"
+          }
+        }
+      ]
     }
   },
   "bloom-on-forty-fifth": {
@@ -1275,6 +2394,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落在地狱厨房第十、十一大道之间的 West 45th Street,向西两个街区就是 Hudson River Park 滨水绿道，向东是剧院区和时报广场。最近的地铁是 42 街—Port Authority 的 A/C/E 线，步行约 10 分钟即达，再往东可换乘 7/N/Q/R/W/S 及 1/2/3 线，进出中城和通勤都顺。",
       "en": "On West 45th Street between Tenth and Eleventh Avenues in Hell's Kitchen, two blocks east of the Hudson River Park waterfront greenway and a short walk west of the Theater District and Times Square. The closest subway is the A/C/E at 42nd Street–Port Authority, roughly a 10-minute walk, with the 7/N/Q/R/W/S and 1/2/3 lines a bit further east for easy Midtown and commuter access."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 500 West 45th Street 数套实际在售房源估算的近似区间，会因户型线、楼层、朝向和面积而异——每套房源的物业管理费与房产税请务必以最新销售计划书或房源信息为准核实。我们未能确认本楼盘当前享有 421-a 房产税减免；所示房产税看似接近全额公寓税，因此可能高于同区域享有减免的新盘。",
+        "en": "These are approximate estimates drawn from a handful of actual unit listings at 500 West 45th Street and vary by line, floor, exposure, and square footage — always verify common charges and taxes per unit against the current offering plan or listing. We could not confirm an active 421-a tax abatement for this building; the taxes shown appear to reflect roughly full condo taxes, so figures may be higher than at comparable abated new developments."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $650–$1,000/月",
+            "en": "~$650–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $850–$1,200/月",
+            "en": "~$850–$1,200 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,000–$1,400/月",
+            "en": "~$1,000–$1,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,300–$1,700/月",
+            "en": "~$1,300–$1,700 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,500–$1,900/月",
+            "en": "~$1,500–$1,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,850–$2,400/月",
+            "en": "~$1,850–$2,400 / mo"
+          }
+        }
+      ]
     }
   },
   "one11-residences": {
@@ -1323,6 +2483,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘位于西 56 街、第六大道与第七大道之间，正处中央公园南侧、Billionaires' Row 的边缘——步行几分钟即到中央公园、卡内基音乐厅、MoMA 与第五大道顶级商圈。地铁 F 线（57 街/第六大道）、N/Q/R 线（57 街/第七大道）、B/D/E 线（第七大道）均在两三个街区内。",
       "en": "On West 56th Street between Sixth and Seventh Avenues, just south of Central Park at the edge of Billionaires' Row — a few minutes' walk to Central Park, Carnegie Hall, MoMA, and Fifth Avenue's flagship shopping. The F (57th/Sixth), N/Q/R (57th/Seventh), and B/D/E (Seventh Ave) trains are all within two or three blocks."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于近期 ONE11 Residences 数套挂牌的近似估算，实际金额因户型线、楼层、面积及具体单元而异，须按单元逐一核验。该楼无 421-a/485-x 房产税减免（挂牌记录显示 Tax Abatement = false），故地税按全额计征；楼内 4+ 卧仅有两套顶层复式，其公共维护费与地税未公开，需按单元核验。",
+        "en": "These are approximate estimates grounded in a handful of recent ONE11 Residences listings; actual figures vary by line, floor, square footage, and unit and must be verified per unit. ONE11 has no 421-a/485-x tax abatement (listing records show Tax Abatement = false), so property taxes run at full rates; the building's only 4+ bedroom homes are its two penthouses, for which common-charge and tax figures are not publicly available."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,800–$2,700/月",
+            "en": "~$1,800–$2,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,300–$1,900/月",
+            "en": "~$1,300–$1,900 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,600–$4,500/月",
+            "en": "~$2,600–$4,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,800–$3,500/月",
+            "en": "~$1,800–$3,500 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "77-greenwich": {
@@ -1371,6 +2572,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于金融区 Greenwich 街与 Rector 街交口,1 号线 Rector Street 站就在楼下的 Greenwich 街地下,步行几分钟可达 World Trade Center 交通枢纽(E/PATH 等多线)、Wall Street 与 Battery Park 海滨,以及 Whitehall/South Ferry 渡轮。",
       "en": "At Greenwich and Rector Streets in the Financial District, with the 1 train's Rector Street station directly beneath Greenwich Street at the door, and a few minutes' walk to the World Trade Center transit hub (E/PATH and more), Wall Street, the Battery Park waterfront, and the Whitehall/South Ferry boats."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于 77 Greenwich 少量在售及近期房源的大致估算；实际公共维护费与房产税因户型线、楼层、面积和具体单元而异，须逐套核验。该楼盘似乎未享有 421-a/485-x 房产税减免，故房产税按全额（无减免）征收；开发商曾对部分两居室及顶层公寓提供限时的公共维护费与房产税抵扣优惠，但不改变上述基础数额。",
+        "en": "Approximate estimates based on a handful of active and recent 77 Greenwich listings; actual common charges and taxes vary by line, floor, square footage, and unit, and must be verified per unit. This building does not appear to carry a 421-a/485-x tax abatement, so property taxes run at full (unabated) levels; the sponsor has at times offered limited-time common-charge and tax credits on select 2-bedroom and penthouse residences, which do not change the underlying figures."
+      },
+      "bands": [
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,800–$2,200/月",
+            "en": "~$1,800–$2,200 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,000–$4,400/月（全额房产税，无减免）",
+            "en": "~$3,000–$4,400 / mo (full taxes, no abatement)"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,400–$3,000/月",
+            "en": "~$2,400–$3,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $5,000–$6,000/月（全额房产税，无减免）",
+            "en": "~$5,000–$6,000 / mo (full taxes, no abatement)"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $4,000–$4,300/月（顶层公寓）",
+            "en": "~$4,000–$4,300 / mo (penthouse)"
+          },
+          "taxes": {
+            "zh": "约 $8,500–$8,800/月（全额房产税，无减免）",
+            "en": "~$8,500–$8,800 / mo (full taxes, no abatement)"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "the-florian": {
@@ -1419,6 +2672,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘坐落在 Gramercy Park 安静的住宅街区，紧邻 Stuyvesant Square 公园，步行约 3 分钟（0.2 英里）即到 14th Street/First Ave 的 L 线地铁；再往西到 Union Square 可换乘 N/Q/R/W、4/5/6 与 L 线（约 0.5 英里），National Arts Club、Players Club、Union Square 农夫市集、Gramercy Tavern 都在步行范围内。",
       "en": "The building sits on a quiet residential block on the edge of Gramercy Park, directly across from Stuyvesant Square, about a 3-minute walk (0.2 mi) to the L train at 14th St/First Ave; a short walk west reaches the Union Square hub (N/Q/R/W, 4/5/6 and L, ~0.5 mi), with the National Arts Club, Players Club, the Union Square Greenmarket and Gramercy Tavern all on foot."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为约略估算，依据 The Florian 多个实际在售/成交房源（例如：一居约 $790–$840 公共维护费 / 约 $880–$930 地税；两居约 $1,170–$1,554 公共维护费 / 约 $1,307–$1,719 地税）；具体金额因户型线、楼层、户外空间和单元而异，须按单元依发售计划或当前房源核验。未发现 421-a / 485-x 或其他地税减免，故地税应按全额（未减免）新评估税率计算。三居缺乏可靠的逐项数据，故该档标注\"按单元核验\"。",
+        "en": "Approximate estimates only, grounded in several actual Florian listings (e.g., 1-bed lines ~$790–$840 common charges / ~$880–$930 taxes; 2-bed units ~$1,170–$1,554 common charges / ~$1,307–$1,719 taxes); figures vary by line, floor, outdoor space, and unit and must be verified per unit from the offering plan or current listing. No 421-a / 485-x or other tax abatement was found, so property taxes appear to run at full (unabated) newly-assessed rates. No reliable 3-bed line items were available, so that band is marked \"By unit.\""
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $750–$1,000/月",
+            "en": "~$750–$1,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $850–$1,100/月",
+            "en": "~$850–$1,100 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,150–$1,700/月",
+            "en": "~$1,150–$1,700 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,300–$1,900/月",
+            "en": "~$1,300–$1,900 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "linea-condominium": {
@@ -1467,6 +2761,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于西切尔西 West 19th Street（第九、十大道之间），紧邻 High Line 高线公园，步行可达切尔西画廊区、Hudson River Park 与 Chelsea Market;最近地铁为 14 街的 A/C/E 与 L 线，以及 23 街的 C/E 线，几个街区即到。",
       "en": "In West Chelsea on West 19th Street between Ninth and Tenth Avenues, steps from the High Line and within an easy walk of the Chelsea galleries, Hudson River Park and Chelsea Market; the nearest trains are the A/C/E and L at 14th Street and the C/E at 23rd Street, a few blocks away."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为基于 Linea（西19街428号）实际在售/成交房源的近似估算，会因户型线、楼层、面积和朝向而异，须按具体单元逐套核验。Linea 为 2024 年落成的新建公寓，没有房产税减免（顶层公寓房源公开记录显示\"Tax Abatement: false\"），因此房产税按全额（未减免）标准征收。",
+        "en": "These are approximate estimates drawn from actual Linea (428 West 19th St) unit listings and vary by line, floor, square footage and exposure — verify the exact common charges and taxes per unit. Linea is a 2024 new-development condominium with NO tax abatement (the penthouse listing's public records show \"Tax Abatement: false\"), so property taxes are charged at the full unabated rate."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,150–$1,800/月",
+            "en": "~$1,150–$1,800 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$1,550/月",
+            "en": "~$1,000–$1,550 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,800–$2,900/月",
+            "en": "~$2,800–$2,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,400–$2,550/月",
+            "en": "~$2,400–$2,550 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $6,300–$6,600/月",
+            "en": "~$6,300–$6,600 / mo"
+          },
+          "taxes": {
+            "zh": "约 $5,500–$5,900/月",
+            "en": "~$5,500–$5,900 / mo"
+          }
+        },
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $1,150–$1,400/月",
+            "en": "~$1,150–$1,400 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,000–$1,050/月",
+            "en": "~$1,000–$1,050 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,250–$3,350/月",
+            "en": "~$2,250–$3,350 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,950–$2,500/月",
+            "en": "~$1,950–$2,500 / mo"
+          }
+        }
+      ]
     }
   },
   "35-hudson-yards-manhattan": {
@@ -1515,6 +2872,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "楼盘就在 Hudson Yards 核心，门口即 Public Square and Gardens 与 The Shops（Neiman Marcus 等），步行可达 The Vessel、The Shed 演艺中心和 High Line 高线公园起点。交通上，7 号线 34 St–Hudson Yards 终点站就在街区内，向东可换乘 Penn Station 的多条城际与地铁线路，去中城与机场都很直接。",
       "en": "The tower sits at the heart of Hudson Yards, steps from the Public Square and Gardens and The Shops (Neiman Marcus and more), and within an easy walk of The Vessel, The Shed and the northern end of the High Line. For transit, the 7 train's 34 St–Hudson Yards terminus is right in the district, with Penn Station's regional rail and multiple subway lines a short distance east — direct connections to Midtown and the airports."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为近似估算，会因线位、楼层和具体单元而异，须按单元逐一核验。35 Hudson Yards 享有 20 年期 421-a 房产税减免（大致延续至 2042–2045 年），因此减免期内房产税异常低——即便大户型，实际观察到的税费也仅约 $565–$1,095/月；减免逐步退出后税费将上升。租赁单元的公共维护费与房产税由业主承担，而非租客（近期 3 居室挂牌租金约 $25,000–$29,000/月）。",
+        "en": "These are approximate estimates that vary by line, floor, and unit and must be verified per unit. 35 Hudson Yards carries a 20-year 421-a tax abatement (running roughly through 2042–2045), so property taxes are unusually low during the abatement term — even large units show observed taxes of only $565–$1,095/mo; taxes will step up as the abatement phases out. For rentals, common charges and taxes are paid by the owner, not the tenant (recent 3-bed asking rents have run roughly $25,000–$29,000/mo)."
+      },
+      "bands": [
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $6,000–$9,000/月",
+            "en": "~$6,000–$9,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $400–$700/月（421-a 减免期内）",
+            "en": "~$400–$700 / mo (421-a abated)"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $6,000–$10,000/月",
+            "en": "~$6,000–$10,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $500–$800/月（421-a 减免期内）",
+            "en": "~$500–$800 / mo (421-a abated)"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $12,000–$18,000/月",
+            "en": "~$12,000–$18,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $750–$1,100/月（421-a 减免期内）",
+            "en": "~$750–$1,100 / mo (421-a abated)"
+          }
+        },
+        {
+          "layout": "3 beds rental",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "660-lexington": {
@@ -1563,6 +2972,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落于莱克星顿大道与 55 街转角，正处米德城东（广场区）核心：步行几分钟即到第五大道、麦迪逊大道的奢侈品旗舰（Cartier、Hermès、Saks）与 MoMA；E/M 线 53 街站、6 号线 51 街站近在咫尺，去 Grand Central（4/5/6/7 与通勤铁路）也只是数街之遥。",
       "en": "On the corner of Lexington Avenue and 55th Street, in the heart of Midtown East / the Plaza District: minutes on foot to the Fifth and Madison Avenue flagships (Cartier, Hermès, Saks) and MoMA, with the E/M at 53rd St and the 6 at 51st St right nearby, and Grand Central (4/5/6/7 plus commuter rail) just a few blocks south."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为近似估算，依据 660 Lexington 在 StreetEasy 上的少量在售房源（如一居 #5C 公摊费约 $908/物业税约 $1,438；顶层 #PHE 约 $2,755/约 $4,361）。实际金额因楼层、朝向与具体单元而异，须逐套核验。该项目为全新市场价曼哈顿公寓（2026 年 3 月开盘），未见 421-a/485-x 税收减免——421-a 已于 2022 年到期，485-x 基本将曼哈顿共管公寓排除在外——故所列物业税按全额（无减免）计。4 居及以上未找到逐项数据。",
+        "en": "Approximate estimates grounded in a handful of active StreetEasy listings at 660 Lexington (e.g., 1-bed #5C ~$908 common charges / ~$1,438 taxes; penthouse #PHE ~$2,755 / ~$4,361); actual figures vary by line, floor, exposure, and unit and must be verified per unit. This is a new market-rate Manhattan condo (sales launched March 2026) with no apparent 421-a/485-x abatement — 421-a expired in 2022 and 485-x effectively excludes Manhattan condos — so taxes shown reflect full (non-abated) rates. No line-item data was found for 4+ bed units."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $900–$1,100/月",
+            "en": "~$900–$1,100 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,400–$1,800/月",
+            "en": "~$1,400–$1,800 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,100–$2,900/月",
+            "en": "~$2,100–$2,900 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,400–$4,000/月",
+            "en": "~$2,400–$4,000 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $2,700–$3,200/月",
+            "en": "~$2,700–$3,200 / mo"
+          },
+          "taxes": {
+            "zh": "约 $4,000–$5,000/月",
+            "en": "~$4,000–$5,000 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "520-fifth-avenue-new-york": {
@@ -1611,6 +3072,58 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于中城核心的第五大道与 43 街交口:布莱恩特公园、纽约公共图书馆就在街角,中央车站、洛克菲勒中心、时代广场均步行可达。地铁 B/D/F/M(42 街-布莱恩特公园)、7 号线(第五大道)与 4/5/6(中央车站)环绕四周。",
       "en": "At Fifth Avenue and 43rd Street in the heart of Midtown: Bryant Park and the New York Public Library are on the corner, with Grand Central, Rockefeller Center, and Times Square all walkable. The B/D/F/M (42 St–Bryant Park), 7 (Fifth Av), and 4/5/6 (Grand Central) lines surround the site."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上为根据 520 Fifth Avenue 在售及近期房源整理的近似估算；公摊费与房产税因户型线、楼层、朝向、面积及露台而异，须按单元对照最新销售计划书与税单逐户核验。该楼盘不享有 421-a/485-x 房产税减免，故所列税费均为全额（未减免）税额。",
+        "en": "These are approximate estimates drawn from active and recent unit listings at 520 Fifth Avenue; common charges and taxes vary by line, floor, exposure, square footage, and terrace, and must be verified per unit against the latest offering plan and tax bill. The building does NOT carry a 421-a/485-x property-tax abatement, so the figures shown reflect full (unabated) taxes."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $1,500–$1,800/月",
+            "en": "~$1,500–$1,800 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,300–$1,700/月",
+            "en": "~$1,300–$1,700 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $2,400–$3,500/月",
+            "en": "~$2,400–$3,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,100–$3,100/月",
+            "en": "~$2,100–$3,100 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $4,000–$5,200/月",
+            "en": "~$4,000–$5,200 / mo"
+          },
+          "taxes": {
+            "zh": "约 $3,500–$4,500/月",
+            "en": "~$3,500–$4,500 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "约 $6,000–$7,500/月",
+            "en": "~$6,000–$7,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $5,000–$6,500/月",
+            "en": "~$5,000–$6,500 / mo"
+          }
+        }
+      ]
     }
   },
   "nolen": {
@@ -1659,6 +3172,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "位于 Kips Bay 第二大道与 33/34 街之间,步行几分钟即到 NYU Langone 医疗中心、Murray Hill 餐饮区和 East River 滨水步道;向西走约十分钟到 Grand Central 换乘 4/5/6/7 号线、Metro-North 与 42 街交通枢纽,33 街 6 号线站和沿第一/第二大道的 M15 SBS 快速巴士都在步行范围内。",
       "en": "In Kips Bay on Second Avenue near 33rd–34th Streets, a few minutes' walk to NYU Langone, the Murray Hill dining strip, and the East River esplanade; about a ten-minute walk west reaches Grand Central for the 4/5/6/7, Metro-North and the 42nd Street hub, with the 33rd Street 6 train and the M15 Select Bus on First/Second Avenue all within walking distance."
+    },
+    "carrying": {
+      "note": {
+        "zh": "仅为近似估算，依据 Nolen 在售房源（如一居 #1102 约 $994 物业费/$1,427 地税；两居顶层约 $1,892–$1,956 物业费/$2,807–$2,915 地税）；实际金额因户型线、楼层、朝向与面积而异，须按单元逐一核验。Nolen 没有 421-a/485-x 地税减免（2024 年 10 月开盘，已在 421-a 失效之后；房源明确显示无减免），故地税按全额计征。未能查到工作室（开间）的物业费/地税数据，故工作室标注为\"按单元核验\"。",
+        "en": "Approximate estimates only, grounded in active Nolen unit listings (e.g. 1-bed #1102 at ~$994 CC / ~$1,427 tax; 2-bed penthouses at ~$1,892–$1,956 CC / ~$2,807–$2,915 tax); actual figures vary by line, floor, exposure and square footage and must be verified per unit. Nolen has NO 421-a/485-x tax abatement (sales launched Oct 2024, after 421-a expired; listings explicitly show no abatement), so property taxes run at full rate. No studio common-charge/tax figures could be sourced, so studio is shown as \"by unit.\""
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $800–$1,050/月",
+            "en": "~$800–$1,050 / mo"
+          },
+          "taxes": {
+            "zh": "约 $600–$1,500/月",
+            "en": "~$600–$1,500 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $1,500–$2,200/月",
+            "en": "~$1,500–$2,200 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,200–$3,200/月",
+            "en": "~$2,200–$3,200 / mo"
+          }
+        }
+      ]
     }
   },
   "loft-21": {
@@ -1707,6 +3261,47 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落在 Long Island City 的 Hunters Point，11-50 45th Road——步行即到 Court Square 枢纽，E/M/G/7 四线交汇，G 线 21 St 站也在附近；一站进曼哈顿中城，旁边就是 LIC 滨水公园和 Gantry Plaza State Park 的河景。",
       "en": "In Hunters Point, Long Island City, at 11-50 45th Road — walking distance to the Court Square hub (E/M/G and 7 trains) with the G at 21st Street nearby, one stop from Midtown Manhattan, and steps from the LIC waterfront and Gantry Plaza State Park's river views."
+    },
+    "carrying": {
+      "note": {
+        "zh": "Loft 21 是全新建造的共管公寓（纽约州总检察长备案 CD250353，2026 年 3 月获批，预计 2027 年竣工），目前尚无转售记录或公开的逐户持有成本，挂牌网站也未披露每月共同管理费与房产税。具体数字以发售计划（Schedule A）为准，须逐户核验。该楼的房产税减免状态（421-a、485-x 或无减免）在公开资料中尚未确认，因其会显著影响每月税额，引用任何税额前应先查阅发售计划。",
+        "en": "Loft 21 is a brand-new ground-up condominium (NY AG offering plan CD250353, accepted March 2026; completion planned for 2027), so no resale history or published per-unit carrying costs are available yet, and the listing sites do not disclose monthly common charges or taxes. Figures will be set per the offering plan's Schedule A and must be verified for each unit. The building's property-tax abatement status (421-a vs. 485-x or none) is not confirmed in public sources and should be checked in the offering plan before quoting any tax figure, as it materially changes monthly taxes."
+      },
+      "bands": [
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   }
 };
