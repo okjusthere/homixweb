@@ -53,9 +53,9 @@ export function NewDevSearch({
 
   return (
     <>
-      <div className="sticky top-[57px] z-20 -mx-4 mb-8 border-b border-line bg-paper/95 px-4 py-4 backdrop-blur sm:top-[65px]">
+      <div className="sticky top-[57px] z-20 -mx-4 mb-8 border-b border-line bg-paper/95 px-4 py-3 backdrop-blur sm:top-[65px]">
         <div className="flex items-center gap-3">
-          <div className="relative flex-1">
+          <div className="relative w-full max-w-md">
             <svg
               aria-hidden
               viewBox="0 0 20 20"
@@ -71,10 +71,10 @@ export function NewDevSearch({
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder={labels.placeholder}
-              className="w-full rounded-sm border border-line bg-surface py-3 pl-10 pr-4 text-base text-ink outline-none transition focus:border-bronze"
+              className="w-full rounded-sm border border-line bg-surface py-2.5 pl-10 pr-4 text-sm text-ink outline-none transition focus:border-bronze"
             />
           </div>
-          <span className="hidden flex-none whitespace-nowrap text-sm text-muted sm:inline">
+          <span className="flex-none whitespace-nowrap text-sm text-muted">
             {labels.showing} {filtered.length} / {buildings.length}
           </span>
         </div>
