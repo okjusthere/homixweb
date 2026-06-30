@@ -1,7 +1,18 @@
 // AUTO-GENERATED project-specific bilingual copy for the new-development pages.
 // Edit wording here. See scripts/ for the generator.
 export type DevelopmentHighlight = { titleZh: string; bodyZh: string; titleEn: string; bodyEn: string };
-export type DevelopmentContent = { overview: { zh: string; en: string }; highlights: DevelopmentHighlight[]; location: { zh: string; en: string } };
+export type CarryingBand = {
+  layout: string;
+  commonCharges: { zh: string; en: string };
+  taxes: { zh: string; en: string };
+};
+export type DevelopmentContent = {
+  overview: { zh: string; en: string };
+  highlights: DevelopmentHighlight[];
+  location: { zh: string; en: string };
+  /** Approximate monthly carrying-cost ranges by bedroom band (editorial estimate, verify per unit). */
+  carrying?: { note: { zh: string; en: string }; bands: CarryingBand[] };
+};
 export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   "the-bryant": {
     "overview": {
@@ -145,6 +156,69 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     "location": {
       "zh": "坐落曼哈顿中城公园大道 49 与 50 街之间，门牌即公园大道核心段。步行数分钟可达 Grand Central Terminal（4/5/6/7/S 及 Metro-North 通勤铁路）、Lexington Av/53 St（E/M）与 51 St（6）地铁站；出门即是第五大道奢侈品零售、洛克菲勒中心，向北约十个街区到中央公园南。",
       "en": "On Park Avenue between 49th and 50th Streets in core Midtown Manhattan. It is a few minutes' walk to Grand Central Terminal (4/5/6/7/S subways plus Metro-North), the Lexington Av/53 St (E/M) and 51 St (6) stations, with Fifth Avenue luxury retail and Rockefeller Center at the doorstep and Central Park South about ten blocks north."
+    },
+    "carrying": {
+      "note": {
+        "zh": "以上仅为近似估算，会因户型线、楼层、面积与景观差异而显著不同；具体数字须按单元对照最新销售计划书（offering plan）与房源逐一核验。请注意：本楼似乎并不享有 421-a 或其他房产税减免（tax abatement），因此其房产税——以及品牌住宅整体的持有成本——会高于许多同类公寓。",
+        "en": "These are approximate estimates only and vary significantly by line, floor, square footage, and view; figures must be verified per unit against the current offering plan and listing. Note that this building does not appear to benefit from a 421-a or other tax abatement, so property taxes—and overall branded-residence carrying costs—run higher than in many comparable condominiums."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约 $1,800–$3,000/月",
+            "en": "~$1,800–$3,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $1,500–$2,800/月",
+            "en": "~$1,500–$2,800 / mo"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约 $2,800–$4,500/月",
+            "en": "~$2,800–$4,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $2,500–$4,500/月",
+            "en": "~$2,500–$4,500 / mo"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约 $4,500–$7,500/月",
+            "en": "~$4,500–$7,500 / mo"
+          },
+          "taxes": {
+            "zh": "约 $4,500–$8,500/月",
+            "en": "~$4,500–$8,500 / mo"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约 $7,500–$12,000/月",
+            "en": "~$7,500–$12,000 / mo"
+          },
+          "taxes": {
+            "zh": "约 $8,000–$15,000/月",
+            "en": "~$8,000–$15,000 / mo"
+          }
+        },
+        {
+          "layout": "4+ beds",
+          "commonCharges": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          },
+          "taxes": {
+            "zh": "按单元核验",
+            "en": "By unit"
+          }
+        }
+      ]
     }
   },
   "the-greenwich-by-rafael-vinoly": {

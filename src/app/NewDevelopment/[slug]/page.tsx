@@ -5,25 +5,36 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { NewDevGallery } from "@/components/new-development/NewDevGallery";
+import { NewDevHighlights } from "@/components/new-development/NewDevHighlights";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentMedia } from "@/data/new-development-media";
 import { getDevelopmentContent } from "@/data/new-development-content";
 import { getT } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import {
-  buyerFit,
   buyerChecklist,
+  buyerFit,
   developmentIntro,
   editorialAngles,
   formatProjectScale,
   getDevelopment,
   newDevelopmentBasePath,
   priceLead,
-  representativePlans,
 } from "@/lib/new-developments";
 
 function mapUrl(address: string) {
   return `https://www.google.com/maps?q=${encodeURIComponent(address)}&output=embed`;
+}
+
+function priceRange(building: ReturnType<typeof getDevelopment>) {
+  if (!building || building.priceBands.length === 0) return "By unit";
+  const first = building.priceBands[0].price;
+  const last = building.priceBands[building.priceBands.length - 1].price;
+  const low = first.split(/\s*[-–]\s*/)[0];
+  const highParts = last.split(/\s*[-–]\s*/);
+  const high = highParts[1] ?? highParts[0];
+  return low && high && low !== high ? `${low} – ${high}` : priceLead(building);
 }
 
 export async function generateStaticParams() {
@@ -38,10 +49,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const building = getDevelopment(slug);
   if (!building) return { title: "New development not found" };
-
   return {
     title: `${building.name} — New Development`,
-    description: `${building.name} in ${building.area}: project overview, location, floor-plan pricing, and buyer notes from Homix.`,
+    description: `${building.name} in ${building.area}: photos, building facts, floor-plan pricing, carrying costs, and buyer notes from Homix.`,
     openGraph: { type: "article" },
   };
 }
@@ -57,39 +67,36 @@ export default async function NewDevelopmentDetailPage({
 
   const { locale } = await getT();
   const zh = locale === "zh";
-  const angles = editorialAngles(building, locale);
-  const plans = representativePlans(building);
-  const checklist = buyerChecklist(building, locale);
   const media = getDevelopmentMedia(building.slug);
-  const cover = media.images[0];
   const content = getDevelopmentContent(building.slug);
 
   const copy = {
     back: zh ? "全部新盘" : "All new developments",
-    overview: zh ? "项目背景" : "Project Background",
-    why: zh ? "项目亮点" : "Highlights",
-    fit: zh ? "适合什么买家" : "Buyer Fit",
-    location: zh ? "地段与交通" : "Location",
+    facts: zh ? "楼宇信息" : "Building Facts",
+    highlights: zh ? "项目亮点" : "Highlights",
+    flipHint: zh ? "翻看" : "Flip",
     budget: zh ? "户型与预算" : "Plans & Budget",
-    details: zh ? "楼宇信息" : "Building Facts",
-    commonCharges: zh ? "物业费" : "Common charges",
-    taxes: zh ? "地产税" : "Taxes",
-    unitLevel: zh ? "按单元核验" : "Unit-level",
-    availability: zh ? "供应" : "Availability",
+    floorPlans: zh ? "代表性户型图" : "Floor Plans",
     plan: zh ? "户型" : "Plan",
     price: zh ? "价格" : "Price",
+    availability: zh ? "供应" : "Availability",
+    commonCharges: zh ? "物业费" : "Common charges",
+    taxes: zh ? "地产税" : "Taxes",
+    unitLevel: zh ? "按单元核验" : "By unit",
+    fit: zh ? "适合什么买家" : "Buyer Fit",
+    location: zh ? "地段与交通" : "Location & Transit",
+    overview: zh ? "项目背景" : "Project Background",
     official: zh ? "项目官网" : "Official Site",
     call: zh ? "联系 Homix 看房" : "Talk to Homix",
-    checklist: zh ? "买家最容易忽略的点" : "Buyer Checks",
-    gallery: zh ? "建筑与室内照片" : "Building & Interiors",
-    floorPlans: zh ? "代表性户型图" : "Representative Floor Plans",
+    photos: zh ? "张照片" : "photos",
+    priceRange: zh ? "价格区间" : "Price range",
     originalPlan: zh ? "查看高清原件" : "Open Original",
     floorPlanPending: zh
-      ? "该项目官网目前没有公开可直接展示的官方户型图；Homix 后续会按具体单元向销售团队核验户型图、面积、朝向、物业费和税费。"
-      : "This project site does not currently expose official floor-plan files we can display; Homix verifies plans, area, exposure, common charges, and taxes by unit before touring or offering.",
-    note: zh
-      ? "新盘价格、税费、物业费和库存会变化；正式看房或出价前，需要按具体单元再次核验。"
-      : "New-development pricing, taxes, common charges, and inventory change; verify unit by unit before touring or writing an offer.",
+      ? "该项目官网目前没有公开可直接展示的官方户型图；Homix 会按具体单元向销售团队核验户型图、面积、朝向、物业费和税费。"
+      : "This project site does not currently expose official floor-plan files we can display; Homix verifies plans, area, exposure, common charges, and taxes by unit.",
+    estNote: zh
+      ? "物业费与地产税为按楼栋估算的大致月度区间，会随楼层、朝向、户型线和具体单元而变化，正式看房或出价前需按单元核验。"
+      : "Common charges and taxes are approximate monthly ranges estimated at the building level; they vary by floor, exposure, line, and unit, and must be verified per unit before touring or offering.",
   };
 
   const facts = [
@@ -101,339 +108,254 @@ export default async function NewDevelopmentDetailPage({
     [zh ? "建筑设计" : "Architecture", building.facts.architect],
     [zh ? "室内设计" : "Interiors", building.facts.interiors],
     [zh ? "销售团队" : "Sales", building.facts.sales],
-  ].filter(([, value]) => value);
+  ].filter(([, value]) => value) as [string, string][];
+
+  const galleryImages = media.images.map((im) => ({
+    src: im.src,
+    alt: im.alt,
+    caption: im.caption,
+  }));
+
+  const highlightItems = content
+    ? content.highlights.map((h) => ({
+        title: zh ? h.titleZh : h.titleEn,
+        body: zh ? h.bodyZh : h.bodyEn,
+      }))
+    : [
+        ...editorialAngles(building, locale).map((a) => ({ title: a.title, body: a.body })),
+        ...buyerChecklist(building, locale).map((c) => ({ title: c.title, body: c.body })),
+      ];
+
+  const carryingFor = (layout: string) => {
+    const band = content?.carrying?.bands.find((b) => b.layout === layout);
+    return {
+      cc: band ? band.commonCharges[locale] : copy.unitLevel,
+      tax: band ? band.taxes[locale] : copy.unitLevel,
+    };
+  };
+  const carryingNote = content?.carrying?.note[locale];
 
   return (
-    <>
-      <section className="overflow-hidden border-b border-line bg-surface">
-        <Container className="grid gap-10 py-10 sm:py-14 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
-          <Link
-            href={newDevelopmentBasePath}
-            className="w-fit text-sm text-muted underline-offset-4 transition-colors hover:text-bronze hover:underline lg:col-span-2"
-          >
-            ← {copy.back}
-          </Link>
+    <Container className="py-8 sm:py-12">
+      <Link
+        href={newDevelopmentBasePath}
+        className="text-sm text-muted underline-offset-4 transition-colors hover:text-bronze hover:underline"
+      >
+        ← {copy.back}
+      </Link>
 
-          <div className="max-w-4xl">
-            <p className="eyebrow">{building.area}</p>
-            <h1 className="mt-5 font-serif text-5xl font-normal leading-[0.95] tracking-tight text-ink sm:text-7xl">
-              {building.name}
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-              {formatProjectScale(building, locale)} · {priceLead(building)}
-            </p>
-          </div>
-          <div className="space-y-4">
-            {cover && (
-              <figure className="overflow-hidden border border-line bg-paper">
-                <div className="relative aspect-[16/11]">
-                  <Image
-                    src={cover.src}
-                    alt={`${building.name} ${cover.alt}`}
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 46vw"
-                    className="object-cover"
-                  />
-                </div>
-                <figcaption className="border-t border-line px-4 py-3 text-xs leading-relaxed text-muted">
-                  {cover.caption}
-                </figcaption>
-              </figure>
-            )}
-            <div className="border border-line bg-paper p-5">
-              <p className="text-xs uppercase tracking-[0.14em] text-muted">
-                {zh ? "客户速读" : "Client Summary"}
-              </p>
-              <div className="mt-5 grid grid-cols-3 gap-px bg-line">
-                {[
-                  [zh ? "区域" : "Area", building.area],
-                  [zh ? "价格" : "Price", priceLead(building)],
-                  [zh ? "户型" : "Plans", plans.map((plan) => plan?.layout).join(" · ")],
-                ].map(([label, value]) => (
-                  <div key={label} className="bg-surface p-4">
-                    <p className="text-[0.65rem] uppercase tracking-[0.12em] text-muted">
-                      {label}
-                    </p>
-                    <p className="mt-2 text-sm font-medium leading-snug text-ink">{value}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-5 text-sm leading-relaxed text-muted">
-                {zh
-                  ? "官方图片与户型图优先展示；具体单元的物业费、税费和库存以后续核验资料为准。"
-                  : "Official photos and floor plans where available; common charges, taxes, and inventory are verified by unit."}
-              </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      <Container className="py-12 sm:py-16">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <Eyebrow>{copy.details}</Eyebrow>
-            <dl className="mt-5 divide-y divide-line border-y border-line">
-              {facts.map(([label, value]) => (
-                <div key={label} className="grid grid-cols-[110px_1fr] gap-4 py-4">
-                  <dt className="text-xs uppercase tracking-[0.12em] text-muted">{label}</dt>
-                  <dd className="text-sm leading-relaxed text-ink/85">{value}</dd>
-                </div>
-              ))}
-            </dl>
-            <div className="mt-6 flex flex-wrap gap-3">
-              {building.officialUrl && (
-                <Button href={building.officialUrl} variant="outline">
-                  {copy.official} →
-                </Button>
-              )}
-              <Button href={siteConfig.contact.phoneHref} variant="ghost">
-                {copy.call} →
-              </Button>
-            </div>
-          </aside>
-
-          <article>
-            <section>
-              <Eyebrow>{copy.overview}</Eyebrow>
-              <p className="mt-5 font-serif text-3xl font-normal leading-tight text-ink sm:text-[2.25rem]">
-                {content ? content.overview[locale] : developmentIntro(building, locale)}
-              </p>
-            </section>
-
-            <section className="mt-14">
-              <Eyebrow>{copy.why}</Eyebrow>
-              {content ? (
-                <div className="mt-5 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-2">
-                  {content.highlights.map((h) => (
-                    <div key={zh ? h.titleZh : h.titleEn} className="bg-surface p-6">
-                      <h2 className="font-serif text-xl font-normal text-ink">
-                        {zh ? h.titleZh : h.titleEn}
-                      </h2>
-                      <p className="mt-3 text-sm leading-relaxed text-muted">
-                        {zh ? h.bodyZh : h.bodyEn}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <>
-                  <div className="mt-5 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
-                    {angles.map((angle) => (
-                      <div key={angle.title} className="bg-surface p-6">
-                        <h2 className="font-serif text-xl font-normal text-ink">{angle.title}</h2>
-                        <p className="mt-3 text-sm leading-relaxed text-muted">{angle.body}</p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-8 grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
-                    {checklist.map((item) => (
-                      <div key={item.title} className="bg-surface p-6">
-                        <h2 className="font-serif text-xl font-normal text-ink">{item.title}</h2>
-                        <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
-            </section>
-
-            {media.images.length > 0 && (
-              <section className="mt-14">
-                <Eyebrow>{copy.gallery}</Eyebrow>
-                <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                  {media.images.map((image, index) => (
-                    <figure
-                      key={image.id}
-                      className={index === 0 ? "sm:col-span-2" : undefined}
-                    >
-                      <div
-                        className={`relative overflow-hidden border border-line bg-paper ${
-                          index === 0 ? "aspect-[16/10]" : "aspect-[4/5]"
-                        }`}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={`${building.name} ${image.alt}`}
-                          fill
-                          sizes={
-                            index === 0
-                              ? "(max-width: 768px) 100vw, 44vw"
-                              : "(max-width: 768px) 50vw, 22vw"
-                          }
-                          className="object-cover transition-transform duration-500 hover:scale-[1.02]"
-                        />
-                      </div>
-                      <figcaption className="mt-2 text-xs leading-relaxed text-muted">
-                        {image.caption}
-                      </figcaption>
-                    </figure>
-                  ))}
-                </div>
-              </section>
-            )}
-
-            <section className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-              <div>
-                <Eyebrow>{copy.fit}</Eyebrow>
-                <p className="mt-4 text-lg leading-relaxed text-ink/84">
-                  {buyerFit(building, locale)}
-                </p>
-              </div>
-              <div>
-                <Eyebrow>{copy.location}</Eyebrow>
-                <p className="mt-4 text-sm leading-relaxed text-muted">
-                  {content ? content.location[locale] : building.transit}
-                </p>
-                <div className="mt-4 overflow-hidden rounded-sm border border-line bg-paper">
-                  <iframe
-                    title={`${building.name} map`}
-                    src={mapUrl(building.address)}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="h-72 w-full border-0 grayscale-[26%] sepia-[8%] saturate-[72%]"
-                  />
-                </div>
-              </div>
-            </section>
-
-            <section className="mt-14 border-t border-line pt-10">
-              <div className="flex flex-wrap items-end justify-between gap-4">
-                <div>
-                  <Eyebrow>{copy.budget}</Eyebrow>
-                  <h2 className="mt-4 font-serif text-3xl font-normal tracking-tight text-ink">
-                    {priceLead(building)}
-                  </h2>
-                </div>
-                <p className="max-w-xl text-xs leading-relaxed text-muted">{copy.note}</p>
-              </div>
-
-              <section className="mt-10">
-                <Eyebrow>{copy.floorPlans}</Eyebrow>
-                {media.floorPlans.length > 0 ? (
-                  <div className="mt-5 grid gap-5 sm:grid-cols-2">
-                    {media.floorPlans.map((plan) => (
-                      <article key={plan.id} className="border border-line bg-surface">
-                        <div className="relative aspect-[4/3] bg-white sm:aspect-[5/4]">
-                          <Image
-                            src={plan.src}
-                            alt={`${building.name} ${plan.title} floor plan`}
-                            fill
-                            loading="eager"
-                            sizes="(max-width: 768px) 100vw, 36vw"
-                            className="object-contain p-3"
-                          />
-                        </div>
-                        <div className="border-t border-line p-4">
-                          <div className="flex flex-wrap items-center justify-between gap-3">
-                            <h3 className="font-serif text-xl font-normal text-ink">
-                              {plan.title}
-                            </h3>
-                            <a
-                              href={plan.sourceUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="text-sm font-medium text-bronze transition-colors hover:text-bronze-dark"
-                            >
-                              {copy.originalPlan} →
-                            </a>
-                          </div>
-                          <p className="mt-3 text-xs leading-relaxed text-muted">
-                            {zh
-                              ? "官方公开户型图缩略展示；面积、朝向、物业费和税费仍需按具体单元复核。"
-                              : "Official floor-plan preview; area, exposure, common charges, and taxes still require unit-level verification."}
-                          </p>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mt-5 border border-line bg-paper p-6">
-                    <p className="text-sm leading-relaxed text-muted">
-                      {copy.floorPlanPending}
-                    </p>
-                  </div>
-                )}
-              </section>
-
-              <div className="mt-6 divide-y divide-line/80 sm:hidden">
-                {building.priceBands.map((band) => (
-                  <div key={`${band.layout}-mobile`} className="py-4">
-                    <div className="flex items-start justify-between gap-4">
-                      <p className="font-medium text-ink">{band.layout}</p>
-                      <p className="text-right text-ink/85">{band.price}</p>
-                    </div>
-                    <dl className="mt-3 grid grid-cols-3 gap-3 text-xs">
-                      <div>
-                        <dt className="uppercase tracking-[0.12em] text-muted">
-                          {copy.availability}
-                        </dt>
-                        <dd className="mt-1 text-ink/75">{band.availability}</dd>
-                      </div>
-                      <div>
-                        <dt className="uppercase tracking-[0.12em] text-muted">
-                          {copy.commonCharges}
-                        </dt>
-                        <dd className="mt-1 text-ink/75">{copy.unitLevel}</dd>
-                      </div>
-                      <div>
-                        <dt className="uppercase tracking-[0.12em] text-muted">
-                          {copy.taxes}
-                        </dt>
-                        <dd className="mt-1 text-ink/75">{copy.unitLevel}</dd>
-                      </div>
-                    </dl>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 hidden overflow-x-auto sm:block">
-                <table className="w-full min-w-[680px] border-collapse text-left text-sm">
-                  <thead>
-                    <tr className="border-b border-line text-xs uppercase tracking-[0.12em] text-muted">
-                      <th className="py-3 pr-4 font-medium">{copy.plan}</th>
-                      <th className="py-3 pr-4 font-medium">{copy.price}</th>
-                      <th className="py-3 pr-4 font-medium">{copy.availability}</th>
-                      <th className="py-3 pr-4 font-medium">{copy.commonCharges}</th>
-                      <th className="py-3 font-medium">{copy.taxes}</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-line/80">
-                    {building.priceBands.map((band) => (
-                      <tr key={band.layout}>
-                        <td className="py-3 pr-4 font-medium text-ink">{band.layout}</td>
-                        <td className="py-3 pr-4 text-ink/85">{band.price}</td>
-                        <td className="py-3 pr-4 text-muted">{band.availability}</td>
-                        <td className="py-3 pr-4 text-muted">{copy.unitLevel}</td>
-                        <td className="py-3 text-muted">{copy.unitLevel}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-
-            <section className="mt-14 overflow-hidden rounded-sm bg-ink p-7 text-paper sm:p-9">
-              <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
-                <div>
-                  <p className="eyebrow text-paper/60">Homix</p>
-                  <h2 className="mt-4 font-serif text-3xl font-normal">
-                    {zh ? "想看这一栋？" : "Want to see this building?"}
-                  </h2>
-                  <p className="mt-3 text-sm leading-relaxed text-paper/72">
-                    {zh
-                      ? "把这个页面发给客户，或直接联系 Homix 安排楼盘资料、看房和单元费用核验。"
-                      : "Share this page with a client, or contact Homix for the building deck, tours, and unit-level carrying-cost checks."}
-                  </p>
-                </div>
-                <Button href={siteConfig.contact.phoneHref} onDark>
-                  {copy.call}
-                </Button>
-              </div>
-            </section>
-          </article>
+      {/* Carousel */}
+      {galleryImages.length > 0 && (
+        <div className="mt-5">
+          <NewDevGallery
+            images={galleryImages}
+            name={building.name}
+            allMediaLabel={copy.photos}
+          />
         </div>
-      </Container>
-    </>
+      )}
+
+      {/* Header: name / address / price */}
+      <header className="mt-8 border-b border-line pb-8">
+        <p className="eyebrow">{building.area}</p>
+        <h1 className="mt-3 font-serif text-4xl font-normal leading-[1.0] tracking-tight text-ink sm:text-6xl">
+          {building.name}
+        </h1>
+        <p className="mt-4 text-lg text-muted">{building.address}</p>
+        <div className="mt-6 flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.14em] text-muted">{copy.priceRange}</p>
+            <p className="mt-1 font-serif text-3xl text-ink sm:text-4xl">{priceRange(building)}</p>
+            <p className="mt-2 text-sm text-muted">{formatProjectScale(building, locale)}</p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {building.officialUrl && (
+              <Button href={building.officialUrl} variant="outline">
+                {copy.official} →
+              </Button>
+            )}
+            <Button href={siteConfig.contact.phoneHref}>{copy.call} →</Button>
+          </div>
+        </div>
+      </header>
+
+      <div className="mx-auto mt-12 max-w-4xl space-y-16">
+        {/* 1 — Building facts */}
+        <section>
+          <Eyebrow>{copy.facts}</Eyebrow>
+          <dl className="mt-5 grid grid-cols-1 gap-x-10 gap-y-px overflow-hidden border-y border-line sm:grid-cols-2">
+            {facts.map(([label, value]) => (
+              <div
+                key={label}
+                className="grid grid-cols-[120px_1fr] gap-4 border-b border-line py-4 last:border-b-0 sm:[&:nth-last-child(-n+1)]:border-b-0"
+              >
+                <dt className="text-xs uppercase tracking-[0.12em] text-muted">{label}</dt>
+                <dd className="text-sm leading-relaxed text-ink/85">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        {/* 2 — Highlights (flip cards) */}
+        <section>
+          <Eyebrow>{copy.highlights}</Eyebrow>
+          <div className="mt-6">
+            <NewDevHighlights items={highlightItems} hint={copy.flipHint} />
+          </div>
+        </section>
+
+        {/* 3 — Plans & budget */}
+        <section>
+          <Eyebrow>{copy.budget}</Eyebrow>
+          <h2 className="mt-4 font-serif text-3xl font-normal tracking-tight text-ink">
+            {priceRange(building)}
+          </h2>
+
+          {media.floorPlans.length > 0 ? (
+            <div className="mt-7 grid gap-5 sm:grid-cols-2">
+              {media.floorPlans.map((plan) => (
+                <article key={plan.id} className="border border-line bg-surface">
+                  <div className="relative aspect-[4/3] bg-white sm:aspect-[5/4]">
+                    <Image
+                      src={plan.src}
+                      alt={`${building.name} ${plan.title} floor plan`}
+                      fill
+                      loading="eager"
+                      sizes="(max-width: 768px) 100vw, 36vw"
+                      className="object-contain p-3"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between gap-3 border-t border-line p-4">
+                    <h3 className="font-serif text-lg font-normal text-ink">{plan.title}</h3>
+                    <a
+                      href={plan.sourceUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="flex-none text-sm font-medium text-bronze transition-colors hover:text-bronze-dark"
+                    >
+                      {copy.originalPlan} →
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-7 border border-line bg-paper p-6">
+              <p className="text-sm leading-relaxed text-muted">{copy.floorPlanPending}</p>
+            </div>
+          )}
+
+          {/* price + carrying-cost table (desktop) */}
+          <div className="mt-8 hidden overflow-x-auto sm:block">
+            <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-line text-xs uppercase tracking-[0.12em] text-muted">
+                  <th className="py-3 pr-4 font-medium">{copy.plan}</th>
+                  <th className="py-3 pr-4 font-medium">{copy.price}</th>
+                  <th className="py-3 pr-4 font-medium">{copy.availability}</th>
+                  <th className="py-3 pr-4 font-medium">{copy.commonCharges}</th>
+                  <th className="py-3 font-medium">{copy.taxes}</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line/80">
+                {building.priceBands.map((band) => {
+                  const c = carryingFor(band.layout);
+                  return (
+                    <tr key={band.layout}>
+                      <td className="py-3 pr-4 font-medium text-ink">{band.layout}</td>
+                      <td className="py-3 pr-4 text-ink/85">{band.price}</td>
+                      <td className="py-3 pr-4 text-muted">{band.availability}</td>
+                      <td className="py-3 pr-4 text-muted">{c.cc}</td>
+                      <td className="py-3 text-muted">{c.tax}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+
+          {/* price + carrying-cost cards (mobile) */}
+          <div className="mt-6 divide-y divide-line/80 sm:hidden">
+            {building.priceBands.map((band) => {
+              const c = carryingFor(band.layout);
+              return (
+                <div key={`${band.layout}-m`} className="py-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <p className="font-medium text-ink">{band.layout}</p>
+                    <p className="text-right text-ink/85">{band.price}</p>
+                  </div>
+                  <dl className="mt-3 grid grid-cols-3 gap-3 text-xs">
+                    <div>
+                      <dt className="uppercase tracking-[0.1em] text-muted">{copy.availability}</dt>
+                      <dd className="mt-1 text-ink/75">{band.availability}</dd>
+                    </div>
+                    <div>
+                      <dt className="uppercase tracking-[0.1em] text-muted">{copy.commonCharges}</dt>
+                      <dd className="mt-1 text-ink/75">{c.cc}</dd>
+                    </div>
+                    <div>
+                      <dt className="uppercase tracking-[0.1em] text-muted">{copy.taxes}</dt>
+                      <dd className="mt-1 text-ink/75">{c.tax}</dd>
+                    </div>
+                  </dl>
+                </div>
+              );
+            })}
+          </div>
+
+          <p className="mt-5 text-xs leading-relaxed text-muted">{carryingNote ?? copy.estNote}</p>
+        </section>
+
+        {/* 4 — Buyer fit + location */}
+        <section>
+          <Eyebrow>{copy.fit}</Eyebrow>
+          <p className="mt-4 text-lg leading-relaxed text-ink/84">{buyerFit(building, locale)}</p>
+
+          <div className="mt-10">
+            <Eyebrow>{copy.location}</Eyebrow>
+            <p className="mt-4 text-base leading-relaxed text-muted">
+              {content ? content.location[locale] : building.transit}
+            </p>
+            <div className="mt-5 overflow-hidden rounded-sm border border-line bg-paper">
+              <iframe
+                title={`${building.name} map`}
+                src={mapUrl(building.address)}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-80 w-full border-0 grayscale-[26%] sepia-[8%] saturate-[72%]"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* 5 — Project background (last) */}
+        <section>
+          <Eyebrow>{copy.overview}</Eyebrow>
+          <p className="mt-5 text-lg leading-relaxed text-ink/85">
+            {content ? content.overview[locale] : developmentIntro(building, locale)}
+          </p>
+        </section>
+
+        {/* CTA */}
+        <section className="overflow-hidden rounded-sm bg-ink p-7 text-paper sm:p-9">
+          <div className="grid gap-6 sm:grid-cols-[1fr_auto] sm:items-center">
+            <div>
+              <p className="eyebrow text-paper/60">Homix</p>
+              <h2 className="mt-4 font-serif text-3xl font-normal">
+                {zh ? "想看这一栋？" : "Want to see this building?"}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-paper/72">
+                {zh
+                  ? "把这个页面发给客户，或直接联系 Homix 安排楼盘资料、看房和单元费用核验。"
+                  : "Share this page with a client, or contact Homix for the building deck, tours, and unit-level carrying-cost checks."}
+              </p>
+            </div>
+            <Button href={siteConfig.contact.phoneHref} onDark>
+              {copy.call}
+            </Button>
+          </div>
+        </section>
+      </div>
+    </Container>
   );
 }
