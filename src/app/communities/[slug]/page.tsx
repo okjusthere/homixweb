@@ -8,6 +8,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { gatedCommunities } from "@/data/gated-communities";
 import { getCommunityContent } from "@/data/gated-community-content";
 import { amenityLabel, commuteFor, homeTypesLabel } from "@/data/gated-community-zh";
+import { NewDevGallery } from "@/components/new-development/NewDevGallery";
 import { getT } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import {
@@ -76,6 +77,7 @@ export default async function CommunityDetailPage({
     developer: zh ? "开发商" : "Developer",
     hoa: zh ? "HOA 月费" : "HOA dues",
     hoaNote: zh ? "按户型/楼层浮动" : "varies by unit",
+    tax: zh ? "地税（约/年）" : "Property tax",
     price: zh ? "价格区间" : "Price range",
     amenities: zh ? "配套" : "Amenities",
     lirr: zh ? "最近 LIRR" : "Nearest LIRR",
@@ -97,6 +99,7 @@ export default async function CommunityDetailPage({
     [copy.built, c.builtYear],
     [copy.developer, c.developer],
     [copy.hoa, c.hoaDues ? `${c.hoaDues} · ${copy.hoaNote}` : undefined],
+    [copy.tax, c.propertyTax ? c.propertyTax[locale] : undefined],
     [copy.price, c.priceRange],
   ];
   const shownFacts = facts.filter(([, v]) => v);
@@ -140,7 +143,17 @@ export default async function CommunityDetailPage({
           </div>
 
           <div className="space-y-4">
-            {c.image ? (
+            {c.gallery && c.gallery.length > 0 ? (
+              <NewDevGallery
+                images={c.gallery.map((g) => ({
+                  src: g.src,
+                  alt: `${c.name}, ${c.town}`,
+                  caption: g.caption,
+                }))}
+                name={c.name}
+                allMediaLabel={zh ? "张照片" : "photos"}
+              />
+            ) : c.image ? (
               <figure className="overflow-hidden border border-line bg-paper">
                 <div className="relative aspect-[16/11]">
                   <Image
