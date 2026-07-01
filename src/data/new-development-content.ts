@@ -3303,6 +3303,117 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
         }
       ]
     }
+  },
+  "99-hudson": {
+    "overview": {
+      "zh": "99 Hudson 是新泽西州第一高楼——一座 79 层、约 889 英尺高的玻璃幕墙大厦，矗立于泽西市滨水区 Paulus Hook 地段，紧邻市中心的 Exchange Place。项目由中海外美国公司（China Overseas America，其在美国的首个住宅开发项目）开发，Perkins Eastman 担纲设计，共设 781 套公寓，户型从开间到三居及顶层复式不等，配有约 65,000 平方英尺的室内外配套设施。大厦于 2019–2020 年落成，最初由 Corcoran Sunshine Marketing Group 独家销售，如今已成为成熟的二手房源社区。其核心吸引力在于地段与景观：无遮挡的曼哈顿天际线与哈德逊河全景，步行数分钟即达 PATH 地铁与轮渡，泽西市中心的餐饮夜生活近在咫尺——而价格较同级曼哈顿公寓有明显折让，且通常享有泽西市长期税收减免（PILOT），使近期持有成本低于新泽西标准房产税。",
+      "en": "99 Hudson is the tallest building in New Jersey — a 79-story, roughly 889-foot glass tower rising directly on the Jersey City waterfront in Paulus Hook, at the Exchange Place edge of Downtown. Developed by China Overseas America (its debut U.S. residential project) and designed by Perkins Eastman, the building holds 781 condominium residences ranging from studios to three-bedrooms and penthouses, wrapped around roughly 65,000 square feet of indoor and outdoor amenities. Completed in 2019–2020 and originally sold by Corcoran Sunshine Marketing Group, it has since matured into an established resale building. Its defining draw is location and view: unobstructed Manhattan skyline and Hudson River panoramas, a PATH station and ferry within a few blocks, and Downtown Jersey City's dining and nightlife at the doorstep — all at a meaningful discount to comparable Manhattan condos, and typically under a long-term Jersey City tax abatement (PILOT) that keeps near-term carrying costs lower than standard NJ property tax."
+    },
+    "highlights": [
+      {
+        "titleZh": "新泽西第一高楼",
+        "bodyZh": "99 Hudson 高 79 层、约 889 英尺，是全州第一高楼，其高楼层景观在新泽西极为罕见。对买家而言：高楼层户型享有稳定的景观溢价，转售时更具吸引力。",
+        "titleEn": "Tallest building in New Jersey",
+        "bodyEn": "At 79 stories and ~889 feet, 99 Hudson is the tallest building in the state, delivering high-floor views that few other NJ addresses can match. For a buyer: upper-floor lines command a durable view premium and hold resale appeal."
+      },
+      {
+        "titleZh": "无遮挡曼哈顿与哈德逊河景观",
+        "bodyZh": "落地玻璃将下曼哈顿天际线、自由女神像与河景尽收眼底。对买家而言：优先选择朝东/朝北户型——天际线朝向是价格与出租能力的最大决定因素。",
+        "titleEn": "Unobstructed Manhattan & Hudson River views",
+        "bodyEn": "Floor-to-ceiling glass frames the Lower Manhattan skyline, the Statue of Liberty, and the river directly across the water. For a buyer: prioritize the east/north-facing lines — the skyline exposure is the single biggest driver of price and rentability."
+      },
+      {
+        "titleZh": "约 65,000 平方英尺配套设施",
+        "bodyZh": "包括大型室内外泳池、完整的水疗养生区、健身与瑜伽室、高尔夫模拟器、放映室、儿童游乐室、共享办公空间、屋顶花园及 24 小时门房大堂。对买家而言：丰富的配套支撑较高的物业费，也带来强劲的租赁需求。",
+        "titleEn": "~65,000 sq ft of amenities",
+        "bodyEn": "Includes a large indoor/outdoor pool, full spa and wellness suite, fitness and yoga studios, golf simulator, screening room, children's playroom, co-working space, rooftop gardens, and a 24-hour attended lobby. For a buyer: the amenity depth justifies the HOA and supports strong rental demand."
+      },
+      {
+        "titleZh": "数分钟直达曼哈顿的 PATH 与轮渡",
+        "bodyZh": "Exchange Place PATH 站距此数个街区（约一站即达世贸中心），滨水步道即有 NY Waterway 轮渡。对买家而言：15 分钟内通勤曼哈顿，使单元易于出租给金融与科技从业者。",
+        "titleEn": "PATH & ferry to Manhattan in minutes",
+        "bodyEn": "Exchange Place PATH is a few blocks away (about one stop to the World Trade Center), with NY Waterway ferry on the boardwalk. For a buyer: sub-15-minute Manhattan commutes make units easy to rent to finance and tech professionals."
+      },
+      {
+        "titleZh": "长期税收减免（PILOT）",
+        "bodyZh": "99 Hudson 列入泽西市长期减免名单；业主缴纳 PILOT（税款代付金），在减免期内通常低于新泽西标准房产税。对买家而言：近期持有成本更低，但成交前务必核实剩余减免年限及到期后的税负跳升。",
+        "titleEn": "Long-term tax abatement (PILOT)",
+        "bodyEn": "99 Hudson sits on Jersey City's long-term abatement list; unit owners pay a PILOT (payment in lieu of taxes) that is typically lower than standard NJ property tax for the abatement term. For a buyer: near-term carrying costs are reduced, but always verify the remaining term and the step-up at expiration before closing."
+      },
+      {
+        "titleZh": "曼哈顿生活方式，泽西市价格",
+        "bodyZh": "泽西市中心的 Paulus Hook 与 Exchange Place 汇聚滨水餐饮、咖啡馆与夜生活，而公寓价格远低于同级曼哈顿产品。对买家而言：以显著低于河对岸的每平方英尺价格，即可拥有新建豪华公寓与天际线景观。",
+        "titleEn": "Manhattan lifestyle at a Jersey City price",
+        "bodyEn": "Downtown Jersey City's Paulus Hook and Exchange Place offer waterfront dining, cafés, and nightlife, while condos price well below comparable Manhattan product. For a buyer: you capture new-construction luxury and skyline views at a substantial per-square-foot discount to across the river."
+      }
+    ],
+    "location": {
+      "zh": "99 Hudson 坐落于泽西市黄金海岸滨水区的 Paulus Hook 地段，紧邻市中心的 Exchange Place，隔哈德逊河与下曼哈顿正面相望。这里将无遮挡的天际线与临河景观，与真正便利的交通结合在一起：Exchange Place PATH 站距此数个街区（约一站即达世贸中心），滨水步道设有 NY Waterway 轮渡，Hudson-Bergen 轻轨仅一街之隔。周边即是泽西市中心的滨水餐饮、咖啡馆与夜生活街区，驾车亦可迅速抵达荷兰隧道与新泽西收费公路延伸段。",
+      "en": "99 Hudson stands on the Jersey City Gold Coast waterfront in Paulus Hook, at the Exchange Place edge of Downtown — directly across the Hudson River from Lower Manhattan. The setting pairs an unobstructed skyline and river frontage with genuine transit convenience: Exchange Place PATH is a few blocks away (about one stop to the World Trade Center), the NY Waterway ferry runs from the boardwalk, and the Hudson-Bergen Light Rail is one block off. The immediate neighborhood offers waterfront dining, cafés, and nightlife along Downtown Jersey City's restaurant corridors, with the Holland Tunnel and NJ Turnpike Extension close for drivers."
+    },
+    "carrying": {
+      "note": {
+        "zh": "重要——税收减免（PILOT）：99 Hudson 列入泽西市长期税收减免名单。业主并非缴纳新泽西标准房产税，而是缴纳 PILOT（税款代付金），在减免期内通常低于按全额计征的税单。这降低了近期持有成本，但减免到期后税负会跳升。具体的 PILOT 金额与物业费因单元而异，需'按单元核验'——在向买家提供建议前，务必核实每套具体房源的当前 PILOT 金额、剩余减免年限及到期后的税负估算。物业费涵盖冷/热水及全部配套设施的使用权。",
+        "en": "IMPORTANT — TAX ABATEMENT (PILOT): 99 Hudson is on Jersey City's long-term tax-abatement list. Rather than standard NJ property tax, unit owners pay a PILOT (payment in lieu of taxes) that is typically lower than a fully-taxed bill for the duration of the abatement term. This lowers near-term carrying costs but steps up when the abatement expires. Exact PILOT and common-charge figures vary by unit and are set 'By unit' — always verify the current PILOT amount, the remaining abatement term, and the post-expiration tax estimate on each specific listing before advising a buyer. Common charges cover water/hot water and access to the full amenity package."
+      },
+      "bands": [
+        {
+          "layout": "Studio",
+          "commonCharges": {
+            "zh": "约每月 $450 – $700",
+            "en": "~$450 – $700 / month"
+          },
+          "taxes": {
+            "zh": "PILOT 减免下较低——按单元核验",
+            "en": "Reduced under PILOT abatement — by unit; verify"
+          }
+        },
+        {
+          "layout": "1 bed",
+          "commonCharges": {
+            "zh": "约每月 $700 – $1,100",
+            "en": "~$700 – $1,100 / month"
+          },
+          "taxes": {
+            "zh": "PILOT 减免下较低——按单元核验",
+            "en": "Reduced under PILOT abatement — by unit; verify"
+          }
+        },
+        {
+          "layout": "2 beds",
+          "commonCharges": {
+            "zh": "约每月 $1,100 – $1,900",
+            "en": "~$1,100 – $1,900 / month"
+          },
+          "taxes": {
+            "zh": "PILOT 减免下较低——按单元核验",
+            "en": "Reduced under PILOT abatement — by unit; verify"
+          }
+        },
+        {
+          "layout": "3 beds",
+          "commonCharges": {
+            "zh": "约每月 $1,900 – $2,800",
+            "en": "~$1,900 – $2,800 / month"
+          },
+          "taxes": {
+            "zh": "PILOT 减免下较低——按单元核验",
+            "en": "Reduced under PILOT abatement — by unit; verify"
+          }
+        },
+        {
+          "layout": "Penthouse",
+          "commonCharges": {
+            "zh": "约每月 $2,800 – $3,200+",
+            "en": "~$2,800 – $3,200+ / month"
+          },
+          "taxes": {
+            "zh": "PILOT 减免下较低——按单元核验",
+            "en": "Reduced under PILOT abatement — by unit; verify"
+          }
+        }
+      ]
+    }
   }
 };
 export function getDevelopmentContent(slug: string): DevelopmentContent | undefined {

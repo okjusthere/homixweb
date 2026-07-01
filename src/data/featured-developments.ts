@@ -1,7 +1,7 @@
 export type FeaturedDevelopment = {
   slug: string;
   name: string;
-  borough: "Manhattan" | "Queens";
+  borough: "Manhattan" | "Queens" | "Jersey City";
   area: string;
   address: string;
   sourceUrl: string;
@@ -996,5 +996,53 @@ export const featuredDevelopments = [
       { layout: "2 beds", price: "$1,535,000 - $2,095,000", availability: "4 available" },
       { layout: "3 beds", price: "$1,940,000", availability: "1 available" },
     ],
+  },
+  {
+    "slug": "99-hudson",
+    "name": "99 Hudson",
+    "borough": "Jersey City",
+    "area": "Jersey City Waterfront",
+    "address": "99 Hudson Street, Jersey City, NJ 07302 (Paulus Hook / Exchange Place waterfront, Downtown Jersey City)",
+    "sourceUrl": "https://99hudsonliving.com/",
+    "officialUrl": "https://99hudsonliving.com/",
+    "galleryCount": 14,
+    "sourceUpdated": "06/30/2026",
+    "transit": "PATH at Exchange Place a few blocks away (roughly one stop / minutes to the World Trade Center in Lower Manhattan); NY Waterway ferry from the waterfront boardwalk to Brookfield Place and Midtown; Hudson-Bergen Light Rail one block away; quick car access to the Holland Tunnel and the NJ Turnpike Extension.",
+    "facts": {
+      "units": "781 condominium residences (studios to three-bedrooms, plus penthouses)",
+      "stories": "79 stories",
+      "built": "2019 (topped out 2018; interiors and full amenity suite completed through 2020)",
+      "status": "Completed and occupied; now largely a resale building with only limited remaining sponsor/new-construction inventory",
+      "developer": "China Overseas America (COA), the U.S. arm of China Overseas Holdings / COHL — its first U.S. residential development",
+      "architect": "Perkins Eastman",
+      "sales": "Corcoran Sunshine Marketing Group"
+    },
+    "priceBands": [
+      {
+        "layout": "Studio",
+        "price": "~$550,000 – $700,000",
+        "availability": "Limited; the smallest and fastest-moving resale tier"
+      },
+      {
+        "layout": "1 bed",
+        "price": "~$800,000 – $1,100,000",
+        "availability": "Most active resale segment; higher floors with skyline views at the top of the range"
+      },
+      {
+        "layout": "2 beds",
+        "price": "~$1,200,000 – $2,200,000+",
+        "availability": "Steady inventory; high-floor river/Manhattan-view lines carry a premium"
+      },
+      {
+        "layout": "3 beds",
+        "price": "~$2,300,000 – $3,500,000+",
+        "availability": "Scarce; large corner and upper-floor layouts"
+      },
+      {
+        "layout": "Penthouse",
+        "price": "~$3,500,000 – $4,500,000+",
+        "availability": "Very rare; a 76th-floor penthouse set a Jersey City record at ~$4.44M"
+      }
+    ]
   },
 ] as const satisfies FeaturedDevelopment[];
