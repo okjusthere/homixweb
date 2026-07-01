@@ -915,13 +915,43 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.condoli.com/condos/estates-ii-mahasset/"
       }
     ],
-    "image": "/communities/estates-north-hills-2.jpg",
+    "image": "/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg",
     "confidence": "high",
     "hoaDues": "~$700-$1,200 / mo",
     "propertyTax": {
       "en": "~$18,000-$32,000 / yr",
       "zh": "约 $18,000-$32,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg",
+        "caption": "Guard gatehouse and gated entrance of The Estates at North Hills II, with the bric… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/wider-view-of-the-community-entrance-dri.jpg",
+        "caption": "Wider view of the community entrance drive curving up to the manned gatehouse, wit… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/renovated-clubhouse-great-room-vaulted-w.jpg",
+        "caption": "Renovated clubhouse great room — vaulted white truss ceiling, chandeliers, seating… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/clubhouse-interior-dining-area-with-ston.jpg",
+        "caption": "Clubhouse interior dining area with stone fireplace, wood floors and long communal… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/outdoor-swimming-pool-patio-bluestone-de.jpg",
+        "caption": "Outdoor swimming pool patio — bluestone deck with navy market umbrellas, café tabl… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/tennis-pickleball-courts-framed-by-matur.jpg",
+        "caption": "Tennis / pickleball courts framed by mature trees, with a landscaped paver walkway… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/estates-north-hills-2/close-up-of-the-community-s-hard-tennis-.jpg",
+        "caption": "Close-up of the community's hard tennis court with net and shaded courtside bench,… · Photo: public-files.hoa-express.com"
+      }
+    ]
   },
   {
     "slug": "links-north-hills",
@@ -1257,7 +1287,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$17,500–$24,000 / yr",
       "zh": "约 $17,500–$24,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg",
+        "caption": "Aerial view over The Greens at North Hills showing the community outdoor swimming… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/exterior-streetscape-of-a-greens-townhou.jpg",
+        "caption": "Exterior/streetscape of a Greens townhouse at 227 Ibis Court, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/townhouse-exterior-at-211-hornbill-drive.jpg",
+        "caption": "Townhouse exterior at 211 Hornbill Drive, Manhasset — representative Greens at Nor… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/front-exterior-of-33-fairway-drive-townh.jpg",
+        "caption": "Front exterior of 33 Fairway Drive townhouse with garden and attached garage — The… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/front-exterior-with-landscaped-garden-34.jpg",
+        "caption": "Front exterior with landscaped garden, 34 Fairway Drive — The Greens at North Hill… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/townhouse-exterior-at-2-fairway-drive-th.jpg",
+        "caption": "Townhouse exterior at 2 Fairway Drive — The Greens at North Hills, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/exterior-view-of-16-fairway-circle-south.jpg",
+        "caption": "Exterior view of 16 Fairway Circle South — renovated home in The Greens at North H… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/rear-exterior-of-42-fairway-drive-showin.jpg",
+        "caption": "Rear exterior of 42 Fairway Drive showing private backyard and garden — The Greens… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/interior-living-space-of-227-ibis-court-.jpg",
+        "caption": "Interior (living space) of 227 Ibis Court unit — The Greens at North Hills, showin… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/greens-area-townhouse-exterior-265-sparr.jpg",
+        "caption": "Greens-area townhouse exterior, 265 Sparrow Drive, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/home-with-garden-landscaping-190-sussex-.jpg",
+        "caption": "Home with garden/landscaping, 190 Sussex Drive, Manhasset — Greens at North Hills… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/greens-north-hills/onekey-mls-listing-photo-of-25-fairway-c.jpg",
+        "caption": "OneKey MLS listing photo of 25 Fairway Circle S — townhouse in The Greens at North… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ],
+    "image": "/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg"
   },
   {
     "slug": "whitewood-north-hills",
@@ -1328,7 +1409,22 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$14,000–$20,000 / yr",
       "zh": "约 $14,000–$20,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg",
+        "caption": "The gated vehicle entrance to Whitewood at North Hills — stone gate pier, lantern,… · Photo: suffolkexperts.com"
+      },
+      {
+        "src": "/communities/whitewood-north-hills/front-side-exterior-of-a-whitewood-home-.jpg",
+        "caption": "Front/side exterior of a Whitewood home — brick multi-level townhouse-style reside… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/whitewood-north-hills/streetscape-of-attached-whitewood-reside.jpg",
+        "caption": "Streetscape of attached Whitewood residences — row of brick townhomes with 2-car g… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ],
+    "image": "/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg"
   },
   {
     "slug": "roslyn-landing",
@@ -1429,7 +1525,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$24,000–$38,000 / yr (estimated from Nassau County 11576 effective rate ~1.97% applied to community price range; varies by unit, exemptions, and grievance status)",
       "zh": "约 $24,000–$38,000 / 年（依据 Nassau 县 11576 邮编约 1.97% 的有效税率结合本社区价格区间估算；具体金额因户型、税务减免及税务申诉情况而异）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg",
+        "caption": "Aerial view of the Roslyn Landing community — professional drone photo showing the… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-2-overhead.jpg",
+        "caption": "Aerial view of Roslyn Landing #2 — overhead shot of the community's rooflines, cou… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-3-bird-s-e.jpg",
+        "caption": "Aerial view of Roslyn Landing #3 — bird's-eye view of the gated community and surr… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-4-high-ang.jpg",
+        "caption": "Aerial view of Roslyn Landing #4 — high-angle photo of the full development showin… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-exterior-landscaped-great.jpg",
+        "caption": "Roslyn Landing exterior — landscaped 'great lawn' / green space with the community… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-exterior-streetscape-prof.jpg",
+        "caption": "Roslyn Landing exterior / streetscape — professionally photographed view of the to… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/representative-roslyn-landing-home-exter.jpg",
+        "caption": "Representative Roslyn Landing home exterior — building facade and entrance in the… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-streetscape-row-of-townho.jpg",
+        "caption": "Roslyn Landing streetscape — row of townhomes with driveways and landscaping along… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-building-exterior-home-fa.jpg",
+        "caption": "Roslyn Landing building exterior — home facade / streetscape within the gated comm… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-exterior-grounds-communit.jpg",
+        "caption": "Roslyn Landing exterior / grounds — community buildings with landscaped common are… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-exterior-townhome-buildin.jpg",
+        "caption": "Roslyn Landing exterior — townhome building facades and entryways along a landscap… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/roslyn-landing/roslyn-landing-streetscape-view-down-a-c.jpg",
+        "caption": "Roslyn Landing streetscape — view down a community street lined with the classic-s… · Photo: images.squarespace-cdn.com"
+      }
+    ],
+    "image": "/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg"
   },
   {
     "slug": "fieldstone-oyster-bay",
@@ -1503,7 +1650,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$17,000–$29,000 / yr",
       "zh": "约 $17,000–$29,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg",
+        "caption": "Fieldstone gated entrance / gatehouse — official HOA rendering of the guard house,… · Photo: casamere-hoa.s3.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext.jpg",
+        "caption": "Representative Fieldstone home — front exterior / streetscape of 38 Fieldstone Lan… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext-2.jpg",
+        "caption": "Representative Fieldstone home — front exterior with sidewalk streetscape (red/blu… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-home-exterior-blue-shingled-r.jpg",
+        "caption": "Fieldstone home exterior — blue-shingled residence with landscaped front yard and… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-home-rear-backyard-exterior-p.jpg",
+        "caption": "Fieldstone home rear / backyard exterior — private lawn and patio behind a shingle… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-community-grounds-open-green-.jpg",
+        "caption": "Fieldstone community grounds — open green common lawn / parkland ringed by mature… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-interior-streetscape-quiet-tr.jpg",
+        "caption": "Fieldstone interior streetscape — quiet tree-lined community road curving through… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/aerial-view-of-a-fieldstone-lane-home-an.jpg",
+        "caption": "Aerial view of a Fieldstone Lane home and its expansive lawn/grounds among mature… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-home-streetscape-38-fieldston.jpg",
+        "caption": "Fieldstone home streetscape — 38 Fieldstone Lane seen from the community street, s… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-home-exterior-detail-front-el.jpg",
+        "caption": "Fieldstone home exterior detail — front elevation of 38 Fieldstone Lane with entry… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-home-interior-two-story-great.jpg",
+        "caption": "Fieldstone home interior — two-story great room with vaulted ceiling, fireplace an… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/fieldstone-oyster-bay/fieldstone-location-lifestyle-nearby-oys.jpg",
+        "caption": "Fieldstone location / lifestyle — nearby Oyster Bay Harbor waterfront with boat la… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      }
+    ],
+    "image": "/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg"
   },
   {
     "slug": "lattingtown-preserve",
@@ -1577,7 +1775,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$22,000–$32,000 / yr",
       "zh": "约 $22,000–$32,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg",
+        "caption": "Wide aerial hero shot over the community's private beach and beachfront clubhouse… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/aerial-of-the-two-story-beachfront-commu.jpg",
+        "caption": "Aerial of the two-story beachfront community clubhouse (wraparound porches, kayak/… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/covered-clubhouse-porch-terrace-overlook.jpg",
+        "caption": "Covered clubhouse/porch terrace overlooking the beach and open water of Long Islan… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/the-community-s-private-sandy-beach-on-l.jpg",
+        "caption": "The community's private sandy beach on Long Island Sound with a protective rock je… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/beach-watersports-amenity-community-kaya.jpg",
+        "caption": "Beach watersports amenity: community kayak/paddleboard racks and storage on the pr… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/representative-home-in-the-community-fro.jpg",
+        "caption": "Representative home in the community — front exterior of a shingle/Tudor-style res… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/parklike-community-streetscape-expansive.jpg",
+        "caption": "Parklike community streetscape: expansive lawns and mature trees with homes set ba… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/wooded-private-driveway-entry-lane-windi.jpg",
+        "caption": "Wooded private driveway/entry lane winding through mature evergreens and flowering… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/carriage-house-style-multi-bay-garage-wi.jpg",
+        "caption": "Carriage-house style multi-bay garage with upper balcony — representative outbuild… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/backyard-recreation-private-sport-basket.jpg",
+        "caption": "Backyard recreation: private sport/basketball court with adjacent patio, outdoor d… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/representative-home-interior-vaulted-upp.jpg",
+        "caption": "Representative home interior — vaulted upper-level bedroom/flex room with shiplap… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-preserve/representative-home-interior-large-light.jpg",
+        "caption": "Representative home interior — large light-filled room with cathedral ceiling, exp… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ],
+    "image": "/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg"
   },
   {
     "slug": "hamlet-olde-oyster-bay",
@@ -1663,12 +1912,26 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://hoa-community.com/hamlet-olde-oyster-bay-hoa-plainview-ny/"
       }
     ],
-    "image": "/communities/hamlet-olde-oyster-bay.jpg",
+    "image": "/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg",
     "confidence": "high",
     "propertyTax": {
       "en": "~$16,000–$28,000 / yr (Nassau County; ~$16,300 avg per 2018 MLS records, higher for larger single-family homes)",
       "zh": "约 $16,000–$28,000 / 年（拿骚县；据 2018 年 MLS 记录平均约 $16,300，大型独栋住宅更高）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg",
+        "caption": "Representative home at 11 Bayview Drive — two-story residence with light siding an… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-olde-oyster-bay/home-streetscape-at-173-sagamore-drive-l.jpg",
+        "caption": "Home/streetscape at 173 Sagamore Drive. Large full-resolution image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-olde-oyster-bay/home-streetscape-at-108-sagamore-drive-f.jpg",
+        "caption": "Home/streetscape at 108 Sagamore Drive. Full-resolution image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      }
+    ]
   },
   {
     "slug": "hamlet-estates-jericho",
@@ -1745,7 +2008,38 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$30,000–$55,000 / yr (Nassau County; e.g., 23 Olde Hamlet Dr ~$43,895/yr, 11 Olde Hamlet Dr ~$45,648/yr for 2026)",
       "zh": "约 $30,000–$55,000 / 年（拿骚县房产税偏高；例如 23 Olde Hamlet Dr 约 $43,895/年、11 Olde Hamlet Dr 约 $45,648/年，2026 税年）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg",
+        "caption": "Home at 1 Olde Hamlet Drive — welcome/entrance shot of a home just inside the gate… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/estate-home-streetscape-at-20-kettlepond.jpg",
+        "caption": "Estate home / streetscape at 20 Kettlepond Road, The Hamlet Estates at Jericho · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/estate-home-exterior-at-3-olde-hamlet-dr.jpg",
+        "caption": "Estate home exterior at 3 Olde Hamlet Drive (official HOA site). Large hero image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/estate-home-front-elevation-at-50-holida.jpg",
+        "caption": "Estate home / front elevation at 50 Holiday Pond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/estate-home-exterior-at-53-kettlepond-ro.jpg",
+        "caption": "Estate home exterior at 53 Kettlepond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/home-streetscape-at-17-olde-hamlet-drive.jpg",
+        "caption": "Home / streetscape at 17 Olde Hamlet Drive · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-estates-jericho/home-at-36-kettlepond-road-official-hoa-.jpg",
+        "caption": "Home at 36 Kettlepond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      }
+    ],
+    "image": "/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg"
   },
   {
     "slug": "hamlet-jericho",
@@ -1840,7 +2134,42 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$17,000–$26,000 / yr",
       "zh": "约 $17,000–$26,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg",
+        "caption": "Representative Hamlet Estates home exterior — 20 Kettlepond Road. Signature Prairi… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/streetscape-home-exterior-3-olde-hamlet-.jpg",
+        "caption": "Streetscape / home exterior — 3 Olde Hamlet Drive. Front elevation with mature lan… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/representative-home-exterior-50-holiday-.jpg",
+        "caption": "Representative home exterior — 50 Holiday Pond Road. Contemporary two-story with b… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/home-exterior-streetscape-53-kettlepond-.jpg",
+        "caption": "Home exterior / streetscape — 53 Kettlepond Road. Three-quarter view showing full… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/home-exterior-17-olde-hamlet-drive-side-.jpg",
+        "caption": "Home exterior — 17 Olde Hamlet Drive. Side/front elevation with stone veneer and P… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/interior-grand-two-story-marble-foyer-wi.jpg",
+        "caption": "Interior — grand two-story marble foyer with curved staircase, iron chandelier and… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/current-active-listing-primary-photo-com.jpg",
+        "caption": "Current active listing primary photo (community feed) — home exterior. From the li… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/hamlet-jericho/current-active-listing-primary-photo-com-2.jpg",
+        "caption": "Current active listing primary photo (community feed) — home/streetscape. From the… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      }
+    ],
+    "image": "/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg"
   },
   {
     "slug": "lattingtown-ponds",
@@ -1916,7 +2245,30 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$16,000–$22,000 / yr",
       "zh": "约 $16,000–$22,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg",
+        "caption": "12 Sparrow Court, Lattingtown Ponds (Glen Cove, NY 11542) — representative townhom… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-ponds/2-cardinal-court-lattingtown-ponds-repre.jpg",
+        "caption": "2 Cardinal Court, Lattingtown Ponds — representative home exterior; hero photo fro… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-ponds/18-swan-court-lattingtown-ponds-3-bed-to.jpg",
+        "caption": "18 Swan Court, Lattingtown Ponds — 3-bed townhome exterior; hero photo from the Co… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-ponds/9-pembroke-drive-glen-cove-ny-11542-home.jpg",
+        "caption": "9 Pembroke Drive, Glen Cove NY 11542 — home exterior/streetscape near/within the c… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/lattingtown-ponds/115-lattingtown-road-glen-cove-ny-11542-.jpg",
+        "caption": "115 Lattingtown Road, Glen Cove NY 11542 — property on the main road serving the c… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ],
+    "image": "/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg"
   },
   {
     "slug": "summit-high-point-north-hills",
@@ -1991,6 +2343,57 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$17,000–$22,000 / yr",
       "zh": "约 $17,000–$22,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg",
+        "caption": "Elevated / aerial view of the community — rows of terracotta-roofed townhomes set… · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/outdoor-tennis-courts-green-hard-courts-.jpg",
+        "caption": "Outdoor tennis courts (green hard courts) at the community's racquet/health-club a… · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/indoor-swimming-pool-in-the-community-cl.jpg",
+        "caption": "Indoor swimming pool in the community clubhouse / health club. WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/fitness-center-gym-community-health-club.jpg",
+        "caption": "Fitness center / gym (community health club). WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/townhouse-building-exterior-streetscape-.jpg",
+        "caption": "Townhouse building exterior / streetscape (gray-sided multi-unit building). WebP 1… · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/streetscape-row-of-townhouse-building-ex.jpg",
+        "caption": "Streetscape: row of townhouse building exteriors with private wooden decks. WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/streetscape-townhouse-row-exteriors-with.jpg",
+        "caption": "Streetscape: townhouse row exteriors with decks and landscaped grounds. WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/covered-patio-deck-of-a-home-overlooking.jpg",
+        "caption": "Covered patio/deck of a home overlooking the community's landscaped grounds. WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/landscaped-grounds-flower-garden-walking.jpg",
+        "caption": "Landscaped grounds / flower-garden walking path within the community. WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/landscaped-community-common-area-garden-.jpg",
+        "caption": "Landscaped community common area / garden with signage and plantings near a buildi… · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/home-exterior-with-private-deck-and-wood.jpg",
+        "caption": "Home exterior with private deck and wooded backdrop (representative unit). WebP, · Photo: cdn.erealtymedia.com"
+      },
+      {
+        "src": "/communities/summit-high-point-north-hills/representative-interior-marble-finished-.jpg",
+        "caption": "Representative interior: marble-finished bathroom in a community unit. WebP, · Photo: cdn.erealtymedia.com"
+      }
+    ],
+    "image": "/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg"
   }
 ];
