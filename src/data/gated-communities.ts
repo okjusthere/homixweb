@@ -145,7 +145,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$36,000-$70,000 / yr (most homes ~$40,000-$55,000)",
       "zh": "约 $36,000-$70,000 / 年（多数房屋约 $40,000-$55,000）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg",
+        "caption": "Aerial / drone view of a Stone Hill home (58 Stone Hill Dr S, Manhasset) showing t… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/high-res-aerial-exterior-of-58-stone-hil.jpg",
+        "caption": "High-res aerial/exterior of 58 Stone Hill Drive S, Manhasset — front of the home w… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/front-exterior-streetscape-of-a-stone-hi.jpg",
+        "caption": "Front exterior / streetscape of a Stone Hill home (58 Stone Hill Dr S) — white-and… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/rear-paver-patio-of-a-stone-hill-home-lo.jpg",
+        "caption": "Rear paver patio of a Stone Hill home looking out over open green space toward the… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/representative-stone-hill-estate-home-st.jpg",
+        "caption": "Representative Stone Hill estate home — stately brick center-hall Colonial with co… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/representative-stone-hill-streetscape-ho.jpg",
+        "caption": "Representative Stone Hill streetscape home — gray colonial with two-car garage and… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/stone-hill-area-luxury-home-with-private.jpg",
+        "caption": "Stone Hill-area luxury home with private in-ground swimming pool (25 Shelter Rock… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/gourmet-eat-in-kitchen-with-center-islan.jpg",
+        "caption": "Gourmet eat-in kitchen with center island, custom cabinetry and marble flooring in… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/interior-bright-sitting-room-upstairs-la.jpg",
+        "caption": "Interior — bright sitting room / upstairs landing with crystal chandeliers and har… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/primary-bedroom-suite-with-crown-molding.jpg",
+        "caption": "Primary bedroom suite with crown molding and hardwood floors in a Stone Hill home · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/formal-dining-area-off-the-kitchen-with-.jpg",
+        "caption": "Formal dining area off the kitchen with bay windows overlooking the landscaped gro… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/stone-hill-north-hills/modern-architectural-home-listed-in-the-.jpg",
+        "caption": "Modern/architectural home listed in the Stone Hill, Manhasset search (7 Folie Cour… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ],
+    "image": "/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg"
   },
   {
     "slug": "gracewood-north-hills",
@@ -229,12 +280,46 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://hoasrus.com/hoa-fees/new-york/manhasset/gracewood-at-north-hills-home-owners-association-inc"
       }
     ],
-    "image": "/communities/gracewood-north-hills.jpg",
+    "image": "/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg",
     "confidence": "high",
     "propertyTax": {
       "en": "~$34,000–$45,000 / yr",
       "zh": "约 $34,000–$45,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg",
+        "caption": "Gracewood entrance / gatehouse monument — the carved stone \"Gracewood\" community e… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/the-mansion-clubhouse-present-day-color-.jpg",
+        "caption": "The Mansion Clubhouse — present-day color photo of the restored white Grace family… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/historic-aerial-of-the-original-grace-es.jpg",
+        "caption": "Historic AERIAL of the original Grace estate mansion and its park-like grounds, tr… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/historic-front-facade-of-the-grace-mansi.jpg",
+        "caption": "Historic front facade of the Grace Mansion (now clubhouse) — grand columned/pedime… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/historic-garden-terrace-of-the-grace-man.jpg",
+        "caption": "Historic garden terrace of the Grace Mansion — brick rear elevation with striped a… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/representative-gracewood-home-cream-clap.jpg",
+        "caption": "Representative Gracewood home — cream clapboard estate-style single-family house w… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/representative-gracewood-home-and-street.jpg",
+        "caption": "Representative Gracewood home and streetscape — gray-blue colonial with two-car ga… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      },
+      {
+        "src": "/communities/gracewood-north-hills/representative-gracewood-home-grey-two-s.jpg",
+        "caption": "Representative Gracewood home — grey two-story colonial with landscaped front yard… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
+      }
+    ]
   },
   {
     "slug": "manhasset-crest",
@@ -304,13 +389,55 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.ownwell.com/trends/new-york/nassau-county/manhasset"
       }
     ],
-    "image": "/communities/manhasset-crest.jpg",
+    "image": "/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg",
     "confidence": "high",
     "hoaDues": "~$400-$430 / mo",
     "propertyTax": {
       "en": "~$53,000-$60,000 / yr",
       "zh": "约 $53,000-$60,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg",
+        "caption": "Aerial/skyline location image used by Toll Brothers for Manhasset Crest — Manhatta… · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/large-hero-exterior-of-the-hecksher-mode.jpg",
+        "caption": "Large hero exterior of the Hecksher Modern Farmhouse home design at Manhasset Crest · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/brady-model-interior-walkthrough-hero-sn.jpg",
+        "caption": "Brady model interior/walkthrough hero snapshot at Manhasset Crest · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/gatsby-model-home-outdoor-living-space-c.jpg",
+        "caption": "Gatsby model home outdoor living space (covered patio / rear exterior) at Manhasse… · Photo: ml.globenewswire.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/interior-great-room-of-the-crawley-moder.jpg",
+        "caption": "Interior — great room of the Crawley Modern Farmhouse model, representative of the… · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/interior-primary-bedroom-crawley-modern-.jpg",
+        "caption": "Interior — primary bedroom (Crawley Modern Farmhouse model). Source: Toll Brothers… · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/interior-casual-dining-area-gatsby-model.jpg",
+        "caption": "Interior — casual dining area, Gatsby model at Manhasset Crest · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/interior-formal-dining-room-gatsby-model.jpg",
+        "caption": "Interior — formal dining room, Gatsby model at Manhasset Crest. Source: Toll Broth… · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/interior-finished-basement-entertaining-.jpg",
+        "caption": "Interior — finished basement entertaining space, Gatsby model at Manhasset Crest.… · Photo: cdn.tollbrothers.com"
+      },
+      {
+        "src": "/communities/manhasset-crest/toll-brothers-long-island-design-studio-.jpg",
+        "caption": "Toll Brothers Long Island Design Studio · Photo: cdn.tollbrothers.com"
+      }
+    ]
   },
   {
     "slug": "stone-hill-muttontown",
@@ -400,7 +527,58 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$35,000–$85,000 / yr",
       "zh": "约 $35,000–$85,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg",
+        "caption": "Aerial view of the Stone Hill at Muttontown community — rolling estate home-sites,… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/the-stone-hill-gatehouse-gated-entrance-.jpg",
+        "caption": "The Stone Hill gatehouse / gated entrance with its signature serpentine stone wall… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/second-view-of-the-old-world-gatehouse-e.jpg",
+        "caption": "Second view of the old-world gatehouse / entry drive at Stone Hill at Muttontown (… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/landscaped-water-feature-waterfall-ameni.jpg",
+        "caption": "Landscaped water feature / waterfall amenity within the Stone Hill common grounds… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/streetscape-street-design-within-stone-h.jpg",
+        "caption": "Streetscape / street design within Stone Hill — manicured roadway, plantings and s… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/community-master-plan-site-map-of-stone-.jpg",
+        "caption": "Community master-plan / site map of Stone Hill at Muttontown showing the estate ho… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/representative-stone-hill-estate-home-5-.jpg",
+        "caption": "Representative Stone Hill estate home — 5 Westgate Road, Muttontown (Stone Hill at… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/stone-hill-estate-home-5-buckingham-cour.jpg",
+        "caption": "Stone Hill estate home — 5 Buckingham Court, Muttontown. MLS listing photo via the… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/stone-hill-estate-home-11-buckingham-cou.jpg",
+        "caption": "Stone Hill estate home — 11 Buckingham Court, Muttontown. Large brick/stone reside… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/stone-hill-estate-home-9-earle-drive-mut.jpg",
+        "caption": "Stone Hill estate home — 9 Earle Drive, Muttontown. MLS listing photo. ~393 KB. · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/stone-hill-estate-home-2-buckingham-cour.jpg",
+        "caption": "Stone Hill estate home — 2 Buckingham Court, Muttontown. Representative home/stree… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      },
+      {
+        "src": "/communities/stone-hill-muttontown/stone-hill-estate-home-2-earle-drive-mut.jpg",
+        "caption": "Stone Hill estate home — 2 Earle Drive, Muttontown. Representative home exterior.… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
+      }
+    ],
+    "image": "/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg"
   },
   {
     "slug": "spring-hill-old-westbury",
@@ -484,13 +662,63 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.longisland.com/articles/01-08-26/house-of-the-week-a-28m-all-season-resort-estate-behind-the-gates-of-old-westburys-spring-hill.html"
       }
     ],
-    "image": "/communities/spring-hill-old-westbury.jpg",
+    "image": "/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg",
     "confidence": "high",
     "builtYear": "2013–present (build-to-suit; existing estates built ~2013 onward)",
     "propertyTax": {
       "en": "~$45,000–$180,000 / yr (most large completed estates ~$60,000–$130,000; the 25,000 sq ft flagship ~$107,000–$179,000 depending on assessment year)",
       "zh": "约 $45,000–$180,000 / 年（多数大型成屋约 $60,000–$130,000；2.5万平方英尺的旗舰庄园视评估年份约 $107,000–$179,000）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg",
+        "caption": "The community's grand wrought-iron entrance gate (ornate antique iron gate between… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/the-ornamental-iron-entrance-gate-closer.jpg",
+        "caption": "The ornamental iron entrance gate, closer frontal view through the gate to the tre… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/spring-hill-entrance-gate-wide-view-of-t.jpg",
+        "caption": "Spring Hill entrance gate — wide view of the decorative wrought-iron gate and ston… · Photo: keandevelopment.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/spring-hill-entrance-gate-alternate-angl.jpg",
+        "caption": "Spring Hill entrance gate, alternate angle framed by mature trees with lush green… · Photo: keandevelopment.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/the-community-s-signature-amenity-the-wh.jpg",
+        "caption": "The community's signature amenity: the white floating boathouse/pavilion on the 3-… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/the-floating-lake-pavilion-boathouse-wit.jpg",
+        "caption": "The floating lake pavilion/boathouse with open-air seating area over the water, se… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/the-lakeside-floating-boathouse-with-cov.jpg",
+        "caption": "The lakeside floating boathouse with covered lounge deck and connecting footbridge… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/wide-landscape-view-of-the-community-s-p.jpg",
+        "caption": "Wide landscape view of the community's private lake with the boathouse at right, m… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/the-community-lake-and-white-columned-bo.jpg",
+        "caption": "The community lake and white columned boathouse pavilion reflected in the water, s… · Photo: keandevelopment.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/elevated-aerial-style-view-looking-down-.jpg",
+        "caption": "Elevated/aerial-style view looking down the dock toward the floating lake pavilion… · Photo: keandevelopment.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/inside-the-lake-pavilion-s-covered-loung.jpg",
+        "caption": "Inside the lake pavilion's covered lounge — teak furniture with blue cushions and… · Photo: springhillatoldwestbury.com"
+      },
+      {
+        "src": "/communities/spring-hill-old-westbury/lake-pavilion-lounge-deck-with-blue-and-.jpg",
+        "caption": "Lake pavilion lounge deck with blue-and-white furnishings and 'SH' monogrammed pil… · Photo: springhillatoldwestbury.com"
+      }
+    ]
   },
   {
     "slug": "legend-yacht-beach-club",
@@ -572,7 +800,50 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$28,000–$45,000 / yr",
       "zh": "约 $28,000–$45,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg",
+        "caption": "Aerial drone view of the full Legend Yacht & Beach Club community on its 46 waterf… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/aerial-drone-shot-from-the-water-showing.jpg",
+        "caption": "Aerial drone shot from the water showing the community, marina and Long Island Sou… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/the-gated-security-entrance-gates-of-the.jpg",
+        "caption": "The gated/security entrance gates of the community (24/7 guarded gatehouse communi… · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/the-clubhouse-beach-club-building-with-w.jpg",
+        "caption": "The clubhouse / beach club building with waterfront views · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/clubhouse-patio-deck-overlooking-long-is.jpg",
+        "caption": "Clubhouse patio/deck overlooking Long Island Sound · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/the-heated-swimming-pool-and-patio-overl.jpg",
+        "caption": "The heated swimming pool and patio overlooking the private marina · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/the-community-s-indoor-tennis-court-mult.jpg",
+        "caption": "The community's indoor tennis court / multi-sport facility · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/the-private-marina-with-boat-slips-on-th.jpg",
+        "caption": "The private marina with boat slips on the waterfront · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/landscaped-pond-and-nature-walking-groun.jpg",
+        "caption": "Landscaped pond and nature/walking grounds within the gated community · Photo: images.squarespace-cdn.com"
+      },
+      {
+        "src": "/communities/legend-yacht-beach-club/nearby-garvies-point-waterfront-boardwal.jpg",
+        "caption": "Nearby Garvies Point waterfront boardwalk · Photo: images.squarespace-cdn.com"
+      }
+    ],
+    "image": "/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg"
   },
   {
     "slug": "estates-north-hills-2",
@@ -730,13 +1001,55 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.zillow.com/homedetails/467-S-Links-Dr-North-Hills-NY-11576/2128306266_zpid/"
       }
     ],
-    "image": "/communities/links-north-hills.jpg",
+    "image": "/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg",
     "confidence": "high",
     "hoaDues": "~$1,180–$1,400 / mo",
     "propertyTax": {
       "en": "~$29,000–$40,000 / yr",
       "zh": "约 $29,000–$40,000 / 年"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg",
+        "caption": "Official HOA site banner photo: the community's stone-and-flower entrance monument… · Photo: public-files.hoa-express.com"
+      },
+      {
+        "src": "/communities/links-north-hills/the-community-clubhouse-gabled-clubhouse.jpg",
+        "caption": "The community CLUBHOUSE — gabled clubhouse building with covered front porch, perg… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/the-community-tennis-courts-green-hard-c.jpg",
+        "caption": "The community TENNIS COURTS — green hard courts with nets, ringed by mature evergr… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/representative-home-exterior-streetscape.jpg",
+        "caption": "Representative home exterior / streetscape: a beige two-story townhome with attach… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/representative-home-wide-front-side-elev.jpg",
+        "caption": "Representative home — wide front/side elevation of a ranch-style attached home wit… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/streetscape-of-attached-townhomes-with-a.jpg",
+        "caption": "Streetscape of attached townhomes with a large open green common lawn in front — t… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/entrance-gate-area-the-the-links-at-nort.jpg",
+        "caption": "Entrance/gate area: the 'THE LINKS At North Hills' stone monument sign beside the… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/open-landscaped-common-green-space-rolli.jpg",
+        "caption": "Open landscaped common green space / rolling lawn with mature trees inside the 125… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/private-rear-deck-of-a-home-overlooking-.jpg",
+        "caption": "Private rear deck of a home overlooking the community's open green lawn and tree l… · Photo: photos.prod.cirrussystem.net"
+      },
+      {
+        "src": "/communities/links-north-hills/interior-of-a-representative-home-full-b.jpg",
+        "caption": "Interior of a representative home — full bathroom with double-sink vanity and glas… · Photo: photos.prod.cirrussystem.net"
+      }
+    ]
   },
   {
     "slug": "acorn-ponds",
@@ -826,7 +1139,50 @@ export const gatedCommunities: GatedCommunity[] = [
     "propertyTax": {
       "en": "~$11,000–$16,000 / yr (typically ~$13,000–$15,000)",
       "zh": "约 $11,000–$16,000 / 年（通常约 $13,000–$15,000）"
-    }
+    },
+    "gallery": [
+      {
+        "src": "/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg",
+        "caption": "Outdoor pool — the large outdoor/Olympic-sized swimming pool and deck area. Full-r… · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/outdoor-pool-alternate-view-poolside-dec.jpg",
+        "caption": "Outdoor pool, alternate view (poolside / deck). Full-resolution from the official… · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/tennis-courts-at-acorn-ponds-har-tru-har.jpg",
+        "caption": "Tennis courts at Acorn Ponds (Har-Tru / hard courts, also used for pickleball). Fu… · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/the-grand-clubhouse-building-houses-fitn.jpg",
+        "caption": "The Grand Clubhouse building (houses fitness center, sauna, steam room, indoor poo… · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/fitness-center-gym-inside-the-clubhouse-.jpg",
+        "caption": "Fitness center / gym inside the clubhouse · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/the-namesake-pond-beside-the-clubhouse-l.jpg",
+        "caption": "The namesake pond beside the clubhouse — landscaped water feature within the commu… · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/community-streetscape-village-road-withi.jpg",
+        "caption": "Community streetscape / village road within Acorn Ponds · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/community-playground-in-the-gated-park-a.jpg",
+        "caption": "Community playground in the gated park area · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/lowell-h-kane-village-park-layout-park-p.jpg",
+        "caption": "Lowell H. Kane Village Park layout / park & playground amenity · Photo: acornpondscondo.com"
+      },
+      {
+        "src": "/communities/acorn-ponds/acorn-ponds-community-building-exterior-.jpg",
+        "caption": "Acorn Ponds community / building exterior · Photo: suffolkexperts.com"
+      }
+    ],
+    "image": "/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg"
   },
   {
     "slug": "greens-north-hills",
