@@ -196,15 +196,7 @@ export default async function NewDevelopmentDetailPage({
           </dl>
         </section>
 
-        {/* 2 — Highlights (flip cards) */}
-        <section>
-          <Eyebrow>{copy.highlights}</Eyebrow>
-          <div className="mt-6">
-            <NewDevHighlights items={highlightItems} hint={copy.flipHint} />
-          </div>
-        </section>
-
-        {/* 3 — Plans & budget */}
+        {/* 2 — Plans & budget */}
         <section>
           <Eyebrow>{copy.budget}</Eyebrow>
           <h2 className="mt-4 font-serif text-3xl font-normal tracking-tight text-ink">
@@ -304,6 +296,14 @@ export default async function NewDevelopmentDetailPage({
           </div>
 
           <p className="mt-5 text-xs leading-relaxed text-muted">{carryingNote ?? copy.estNote}</p>
+        </section>
+
+        {/* 3 — Highlights (flip cards) */}
+        <section>
+          <Eyebrow>{copy.highlights}</Eyebrow>
+          <div className="mt-6">
+            <NewDevHighlights items={highlightItems} hint={copy.flipHint} />
+          </div>
         </section>
 
         {/* 4 — Buyer fit + location */}
