@@ -29,12 +29,20 @@ function mapUrl(address: string) {
 
 function priceRange(building: ReturnType<typeof getDevelopment>) {
   if (!building || building.priceBands.length === 0) return "By unit";
-  const first = building.priceBands[0].price;
-  const last = building.priceBands[building.priceBands.length - 1].price;
-  const low = first.split(/\s*[-–]\s*/)[0];
-  const highParts = last.split(/\s*[-–]\s*/);
-  const high = highParts[1] ?? highParts[0];
-  return low && high && low !== high ? `${low} – ${high}` : priceLead(building);
+  // Min/max across SALE bands only — bands aren't guaranteed sorted, rental
+  // bands ("… base rent") and sold-out bands ("0 available") are excluded.
+  const tokens: { value: number; text: string }[] = [];
+  for (const band of building.priceBands) {
+    if (/rent/i.test(band.price) || /^0 available/i.test(band.availability)) continue;
+    for (const m of band.price.matchAll(/~?\$[\d,]+(?:\.\d+)?\+?/g)) {
+      const value = parseFloat(m[0].replace(/[~$,+]/g, ""));
+      if (Number.isFinite(value) && value >= 10000) tokens.push({ value, text: m[0] });
+    }
+  }
+  if (tokens.length === 0) return priceLead(building);
+  const lo = tokens.reduce((a, b) => (b.value < a.value ? b : a));
+  const hi = tokens.reduce((a, b) => (b.value > a.value ? b : a));
+  return lo.value !== hi.value ? `${lo.text} – ${hi.text}` : lo.text;
 }
 
 export async function generateStaticParams() {

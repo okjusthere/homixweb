@@ -46,6 +46,7 @@ export default async function JournalArticlePage({
     year: "numeric",
     month: "long",
     day: "numeric",
+    timeZone: "UTC", // post dates are date-only ISO strings; format in UTC to avoid off-by-one
   });
 
   const jsonLd = {

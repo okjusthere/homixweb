@@ -197,6 +197,9 @@ export class BboListingsProvider implements ListingsProvider {
         Accept: "application/json",
       },
       next: { revalidate: cfg.revalidateSeconds },
+      // A hung upstream should degrade to the "listings unavailable" notice,
+      // not stall the page render until the platform function timeout.
+      signal: AbortSignal.timeout(8000),
     });
     if (!response.ok) {
       throw new Error(`BBO request failed with ${response.status}`);
