@@ -1009,9 +1009,9 @@ export const featuredDevelopments = [
     "sourceUpdated": "06/30/2026",
     "transit": "PATH at Exchange Place a few blocks away (roughly one stop / minutes to the World Trade Center in Lower Manhattan); NY Waterway ferry from the waterfront boardwalk to Brookfield Place and Midtown; Hudson-Bergen Light Rail one block away; quick car access to the Holland Tunnel and the NJ Turnpike Extension.",
     "facts": {
-      "units": "781 condominium residences (studios to three-bedrooms, plus penthouses)",
-      "stories": "79 stories",
-      "built": "2019 (topped out 2018; interiors and full amenity suite completed through 2020)",
+      "units": "781",
+      "stories": "79",
+      "built": "2019",
       "status": "Completed and occupied; now largely a resale building with only limited remaining sponsor/new-construction inventory",
       "developer": "China Overseas America (COA), the U.S. arm of China Overseas Holdings / COHL — its first U.S. residential development",
       "architect": "Perkins Eastman",
