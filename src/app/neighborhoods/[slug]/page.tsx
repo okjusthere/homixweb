@@ -7,6 +7,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
 import { getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
 import { neighborhoodGlance, neighborhoods, siteConfig } from "@/lib/site";
 
 function getNeighborhood(slug: string) {
@@ -28,6 +29,7 @@ export async function generateMetadata({
   return {
     title: `${n.name} — Neighborhood Guide`,
     description: n.blurb,
+    alternates: langAlternates(`/neighborhoods/${slug}`),
     openGraph: { images: [n.image], type: "article" },
   };
 }
@@ -50,8 +52,12 @@ export default async function NeighborhoodPage({
     "@type": "Place",
     name: `${n.name}, New York`,
     description: n.guide?.en ?? n.blurb,
-    image: n.image,
+    image: absUrl(n.image),
   };
+  const crumbs = breadcrumbLd([
+    { name: "Neighborhoods", path: "/neighborhoods" },
+    { name: n.name, path: `/neighborhoods/${n.slug}` },
+  ]);
 
   return (
     <Container className="py-12 sm:py-16">
@@ -134,6 +140,10 @@ export default async function NeighborhoodPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
     </Container>
   );

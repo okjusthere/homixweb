@@ -10,6 +10,10 @@ export const metadata: Metadata = {
   title: "Journal",
   description:
     "Market reports, neighborhood deep-dives, and guides from the Homix team — New York's media-first brokerage.",
+  alternates: {
+    canonical: "/journal",
+    languages: { en: "/journal", "zh-Hans": "/journal?lang=zh", "x-default": "/journal" },
+  },
 };
 
 export default async function JournalPage() {

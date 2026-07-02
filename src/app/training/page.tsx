@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Agent Training Library",
   description:
     "Homix agent portal training videos: onboarding, media production, buyer and seller playbooks, compliance, and operations.",
+  robots: { index: false, follow: false },
 };
 
 type Lesson = {

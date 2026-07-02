@@ -11,6 +11,7 @@ import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentMedia } from "@/data/new-development-media";
 import { getDevelopmentContent } from "@/data/new-development-content";
 import { getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   buyerChecklist,
@@ -57,10 +58,12 @@ export async function generateMetadata({
   const { slug } = await params;
   const building = getDevelopment(slug);
   if (!building) return { title: "New development not found" };
+  const cover = getDevelopmentMedia(slug).images[0];
   return {
     title: `${building.name} — New Development`,
     description: `${building.name} in ${building.area}: photos, building facts, floor-plan pricing, carrying costs, and buyer notes from Homix.`,
-    openGraph: { type: "article" },
+    alternates: langAlternates(`/NewDevelopment/${slug}`),
+    openGraph: { type: "article", images: cover ? [cover.src] : undefined },
   };
 }
 
@@ -154,6 +157,26 @@ export default async function NewDevelopmentDetailPage({
     };
   };
   const carryingNote = content?.carrying?.note[locale];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ApartmentComplex",
+    name: building.name,
+    url: absUrl(`${newDevelopmentBasePath}/${building.slug}`),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: building.address,
+      addressRegion: building.borough === "Jersey City" ? "NJ" : "NY",
+      addressCountry: "US",
+    },
+    numberOfAccommodationUnits: building.facts.units,
+    image: galleryImages.slice(0, 3).map((im) => absUrl(im.src)),
+    description: content?.overview.en ?? developmentIntro(building, "en"),
+  };
+  const crumbs = breadcrumbLd([
+    { name: "New Development", path: newDevelopmentBasePath },
+    { name: building.name, path: `${newDevelopmentBasePath}/${building.slug}` },
+  ]);
 
   return (
     <Container className="py-8 sm:py-12">
@@ -376,6 +399,15 @@ export default async function NewDevelopmentDetailPage({
           </div>
         </section>
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
+      />
     </Container>
   );
 }

@@ -10,6 +10,7 @@ import { getCommunityContent } from "@/data/gated-community-content";
 import { amenityLabel, commuteFor, homeTypesLabel } from "@/data/gated-community-zh";
 import { NewDevGallery } from "@/components/new-development/NewDevGallery";
 import { getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   communitiesBasePath,
@@ -46,6 +47,7 @@ export async function generateMetadata({
   return {
     title: `${c.name} — ${c.town}`,
     description: `${c.name} in ${c.town}, Nassau County: a buyer's guide to this gated/private community — access, homes, HOA, commute, and resale.`,
+    alternates: langAlternates(`/communities/${slug}`),
     openGraph: { type: "article", images: c.image ? [c.image] : undefined },
   };
 }
@@ -120,6 +122,25 @@ export default async function CommunityDetailPage({
   const uniqueSources = Array.from(
     new Map(c.sources.map((s) => [hostOf(s.url), s.url])).values(),
   );
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    name: c.name,
+    url: absUrl(`${communitiesBasePath}/${c.slug}`),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: c.town,
+      addressRegion: "NY",
+      addressCountry: "US",
+    },
+    image: c.image ? absUrl(c.image) : undefined,
+    description: content?.overview.en,
+  };
+  const crumbs = breadcrumbLd([
+    { name: "Gated Communities", path: communitiesBasePath },
+    { name: c.name, path: `${communitiesBasePath}/${c.slug}` },
+  ]);
 
   return (
     <>
@@ -335,6 +356,15 @@ export default async function CommunityDetailPage({
           </article>
         </div>
       </Container>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
+      />
     </>
   );
 }

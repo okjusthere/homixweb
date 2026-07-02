@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   title: "New Development",
   description:
     "A curated Homix guide to New York new development condos, with individual project pages for client sharing.",
+  alternates: {
+    canonical: "/NewDevelopment",
+    languages: {
+      en: "/NewDevelopment",
+      "zh-Hans": "/NewDevelopment?lang=zh",
+      "x-default": "/NewDevelopment",
+    },
+  },
 };
 
 export default async function NewDevelopmentPage() {

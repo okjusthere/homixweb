@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   title: "Neighborhoods",
   description:
     "Local guides to the New York neighborhoods Homix knows best — across Queens, Long Island, and Manhattan.",
+  alternates: {
+    canonical: "/neighborhoods",
+    languages: { en: "/neighborhoods", "zh-Hans": "/neighborhoods?lang=zh", "x-default": "/neighborhoods" },
+  },
 };
 
 function n2(i: number): string {

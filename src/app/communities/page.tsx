@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Nassau Gated & Private Communities",
   description:
     "Plain-language buyer guides to the gated and private communities of Nassau County, Long Island — North Shore to South Shore: what's behind the gate, what the HOA covers, and the real monthly cost.",
+  alternates: {
+    canonical: "/communities",
+    languages: { en: "/communities", "zh-Hans": "/communities?lang=zh", "x-default": "/communities" },
+  },
 };
 
 function n2(i: number): string {

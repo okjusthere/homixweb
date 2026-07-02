@@ -1,19 +1,24 @@
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 
 /**
  * Lightweight bilingual (English / 中文) layer.
  *
- * Locale is read from a `locale` cookie on the server, so pages render fully in
- * the chosen language (good for both audiences). A header toggle sets the cookie.
- * NOTE: cookie-based locale makes pages dynamic; for per-language SEO indexing,
- * migrate to `/en` `/zh` path routing later. Listing/agent DATA stays as-is
- * (MLS is English); only brand/marketing copy is translated.
+ * Locale resolution order:
+ *   1. `x-locale` request header — set by src/proxy.ts when the URL carries
+ *      `?lang=zh|en`. This makes the zh layer crawlable/indexable (crawlers
+ *      don't send cookies); pages emit hreflang alternates to the ?lang=zh URLs.
+ *   2. `locale` cookie — set by the header toggle for returning visitors.
+ * Listing/agent DATA stays as-is (MLS is English); only brand/marketing copy
+ * is translated.
  */
 
 export const locales = ["en", "zh"] as const;
 export type Locale = (typeof locales)[number];
 
 export async function getLocale(): Promise<Locale> {
+  const hdrs = await headers();
+  const forced = hdrs.get("x-locale");
+  if (forced === "zh" || forced === "en") return forced;
   const store = await cookies();
   return store.get("locale")?.value === "zh" ? "zh" : "en";
 }

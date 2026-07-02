@@ -9,6 +9,7 @@ import { Markdown } from "@/components/journal/Markdown";
 import { getJournalPost, journalPosts } from "@/content/journal/posts";
 import { getAgentBySlug } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -27,6 +28,7 @@ export async function generateMetadata({
   return {
     title: post.title[locale],
     description: post.excerpt[locale],
+    alternates: langAlternates(`/journal/${slug}`),
     openGraph: { images: [post.cover], type: "article" },
   };
 }
@@ -54,7 +56,7 @@ export default async function JournalArticlePage({
     "@type": "BlogPosting",
     headline: post.title.en,
     description: post.excerpt.en,
-    image: post.cover,
+    image: absUrl(post.cover),
     datePublished: post.date,
     author: author
       ? { "@type": "Person", name: author.name, jobTitle: author.title }
@@ -128,6 +130,17 @@ export default async function JournalArticlePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbLd([
+              { name: "Journal", path: "/journal" },
+              { name: post.title.en, path: `/journal/${post.slug}` },
+            ]),
+          ),
+        }}
       />
     </Container>
   );
