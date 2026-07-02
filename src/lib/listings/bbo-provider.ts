@@ -158,7 +158,11 @@ export class BboListingsProvider implements ListingsProvider {
       return toListing({ ...dto, imageUrls: dto.imageUrls ?? payload.imageUrls });
     } catch (error) {
       logBboFailure("detail", error);
-      return null;
+      // Only a genuine "listing not found" becomes null (→ 404). A transient
+      // upstream failure re-throws to the error boundary so crawlers don't see
+      // valid listing URLs answered with hard 404s during an outage.
+      if (error instanceof Error && /failed with 404/.test(error.message)) return null;
+      throw error;
     }
   }
 

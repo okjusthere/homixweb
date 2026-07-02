@@ -7,7 +7,6 @@ const selectClass =
   "rounded-sm border border-line bg-surface px-3 py-2.5 text-sm text-ink focus:border-bronze focus:outline-none";
 
 const PRICES = [
-  { label: "No min", value: "" },
   { label: "$500K", value: "500000" },
   { label: "$750K", value: "750000" },
   { label: "$1M", value: "1000000" },
@@ -17,6 +16,7 @@ const PRICES = [
   { label: "$5M", value: "5000000" },
 ];
 
+// MLS property-type values stay in English (data terms), only UI labels localize.
 const TYPES = [
   "Single Family",
   "Condo",
@@ -27,7 +27,29 @@ const TYPES = [
   "Residential",
 ];
 
-export function ListingFilters({ cities }: { cities: string[] }) {
+export interface ListingFilterLabels {
+  scopeHomix: string;
+  scopeAll: string;
+  allLocations: string;
+  anyType: string;
+  noMin: string;
+  noMax: string;
+  upTo: string; // e.g. "Up to" / "最高"
+  anyBeds: string;
+  bedsSuffix: string; // e.g. "+ beds" / "居+"
+  sortNewest: string;
+  sortPriceDesc: string;
+  sortPriceAsc: string;
+  sortBeds: string;
+}
+
+export function ListingFilters({
+  cities,
+  labels,
+}: {
+  cities: string[];
+  labels: ListingFilterLabels;
+}) {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -52,8 +74,8 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("scope")}
         onChange={(e) => update("scope", e.target.value)}
       >
-        <option value="">Homix listings</option>
-        <option value="all">All OneKey listings</option>
+        <option value="">{labels.scopeHomix}</option>
+        <option value="all">{labels.scopeAll}</option>
       </select>
 
       <select
@@ -62,7 +84,7 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("city")}
         onChange={(e) => update("city", e.target.value)}
       >
-        <option value="">All locations</option>
+        <option value="">{labels.allLocations}</option>
         {cities.map((c) => (
           <option key={c} value={c}>
             {c}
@@ -76,7 +98,7 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("type")}
         onChange={(e) => update("type", e.target.value)}
       >
-        <option value="">Any type</option>
+        <option value="">{labels.anyType}</option>
         {TYPES.map((t) => (
           <option key={t} value={t}>
             {t}
@@ -90,9 +112,10 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("minPrice")}
         onChange={(e) => update("minPrice", e.target.value)}
       >
+        <option value="">{labels.noMin}</option>
         {PRICES.map((p) => (
           <option key={p.value} value={p.value}>
-            {p.label === "No min" ? "No min" : `${p.label}+`}
+            {`${p.label}+`}
           </option>
         ))}
       </select>
@@ -103,10 +126,10 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("maxPrice")}
         onChange={(e) => update("maxPrice", e.target.value)}
       >
-        <option value="">No max</option>
-        {PRICES.slice(1).map((p) => (
+        <option value="">{labels.noMax}</option>
+        {PRICES.map((p) => (
           <option key={p.value} value={p.value}>
-            {`Up to ${p.label}`}
+            {`${labels.upTo} ${p.label}`}
           </option>
         ))}
       </select>
@@ -117,10 +140,10 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("beds")}
         onChange={(e) => update("beds", e.target.value)}
       >
-        <option value="">Any beds</option>
+        <option value="">{labels.anyBeds}</option>
         {[1, 2, 3, 4, 5].map((b) => (
           <option key={b} value={b}>
-            {b}+ beds
+            {`${b}${labels.bedsSuffix}`}
           </option>
         ))}
       </select>
@@ -131,10 +154,10 @@ export function ListingFilters({ cities }: { cities: string[] }) {
         value={val("sort")}
         onChange={(e) => update("sort", e.target.value)}
       >
-        <option value="newest">Newest</option>
-        <option value="price-desc">Price (high to low)</option>
-        <option value="price-asc">Price (low to high)</option>
-        <option value="beds-desc">Most bedrooms</option>
+        <option value="newest">{labels.sortNewest}</option>
+        <option value="price-desc">{labels.sortPriceDesc}</option>
+        <option value="price-asc">{labels.sortPriceAsc}</option>
+        <option value="beds-desc">{labels.sortBeds}</option>
       </select>
     </div>
   );

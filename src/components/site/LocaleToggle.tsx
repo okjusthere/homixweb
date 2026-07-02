@@ -19,7 +19,8 @@ export function LocaleToggle({
 
   const toggle = () => {
     const next = locale === "zh" ? "en" : "zh";
-    document.cookie = `locale=${next}; path=/; max-age=31536000; samesite=lax`;
+    const secure = window.location.protocol === "https:" ? "; secure" : "";
+    document.cookie = `locale=${next}; path=/; max-age=31536000; samesite=lax${secure}`;
     router.refresh();
   };
 

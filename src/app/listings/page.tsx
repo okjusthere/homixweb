@@ -30,7 +30,8 @@ export default async function ListingsPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
-  const { t } = await getT();
+  const { locale, t } = await getT();
+  const zh = locale === "zh";
   const page = Math.max(1, parseInt(one(sp.page), 10) || 1);
   const scope = one(sp.scope) === "all" ? "all" : "homix";
 
@@ -66,7 +67,7 @@ export default async function ListingsPage({
         <div className="max-w-2xl">
           <Eyebrow>Listings</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
-            Homes for sale
+            {zh ? "在售房源" : "Homes for sale"}
           </h1>
           <Link
             href="/calculator"
@@ -96,26 +97,63 @@ export default async function ListingsPage({
       </div>
 
       <div className="mt-10 border-y border-line py-5">
-        <ListingFilters cities={cities} />
+        <ListingFilters
+          cities={cities}
+          labels={{
+            scopeHomix: zh ? "Homix 房源" : "Homix listings",
+            scopeAll: zh ? "全部 OneKey 房源" : "All OneKey listings",
+            allLocations: zh ? "全部地区" : "All locations",
+            anyType: zh ? "全部类型" : "Any type",
+            noMin: zh ? "不限最低价" : "No min",
+            noMax: zh ? "不限最高价" : "No max",
+            upTo: zh ? "最高" : "Up to",
+            anyBeds: zh ? "不限卧室" : "Any beds",
+            bedsSuffix: zh ? " 居+" : "+ beds",
+            sortNewest: zh ? "最新上架" : "Newest",
+            sortPriceDesc: zh ? "价格从高到低" : "Price (high to low)",
+            sortPriceAsc: zh ? "价格从低到高" : "Price (low to high)",
+            sortBeds: zh ? "卧室最多" : "Most bedrooms",
+          }}
+        />
       </div>
 
-      <p className="mt-6 text-sm text-muted">
-        {formatNumber(total)} {total === 1 ? "home" : "homes"}
-        {query.city ? ` in ${query.city}` : ""} · page {page} of {pages || 1}
-        {scope === "homix" ? " · Homix Realty Inc." : " · All OneKey"}
-      </p>
+      {!unavailable && (
+        <p className="mt-6 text-sm text-muted">
+          {zh ? (
+            <>
+              {formatNumber(total)} 套房源
+              {query.city ? `（${query.city}）` : ""} · 第 {page} / {pages || 1} 页
+              {scope === "homix" ? " · Homix Realty Inc." : " · 全部 OneKey"}
+            </>
+          ) : (
+            <>
+              {formatNumber(total)} {total === 1 ? "home" : "homes"}
+              {query.city ? ` in ${query.city}` : ""} · page {page} of {pages || 1}
+              {scope === "homix" ? " · Homix Realty Inc." : " · All OneKey"}
+            </>
+          )}
+        </p>
+      )}
 
       {unavailable ? (
         <div className="py-24 text-center">
-          <p className="font-serif text-2xl text-ink">Listings are temporarily unavailable.</p>
+          <p className="font-serif text-2xl text-ink">
+            {zh ? "房源数据暂时不可用。" : "Listings are temporarily unavailable."}
+          </p>
           <p className="mt-2 text-muted">
-            Please contact Homix for current inventory while the MLS feed is restored.
+            {zh
+              ? "MLS 数据恢复期间，请直接联系 Homix 了解当前在售房源。"
+              : "Please contact Homix for current inventory while the MLS feed is restored."}
           </p>
         </div>
       ) : results.length === 0 ? (
         <div className="py-24 text-center">
-          <p className="font-serif text-2xl text-ink">No homes match those filters.</p>
-          <p className="mt-2 text-muted">Try widening your price range or location.</p>
+          <p className="font-serif text-2xl text-ink">
+            {zh ? "没有符合筛选条件的房源。" : "No homes match those filters."}
+          </p>
+          <p className="mt-2 text-muted">
+            {zh ? "试试放宽价格区间或地区。" : "Try widening your price range or location."}
+          </p>
         </div>
       ) : (
         <div className="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
