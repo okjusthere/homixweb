@@ -5,7 +5,7 @@ import { footerNav, siteConfig } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { EqualHousingLogo } from "./EqualHousingLogo";
 
-const year = 2026;
+const year = new Date().getFullYear();
 
 export async function SiteFooter() {
   const { t } = await getT();

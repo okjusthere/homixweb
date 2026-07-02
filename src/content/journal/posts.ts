@@ -1,13 +1,14 @@
 /**
- * Journal / 观察 — editorial content (SAMPLE posts).
+ * Journal / 观察 — editorial content.
  *
- * Bilingual (en/zh) market reports, guides, and brand pieces. Body is Markdown.
- * Replace these samples with real content; market figures here are illustrative.
- * `authorSlug` ties to an agent in the listings roster (Person schema + profile link).
+ * Bilingual (en/zh) market reports, guides, and educational pieces. Body is
+ * Markdown. Articles are researched against cited sources with as-of dates and
+ * not-advice disclaimers where topics are YMYL (tax/legal/immigration/finance);
+ * figures should be re-verified before relying on them.
+ * `authorSlug` ties to an agent in the roster (Person schema + profile link).
+ * Covers are self-hosted under /public/journal/covers with `coverCredit`
+ * attribution rendered wherever the image appears.
  */
-
-const cover = (id: string) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1600&q=80`;
 
 export interface Bilingual {
   en: string;
@@ -289,8 +290,8 @@ export const journalPosts: JournalPost[] = [
       "zh": "临近交通的库存偏紧，布置出色的房子依旧多份报价——而价格,往往赢在曝光。"
     },
     "body": {
-      "en": "The New York market rewards preparation. Here's how the numbers around Flushing and greater Queens are shaping up — and what it means whether you're buying or selling this season.\n\n## What we're seeing\n\nInventory remains tight in the most walkable pockets — near the 7 train, Main Street, and the new-construction condos along Sanford and Roosevelt. Well-priced homes that show beautifully are still drawing multiple offers within the first two weeks.\n\n- **Condos** near transit are moving fastest.\n- **Single-family** homes in top school districts hold their value through any season.\n- **Sellers** who invest in staging and professional media consistently close higher.\n\n## For buyers\n\nGet pre-approved before you tour. In a competitive pocket, the difference between a clean, ready offer and a slow one is often the home itself.\n\n## For sellers\n\nExposure is everything. A listing that lives only on the MLS reaches a fraction of the audience a media-first campaign does. That gap is where price is won or lost.\n\n*Figures are illustrative. For a current, address-specific read, [reach out](/contact) — we'll run the real numbers for you.*",
-      "zh": "纽约市场，准备充分者得利。下面是法拉盛与皇后区近期的行情走向——无论你这一季是买还是卖，都值得一看。\n\n## 我们看到的\n\n最走得通的地段库存依然偏紧——7 号线沿线、缅街，以及 Sanford 与 Roosevelt 一带的新建公寓。定价合理、展示出色的房子，往往在挂牌头两周就收到多份报价。\n\n- 临近地铁的**公寓**成交最快。\n- 顶级学区的**独立屋**穿越周期、保值能力强。\n- 在布置与专业媒体上投入的**卖家**，成交价普遍更高。\n\n## 给买家\n\n看房前先拿到贷款预批。在抢手地段，一份干净、随时可成交的报价，常常就是赢下心仪房子的关键。\n\n## 给卖家\n\n曝光决定一切。只挂在 MLS 上的房源，触达的人群只是\"媒体优先\"打法的一个零头。价格的高低，往往就赢在这个差距里。\n\n*以上数据仅作示意。需要针对具体地址的最新行情，[联系我们](/contact)，我们为你跑真实数字。*"
+      "en": "The New York market rewards preparation. Here's how the numbers around Flushing and greater Queens are shaping up — and what it means whether you're buying or selling this season.\n\n## What we're seeing\n\nInventory remains tight in the most walkable pockets — near the 7 train, Main Street, and the new-construction condos along Sanford and Roosevelt. Well-priced homes that show beautifully are still drawing multiple offers within the first two weeks.\n\n- **Condos** near transit are moving fastest.\n- **Single-family** homes in high-demand districts hold their value through any season.\n- **Sellers** who invest in staging and professional media consistently close higher.\n\n## For buyers\n\nGet pre-approved before you tour. In a competitive pocket, the difference between a clean, ready offer and a slow one is often the home itself.\n\n## For sellers\n\nExposure is everything. A listing that lives only on the MLS reaches a fraction of the audience a media-first campaign does. That gap is where price is won or lost.\n\n*Figures are illustrative. For a current, address-specific read, [reach out](/contact) — we'll run the real numbers for you.*",
+      "zh": "纽约市场，准备充分者得利。下面是法拉盛与皇后区近期的行情走向——无论你这一季是买还是卖，都值得一看。\n\n## 我们看到的\n\n最走得通的地段库存依然偏紧——7 号线沿线、缅街，以及 Sanford 与 Roosevelt 一带的新建公寓。定价合理、展示出色的房子，往往在挂牌头两周就收到多份报价。\n\n- 临近地铁的**公寓**成交最快。\n- 需求旺盛地段的**独立屋**穿越周期、保值能力强。\n- 在布置与专业媒体上投入的**卖家**，成交价普遍更高。\n\n## 给买家\n\n看房前先拿到贷款预批。在抢手地段，一份干净、随时可成交的报价，常常就是赢下心仪房子的关键。\n\n## 给卖家\n\n曝光决定一切。只挂在 MLS 上的房源，触达的人群只是\"媒体优先\"打法的一个零头。价格的高低，往往就赢在这个差距里。\n\n*以上数据仅作示意。需要针对具体地址的最新行情，[联系我们](/contact)，我们为你跑真实数字。*"
     },
     "coverCredit": "Acroterion — CC BY-SA 4.0 · Wikimedia Commons"
   },

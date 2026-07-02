@@ -207,7 +207,7 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "name": "Great Neck",
     "slug": "great-neck",
     "region": "Long Island",
-    "blurb": "Top-rated schools and gracious homes on Long Island's North Shore.",
+    "blurb": "Gracious homes and waterfront parks on Long Island's North Shore.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Steppingstone_Park%2C_Kings_Point%2C_NY_August_14%2C_2022.jpg/1280px-Steppingstone_Park%2C_Kings_Point%2C_NY_August_14%2C_2022.jpg",
     "photoCredit": "AITFFan1 · CC BY-SA 4.0",
     "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Steppingstone_Park,_Kings_Point,_NY_August_14,_2022.jpg",
@@ -220,7 +220,7 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "name": "Manhasset",
     "slug": "manhasset",
     "region": "Long Island",
-    "blurb": "Gracious North Shore homes, top schools, and a short LIRR ride to the city.",
+    "blurb": "Gracious North Shore homes, the Miracle Mile, and a short LIRR ride to the city.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Plandome_Pond_Park%2C_Manhasset%2C_Long_Island%2C_New_York_August_2%2C_2021.jpg/1280px-Plandome_Pond_Park%2C_Manhasset%2C_Long_Island%2C_New_York_August_2%2C_2021.jpg",
     "photoCredit": "AITFFan1 · CC BY-SA 4.0",
     "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Plandome_Pond_Park,_Manhasset,_Long_Island,_New_York_August_2,_2021.jpg",
@@ -233,7 +233,7 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "name": "Syosset",
     "slug": "syosset",
     "region": "Long Island",
-    "blurb": "Award-winning schools and a walkable downtown in the heart of Long Island.",
+    "blurb": "A walkable downtown and direct LIRR service in the heart of Long Island.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Downtown_Syosset%2C_Long_Island%2C_New_York_August_29%2C_2021.jpg/1280px-Downtown_Syosset%2C_Long_Island%2C_New_York_August_29%2C_2021.jpg",
     "photoCredit": "AITFFan1 · CC BY-SA 4.0",
     "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Downtown_Syosset,_Long_Island,_New_York_August_29,_2021.jpg",
@@ -246,7 +246,7 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "name": "Jericho",
     "slug": "jericho",
     "region": "Long Island",
-    "blurb": "One of Long Island's top school districts, with quiet streets and easy highways.",
+    "blurb": "Quiet residential streets and easy highway access in central Nassau County.",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/The_Milleridge_Inn%3B_Jericho%2C_New_York-3.jpg/1280px-The_Milleridge_Inn%3B_Jericho%2C_New_York-3.jpg",
     "photoCredit": "DanTD · CC BY-SA 4.0",
     "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:The_Milleridge_Inn;_Jericho,_New_York-3.jpg",
@@ -317,7 +317,7 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "blurb": "Historic village charm and gracious North Shore homes, a short LIRR ride from the city.",
     "image": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1280&q=80",
     "guide": {
-      "en": "Roslyn is one of Long Island's North Shore villages, set at the head of Hempstead Harbor and known for a remarkably preserved 18th- and 19th-century downtown. Its Main Street, the duck pond, and the landmark clock tower give the village an unhurried, storybook character, while the surrounding villages — Roslyn Estates, Roslyn Harbor, East Hills, and Flower Hill — offer wooded lots, classic colonials, Tudors, and a number of larger estate properties.\n\nFor commuters, the Roslyn station sits on the LIRR Port Washington Branch with direct trains to both Penn Station and Grand Central Madison; peak service reaches Midtown in roughly 40 to 50 minutes, with no transfer required. Parks and open space are close at hand, from Gerry Pond and Christopher Morley Park to the Cedarmere waterfront, and the Nassau County Museum of Art anchors the village's cultural life.\n\nFor buyers, Roslyn pairs a walkable historic downtown with quiet, established residential streets; for sellers, well-kept homes in a sought-after district tend to hold their value across markets.",
+      "en": "Roslyn is one of Long Island's North Shore villages, set at the head of Hempstead Harbor and known for a remarkably preserved 18th- and 19th-century downtown. Its Main Street, the duck pond, and the landmark clock tower give the village an unhurried, storybook character, while the surrounding villages — Roslyn Estates, Roslyn Harbor, East Hills, and Flower Hill — offer wooded lots, classic colonials, Tudors, and a number of larger estate properties.\n\nFor commuters, the Roslyn station sits on the LIRR Port Washington Branch with direct trains to both Penn Station and Grand Central Madison; peak service reaches Midtown in roughly 40 to 50 minutes, with no transfer required. Parks and open space are close at hand, from Gerry Pond and Christopher Morley Park to the Cedarmere waterfront, and the Nassau County Museum of Art anchors the village's cultural life.\n\nFor buyers, Roslyn pairs a walkable historic downtown with quiet, established residential streets; for sellers, well-kept homes near the village center tend to hold their value across markets.",
       "zh": "Roslyn 是长岛北岸的村镇之一，坐落在 Hempstead 港湾的尽头，以保存极为完好的 18、19 世纪市中心而闻名。Main Street、鸭池与地标钟楼为村庄赋予了从容、如画的气质，而周边的 Roslyn Estates、Roslyn Harbor、East Hills 与 Flower Hill 等村落，则提供林木环绕的地块、经典殖民式与都铎式住宅，以及若干规模更大的庄园物业。\n\n对通勤者而言，Roslyn 车站位于长岛铁路 Port Washington 支线，可直达宾州车站与 Grand Central Madison；高峰时段约 40 至 50 分钟即抵中城，无需换乘。公园与开放绿地近在咫尺，从 Gerry Pond、Christopher Morley 公园到 Cedarmere 滨水区皆是，拿骚县艺术博物馆更为村镇的文化生活注入活力。\n\n对买家来说，Roslyn 将可步行的历史市中心与宁静、成熟的住宅街区融为一体；对卖家而言，热门学区内维护良好的住宅往往能在各种市况下保值。"
     }
   },
@@ -541,16 +541,16 @@ export const neighborhoodGlance: Record<
       "zh": "位于长岛铁路 Port Washington 支线，直达宾州车站与中央车站；高峰时段的快车约半小时即抵中城，是北岸较快的通勤之一。"
     },
     "schools": {
-      "en": "Great Neck Union Free School District is a long-standing top-tier Nassau County district, consistently rated among the strongest in New York State.",
-      "zh": "Great Neck 联合自由学区是拿骚县长期稳居顶尖的学区，始终位列纽约州最强学区之中。"
+      "en": "The area is served by the Great Neck Union Free School District; school assignment varies by address, so verify with the district before offering.",
+      "zh": "该区域隶属 Great Neck 联合自由学区；学校划分因地址而异，下 offer 前请向学区核实。"
     },
     "character": {
       "en": "A cluster of North Shore villages defined by tree-lined streets, waterfront parks on Manhasset Bay, and a housing mix from classic colonials to modern builds.",
       "zh": "一组北岸村镇，以林荫街道、Manhasset 湾畔的滨水公园，以及从经典殖民式到现代新建的多元住宅著称。"
     },
     "bestFor": {
-      "en": "Best for families and commuters who want top schools and suburban space within a quick, direct ride to Manhattan.",
-      "zh": "适合想要顶级学校与郊区空间、又能快速直达曼哈顿的家庭与通勤者。"
+      "en": "Best for buyers who want the Great Neck school district and suburban space within a quick, direct ride to Manhattan.",
+      "zh": "适合看重 Great Neck 学区与郊区空间、又能快速直达曼哈顿的买家。"
     }
   },
   "manhasset": {
@@ -559,16 +559,16 @@ export const neighborhoodGlance: Record<
       "zh": "Manhasset 长岛铁路车站（Plandome Road）位于 Port Washington 支线，直达宾州车站与中央车站——一段短而可靠的北岸通勤。"
     },
     "schools": {
-      "en": "Manhasset Union Free School District is a small, highly regarded district; its secondary school ranks among the very top public schools in New York year after year.",
-      "zh": "Manhasset 联合自由学区是一所规模不大却备受推崇的学区，其中学连年位列纽约州顶尖公立学校之中。"
+      "en": "The hamlet is served by the Manhasset Union Free School District, anchored by Manhasset Secondary School; verify the assignment for any specific address with the district.",
+      "zh": "该区域隶属 Manhasset 联合自由学区，以 Manhasset 中学为核心；具体地址的学校划分请向学区核实。"
     },
     "character": {
       "en": "A gracious North Shore community of tree-lined streets and classic colonial and estate homes, anchored by the upscale Miracle Mile shopping district on Northern Boulevard.",
       "zh": "一处优雅的北岸社区，林荫街道间散落着经典殖民式与庄园式住宅，并以 Northern Boulevard 上的高端购物区「Miracle Mile」为核心。"
     },
     "bestFor": {
-      "en": "Best for families seeking estate-style space, premier schools, and high-end shopping within an easy commute to the city.",
-      "zh": "适合追求庄园式空间、顶尖学校与高端购物，同时通勤进城便捷的家庭。"
+      "en": "Best for buyers seeking estate-style space, the Manhasset school district, and high-end shopping within an easy commute to the city.",
+      "zh": "适合追求庄园式空间、Manhasset 学区与高端购物，同时通勤进城便捷的买家。"
     }
   },
   "syosset": {
@@ -577,16 +577,16 @@ export const neighborhoodGlance: Record<
       "zh": "Syosset 的长岛铁路车站位于 Port Jefferson 支线，直达宾州车站与中央车站；长岛快速路（LIE）与 Northern State Parkway 也让该区在自驾上四通八达。"
     },
     "schools": {
-      "en": "Syosset Central School District is one of the most acclaimed districts in the state and nation — repeatedly ranked at or near the top of New York's public school districts.",
-      "zh": "Syosset 中央学区是全州乃至全美最受赞誉的学区之一——屡次位列纽约州公立学区的榜首或前列。"
+      "en": "The area is served by the Syosset Central School District, including Syosset High School; school assignment varies by address, so verify with the district.",
+      "zh": "该区域隶属 Syosset 中央学区（含 Syosset 高中）；学校划分因地址而异，请向学区核实。"
     },
     "character": {
       "en": "A heart-of-Nassau community with a walkable downtown along Jackson Avenue, parks and recreation close by, and homes from mid-century classics to updated colonials on generous lots.",
       "zh": "位于拿骚县腹地的社区，Jackson Avenue 沿线有可步行的市中心，公园与休闲设施近在咫尺，住宅从世纪中叶经典款到地块宽敞、翻新过的殖民式不等。"
     },
     "bestFor": {
-      "en": "Best for families prioritizing nationally ranked schools alongside a walkable downtown and classic suburban lots.",
-      "zh": "适合把全美知名学校放在首位，同时看重可步行市中心与经典郊区地块的家庭。"
+      "en": "Best for buyers who prioritize the Syosset school district alongside a walkable downtown and classic suburban lots.",
+      "zh": "适合把 Syosset 学区放在首位，同时看重可步行市中心与经典郊区地块的买家。"
     }
   },
   "jericho": {
@@ -595,16 +595,16 @@ export const neighborhoodGlance: Record<
       "zh": "Jericho 本身没有车站；通勤者借由邻近的 Hicksville 与 Syosset 长岛铁路车站直达曼哈顿，长岛快速路与 Northern State Parkway 则让自驾轻松便捷。"
     },
     "schools": {
-      "en": "Jericho Union Free School District is among the most decorated in the country, consistently ranked New York's #1 public school district and one of the very best nationally.",
-      "zh": "Jericho 联合自由学区是全美最受表彰的学区之一，长期被评为纽约州第一、并跻身全美最佳之列。"
+      "en": "The hamlet is served by the Jericho Union Free School District; school assignment varies by address, so verify with the district before offering.",
+      "zh": "该区域隶属 Jericho 联合自由学区；学校划分因地址而异，下 offer 前请向学区核实。"
     },
     "character": {
       "en": "A quiet, established Nassau County hamlet of residential streets and a central location, anchored by landmarks like the historic Milleridge Inn.",
       "zh": "一处宁静、成熟的拿骚县社区，住宅街道与中心地段相映，并以历史悠久的 Milleridge Inn 等地标为依托。"
     },
     "bestFor": {
-      "en": "Best for families who put top-ranked schools first and value quiet streets with quick highway access.",
-      "zh": "适合把顶级学区放在第一位、并看重安静街道与便捷高速通行的家庭。"
+      "en": "Best for buyers who put the Jericho school district first and value quiet streets with quick highway access.",
+      "zh": "适合把 Jericho 学区放在第一位、并看重安静街道与便捷高速通行的买家。"
     }
   },
   "tribeca": {
@@ -747,8 +747,8 @@ export const neighborhoodGlance: Record<
       "zh": "一座 19 世纪规划而成的村镇，宽阔林荫大道两旁矗立着气派的殖民式、都铎式与中央门厅式住宅，以可步行的市中心及历史悠久的 Garden City Hotel 为核心。"
     },
     "bestFor": {
-      "en": "Best for buyers who want architectural character and a walkable downtown in an established, parklike village with a strong public-school district.",
-      "zh": "适合想要在一座成熟、宛如公园的村镇中，拥有建筑特色与可步行市中心、且学区优秀的买家。"
+      "en": "Best for buyers who want architectural character and a walkable downtown in an established, parklike village served by its own school district.",
+      "zh": "适合想要在一座成熟、宛如公园的村镇中，拥有建筑特色与可步行市中心的买家（村镇设有自己的学区）。"
     }
   },
   "old-westbury": {
@@ -873,8 +873,8 @@ export const neighborhoodGlance: Record<
       "zh": "静谧、绿荫、低密度，临小颈湾，颇具郊区气息。住宅从历史街区道格拉斯庄园由建筑师设计的都铎式、殖民式与平房，到各式独栋住宅，并有临商业街的双拼住宅与合作公寓。"
     },
     "bestFor": {
-      "en": "Buyers and families seeking a low-density, house-oriented setting with waterfront and historic character, generous green space, and a fast direct rail commute to Manhattan.",
-      "zh": "适合追求低密度、以独栋住宅为主的居住环境，向往临水与历史氛围、充裕绿地，并看重直达曼哈顿快捷通勤的买家与家庭。"
+      "en": "Buyers seeking a low-density, house-oriented setting with waterfront and historic character, generous green space, and a fast direct rail commute to Manhattan.",
+      "zh": "适合追求低密度、以独栋住宅为主的居住环境，向往临水与历史氛围、充裕绿地，并看重直达曼哈顿快捷通勤的买家。"
     }
   },
   "mineola": {
@@ -909,8 +909,8 @@ export const neighborhoodGlance: Record<
       "zh": "一座安静、以独栋住宅为主的边界村落，住房多为20世纪中叶的Cape式、殖民式、平房与错层式独栋，配有适合步行的商业街，入门价位相对亲民。"
     },
     "bestFor": {
-      "en": "Commuters and families wanting a detached house with yard and a fast Main Line ride to Manhattan, plus buyers drawn to the South Asian dining-and-grocery corridors and proximity to the Northwell/LIJ medical campus.",
-      "zh": "适合想要带院独栋、又看重主线快速通勤曼哈顿的上班族与家庭，以及青睐南亚餐饮杂货街、邻近Northwell／LIJ医疗园区的买家。"
+      "en": "Commuters wanting a detached house with yard and a fast Main Line ride to Manhattan, plus buyers drawn to the South Asian dining-and-grocery corridors and proximity to the Northwell/LIJ medical campus.",
+      "zh": "适合想要带院独栋、又看重主线快速通勤曼哈顿的上班族，以及青睐南亚餐饮杂货街、邻近Northwell／LIJ医疗园区的买家。"
     }
   },
   "hicksville": {

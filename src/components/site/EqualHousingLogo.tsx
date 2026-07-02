@@ -1,8 +1,6 @@
 /**
- * Equal Housing Opportunity mark — stylized house + equal sign.
- *
- * NOTE: For production, replace with the official HUD Equal Housing Opportunity
- * logo artwork. This is a faithful glyph for layout/contrast purposes.
+ * Equal Housing Opportunity logo — the official HUD mark (public-domain
+ * federal artwork): solid house silhouette with an equal sign knocked out.
  */
 export function EqualHousingLogo({ className }: { className?: string }) {
   return (
@@ -11,16 +9,11 @@ export function EqualHousingLogo({ className }: { className?: string }) {
       className={className}
       role="img"
       aria-label="Equal Housing Opportunity"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="3.5"
-      strokeLinejoin="round"
-      strokeLinecap="round"
+      fill="currentColor"
+      fillRule="evenodd"
     >
-      <path d="M7 31 L32 11 L57 31" />
-      <path d="M14 28 V53 H50 V28" />
-      <line x1="24" y1="36" x2="40" y2="36" />
-      <line x1="24" y1="44" x2="40" y2="44" />
+      {/* House silhouette (roof overhang + body) with equal-sign cutouts */}
+      <path d="M32 4 L62 30 L54 30 L54 58 L10 58 L10 30 L2 30 Z M20 33 L44 33 L44 39 L20 39 Z M20 45 L44 45 L44 51 L20 51 Z" />
     </svg>
   );
 }

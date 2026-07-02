@@ -34,6 +34,7 @@ export default async function JournalPage() {
     .map((post) => ({
       slug: post.slug,
       cover: post.cover,
+      coverCredit: post.coverCredit,
       catKey: post.category.en,
       catLabel: post.category[locale],
       title: post.title[locale],

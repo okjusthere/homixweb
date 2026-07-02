@@ -16,7 +16,7 @@ export function MlsDisclaimer({ syncedAt }: { syncedAt?: string | null }) {
         independently verified.
       </p>
       <p>
-        © {2026} OneKey® MLS. All rights reserved.
+        © {new Date().getFullYear()} OneKey® MLS. All rights reserved.
         {syncedAt ? ` Data last updated ${formatDate(syncedAt)}.` : ""}
       </p>
     </div>

@@ -533,7 +533,7 @@ const en = {
     langLabel: "中文",
   },
   footer: {
-    eho: "Homix Realty Inc. is committed to the principles of the Fair Housing Act and the Equal Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, disability, familial status, or national origin. All information is deemed reliable but not guaranteed.",
+    eho: "Homix Realty Inc. is committed to the principles of the Fair Housing Act and the Equal Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, disability, familial status, national origin, or any other class protected by applicable federal, New York State, or New York City law. All information is deemed reliable but not guaranteed.",
     brokerOfRecord: "Broker of Record",
     licensedIn: "Licensed in",
     rights: "All rights reserved.",
@@ -1774,7 +1774,7 @@ const en = {
     photoBy: "Photo",
     whyEyebrow: "Neighborhood Intelligence",
     whyTitle: "We don't sell zip codes. We read neighborhoods.",
-    whyBody: "From Downtown Flushing to the North Shore villages of Nassau County, these are the markets Homix works in every week. Our agents grew up here, shop here, and ride these trains — so our guidance is grounded in lived knowledge, not a portal listing. For each neighborhood we pair that local fluency with disciplined data: how homes are actually pricing, which school districts hold their reputation, what the commute really looks like, and where supply and demand are heading. The result is bilingual, fair-housing-conscious counsel you can act on, whether you're buying your first co-op near the 7 train or trading up to a colonial in a top-ranked school zone.",
+    whyBody: "From Downtown Flushing to the North Shore villages of Nassau County, these are the markets Homix works in every week. Our agents grew up here, shop here, and ride these trains — so our guidance is grounded in lived knowledge, not a portal listing. For each neighborhood we pair that local fluency with disciplined data: how homes are actually pricing, which school districts hold their reputation, what the commute really looks like, and where supply and demand are heading. The result is bilingual, fair-housing-conscious counsel you can act on, whether you're buying your first co-op near the 7 train or trading up to a colonial on the North Shore.",
     methodology: [
       {
         title: "Comps & pricing discipline",
@@ -1968,7 +1968,7 @@ const zh: Dict = {
     langLabel: "EN",
   },
   footer: {
-    eho: "Homix Realty Inc. 恪守《公平住房法》与《平等机会法》。我们不因种族、肤色、宗教、性别、残障、家庭状况或国籍而歧视。所有信息力求可靠，但不作保证。",
+    eho: "Homix Realty Inc. 恪守《公平住房法》与《平等机会法》。我们不因种族、肤色、宗教、性别、残障、家庭状况、国籍，或联邦、纽约州及纽约市法律保护的任何其他类别而歧视。所有信息力求可靠，但不作保证。",
     brokerOfRecord: "备案经纪人",
     licensedIn: "持牌州",
     rights: "保留所有权利。",
@@ -3209,7 +3209,7 @@ const zh: Dict = {
     photoBy: "摄影",
     whyEyebrow: "社区研判",
     whyTitle: "我们卖的不是邮编，而是对社区的理解",
-    whyBody: "从法拉盛市中心到拿骚县北岸的村镇，这些都是 Homix 每周深耕的市场。我们的经纪人在这里长大、在这里生活、也每天搭乘这些列车——因此我们的建议来自真实的在地认知，而非门户网站上的一条房源。对每个社区，我们都把这份在地熟悉与严谨的数据结合起来：房子真实的定价走向、哪些学区的口碑长期稳固、通勤实际是什么样、供需又在往哪个方向走。最终交付的，是符合公平住房原则的中英双语建议，让你可以据此行动——无论是在 7 号线旁购入第一套合作公寓，还是换购顶级学区里的一栋殖民式住宅。",
+    whyBody: "从法拉盛市中心到拿骚县北岸的村镇，这些都是 Homix 每周深耕的市场。我们的经纪人在这里长大、在这里生活、也每天搭乘这些列车——因此我们的建议来自真实的在地认知，而非门户网站上的一条房源。对每个社区，我们都把这份在地熟悉与严谨的数据结合起来：房子真实的定价走向、哪些学区的口碑长期稳固、通勤实际是什么样、供需又在往哪个方向走。最终交付的，是符合公平住房原则的中英双语建议，让你可以据此行动——无论是在 7 号线旁购入第一套合作公寓，还是换购北岸村镇的一栋殖民式住宅。",
     methodology: [
       {
         title: "可比成交与定价纪律",

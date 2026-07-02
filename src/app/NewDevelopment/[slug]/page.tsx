@@ -118,11 +118,23 @@ export default async function NewDevelopmentDetailPage({
     [zh ? "销售团队" : "Sales", building.facts.sales],
   ].filter(([, value]) => value) as [string, string][];
 
-  const galleryImages = media.images.map((im) => ({
-    src: im.src,
-    alt: im.alt,
-    caption: im.caption,
-  }));
+  // Per-image source credit (compliance): derive from the recorded sourceUrl.
+  const creditOf = (sourceUrl: string) => {
+    try {
+      const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+      return `Photo: ${host}`;
+    } catch {
+      return undefined;
+    }
+  };
+  const galleryImages = media.images.map((im) => {
+    const credit = creditOf(im.sourceUrl);
+    return {
+      src: im.src,
+      alt: im.alt,
+      caption: credit ? `${im.caption} · ${credit}` : im.caption,
+    };
+  });
 
   const highlightItems = content
     ? content.highlights.map((h) => ({

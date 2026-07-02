@@ -3,6 +3,25 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { legalDocs } from "@/content/legal";
 import { getT } from "@/lib/i18n";
 
+/** Render plain-text URLs inside legal copy as real links (e.g. the DOS Fair Housing Notice). */
+function autolink(text: string) {
+  return text.split(/(https?:\/\/[^\s)，。；]+)/g).map((part, i) =>
+    /^https?:\/\//.test(part) ? (
+      <a
+        key={i}
+        href={part}
+        target="_blank"
+        rel="noreferrer"
+        className="text-bronze underline underline-offset-2 hover:text-bronze-dark"
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    ),
+  );
+}
+
 /** Renders a bilingual legal document by key (privacy / terms / etc.). */
 export async function LegalLayout({ doc }: { doc: keyof typeof legalDocs }) {
   const { locale, t } = await getT();
@@ -29,7 +48,7 @@ export async function LegalLayout({ doc }: { doc: keyof typeof legalDocs }) {
               <h2 className="font-serif text-2xl text-ink">{s.heading[locale]}</h2>
               <div className="mt-3 space-y-3 leading-relaxed text-ink/85">
                 {s.body[locale].split("\n\n").map((p) => (
-                  <p key={p}>{p}</p>
+                  <p key={p}>{autolink(p)}</p>
                 ))}
               </div>
             </section>

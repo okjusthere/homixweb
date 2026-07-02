@@ -9,6 +9,8 @@ import { Reveal } from "@/components/ui/Reveal";
 export interface JournalCardData {
   slug: string;
   cover: string;
+  /** CC/PD photo credit — attribution must appear wherever the image does. */
+  coverCredit?: string;
   /** Stable filter key (category.en). */
   catKey: string;
   /** Localized category label shown on the card + tab. */
@@ -65,6 +67,11 @@ export function JournalList({
                   className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
               </div>
+              {post.coverCredit && (
+                <p className="mt-1 text-right text-[10px] leading-tight text-muted/60">
+                  {post.coverCredit}
+                </p>
+              )}
               <p className="eyebrow mt-4">{post.catLabel}</p>
               <h2 className="mt-2 font-serif text-xl text-ink transition-colors group-hover:text-bronze">
                 {post.title}
