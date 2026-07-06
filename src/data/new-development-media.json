@@ -2,6 +2,33 @@
  "waldorf-astoria-residences-new-york": {
   "images": [
    {
+    "id": "towers-exterior-dusk-rendering",
+    "src": "/new-development/waldorf-astoria-residences-new-york/images/towers-exterior-dusk-rendering.jpg",
+    "caption": "The Waldorf Astoria towers at dusk (rendering)",
+    "alt": "The Waldorf Astoria towers at dusk (rendering)",
+    "sourceUrl": "https://www.waldorftowers.nyc",
+    "width": 1120,
+    "height": 1400
+   },
+   {
+    "id": "park-avenue-entrance-facade",
+    "src": "/new-development/waldorf-astoria-residences-new-york/images/park-avenue-entrance-facade.jpg",
+    "caption": "Restored Art Deco entrance facade",
+    "alt": "Restored Art Deco entrance facade",
+    "sourceUrl": "https://www.waldorftowers.nyc",
+    "width": 1199,
+    "height": 800
+   },
+   {
+    "id": "porte-cochere-motor-court",
+    "src": "/new-development/waldorf-astoria-residences-new-york/images/porte-cochere-motor-court.jpg",
+    "caption": "Residential porte-cochère motor court",
+    "alt": "Residential porte-cochère motor court",
+    "sourceUrl": "https://www.waldorftowers.nyc",
+    "width": 1203,
+    "height": 800
+   },
+   {
     "id": "bath-view",
     "src": "/new-development/waldorf-astoria-residences-new-york/images/bath-view.jpg",
     "caption": "Primary bath with Park Avenue atmosphere",
@@ -27,6 +54,15 @@
     "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2023/09/004_20th_Floor_Terrace_Stage_E3_7k_2-1654474919.png",
     "width": 1400,
     "height": 933
+   },
+   {
+    "id": "starlight-pool",
+    "src": "/new-development/waldorf-astoria-residences-new-york/images/starlight-pool.jpg",
+    "caption": "Starlight Pool — indoor swimming pool",
+    "alt": "Starlight Pool — indoor swimming pool",
+    "sourceUrl": "https://www.waldorftowers.nyc",
+    "width": 1199,
+    "height": 800
    },
    {
     "id": "side-entrance-residential-lounge",
@@ -1060,6 +1096,15 @@
  "720-west-end-avenue-new-york": {
   "images": [
    {
+    "id": "restored-renaissance-revival-entrance-ma",
+    "src": "/new-development/720-west-end-avenue-new-york/images/restored-renaissance-revival-entrance-ma.jpg",
+    "caption": "Restored Renaissance Revival entrance marquee",
+    "alt": "Restored Renaissance Revival entrance marquee",
+    "sourceUrl": "https://720westend.com/wp-content/uploads/720WEA_Marquee.jpg",
+    "width": 1400,
+    "height": 786
+   },
+   {
     "id": "residence-living",
     "src": "/new-development/720-west-end-avenue-new-york/images/residence-living.jpg",
     "caption": "Residence living room",
@@ -1094,15 +1139,6 @@
     "sourceUrl": "https://720westend.com/wp-content/uploads/UWS_WEA_Sign_AM_010.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "restored-renaissance-revival-entrance-ma",
-    "src": "/new-development/720-west-end-avenue-new-york/images/restored-renaissance-revival-entrance-ma.jpg",
-    "caption": "Restored Renaissance Revival entrance marquee",
-    "alt": "Restored Renaissance Revival entrance marquee",
-    "sourceUrl": "https://720westend.com/wp-content/uploads/720WEA_Marquee.jpg",
-    "width": 1400,
-    "height": 786
    },
    {
     "id": "penthouse-southwest-facade-building-exte",
@@ -1981,6 +2017,15 @@
  "monogram-new-york": {
   "images": [
    {
+    "id": "hero-exterior-tower-facade-vertical",
+    "src": "/new-development/monogram-new-york/images/hero-exterior-tower-facade-vertical.jpg",
+    "caption": "Hero exterior tower / facade (vertical)",
+    "alt": "Hero exterior tower / facade (vertical)",
+    "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2025/01/Monogram-Hero-Vertical-scaled.jpg",
+    "width": 932,
+    "height": 1400
+   },
+   {
     "id": "penthouse-living",
     "src": "/new-development/monogram-new-york/images/penthouse-living.jpg",
     "caption": "Penthouse living room",
@@ -2006,15 +2051,6 @@
     "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2023/07/47th_Street_view_15_penthouse_terrace-Adobe1998-Full-scaled.jpg",
     "width": 1400,
     "height": 863
-   },
-   {
-    "id": "hero-exterior-tower-facade-vertical",
-    "src": "/new-development/monogram-new-york/images/hero-exterior-tower-facade-vertical.jpg",
-    "caption": "Hero exterior tower / facade (vertical)",
-    "alt": "Hero exterior tower / facade (vertical)",
-    "sourceUrl": "https://monogramnewyork.com/wp-content/uploads/2025/01/Monogram-Hero-Vertical-scaled.jpg",
-    "width": 932,
-    "height": 1400
    },
    {
     "id": "exterior-street-level-view-of-135-east-4",
@@ -2194,6 +2230,15 @@
  "111-murray-street": {
   "images": [
    {
+    "id": "building-exterior-facade-homepage-hero",
+    "src": "/new-development/111-murray-street/images/building-exterior-facade-homepage-hero.jpg",
+    "caption": "Building exterior / facade (homepage hero)",
+    "alt": "Building exterior / facade (homepage hero)",
+    "sourceUrl": "https://111murray.com/wp-content/uploads/2018/10/111Murray_Building_Homepage_100318.jpg",
+    "width": 1400,
+    "height": 865
+   },
+   {
     "id": "penthouse-kitchen",
     "src": "/new-development/111-murray-street/images/penthouse-kitchen.jpg",
     "caption": "Penthouse kitchen",
@@ -2210,15 +2255,6 @@
     "sourceUrl": "https://111murray.com/wp-content/uploads/2021/10/bedroom.png",
     "width": 1400,
     "height": 848
-   },
-   {
-    "id": "building-exterior-facade-homepage-hero",
-    "src": "/new-development/111-murray-street/images/building-exterior-facade-homepage-hero.jpg",
-    "caption": "Building exterior / facade (homepage hero)",
-    "alt": "Building exterior / facade (homepage hero)",
-    "sourceUrl": "https://111murray.com/wp-content/uploads/2018/10/111Murray_Building_Homepage_100318.jpg",
-    "width": 1400,
-    "height": 865
    },
    {
     "id": "tower-exterior-at-dusk",
@@ -2982,6 +3018,15 @@
  "eastlight-condominium": {
   "images": [
    {
+    "id": "building-exterior-facade-against-skyline",
+    "src": "/new-development/eastlight-condominium/images/building-exterior-facade-against-skyline.jpg",
+    "caption": "Building exterior against the skyline",
+    "alt": "Building exterior against the skyline",
+    "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/230616_EM_501_Third_Ave_04_HIGH-RES.jpg",
+    "width": 939,
+    "height": 1400
+   },
+   {
     "id": "terrace",
     "src": "/new-development/eastlight-condominium/images/terrace.jpg",
     "caption": "Common terrace",
@@ -3015,15 +3060,6 @@
     "alt": "Building exterior with cantilevered facade",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/230616_EM_501_Third_Ave_03_HIGH-RES.jpg",
     "width": 792,
-    "height": 1400
-   },
-   {
-    "id": "building-exterior-facade-against-skyline",
-    "src": "/new-development/eastlight-condominium/images/building-exterior-facade-against-skyline.jpg",
-    "caption": "Building exterior against the skyline",
-    "alt": "Building exterior against the skyline",
-    "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/230616_EM_501_Third_Ave_04_HIGH-RES.jpg",
-    "width": 939,
     "height": 1400
    },
    {
@@ -3219,6 +3255,15 @@
  "565-broome-soho": {
   "images": [
    {
+    "id": "building-exterior-all-glass-facade-renzo",
+    "src": "/new-development/565-broome-soho/images/building-exterior-all-glass-facade-renzo.jpg",
+    "caption": "Building exterior / all-glass facade (Renzo Piano)",
+    "alt": "Building exterior / all-glass facade (Renzo Piano)",
+    "sourceUrl": "https://www.lxcollection.com/wp-content/uploads/2020/12/565Broome_Building-Exterior-min-1-scaled.jpg",
+    "width": 1044,
+    "height": 1400
+   },
+   {
     "id": "living-area",
     "src": "/new-development/565-broome-soho/images/living-area.jpg",
     "caption": "North tower living area",
@@ -3235,15 +3280,6 @@
     "sourceUrl": "https://565broomesoho.com/assets/interiors/FINAL-AP08_Duplex-Kitchen_revC-d808496ec2ea2b0969e852a89d13b0972e486dac04c6c091ef7ae8f87b2890a2.jpg",
     "width": 1400,
     "height": 778
-   },
-   {
-    "id": "building-exterior-all-glass-facade-renzo",
-    "src": "/new-development/565-broome-soho/images/building-exterior-all-glass-facade-renzo.jpg",
-    "caption": "Building exterior / all-glass facade (Renzo Piano)",
-    "alt": "Building exterior / all-glass facade (Renzo Piano)",
-    "sourceUrl": "https://www.lxcollection.com/wp-content/uploads/2020/12/565Broome_Building-Exterior-min-1-scaled.jpg",
-    "width": 1044,
-    "height": 1400
    },
    {
     "id": "private-gated-porte-cochere-driveway-at-",
@@ -3423,6 +3459,15 @@
  "222-les-tower-lofts": {
   "images": [
    {
+    "id": "building-exterior-streetscape-cityrealty",
+    "src": "/new-development/222-les-tower-lofts/images/building-exterior-streetscape-cityrealty.jpg",
+    "caption": "Building exterior / streetscape (CityRealty)",
+    "alt": "Building exterior / streetscape (CityRealty)",
+    "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/4/41/41a3f2530a87a136ea77090fede579b454e41215/222-les-tower-lofts-222-east-broadway-01.jpg",
+    "width": 1400,
+    "height": 1050
+   },
+   {
     "id": "kitchen",
     "src": "/new-development/222-les-tower-lofts/images/kitchen.jpg",
     "caption": "Tower kitchen",
@@ -3520,15 +3565,6 @@
     "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240801193445/222-PHE.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "building-exterior-streetscape-cityrealty",
-    "src": "/new-development/222-les-tower-lofts/images/building-exterior-streetscape-cityrealty.jpg",
-    "caption": "Building exterior / streetscape (CityRealty)",
-    "alt": "Building exterior / streetscape (CityRealty)",
-    "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/4/41/41a3f2530a87a136ea77090fede579b454e41215/222-les-tower-lofts-222-east-broadway-01.jpg",
-    "width": 1400,
-    "height": 1050
    }
   ],
   "floorPlans": [
@@ -3593,6 +3629,15 @@
  "155w68-condominium": {
   "images": [
    {
+    "id": "building-entrance-porte-cochere",
+    "src": "/new-development/155w68-condominium/images/building-entrance-porte-cochere.jpg",
+    "caption": "Building entrance / porte-cochere (artist rendering)",
+    "alt": "Building entrance / porte-cochere (artist rendering)",
+    "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Final-porte-cochere-with-family.jpg",
+    "width": 1400,
+    "height": 917
+   },
+   {
     "id": "primary-bedroom",
     "src": "/new-development/155w68-condominium/images/primary-bedroom.jpg",
     "caption": "Primary bedroom",
@@ -3627,15 +3672,6 @@
     "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/5-Hall.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "building-entrance-porte-cochere",
-    "src": "/new-development/155w68-condominium/images/building-entrance-porte-cochere.jpg",
-    "caption": "Building entrance / porte-cochere (artist rendering)",
-    "alt": "Building entrance / porte-cochere (artist rendering)",
-    "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Final-porte-cochere-with-family.jpg",
-    "width": 1400,
-    "height": 917
    },
    {
     "id": "model-residence-kitchen",
@@ -4117,6 +4153,15 @@
  "the-florian": {
   "images": [
    {
+    "id": "building-exterior-facade-hero",
+    "src": "/new-development/the-florian/images/building-exterior-facade-hero.jpg",
+    "caption": "Building exterior / facade hero",
+    "alt": "Building exterior / facade hero",
+    "sourceUrl": "https://thefloriannyc.com/uploads/images/homepage/homepage-hero.webp",
+    "width": 1400,
+    "height": 736
+   },
+   {
     "id": "residences-hero",
     "src": "/new-development/the-florian/images/residences-hero.jpg",
     "caption": "Residences hero",
@@ -4142,15 +4187,6 @@
     "sourceUrl": "https://thefloriannyc.com/uploads/images/residences/your-own-private-spa.webp",
     "width": 1400,
     "height": 1020
-   },
-   {
-    "id": "building-exterior-facade-hero",
-    "src": "/new-development/the-florian/images/building-exterior-facade-hero.jpg",
-    "caption": "Building exterior / facade hero",
-    "alt": "Building exterior / facade hero",
-    "sourceUrl": "https://thefloriannyc.com/uploads/images/homepage/homepage-hero.webp",
-    "width": 1400,
-    "height": 736
    },
    {
     "id": "architecture-hero-facade-detail",
@@ -4277,6 +4313,15 @@
  "linea-condominium": {
   "images": [
    {
+    "id": "amenity-residence-space",
+    "src": "/new-development/linea-condominium/images/amenity-residence-space.jpg",
+    "caption": "Building exterior on West 19th Street",
+    "alt": "Building exterior on West 19th Street",
+    "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0100.jpg",
+    "width": 876,
+    "height": 1400
+   },
+   {
     "id": "living",
     "src": "/new-development/linea-condominium/images/living.jpg",
     "caption": "Residence 6B living room",
@@ -4302,15 +4347,6 @@
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0048.jpg",
     "width": 1400,
     "height": 1225
-   },
-   {
-    "id": "amenity-residence-space",
-    "src": "/new-development/linea-condominium/images/amenity-residence-space.jpg",
-    "caption": "Building exterior on West 19th Street",
-    "alt": "Building exterior on West 19th Street",
-    "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0100.jpg",
-    "width": 876,
-    "height": 1400
    },
    {
     "id": "residence-interior-2",
@@ -4481,6 +4517,15 @@
  "35-hudson-yards-manhattan": {
   "images": [
    {
+    "id": "entrance-facade-at-street-level",
+    "src": "/new-development/35-hudson-yards-manhattan/images/entrance-facade-at-street-level.jpg",
+    "caption": "Entrance facade at street level",
+    "alt": "Entrance facade at street level",
+    "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/entrance-facade_0.jpg",
+    "width": 1400,
+    "height": 932
+   },
+   {
     "id": "penthouse-view",
     "src": "/new-development/35-hudson-yards-manhattan/images/penthouse-view.jpg",
     "caption": "Penthouse with Hudson Yards view",
@@ -4513,15 +4558,6 @@
     "caption": "Corner living room with skyline views",
     "alt": "Corner living room with skyline views",
     "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/Hero.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "entrance-facade-at-street-level",
-    "src": "/new-development/35-hudson-yards-manhattan/images/entrance-facade-at-street-level.jpg",
-    "caption": "Entrance facade at street level",
-    "alt": "Entrance facade at street level",
-    "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/entrance-facade_0.jpg",
     "width": 1400,
     "height": 932
    },
@@ -4709,6 +4745,15 @@
  "660-lexington": {
   "images": [
    {
+    "id": "exterior-arrival-street-level-facade",
+    "src": "/new-development/660-lexington/images/exterior-arrival-street-level-facade.jpg",
+    "caption": "Exterior arrival / street-level facade",
+    "alt": "Exterior arrival / street-level facade",
+    "sourceUrl": "https://660lex.com/uploads/images/design/660-Lexington_Exterior_Arrival-landscape_11-19.webp",
+    "width": 1400,
+    "height": 786
+   },
+   {
     "id": "living",
     "src": "/new-development/660-lexington/images/living.jpg",
     "caption": "Residence living room",
@@ -4734,15 +4779,6 @@
     "sourceUrl": "https://660lex.com/uploads/images/residences/660-Lexington_Interior_Bedroom_3-4-desktop(1).webp",
     "width": 1400,
     "height": 1050
-   },
-   {
-    "id": "exterior-arrival-street-level-facade",
-    "src": "/new-development/660-lexington/images/exterior-arrival-street-level-facade.jpg",
-    "caption": "Exterior arrival / street-level facade",
-    "alt": "Exterior arrival / street-level facade",
-    "sourceUrl": "https://660lex.com/uploads/images/design/660-Lexington_Exterior_Arrival-landscape_11-19.webp",
-    "width": 1400,
-    "height": 786
    },
    {
     "id": "building-entrance-front-door",
@@ -4855,6 +4891,15 @@
  "520-fifth-avenue-new-york": {
   "images": [
    {
+    "id": "residence-living-space-official-hero-ima",
+    "src": "/new-development/520-fifth-avenue-new-york/images/residence-living-space-official-hero-ima.jpg",
+    "caption": "Tower illuminated at dusk, Midtown skyline (official rendering)",
+    "alt": "Tower illuminated at dusk, Midtown skyline (official rendering)",
+    "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img_h2.jpg",
+    "width": 991,
+    "height": 1400
+   },
+   {
     "id": "residence",
     "src": "/new-development/520-fifth-avenue-new-york/images/residence.jpg",
     "caption": "Residence terrace at dusk (official rendering)",
@@ -4916,15 +4961,6 @@
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img4new.jpg",
     "width": 1400,
     "height": 1016
-   },
-   {
-    "id": "residence-living-space-official-hero-ima",
-    "src": "/new-development/520-fifth-avenue-new-york/images/residence-living-space-official-hero-ima.jpg",
-    "caption": "Tower illuminated at dusk, Midtown skyline (official rendering)",
-    "alt": "Tower illuminated at dusk, Midtown skyline (official rendering)",
-    "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img_h2.jpg",
-    "width": 991,
-    "height": 1400
    },
    {
     "id": "amenity-space-official",
@@ -5074,6 +5110,15 @@
  "nolen": {
   "images": [
    {
+    "id": "building-exterior-vertical-hero-render",
+    "src": "/new-development/nolen/images/building-exterior-vertical-hero-render.jpg",
+    "caption": "Building exterior, vertical hero render",
+    "alt": "Building exterior, vertical hero render",
+    "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/11a16e10e22a6acb1f192678da5335fc7e1f8403-2397x4000.png",
+    "width": 838,
+    "height": 1400
+   },
+   {
     "id": "residence-1",
     "src": "/new-development/nolen/images/residence-1.jpg",
     "caption": "Residence rendering",
@@ -5108,15 +5153,6 @@
     "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/33d116b92858f4e2f20d00dbcf00859fe184ed85-3477x2167.png",
     "width": 1400,
     "height": 872
-   },
-   {
-    "id": "building-exterior-vertical-hero-render",
-    "src": "/new-development/nolen/images/building-exterior-vertical-hero-render.jpg",
-    "caption": "Building exterior, vertical hero render",
-    "alt": "Building exterior, vertical hero render",
-    "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/11a16e10e22a6acb1f192678da5335fc7e1f8403-2397x4000.png",
-    "width": 838,
-    "height": 1400
    },
    {
     "id": "lobby-attended-entry-lounge",
@@ -5284,6 +5320,15 @@
  "radiant-condominium": {
   "images": [
    {
+    "id": "building-exterior-facade-rendering-oda",
+    "src": "/new-development/radiant-condominium/images/building-exterior-facade-rendering-oda.jpg",
+    "caption": "Building exterior / facade rendering (ODA)",
+    "alt": "Building exterior / facade rendering (ODA)",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/495ea901-2352-4148-8394-21b62a241a8a/2022_003_QueensPlaza_ODA_CAM_011_EDIT.jpg",
+    "width": 988,
+    "height": 1400
+   },
+   {
     "id": "living-kitchen",
     "src": "/new-development/radiant-condominium/images/living-kitchen.jpg",
     "caption": "Radiant LIC kitchen and living room",
@@ -5308,15 +5353,6 @@
     "alt": "Radiant LIC city view",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/13de8f3b-a53a-4d2b-88ba-5ab4f7331391/Radiant+LIC+Building+City+View+Daytime+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
     "width": 1223,
-    "height": 1400
-   },
-   {
-    "id": "building-exterior-facade-rendering-oda",
-    "src": "/new-development/radiant-condominium/images/building-exterior-facade-rendering-oda.jpg",
-    "caption": "Building exterior / facade rendering (ODA)",
-    "alt": "Building exterior / facade rendering (ODA)",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/495ea901-2352-4148-8394-21b62a241a8a/2022_003_QueensPlaza_ODA_CAM_011_EDIT.jpg",
-    "width": 988,
     "height": 1400
    },
    {
@@ -5503,6 +5539,15 @@
  "loft-21": {
   "images": [
    {
+    "id": "building-exterior-facade-serhant-listing",
+    "src": "/new-development/loft-21/images/building-exterior-facade-serhant-listing.jpg",
+    "caption": "Building exterior / facade (SERHANT listing, main photo)",
+    "alt": "Building exterior / facade (SERHANT listing, main photo)",
+    "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/915b450a-3f3e-43f2-9030-b20a4c4228f4",
+    "width": 1400,
+    "height": 932
+   },
+   {
     "id": "kitchen",
     "src": "/new-development/loft-21/images/kitchen.jpg",
     "caption": "Unit kitchen rendering",
@@ -5582,15 +5627,6 @@
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/cf49c851-a7c6-44e7-b077-00dca27b853f/21stStreet_RENDERING_UNIT+BATHROOM+SECONDARY-WOOD.jpg?format=2500w",
     "width": 1120,
     "height": 1400
-   },
-   {
-    "id": "building-exterior-facade-serhant-listing",
-    "src": "/new-development/loft-21/images/building-exterior-facade-serhant-listing.jpg",
-    "caption": "Building exterior / facade (SERHANT listing, main photo)",
-    "alt": "Building exterior / facade (SERHANT listing, main photo)",
-    "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=85,fit=scale-down,width=1280/https://media-production.lp-cdn.com/media/915b450a-3f3e-43f2-9030-b20a4c4228f4",
-    "width": 1400,
-    "height": 932
    },
    {
     "id": "building-exterior-rendering-serhant-list",
@@ -6032,6 +6068,15 @@
  "parc-beaufort": {
   "images": [
    {
+    "id": "building-exterior-facade-at-140-west-57t",
+    "src": "/new-development/parc-beaufort/images/building-exterior-facade-at-140-west-57t.jpg",
+    "caption": "Building exterior / facade at 140 West 57th Street",
+    "alt": "Building exterior / facade at 140 West 57th Street",
+    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/44a526bdbb718b58376015064258cd066b5f1f37-4096x2392.jpg",
+    "width": 1400,
+    "height": 817
+   },
+   {
     "id": "parc-beaufort-img-1",
     "src": "/new-development/parc-beaufort/images/parc-beaufort-img-1.jpg",
     "caption": "保留原始双层高窗与近 20 英尺层高的 loft 起居空间,沿袭当年艺术家工作室的采光格局。",
@@ -6084,15 +6129,6 @@
     "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/a67dd615df9f0e01c52170f93ab8a63476c25731-4096x2731.jpg?rect=82,519,3932,2212&w=1600&h=900&fit=crop&auto=format",
     "width": 1600,
     "height": 900
-   },
-   {
-    "id": "building-exterior-facade-at-140-west-57t",
-    "src": "/new-development/parc-beaufort/images/building-exterior-facade-at-140-west-57t.jpg",
-    "caption": "Building exterior / facade at 140 West 57th Street",
-    "alt": "Building exterior / facade at 140 West 57th Street",
-    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/44a526bdbb718b58376015064258cd066b5f1f37-4096x2392.jpg",
-    "width": 1400,
-    "height": 817
    },
    {
     "id": "billionaires-row-skyline-context-buildin",
