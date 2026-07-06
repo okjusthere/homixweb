@@ -40,8 +40,8 @@
    {
     "id": "residential-side-entrance-hallway",
     "src": "/new-development/waldorf-astoria-residences-new-york/images/residential-side-entrance-hallway.jpg",
-    "caption": "Residential side entrance hallway",
-    "alt": "Residential side entrance hallway",
+    "caption": "Residential side entrance — concierge desk",
+    "alt": "Residential side entrance — concierge desk",
     "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2023/09/011_Resi_Side_Entrance_Hallway_003_E_7k-1579475156.jpg",
     "width": 1400,
     "height": 786
@@ -179,22 +179,6 @@
     "height": 1700
    },
    {
-    "id": "floor-plan-residences-2005-2205",
-    "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/floor-plan-residences-2005-2205.jpg",
-    "title": "Floor plan — Residences 2005 / 2205",
-    "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/03/2005-2205_For-listings.pdf",
-    "width": 1313,
-    "height": 1700
-   },
-   {
-    "id": "floor-plan-residences-2909-4309-line",
-    "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/floor-plan-residences-2909-4309-line.jpg",
-    "title": "Floor plan — Residences 2909–4309 line",
-    "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/04/2909-4309-For-Listings.pdf",
-    "width": 1313,
-    "height": 1700
-   },
-   {
     "id": "floor-plan-residences-2904-3704-line",
     "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/floor-plan-residences-2904-3704-line.jpg",
     "title": "Floor plan — Residences 2904–3704 line",
@@ -223,14 +207,6 @@
     "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/floor-plan-residences-2021-2621-2707-430.jpg",
     "title": "Floor plan — Residences 2021–2621 / 2707–4307",
     "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2025/03/2021-2621-2707-4307-final.pdf",
-    "width": 1313,
-    "height": 1700
-   },
-   {
-    "id": "floor-plan-residences-2332-2432",
-    "src": "/new-development/waldorf-astoria-residences-new-york/floorplans/floor-plan-residences-2332-2432.jpg",
-    "title": "Floor plan — Residences 2332 / 2432",
-    "sourceUrl": "https://www.waldorftowers.nyc/content/uploads/2026/03/2332-2432_For-listings.pdf",
     "width": 1313,
     "height": 1700
    }
@@ -295,8 +271,8 @@
    {
     "id": "building-exterior-facade-detail",
     "src": "/new-development/the-greenwich-by-rafael-vinoly/images/building-exterior-facade-detail.jpg",
-    "caption": "Building exterior / facade detail",
-    "alt": "Building exterior / facade detail",
+    "caption": "Residence living area with Lower Manhattan skyline views",
+    "alt": "Residence living area with Lower Manhattan skyline views",
     "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2025/07/125_greenwich-113_2_HIGH_RES.avif",
     "width": 1400,
     "height": 946
@@ -375,22 +351,6 @@
    }
   ],
   "floorPlans": [
-   {
-    "id": "residence-79b-interior-layout-rendering",
-    "src": "/new-development/the-greenwich-by-rafael-vinoly/floorplans/residence-79b-interior-layout-rendering.jpg",
-    "title": "Residence 79B — interior layout rendering",
-    "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2023/11/MARCH_125GS_Unit-79B_FINAL-V4.jpg",
-    "width": 1700,
-    "height": 1274
-   },
-   {
-    "id": "residence-81c-interior-layout-rendering",
-    "src": "/new-development/the-greenwich-by-rafael-vinoly/floorplans/residence-81c-interior-layout-rendering.jpg",
-    "title": "Residence 81C — interior layout rendering",
-    "sourceUrl": "https://thegreenwichnyc.com/wp-content/uploads/2023/11/MARCH_125GS_Unit-81C_FINAL-V3.jpg",
-    "width": 1700,
-    "height": 1132
-   },
    {
     "id": "studio-residence-h-floors-61-66-652-sf-e-g-u",
     "src": "/new-development/the-greenwich-by-rafael-vinoly/floorplans/studio-residence-h-floors-61-66-652-sf-e-g-u.jpg",
@@ -485,15 +445,6 @@
     "height": 1400
    },
    {
-    "id": "interior-wide",
-    "src": "/new-development/one-high-line/images/interior-wide.jpg",
-    "caption": "Interior and Hudson River light",
-    "alt": "Interior and Hudson River light",
-    "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/11/04_OneHighLine_Homepage-Single-Image-Landscape-Wide.jpg",
-    "width": 1400,
-    "height": 787
-   },
-   {
     "id": "residence-gallery",
     "src": "/new-development/one-high-line/images/residence-gallery.jpg",
     "caption": "Residence gallery view",
@@ -514,29 +465,11 @@
    {
     "id": "building-exterior-architecture-hero",
     "src": "/new-development/one-high-line/images/building-exterior-architecture-hero.jpg",
-    "caption": "Building exterior / architecture hero",
-    "alt": "Building exterior / architecture hero",
+    "caption": "One High Line on the Hudson River skyline",
+    "alt": "One High Line on the Hudson River skyline",
     "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/12/01_OneHighLine_Project-Intro-Hero.jpg",
     "width": 1400,
     "height": 786
-   },
-   {
-    "id": "architectural-building-editorial-image",
-    "src": "/new-development/one-high-line/images/architectural-building-editorial-image.jpg",
-    "caption": "Architectural / building editorial image",
-    "alt": "Architectural / building editorial image",
-    "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/12/03_OneHighLine_Project-TextImage-Editorial-Large.jpg",
-    "width": 1192,
-    "height": 1400
-   },
-   {
-    "id": "building-detail-high-line-context",
-    "src": "/new-development/one-high-line/images/building-detail-high-line-context.jpg",
-    "caption": "Building detail / High Line context",
-    "alt": "Building detail / High Line context",
-    "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/12/02_OneHighLine_Project-TextImage-Small-Portrait-1.jpg",
-    "width": 1141,
-    "height": 1400
    },
    {
     "id": "east-tower-entrance-lobby",
@@ -568,8 +501,8 @@
    {
     "id": "bridge-lounge-amenity-space",
     "src": "/new-development/one-high-line/images/bridge-lounge-amenity-space.jpg",
-    "caption": "Bridge lounge amenity space",
-    "alt": "Bridge lounge amenity space",
+    "caption": "Motor court beneath the glass bridge lounge",
+    "alt": "Motor court beneath the glass bridge lounge",
     "sourceUrl": "https://www.onehighlineresidences.com/wp-content/uploads/2022/11/02_OneHighLine_Amenities-Single-Image-Landscape.jpg",
     "width": 1400,
     "height": 786
@@ -724,8 +657,8 @@
    {
     "id": "amenity",
     "src": "/new-development/one-manhattan-square/images/amenity.jpg",
-    "caption": "Amenity interior",
-    "alt": "Amenity interior",
+    "caption": "Dining area with harbor view",
+    "alt": "Dining area with harbor view",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/3O2A0024_MEDIUM_RES-1.jpg",
     "width": 1400,
     "height": 933
@@ -733,26 +666,17 @@
    {
     "id": "pool",
     "src": "/new-development/one-manhattan-square/images/pool.jpg",
-    "caption": "Indoor amenity pool",
-    "alt": "Indoor amenity pool",
+    "caption": "Residence bedroom with skyline view",
+    "alt": "Residence bedroom with skyline view",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/3O2A0273_MEDIUM_RES.jpg",
     "width": 1400,
     "height": 933
    },
    {
-    "id": "residence-interior-living-kitchen",
-    "src": "/new-development/one-manhattan-square/images/residence-interior-living-kitchen.jpg",
-    "caption": "Residence interior — living/kitchen",
-    "alt": "Residence interior — living/kitchen",
-    "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/3O2A0024_MEDIUM_RES.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
     "id": "residence-interior-high-res-living-space",
     "src": "/new-development/one-manhattan-square/images/residence-interior-high-res-living-space.jpg",
-    "caption": "Residence interior — high-res living space",
-    "alt": "Residence interior — high-res living space",
+    "caption": "Residence children's bedroom",
+    "alt": "Residence children's bedroom",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2025/08/191203_EJ_OMS-0204_HIGH_RES-2.jpg",
     "width": 1400,
     "height": 932
@@ -760,18 +684,9 @@
    {
     "id": "residence-interior-full-resolution",
     "src": "/new-development/one-manhattan-square/images/residence-interior-full-resolution.jpg",
-    "caption": "Residence interior — full resolution",
-    "alt": "Residence interior — full resolution",
+    "caption": "Residence den / home office",
+    "alt": "Residence den / home office",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/10/unnamed.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "skyline-river-view-from-residence",
-    "src": "/new-development/one-manhattan-square/images/skyline-river-view-from-residence.jpg",
-    "caption": "Skyline / river view from residence",
-    "alt": "Skyline / river view from residence",
-    "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2025/08/3Y1A0411-1024x683.jpg",
     "width": 1400,
     "height": 932
    },
@@ -787,8 +702,8 @@
    {
     "id": "amenity-lounge",
     "src": "/new-development/one-manhattan-square/images/amenity-lounge.jpg",
-    "caption": "Amenity — lounge",
-    "alt": "Amenity — lounge",
+    "caption": "Amenity — golf simulator",
+    "alt": "Amenity — golf simulator",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/200211_EJ_OMS_AMENITIES-0155_MEDIUM_RES.jpg",
     "width": 1400,
     "height": 932
@@ -796,8 +711,8 @@
    {
     "id": "amenity-pool-spa-area",
     "src": "/new-development/one-manhattan-square/images/amenity-pool-spa-area.jpg",
-    "caption": "Amenity — pool / spa area",
-    "alt": "Amenity — pool / spa area",
+    "caption": "Amenity — bowling alley",
+    "alt": "Amenity — bowling alley",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/200211_EJ_OMS_AMENITIES-0110_MEDIUM_RES.jpg",
     "width": 1400,
     "height": 932
@@ -814,8 +729,8 @@
    {
     "id": "amenity-lounge-common-area",
     "src": "/new-development/one-manhattan-square/images/amenity-lounge-common-area.jpg",
-    "caption": "Amenity — lounge / common area",
-    "alt": "Amenity — lounge / common area",
+    "caption": "Amenity — spa plunge pool",
+    "alt": "Amenity — spa plunge pool",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/200211_EJ_OMS_AMENITIES-0047_MEDIUM-RES.jpg",
     "width": 1400,
     "height": 932
@@ -823,8 +738,8 @@
    {
     "id": "amenity-interior-recreation-space",
     "src": "/new-development/one-manhattan-square/images/amenity-interior-recreation-space.jpg",
-    "caption": "Amenity — interior recreation space",
-    "alt": "Amenity — interior recreation space",
+    "caption": "Amenity — café / coffee bar",
+    "alt": "Amenity — café / coffee bar",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/200213_EJ_OMS_amenities-0380_MEDIUM_RES.jpg",
     "width": 1400,
     "height": 932
@@ -832,8 +747,8 @@
    {
     "id": "amenity-high-res-common-space",
     "src": "/new-development/one-manhattan-square/images/amenity-high-res-common-space.jpg",
-    "caption": "Amenity — high-res common space",
-    "alt": "Amenity — high-res common space",
+    "caption": "Amenity — cigar lounge",
+    "alt": "Amenity — cigar lounge",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2025/08/200211_EJ_OMS_AMENITIES-0334_HIGH-RES.jpg",
     "width": 1400,
     "height": 932
@@ -841,8 +756,8 @@
    {
     "id": "amenity-lounge-terrace",
     "src": "/new-development/one-manhattan-square/images/amenity-lounge-terrace.jpg",
-    "caption": "Amenity — lounge / terrace",
-    "alt": "Amenity — lounge / terrace",
+    "caption": "Amenity — wine tasting room",
+    "alt": "Amenity — wine tasting room",
     "sourceUrl": "https://onemanhattansquare.com/wp-content/uploads/2020/06/200211_EJ_OMS_amenities-0323_MEDIUM_RES.jpg",
     "width": 1400,
     "height": 932
@@ -934,13 +849,13 @@
  "the-west-residence-club": {
   "images": [
    {
-    "id": "living-room",
-    "src": "/new-development/the-west-residence-club/images/living-room.jpg",
-    "caption": "Residence 514 living room",
-    "alt": "Residence 514 living room",
-    "sourceUrl": "https://cms.547west47.com/uploads/images/_1800x1137_crop_center-center_100_line/547W47_514-Living-Room-with-Kendall_credit-Donna-Dotan_crop.jpg",
+    "id": "building-exterior-facade-detail-field-co",
+    "src": "/new-development/the-west-residence-club/images/building-exterior-facade-detail-field-co.jpg",
+    "caption": "Building exterior / street corner",
+    "alt": "Building exterior / street corner",
+    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/065b6f2c-c295-4b1f-b133-b2e91a437532/547+W+47-The+West-20220521-DSC00710.jpg?format=2500w",
     "width": 1400,
-    "height": 883
+    "height": 1120
    },
    {
     "id": "studio-home-office",
@@ -954,26 +869,17 @@
    {
     "id": "residence-club",
     "src": "/new-development/the-west-residence-club/images/residence-club.jpg",
-    "caption": "Residence Club lounge",
-    "alt": "Residence Club lounge",
+    "caption": "Residence Club yoga studio",
+    "alt": "Residence Club yoga studio",
     "sourceUrl": "https://cms.547west47.com/uploads/images/Residences-Club/_1800x1200_crop_center-center_100_line/22030_press_547w47_5-18-22_0026.jpg",
     "width": 1400,
     "height": 932
    },
    {
-    "id": "building-exterior-facade-detail-field-co",
-    "src": "/new-development/the-west-residence-club/images/building-exterior-facade-detail-field-co.jpg",
-    "caption": "Building exterior / facade detail (FIELD CONDITION tour)",
-    "alt": "Building exterior / facade detail (FIELD CONDITION tour)",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/065b6f2c-c295-4b1f-b133-b2e91a437532/547+W+47-The+West-20220521-DSC00710.jpg?format=2500w",
-    "width": 1400,
-    "height": 1120
-   },
-   {
     "id": "lobby-interior-common-space",
     "src": "/new-development/the-west-residence-club/images/lobby-interior-common-space.jpg",
-    "caption": "Lobby / interior common space",
-    "alt": "Lobby / interior common space",
+    "caption": "Building exterior / avenue corner view",
+    "alt": "Building exterior / avenue corner view",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/d839ba44-0b82-4d93-9c23-c4281730d317/547+West+47+-+The+West-20220511-DSC08429.jpg?format=2500w",
     "width": 1400,
     "height": 1120
@@ -981,8 +887,8 @@
    {
     "id": "lobby-lounge-interior-common-space",
     "src": "/new-development/the-west-residence-club/images/lobby-lounge-interior-common-space.jpg",
-    "caption": "Lobby lounge / interior common space",
-    "alt": "Lobby lounge / interior common space",
+    "caption": "Streetscape view toward the building",
+    "alt": "Streetscape view toward the building",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/2d336a3c-bc15-49e9-a05c-83c82ec73829/547+West+47+-+The+West-20220511-DSC08426.jpg?format=2500w",
     "width": 1400,
     "height": 1120
@@ -990,26 +896,17 @@
    {
     "id": "building-exterior-streetscape",
     "src": "/new-development/the-west-residence-club/images/building-exterior-streetscape.jpg",
-    "caption": "Building exterior / streetscape",
-    "alt": "Building exterior / streetscape",
+    "caption": "Facade detail of glass balconies",
+    "alt": "Facade detail of glass balconies",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/64c8905e-c4c3-42d2-8d02-be0b07281c32/547+W+47-The+West-20220319-DSC08273.jpg?format=2500w",
-    "width": 932,
-    "height": 1400
-   },
-   {
-    "id": "facade-entrance-courtyard",
-    "src": "/new-development/the-west-residence-club/images/facade-entrance-courtyard.jpg",
-    "caption": "Facade / entrance courtyard",
-    "alt": "Facade / entrance courtyard",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/560930f0-2705-415e-aefc-31d1ee276c14/547+W+47-The+West-20220319-DSC08294.jpg?format=2500w",
     "width": 932,
     "height": 1400
    },
    {
     "id": "amenity-common-space-interior",
     "src": "/new-development/the-west-residence-club/images/amenity-common-space-interior.jpg",
-    "caption": "Amenity / common-space interior",
-    "alt": "Amenity / common-space interior",
+    "caption": "Entrance courtyard behind perforated metal screens",
+    "alt": "Entrance courtyard behind perforated metal screens",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/b239d907-2143-42ad-9286-482ec13e21df/547+W+47-The+West-20220511-DSC08972.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1017,8 +914,8 @@
    {
     "id": "glasshouse-library-lounge-interior",
     "src": "/new-development/the-west-residence-club/images/glasshouse-library-lounge-interior.jpg",
-    "caption": "Glasshouse library / lounge interior",
-    "alt": "Glasshouse library / lounge interior",
+    "caption": "Entrance courtyard garden and building entry",
+    "alt": "Entrance courtyard garden and building entry",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/7638ade5-e04a-44af-aa94-4d5b55563c34/547+W+47-The+West-20220511-DSC08959.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1026,8 +923,8 @@
    {
     "id": "amenity-lounge-interior",
     "src": "/new-development/the-west-residence-club/images/amenity-lounge-interior.jpg",
-    "caption": "Amenity lounge interior",
-    "alt": "Amenity lounge interior",
+    "caption": "Lobby and reception desk",
+    "alt": "Lobby and reception desk",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/4d071e09-af50-4c19-9eab-740b470f6d87/547+W+47-The+West-20220511-DSC08914.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1035,8 +932,8 @@
    {
     "id": "communal-dining-kitchen-amenity",
     "src": "/new-development/the-west-residence-club/images/communal-dining-kitchen-amenity.jpg",
-    "caption": "Communal dining / kitchen amenity",
-    "alt": "Communal dining / kitchen amenity",
+    "caption": "Glasshouse library with communal table",
+    "alt": "Glasshouse library with communal table",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/832351dc-9b52-4224-879f-0e59987fc78c/547+W+47-The+West-20220511-DSC08908.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1044,8 +941,8 @@
    {
     "id": "residence-living-room",
     "src": "/new-development/the-west-residence-club/images/residence-living-room.jpg",
-    "caption": "Residence living room",
-    "alt": "Residence living room",
+    "caption": "Glasshouse library lounge seating",
+    "alt": "Glasshouse library lounge seating",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/26079c1d-d866-4132-a4c5-a39d3f2e779a/547+W+47-The+West-20220511-DSC08894.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1053,8 +950,8 @@
    {
     "id": "residence-interior-living-space",
     "src": "/new-development/the-west-residence-club/images/residence-interior-living-space.jpg",
-    "caption": "Residence interior / living space",
-    "alt": "Residence interior / living space",
+    "caption": "Fitness center",
+    "alt": "Fitness center",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/62088e9f-6f1e-4840-ae70-f8340308eb6b/547+W+47-The+West-20220511-DSC08884.jpg?format=2500w",
     "width": 1400,
     "height": 932
@@ -1062,8 +959,8 @@
    {
     "id": "residence-kitchen",
     "src": "/new-development/the-west-residence-club/images/residence-kitchen.jpg",
-    "caption": "Residence kitchen",
-    "alt": "Residence kitchen",
+    "caption": "Rooftop terrace and games lawn",
+    "alt": "Rooftop terrace and games lawn",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/5164b16ae4b0cac6e79b081f/05158b68-5bb5-46e4-bc6b-5cd8e7e32a52/547+W+47-The+West-20220511-DSC08831.jpg?format=2500w",
     "width": 1400,
     "height": 999
@@ -1192,8 +1089,8 @@
    {
     "id": "building-exterior-marquee-signage-on-wes",
     "src": "/new-development/720-west-end-avenue-new-york/images/building-exterior-marquee-signage-on-wes.jpg",
-    "caption": "Building exterior / marquee signage on West End Avenue",
-    "alt": "Building exterior / marquee signage on West End Avenue",
+    "caption": "West End Avenue and West 95th Street signs at the building's corner",
+    "alt": "West End Avenue and West 95th Street signs at the building's corner",
     "sourceUrl": "https://720westend.com/wp-content/uploads/UWS_WEA_Sign_AM_010.jpg",
     "width": 1400,
     "height": 932
@@ -1429,8 +1326,8 @@
    {
     "id": "exterior-facade-daytime-rendering",
     "src": "/new-development/sutton-tower/images/exterior-facade-daytime-rendering.jpg",
-    "caption": "Exterior / facade (daytime rendering)",
-    "alt": "Exterior / facade (daytime rendering)",
+    "caption": "Exterior / facade in daylight, from across the East River",
+    "alt": "Exterior / facade in daylight, from across the East River",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2024/05/30102516/Sutton-Tower-Exterior.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 932
@@ -1666,8 +1563,8 @@
    {
     "id": "double-height-lobby-with-bench-seating-a",
     "src": "/new-development/the-perrie/images/double-height-lobby-with-bench-seating-a.jpg",
-    "caption": "Double-height lobby with bench seating and garden view",
-    "alt": "Double-height lobby with bench seating and garden view",
+    "caption": "Lobby lounge with bench seating and garden view",
+    "alt": "Lobby lounge with bench seating and garden view",
     "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/b02b29bfa51ac5db76604f887801afe43253c7c5-2500x1701.jpg?fit=max&auto=format",
     "width": 1400,
     "height": 952
@@ -1700,15 +1597,6 @@
     "height": 842
    },
    {
-    "id": "coworking-suite-desk-with-sunlight-ameni",
-    "src": "/new-development/the-perrie/images/coworking-suite-desk-with-sunlight-ameni.jpg",
-    "caption": "Coworking suite desk with sunlight (amenity)",
-    "alt": "Coworking suite desk with sunlight (amenity)",
-    "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/4a89b461cca84dd153d9a813e2998d65521c05a9-2500x1674.jpg?fit=max&auto=format",
-    "width": 1400,
-    "height": 937
-   },
-   {
     "id": "residence-living-area-with-city-views-an",
     "src": "/new-development/the-perrie/images/residence-living-area-with-city-views-an.jpg",
     "caption": "Residence living area with city views and terrace",
@@ -1736,19 +1624,10 @@
     "height": 953
    },
    {
-    "id": "resident-silhouette-looking-out-over-the",
-    "src": "/new-development/the-perrie/images/resident-silhouette-looking-out-over-the.jpg",
-    "caption": "Resident silhouette looking out over the Midtown skyline",
-    "alt": "Resident silhouette looking out over the Midtown skyline",
-    "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/053b2af5c08c80cc34d2fad09c2a2b18170b5c57-4096x2304.jpg?fit=max&auto=format",
-    "width": 1400,
-    "height": 786
-   },
-   {
     "id": "open-living-and-dining-room-with-double-",
     "src": "/new-development/the-perrie/images/open-living-and-dining-room-with-double-.jpg",
-    "caption": "Open living and dining room with double doors to private terrace",
-    "alt": "Open living and dining room with double doors to private terrace",
+    "caption": "Resident lounge with doors to the courtyard garden",
+    "alt": "Resident lounge with doors to the courtyard garden",
     "sourceUrl": "https://cdn.sanity.io/images/ocxfzm61/full-website/85c10e603cf853f7a234b638aaa1b4fb020dced4-3000x1317.jpg?fit=max&auto=format",
     "width": 1400,
     "height": 614
@@ -1876,8 +1755,8 @@
    {
     "id": "view-1",
     "src": "/new-development/malabar-residences/images/view-1.jpg",
-    "caption": "Midtown view study",
-    "alt": "Midtown view study",
+    "caption": "Building exterior — upper floors at dusk with Midtown skyline",
+    "alt": "Building exterior — upper floors at dusk with Midtown skyline",
     "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-04-3-1.png",
     "width": 1400,
     "height": 828
@@ -1885,20 +1764,11 @@
    {
     "id": "view-2",
     "src": "/new-development/malabar-residences/images/view-2.jpg",
-    "caption": "Upper-floor view study",
-    "alt": "Upper-floor view study",
+    "caption": "Rooftop terrace with Midtown skyline views",
+    "alt": "Rooftop terrace with Midtown skyline views",
     "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-05-1-1.png",
     "width": 1400,
     "height": 884
-   },
-   {
-    "id": "view-3",
-    "src": "/new-development/malabar-residences/images/view-3.jpg",
-    "caption": "Skyline view study",
-    "alt": "Skyline view study",
-    "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2026/02/MALABAR_DESKTOP_VIEW_021526-06-1-1.png",
-    "width": 1261,
-    "height": 1400
    },
    {
     "id": "building-exterior-facade-corner-renderin",
@@ -1957,8 +1827,8 @@
    {
     "id": "amenity-wellness-level-lounge",
     "src": "/new-development/malabar-residences/images/amenity-wellness-level-lounge.jpg",
-    "caption": "Amenity — wellness level lounge",
-    "alt": "Amenity — wellness level lounge",
+    "caption": "Amenity — fitness studio overlooking the pool",
+    "alt": "Amenity — fitness studio overlooking the pool",
     "sourceUrl": "https://malabarnyc.com/wp-content/uploads/2025/10/5MALABAR_BROCHURE_081025_B-1.png",
     "width": 1400,
     "height": 895
@@ -2353,29 +2223,11 @@
    {
     "id": "tower-exterior-at-dusk",
     "src": "/new-development/111-murray-street/images/tower-exterior-at-dusk.jpg",
-    "caption": "Tower exterior at dusk",
-    "alt": "Tower exterior at dusk",
+    "caption": "Penthouse great room at dusk",
+    "alt": "Penthouse great room at dusk",
     "sourceUrl": "https://111murray.com/wp-content/uploads/2022/02/111-murray-dusk-1.jpg",
     "width": 1400,
     "height": 442
-   },
-   {
-    "id": "tower-exterior-at-dawn",
-    "src": "/new-development/111-murray-street/images/tower-exterior-at-dawn.jpg",
-    "caption": "Tower exterior at dawn",
-    "alt": "Tower exterior at dawn",
-    "sourceUrl": "https://111murray.com/wp-content/uploads/2022/02/111-murray-dawn.jpg",
-    "width": 1400,
-    "height": 442
-   },
-   {
-    "id": "building-in-the-tribeca-skyline",
-    "src": "/new-development/111-murray-street/images/building-in-the-tribeca-skyline.jpg",
-    "caption": "Building in the Tribeca skyline",
-    "alt": "Building in the Tribeca skyline",
-    "sourceUrl": "https://111murray.com/wp-content/uploads/2015/09/111-MURRAY-TRIBECA_1.jpg",
-    "width": 932,
-    "height": 1400
    },
    {
     "id": "residential-lobby",
@@ -2394,15 +2246,6 @@
     "sourceUrl": "https://111murray.com/wp-content/uploads/2019/10/TheLobby.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "hammam-spa-lobby",
-    "src": "/new-development/111-murray-street/images/hammam-spa-lobby.jpg",
-    "caption": "Hammam / spa lobby",
-    "alt": "Hammam / spa lobby",
-    "sourceUrl": "https://111murray.com/wp-content/uploads/2014/12/RP-111-MURRAY-18-HAMMAM-LOBBY_FINAL_HR_rg.jpg",
-    "width": 1400,
-    "height": 1017
    },
    {
     "id": "amenity-swimming-pool",
@@ -2452,8 +2295,8 @@
    {
     "id": "amenity-space",
     "src": "/new-development/111-murray-street/images/amenity-space.jpg",
-    "caption": "Amenity space",
-    "alt": "Amenity space",
+    "caption": "Hammam / spa lobby",
+    "alt": "Hammam / spa lobby",
     "sourceUrl": "https://111murray.com/wp-content/uploads/2019/10/190821_111_murray_amenities_0078-1.jpg",
     "width": 1400,
     "height": 932
@@ -2588,69 +2431,6 @@
     "height": 1400
    },
    {
-    "id": "interior-lifestyle-photograph-service-pa",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/interior-lifestyle-photograph-service-pa.jpg",
-    "caption": "Interior / lifestyle photograph (service page hero)",
-    "alt": "Interior / lifestyle photograph (service page hero)",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/62ed8af0ceefbf501e055dfb_685_5th_Ave_SHOT_3_1DL1_5491_112880_RT5_V0_v1_QC_ISO39L300.webp",
-    "width": 1074,
-    "height": 1400
-   },
-   {
-    "id": "gallery-residence-interior",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-residence-interior.jpg",
-    "caption": "Gallery: residence interior",
-    "alt": "Gallery: residence interior",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec3749a0de131270a055d_1.jpg",
-    "width": 1400,
-    "height": 939
-   },
-   {
-    "id": "gallery-living-room-residence-interior",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-living-room-residence-interior.jpg",
-    "caption": "Gallery: living room / residence interior",
-    "alt": "Gallery: living room / residence interior",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec3744f830bebe10a8f7a_3P.jpg",
-    "width": 1019,
-    "height": 1400
-   },
-   {
-    "id": "gallery-residence-interior-2",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-residence-interior-2.jpg",
-    "caption": "Gallery: residence interior",
-    "alt": "Gallery: residence interior",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec3772d2808d708dffcf3_4P.jpg",
-    "width": 1003,
-    "height": 1400
-   },
-   {
-    "id": "gallery-residence-interior-with-city-vie",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-residence-interior-with-city-vie.jpg",
-    "caption": "Gallery: residence interior with city view",
-    "alt": "Gallery: residence interior with city view",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec3764f4f202db0f8c97b_5.jpg",
-    "width": 1400,
-    "height": 841
-   },
-   {
-    "id": "gallery-residence-interior-3",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-residence-interior-3.jpg",
-    "caption": "Gallery: residence interior",
-    "alt": "Gallery: residence interior",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec37414d2848698cf7ce2_6P.jpg",
-    "width": 1400,
-    "height": 901
-   },
-   {
-    "id": "gallery-residence-interior-4",
-    "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-residence-interior-4.jpg",
-    "caption": "Gallery: residence interior",
-    "alt": "Gallery: residence interior",
-    "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/618ec374839fb339e8ebc71b_7P.jpg",
-    "width": 932,
-    "height": 1400
-   },
-   {
     "id": "gallery-amenity-interior-space",
     "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/gallery-amenity-interior-space.jpg",
     "caption": "Gallery: amenity / interior space",
@@ -2671,8 +2451,8 @@
    {
     "id": "residences-living-room-interior",
     "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/residences-living-room-interior.jpg",
-    "caption": "Residences: living room / interior",
-    "alt": "Residences: living room / interior",
+    "caption": "Residences: loggia with city views",
+    "alt": "Residences: loggia with city views",
     "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/6196d88831fc801c4baa80bf_3.jpg",
     "width": 1120,
     "height": 1400
@@ -2689,8 +2469,8 @@
    {
     "id": "residences-interior",
     "src": "/new-development/mandarin-oriental-residences-fifth-avenue/images/residences-interior.jpg",
-    "caption": "Residences: interior",
-    "alt": "Residences: interior",
+    "caption": "Residences: private terrace",
+    "alt": "Residences: private terrace",
     "sourceUrl": "https://cdn.prod.website-files.com/618e90e28fb67e4fdc8110d6/6196d88c915d10574ab00997_5.jpg",
     "width": 1400,
     "height": 786
@@ -2854,8 +2634,8 @@
    {
     "id": "vita-feature-photo-1-exterior-interior-c",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-1-exterior-interior-c.jpg",
-    "caption": "VITA feature photo 1 — exterior/interior (CityRealty feature)",
-    "alt": "VITA feature photo 1 — exterior/interior (CityRealty feature)",
+    "caption": "VITA — exterior massing rendering of both towers (CityRealty feature)",
+    "alt": "VITA — exterior massing rendering of both towers (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1500x/webp/a/a6/a6144e854018dea77c42f5a6b60ac14cadbadf66",
     "width": 1400,
     "height": 787
@@ -2863,8 +2643,8 @@
    {
     "id": "vita-feature-photo-2-interior-cityrealty",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-2-interior-cityrealty.jpg",
-    "caption": "VITA feature photo 2 — interior (CityRealty feature)",
-    "alt": "VITA feature photo 2 — interior (CityRealty feature)",
+    "caption": "VITA — under construction, street view (CityRealty feature)",
+    "alt": "VITA — under construction, street view (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1500x/webp/0/09/09f2eb6bec7a06e9d1f52bbfd9638f3a71691641",
     "width": 1400,
     "height": 1128
@@ -2872,8 +2652,8 @@
    {
     "id": "vita-feature-photo-3-interior-living-cit",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-3-interior-living-cit.jpg",
-    "caption": "VITA feature photo 3 — interior / living (CityRealty feature)",
-    "alt": "VITA feature photo 3 — interior / living (CityRealty feature)",
+    "caption": "VITA — construction progress, superstructure and facade installation (CityRealty feature)",
+    "alt": "VITA — construction progress, superstructure and facade installation (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/0/00/00539a5d00c3833f21e140d1e4d8511b938535f8",
     "width": 1400,
     "height": 881
@@ -2881,8 +2661,8 @@
    {
     "id": "vita-feature-photo-4-interior-cityrealty",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-4-interior-cityrealty.jpg",
-    "caption": "VITA feature photo 4 — interior (CityRealty feature)",
-    "alt": "VITA feature photo 4 — interior (CityRealty feature)",
+    "caption": "VITA — construction progress, corner view with VITA signage (CityRealty feature)",
+    "alt": "VITA — construction progress, corner view with VITA signage (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/3/3f/3ff65e8c90b20cee22cbf06206d70cf6f2c9967b",
     "width": 1400,
     "height": 1050
@@ -2890,47 +2670,20 @@
    {
     "id": "vita-feature-photo-5-interior-cityrealty",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-5-interior-cityrealty.jpg",
-    "caption": "VITA feature photo 5 — interior (CityRealty feature)",
-    "alt": "VITA feature photo 5 — interior (CityRealty feature)",
+    "caption": "VITA — under construction, both towers with VITA banners at the base (CityRealty feature)",
+    "alt": "VITA — under construction, both towers with VITA banners at the base (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/c/c2/c2aec33feed080c4ff8617598772a2a3487d2254",
     "width": 1400,
     "height": 1050
    },
    {
-    "id": "vita-feature-photo-6-interior-amenity-ci",
-    "src": "/new-development/vita-north-tower/images/vita-feature-photo-6-interior-amenity-ci.jpg",
-    "caption": "VITA feature photo 6 — interior / amenity (CityRealty feature)",
-    "alt": "VITA feature photo 6 — interior / amenity (CityRealty feature)",
-    "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/7/79/7977c6d1fc3bc2762583ab036e5fa300991eea21",
-    "width": 1400,
-    "height": 787
-   },
-   {
     "id": "vita-feature-photo-7-interior-cityrealty",
     "src": "/new-development/vita-north-tower/images/vita-feature-photo-7-interior-cityrealty.jpg",
-    "caption": "VITA feature photo 7 — interior (CityRealty feature)",
-    "alt": "VITA feature photo 7 — interior (CityRealty feature)",
+    "caption": "VITA — under construction, seen from the Dyer Avenue cut (CityRealty feature)",
+    "alt": "VITA — under construction, seen from the Dyer Avenue cut (CityRealty feature)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/4/4d/4da8b44f6aad9d46b6ffc7267cb6dc61cc86c999",
     "width": 1400,
     "height": 1249
-   },
-   {
-    "id": "vita-feature-photo-8-interior-bath-cityr",
-    "src": "/new-development/vita-north-tower/images/vita-feature-photo-8-interior-bath-cityr.jpg",
-    "caption": "VITA feature photo 8 — interior / bath (CityRealty feature)",
-    "alt": "VITA feature photo 8 — interior / bath (CityRealty feature)",
-    "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/c/cc/ccfc9eedb3d42db4eeec0e7a1dc41fa137c4a664",
-    "width": 1400,
-    "height": 667
-   },
-   {
-    "id": "vita-feature-photo-9-interior-amenity-ci",
-    "src": "/new-development/vita-north-tower/images/vita-feature-photo-9-interior-amenity-ci.jpg",
-    "caption": "VITA feature photo 9 — interior / amenity (CityRealty feature)",
-    "alt": "VITA feature photo 9 — interior / amenity (CityRealty feature)",
-    "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/3/3d/3dac926492c05cb306c317f0f745aee351deec1e",
-    "width": 1400,
-    "height": 748
    }
   ],
   "floorPlans": [
@@ -3044,15 +2797,6 @@
     "height": 735
    },
    {
-    "id": "building-exterior-facade-hero-developer-",
-    "src": "/new-development/vita-south-tower/images/building-exterior-facade-hero-developer-.jpg",
-    "caption": "Building exterior / facade hero (developer photo, full-res)",
-    "alt": "Building exterior / facade hero (developer photo, full-res)",
-    "sourceUrl": "https://www.zdjasper.com/wp-content/uploads/2025/04/Vita_01-Building-Hero_250319-ps.jpg",
-    "width": 1114,
-    "height": 1400
-   },
-   {
     "id": "double-height-lobby-attended-reception",
     "src": "/new-development/vita-south-tower/images/double-height-lobby-attended-reception.jpg",
     "caption": "Double-height lobby / attended reception",
@@ -3125,24 +2869,6 @@
     "height": 1400
    },
    {
-    "id": "neighborhood-lifestyle-marketing-image-s",
-    "src": "/new-development/vita-south-tower/images/neighborhood-lifestyle-marketing-image-s.jpg",
-    "caption": "Neighborhood / lifestyle marketing image (SERHANT)",
-    "alt": "Neighborhood / lifestyle marketing image (SERHANT)",
-    "sourceUrl": "https://media-production.lp-cdn.com/media/yovj617hehcc5hlm7jnw",
-    "width": 1400,
-    "height": 875
-   },
-   {
-    "id": "official-site-twitter-card-image-buildin",
-    "src": "/new-development/vita-south-tower/images/official-site-twitter-card-image-buildin.jpg",
-    "caption": "Official site Twitter card image — building/brand",
-    "alt": "Official site Twitter card image — building/brand",
-    "sourceUrl": "https://vitanewyork.com/img/social-image-twitter.jpg",
-    "width": 1400,
-    "height": 1400
-   },
-   {
     "id": "vita-editorial-rendering-cityrealty-feat",
     "src": "/new-development/vita-south-tower/images/vita-editorial-rendering-cityrealty-feat.jpg",
     "caption": "VITA editorial rendering (CityRealty feature, 1004px)",
@@ -3154,8 +2880,8 @@
    {
     "id": "vita-exterior-interior-rendering-cityrea",
     "src": "/new-development/vita-south-tower/images/vita-exterior-interior-rendering-cityrea.jpg",
-    "caption": "VITA exterior/interior rendering (CityRealty feature, 1004px)",
-    "alt": "VITA exterior/interior rendering (CityRealty feature, 1004px)",
+    "caption": "VITA under construction — street view from Second Avenue (construction progress photo)",
+    "alt": "VITA under construction — street view from Second Avenue (construction progress photo)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/0/09/09f2eb6bec7a06e9d1f52bbfd9638f3a71691641",
     "width": 1400,
     "height": 1129
@@ -3163,8 +2889,8 @@
    {
     "id": "vita-rendering-cityrealty-feature-1004px",
     "src": "/new-development/vita-south-tower/images/vita-rendering-cityrealty-feature-1004px.jpg",
-    "caption": "VITA rendering (CityRealty feature, 1004px)",
-    "alt": "VITA rendering (CityRealty feature, 1004px)",
+    "caption": "VITA under construction with branded sidewalk shed (construction progress photo)",
+    "alt": "VITA under construction with branded sidewalk shed (construction progress photo)",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1004x/webp/3/3f/3ff65e8c90b20cee22cbf06206d70cf6f2c9967b",
     "width": 1400,
     "height": 1050
@@ -3285,8 +3011,8 @@
    {
     "id": "building-exterior-cantilevered-facade-hi",
     "src": "/new-development/eastlight-condominium/images/building-exterior-cantilevered-facade-hi.jpg",
-    "caption": "Building exterior / cantilevered facade (high-res render)",
-    "alt": "Building exterior / cantilevered facade (high-res render)",
+    "caption": "Building exterior with cantilevered facade",
+    "alt": "Building exterior with cantilevered facade",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/230616_EM_501_Third_Ave_03_HIGH-RES.jpg",
     "width": 792,
     "height": 1400
@@ -3294,8 +3020,8 @@
    {
     "id": "building-exterior-facade-against-skyline",
     "src": "/new-development/eastlight-condominium/images/building-exterior-facade-against-skyline.jpg",
-    "caption": "Building exterior facade against skyline (high-res render)",
-    "alt": "Building exterior facade against skyline (high-res render)",
+    "caption": "Building exterior against the skyline",
+    "alt": "Building exterior against the skyline",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/230616_EM_501_Third_Ave_04_HIGH-RES.jpg",
     "width": 939,
     "height": 1400
@@ -3303,8 +3029,8 @@
    {
     "id": "tower-exterior-street-view-at-dusk",
     "src": "/new-development/eastlight-condominium/images/tower-exterior-street-view-at-dusk.jpg",
-    "caption": "Tower exterior / street view at dusk",
-    "alt": "Tower exterior / street view at dusk",
+    "caption": "Tower exterior / elevated daytime view",
+    "alt": "Tower exterior / elevated daytime view",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2023/08/230616_EM_501_Third_Ave_01_MEDIUM-RES.jpg",
     "width": 893,
     "height": 1400
@@ -3312,8 +3038,8 @@
    {
     "id": "lobby-lounge-seating",
     "src": "/new-development/eastlight-condominium/images/lobby-lounge-seating.jpg",
-    "caption": "Lobby lounge seating",
-    "alt": "Lobby lounge seating",
+    "caption": "Lobby reception desk (render)",
+    "alt": "Lobby reception desk (render)",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2021/04/EastLight_Lobby_final_no-apple-logo.jpg",
     "width": 1400,
     "height": 932
@@ -3321,8 +3047,8 @@
    {
     "id": "amenity-space-lounge-full-res",
     "src": "/new-development/eastlight-condominium/images/amenity-space-lounge-full-res.jpg",
-    "caption": "Amenity space / lounge (full-res)",
-    "alt": "Amenity space / lounge (full-res)",
+    "caption": "Amenity lounge and rooftop terrace at dusk",
+    "alt": "Amenity lounge and rooftop terrace at dusk",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/DSC00772.jpg",
     "width": 1400,
     "height": 932
@@ -3330,8 +3056,8 @@
    {
     "id": "amenity-suite-interior",
     "src": "/new-development/eastlight-condominium/images/amenity-suite-interior.jpg",
-    "caption": "Amenity suite interior",
-    "alt": "Amenity suite interior",
+    "caption": "Rooftop terrace with dining area and grill",
+    "alt": "Rooftop terrace with dining area and grill",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/DSC00764.jpg",
     "width": 1400,
     "height": 932
@@ -3339,8 +3065,8 @@
    {
     "id": "amenity-fitness-or-lounge-area",
     "src": "/new-development/eastlight-condominium/images/amenity-fitness-or-lounge-area.jpg",
-    "caption": "Amenity / fitness or lounge area",
-    "alt": "Amenity / fitness or lounge area",
+    "caption": "Fitness center",
+    "alt": "Fitness center",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/DSC00721.jpg",
     "width": 1400,
     "height": 932
@@ -3357,8 +3083,8 @@
    {
     "id": "amenity-lounge-dining-space",
     "src": "/new-development/eastlight-condominium/images/amenity-lounge-dining-space.jpg",
-    "caption": "Amenity lounge / dining space",
-    "alt": "Amenity lounge / dining space",
+    "caption": "Amenity lounge with billiards table",
+    "alt": "Amenity lounge with billiards table",
     "sourceUrl": "https://eastlight.com/wp-content/uploads/2025/12/GSJ_6431.jpg",
     "width": 1400,
     "height": 984
@@ -3585,8 +3311,8 @@
    {
     "id": "interior-living-space-with-skyline-views",
     "src": "/new-development/565-broome-soho/images/interior-living-space-with-skyline-views.jpg",
-    "caption": "Interior living space with skyline views",
-    "alt": "Interior living space with skyline views",
+    "caption": "Lobby reception desk and library wall",
+    "alt": "Lobby reception desk and library wall",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2019/11/25090912/565-Broome-Street-2.jpg",
     "width": 1400,
     "height": 1062
@@ -3594,26 +3320,17 @@
    {
     "id": "living-room-floor-to-ceiling-glass",
     "src": "/new-development/565-broome-soho/images/living-room-floor-to-ceiling-glass.jpg",
-    "caption": "Living room / floor-to-ceiling glass",
-    "alt": "Living room / floor-to-ceiling glass",
+    "caption": "Lobby lounge seating",
+    "alt": "Lobby lounge seating",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2019/11/25090918/565-Broome-Street-3.jpg",
     "width": 1400,
     "height": 932
    },
    {
-    "id": "interior-view",
-    "src": "/new-development/565-broome-soho/images/interior-view.jpg",
-    "caption": "Interior view",
-    "alt": "Interior view",
-    "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2019/11/25090924/565-Broome-Street-4.jpg",
-    "width": 1062,
-    "height": 1400
-   },
-   {
     "id": "kitchen-interior",
     "src": "/new-development/565-broome-soho/images/kitchen-interior.jpg",
-    "caption": "Kitchen / interior",
-    "alt": "Kitchen / interior",
+    "caption": "Lobby with view to the entry courtyard",
+    "alt": "Lobby with view to the entry courtyard",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2019/11/25090931/565-Broome-Street-5.jpg",
     "width": 1400,
     "height": 933
@@ -3621,8 +3338,8 @@
    {
     "id": "interior-bedroom",
     "src": "/new-development/565-broome-soho/images/interior-bedroom.jpg",
-    "caption": "Interior / bedroom",
-    "alt": "Interior / bedroom",
+    "caption": "Double-height lobby atrium with trees",
+    "alt": "Double-height lobby atrium with trees",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2019/11/25090936/565-Broome-Street-6.jpg",
     "width": 787,
     "height": 1400
@@ -3713,33 +3430,6 @@
     "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240731145935/222_kitchen.jpg",
     "width": 1400,
     "height": 1116
-   },
-   {
-    "id": "terrace",
-    "src": "/new-development/222-les-tower-lofts/images/terrace.jpg",
-    "caption": "Tower terrace",
-    "alt": "Tower terrace",
-    "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240816174547/222-Tower-terrace-1-640x434.jpg",
-    "width": 1400,
-    "height": 949
-   },
-   {
-    "id": "lobby",
-    "src": "/new-development/222-les-tower-lofts/images/lobby.jpg",
-    "caption": "Lobby",
-    "alt": "Lobby",
-    "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240905043554/Lobby_v2.jpg",
-    "width": 1400,
-    "height": 1143
-   },
-   {
-    "id": "building-exterior-hero-facade-tower-land",
-    "src": "/new-development/222-les-tower-lofts/images/building-exterior-hero-facade-tower-land.jpg",
-    "caption": "Building exterior / hero facade (tower + landmarked loft building)",
-    "alt": "Building exterior / hero facade (tower + landmarked loft building)",
-    "sourceUrl": "https://cdn.222les.nyc/s3-uploads/20240514191010/hero-min.jpg",
-    "width": 1400,
-    "height": 930
    },
    {
     "id": "lobby-entry-seating-area",
@@ -3941,8 +3631,8 @@
    {
     "id": "building-entrance-porte-cochere",
     "src": "/new-development/155w68-condominium/images/building-entrance-porte-cochere.jpg",
-    "caption": "Building entrance / porte-cochere",
-    "alt": "Building entrance / porte-cochere",
+    "caption": "Building entrance / porte-cochere (artist rendering)",
+    "alt": "Building entrance / porte-cochere (artist rendering)",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Final-porte-cochere-with-family.jpg",
     "width": 1400,
     "height": 917
@@ -3959,8 +3649,8 @@
    {
     "id": "kitchen-with-dining-seating-area",
     "src": "/new-development/155w68-condominium/images/kitchen-with-dining-seating-area.jpg",
-    "caption": "Kitchen with dining/seating area",
-    "alt": "Kitchen with dining/seating area",
+    "caption": "Dining area",
+    "alt": "Dining area",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/kitchen-seating-scaled.jpg",
     "width": 933,
     "height": 1400
@@ -3977,8 +3667,8 @@
    {
     "id": "model-residence-interior-professional-ph",
     "src": "/new-development/155w68-condominium/images/model-residence-interior-professional-ph.jpg",
-    "caption": "Model residence interior (professional photography)",
-    "alt": "Model residence interior (professional photography)",
+    "caption": "Hudson River waterfront nearby",
+    "alt": "Hudson River waterfront nearby",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2025/05/Baguskas_UWS_0011_9006.jpg",
     "width": 1400,
     "height": 932
@@ -3986,54 +3676,27 @@
    {
     "id": "model-residence-interior-professional-ph-2",
     "src": "/new-development/155w68-condominium/images/model-residence-interior-professional-ph-2.jpg",
-    "caption": "Model residence interior (professional photography)",
-    "alt": "Model residence interior (professional photography)",
+    "caption": "Central Park lake",
+    "alt": "Central Park lake",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2025/05/Baguskas_UWS_IMB6921-Edit1.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "model-residence-interior-professional-ph-3",
-    "src": "/new-development/155w68-condominium/images/model-residence-interior-professional-ph-3.jpg",
-    "caption": "Model residence interior (professional photography)",
-    "alt": "Model residence interior (professional photography)",
-    "sourceUrl": "https://155west68.com/wp-content/uploads/2025/05/Baguskas_UWS_0009_8500-scaled.jpg",
     "width": 1400,
     "height": 932
    },
    {
     "id": "model-residence-interior-professional-ph-4",
     "src": "/new-development/155w68-condominium/images/model-residence-interior-professional-ph-4.jpg",
-    "caption": "Model residence interior (professional photography)",
-    "alt": "Model residence interior (professional photography)",
+    "caption": "Sheep Meadow, Central Park",
+    "alt": "Sheep Meadow, Central Park",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2025/07/Baguskas_UWS_IMB6990.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "lincoln-square-upper-west-side-neighborh",
-    "src": "/new-development/155w68-condominium/images/lincoln-square-upper-west-side-neighborh.jpg",
-    "caption": "Lincoln Square / Upper West Side neighborhood",
-    "alt": "Lincoln Square / Upper West Side neighborhood",
-    "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Baguskas_UWS_0035_6664.jpg",
     "width": 1400,
     "height": 932
    },
    {
     "id": "upper-west-side-neighborhood-streetscape",
     "src": "/new-development/155w68-condominium/images/upper-west-side-neighborhood-streetscape.jpg",
-    "caption": "Upper West Side neighborhood streetscape",
-    "alt": "Upper West Side neighborhood streetscape",
+    "caption": "American Museum of Natural History, Gilder Center",
+    "alt": "American Museum of Natural History, Gilder Center",
     "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Baguskas_UWS_0977_7681.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "upper-west-side-neighborhood",
-    "src": "/new-development/155w68-condominium/images/upper-west-side-neighborhood.jpg",
-    "caption": "Upper West Side neighborhood",
-    "alt": "Upper West Side neighborhood",
-    "sourceUrl": "https://155west68.com/wp-content/uploads/2024/12/Baguskas_UWS_1256_7962.jpg",
     "width": 1400,
     "height": 932
    }
@@ -4108,24 +3771,6 @@
  "linden-lane": {
   "images": [
    {
-    "id": "penthouse-terrace",
-    "src": "/new-development/linden-lane/images/penthouse-terrace.jpg",
-    "caption": "Penthouse terrace",
-    "alt": "Penthouse terrace",
-    "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/08/352_PENTHOUSE-1-1024x559.jpg",
-    "width": 1400,
-    "height": 764
-   },
-   {
-    "id": "availability-hero",
-    "src": "/new-development/linden-lane/images/availability-hero.jpg",
-    "caption": "Project availability hero",
-    "alt": "Project availability hero",
-    "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/08/availability-hero-d.jpg",
-    "width": 1400,
-    "height": 363
-   },
-   {
     "id": "building-exterior-facade-at-349-west-51s",
     "src": "/new-development/linden-lane/images/building-exterior-facade-at-349-west-51s.jpg",
     "caption": "Building exterior / facade at 349 West 51st Street",
@@ -4191,8 +3836,8 @@
    {
     "id": "penthouse-interior-with-terrace",
     "src": "/new-development/linden-lane/images/penthouse-interior-with-terrace.jpg",
-    "caption": "Penthouse interior with terrace",
-    "alt": "Penthouse interior with terrace",
+    "caption": "Penthouse bathroom with soaking tub",
+    "alt": "Penthouse bathroom with soaking tub",
     "sourceUrl": "https://lindenln.com/wp-content/uploads/2025/08/352_PENTHOUSE-2.jpg",
     "width": 1400,
     "height": 830
@@ -4332,51 +3977,6 @@
     "height": 757
    },
    {
-    "id": "building-exterior-hero-one11-residences-",
-    "src": "/new-development/one11-residences/images/building-exterior-hero-one11-residences-.jpg",
-    "caption": "Building exterior / hero — ONE11 Residences atop Thompson Central Park",
-    "alt": "Building exterior / hero — ONE11 Residences atop Thompson Central Park",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/hero-1.jpg",
-    "width": 1400,
-    "height": 631
-   },
-   {
-    "id": "hero-residence-interior-central-park-vie",
-    "src": "/new-development/one11-residences/images/hero-residence-interior-central-park-vie.jpg",
-    "caption": "Hero — residence interior / Central Park view",
-    "alt": "Hero — residence interior / Central Park view",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/hero-2.jpg",
-    "width": 1400,
-    "height": 631
-   },
-   {
-    "id": "hero-interior-living-space",
-    "src": "/new-development/one11-residences/images/hero-interior-living-space.jpg",
-    "caption": "Hero — interior living space",
-    "alt": "Hero — interior living space",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/hero-3.jpg",
-    "width": 1400,
-    "height": 631
-   },
-   {
-    "id": "hero-building-skyline-view",
-    "src": "/new-development/one11-residences/images/hero-building-skyline-view.jpg",
-    "caption": "Hero — building / skyline view",
-    "alt": "Hero — building / skyline view",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/hero-4.jpg",
-    "width": 1400,
-    "height": 631
-   },
-   {
-    "id": "one11-residences-building-feature-image",
-    "src": "/new-development/one11-residences/images/one11-residences-building-feature-image.jpg",
-    "caption": "ONE11 Residences building feature image",
-    "alt": "ONE11 Residences building feature image",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/ONE11-Residences.jpg",
-    "width": 1164,
-    "height": 1400
-   },
-   {
     "id": "central-park-view-from-the-building",
     "src": "/new-development/one11-residences/images/central-park-view-from-the-building.jpg",
     "caption": "Central Park view from the building",
@@ -4388,8 +3988,8 @@
    {
     "id": "thompson-central-park-hotel-facade",
     "src": "/new-development/one11-residences/images/thompson-central-park-hotel-facade.jpg",
-    "caption": "Thompson Central Park Hotel facade",
-    "alt": "Thompson Central Park Hotel facade",
+    "caption": "Thompson Central Park Hotel lounge",
+    "alt": "Thompson Central Park Hotel lounge",
     "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/home/Thompson-Central-Park-Hotel.jpg",
     "width": 1163,
     "height": 1400
@@ -4419,15 +4019,6 @@
     "alt": "Kitchen with Miele appliances",
     "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/living/residences-kitchen.jpg",
     "width": 1120,
-    "height": 1400
-   },
-   {
-    "id": "bathroom",
-    "src": "/new-development/one11-residences/images/bathroom.jpg",
-    "caption": "Bathroom",
-    "alt": "Bathroom",
-    "sourceUrl": "https://one11residences.com/wp-content/themes/one11/dist/images/living/residences-bathroom.jpg",
-    "width": 971,
     "height": 1400
    },
    {
@@ -4496,14 +4087,6 @@
     "sourceUrl": "https://hl-django-new.s3.amazonaws.com/realtymx_floorplan/douglas_elliman_real_estate/realtymx_floorplan/1331279_132739376.jpg?AWSAccessKeyId=AKIA3CEYEB6JVPPVBQIU&Signature=FtzSRVMXa9Z5WyRhaNI8DKXLfrI%3D&Expires=1786452471",
     "width": 1700,
     "height": 1134
-   },
-   {
-    "id": "residence-41k-2",
-    "src": "/new-development/one11-residences/floorplans/residence-41k-2.jpg",
-    "title": "Residence 41K",
-    "sourceUrl": "https://hl-django-new.s3.amazonaws.com/realtymx_floorplan/douglas_elliman_real_estate/realtymx_floorplan/96e98d81-5f38-45c9-b59d-8ae3359b37ad.jpg?AWSAccessKeyId=AKIA3CEYEB6JVPPVBQIU&Signature=GSR%2FssZAaDmWw6v5rXhC81k82Ak%3D&Expires=1786452457",
-    "width": 1700,
-    "height": 1099
    },
    {
     "id": "residence-34a",
@@ -4579,15 +4162,6 @@
     "height": 736
    },
    {
-    "id": "exterior-structure-facade-close-up",
-    "src": "/new-development/the-florian/images/exterior-structure-facade-close-up.jpg",
-    "caption": "Exterior structure / facade close-up",
-    "alt": "Exterior structure / facade close-up",
-    "sourceUrl": "https://thefloriannyc.com/uploads/images/architecture/structure1.webp",
-    "width": 1026,
-    "height": 1400
-   },
-   {
     "id": "building-in-urban-gramercy-context",
     "src": "/new-development/the-florian/images/building-in-urban-gramercy-context.jpg",
     "caption": "Building in urban Gramercy context",
@@ -4599,8 +4173,8 @@
    {
     "id": "architecture-greenery-terrace-detail",
     "src": "/new-development/the-florian/images/architecture-greenery-terrace-detail.jpg",
-    "caption": "Architecture - greenery / terrace detail",
-    "alt": "Architecture - greenery / terrace detail",
+    "caption": "Landscaped courtyard lounge",
+    "alt": "Landscaped courtyard lounge",
     "sourceUrl": "https://thefloriannyc.com/uploads/images/architecture/sustainability-and-nature.webp",
     "width": 1400,
     "height": 736
@@ -4615,15 +4189,6 @@
     "height": 1400
    },
    {
-    "id": "gallery-interior-view",
-    "src": "/new-development/the-florian/images/gallery-interior-view.jpg",
-    "caption": "Gallery interior view",
-    "alt": "Gallery interior view",
-    "sourceUrl": "https://thefloriannyc.com/uploads/application/files/static-gallery/1/homepage-gallery-01-01.webp",
-    "width": 1400,
-    "height": 981
-   },
-   {
     "id": "gallery-interior-view-2",
     "src": "/new-development/the-florian/images/gallery-interior-view-2.jpg",
     "caption": "Gallery interior view",
@@ -4633,24 +4198,6 @@
     "height": 981
    },
    {
-    "id": "gallery-interior-view-3",
-    "src": "/new-development/the-florian/images/gallery-interior-view-3.jpg",
-    "caption": "Gallery interior view",
-    "alt": "Gallery interior view",
-    "sourceUrl": "https://thefloriannyc.com/uploads/application/files/static-gallery/1/gallery-2-1.webp",
-    "width": 1400,
-    "height": 981
-   },
-   {
-    "id": "living-room",
-    "src": "/new-development/the-florian/images/living-room.jpg",
-    "caption": "Living room",
-    "alt": "Living room",
-    "sourceUrl": "https://thefloriannyc.com/uploads/application/files/static-gallery/1/Livingroom.webp",
-    "width": 1400,
-    "height": 980
-   },
-   {
     "id": "residence-living-room",
     "src": "/new-development/the-florian/images/residence-living-room.jpg",
     "caption": "Residence living room",
@@ -4658,15 +4205,6 @@
     "sourceUrl": "https://thefloriannyc.com/uploads/application/files/static-gallery/3/LivingRoom1.webp",
     "width": 1400,
     "height": 981
-   },
-   {
-    "id": "residence-living-room-alternate-view",
-    "src": "/new-development/the-florian/images/residence-living-room-alternate-view.jpg",
-    "caption": "Residence living room - alternate view",
-    "alt": "Residence living room - alternate view",
-    "sourceUrl": "https://thefloriannyc.com/uploads/application/files/static-gallery/3/LivingRoom2.webp",
-    "width": 1400,
-    "height": 980
    }
   ],
   "floorPlans": [
@@ -4750,8 +4288,8 @@
    {
     "id": "interior-residence-living-space",
     "src": "/new-development/linea-condominium/images/interior-residence-living-space.jpg",
-    "caption": "Interior residence - living space",
-    "alt": "Interior residence - living space",
+    "caption": "Building exterior - facade and private terraces",
+    "alt": "Building exterior - facade and private terraces",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0002.jpg",
     "width": 1400,
     "height": 1225
@@ -4766,19 +4304,10 @@
     "height": 1225
    },
    {
-    "id": "residence-interior-alt",
-    "src": "/new-development/linea-condominium/images/residence-interior-alt.jpg",
-    "caption": "Residence interior (alt)",
-    "alt": "Residence interior (alt)",
-    "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB2_RES_250806_EJ_428_w_19_0048.jpg",
-    "width": 932,
-    "height": 1400
-   },
-   {
     "id": "amenity-residence-space",
     "src": "/new-development/linea-condominium/images/amenity-residence-space.jpg",
-    "caption": "Amenity / residence space",
-    "alt": "Amenity / residence space",
+    "caption": "Building exterior on West 19th Street",
+    "alt": "Building exterior on West 19th Street",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0100.jpg",
     "width": 876,
     "height": 1400
@@ -4786,8 +4315,8 @@
    {
     "id": "residence-interior-2",
     "src": "/new-development/linea-condominium/images/residence-interior-2.jpg",
-    "caption": "Residence interior",
-    "alt": "Residence interior",
+    "caption": "Lobby and reception",
+    "alt": "Lobby and reception",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0016.jpg",
     "width": 1400,
     "height": 1037
@@ -4813,8 +4342,8 @@
    {
     "id": "residence-interior-5",
     "src": "/new-development/linea-condominium/images/residence-interior-5.jpg",
-    "caption": "Residence interior",
-    "alt": "Residence interior",
+    "caption": "Private terrace with outdoor kitchen and skyline views",
+    "alt": "Private terrace with outdoor kitchen and skyline views",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0060.jpg",
     "width": 1400,
     "height": 933
@@ -4822,8 +4351,8 @@
    {
     "id": "residence-interior-kitchen-living",
     "src": "/new-development/linea-condominium/images/residence-interior-kitchen-living.jpg",
-    "caption": "Residence interior - kitchen/living",
-    "alt": "Residence interior - kitchen/living",
+    "caption": "Residence interior - living/dining",
+    "alt": "Residence interior - living/dining",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0027.jpg",
     "width": 1400,
     "height": 933
@@ -4840,8 +4369,8 @@
    {
     "id": "residence-interior-7",
     "src": "/new-development/linea-condominium/images/residence-interior-7.jpg",
-    "caption": "Residence interior",
-    "alt": "Residence interior",
+    "caption": "Private courtyard terrace",
+    "alt": "Private courtyard terrace",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0007.jpg",
     "width": 932,
     "height": 1400
@@ -4849,8 +4378,8 @@
    {
     "id": "residence-interior-bath-bedroom",
     "src": "/new-development/linea-condominium/images/residence-interior-bath-bedroom.jpg",
-    "caption": "Residence interior - bath/bedroom",
-    "alt": "Residence interior - bath/bedroom",
+    "caption": "Private terrace with outdoor dining and grill",
+    "alt": "Private terrace with outdoor dining and grill",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2025/10/WEB_RES_250806_EJ_428_w_19_0024.jpg",
     "width": 1400,
     "height": 933
@@ -4886,16 +4415,8 @@
    {
     "id": "residence-3-6d-floor-plan-pdf",
     "src": "/new-development/linea-condominium/floorplans/residence-3-6d-floor-plan-pdf.jpg",
-    "title": "Residence 3-6D floor plan (PDF)",
+    "title": "Residence 3-6C floor plan (PDF)",
     "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2024/06/floorplan_Residence_3-6D.pdf",
-    "width": 1700,
-    "height": 1313
-   },
-   {
-    "id": "residence-3-6d-alt-floor-plan-pdf",
-    "src": "/new-development/linea-condominium/floorplans/residence-3-6d-alt-floor-plan-pdf.jpg",
-    "title": "Residence 3-6D Alt floor plan (PDF)",
-    "sourceUrl": "https://linea-nyc.com/wp-content/uploads/2023/07/Linea-Residence-3–6D-Alt-8.5x11.pdf",
     "width": 1700,
     "height": 1313
    },
@@ -4989,20 +4510,11 @@
    {
     "id": "hero-exterior-tower",
     "src": "/new-development/35-hudson-yards-manhattan/images/hero-exterior-tower.jpg",
-    "caption": "Hero exterior / tower",
-    "alt": "Hero exterior / tower",
+    "caption": "Corner living room with skyline views",
+    "alt": "Corner living room with skyline views",
     "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/Hero.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "limestone-tower-exterior",
-    "src": "/new-development/35-hudson-yards-manhattan/images/limestone-tower-exterior.jpg",
-    "caption": "Limestone tower exterior",
-    "alt": "Limestone tower exterior",
-    "sourceUrl": "https://www.35hudsonyards.com/sites/g/files/ujywhv221/files/2025-07/tower-image_1.jpg",
-    "width": 1400,
-    "height": 933
    },
    {
     "id": "entrance-facade-at-street-level",
@@ -5224,15 +4736,6 @@
     "height": 1050
    },
    {
-    "id": "building-exterior-art-moderne-facade-her",
-    "src": "/new-development/660-lexington/images/building-exterior-art-moderne-facade-her.jpg",
-    "caption": "Building exterior / Art Moderne facade hero (RYBAK, high-res)",
-    "alt": "Building exterior / Art Moderne facade hero (RYBAK, high-res)",
-    "sourceUrl": "https://i0.wp.com/rybakdev.com/wp-content/uploads/2025/08/HERO.jpg?fit=1280%2C1066&ssl=1",
-    "width": 1400,
-    "height": 1165
-   },
-   {
     "id": "exterior-arrival-street-level-facade",
     "src": "/new-development/660-lexington/images/exterior-arrival-street-level-facade.jpg",
     "caption": "Exterior arrival / street-level facade",
@@ -5251,19 +4754,10 @@
     "height": 1400
    },
    {
-    "id": "lobby-rybak-high-res",
-    "src": "/new-development/660-lexington/images/lobby-rybak-high-res.jpg",
-    "caption": "Lobby (RYBAK, high-res)",
-    "alt": "Lobby (RYBAK, high-res)",
-    "sourceUrl": "https://i0.wp.com/rybakdev.com/wp-content/uploads/2025/08/660_LEX_LOBBY_01_C-scaled.jpg?fit=2560%2C1920&ssl=1",
-    "width": 1400,
-    "height": 1050
-   },
-   {
     "id": "lobby-alternate-view-rybak-high-res",
     "src": "/new-development/660-lexington/images/lobby-alternate-view-rybak-high-res.jpg",
-    "caption": "Lobby, alternate view (RYBAK, high-res)",
-    "alt": "Lobby, alternate view (RYBAK, high-res)",
+    "caption": "Lobby reception desk",
+    "alt": "Lobby reception desk",
     "sourceUrl": "https://i0.wp.com/rybakdev.com/wp-content/uploads/2025/08/660_LEX_LOBBY_02-scaled.jpg?fit=1920%2C2560&ssl=1",
     "width": 1050,
     "height": 1400
@@ -5280,8 +4774,8 @@
    {
     "id": "fitness-center-gym-rybak-high-res",
     "src": "/new-development/660-lexington/images/fitness-center-gym-rybak-high-res.jpg",
-    "caption": "Fitness center / gym (RYBAK, high-res)",
-    "alt": "Fitness center / gym (RYBAK, high-res)",
+    "caption": "Fitness center / gym",
+    "alt": "Fitness center / gym",
     "sourceUrl": "https://i0.wp.com/rybakdev.com/wp-content/uploads/2025/08/660_LEX_GYM_01-scaled.jpg?fit=2560%2C1920&ssl=1",
     "width": 1400,
     "height": 1050
@@ -5303,15 +4797,6 @@
     "sourceUrl": "https://660lex.com/uploads/application/files/static-gallery/4/Amenities_Recovery-room.webp",
     "width": 1400,
     "height": 786
-   },
-   {
-    "id": "11th-floor-covered-amenity-terrace-rybak",
-    "src": "/new-development/660-lexington/images/11th-floor-covered-amenity-terrace-rybak.jpg",
-    "caption": "11th-floor covered amenity terrace (RYBAK, high-res)",
-    "alt": "11th-floor covered amenity terrace (RYBAK, high-res)",
-    "sourceUrl": "https://i0.wp.com/rybakdev.com/wp-content/uploads/2025/08/660_LEX_AMENITIES_11th-Covered-Area-scaled.jpg?fit=2560%2C1441&ssl=1",
-    "width": 1400,
-    "height": 787
    },
    {
     "id": "11th-floor-landscaped-deck-covered-area",
@@ -5372,8 +4857,8 @@
    {
     "id": "residence",
     "src": "/new-development/520-fifth-avenue-new-york/images/residence.jpg",
-    "caption": "Residence interior",
-    "alt": "Residence interior",
+    "caption": "Residence terrace at dusk (official rendering)",
+    "alt": "Residence terrace at dusk (official rendering)",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/m2.jpg",
     "width": 1400,
     "height": 1034
@@ -5424,19 +4909,10 @@
     "height": 1400
    },
    {
-    "id": "residence-interior-with-midtown-view-off",
-    "src": "/new-development/520-fifth-avenue-new-york/images/residence-interior-with-midtown-view-off.jpg",
-    "caption": "Residence interior with Midtown view (official, full-res)",
-    "alt": "Residence interior with Midtown view (official, full-res)",
-    "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img1-scaled.jpg",
-    "width": 1400,
-    "height": 841
-   },
-   {
     "id": "residence-interior-official",
     "src": "/new-development/520-fifth-avenue-new-york/images/residence-interior-official.jpg",
-    "caption": "Residence interior (official)",
-    "alt": "Residence interior (official)",
+    "caption": "Fifth Avenue entrance with inlaid address motif (official rendering)",
+    "alt": "Fifth Avenue entrance with inlaid address motif (official rendering)",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img4new.jpg",
     "width": 1400,
     "height": 1016
@@ -5444,8 +4920,8 @@
    {
     "id": "residence-living-space-official-hero-ima",
     "src": "/new-development/520-fifth-avenue-new-york/images/residence-living-space-official-hero-ima.jpg",
-    "caption": "Residence living space (official hero image)",
-    "alt": "Residence living space (official hero image)",
+    "caption": "Tower illuminated at dusk, Midtown skyline (official rendering)",
+    "alt": "Tower illuminated at dusk, Midtown skyline (official rendering)",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/img_h2.jpg",
     "width": 991,
     "height": 1400
@@ -5460,19 +4936,10 @@
     "height": 1051
    },
    {
-    "id": "interior-design-detail-official-interior",
-    "src": "/new-development/520-fifth-avenue-new-york/images/interior-design-detail-official-interior.jpg",
-    "caption": "Interior design detail (official interiors page)",
-    "alt": "Interior design detail (official interiors page)",
-    "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/in1.jpg",
-    "width": 1073,
-    "height": 1400
-   },
-   {
     "id": "interior-design-detail-official-interior-2",
     "src": "/new-development/520-fifth-avenue-new-york/images/interior-design-detail-official-interior-2.jpg",
-    "caption": "Interior design detail (official interiors page)",
-    "alt": "Interior design detail (official interiors page)",
+    "caption": "Residence kitchen (official interiors page)",
+    "alt": "Residence kitchen (official interiors page)",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/in2.jpg",
     "width": 1400,
     "height": 1033
@@ -5480,8 +4947,8 @@
    {
     "id": "interior-design-detail-official-interior-3",
     "src": "/new-development/520-fifth-avenue-new-york/images/interior-design-detail-official-interior-3.jpg",
-    "caption": "Interior design detail (official interiors page)",
-    "alt": "Interior design detail (official interiors page)",
+    "caption": "Residence terrace with Empire State Building views (official)",
+    "alt": "Residence terrace with Empire State Building views (official)",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/06/in3.jpg",
     "width": 1114,
     "height": 1400
@@ -5517,7 +4984,7 @@
    {
     "id": "floor-plan-residence-43-44a-duplex",
     "src": "/new-development/520-fifth-avenue-new-york/floorplans/floor-plan-residence-43-44a-duplex.jpg",
-    "title": "Floor plan — Residence 43-44A (duplex)",
+    "title": "Floor plan — Residence 43-44A",
     "sourceUrl": "https://520fifth.com/residences/wp-content/uploads/2024/07/20240311_520_Floorplans_Tabloid_43-44A.pdf",
     "width": 1700,
     "height": 1100
@@ -5618,8 +5085,8 @@
    {
     "id": "residence-2",
     "src": "/new-development/nolen/images/residence-2.jpg",
-    "caption": "Residence kitchen",
-    "alt": "Residence kitchen",
+    "caption": "Lobby reception and lounge",
+    "alt": "Lobby reception and lounge",
     "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/6533646814d2afb4a5c983b89ad22a4b5e423d09-4096x2724.jpg",
     "width": 1400,
     "height": 931
@@ -5627,20 +5094,11 @@
    {
     "id": "residence-3",
     "src": "/new-development/nolen/images/residence-3.jpg",
-    "caption": "Residence bath",
-    "alt": "Residence bath",
+    "caption": "Fitness center / strength training area",
+    "alt": "Fitness center / strength training area",
     "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/bbe3b9355d30e599a213d86556ce84d687e491be-4096x2724.jpg",
     "width": 1400,
     "height": 931
-   },
-   {
-    "id": "building-exterior-facade-dark-brick-copp",
-    "src": "/new-development/nolen/images/building-exterior-facade-dark-brick-copp.jpg",
-    "caption": "Building exterior / facade (dark brick + copper, curved balconies) - 'front'",
-    "alt": "Building exterior / facade (dark brick + copper, curved balconies) - 'front'",
-    "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/6b0296212cadb23550d51da8544ae57e74f5e958-2048x1365.png",
-    "width": 1400,
-    "height": 932
    },
    {
     "id": "building-exterior-render-homepage-hero",
@@ -5722,24 +5180,6 @@
     "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/5e285ae426469c820541472023918d600049bcb8-2500x1462.png",
     "width": 1400,
     "height": 818
-   },
-   {
-    "id": "residents-lounge-dining-area",
-    "src": "/new-development/nolen/images/residents-lounge-dining-area.jpg",
-    "caption": "Residents' lounge / dining area",
-    "alt": "Residents' lounge / dining area",
-    "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/661687792a6b519a77ecebb3c9bce5116e4a9064-2048x1365.png",
-    "width": 1400,
-    "height": 932
-   },
-   {
-    "id": "amenity-lifestyle-space-running",
-    "src": "/new-development/nolen/images/amenity-lifestyle-space-running.jpg",
-    "caption": "Amenity / lifestyle space ('running')",
-    "alt": "Amenity / lifestyle space ('running')",
-    "sourceUrl": "https://cdn.sanity.io/images/scite0a0/production/84e5a032ca249eb343bc269be08af03887593971-2048x1365.png",
-    "width": 1400,
-    "height": 932
    }
   ],
   "floorPlans": [
@@ -5909,20 +5349,11 @@
    {
     "id": "lobby-alternate-view",
     "src": "/new-development/radiant-condominium/images/lobby-alternate-view.jpg",
-    "caption": "Lobby (alternate view)",
-    "alt": "Lobby (alternate view)",
+    "caption": "Arrival lounge seating with fireplace",
+    "alt": "Arrival lounge seating with fireplace",
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/39c3d0fc-56d1-4c84-b65b-4254fa2a89e4/Radiant+LIC+Lobby+2+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
     "width": 1400,
     "height": 1019
-   },
-   {
-    "id": "arrival-lounge-seating-with-fireplace",
-    "src": "/new-development/radiant-condominium/images/arrival-lounge-seating-with-fireplace.jpg",
-    "caption": "Arrival lounge seating with fireplace",
-    "alt": "Arrival lounge seating with fireplace",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/81ef4ab0-d85c-46a6-9514-cd2ba5126fa4/Radiant+LIC+Seating+Fireplace+Arrival+Bethoney+Shen+Exclusive+Marketing+Sales.png",
-    "width": 1400,
-    "height": 570
    },
    {
     "id": "resident-lounge",
@@ -5950,15 +5381,6 @@
     "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/20440168-a602-4da5-9425-6764d92456cf/Radiant+LIC+Fitness+Gym+Bethoney+Shen+Exclusive+Marketing+Sales.jpg",
     "width": 1400,
     "height": 1052
-   },
-   {
-    "id": "amenity-finnish-sauna",
-    "src": "/new-development/radiant-condominium/images/amenity-finnish-sauna.jpg",
-    "caption": "Amenity: Finnish sauna",
-    "alt": "Amenity: Finnish sauna",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/65b275dd96b4a434f2c88f63/05a0a099-80aa-472a-87c2-bce1e62640f6/Radiant+LIC+Sauna+2+Bethoney+Shen+Exclusive+Marketing+Sales.png",
-    "width": 1400,
-    "height": 1400
    },
    {
     "id": "amenity-rooftop-lounge",
@@ -6099,15 +5521,6 @@
     "height": 1400
    },
    {
-    "id": "lobby",
-    "src": "/new-development/loft-21/images/lobby.jpg",
-    "caption": "Lobby rendering",
-    "alt": "Lobby rendering",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/153a9a88-3a3e-4171-98c1-a980ce9c2e33/21st+Street_APPROVED+RENDERING_LOBBY+1.jpg",
-    "width": 1400,
-    "height": 1273
-   },
-   {
     "id": "lobby-rendering-view-1",
     "src": "/new-development/loft-21/images/lobby-rendering-view-1.jpg",
     "caption": "Lobby rendering (view 1)",
@@ -6162,24 +5575,6 @@
     "height": 1400
    },
    {
-    "id": "unit-kitchen-rendering-cabinetry-detail",
-    "src": "/new-development/loft-21/images/unit-kitchen-rendering-cabinetry-detail.jpg",
-    "caption": "Unit kitchen rendering (cabinetry detail)",
-    "alt": "Unit kitchen rendering (cabinetry detail)",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/6192a8ed-5bac-4522-9429-e1ab96d6e36e/20260219+4528_21stStreet.+UNIT+KITCHEN+CABINET+COLUMN.jpg?format=2500w",
-    "width": 1400,
-    "height": 1400
-   },
-   {
-    "id": "primary-master-bathroom-rendering",
-    "src": "/new-development/loft-21/images/primary-master-bathroom-rendering.jpg",
-    "caption": "Primary/master bathroom rendering",
-    "alt": "Primary/master bathroom rendering",
-    "sourceUrl": "https://images.squarespace-cdn.com/content/v1/69cc29843fe736123818c3ce/e1da244b-d4d8-4ade-aa16-c1dbe6f3fcb9/21stStreet_RENDERING_UNIT+BATHROOM+MASTER.jpg?format=2500w",
-    "width": 1120,
-    "height": 1400
-   },
-   {
     "id": "secondary-bathroom-rendering-wood-finish",
     "src": "/new-development/loft-21/images/secondary-bathroom-rendering-wood-finish.jpg",
     "caption": "Secondary bathroom rendering (wood finish)",
@@ -6205,15 +5600,6 @@
     "sourceUrl": "https://media-production.lp-cdn.com/media/696b0028-c975-4bc3-8e2c-180a4047b734",
     "width": 1400,
     "height": 1400
-   },
-   {
-    "id": "building-interior-photo-serhant-listing",
-    "src": "/new-development/loft-21/images/building-interior-photo-serhant-listing.jpg",
-    "caption": "Building / interior photo (SERHANT listing)",
-    "alt": "Building / interior photo (SERHANT listing)",
-    "sourceUrl": "https://media-production.lp-cdn.com/media/c36a9004-bde8-4db6-b264-710555301f16",
-    "width": 1400,
-    "height": 929
    }
   ],
   "floorPlans": [
@@ -6297,20 +5683,11 @@
    {
     "id": "park-view",
     "src": "/new-development/central-park-tower/images/park-view.jpg",
-    "caption": "Central Park views from the tower",
-    "alt": "Central Park views from the tower",
+    "caption": "Aerial view of Central Park Tower above Central Park",
+    "alt": "Aerial view of Central Park Tower above Central Park",
     "sourceUrl": "https://www.lxcollection.com/wp-content/uploads/2020/09/Central_Park_Tower_Parkview-scaled-1792x560.jpg",
     "width": 1400,
     "height": 437
-   },
-   {
-    "id": "interior",
-    "src": "/new-development/central-park-tower/images/interior.jpg",
-    "caption": "Residence interior",
-    "alt": "Residence interior",
-    "sourceUrl": "https://www.lxcollection.com/wp-content/uploads/2020/03/centralparktower_design-1-1000x750.jpg",
-    "width": 1000,
-    "height": 750
    },
    {
     "id": "amenity",
@@ -6324,8 +5701,8 @@
    {
     "id": "building-exterior-facade-cityrealty-buil",
     "src": "/new-development/central-park-tower/images/building-exterior-facade-cityrealty-buil.jpg",
-    "caption": "Building exterior / facade (CityRealty building gallery)",
-    "alt": "Building exterior / facade (CityRealty building gallery)",
+    "caption": "Penthouse living room with panoramic Central Park and city views",
+    "alt": "Penthouse living room with panoramic Central Park and city views",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/6/64/64716f822b144b086328d8b958db1c219ce196f2/central-park-tower-217-west-57th-street-01.jpg",
     "width": 1400,
     "height": 934
@@ -6333,8 +5710,8 @@
    {
     "id": "tower-exterior-view-cityrealty-building-",
     "src": "/new-development/central-park-tower/images/tower-exterior-view-cityrealty-building-.jpg",
-    "caption": "Tower exterior view (CityRealty building gallery)",
-    "alt": "Tower exterior view (CityRealty building gallery)",
+    "caption": "Formal dining room with Midtown skyline views",
+    "alt": "Formal dining room with Midtown skyline views",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/f/fc/fcba3c35979739b864b2a84f7ee194c0f833ef7d/central-park-tower-217-west-57th-street-02.jpg",
     "width": 1400,
     "height": 934
@@ -6342,8 +5719,8 @@
    {
     "id": "tower-exterior-streetscape-cityrealty-bu",
     "src": "/new-development/central-park-tower/images/tower-exterior-streetscape-cityrealty-bu.jpg",
-    "caption": "Tower exterior / streetscape (CityRealty building gallery)",
-    "alt": "Tower exterior / streetscape (CityRealty building gallery)",
+    "caption": "Living room overlooking Central Park",
+    "alt": "Living room overlooking Central Park",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/d/df/dfb53404b4d80122ac0bec17d1732b91ac60b0c6/central-park-tower-217-west-57th-street-03.jpg",
     "width": 1400,
     "height": 934
@@ -6351,8 +5728,8 @@
    {
     "id": "tower-exterior-detail-cityrealty-buildin",
     "src": "/new-development/central-park-tower/images/tower-exterior-detail-cityrealty-buildin.jpg",
-    "caption": "Tower exterior detail (CityRealty building gallery)",
-    "alt": "Tower exterior detail (CityRealty building gallery)",
+    "caption": "Double-height great room with grand piano",
+    "alt": "Double-height great room with grand piano",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/a/ae/aef26d4f9984e0fcb241160bea828b93867c725e/central-park-tower-217-west-57th-street-04.jpg",
     "width": 1400,
     "height": 934
@@ -6360,8 +5737,8 @@
    {
     "id": "building-facade-cityrealty-building-gall",
     "src": "/new-development/central-park-tower/images/building-facade-cityrealty-building-gall.jpg",
-    "caption": "Building / facade (CityRealty building gallery)",
-    "alt": "Building / facade (CityRealty building gallery)",
+    "caption": "Grand salon with piano and Central Park views",
+    "alt": "Grand salon with piano and Central Park views",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/d/d6/d67e5511d8caf231226ea24057c15ddee4ac9326/central-park-tower-217-west-57th-street-05.jpg",
     "width": 1400,
     "height": 1013
@@ -6369,8 +5746,8 @@
    {
     "id": "building-facade-cityrealty-building-gall-2",
     "src": "/new-development/central-park-tower/images/building-facade-cityrealty-building-gall-2.jpg",
-    "caption": "Building / facade (CityRealty building gallery)",
-    "alt": "Building / facade (CityRealty building gallery)",
+    "caption": "Twilight city views from the tower",
+    "alt": "Twilight city views from the tower",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/1200x/webp/2/27/27a5515449055c38438aac6977806da88c5b1d84/central-park-tower-217-west-57th-street-06.jpg",
     "width": 1400,
     "height": 932
@@ -6378,8 +5755,8 @@
    {
     "id": "exterior-rendering-of-the-all-glass-faca",
     "src": "/new-development/central-park-tower/images/exterior-rendering-of-the-all-glass-faca.jpg",
-    "caption": "Exterior rendering of the all-glass facade (Extell)",
-    "alt": "Exterior rendering of the all-glass facade (Extell)",
+    "caption": "Residential lobby rendering (Extell)",
+    "alt": "Residential lobby rendering (Extell)",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2017/07/12102025/Extell-Central-Park-Tower-1.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 544
@@ -6405,8 +5782,8 @@
    {
     "id": "model-residence-living-room-with-central",
     "src": "/new-development/central-park-tower/images/model-residence-living-room-with-central.jpg",
-    "caption": "Model residence living room with Central Park views",
-    "alt": "Model residence living room with Central Park views",
+    "caption": "Model residence entry gallery",
+    "alt": "Model residence entry gallery",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2020/07/24093040/Central-Park-Tower-Model-Residence-1.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 932
@@ -6476,19 +5853,10 @@
     "height": 1400
    },
    {
-    "id": "250-west-96-street-img-2",
-    "src": "/new-development/250-west-96-street/images/250-west-96-street-img-2.jpg",
-    "caption": "室内场景，Thomas Juul-Hansen 操刀的精装调性。",
-    "alt": "",
-    "sourceUrl": "https://media-production.lp-cdn.com/media/553938bf-9d6d-48f8-9234-46cab2268b7f",
-    "width": 1200,
-    "height": 1200
-   },
-   {
     "id": "250-west-96-street-img-3",
     "src": "/new-development/250-west-96-street/images/250-west-96-street-img-3.jpg",
-    "caption": "住宅空间一隅，超大平开窗带来开阔采光。",
-    "alt": "",
+    "caption": "私人露台，配户外休闲家具，眺望哈德逊河与城市天际线。",
+    "alt": "私人露台，配户外休闲家具，眺望哈德逊河与城市天际线。",
     "sourceUrl": "https://media-production.lp-cdn.com/media/1ad034d2-50d7-473a-b6be-ab189ad17a8e",
     "width": 1400,
     "height": 875
@@ -6555,33 +5923,6 @@
     "sourceUrl": "https://media-production.lp-cdn.com/media/64e1764f-c57b-4e5c-9f88-0fb3ae0cd095",
     "width": 1400,
     "height": 934
-   },
-   {
-    "id": "building-exterior-facade-hero",
-    "src": "/new-development/250-west-96-street/images/building-exterior-facade-hero.jpg",
-    "caption": "Building exterior / facade (hero)",
-    "alt": "Building exterior / facade (hero)",
-    "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=90,fit=scale-down,width=2400/https://media-production.lp-cdn.com/media/a694ec9a-a399-4737-93fd-742893e92f95",
-    "width": 1400,
-    "height": 180
-   },
-   {
-    "id": "building-exterior-facade-detail",
-    "src": "/new-development/250-west-96-street/images/building-exterior-facade-detail.jpg",
-    "caption": "Building exterior / facade detail",
-    "alt": "Building exterior / facade detail",
-    "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=90,fit=scale-down,width=2400/https://media-production.lp-cdn.com/media/da500451-ef6b-4c6a-8811-3acb9dc87df0",
-    "width": 1400,
-    "height": 180
-   },
-   {
-    "id": "living-room-interior",
-    "src": "/new-development/250-west-96-street/images/living-room-interior.jpg",
-    "caption": "Living room / interior",
-    "alt": "Living room / interior",
-    "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=90,fit=scale-down,width=2400/https://media-production.lp-cdn.com/media/73cb9d6e-2390-4bb2-899c-ef99c65a7bc5",
-    "width": 1051,
-    "height": 1400
    },
    {
     "id": "interior-living-space",
@@ -6702,8 +6043,8 @@
    {
     "id": "parc-beaufort-img-5",
     "src": "/new-development/parc-beaufort/images/parc-beaufort-img-5.jpg",
-    "caption": "主浴室以哑光 travertine 铺设地墙,搭配白橡木浴柜与暖铜色 Gessi 五金。",
-    "alt": "",
+    "caption": "主浴室以哑光 travertine 铺设地墙,搭配白橡木浴柜与暖铜色 Kohler 五金。",
+    "alt": "主浴室以哑光 travertine 铺设地墙,搭配白橡木浴柜与暖铜色 Kohler 五金。",
     "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/810c9bd5f81959374a5829e709c08183bb84b494-2731x4096.jpg?rect=18,1294,2697,1517&w=1600&h=900&fit=crop&auto=format",
     "width": 1600,
     "height": 900
@@ -6711,8 +6052,8 @@
    {
     "id": "parc-beaufort-img-6",
     "src": "/new-development/parc-beaufort/images/parc-beaufort-img-6.jpg",
-    "caption": "浴室细部:暖铜色 Gessi 龙头与 travertine 台面的材质组合。",
-    "alt": "",
+    "caption": "浴室细部:暖铜色 Kohler 龙头与白色石台面、马赛克瓷砖的材质组合。",
+    "alt": "浴室细部:暖铜色 Kohler 龙头与白色石台面、马赛克瓷砖的材质组合。",
     "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/a67dd615df9f0e01c52170f93ab8a63476c25731-4096x2731.jpg?rect=82,519,3932,2212&w=1600&h=900&fit=crop&auto=format",
     "width": 1600,
     "height": 900
@@ -6745,15 +6086,6 @@
     "height": 1400
    },
    {
-    "id": "living-space-interior",
-    "src": "/new-development/parc-beaufort/images/living-space-interior.jpg",
-    "caption": "Living space interior",
-    "alt": "Living space interior",
-    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/1c365ada2256112c15bc5e7c19b2f59cff41f986-4096x2731.jpg",
-    "width": 1400,
-    "height": 932
-   },
-   {
     "id": "living-room-with-sofa",
     "src": "/new-development/parc-beaufort/images/living-room-with-sofa.jpg",
     "caption": "Living room with sofa",
@@ -6765,36 +6097,9 @@
    {
     "id": "interior-dining-table-room",
     "src": "/new-development/parc-beaufort/images/interior-dining-table-room.jpg",
-    "caption": "Interior dining table / room",
-    "alt": "Interior dining table / room",
+    "caption": "Entry gallery with console table and round mirror",
+    "alt": "Entry gallery with console table and round mirror",
     "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/b78d54ddb1ecd460c84b7d0054d79dad0036b0d2-2731x4096.jpg",
-    "width": 932,
-    "height": 1400
-   },
-   {
-    "id": "contemporary-kitchen",
-    "src": "/new-development/parc-beaufort/images/contemporary-kitchen.jpg",
-    "caption": "Contemporary kitchen",
-    "alt": "Contemporary kitchen",
-    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/81f573f1df69126f72977e55c1c3ff407eeb0edd-2731x4096.jpg",
-    "width": 932,
-    "height": 1400
-   },
-   {
-    "id": "wood-kitchen",
-    "src": "/new-development/parc-beaufort/images/wood-kitchen.jpg",
-    "caption": "Wood kitchen",
-    "alt": "Wood kitchen",
-    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/ccd030513f1617452b456d4616c30edfe3dcd81c-2731x4096.jpg",
-    "width": 932,
-    "height": 1400
-   },
-   {
-    "id": "marble-granite-countertop-detail-in-kitc",
-    "src": "/new-development/parc-beaufort/images/marble-granite-countertop-detail-in-kitc.jpg",
-    "caption": "Marble granite countertop detail in kitchen",
-    "alt": "Marble granite countertop detail in kitchen",
-    "sourceUrl": "https://cdn.sanity.io/images/tm6xrukv/production/0dce1ffbf8bb01c98e53acb6052e81181b5a695f-2731x4096.jpg",
     "width": 932,
     "height": 1400
    }
@@ -6903,24 +6208,6 @@
     "sourceUrl": ""
    },
    {
-    "id": "bloom-rendering",
-    "src": "/new-development/bloom-on-forty-fifth/images/bloom-rendering.jpg",
-    "caption": "Two-tower design",
-    "alt": "Two-tower design",
-    "width": 578,
-    "height": 399,
-    "sourceUrl": ""
-   },
-   {
-    "id": "official-site-hero-image-building-exteri",
-    "src": "/new-development/bloom-on-forty-fifth/images/official-site-hero-image-building-exteri.jpg",
-    "caption": "Official site hero image — building exterior / facade",
-    "alt": "Official site hero image — building exterior / facade",
-    "sourceUrl": "https://cdn.prod.website-files.com/673eb6d91055e17f87661ed2/673eb78e07787db2450e09ff_Hero%20copy.jpg",
-    "width": 1400,
-    "height": 965
-   },
-   {
     "id": "exterior-rendering-full-block-facade-whi",
     "src": "/new-development/bloom-on-forty-fifth/images/exterior-rendering-full-block-facade-whi.jpg",
     "caption": "Exterior rendering — full-block facade, white stone paneling and glass (developer BH3, full-res)",
@@ -6932,8 +6219,8 @@
    {
     "id": "exterior-amenities-rendering-twin-towers",
     "src": "/new-development/bloom-on-forty-fifth/images/exterior-amenities-rendering-twin-towers.jpg",
-    "caption": "Exterior / amenities rendering — twin towers and glass amenities bridge (developer BH3, full-res)",
-    "alt": "Exterior / amenities rendering — twin towers and glass amenities bridge (developer BH3, full-res)",
+    "caption": "Landscaped elevated courtyard between the two towers",
+    "alt": "Landscaped elevated courtyard between the two towers",
     "sourceUrl": "https://advisors.bh-3.com/wp-content/uploads/bloom-on-45th-2.jpg",
     "width": 1400,
     "height": 932
@@ -6941,8 +6228,8 @@
    {
     "id": "amenities-courtyard-rendering-developer-",
     "src": "/new-development/bloom-on-forty-fifth/images/amenities-courtyard-rendering-developer-.jpg",
-    "caption": "Amenities / courtyard rendering (developer BH3, full-res)",
-    "alt": "Amenities / courtyard rendering (developer BH3, full-res)",
+    "caption": "Lobby reception with wood-slat wall and sculptural lighting",
+    "alt": "Lobby reception with wood-slat wall and sculptural lighting",
     "sourceUrl": "https://advisors.bh-3.com/wp-content/uploads/bloom-on-45th-3.jpg",
     "width": 1400,
     "height": 932
@@ -6957,19 +6244,10 @@
     "height": 932
    },
    {
-    "id": "building-exterior-street-level-facade-re",
-    "src": "/new-development/bloom-on-forty-fifth/images/building-exterior-street-level-facade-re.jpg",
-    "caption": "Building exterior / street-level facade rendering (1560px)",
-    "alt": "Building exterior / street-level facade rendering (1560px)",
-    "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2021/03/16103444/Bloom-on-Forty-Fifth-1.jpg?w=1560&format=webp",
-    "width": 1400,
-    "height": 980
-   },
-   {
     "id": "exterior-aerial-rendering-of-the-full-bl",
     "src": "/new-development/bloom-on-forty-fifth/images/exterior-aerial-rendering-of-the-full-bl.jpg",
-    "caption": "Exterior / aerial rendering of the full-block development (1560px)",
-    "alt": "Exterior / aerial rendering of the full-block development (1560px)",
+    "caption": "Courtyard garden rendering between the residential wings",
+    "alt": "Courtyard garden rendering between the residential wings",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2021/03/16103449/Bloom-on-Forty-Fifth-2.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 933
@@ -6977,8 +6255,8 @@
    {
     "id": "8-000-sq-ft-elevated-courtyard-park-betw",
     "src": "/new-development/bloom-on-forty-fifth/images/8-000-sq-ft-elevated-courtyard-park-betw.jpg",
-    "caption": "8,000 sq ft elevated courtyard / park between the two towers (1560px)",
-    "alt": "8,000 sq ft elevated courtyard / park between the two towers (1560px)",
+    "caption": "Lobby and reception interior rendering",
+    "alt": "Lobby and reception interior rendering",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2021/03/16103453/Bloom-on-Forty-Fifth-3.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 926
@@ -6995,8 +6273,8 @@
    {
     "id": "lobby-interior-common-space-rendering-15",
     "src": "/new-development/bloom-on-forty-fifth/images/lobby-interior-common-space-rendering-15.jpg",
-    "caption": "Lobby / interior common space rendering (1560px)",
-    "alt": "Lobby / interior common space rendering (1560px)",
+    "caption": "Fitness center rendering",
+    "alt": "Fitness center rendering",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2021/03/16103501/Bloom-on-Forty-Fifth-5.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 926
@@ -7004,8 +6282,8 @@
    {
     "id": "interior-amenity-detail-rendering-1560px",
     "src": "/new-development/bloom-on-forty-fifth/images/interior-amenity-detail-rendering-1560px.jpg",
-    "caption": "Interior / amenity detail rendering (1560px)",
-    "alt": "Interior / amenity detail rendering (1560px)",
+    "caption": "Residence kitchen rendering with walnut cabinetry",
+    "alt": "Residence kitchen rendering with walnut cabinetry",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2021/03/16103505/Bloom-on-Forty-Fifth-6.jpg?w=1560&format=webp",
     "width": 1400,
     "height": 897
@@ -7087,8 +6365,8 @@
    {
     "id": "building-exterior-rendering-street-level",
     "src": "/new-development/77-greenwich/images/building-exterior-rendering-street-level.jpg",
-    "caption": "Building exterior rendering, street level",
-    "alt": "Building exterior rendering, street level",
+    "caption": "Building exterior rendering overlooking New York Harbor and the Statue of Liberty",
+    "alt": "Building exterior rendering overlooking New York Harbor and the Statue of Liberty",
     "sourceUrl": "https://77greenwich.com/wp-content/uploads/2022/08/bui_exterior-1024x576.jpg",
     "width": 1400,
     "height": 786
@@ -7159,8 +6437,8 @@
    {
     "id": "amenity-wright-fit-space-panoramic-evan-",
     "src": "/new-development/77-greenwich/images/amenity-wright-fit-space-panoramic-evan-.jpg",
-    "caption": "Amenity / Wright Fit space, panoramic (Evan Joseph)",
-    "alt": "Amenity / Wright Fit space, panoramic (Evan Joseph)",
+    "caption": "Amenity lounge seating area, panoramic (Evan Joseph)",
+    "alt": "Amenity lounge seating area, panoramic (Evan Joseph)",
     "sourceUrl": "https://77greenwich.com/wp-content/uploads/2023/10/THW_0096_HIGH-RES-Evan-Joseph-1024x405.jpg",
     "width": 1400,
     "height": 554
@@ -7182,15 +6460,6 @@
     "sourceUrl": "https://77greenwich.com/wp-content/uploads/2024/04/77Greenwich-35BBedroom-CreditEvanJoseph-1024x683.jpg",
     "width": 1400,
     "height": 932
-   },
-   {
-    "id": "residence-35b-bedroom-alternate-view-eva",
-    "src": "/new-development/77-greenwich/images/residence-35b-bedroom-alternate-view-eva.jpg",
-    "caption": "Residence 35B bedroom, alternate view (Evan Joseph)",
-    "alt": "Residence 35B bedroom, alternate view (Evan Joseph)",
-    "sourceUrl": "https://77greenwich.com/wp-content/uploads/2024/04/77Greenwich-35B-Bedroom-Credit-Evan-Joseph.jpg",
-    "width": 1400,
-    "height": 933
    }
   ],
   "floorPlans": [
@@ -7344,15 +6613,6 @@
     "height": 1306
    },
    {
-    "id": "street-level-view-up-to-a-residence-wind",
-    "src": "/new-development/the-bryant/images/street-level-view-up-to-a-residence-wind.jpg",
-    "caption": "Street-level view up to a residence window",
-    "alt": "Street-level view up to a residence window",
-    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2018/11/Shot08_WindowFromStreet_1831_v4.jpg",
-    "width": 1400,
-    "height": 700
-   },
-   {
     "id": "attended-private-residential-lobby",
     "src": "/new-development/the-bryant/images/attended-private-residential-lobby.jpg",
     "caption": "Attended private residential lobby",
@@ -7362,19 +6622,10 @@
     "height": 465
    },
    {
-    "id": "living-room-with-floor-to-ceiling-window",
-    "src": "/new-development/the-bryant/images/living-room-with-floor-to-ceiling-window.jpg",
-    "caption": "Living room with floor-to-ceiling windows",
-    "alt": "Living room with floor-to-ceiling windows",
-    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/06/Shot06_LivingRoom_1152_v4.jpg",
-    "width": 1400,
-    "height": 700
-   },
-   {
     "id": "living-room-alternate-unstaged-view",
     "src": "/new-development/the-bryant/images/living-room-alternate-unstaged-view.jpg",
-    "caption": "Living room, alternate (unstaged) view",
-    "alt": "Living room, alternate (unstaged) view",
+    "caption": "Living room with floor-to-ceiling windows overlooking Bryant Park",
+    "alt": "Living room with floor-to-ceiling windows overlooking Bryant Park",
     "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2023/07/Shot06_LivingRoom_1152_noGirl_v4.jpg",
     "width": 1400,
     "height": 932
@@ -7414,22 +6665,6 @@
     "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/10/TheBryant_Floorplans_PHS_V18.png",
     "width": 1293,
     "height": 1700
-   },
-   {
-    "id": "penthouse-north-floor-plan-pdf",
-    "src": "/new-development/the-bryant/floorplans/penthouse-north-floor-plan-pdf.jpg",
-    "title": "Penthouse North — Floor Plan (PDF)",
-    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2023/11/The-Bryant-Penthouse-North-2.pdf",
-    "width": 1100,
-    "height": 1700
-   },
-   {
-    "id": "penthouse-south-floor-plan-pdf",
-    "src": "/new-development/the-bryant/floorplans/penthouse-south-floor-plan-pdf.jpg",
-    "title": "Penthouse South — Floor Plan (PDF)",
-    "sourceUrl": "https://thebryantnyc.com/wp-content/uploads/2015/10/The-Bryant-Penthouse-South.pdf",
-    "width": 1100,
-    "height": 1700
    }
   ]
  },
@@ -7438,8 +6673,8 @@
    {
     "id": "99-hudson-tower-exterior-facade-the-tall",
     "src": "/new-development/99-hudson/images/99-hudson-tower-exterior-facade-the-tall.jpg",
-    "caption": "99 Hudson tower exterior/facade — the tallest building in New Jersey (~79 stories) rising over the Jersey City waterfront. Official developer photo (Extell/China Overseas marketing site). VERIFIED 200, ~1.0 MB, directly hotlinkable.",
-    "alt": "99 Hudson tower exterior/facade — the tallest building in New Jersey (~79 stories) rising over the Jersey City waterfront. Official developer photo (Extell/China Overseas marketing site). VERIFIED 200, ~1.0 MB, directly hotlinkable.",
+    "caption": "99 Hudson — street-level view of the limestone facade and residential entrance in Jersey City.",
+    "alt": "99 Hudson — street-level view of the limestone facade and residential entrance in Jersey City.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/20_11_13_99_Hudson_exterior_EMPROD_03_MEDIUM-RES-e1623786538362.jpg",
     "width": 1600,
     "height": 999
@@ -7447,8 +6682,8 @@
    {
     "id": "residents-lounge-one-of-the-interior-ame",
     "src": "/new-development/99-hudson/images/residents-lounge-one-of-the-interior-ame.jpg",
-    "caption": "Residents' Lounge — one of the interior amenity lounges within the 65,000 sq ft amenity suite. Official photo. VERIFIED 200, ~1.5 MB.",
-    "alt": "Residents' Lounge — one of the interior amenity lounges within the 65,000 sq ft amenity suite. Official photo. VERIFIED 200, ~1.5 MB.",
+    "caption": "Residents' Lounge — one of the interior amenity lounges within the 65,000 sq ft amenity suite.",
+    "alt": "Residents' Lounge — one of the interior amenity lounges within the 65,000 sq ft amenity suite.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/211008_EM_99_Hudson_19_MEDIUM-RES.jpg",
     "width": 1600,
     "height": 1066
@@ -7456,8 +6691,8 @@
    {
     "id": "screening-room-private-media-screening-a",
     "src": "/new-development/99-hudson/images/screening-room-private-media-screening-a.jpg",
-    "caption": "Screening Room — private media/screening amenity. Official photo. VERIFIED 200, ~1.5 MB.",
-    "alt": "Screening Room — private media/screening amenity. Official photo. VERIFIED 200, ~1.5 MB.",
+    "caption": "Screening Room — private media/screening amenity.",
+    "alt": "Screening Room — private media/screening amenity.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/211008_EM_99_Hudson_23_MEDIUM-RES.jpg",
     "width": 1600,
     "height": 1066
@@ -7465,8 +6700,8 @@
    {
     "id": "game-room-entertainment-amenity-space-of",
     "src": "/new-development/99-hudson/images/game-room-entertainment-amenity-space-of.jpg",
-    "caption": "Game Room — entertainment amenity space. Official photo. VERIFIED 200, ~1.7 MB.",
-    "alt": "Game Room — entertainment amenity space. Official photo. VERIFIED 200, ~1.7 MB.",
+    "caption": "Game Room — entertainment amenity space.",
+    "alt": "Game Room — entertainment amenity space.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/211008_EM_99_Hudson_24_MEDIUM-RES.jpg",
     "width": 1600,
     "height": 1066
@@ -7474,8 +6709,8 @@
    {
     "id": "children-s-playroom-amenity-official-pho",
     "src": "/new-development/99-hudson/images/children-s-playroom-amenity-official-pho.jpg",
-    "caption": "Children's Playroom amenity. Official photo. VERIFIED 200, ~1.6 MB.",
-    "alt": "Children's Playroom amenity. Official photo. VERIFIED 200, ~1.6 MB.",
+    "caption": "Children's Playroom amenity.",
+    "alt": "Children's Playroom amenity.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/211008_EM_99_Hudson_22_MEDIUM-RES.jpg",
     "width": 1600,
     "height": 1066
@@ -7483,8 +6718,8 @@
    {
     "id": "golf-simulator-amenity-room-official-pho",
     "src": "/new-development/99-hudson/images/golf-simulator-amenity-room-official-pho.jpg",
-    "caption": "Golf Simulator amenity room. Official photo. VERIFIED 200, ~1.9 MB.",
-    "alt": "Golf Simulator amenity room. Official photo. VERIFIED 200, ~1.9 MB.",
+    "caption": "Golf Simulator amenity room.",
+    "alt": "Golf Simulator amenity room.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/211008_EM_99_Hudson_25_MEDIUM-RES.jpg",
     "width": 1600,
     "height": 1066
@@ -7492,8 +6727,8 @@
    {
     "id": "model-residence-interior-open-living-din",
     "src": "/new-development/99-hudson/images/model-residence-interior-open-living-din.jpg",
-    "caption": "Model residence interior — open living/dining space with floor-to-ceiling glass (photographer Eric Petschek). Official photo. VERIFIED 200, ~383 KB.",
-    "alt": "Model residence interior — open living/dining space with floor-to-ceiling glass (photographer Eric Petschek). Official photo. VERIFIED 200, ~383 KB.",
+    "caption": "Model residence kitchen — quartz island and integrated appliances, open to the living area with water views (Eric Petschek).",
+    "alt": "Model residence kitchen — quartz island and integrated appliances, open to the living area with water views (Eric Petschek).",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2021/06/190829-EricPetschek-99Hudson-Quadra-108-Web-e1623786811214.jpg",
     "width": 1600,
     "height": 1189
@@ -7501,8 +6736,8 @@
    {
     "id": "model-residence-interior-with-manhattan-",
     "src": "/new-development/99-hudson/images/model-residence-interior-with-manhattan-.jpg",
-    "caption": "Model residence interior with Manhattan/skyline views through the windows (Eric Petschek). Official photo. VERIFIED 200, ~426 KB.",
-    "alt": "Model residence interior with Manhattan/skyline views through the windows (Eric Petschek). Official photo. VERIFIED 200, ~426 KB.",
+    "caption": "Model residence primary bathroom — marble-clad walls, glass-enclosed shower and skyline-view window (Eric Petschek).",
+    "alt": "Model residence primary bathroom — marble-clad walls, glass-enclosed shower and skyline-view window (Eric Petschek).",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2021/06/190715-EricPetschek-99Hudson-361-Web-e1623786903637.jpg",
     "width": 1600,
     "height": 1114
@@ -7510,8 +6745,8 @@
    {
     "id": "model-residence-interior-living-space-qu",
     "src": "/new-development/99-hudson/images/model-residence-interior-living-space-qu.jpg",
-    "caption": "Model residence interior — living space, Quadra unit (Eric Petschek). Official photo. VERIFIED 200, ~408 KB.",
-    "alt": "Model residence interior — living space, Quadra unit (Eric Petschek). Official photo. VERIFIED 200, ~408 KB.",
+    "caption": "Model residence secondary bathroom — soaking tub, wood-front vanity and stone-look tile (Eric Petschek).",
+    "alt": "Model residence secondary bathroom — soaking tub, wood-front vanity and stone-look tile (Eric Petschek).",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2021/06/190829-EricPetschek-99Hudson-Quadra-160-Web-e1623787115826.jpg",
     "width": 1600,
     "height": 1240
@@ -7528,8 +6763,8 @@
    {
     "id": "9th-floor-amenity-map-wellness-spa-level",
     "src": "/new-development/99-hudson/images/9th-floor-amenity-map-wellness-spa-level.jpg",
-    "caption": "9th-floor amenity map — wellness/spa level (sauna, steam, fitness, yoga). Official diagram.",
-    "alt": "9th-floor amenity map — wellness/spa level (sauna, steam, fitness, yoga). Official diagram.",
+    "caption": "9th-floor amenity map — spa/wellness level with hot tub, steam room, dry sauna, treatment and massage rooms, and spa terrace. Official diagram.",
+    "alt": "9th-floor amenity map — spa/wellness level with hot tub, steam room, dry sauna, treatment and massage rooms, and spa terrace. Official diagram.",
     "sourceUrl": "https://99hudsonliving.com/wp-content/uploads/2025/05/AmenitiesMap-0513-9thFloor.jpg",
     "width": 1600,
     "height": 916
@@ -7537,8 +6772,8 @@
    {
     "id": "99-hudson-cityrealty-gallery-photo-01-ex",
     "src": "/new-development/99-hudson/images/99-hudson-cityrealty-gallery-photo-01-ex.jpg",
-    "caption": "99 Hudson — CityRealty gallery photo 01 (exterior/skyline). Same hotlink caveat as above; valid extracted URL.",
-    "alt": "99 Hudson — CityRealty gallery photo 01 (exterior/skyline). Same hotlink caveat as above; valid extracted URL.",
+    "caption": "99 Hudson — facade and private balcony detail with the Lower Manhattan skyline across the Hudson River (CityRealty rendering).",
+    "alt": "99 Hudson — facade and private balcony detail with the Lower Manhattan skyline across the Hudson River (CityRealty rendering).",
     "sourceUrl": "https://thumbs.cityrealty.com/assets/smart/x424/webp/3/31/310e2c436eee92e0a07f228f71f9c58e6d7b1b14/99-hudson-street-01.jpg",
     "width": 1600,
     "height": 934
@@ -7546,8 +6781,8 @@
    {
     "id": "99-hudson-tower-exterior-at-dusk-waterfr",
     "src": "/new-development/99-hudson/images/99-hudson-tower-exterior-at-dusk-waterfr.jpg",
-    "caption": "99 Hudson tower exterior at dusk, waterfront skyline. From 6sqft. NOTE: 6sqft CDN blocks direct hotlinking (403 to raw curl); URL extracted from live page, displays in-browser. Adjust w= param for size.",
-    "alt": "99 Hudson tower exterior at dusk, waterfront skyline. From 6sqft. NOTE: 6sqft CDN blocks direct hotlinking (403 to raw curl); URL extracted from live page, displays in-browser. Adjust w= param for size.",
+    "caption": "99 Hudson tower at dusk over the Jersey City waterfront skyline (6sqft).",
+    "alt": "99 Hudson tower at dusk over the Jersey City waterfront skyline (6sqft).",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2020/11/20114950/99-Hudson-Exterior-Dusk.jpg?w=1200&format=webp",
     "width": 1600,
     "height": 1089
@@ -7555,8 +6790,8 @@
    {
     "id": "99-hudson-exterior-daytime-jersey-city-w",
     "src": "/new-development/99-hudson/images/99-hudson-exterior-daytime-jersey-city-w.jpg",
-    "caption": "99 Hudson exterior daytime, Jersey City waterfront. From 6sqft. Same hotlink caveat as above.",
-    "alt": "99 Hudson exterior daytime, Jersey City waterfront. From 6sqft. Same hotlink caveat as above.",
+    "caption": "99 Hudson rising over the Jersey City waterfront at sunset, viewed from the Hudson River (6sqft).",
+    "alt": "99 Hudson rising over the Jersey City waterfront at sunset, viewed from the Hudson River (6sqft).",
     "sourceUrl": "https://thumbs.6sqft.com/wp-content/uploads/2020/11/20114945/99-hudson-exterior-2.jpg?w=1200&format=webp",
     "width": 1600,
     "height": 998
