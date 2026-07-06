@@ -5844,6 +5844,15 @@
  "250-west-96-street": {
   "images": [
    {
+    "id": "building-exterior-facade-rendering",
+    "src": "/new-development/250-west-96-street/images/building-exterior-facade-rendering.jpg",
+    "caption": "大楼外观渲染图——超大铸铁风格窗格立面与退台绿植露台。",
+    "alt": "250 West 96th Street 大楼外观渲染图",
+    "sourceUrl": "https://250west96th.com",
+    "width": 840,
+    "height": 1400
+   },
+   {
     "id": "250-west-96-street-img-1",
     "src": "/new-development/250-west-96-street/images/250-west-96-street-img-1.jpg",
     "caption": "250 West 96th Street 官方主视觉。",
@@ -5907,6 +5916,15 @@
     "height": 933
    },
    {
+    "id": "rooftop-lounge-outdoor-screen",
+    "src": "/new-development/250-west-96-street/images/rooftop-lounge-outdoor-screen.jpg",
+    "caption": "屋顶酒廊，配户外沙发组与观影大屏。",
+    "alt": "250 West 96th Street 屋顶酒廊与户外大屏",
+    "sourceUrl": "https://250west96th.com",
+    "width": 1400,
+    "height": 934
+   },
+   {
     "id": "250-west-96-street-img-9",
     "src": "/new-development/250-west-96-street/images/250-west-96-street-img-9.jpg",
     "caption": "会客与娱乐空间，含正式餐厅与俱乐部室。",
@@ -5925,10 +5943,19 @@
     "height": 934
    },
    {
+    "id": "model-residence-bedroom",
+    "src": "/new-development/250-west-96-street/images/model-residence-bedroom.jpg",
+    "caption": "样板间卧室，超大平开窗引入充足采光。",
+    "alt": "250 West 96th Street 样板间卧室",
+    "sourceUrl": "https://250west96th.com",
+    "width": 1200,
+    "height": 800
+   },
+   {
     "id": "interior-living-space",
     "src": "/new-development/250-west-96-street/images/interior-living-space.jpg",
-    "caption": "Interior living space",
-    "alt": "Interior living space",
+    "caption": "住宅室内起居空间。",
+    "alt": "250 West 96th Street 住宅室内起居空间",
     "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=90,fit=scale-down,width=2400/https://media-production.lp-cdn.com/media/c9f2e4b2-1974-40d0-9954-769b589e7251",
     "width": 1400,
     "height": 875
@@ -5936,8 +5963,8 @@
    {
     "id": "interior-residence-view",
     "src": "/new-development/250-west-96-street/images/interior-residence-view.jpg",
-    "caption": "Interior / residence view",
-    "alt": "Interior / residence view",
+    "caption": "住宅室内一景。",
+    "alt": "250 West 96th Street 住宅室内一景",
     "sourceUrl": "https://media-production.lp-cdn.com/cdn-cgi/image/format=auto,quality=90,fit=scale-down,width=2400/https://media-production.lp-cdn.com/media/62c9dc97-90e9-4173-93fd-1f64ddf6d3d7",
     "width": 1400,
     "height": 875
