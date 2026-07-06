@@ -682,6 +682,15 @@
  "one-manhattan-square": {
   "images": [
    {
+    "id": "tower-exterior-manhattan-bridge",
+    "src": "/new-development/one-manhattan-square/images/tower-exterior-manhattan-bridge.jpg",
+    "caption": "One Manhattan Square rising beside the Manhattan Bridge",
+    "alt": "One Manhattan Square rising beside the Manhattan Bridge",
+    "sourceUrl": "https://onemanhattansquare.com",
+    "width": 899,
+    "height": 1400
+   },
+   {
     "id": "residence-living",
     "src": "/new-development/one-manhattan-square/images/residence-living.jpg",
     "caption": "Residence interior",
@@ -3985,6 +3994,15 @@
  },
  "one11-residences": {
   "images": [
+   {
+    "id": "building-crown-rooftop-terrace-central-park",
+    "src": "/new-development/one11-residences/images/building-crown-rooftop-terrace-central-park.jpg",
+    "caption": "Building crown and rooftop terrace overlooking Central Park",
+    "alt": "Building crown and rooftop terrace overlooking Central Park",
+    "sourceUrl": "https://one11residences.com",
+    "width": 543,
+    "height": 800
+   },
    {
     "id": "living-day",
     "src": "/new-development/one11-residences/images/living-day.jpg",
