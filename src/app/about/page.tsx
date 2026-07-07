@@ -25,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-const HERO = "/about/hero.jpg";
+const HERO = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/about/hero.jpg";
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");
@@ -103,7 +103,7 @@ export default async function AboutPage() {
           </div>
           <div className="relative mt-12 aspect-[3/2] overflow-hidden rounded-sm bg-line/40">
             <Image
-              src="/about/team.jpg"
+              src="https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/about/team.jpg"
               alt="The Homix team"
               fill
               sizes="(max-width: 1024px) 100vw, 1200px"

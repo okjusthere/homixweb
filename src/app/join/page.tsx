@@ -26,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-const HERO = "/join/hero.jpg";
+const HERO = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/join/hero.jpg";
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");

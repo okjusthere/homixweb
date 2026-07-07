@@ -44,6 +44,38 @@ Never expose `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_SECRET`, `ADMIN_PASSWORD`,
 The `inquiries` table has RLS enabled and no public insert policy. Public forms
 submit to the Next.js server, and the server writes through the service-role key.
 
+## Media Storage
+
+The website uses Supabase Storage for long-lived brand and content assets:
+
+- `agent-photos/agents/...`: advisor headshots. The production source of truth is
+  `public.agents.photo_url`; the static roster only uses `/agent-placeholder-logo.png`
+  as a fallback when Supabase is unavailable.
+- `agent-photos/site-media/...`: new development media, gated community media,
+  journal covers, neighborhood images, onboarding materials, training images,
+  and other long-lived editorial assets.
+
+Git should keep only logo, fallback, favicon/icon, and small static UI assets in
+`public/`. Do not add large advisor, building, community, training, journal, or
+neighborhood media back into Git.
+
+To re-run or extend the media migration from a trusted local machine:
+
+```bash
+SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/migrate-media-to-supabase.mjs --dry-run
+SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... node scripts/migrate-media-to-supabase.mjs
+```
+
+The script uploads to the existing public `agent-photos` bucket, updates agent
+`photo_url` rows by slug, and replaces local content-media paths in source files
+with Supabase public URLs. Keep the service-role key out of Git and logs.
+
+New advisor self-service uploads through `/edit/<token>` also write to
+`agent-photos/agents/<slug>/...`.
+
+Listing photos are excluded from this storage policy. They are dynamic MLS media
+served through BBO/R2 and should not be copied into Supabase or Git.
+
 ## Inquiry Flow
 
 The public forms are intentionally simple. A submission should:
@@ -129,7 +161,13 @@ Then verify:
 - no obvious red/green/purple palette drift outside brand tokens;
 - `/listings` loads from BBO or displays the formal temporary-unavailable state;
 - listing image URLs come from BBO/R2 domains, not `media.mlsgrid.com`;
+- advisor and long-lived content images load from Supabase Storage, not
+  Squarespace or deleted local content directories;
 - `NEXT_PUBLIC_SITE_URL` points at the production domain.
+
+`next.config.ts` sets `images.unoptimized = true`; this avoids Vercel Image
+Optimization transformation limits on the Hobby plan. Images are served directly
+from Supabase, BBO/R2, or static public assets.
 
 ## Visual Direction
 

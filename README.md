@@ -57,11 +57,24 @@ login password for `/admin`; keep them different.
 Run `supabase/schema.sql` in the Supabase SQL editor. It creates:
 
 - `agents` for advisor profiles and private edit links.
-- `agent-photos` public storage bucket for advisor headshots.
+- `agent-photos` public storage bucket for advisor headshots and long-lived
+  website media.
 - `inquiries` for website contact form submissions.
 
 No public write policy is created for `inquiries`; the server writes through the
 service-role key after validation.
+
+Storage paths are intentionally stable:
+
+- `agent-photos/agents/...` stores advisor headshots. Production agent cards use
+  `public.agents.photo_url`; the static roster only keeps the brand fallback.
+- `agent-photos/site-media/...` stores long-lived editorial assets such as new
+  development images, gated community images, journal covers, neighborhood
+  photos, onboarding materials, and training images.
+- Git keeps only logo, fallback, and static UI assets in `public/`.
+
+Listings media is not stored by this website. Listing photos remain on the
+BBO/R2 listing-media path and are treated as dynamic MLS assets.
 
 ## Inquiries
 
@@ -85,6 +98,6 @@ checklist, and routine operating tasks.
 ## Listings Boundary
 
 The listings data layer is intentionally isolated behind `src/lib/listings`.
-UI imports only the provider interface/singleton. MLS/IDX feed hardening, media
-URL durability, and listing image reliability are specialist-owned before final
-launch and should not be mixed with brand/content changes.
+UI imports only the provider interface/singleton. The website does not call
+OneKey/MLSGrid directly and does not keep a local MLS cache; BBO is the only MLS
+backend.

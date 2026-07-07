@@ -34,7 +34,7 @@ export async function updateAgentProfile(
       return { ok: false, error: "Photo is too large (max 8MB)." };
     }
     const ext = (file.name.split(".").pop() || "jpg").toLowerCase().replace(/[^a-z0-9]/g, "");
-    const path = `${agent.slug}/${Date.now()}.${ext || "jpg"}`;
+    const path = `agents/${agent.slug}/${Date.now()}.${ext || "jpg"}`;
     const buf = Buffer.from(await file.arrayBuffer());
     const { error: upErr } = await sb.storage
       .from("agent-photos")

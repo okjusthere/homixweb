@@ -218,7 +218,7 @@ const copy: Record<
       {
         title: "Buyer Boot Camp flyer",
         subtitle: "买家精英实战营 · 6 weeks · 12 sessions",
-        image: "/training/buyer-bootcamp.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/buyer-bootcamp.jpg",
         alt: "Buyer Boot Camp 买家精英实战营 — 6-week, 12-session curriculum poster",
         width: 1280,
         height: 2134,
@@ -226,7 +226,7 @@ const copy: Record<
       {
         title: "Listing Mastery flyer",
         subtitle: "6 周系统训练营 · 6 weeks · 12 sessions",
-        image: "/training/listing-bootcamp.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-bootcamp.jpg",
         alt: "The Listing Mastery Bootcamp 6 周系统训练营 — 6-week, 12-session curriculum poster",
         width: 1080,
         height: 1920,
@@ -234,7 +234,7 @@ const copy: Record<
       {
         title: "New York transaction pitfalls",
         subtitle: "Attorney Chen Heng · Apr 15, 2026 · 12 PM",
-        image: "/training/ny-transaction-pitfalls.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ny-transaction-pitfalls.jpg",
         alt: "Flyer for Homix seminar on common issues in New York real estate transactions",
         width: 1131,
         height: 1600,
@@ -242,7 +242,7 @@ const copy: Record<
       {
         title: "Mortgage process notes",
         subtitle: "Jing Rao mortgage team · Feb 13",
-        image: "/training/mortgage-process-notes.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/mortgage-process-notes.jpg",
         alt: "Flyer for Homix mortgage process and risk notes seminar",
         width: 1079,
         height: 1600,
@@ -250,7 +250,7 @@ const copy: Record<
       {
         title: "AI media event",
         subtitle: "Sunny Zhang & Eric Wei · Jan 22, 2026",
-        image: "/training/ai-media-event.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ai-media-event.jpg",
         alt: "Flyer for Homix AI media and content operations event",
         width: 900,
         height: 1600,
@@ -258,7 +258,7 @@ const copy: Record<
       {
         title: "Listing appointment week 3",
         subtitle: "Judy Markowitz · Apr 8 · 1 PM",
-        image: "/training/listing-appointment-week3.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-appointment-week3.jpg",
         alt: "Flyer for Homix week 3 listing appointment training",
         width: 898,
         height: 1600,
@@ -266,7 +266,7 @@ const copy: Record<
       {
         title: "Loan strategy seminar",
         subtitle: "David Wu · Apr 10 · 11 AM",
-        image: "/training/loan-seminar-david-wu.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/loan-seminar-david-wu.jpg",
         alt: "Flyer for Homix loan strategy seminar with David Wu",
         width: 1280,
         height: 1600,
@@ -274,7 +274,7 @@ const copy: Record<
       {
         title: "No-income loan week 4",
         subtitle: "Li Li · Apr 13 · 11 AM",
-        image: "/training/no-income-loan-week4.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/no-income-loan-week4.jpg",
         alt: "Flyer for Homix week 4 no-income loan training",
         width: 899,
         height: 1600,
@@ -282,7 +282,7 @@ const copy: Record<
       {
         title: "Live workshop session",
         subtitle: "In-person scripts, Q&A, and deal practice",
-        image: "/training/live-workshop.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/live-workshop.jpg",
         alt: "Homix agents studying scripts during a live workshop session",
         width: 908,
         height: 1600,
@@ -290,7 +290,7 @@ const copy: Record<
       {
         title: "Cohort team session",
         subtitle: "Office training and team learning",
-        image: "/training/training-team.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-team.jpg",
         alt: "Homix team members gathered in the office during training",
         width: 1600,
         height: 1199,
@@ -298,7 +298,7 @@ const copy: Record<
       {
         title: "Office coaching moment",
         subtitle: "Hands-on support and milestone check-ins",
-        image: "/training/training-milestone.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-milestone.jpg",
         alt: "Homix office coaching moment with agents after training",
         width: 1200,
         height: 1600,
@@ -306,7 +306,7 @@ const copy: Record<
       {
         title: "Window roundtable session",
         subtitle: "In-office group coaching and discussion",
-        image: "/training/roundtable-window-session.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/roundtable-window-session.jpg",
         alt: "Homix agents gathered around the conference table for a training roundtable",
         width: 1199,
         height: 1600,
@@ -446,7 +446,7 @@ const copy: Record<
       {
         title: "买家精英实战营 flyer",
         subtitle: "Buyer Boot Camp · 6 周 · 12 节实战课程",
-        image: "/training/buyer-bootcamp.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/buyer-bootcamp.jpg",
         alt: "买家精英实战营 Buyer Boot Camp — 6 周 12 节课程大纲海报",
         width: 1280,
         height: 2134,
@@ -454,7 +454,7 @@ const copy: Record<
       {
         title: "Listing Mastery flyer",
         subtitle: "The Listing Mastery Bootcamp · 6 周 · 12 节实战课程",
-        image: "/training/listing-bootcamp.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-bootcamp.jpg",
         alt: "6 周系统训练营 The Listing Mastery Bootcamp — 6 周 12 节课程大纲海报",
         width: 1080,
         height: 1920,
@@ -462,7 +462,7 @@ const copy: Record<
       {
         title: "纽约地产交易常见问题",
         subtitle: "陈恒律师 · 2026 年 4 月 15 日 · 12 PM",
-        image: "/training/ny-transaction-pitfalls.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ny-transaction-pitfalls.jpg",
         alt: "Homix 纽约地产交易常见问题讲座 flyer",
         width: 1131,
         height: 1600,
@@ -470,7 +470,7 @@ const copy: Record<
       {
         title: "房贷过程注意事项",
         subtitle: "Jing Rao mortgage team · 2 月 13 日",
-        image: "/training/mortgage-process-notes.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/mortgage-process-notes.jpg",
         alt: "Homix 房贷流程与风险提示讲座 flyer",
         width: 1079,
         height: 1600,
@@ -478,7 +478,7 @@ const copy: Record<
       {
         title: "自媒体变现与 AI 运用",
         subtitle: "Sunny Zhang & Eric Wei · 2026 年 1 月 22 日",
-        image: "/training/ai-media-event.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ai-media-event.jpg",
         alt: "Homix 自媒体变现与 AI 运用公开课 flyer",
         width: 900,
         height: 1600,
@@ -486,7 +486,7 @@ const copy: Record<
       {
         title: "Listing Appointment Week 3",
         subtitle: "Judy Markowitz · 4 月 8 日 · 1 PM",
-        image: "/training/listing-appointment-week3.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-appointment-week3.jpg",
         alt: "Homix 6 周系统训练营 Week 3 listing appointment flyer",
         width: 898,
         height: 1600,
@@ -494,7 +494,7 @@ const copy: Record<
       {
         title: "贷款如何帮助经纪人成单",
         subtitle: "David Wu · 4 月 10 日 · 11 AM",
-        image: "/training/loan-seminar-david-wu.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/loan-seminar-david-wu.jpg",
         alt: "Homix 贷款如何帮助地产经纪人成单讲座 flyer",
         width: 1280,
         height: 1600,
@@ -502,7 +502,7 @@ const copy: Record<
       {
         title: "不查收入贷款 Week 4",
         subtitle: "Li Li · 4 月 13 日 · 11 AM",
-        image: "/training/no-income-loan-week4.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/no-income-loan-week4.jpg",
         alt: "Homix 不查收入贷款项目类别和优势 Week 4 flyer",
         width: 899,
         height: 1600,
@@ -510,7 +510,7 @@ const copy: Record<
       {
         title: "线下实战课现场",
         subtitle: "话术、答疑与交易演练",
-        image: "/training/live-workshop.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/live-workshop.jpg",
         alt: "Homix 经纪人在线下 workshop 中学习话术与交易流程",
         width: 908,
         height: 1600,
@@ -518,7 +518,7 @@ const copy: Record<
       {
         title: "班级合影",
         subtitle: "办公室培训与团队学习",
-        image: "/training/training-team.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-team.jpg",
         alt: "Homix 团队成员在办公室培训期间合影",
         width: 1600,
         height: 1199,
@@ -526,7 +526,7 @@ const copy: Record<
       {
         title: "办公室带教时刻",
         subtitle: "实战支持与阶段性 check-in",
-        image: "/training/training-milestone.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-milestone.jpg",
         alt: "Homix 办公室培训后的带教与交流时刻",
         width: 1200,
         height: 1600,
@@ -534,7 +534,7 @@ const copy: Record<
       {
         title: "会议室圆桌培训",
         subtitle: "办公室集体带教与讨论",
-        image: "/training/roundtable-window-session.jpg",
+        image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/roundtable-window-session.jpg",
         alt: "Homix 经纪人在会议室参加圆桌培训",
         width: 1199,
         height: 1600,

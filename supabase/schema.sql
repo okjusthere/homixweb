@@ -30,7 +30,7 @@ create policy "agents public read"
   on public.agents for select
   using (visible = true);
 
--- Public bucket for advisor headshots.
+-- Public bucket for advisor headshots and long-lived website media.
 insert into storage.buckets (id, name, public)
 values ('agent-photos', 'agent-photos', true)
 on conflict (id) do nothing;

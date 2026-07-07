@@ -857,14 +857,14 @@ const en = {
         {
           name: "Si Zhang (Sunny)",
           role: "Founder · Licensed Real Estate Broker",
-          image: "/onboarding/sunny-zhang.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/sunny-zhang.jpg",
           bio: "Sunny began his real estate career in 2013, built a record of top sales performance in China, and quickly became a top-producing New York broker after relocating to the United States. Before launching Homix in 2025, he built a digital media community of more than 400,000 followers and proved that trusted content can create real market leverage for agents and sellers.",
           focus: ["Brokerage strategy", "Media engine", "Agent personal brand"],
         },
         {
           name: "Heidi Liu",
           role: "联合创始人 · 持牌地产副经纪",
-          image: "/onboarding/heidi-liu.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/heidi-liu.jpg",
           bio: "Heidi brings 13+ years of full-time New York real estate experience as a broker, branch manager, coach, mentor, investor, and homeowner. Known for relentless follow-up, market expertise, staging and marketing judgment, and a long Top Producer track record, she helps agents learn the practical standard behind a clean client experience and a strong transaction.",
           focus: ["Mentorship", "Transaction standards", "Client experience"],
         },
@@ -878,21 +878,21 @@ const en = {
         {
           name: "Grace Xia",
           role: "Office Manager",
-          image: "/onboarding/grace.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/grace.jpg",
           imagePosition: "50% 35%",
           body: "Your first stop for office coordination, onboarding checklists, account setup, scheduling, paperwork routing, and making sure the right person sees the right issue.",
         },
         {
           name: "Zoey Zhang",
           role: "Marketing Coordinator",
-          image: "/onboarding/zoey.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/zoey.jpg",
           imagePosition: "50% 22%",
           body: "Supports agent profiles, content calendars, listing marketing requests, social media coordination, and the brand details that keep every agent looking consistent.",
         },
         {
           name: "Henry Ju",
           role: "Accounting / Finance",
-          image: "/onboarding/henry-ju.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/henry-ju.jpg",
           imagePosition: "50% 26%",
           body: "Helps keep commissions, reimbursements, invoices, deal-related payments, and finance questions moving with clear records and timely follow-up.",
         },
@@ -960,7 +960,7 @@ const en = {
       title: "A media engine agents can grow inside.",
       lead: "Homix is not only a brokerage brand. It is a network of recognizable IPs, company channels, bilingual content, and listing stories that help agents become known before the first client call.",
       image: {
-        src: "/onboarding/homix-social-media-team.jpg",
+        src: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-social-media-team.jpg",
         alt: "Homix social media IP team group portrait",
       },
       stats: [
@@ -994,7 +994,7 @@ const en = {
           handle: "@Homix 合美置地",
           body: "Douyin ID: 70077200788. Open the link or scan the QR code in Douyin.",
           url: "https://v.douyin.com/EPHD2ERjt3A/",
-          image: "/onboarding/homix-douyin-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-douyin-qr.jpg",
           alt: "Homix Douyin QR code",
           width: 545,
           height: 545,
@@ -1005,7 +1005,7 @@ const en = {
           handle: "homix合美置地｜乐居",
           body: "Follow Homix for bilingual real estate video, local market stories, and agent IP content.",
           url: "https://xhslink.com/m/2vk0nSDkvyq",
-          image: "/onboarding/homix-xiaohongshu-qr-clean.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-xiaohongshu-qr-clean.jpg",
           alt: "Homix Xiaohongshu QR code",
           width: 306,
           height: 306,
@@ -1016,7 +1016,7 @@ const en = {
           handle: "@homix.realty",
           body: "Follow the Homix Realty account for listing visuals, agent media, events, and social proof.",
           url: "https://www.instagram.com/homix.realty?igsh=cWlwZm83aTA5b3h5&utm_source=qr",
-          image: "/onboarding/homix-instagram-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-instagram-qr.jpg",
           alt: "Homix Instagram QR code",
           width: 410,
           height: 410,
@@ -1026,7 +1026,7 @@ const en = {
           name: "WeChat Channels / 视频号",
           handle: "Homix 合美置地",
           body: "Scan the QR code in WeChat to follow the Homix video account.",
-          image: "/onboarding/homix-wechat-channels-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-wechat-channels-qr.jpg",
           alt: "Homix WeChat Channels QR code",
           width: 530,
           height: 530,
@@ -1263,7 +1263,7 @@ const en = {
               {
                 title: "Homix business card",
                 body: "Branded business card template with agent name, license disclosure, contact details, QR code, and headshot area.",
-                image: "/onboarding/self-branding-business-card.png",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-business-card.png",
                 alt: "Homix branded business card template for agent onboarding",
                 width: 1044,
                 height: 600,
@@ -1282,7 +1282,7 @@ const en = {
               {
                 title: "Email signature setup",
                 body: "Recommended email signature structure for professional client communication.",
-                image: "/onboarding/self-branding-email-signature.svg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-email-signature.svg",
                 alt: "Email signature setup example for Homix agent onboarding",
                 width: 1600,
                 height: 720,
@@ -1301,7 +1301,7 @@ const en = {
               {
                 title: "Open House sign",
                 body: "Company-provided Open House sign design with headshot and flyer area.",
-                image: "/onboarding/self-branding-open-house-sign.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-open-house-sign.jpg",
                 alt: "Homix Open House sign design template",
                 width: 1600,
                 height: 980,
@@ -1309,7 +1309,7 @@ const en = {
               {
                 title: "For Sale sign",
                 body: "Company-provided For Sale sign design with agent contact and QR placement.",
-                image: "/onboarding/self-branding-for-sale-sign.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-for-sale-sign.jpg",
                 alt: "Homix For Sale sign design template",
                 width: 1600,
                 height: 982,
@@ -1317,7 +1317,7 @@ const en = {
               {
                 title: "For Sale sign (vertical)",
                 body: "Vertical For Sale sign design with agent name, QR code, headshot area, and social icons.",
-                image: "/onboarding/self-branding-for-sale-sign-vertical.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-for-sale-sign-vertical.jpg",
                 alt: "Homix vertical For Sale sign design template",
                 width: 732,
                 height: 1106,
@@ -1425,7 +1425,7 @@ const en = {
           {
             title: "Buyer Boot Camp",
             subtitle: "买家精英实战营 · 6 weeks · 12 sessions",
-            image: "/training/buyer-bootcamp.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/buyer-bootcamp.jpg",
             alt: "Buyer Boot Camp training poster",
             width: 1280,
             height: 2134,
@@ -1433,7 +1433,7 @@ const en = {
           {
             title: "The Listing Mastery Bootcamp",
             subtitle: "6 周系统训练营 · 6 weeks · 12 sessions",
-            image: "/training/listing-bootcamp.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-bootcamp.jpg",
             alt: "The Listing Mastery Bootcamp training poster",
             width: 1080,
             height: 1920,
@@ -1441,7 +1441,7 @@ const en = {
           {
             title: "New York transaction pitfalls",
             subtitle: "Attorney Chen Heng · Apr 15, 2026 · 12 PM",
-            image: "/training/ny-transaction-pitfalls.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ny-transaction-pitfalls.jpg",
             alt: "Flyer for Homix seminar on common issues in New York real estate transactions",
             width: 1131,
             height: 1600,
@@ -1449,7 +1449,7 @@ const en = {
           {
             title: "Mortgage process notes",
             subtitle: "Jing Rao mortgage team · Feb 13",
-            image: "/training/mortgage-process-notes.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/mortgage-process-notes.jpg",
             alt: "Flyer for Homix mortgage process and risk notes seminar",
             width: 1079,
             height: 1600,
@@ -1457,7 +1457,7 @@ const en = {
           {
             title: "AI media event",
             subtitle: "Sunny Zhang & Eric Wei · Jan 22, 2026",
-            image: "/training/ai-media-event.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ai-media-event.jpg",
             alt: "Flyer for Homix AI media and content operations event",
             width: 900,
             height: 1600,
@@ -1465,7 +1465,7 @@ const en = {
           {
             title: "Listing appointment week 3",
             subtitle: "Judy Markowitz · Apr 8 · 1 PM",
-            image: "/training/listing-appointment-week3.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-appointment-week3.jpg",
             alt: "Flyer for Homix week 3 listing appointment training",
             width: 898,
             height: 1600,
@@ -1473,7 +1473,7 @@ const en = {
           {
             title: "Loan strategy seminar",
             subtitle: "David Wu · Apr 10 · 11 AM",
-            image: "/training/loan-seminar-david-wu.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/loan-seminar-david-wu.jpg",
             alt: "Flyer for Homix loan strategy seminar with David Wu",
             width: 1280,
             height: 1600,
@@ -1481,7 +1481,7 @@ const en = {
           {
             title: "No-income loan week 4",
             subtitle: "Li Li · Apr 13 · 11 AM",
-            image: "/training/no-income-loan-week4.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/no-income-loan-week4.jpg",
             alt: "Flyer for Homix week 4 no-income loan training",
             width: 899,
             height: 1600,
@@ -1489,7 +1489,7 @@ const en = {
           {
             title: "Live workshop session",
             subtitle: "In-person scripts, Q&A, and deal practice",
-            image: "/training/live-workshop.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/live-workshop.jpg",
             alt: "Homix agents studying scripts during a live workshop session",
             width: 908,
             height: 1600,
@@ -1497,7 +1497,7 @@ const en = {
           {
             title: "Cohort team session",
             subtitle: "Office training and team learning",
-            image: "/training/training-team.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-team.jpg",
             alt: "Homix team members gathered in the office during training",
             width: 1600,
             height: 1199,
@@ -1505,7 +1505,7 @@ const en = {
           {
             title: "Office coaching moment",
             subtitle: "Hands-on support and milestone check-ins",
-            image: "/training/training-milestone.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-milestone.jpg",
             alt: "Homix office coaching moment with agents after training",
             width: 1200,
             height: 1600,
@@ -1513,7 +1513,7 @@ const en = {
           {
             title: "Window roundtable session",
             subtitle: "In-office group coaching and discussion",
-            image: "/training/roundtable-window-session.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/roundtable-window-session.jpg",
             alt: "Homix agents gathered around the conference table for a training roundtable",
             width: 1199,
             height: 1600,
@@ -2296,14 +2296,14 @@ const zh: Dict = {
         {
           name: "Si Zhang (Sunny)",
           role: "创始人 · 持牌地产经纪",
-          image: "/onboarding/sunny-zhang.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/sunny-zhang.jpg",
           bio: "Sunny 于 2013 年进入房地产行业，曾在中国头部房企取得全国级销售成绩，来到美国后迅速转入纽约地产市场并成为高产经纪人。创立 Homix 之前，他打造了超过 40 万粉丝的个人媒体社区，证明了可信内容可以为经纪人和卖家带来真实的市场杠杆。",
           focus: ["公司战略", "媒体引擎", "经纪人个人品牌"],
         },
         {
           name: "Heidi Liu",
           role: "联合创始人 · 持牌地产副经纪",
-          image: "/onboarding/heidi-liu.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/heidi-liu.jpg",
           bio: "Heidi 拥有 13 年以上纽约地产全职经验，曾担任 broker、branch manager、coach 与 mentor，同时也是投资人与业主。她以市场判断、持续跟进、空间审美、营销能力和长期 Top Producer 记录著称，帮助经纪人学会一笔干净交易背后的服务标准。",
           focus: ["导师带教", "交易标准", "客户体验"],
         },
@@ -2317,21 +2317,21 @@ const zh: Dict = {
         {
           name: "Grace Xia",
           role: "Office Manager",
-          image: "/onboarding/grace.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/grace.jpg",
           imagePosition: "50% 35%",
           body: "负责办公室协调、入职清单、账号开通、日程安排、文件流转，以及把问题及时交到对的人手上。",
         },
         {
           name: "Zoey Zhang",
           role: "Marketing Coordinator",
-          image: "/onboarding/zoey.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/zoey.jpg",
           imagePosition: "50% 22%",
           body: "支持经纪人主页、内容日历、房源营销需求、社交媒体协调，以及确保每位经纪人的对外形象保持品牌一致。",
         },
         {
           name: "Henry Ju",
           role: "Accounting / 财务",
-          image: "/onboarding/henry-ju.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/henry-ju.jpg",
           imagePosition: "50% 26%",
           body: "协助佣金、报销、发票、交易相关款项与财务问题，确保记录清楚、跟进及时。",
         },
@@ -2399,7 +2399,7 @@ const zh: Dict = {
       title: "一套能让经纪人不断成长的媒体引擎。",
       lead: "Homix 不只是一个 brokerage 品牌，也是一个由公司账号、经纪人 IP、双语内容和房源故事组成的媒体网络。我们希望经纪人在第一次客户来电之前，就已经被市场看见、记住并信任。",
       image: {
-        src: "/onboarding/homix-social-media-team.jpg",
+        src: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-social-media-team.jpg",
         alt: "Homix social media IP 团队大合照",
       },
       stats: [
@@ -2433,7 +2433,7 @@ const zh: Dict = {
           handle: "@Homix 合美置地",
           body: "抖音号：70077200788。可点击链接打开，也可以保存二维码后在抖音扫码关注。",
           url: "https://v.douyin.com/EPHD2ERjt3A/",
-          image: "/onboarding/homix-douyin-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-douyin-qr.jpg",
           alt: "Homix 抖音二维码",
           width: 545,
           height: 545,
@@ -2444,7 +2444,7 @@ const zh: Dict = {
           handle: "homix合美置地｜乐居",
           body: "关注 Homix 小红书，查看纽约地产视频、本地市场内容与经纪人 IP 内容。",
           url: "https://xhslink.com/m/2vk0nSDkvyq",
-          image: "/onboarding/homix-xiaohongshu-qr-clean.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-xiaohongshu-qr-clean.jpg",
           alt: "Homix 小红书二维码",
           width: 306,
           height: 306,
@@ -2455,7 +2455,7 @@ const zh: Dict = {
           handle: "@homix.realty",
           body: "关注 Homix Realty Instagram，查看房源视觉、经纪人媒体内容、活动与品牌动态。",
           url: "https://www.instagram.com/homix.realty?igsh=cWlwZm83aTA5b3h5&utm_source=qr",
-          image: "/onboarding/homix-instagram-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-instagram-qr.jpg",
           alt: "Homix Instagram 二维码",
           width: 410,
           height: 410,
@@ -2465,7 +2465,7 @@ const zh: Dict = {
           name: "WeChat Channels / 视频号",
           handle: "Homix 合美置地",
           body: "使用微信扫描二维码，关注 Homix 视频号。",
-          image: "/onboarding/homix-wechat-channels-qr.jpg",
+          image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/homix-wechat-channels-qr.jpg",
           alt: "Homix 视频号二维码",
           width: 530,
           height: 530,
@@ -2702,7 +2702,7 @@ const zh: Dict = {
               {
                 title: "Homix 名片",
                 body: "Homix 品牌名片模板，含经纪人姓名、执照披露、联系方式、二维码和照片区域。",
-                image: "/onboarding/self-branding-business-card.png",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-business-card.png",
                 alt: "Homix 经纪人入职品牌名片模板",
                 width: 1044,
                 height: 600,
@@ -2721,7 +2721,7 @@ const zh: Dict = {
               {
                 title: "邮件签名设置",
                 body: "建议每位经纪人按统一格式设置邮件签名，提升客户沟通的专业感。",
-                image: "/onboarding/self-branding-email-signature.svg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-email-signature.svg",
                 alt: "Homix 经纪人邮件签名设置示例",
                 width: 1600,
                 height: 720,
@@ -2740,7 +2740,7 @@ const zh: Dict = {
               {
                 title: "Open House sign",
                 body: "公司提供的 Open House sign 设计，预留头像与 flyer 展示位置。",
-                image: "/onboarding/self-branding-open-house-sign.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-open-house-sign.jpg",
                 alt: "Homix Open House sign 设计模板",
                 width: 1600,
                 height: 980,
@@ -2748,7 +2748,7 @@ const zh: Dict = {
               {
                 title: "For Sale sign",
                 body: "公司提供的 For Sale sign 设计，包含经纪人联系方式与二维码位置。",
-                image: "/onboarding/self-branding-for-sale-sign.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-for-sale-sign.jpg",
                 alt: "Homix For Sale sign 设计模板",
                 width: 1600,
                 height: 982,
@@ -2756,7 +2756,7 @@ const zh: Dict = {
               {
                 title: "For Sale sign（竖版）",
                 body: "竖版 For Sale sign 设计，含经纪人姓名、二维码、照片区域和社交媒体图标。",
-                image: "/onboarding/self-branding-for-sale-sign-vertical.jpg",
+                image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/onboarding/self-branding-for-sale-sign-vertical.jpg",
                 alt: "Homix 竖版 For Sale sign 设计模板",
                 width: 732,
                 height: 1106,
@@ -2864,7 +2864,7 @@ const zh: Dict = {
           {
             title: "Buyer Boot Camp",
             subtitle: "买家精英实战营 · 6 weeks · 12 sessions",
-            image: "/training/buyer-bootcamp.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/buyer-bootcamp.jpg",
             alt: "Buyer Boot Camp 买家精英实战营培训海报",
             width: 1280,
             height: 2134,
@@ -2872,7 +2872,7 @@ const zh: Dict = {
           {
             title: "The Listing Mastery Bootcamp",
             subtitle: "6 周系统训练营 · 6 weeks · 12 sessions",
-            image: "/training/listing-bootcamp.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-bootcamp.jpg",
             alt: "The Listing Mastery Bootcamp 培训海报",
             width: 1080,
             height: 1920,
@@ -2880,7 +2880,7 @@ const zh: Dict = {
           {
             title: "纽约地产交易常见问题",
             subtitle: "陈恒律师 · 2026 年 4 月 15 日 · 12 PM",
-            image: "/training/ny-transaction-pitfalls.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ny-transaction-pitfalls.jpg",
             alt: "Homix 纽约地产交易常见问题讲座 flyer",
             width: 1131,
             height: 1600,
@@ -2888,7 +2888,7 @@ const zh: Dict = {
           {
             title: "房贷过程注意事项",
             subtitle: "Jing Rao mortgage team · 2 月 13 日",
-            image: "/training/mortgage-process-notes.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/mortgage-process-notes.jpg",
             alt: "Homix 房贷流程与风险提示讲座 flyer",
             width: 1079,
             height: 1600,
@@ -2896,7 +2896,7 @@ const zh: Dict = {
           {
             title: "自媒体变现与 AI 运用",
             subtitle: "Sunny Zhang & Eric Wei · 2026 年 1 月 22 日",
-            image: "/training/ai-media-event.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/ai-media-event.jpg",
             alt: "Homix 自媒体变现与 AI 运用公开课 flyer",
             width: 900,
             height: 1600,
@@ -2904,7 +2904,7 @@ const zh: Dict = {
           {
             title: "Listing Appointment Week 3",
             subtitle: "Judy Markowitz · 4 月 8 日 · 1 PM",
-            image: "/training/listing-appointment-week3.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/listing-appointment-week3.jpg",
             alt: "Homix 6 周系统训练营 Week 3 listing appointment flyer",
             width: 898,
             height: 1600,
@@ -2912,7 +2912,7 @@ const zh: Dict = {
           {
             title: "贷款如何帮助经纪人成单",
             subtitle: "David Wu · 4 月 10 日 · 11 AM",
-            image: "/training/loan-seminar-david-wu.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/loan-seminar-david-wu.jpg",
             alt: "Homix 贷款如何帮助地产经纪人成单讲座 flyer",
             width: 1280,
             height: 1600,
@@ -2920,7 +2920,7 @@ const zh: Dict = {
           {
             title: "不查收入贷款 Week 4",
             subtitle: "Li Li · 4 月 13 日 · 11 AM",
-            image: "/training/no-income-loan-week4.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/no-income-loan-week4.jpg",
             alt: "Homix 不查收入贷款项目类别和优势 Week 4 flyer",
             width: 899,
             height: 1600,
@@ -2928,7 +2928,7 @@ const zh: Dict = {
           {
             title: "线下实战课现场",
             subtitle: "话术、答疑与交易演练",
-            image: "/training/live-workshop.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/live-workshop.jpg",
             alt: "Homix 经纪人在线下 workshop 中学习话术与交易流程",
             width: 908,
             height: 1600,
@@ -2936,7 +2936,7 @@ const zh: Dict = {
           {
             title: "班级合影",
             subtitle: "办公室培训与团队学习",
-            image: "/training/training-team.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-team.jpg",
             alt: "Homix 团队成员在办公室培训期间合影",
             width: 1600,
             height: 1199,
@@ -2944,7 +2944,7 @@ const zh: Dict = {
           {
             title: "办公室带教时刻",
             subtitle: "实战支持与阶段性 check-in",
-            image: "/training/training-milestone.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/training-milestone.jpg",
             alt: "Homix 办公室培训后的带教与交流时刻",
             width: 1200,
             height: 1600,
@@ -2952,7 +2952,7 @@ const zh: Dict = {
           {
             title: "会议室圆桌培训",
             subtitle: "办公室集体带教与讨论",
-            image: "/training/roundtable-window-session.jpg",
+            image: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training/roundtable-window-session.jpg",
             alt: "Homix 经纪人在会议室参加圆桌培训",
             width: 1199,
             height: 1600,
