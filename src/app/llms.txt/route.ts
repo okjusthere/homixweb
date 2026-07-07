@@ -1,4 +1,6 @@
 import { journalPosts } from "@/content/journal/posts";
+import { guides } from "@/content/guides";
+import { marketAreas } from "@/data/market-stats";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { gatedCommunities } from "@/data/gated-communities";
 import { neighborhoods, siteConfig } from "@/lib/site";
@@ -30,12 +32,24 @@ export async function GET() {
     "",
     `- [Homes for sale](${base}/listings): MLS listings across New York`,
     `- [New developments](${base}/NewDevelopment): ${featuredDevelopments.length} curated NYC new-construction condo buildings with pricing and floor plans`,
-    `- [Neighborhood guides](${base}/neighborhoods): ${neighborhoods.length} bilingual neighborhood guides (Queens, Manhattan, Long Island)`,
+    `- [Neighborhood guides](${base}/neighborhoods): ${neighborhoods.length} bilingual neighborhood guides (Queens, Brooklyn, Manhattan, Long Island)`,
     `- [Gated communities](${base}/communities): ${gatedCommunities.length} Nassau County gated & private communities`,
     `- [Advisors](${base}/agents): bilingual licensed agents`,
     `- [Journal](${base}/journal): ${journalPosts.length} bilingual guides on buying, mortgages, taxes, and market data`,
     `- [Mortgage calculator](${base}/calculator)`,
     `- [Sell with Homix](${base}/sell)`,
+    "",
+    "## Evergreen guides 置业指南 (bilingual pillar pages)",
+    "",
+    ...guides.map(
+      (g) => `- [${g.title.en}](${base}/guides/${g.slug}): ${g.title.zh}`
+    ),
+    "",
+    "## Live market data 市场数据 (refreshed quarterly)",
+    "",
+    ...marketAreas.map(
+      (a) => `- [${a.title.en}](${base}/market-data/${a.slug}): ${a.title.zh}`
+    ),
     "",
     "## Neighborhood guides 社区指南",
     "",

@@ -65,6 +65,8 @@ export const buyNav: string[] = [
   "/neighborhoods",
   "/communities",
   "/NewDevelopment",
+  "/guides",
+  "/market-data",
   "/calculator",
 ];
 
@@ -78,6 +80,8 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "communities", href: "/communities" },
       { key: "advisors", href: "/agents" },
       { key: "bilingualAgents", href: "/chinese-real-estate-agents-nyc" },
+      { key: "guides", href: "/guides" },
+      { key: "marketData", href: "/market-data" },
       { key: "journal", href: "/journal" },
     ],
   },
@@ -162,7 +166,7 @@ export const socialReach: SocialChannel[] = [
 export interface NeighborhoodTeaser {
   name: string;
   slug: string;
-  region: "Queens" | "Long Island" | "Manhattan";
+  region: "Queens" | "Long Island" | "Manhattan" | "Brooklyn";
   blurb: string;
   image: string;
   /** Photo attribution — required for CC-BY/CC-BY-SA imagery. */
@@ -479,6 +483,45 @@ export const neighborhoods: NeighborhoodTeaser[] = [
     "guide": {
       "en": "Floral Park is an incorporated village straddling the Queens–Nassau line, named for the seed-and-nursery business that once bloomed across its grounds — a heritage still legible in street names like Tulip, Violet, and Verbena. Its residential fabric is the suburban dream rendered in early-to-mid-20th-century brick and stucco: well-kept Tudors with timbering and steep gables, center-hall Colonials, and Cape Cods with dormers and bay windows, set on tidy, tree-lined blocks with private driveways and yards. Ownership skews overwhelmingly toward detached single-family houses, supplemented by some two-family homes and a modest stock of co-ops and condominiums. Three-to-four-bedroom houses generally trade in the high six figures, with the village offering relatively accessible pricing compared with pricier North Shore towns — a value entry point into Nassau ownership without leaving the Queens doorstep.\n\nFor commuters, the Long Island Rail Road is the headline. The Floral Park station, at Tulip and Atlantic Avenues, sits just west of where the Main Line and Hempstead Branch split: Main Line trains run one-seat to Penn Station in roughly 30 to 35 minutes, while Hempstead Branch trains now reach Grand Central Madison on the East Side directly, around 40 minutes. The station is ADA-accessible, with elevators to each platform, and sits along the completed Main Line Third Track, which added bi-directional capacity. Drivers reach the Cross Island Parkway, Grand Central Parkway, and Jericho Turnpike (NY Route 25) within minutes, linking to the wider parkway network and the boroughs.\n\nTwo compact downtowns give the village its rhythm. Tulip Avenue, the \"Uptown\" main street, lines up independent restaurants, bakeries, and pubs — the long-running Floral Park Diner, taco and gyro counters, and Irish tap rooms — behind brick and stone facades, and closes to traffic for the annual Chamber street fair timed to the Belmont Stakes. Covert Avenue adds a second walkable strip of shops and eateries. Belmont Park and UBS Arena, home of the New York Islanders, sit just over the line in Elmont for racing, concerts, and hockey. Elementary education is provided by the Floral Park-Bellerose Union Free School District (Floral Park-Bellerose School and John Lewis Childs School, PreK–6); secondary students attend Floral Park Memorial High School within the Sewanhaka Central High School District.",
       "zh": "Floral Park 是一座横跨皇后区与拿骚县交界的自治村（incorporated village），村名源自早年遍布此地的花卉苗圃产业，至今 Tulip（郁金香）、Violet（紫罗兰）、Verbena 等街名仍留有这段花卉渊源。它的住宅肌理是典型的郊区图景，以二十世纪上半叶的砖石与灰泥建筑为主：带木骨外露与陡峭山墙的都铎式（Tudor）、中厅式殖民风（Colonial），以及带老虎窗与凸窗的鳕鱼角式（Cape Cod），错落在整洁的林荫街区，多配私家车道与庭院。产权结构以独栋独户为绝对主体，辅以部分双拼住宅及少量合作公寓与共管公寓。三至四居室独栋通常成交于六十万至九十余万美元区间；相较北岸（North Shore）更昂贵的小镇，这里价格更亲民，是一个紧贴皇后区门口、又能进入拿骚县置业的高性价比入口。\n\n通勤方面，长岛铁路（LIRR）是核心卖点。Floral Park 车站位于 Tulip 与 Atlantic 大道交口，正处主线（Main Line）与 Hempstead 支线分叉点稍西侧：主线列车直达宾州车站（Penn Station）约 30 至 35 分钟，Hempstead 支线列车则可一车直达东城的 Grand Central Madison，约 40 分钟。车站已实现无障碍通行，各站台均设电梯，并坐落于已完工、新增双向运力的主线第三轨（Third Track）沿线。自驾数分钟即可上 Cross Island Parkway、Grand Central Parkway 及 Jericho Turnpike（纽约 25 号公路），接入更广的景观公路网与各区。\n\n两处紧凑的小镇中心赋予了村庄节奏。被本地人称作 \"Uptown\" 的主街 Tulip Avenue，在砖石店面后聚集着独立餐馆、烘焙坊与酒馆——开业多年的 Floral Park Diner、墨西哥卷与希腊烤肉小店，以及爱尔兰风格酒吧；每年配合贝尔蒙锦标赛（Belmont Stakes）的商会街市更会封街举办。Covert Avenue 则是第二条可步行的商铺与餐饮街。一线之隔的 Elmont 即是 Belmont Park 赛马场与纽约岛人队（New York Islanders）主场 UBS Arena，可看赛马、演唱会与冰球。小学教育由 Floral Park-Bellerose 联合自由学区提供（Floral Park-Bellerose School 与 John Lewis Childs School，学前至六年级）；中学生就读于 Sewanhaka 中央高中学区下的 Floral Park Memorial High School。"
+    }
+  },
+  {
+    "name": "Sunset Park",
+    "slug": "sunset-park",
+    "region": "Brooklyn",
+    "blurb": "Brooklyn's 八大道 Chinatown, hilltop harbor views, and the reborn Industry City waterfront.",
+    "image": "/neighborhoods/covers/sunset-park.jpg",
+    "photoCredit": "MusikAnimal · CC BY-SA 4.0",
+    "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Sunset_Park,_Brooklyn_looking_south_from_51st_St.JPG",
+    "guide": {
+      "en": "Sunset Park stretches across southwestern Brooklyn between the Gowanus Expressway waterfront and the ridge of Green-Wood Cemetery, and it carries two distinct commercial identities. Along Eighth Avenue runs one of New York City's largest Chinese business corridors — widely known as \"Brooklyn's Chinatown\" and, to its own community, 八大道 (\"Eighth Avenue\") — a dense run of Cantonese and Fujianese restaurants, herbal-medicine shops, bakeries, and Asian supermarkets that has grown steadily since the 1980s. A few blocks west, Fifth Avenue anchors a long-established Latino commercial strip. The housing stock is defined by handsome late-19th- and early-20th-century rowhouses, many faced in limestone or brownstone with stoops and bay windows, alongside brick multifamily walk-ups and a growing number of converted and newly built condominium units; two-, three-, and four-family houses are common, giving the area a strong owner-plus-rental-income character.\n\nTransit runs on two spines. The N train's BMT Sea Beach line surfaces at the Eighth Avenue station in the heart of the Chinese corridor, giving a one-seat ride toward Manhattan, while the D, N, and R trains run under Fourth Avenue along the neighborhood's western edge. The B35, B63, and B70 buses cross the district, and the Gowanus Expressway (I-278) and nearby Belt Parkway connect drivers to the wider region and the Verrazzano-Narrows Bridge to Staten Island.\n\nThe neighborhood takes its name from Sunset Park itself, a hilltop green space whose crest is one of the highest points in the borough, offering sweeping views across New York Harbor to Lower Manhattan, the Statue of Liberty, and the New Jersey shoreline, with a large public pool and recreation center below. Along the water, Industry City — a sprawling early-20th-century warehouse and manufacturing complex — has been reborn as a campus of design studios, food halls, makers, and retail, while the adjacent Brooklyn Army Terminal and Bush Terminal Park extend public access to the shoreline. Schools fall within NYC Community School Districts 15 and 20.",
+      "zh": "日落公园（Sunset Park）横亘于布鲁克林西南部，介于 Gowanus 快速路的滨水一侧与绿荫公墓（Green-Wood Cemetery）所在的山脊之间，拥有两条截然不同的商业主脉。沿第八大道（Eighth Avenue）展开的，是全纽约市规模最大的华人商业走廊之一——外界常称之为「布鲁克林华埠」，本地华人社区则称其为「八大道」——粤式与福建风味餐馆、中药行、烘焙店与亚洲超市鳞次栉比，自 1980 年代以来持续壮大。往西数个街区，第五大道则是历史悠久的拉丁裔商业带。住宅方面，本区以精美的十九世纪末至二十世纪初联排屋（rowhouse）为特色，许多以石灰岩或褐石为立面，配有门廊台阶与凸窗，另有砖砌多户步梯楼，以及日渐增多的改造与新建共管公寓（condo）单元；双户、三户、四户住宅十分常见，赋予本区鲜明的「自住兼收租」置业属性。\n\n交通沿两条主轴展开。地铁 N 线（BMT Sea Beach 线）在华人走廊核心的第八大道站（Eighth Avenue）出地面，可一线直通曼哈顿方向；D、N、R 线则沿本区西缘的第四大道（Fourth Avenue）地下运行。B35、B63、B70 等公交横贯全区；Gowanus 快速路（I-278）与邻近的 Belt Parkway 让自驾者通往更广区域，并经 Verrazzano-Narrows 大桥直达史泰登岛。\n\n社区之名正取自日落公园本身——一处山顶绿地，其顶端是全区地势最高处之一，可将纽约港、下曼哈顿、自由女神像与新泽西海岸线尽收眼底，坡下另设大型公共泳池与康乐中心。沿水岸，Industry City——一片二十世纪初的大型仓储与制造建筑群——已重生为汇聚设计工作室、美食广场、手作品牌与零售的园区；相邻的 Brooklyn Army Terminal 与 Bush Terminal Park 则进一步向公众开放滨水空间。学区隶属纽约市第 15 与第 20 学区。"
+    }
+  },
+  {
+    "name": "Bensonhurst",
+    "slug": "bensonhurst",
+    "region": "Brooklyn",
+    "blurb": "Brick rowhouses and two-family homes, an N-train commute, and a lively 86th Street & Bay Parkway Chinese corridor.",
+    "image": "/neighborhoods/covers/bensonhurst.jpg",
+    "photoCredit": "Rager722 · CC BY-SA 4.0",
+    "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Chinatown_Bensonhurst_(Bay_Parkway).jpg",
+    "guide": {
+      "en": "Bensonhurst sits in southern Brooklyn, a settled, low-rise residential district long known as one of the city's largest Italian-American enclaves and now home to a large and growing Chinese and broader Asian community. Its housing stock is distinctive: block after block of attached and semi-detached brick rowhouses, many of them two-family homes with a rentable unit, alongside detached houses on modest lots and a steady supply of postwar and newer condominium and co-op apartment buildings. This mix of two-family houses and condos makes the area a practical entry point for buyers who want ownership with rental income or a manageable apartment, and its residential streets stay quiet and tree-lined a block off the commercial avenues.\n\nCommercial life concentrates on a few busy corridors. Eighteenth Avenue — historically the heart of Italian Bensonhurst, lined for generations with pork stores, bakeries, and cafes — remains a defining strip, while 86th Street and Bay Parkway have become vibrant Chinese business corridors of restaurants, bakeries, herbal shops, and Asian supermarkets serving the neighborhood's changing population. The result is one of the more layered commercial landscapes in Brooklyn, where Italian and Chinese storefronts sit side by side.\n\nTransit is a genuine strength. The elevated D train runs above 86th Street with several neighborhood stations, and the N train's Sea Beach line stops along the corridor as well, giving residents two routes toward Manhattan; local bus lines and the nearby Belt Parkway and Gowanus Expressway round out the options. Green space centers on Bensonhurst Park near the Belt Parkway waterfront and the larger Dyker Beach Park just to the southwest, with community recreation and playing fields close at hand. Schools fall within NYC Community School Districts 20 and 21; named campuses include New Utrecht High School, a longtime neighborhood landmark.",
+      "zh": "本森赫斯特（Bensonhurst）坐落于布鲁克林南部，是一处成熟、低层的住宅区，长期以来以全市规模最大的意大利裔聚居区之一而闻名，如今也已成为一个庞大且不断壮大的华人及更广义亚裔社区的家园。其住宅类型颇具特色：一排排相连（attached）与半独立（semi-detached）的砖砌联排屋，许多为带可出租单元的双户住宅，另有小地块上的独栋住宅，以及源源不断的战后及新建共管公寓（condo）与合作公寓（co-op）楼。这种双户住宅与公寓交织的格局，让本区成为置业者务实的入门之选——既可自住兼收租，也可选购一套易于打理的公寓；而只要离开商业大道一个街区，住宅街道便重归宁静、绿树成荫。\n\n商业活力集中于几条繁忙的走廊。第十八大道（18th Avenue）——历史上意大利裔本森赫斯特的心脏，几代人以来遍布意式熟食店、烘焙坊与咖啡馆——至今仍是标志性街段；而 86 街（86th Street）与 Bay Parkway 则已发展为充满活力的华人商业走廊，餐馆、烘焙店、中药行与亚洲超市云集，服务于本区不断变化的人口。由此形成布鲁克林最具层次感的商业景观之一，意式与华人店铺比邻而立。\n\n交通是本区的一大实打实的优势。高架 D 线沿 86 街上方运行，在社区内设有多个车站；N 线的 Sea Beach 线亦在此走廊沿线停靠，为居民提供两条通往曼哈顿的路线；本地公交，加上邻近的 Belt Parkway 与 Gowanus 快速路，进一步丰富了出行选择。绿地方面，以邻近 Belt Parkway 滨水的 Bensonhurst Park，以及西南侧更大的 Dyker Beach Park 为核心，社区康乐设施与运动场近在咫尺。学区隶属纽约市第 20 与第 21 学区，知名校园包括本区长久以来的地标——New Utrecht 高中（New Utrecht High School）。"
+    }
+  },
+  {
+    "name": "Dyker Heights",
+    "slug": "dyker-heights",
+    "region": "Brooklyn",
+    "blurb": "Detached houses on larger lots, a beachside park and golf course, and Brooklyn's famous Christmas lights.",
+    "image": "/neighborhoods/covers/dyker-heights.jpg",
+    "photoCredit": "Rachel L'Heureux · CC BY-SA 4.0",
+    "photoCreditUrl": "https://commons.wikimedia.org/wiki/File:Dyker_Heights_Christmas_Lights.jpg",
+    "guide": {
+      "en": "Dyker Heights occupies a quiet stretch of southwestern Brooklyn between Bensonhurst and Bay Ridge, and it reads as one of the more suburban corners of the borough. Where much of surrounding Brooklyn is built up in attached rowhouses, Dyker Heights is known for detached and semi-detached single-family houses on comparatively generous lots, many with driveways, garages, front lawns, and side yards. The architecture ranges from brick and stone Colonials and Tudors to substantial custom-built and rebuilt homes, and the larger, well-set-back properties on the neighborhood's most prominent blocks sit at the upper end of the local market. Attached rowhouses and a modest number of two-family homes fill in the more affordable side streets, but the detached single-family house is the neighborhood's signature.\n\nDyker Heights has no subway line running through its core, which is part of what keeps it residential and calm. Commuters typically walk or take a short bus ride to the D and N trains along the eastern edge in adjacent Bensonhurst, or to the R train in Bay Ridge to the west; express buses to Manhattan run along the avenues, and the nearby Belt Parkway and Gowanus Expressway (I-278) give drivers quick access to the rest of Brooklyn, Staten Island via the Verrazzano-Narrows Bridge, and beyond. Eleventh through Thirteenth Avenues carry much of the local shopping and dining.\n\nThe neighborhood's signature open space is Dyker Beach Park and its 18-hole Dyker Beach Golf Course, one of the city's public courses, set along the Belt Parkway shoreline with ball fields, courts, and waterfront paths. Dyker Heights is best known citywide, though, for its extraordinary Christmas-light displays: each December, homeowners — especially along the blocks around 84th Street and 11th to 13th Avenues — mount elaborate, professionally installed light-and-figure displays that draw large crowds and bus tours from across the region. Schools fall within NYC Community School District 20.",
+      "zh": "戴克高地（Dyker Heights）占据布鲁克林西南部一片宁静地带，介于本森赫斯特（Bensonhurst）与湾脊（Bay Ridge）之间，是全区最具郊区气息的角落之一。周边布鲁克林多以相连的联排屋建成，戴克高地却以坐落在相对宽敞地块上的独栋（detached）与半独立（semi-detached）单户住宅著称，许多都配有车道、车库、前草坪与侧院。建筑风格从砖石殖民式（Colonial）、都铎式（Tudor），到气派的定制新建与重建住宅，一应俱全；社区最具代表性街区上那些占地更大、远离街道的宅邸，处于本地市场的高端段位。相连的联排屋与少量双户住宅则填充在价格更为亲民的侧街，但独栋单户住宅始终是本区的标志。\n\n戴克高地的核心地带没有地铁线路穿行，这也正是它得以保持居住感与宁静的原因之一。通勤者通常步行或短途乘公交，前往东缘邻近本森赫斯特的 D 线与 N 线，或西侧湾脊（Bay Ridge）的 R 线；通往曼哈顿的快速巴士（express bus）沿各大道运行；邻近的 Belt Parkway 与 Gowanus 快速路（I-278）则让自驾者迅速通达布鲁克林其余各处，并经 Verrazzano-Narrows 大桥直达史泰登岛及更远地区。第十一至第十三大道（11th–13th Avenues）承载了本地大部分购物与餐饮。\n\n本区的标志性开放空间是戴克海滩公园（Dyker Beach Park）及其 18 洞的戴克海滩高尔夫球场（Dyker Beach Golf Course）——全市公共球场之一，沿 Belt Parkway 滨水一线展开，配有球场、运动场地与滨水步道。不过，戴克高地在全市最负盛名的，还是其蔚为壮观的圣诞灯饰：每年十二月，尤其是 84 街与第十一至第十三大道一带的屋主们，会架设由专业团队布置、极尽繁复的灯饰与人偶造型，吸引来自全区各地的人潮与巴士观光团。学区隶属纽约市第 20 学区。"
     }
   }
 ];

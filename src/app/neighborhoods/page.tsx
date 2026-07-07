@@ -34,6 +34,7 @@ export default async function NeighborhoodsPage() {
   const zh = locale === "zh";
   const regions: [string, string][] = [
     ["Queens", zh ? "皇后区" : "Queens"],
+    ["Brooklyn", zh ? "布鲁克林" : "Brooklyn"],
     ["Long Island", zh ? "长岛" : "Long Island"],
     ["Manhattan", zh ? "曼哈顿" : "Manhattan"],
   ];

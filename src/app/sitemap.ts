@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { journalPosts } from "@/content/journal/posts";
+import { guides } from "@/content/guides";
+import { marketAreas } from "@/data/market-stats";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getAgents } from "@/lib/agents";
 import { newDevelopmentBasePath, newDevelopmentHref } from "@/lib/new-developments";
@@ -35,6 +37,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/sell",
     "/agents",
     "/chinese-real-estate-agents-nyc",
+    "/guides",
+    "/market-data",
     "/neighborhoods",
     communitiesBasePath,
     "/about",
@@ -81,6 +85,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.6,
       ...withAlternates(`${base}${communityHref(c.slug)}`),
+    })),
+    ...guides.map((g) => ({
+      url: `${base}/guides/${g.slug}`,
+      lastModified: g.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...withAlternates(`${base}/guides/${g.slug}`),
+    })),
+    ...marketAreas.map((a) => ({
+      url: `${base}/market-data/${a.slug}`,
+      lastModified: a.updated,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+      ...withAlternates(`${base}/market-data/${a.slug}`),
     })),
     ...journalPosts.map((p) => ({
       url: `${base}/journal/${p.slug}`,
