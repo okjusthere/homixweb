@@ -66,6 +66,10 @@ export default async function GuidePage({
     disclaimer: zh
       ? "本指南为一般性市场信息,不构成法律、税务、贷款或移民建议;具体交易请咨询相应持牌专业人士。数据以引用文章的截至日期为准。"
       : "This guide is general market information — not legal, tax, lending, or immigration advice. Consult licensed professionals for your situation. Figures are as of the dates cited in the linked reports.",
+    reviewed: zh
+      ? `本指南由 Homix 持牌经纪团队复审(记录经纪 ${siteConfig.legal.brokerOfRecord},${siteConfig.legal.brokerLicense})。税务、移民、法律与贷款细节请以持牌专业人士的意见为准。`
+      : `Reviewed by the Homix licensed brokerage team (Broker of Record ${siteConfig.legal.brokerOfRecord}, ${siteConfig.legal.brokerLicense}). For tax, immigration, legal, and lending specifics, rely on the relevant licensed professional.`,
+    reviewLabel: zh ? "内容复审" : "Content review",
     talk: zh ? "和双语顾问聊聊" : "Talk to a bilingual advisor",
   };
 
@@ -76,9 +80,19 @@ export default async function GuidePage({
     description: guide.description[locale],
     ...(guide.cover ? { image: absUrl(guide.cover) } : {}),
     dateModified: guide.updated,
+    lastReviewed: guide.updated,
     mainEntityOfPage: { "@type": "WebPage", "@id": absUrl(`/guides/${guide.slug}`) },
     author: { "@type": "Organization", name: siteConfig.legalName },
     publisher: { "@type": "Organization", name: siteConfig.legalName },
+    reviewedBy: {
+      "@type": "Organization",
+      name: siteConfig.legalName,
+      hasCredential: {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "license",
+        name: siteConfig.legal.brokerLicense,
+      },
+    },
     inLanguage: zh ? "zh-Hans" : "en",
   };
 
@@ -168,7 +182,13 @@ export default async function GuidePage({
           </section>
         )}
 
-        <p className="mt-10 text-xs leading-relaxed text-muted/80">{copy.disclaimer}</p>
+        {/* YMYL trust signal — visible reviewer credit + schema reviewedBy */}
+        <div className="mt-12 rounded-sm border border-line bg-surface px-5 py-4">
+          <p className="text-xs uppercase tracking-wide text-muted">{copy.reviewLabel}</p>
+          <p className="mt-1.5 text-sm leading-relaxed text-ink/80">{copy.reviewed}</p>
+        </div>
+
+        <p className="mt-6 text-xs leading-relaxed text-muted/80">{copy.disclaimer}</p>
 
         {/* Topic cluster */}
         {related.length > 0 && (

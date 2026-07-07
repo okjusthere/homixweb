@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { journalPosts } from "@/content/journal/posts";
 import { guides } from "@/content/guides";
+import { topics } from "@/content/journal/topics";
 import { marketAreas } from "@/data/market-stats";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getAgents } from "@/lib/agents";
@@ -99,6 +100,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
       ...withAlternates(`${base}/market-data/${a.slug}`),
+    })),
+    ...topics.map((tp) => ({
+      url: `${base}/journal/topic/${tp.slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      ...withAlternates(`${base}/journal/topic/${tp.slug}`),
     })),
     ...journalPosts.map((p) => ({
       url: `${base}/journal/${p.slug}`,

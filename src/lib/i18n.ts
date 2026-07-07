@@ -515,6 +515,7 @@ const en = {
     guides: "Guides",
     marketData: "Market Data",
     journal: "Journal",
+    learn: "Learn",
     sell: "Sell",
     join: "Join Homix",
     about: "About",
@@ -827,8 +828,6 @@ const en = {
     { title: "Neighborhoods", desc: "Guides to the areas we cover" },
     { title: "Gated communities", desc: "Nassau's gated & private enclaves" },
     { title: "New Development", desc: "Shareable condo project pages" },
-    { title: "Buying guides", desc: "Process, costs, taxes — evergreen playbooks" },
-    { title: "Market data", desc: "Prices by area, refreshed quarterly" },
     { title: "Mortgage calculator", desc: "Estimate your monthly payment" },
   ],
   onboarding: {
@@ -1955,6 +1954,7 @@ const zh: Dict = {
     guides: "置业指南",
     marketData: "市场数据",
     journal: "观察",
+    learn: "学堂",
     sell: "卖房",
     join: "加入我们",
     about: "关于",
@@ -2267,8 +2267,6 @@ const zh: Dict = {
     { title: "社区指南", desc: "我们覆盖区域的本地指南" },
     { title: "封闭社区", desc: "Nassau 封闭与私密社区" },
     { title: "纽约新盘", desc: "可转发给客户的项目页" },
-    { title: "置业指南", desc: "买房流程、税务、租房长期指南" },
-    { title: "市场数据", desc: "各区房价,季度更新" },
     { title: "房贷计算器", desc: "估算你的月供" },
   ],
   onboarding: {

@@ -17,12 +17,31 @@ export interface Bilingual {
 
 export interface JournalPost {
   slug: string;
-  /** ISO date. */
+  /** ISO date of original publication (schema.org datePublished). */
   date: string;
+  /**
+   * ISO date of last material content review (schema.org dateModified). Only
+   * bump this when the content was actually re-checked. Defaults to `date`.
+   */
+  dateModified?: string;
+  /**
+   * "evergreen" = timeless how-to; UI shows "Updated {dateModified}" and de-
+   * emphasizes the original date (but schema keeps datePublished). "timely" =
+   * market report / rate / policy piece where the publish date IS a freshness
+   * signal; UI shows "Published {date}".
+   */
+  contentKind?: "evergreen" | "timely";
+  /** Primary topic slug (see src/content/journal/topics.ts). */
+  topic?: string;
+  /** Secondary topic slugs for cross-cutting posts. */
+  secondaryTags?: string[];
+  /** Pillar guide this article is a spoke of (/guides/[parentGuideSlug]). */
+  parentGuideSlug?: string;
   authorSlug: string;
   cover: string;
   coverCredit?: string;
   readMinutes: number;
+  /** @deprecated Free-text label — superseded by `topic`. Kept for back-compat. */
   category: Bilingual;
   title: Bilingual;
   excerpt: Bilingual;
@@ -30,9 +49,25 @@ export interface JournalPost {
   body: Bilingual;
 }
 
+/** schema.org dateModified — falls back to the publish date. */
+export function postModified(post: JournalPost): string {
+  return post.dateModified ?? post.date;
+}
+
+/** All posts in a topic (primary or secondary), newest first. */
+export function postsByTopic(topicSlug: string): JournalPost[] {
+  return journalPosts
+    .filter(
+      (p) => p.topic === topicSlug || (p.secondaryTags ?? []).includes(topicSlug)
+    )
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
 export const journalPosts: JournalPost[] = [
   {
     "slug": "manhattan-residential-market-data-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-06-18",
     "authorSlug": "sunny",
     "cover": "/journal/covers/manhattan-skyline.jpg",
@@ -57,6 +92,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "queens-residential-market-data-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-06-17",
     "authorSlug": "queenie",
     "cover": "/journal/covers/midtown.jpg",
@@ -81,6 +118,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nassau-north-shore-long-island-market-data-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-06-16",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/brooklyn-bridge.jpg",
@@ -105,6 +144,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "long-island-city-buyers-guide",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["market"],
     "date": "2026-06-15",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/brownstone.jpg",
@@ -129,6 +172,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "home-staging-secrets-sell-for-more",
+    "contentKind": "evergreen",
+    "topic": "selling",
     "date": "2026-06-01",
     "authorSlug": "yanxue",
     "cover": "/journal/covers/park-slope.jpg",
@@ -153,6 +198,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "coop-vs-condo-nyc",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
     "date": "2026-05-28",
     "authorSlug": "heidi",
     "cover": "/journal/covers/brownstone.jpg",
@@ -177,6 +225,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "great-neck-north-shore-guide",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["students"],
     "date": "2026-05-15",
     "authorSlug": "jingjingfeng",
     "cover": "/journal/covers/park-slope.jpg",
@@ -201,6 +253,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nyc-closing-costs-explained",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["taxes"],
     "date": "2026-04-28",
     "authorSlug": "emmaniu",
     "cover": "/journal/covers/brownstone.jpg",
@@ -225,6 +281,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "why-video-sells-homes-faster",
+    "contentKind": "evergreen",
+    "topic": "selling",
     "date": "2026-04-15",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/midtown.jpg",
@@ -249,6 +307,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "first-investment-property-nyc",
+    "contentKind": "evergreen",
+    "topic": "investing",
     "date": "2026-04-02",
     "authorSlug": "linafeng",
     "cover": "/journal/covers/financial-district.jpg",
@@ -273,6 +333,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "flushing-queens-market-report",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-06-10",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/manhattan-skyline.jpg",
@@ -297,6 +359,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "first-time-buyer-guide-nyc",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
     "date": "2026-05-22",
     "authorSlug": "heidi",
     "cover": "/journal/covers/apartment-building.jpg",
@@ -321,6 +386,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "why-media-first-sells-faster",
+    "contentKind": "evergreen",
+    "topic": "selling",
     "date": "2026-05-05",
     "authorSlug": "queenie",
     "cover": "/journal/covers/brownstone.jpg",
@@ -345,6 +412,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nyc-closing-process-step-by-step",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["taxes"],
     "date": "2026-06-28",
     "authorSlug": "sunny",
     "cover": "/journal/covers/courthouse.jpg",
@@ -369,6 +440,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "foreign-non-resident-buyer-nyc",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["buying", "new-immigrants"],
     "date": "2026-06-27",
     "authorSlug": "queenie",
     "cover": "/journal/covers/city-hall.jpg",
@@ -393,6 +468,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nyc-mansion-tax-transfer-taxes",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["buying"],
     "date": "2026-06-25",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/financial-district.jpg",
@@ -417,6 +496,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "passing-a-coop-board-nyc",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
     "date": "2026-06-24",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/apartment-building.jpg",
@@ -441,6 +523,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "seller-taxes-net-proceeds-ny",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["selling"],
     "date": "2026-06-23",
     "authorSlug": "yanxue",
     "cover": "/journal/covers/midtown.jpg",
@@ -465,6 +551,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "1031-exchange-explained",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["investing"],
     "date": "2026-06-21",
     "authorSlug": "heidi",
     "cover": "/journal/covers/manhattan-skyline.jpg",
@@ -489,6 +579,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "property-taxes-grievance-ny",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
     "date": "2026-06-20",
     "authorSlug": "jingjingfeng",
     "cover": "/journal/covers/hudson-yards.jpg",
@@ -513,6 +606,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "fair-housing-buyers-sellers",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "secondaryTags": ["buying", "selling"],
     "date": "2026-06-19",
     "authorSlug": "emmaniu",
     "cover": "/journal/covers/brooklyn-bridge.jpg",
@@ -537,6 +633,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "building-us-credit-from-scratch",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
+    "secondaryTags": ["buying"],
     "date": "2026-06-18",
     "authorSlug": "linafeng",
     "cover": "/journal/covers/flushing.jpg",
@@ -561,6 +661,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "mortgage-without-green-card",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
+    "secondaryTags": ["buying"],
     "date": "2026-06-16",
     "authorSlug": "sunny",
     "cover": "/journal/covers/chinatown.jpg",
@@ -585,6 +689,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "first-year-nyc-settling-checklist",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
     "date": "2026-06-15",
     "authorSlug": "queenie",
     "cover": "/journal/covers/subway.jpg",
@@ -609,6 +716,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "flushing-chinese-community-guide",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
     "date": "2026-06-14",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/manhattan-skyline.jpg",
@@ -633,6 +743,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nyc-vs-long-island-immigrant-family",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
+    "secondaryTags": ["buying"],
     "date": "2026-06-12",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/central-park.jpg",
@@ -657,6 +771,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "healthcare-insurance-newcomers",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
     "date": "2026-06-11",
     "authorSlug": "yanxue",
     "cover": "/journal/covers/apartment-building.jpg",
@@ -681,6 +798,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "cost-of-living-nyc-family",
+    "contentKind": "evergreen",
+    "topic": "new-immigrants",
+    "parentGuideSlug": "new-immigrants",
     "date": "2026-06-10",
     "authorSlug": "heidi",
     "cover": "/journal/covers/upper-west.jpg",
@@ -705,6 +825,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "buying-vs-renting-students-parents",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
+    "secondaryTags": ["renting"],
     "date": "2026-06-08",
     "authorSlug": "jingjingfeng",
     "cover": "/journal/covers/stony-brook.jpg",
@@ -729,6 +853,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "buying-near-nyc-universities",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
+    "secondaryTags": ["buying"],
     "date": "2026-06-07",
     "authorSlug": "emmaniu",
     "cover": "/journal/covers/columbia.jpg",
@@ -753,6 +881,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "parents-buying-for-student",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
+    "secondaryTags": ["taxes"],
     "date": "2026-06-06",
     "authorSlug": "linafeng",
     "cover": "/journal/covers/nyu.jpg",
@@ -777,6 +909,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "long-island-top-school-districts",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
+    "secondaryTags": ["buying"],
     "date": "2026-06-05",
     "authorSlug": "sunny",
     "cover": "/journal/covers/great-neck.jpg",
@@ -801,6 +937,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "how-school-zoning-works",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
     "date": "2026-06-03",
     "authorSlug": "queenie",
     "cover": "/journal/covers/roosevelt-island.jpg",
@@ -825,6 +964,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "student-first-home-foothold",
+    "contentKind": "evergreen",
+    "topic": "students",
+    "parentGuideSlug": "international-students",
+    "secondaryTags": ["investing"],
     "date": "2026-06-02",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/central-park.jpg",
@@ -849,6 +992,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "interest-rates-fed-buying-power",
+    "contentKind": "timely",
+    "topic": "policy",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["buying"],
     "date": "2026-06-01",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/financial-district.jpg",
@@ -873,6 +1020,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nyc-tax-abatements-421a-485x",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["policy"],
     "date": "2026-05-30",
     "authorSlug": "yanxue",
     "cover": "/journal/covers/hudson-yards.jpg",
@@ -897,6 +1048,9 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "city-of-yes-zoning-buyers",
+    "contentKind": "timely",
+    "topic": "policy",
+    "secondaryTags": ["buying"],
     "date": "2026-05-29",
     "authorSlug": "heidi",
     "cover": "/journal/covers/construction.jpg",
@@ -921,6 +1075,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "congestion-pricing-neighborhoods",
+    "contentKind": "timely",
+    "topic": "policy",
     "date": "2026-05-28",
     "authorSlug": "jingjingfeng",
     "cover": "/journal/covers/traffic.jpg",
@@ -945,6 +1101,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "flood-risk-insurance-waterfront",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["policy"],
     "date": "2026-05-26",
     "authorSlug": "emmaniu",
     "cover": "/journal/covers/sandy-flood.jpg",
@@ -969,6 +1129,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "brooklyn-market-data-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-05-25",
     "authorSlug": "linafeng",
     "cover": "/journal/covers/financial-district.jpg",
@@ -993,6 +1155,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "long-island-south-shore-suffolk-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-05-24",
     "authorSlug": "sunny",
     "cover": "/journal/covers/great-neck.jpg",
@@ -1017,6 +1181,8 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "nj-gold-coast-2026",
+    "contentKind": "timely",
+    "topic": "market",
     "date": "2026-05-23",
     "authorSlug": "queenie",
     "cover": "/journal/covers/jersey-city.jpg",
@@ -1041,6 +1207,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "manhattan-rentals-2026",
+    "contentKind": "timely",
+    "topic": "market",
+    "parentGuideSlug": "renting-in-nyc",
+    "secondaryTags": ["renting"],
     "date": "2026-05-21",
     "authorSlug": "kevinnli",
     "cover": "/journal/covers/brownstone.jpg",
@@ -1065,6 +1235,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "first-time-buyer-mortgage-roadmap",
+    "contentKind": "evergreen",
+    "topic": "buying",
+    "parentGuideSlug": "buying-in-nyc",
+    "secondaryTags": ["new-immigrants"],
     "date": "2026-05-20",
     "authorSlug": "michelleli",
     "cover": "/journal/covers/park-slope.jpg",
@@ -1089,6 +1263,10 @@ export const journalPosts: JournalPost[] = [
   },
   {
     "slug": "overseas-funds-buy-us-property",
+    "contentKind": "evergreen",
+    "topic": "taxes",
+    "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["new-immigrants", "investing"],
     "date": "2026-05-19",
     "authorSlug": "yanxue",
     "cover": "/journal/covers/chinatown.jpg",

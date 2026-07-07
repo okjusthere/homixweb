@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { journalPosts } from "@/content/journal/posts";
+import { journalPosts, postsByTopic } from "@/content/journal/posts";
+import { topics } from "@/content/journal/topics";
 import { JournalList, type JournalCardData } from "@/components/journal/JournalList";
 import { getAgents } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
@@ -74,12 +76,35 @@ export default async function JournalPage() {
         <p className="mt-4 text-lg leading-relaxed text-muted">{t.journal.lead}</p>
       </div>
 
-      <JournalList
-        posts={cards}
-        categories={categories}
-        allLabel={locale === "zh" ? "全部" : "All"}
-        minRead={t.journal.minRead}
-      />
+      {/* Browse by topic — crawlable, server-rendered links to topic archives */}
+      <div className="mt-10">
+        <p className="eyebrow mb-4">{locale === "zh" ? "按主题浏览" : "Browse by topic"}</p>
+        <div className="flex flex-wrap gap-2.5">
+          {topics.map((topic) => {
+            const count = postsByTopic(topic.slug).length;
+            if (count === 0) return null;
+            return (
+              <Link
+                key={topic.slug}
+                href={`/journal/topic/${topic.slug}`}
+                className="rounded-full border border-line px-4 py-1.5 text-sm text-ink/80 transition-colors hover:border-bronze/50 hover:text-bronze"
+              >
+                {topic.label[locale]}
+                <span className="ml-1.5 text-muted/70">{count}</span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <JournalList
+          posts={cards}
+          categories={categories}
+          allLabel={locale === "zh" ? "全部" : "All"}
+          minRead={t.journal.minRead}
+        />
+      </div>
     </Container>
   );
 }

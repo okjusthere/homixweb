@@ -70,6 +70,12 @@ export default async function MarketDataPage({
     talk: zh ? "咨询双语顾问" : "Ask a bilingual advisor",
   };
 
+  // Distinct source labels across every table on the page (for the visible
+  // Sources block + Dataset citation — makes provenance explicit for AI engines).
+  const distinctSources = Array.from(
+    new Set(area.tables.map((t) => t.source))
+  );
+
   const datasetLd = {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -78,6 +84,8 @@ export default async function MarketDataPage({
     url: absUrl(`/market-data/${area.slug}`),
     dateModified: area.updated,
     creator: { "@type": "Organization", name: siteConfig.legalName },
+    citation: distinctSources,
+    isBasedOn: reports.map((p) => absUrl(`/journal/${p.slug}`)),
     inLanguage: zh ? "zh-Hans" : "en",
   };
 
@@ -161,7 +169,21 @@ export default async function MarketDataPage({
           </section>
         )}
 
-        <p className="mt-10 text-xs leading-relaxed text-muted/80">{copy.methodology}</p>
+        {/* Explicit sources block — provenance for readers and AI engines */}
+        <div className="mt-12 rounded-sm border border-line bg-surface px-5 py-4">
+          <p className="text-xs uppercase tracking-wide text-muted">
+            {zh ? "数据来源" : "Data sources"}
+          </p>
+          <ul className="mt-2 space-y-1">
+            {distinctSources.map((src) => (
+              <li key={src} className="text-sm leading-relaxed text-ink/80">
+                {src}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="mt-6 text-xs leading-relaxed text-muted/80">{copy.methodology}</p>
 
         {reports.length > 0 && (
           <section className="mt-12">

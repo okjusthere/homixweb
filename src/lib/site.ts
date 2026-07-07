@@ -54,7 +54,7 @@ export interface NavItem {
 export const primaryNav: NavItem[] = [
   { key: "sell", href: "/sell" },
   { key: "advisors", href: "/agents" },
-  { key: "journal", href: "/journal" },
+  { key: "learn", href: "/guides" },
   { key: "join", href: "/join" },
   { key: "about", href: "/about" },
 ];
@@ -65,8 +65,6 @@ export const buyNav: string[] = [
   "/neighborhoods",
   "/communities",
   "/NewDevelopment",
-  "/guides",
-  "/market-data",
   "/calculator",
 ];
 

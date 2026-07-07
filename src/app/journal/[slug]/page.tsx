@@ -6,7 +6,9 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Markdown } from "@/components/journal/Markdown";
-import { getJournalPost, journalPosts } from "@/content/journal/posts";
+import { getJournalPost, journalPosts, postModified } from "@/content/journal/posts";
+import { getGuide } from "@/content/guides";
+import { getTopic } from "@/content/journal/topics";
 import { getAgentBySlug } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
 import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
@@ -55,6 +57,7 @@ export default async function JournalArticlePage({
   if (!post) notFound();
 
   const { locale, t } = await getT();
+  const zh = locale === "zh";
   const author = await getAgentBySlug(post.authorSlug);
   const df = new Intl.DateTimeFormat(locale === "zh" ? "zh-CN" : "en-US", {
     year: "numeric",
@@ -62,6 +65,19 @@ export default async function JournalArticlePage({
     day: "numeric",
     timeZone: "UTC", // post dates are date-only ISO strings; format in UTC to avoid off-by-one
   });
+  const parentGuide = post.parentGuideSlug ? getGuide(post.parentGuideSlug) : undefined;
+  const topic = post.topic ? getTopic(post.topic) : undefined;
+  const modified = postModified(post);
+  // Timely pieces (market reports, rate/policy) show the publish date as a
+  // freshness signal. Evergreen how-tos show "Updated" only when they've been
+  // materially re-reviewed (dateModified > date) — otherwise no stale date line,
+  // while schema keeps datePublished either way.
+  const dateLine =
+    post.contentKind === "timely"
+      ? `${zh ? "发表于 " : ""}${df.format(new Date(post.date))}${zh ? "" : ""}`
+      : modified !== post.date
+      ? `${zh ? "更新于 " : "Updated "}${df.format(new Date(modified))}`
+      : "";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -70,7 +86,7 @@ export default async function JournalArticlePage({
     description: post.excerpt[locale],
     image: absUrl(post.cover),
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: modified,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": absUrl(`/journal/${post.slug}`),
@@ -107,11 +123,36 @@ export default async function JournalArticlePage({
               </Link>
             ) : (
               "Homix"
-            )}{" "}
-            · {df.format(new Date(post.date))} · {post.readMinutes}{" "}
+            )}
+            {dateLine ? ` · ${dateLine}` : ""} · {post.readMinutes}{" "}
             {t.journal.minRead}
           </p>
+          {topic && (
+            <div className="mt-3">
+              <Link
+                href={`/journal/topic/${topic.slug}`}
+                className="inline-block rounded-full border border-line px-3 py-1 text-xs text-ink/70 transition-colors hover:border-bronze/50 hover:text-bronze"
+              >
+                {topic.label[locale]}
+              </Link>
+            </div>
+          )}
         </div>
+
+        {/* Reverse link UP to the pillar guide this article is a spoke of */}
+        {parentGuide && (
+          <div className="mt-8 rounded-sm border border-line bg-surface px-5 py-4">
+            <p className="text-xs uppercase tracking-wide text-muted">
+              {zh ? "本文属于" : "Part of the guide"}
+            </p>
+            <Link
+              href={`/guides/${parentGuide.slug}`}
+              className="mt-1 inline-block font-serif text-lg leading-snug text-ink underline-offset-4 hover:text-bronze hover:underline"
+            >
+              {parentGuide.title[locale]} →
+            </Link>
+          </div>
+        )}
 
         <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-sm bg-line/50">
           <Image

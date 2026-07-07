@@ -1,5 +1,6 @@
 import { journalPosts } from "@/content/journal/posts";
 import { guides } from "@/content/guides";
+import { topics } from "@/content/journal/topics";
 import { marketAreas } from "@/data/market-stats";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { gatedCommunities } from "@/data/gated-communities";
@@ -43,6 +44,12 @@ export async function GET() {
     "",
     ...guides.map(
       (g) => `- [${g.title.en}](${base}/guides/${g.slug}): ${g.title.zh}`
+    ),
+    "",
+    "## Topics 主题 (article archives)",
+    "",
+    ...topics.map(
+      (tp) => `- [${tp.label.en} / ${tp.label.zh}](${base}/journal/topic/${tp.slug})`
     ),
     "",
     "## Live market data 市场数据 (refreshed quarterly)",
