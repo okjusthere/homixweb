@@ -146,6 +146,9 @@ export default async function NewDevelopmentDetailPage({
   const creditOf = (sourceUrl: string) => {
     try {
       const host = new URL(sourceUrl).hostname.replace(/^www\./, "");
+      if (host === "images.squarespace-cdn.com" || host.endsWith(".squarespace.com")) {
+        return "Photo: project marketing archive";
+      }
       return `Photo: ${host}`;
     } catch {
       return undefined;

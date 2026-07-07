@@ -515,27 +515,27 @@ export const gatedCommunities: GatedCommunity[] = [
     "gallery": [
       {
         "src": "/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg",
-        "caption": "Aerial view of the Stone Hill at Muttontown community — rolling estate home-sites,… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial view of the Stone Hill at Muttontown community — rolling estate home-sites,… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/the-stone-hill-gatehouse-gated-entrance-.jpg",
-        "caption": "The Stone Hill gatehouse / gated entrance with its signature serpentine stone wall… · Photo: images.squarespace-cdn.com"
+        "caption": "The Stone Hill gatehouse / gated entrance with its signature serpentine stone wall… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/second-view-of-the-old-world-gatehouse-e.jpg",
-        "caption": "Second view of the old-world gatehouse / entry drive at Stone Hill at Muttontown (… · Photo: images.squarespace-cdn.com"
+        "caption": "Second view of the old-world gatehouse / entry drive at Stone Hill at Muttontown (… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/landscaped-water-feature-waterfall-ameni.jpg",
-        "caption": "Landscaped water feature / waterfall amenity within the Stone Hill common grounds… · Photo: images.squarespace-cdn.com"
+        "caption": "Landscaped water feature / waterfall amenity within the Stone Hill common grounds… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/streetscape-street-design-within-stone-h.jpg",
-        "caption": "Streetscape / street design within Stone Hill — manicured roadway, plantings and s… · Photo: images.squarespace-cdn.com"
+        "caption": "Streetscape / street design within Stone Hill — manicured roadway, plantings and s… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/community-master-plan-site-map-of-stone-.jpg",
-        "caption": "Community master-plan / site map of Stone Hill at Muttontown showing the estate ho… · Photo: images.squarespace-cdn.com"
+        "caption": "Community master-plan / site map of Stone Hill at Muttontown showing the estate ho… · Photo: community marketing archive"
       },
       {
         "src": "/communities/stone-hill-muttontown/representative-stone-hill-estate-home-5-.jpg",
@@ -776,43 +776,43 @@ export const gatedCommunities: GatedCommunity[] = [
     "gallery": [
       {
         "src": "/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg",
-        "caption": "Aerial drone view of the full Legend Yacht & Beach Club community on its 46 waterf… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial drone view of the full Legend Yacht & Beach Club community on its 46 waterf… · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/aerial-drone-shot-from-the-water-showing.jpg",
-        "caption": "Aerial drone shot from the water showing the community, marina and Long Island Sou… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial drone shot from the water showing the community, marina and Long Island Sou… · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/the-gated-security-entrance-gates-of-the.jpg",
-        "caption": "The gated/security entrance gates of the community (24/7 guarded gatehouse communi… · Photo: images.squarespace-cdn.com"
+        "caption": "The gated/security entrance gates of the community (24/7 guarded gatehouse communi… · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/the-clubhouse-beach-club-building-with-w.jpg",
-        "caption": "The clubhouse / beach club building with waterfront views · Photo: images.squarespace-cdn.com"
+        "caption": "The clubhouse / beach club building with waterfront views · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/clubhouse-patio-deck-overlooking-long-is.jpg",
-        "caption": "Clubhouse patio/deck overlooking Long Island Sound · Photo: images.squarespace-cdn.com"
+        "caption": "Clubhouse patio/deck overlooking Long Island Sound · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/the-heated-swimming-pool-and-patio-overl.jpg",
-        "caption": "The heated swimming pool and patio overlooking the private marina · Photo: images.squarespace-cdn.com"
+        "caption": "The heated swimming pool and patio overlooking the private marina · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/the-community-s-indoor-tennis-court-mult.jpg",
-        "caption": "The community's indoor tennis court / multi-sport facility · Photo: images.squarespace-cdn.com"
+        "caption": "The community's indoor tennis court / multi-sport facility · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/the-private-marina-with-boat-slips-on-th.jpg",
-        "caption": "The private marina with boat slips on the waterfront · Photo: images.squarespace-cdn.com"
+        "caption": "The private marina with boat slips on the waterfront · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/landscaped-pond-and-nature-walking-groun.jpg",
-        "caption": "Landscaped pond and nature/walking grounds within the gated community · Photo: images.squarespace-cdn.com"
+        "caption": "Landscaped pond and nature/walking grounds within the gated community · Photo: community marketing archive"
       },
       {
         "src": "/communities/legend-yacht-beach-club/nearby-garvies-point-waterfront-boardwal.jpg",
-        "caption": "Nearby Garvies Point waterfront boardwalk · Photo: images.squarespace-cdn.com"
+        "caption": "Nearby Garvies Point waterfront boardwalk · Photo: community marketing archive"
       }
     ],
     "image": "/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg"
@@ -1485,51 +1485,51 @@ export const gatedCommunities: GatedCommunity[] = [
     "gallery": [
       {
         "src": "/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg",
-        "caption": "Aerial view of the Roslyn Landing community — professional drone photo showing the… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial view of the Roslyn Landing community — professional drone photo showing the… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-2-overhead.jpg",
-        "caption": "Aerial view of Roslyn Landing #2 — overhead shot of the community's rooflines, cou… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial view of Roslyn Landing #2 — overhead shot of the community's rooflines, cou… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-3-bird-s-e.jpg",
-        "caption": "Aerial view of Roslyn Landing #3 — bird's-eye view of the gated community and surr… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial view of Roslyn Landing #3 — bird's-eye view of the gated community and surr… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/aerial-view-of-roslyn-landing-4-high-ang.jpg",
-        "caption": "Aerial view of Roslyn Landing #4 — high-angle photo of the full development showin… · Photo: images.squarespace-cdn.com"
+        "caption": "Aerial view of Roslyn Landing #4 — high-angle photo of the full development showin… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-exterior-landscaped-great.jpg",
-        "caption": "Roslyn Landing exterior — landscaped 'great lawn' / green space with the community… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing exterior — landscaped 'great lawn' / green space with the community… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-exterior-streetscape-prof.jpg",
-        "caption": "Roslyn Landing exterior / streetscape — professionally photographed view of the to… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing exterior / streetscape — professionally photographed view of the to… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/representative-roslyn-landing-home-exter.jpg",
-        "caption": "Representative Roslyn Landing home exterior — building facade and entrance in the… · Photo: images.squarespace-cdn.com"
+        "caption": "Representative Roslyn Landing home exterior — building facade and entrance in the… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-streetscape-row-of-townho.jpg",
-        "caption": "Roslyn Landing streetscape — row of townhomes with driveways and landscaping along… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing streetscape — row of townhomes with driveways and landscaping along… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-building-exterior-home-fa.jpg",
-        "caption": "Roslyn Landing building exterior — home facade / streetscape within the gated comm… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing building exterior — home facade / streetscape within the gated comm… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-exterior-grounds-communit.jpg",
-        "caption": "Roslyn Landing exterior / grounds — community buildings with landscaped common are… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing exterior / grounds — community buildings with landscaped common are… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-exterior-townhome-buildin.jpg",
-        "caption": "Roslyn Landing exterior — townhome building facades and entryways along a landscap… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing exterior — townhome building facades and entryways along a landscap… · Photo: community marketing archive"
       },
       {
         "src": "/communities/roslyn-landing/roslyn-landing-streetscape-view-down-a-c.jpg",
-        "caption": "Roslyn Landing streetscape — view down a community street lined with the classic-s… · Photo: images.squarespace-cdn.com"
+        "caption": "Roslyn Landing streetscape — view down a community street lined with the classic-s… · Photo: community marketing archive"
       }
     ],
     "image": "/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg"
