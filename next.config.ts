@@ -8,9 +8,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
-      // Homix legacy site (Squarespace) — agent & founder photos.
-      { protocol: "https", hostname: "images.squarespace-cdn.com" },
-      { protocol: "https", hostname: "static1.squarespace.com" },
       // BBO listing media proxy and R2 public media.
       { protocol: "https", hostname: "onekey.kevv.ai" },
       { protocol: "https", hostname: "onekeymls.kevv.ai" },
