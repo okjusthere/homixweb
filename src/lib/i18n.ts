@@ -511,6 +511,7 @@ const en = {
   common: {
     listings: "Buy",
     advisors: "Advisors",
+    bilingualAgents: "Chinese-Speaking Agents",
     journal: "Journal",
     sell: "Sell",
     join: "Join Homix",
@@ -1946,6 +1947,7 @@ const zh: Dict = {
   common: {
     listings: "买房",
     advisors: "经纪人",
+    bilingualAgents: "华人经纪团队",
     journal: "观察",
     sell: "卖房",
     join: "加入我们",

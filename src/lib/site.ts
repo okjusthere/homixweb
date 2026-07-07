@@ -77,6 +77,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "communities", href: "/communities" },
       { key: "advisors", href: "/agents" },
+      { key: "bilingualAgents", href: "/chinese-real-estate-agents-nyc" },
       { key: "journal", href: "/journal" },
     ],
   },
