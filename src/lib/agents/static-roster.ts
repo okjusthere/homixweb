@@ -6,8 +6,6 @@
 import { REAL_BIOS } from "@/data/agent-bios";
 import type { Agent } from "@/lib/listings/types";
 
-const PLACEHOLDER_PORTRAIT = "/agent-placeholder-logo.png";
-
 export const STATIC_AGENTS: Agent[] = [
   {
     id: "sunny",
@@ -163,18 +161,18 @@ export const STATIC_AGENTS: Agent[] = [
   { id: "angelalin", slug: "angelalin", name: "Angela (Jianxiu) Lin", title: "Licensed Real Estate Salesperson", photo: "/agents/angelalin.jpg", phone: "516-989-8588", email: "angelacomm688@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/angelalin" },
   { id: "davidhu", slug: "davidhu", name: "David Hu", title: "Licensed Real Estate Salesperson", photo: "/agents/davidhu.jpg", phone: "516-373-4779", email: "david.homix@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/davidhu" },
   { id: "kylehuang", slug: "kylehuang", name: "Kyle (Huizhong) Huang", title: "Licensed Real Estate Salesperson", photo: "/agents/kylehuang.jpg", phone: "347-637-9380", email: "homix.realty.kyle@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/kylehuang" },
-  { id: "xueyaozou", slug: "xueyaozou", name: "Xueyao Zou", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "", email: "xyzou98@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/xueyaozou" },
-  { id: "shawnzhang", slug: "shawnzhang", name: "Shawn (Xiaoyi) Zhang", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "201-889-0333", email: "shawnxiao1987@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/shawnzhang" },
+  { id: "xueyaozou", slug: "xueyaozou", name: "Xueyao Zou", title: "Licensed Real Estate Salesperson", photo: "/agents/xueyaozou.png", phone: "", email: "xyzou98@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/xueyaozou" },
+  { id: "shawnzhang", slug: "shawnzhang", name: "Shawn (Xiaoyi) Zhang", title: "Licensed Real Estate Salesperson", photo: "/agents/shawnzhang.png", phone: "201-889-0333", email: "shawnxiao1987@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/shawnzhang" },
   { id: "bingwu", slug: "bingwu", name: "Bing Wu", title: "Licensed Real Estate Salesperson (NY) · Broker (CA)", photo: "/agents/bingwu.jpg", phone: "951-733-8143", email: "bingwu.bwc@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/bingwu" },
   { id: "ericwei", slug: "ericwei", name: "Eric (Zhengle) Wei", title: "Licensed Real Estate Salesperson", photo: "/agents/ericwei.jpg", phone: "929-367-8402", email: "eric.wei@homixny.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/ericwei" },
-  { id: "jaydoncai", slug: "jaydoncai", name: "Jaydon (Congyuan) Cai", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "917-285-3491", email: "jaydoncai66@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/jaydoncai" },
+  { id: "jaydoncai", slug: "jaydoncai", name: "Jaydon (Congyuan) Cai", title: "Licensed Real Estate Salesperson", photo: "/agents/jaydoncai.png", phone: "917-285-3491", email: "jaydoncai66@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/jaydoncai" },
   { id: "stevenchang", slug: "stevenchang", name: "Steven Chang", title: "Licensed Real Estate Salesperson", photo: "/agents/stevenchang.jpg", phone: "718-669-1534", email: "stevenchang2000@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/stevenchang" },
   { id: "junlincao", slug: "junlincao", name: "Junlin Cao", title: "Licensed Real Estate Salesperson", photo: "/agents/junlincao.jpg", phone: "", email: "caojunlin6699@gmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/junlincao" },
-  { id: "reannechen", slug: "reannechen", name: "Reanne Chen", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "347-255-4770", email: "reanne3@hotmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/reannechen" },
+  { id: "reannechen", slug: "reannechen", name: "Reanne Chen", title: "Licensed Real Estate Salesperson", photo: "/agents/reannechen.png", phone: "347-255-4770", email: "reanne3@hotmail.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/reannechen" },
   { id: "pengxuhu", slug: "pengxuhu", name: "Pengxu Hu", title: "Licensed Real Estate Salesperson", photo: "/agents/pengxuhu.jpg", phone: "929-338-3555", email: "pengxuhu@yahoo.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/pengxuhu" },
   { id: "jorcylu", slug: "jorcylu", name: "Jorcy (Jueyao) Lu", title: "Licensed Real Estate Salesperson", photo: "/agents/jorcylu.jpg", phone: "917-821-5179", email: "jorcy@homixny.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/jorcylu" },
-  { id: "chunchinyang", slug: "chunchinyang", name: "Chun Chin Yang", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "917-355-5190", email: "ccy1368@outlook.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/chunchinyang" },
-  { id: "yukeyhoo", slug: "yukeyhoo", name: "Yukey Hoo", title: "Licensed Real Estate Salesperson", photo: PLACEHOLDER_PORTRAIT, phone: "407-937-8888", email: "", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/yukeyhoo" },
+  { id: "chunchinyang", slug: "chunchinyang", name: "Chun Chin Yang", title: "Licensed Real Estate Salesperson", photo: "/agents/chunchinyang.png", phone: "917-355-5190", email: "ccy1368@outlook.com", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/chunchinyang" },
+  { id: "yukeyhoo", slug: "yukeyhoo", name: "Yukey Hoo", title: "Licensed Real Estate Salesperson", photo: "/agents/yukeyhoo.png", phone: "407-937-8888", email: "", bio: "", specialties: [], profileUrl: "https://www.homixny.com/agents/yukeyhoo" },
   // --- Added from the OneKey MLS office roster (not on the legacy site).
   // Replace public/agents/<slug>.jpg with real photos; add contact details as available.
   { id: "winarkotanumiharjo", slug: "winarkotanumiharjo", name: "Winarko Tanumiharjo", title: "Licensed Real Estate Salesperson", photo: "/agents/winarkotanumiharjo.jpg", phone: "", email: "", bio: "", specialties: [] },
