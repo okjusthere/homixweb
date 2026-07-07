@@ -55,7 +55,7 @@ export function JournalList({
         {shown.map((post, i) => (
           <Reveal key={post.slug} delay={(i % 3) * 60}>
             <Link
-              href={`/journal/${post.slug}`}
+              href={`/guides/articles/${post.slug}`}
               className="group block focus-visible:outline-none"
             >
               <div className="relative aspect-[3/2] overflow-hidden rounded-sm bg-line/50">

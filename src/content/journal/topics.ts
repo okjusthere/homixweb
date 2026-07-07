@@ -2,13 +2,13 @@ import type { Bilingual } from "@/content/journal/posts";
 
 /**
  * Canonical topic taxonomy — the SINGLE source of truth for how educational
- * content is organized (pillars, journal articles, and topic index pages all
+ * content is organized (pillars, guide articles, and topic index pages all
  * key off these slugs). Replaces the old free-text `category` field, which had
  * 13 inconsistent labels (some with 1 post, some with duplicate zh names).
  *
  * Each topic optionally points to its pillar guide (/guides/[pillarSlug]) or a
  * data hub (hubHref) — that page IS the topic's authority hub; the topic index
- * page (/journal/topic/[slug]) is the crawlable archive of its articles.
+ * page (/guides/topics/[slug]) is the crawlable archive of its articles.
  */
 export interface Topic {
   slug: string;

@@ -69,7 +69,7 @@ Storage paths are intentionally stable:
 - `agent-photos/agents/...` stores advisor headshots. Production agent cards use
   `public.agents.photo_url`; the static roster only keeps the brand fallback.
 - `agent-photos/site-media/...` stores long-lived editorial assets such as new
-  development images, gated community images, journal covers, neighborhood
+  development images, gated community images, guide article covers, neighborhood
   photos, onboarding materials, and training images.
 - Git keeps only logo, fallback, and static UI assets in `public/`.
 

@@ -52,11 +52,11 @@ The website uses Supabase Storage for long-lived brand and content assets:
   `public.agents.photo_url`; the static roster only uses `/agent-placeholder-logo.png`
   as a fallback when Supabase is unavailable.
 - `agent-photos/site-media/...`: new development media, gated community media,
-  journal covers, neighborhood images, onboarding materials, training images,
+  guide article covers, neighborhood images, onboarding materials, training images,
   and other long-lived editorial assets.
 
 Git should keep only logo, fallback, favicon/icon, and small static UI assets in
-`public/`. Do not add large advisor, building, community, training, journal, or
+`public/`. Do not add large advisor, building, community, training, guide article, or
 neighborhood media back into Git.
 
 To re-run or extend the media migration from a trusted local machine:

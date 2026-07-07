@@ -91,7 +91,7 @@ export default async function MarketDataPage({
     dateModified: area.updated,
     creator: { "@type": "Organization", name: siteConfig.legalName },
     citation: distinctSources,
-    isBasedOn: reports.map((p) => absUrl(`/journal/${p.slug}`)),
+    isBasedOn: reports.map((p) => absUrl(`/guides/articles/${p.slug}`)),
     inLanguage: zh ? "zh-Hans" : "en",
   };
 
@@ -200,7 +200,7 @@ export default async function MarketDataPage({
               {reports.map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/journal/${p.slug}`}
+                  href={`/guides/articles/${p.slug}`}
                   className="group rounded-sm border border-line bg-surface p-5 transition-colors hover:border-bronze/50"
                 >
                   <p className="text-xs uppercase tracking-wide text-muted">

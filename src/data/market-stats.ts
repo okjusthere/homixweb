@@ -4,7 +4,7 @@ import type { Bilingual } from "@/content/journal/posts";
  * Living market-data pages (/market-data/[slug]).
  *
  * HARD RULE: every number here must be traceable to a cited source — either a
- * journal post in src/content/journal/posts.ts (whose articles carry source
+ * guide article in src/content/journal/posts.ts (whose articles carry source
  * citations and as-of dates) or an external source named in `source`. Never
  * estimate or invent figures. Refresh quarterly: update the rows + asOf, keep
  * the page URL stable.
@@ -41,7 +41,7 @@ export interface MarketArea {
   tables: StatTable[];
   /** Direct Q&A derived from the data (also FAQPage JSON-LD). */
   faq: { question: Bilingual; answer: Bilingual }[];
-  /** Journal slugs of the full reports these figures come from. */
+  /** Guide article slugs of the full reports these figures come from. */
   reportSlugs: string[];
   /** Neighborhood/community page slugs to cross-link, e.g. /neighborhoods/flushing. */
   relatedLinks: { label: Bilingual; href: string }[];

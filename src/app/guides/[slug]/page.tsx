@@ -206,7 +206,7 @@ export default async function GuidePage({
               {related.map((p) => (
                 <Link
                   key={p.slug}
-                  href={`/journal/${p.slug}`}
+                  href={`/guides/articles/${p.slug}`}
                   className="group rounded-sm border border-line bg-surface p-5 transition-colors hover:border-bronze/50"
                 >
                   <p className="text-xs uppercase tracking-wide text-muted">

@@ -36,7 +36,7 @@ function introOgImage(title: string, description: string, path: string) {
 }
 
 export type PageMetaInput = {
-  /** Clean path without locale param, e.g. "/about" or "/journal/foo". */
+  /** Clean path without locale param, e.g. "/about" or "/guides/articles/foo". */
   path: string;
   title: Localized;
   description: Localized;

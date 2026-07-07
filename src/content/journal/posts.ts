@@ -1,12 +1,12 @@
 /**
- * Journal / 观察 — editorial content.
+ * Guide articles / 置业文章 — editorial content.
  *
  * Bilingual (en/zh) market reports, guides, and educational pieces. Body is
  * Markdown. Articles are researched against cited sources with as-of dates and
  * not-advice disclaimers where topics are YMYL (tax/legal/immigration/finance);
  * figures should be re-verified before relying on them.
  * `authorSlug` ties to an agent in the roster (Person schema + profile link).
- * Covers are self-hosted under /public/journal/covers with `coverCredit`
+ * Covers are self-hosted under /public/guides/articles/covers with `coverCredit`
  * attribution rendered wherever the image appears.
  */
 
@@ -70,7 +70,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-06-18",
     "authorSlug": "sunny",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/manhattan-skyline.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/manhattan-skyline.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Market Data",
@@ -96,7 +96,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-06-17",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/midtown.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/midtown.jpg",
     "readMinutes": 7,
     "category": {
       "en": "Market Data",
@@ -122,7 +122,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-06-16",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brooklyn-bridge.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brooklyn-bridge.jpg",
     "readMinutes": 7,
     "category": {
       "en": "Market Data",
@@ -150,7 +150,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["market"],
     "date": "2026-06-15",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
     "readMinutes": 5,
     "category": {
       "en": "Neighborhood",
@@ -176,7 +176,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "selling",
     "date": "2026-06-01",
     "authorSlug": "yanxue",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/park-slope.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/park-slope.jpg",
     "readMinutes": 4,
     "category": {
       "en": "Selling",
@@ -203,7 +203,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "buying-in-nyc",
     "date": "2026-05-28",
     "authorSlug": "heidi",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
     "readMinutes": 5,
     "category": {
       "en": "Buyer Guide",
@@ -231,7 +231,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["students"],
     "date": "2026-05-15",
     "authorSlug": "jingjingfeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/park-slope.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/park-slope.jpg",
     "readMinutes": 5,
     "category": {
       "en": "Neighborhood",
@@ -259,7 +259,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["taxes"],
     "date": "2026-04-28",
     "authorSlug": "emmaniu",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
     "readMinutes": 6,
     "category": {
       "en": "Guide",
@@ -285,7 +285,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "selling",
     "date": "2026-04-15",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/midtown.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/midtown.jpg",
     "readMinutes": 4,
     "category": {
       "en": "Media",
@@ -311,7 +311,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "investing",
     "date": "2026-04-02",
     "authorSlug": "linafeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/financial-district.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/financial-district.jpg",
     "readMinutes": 6,
     "category": {
       "en": "Investing",
@@ -337,7 +337,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-06-10",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/manhattan-skyline.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/manhattan-skyline.jpg",
     "readMinutes": 4,
     "category": {
       "en": "Market Report",
@@ -364,7 +364,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "buying-in-nyc",
     "date": "2026-05-22",
     "authorSlug": "heidi",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/apartment-building.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/apartment-building.jpg",
     "readMinutes": 5,
     "category": {
       "en": "Buyer Guide",
@@ -390,7 +390,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "selling",
     "date": "2026-05-05",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
     "readMinutes": 4,
     "category": {
       "en": "Selling",
@@ -418,7 +418,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["taxes"],
     "date": "2026-06-28",
     "authorSlug": "sunny",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/courthouse.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/courthouse.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -446,7 +446,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying", "new-immigrants"],
     "date": "2026-06-27",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/city-hall.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/city-hall.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -474,7 +474,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-25",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/financial-district.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/financial-district.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -501,7 +501,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "buying-in-nyc",
     "date": "2026-06-24",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/apartment-building.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/apartment-building.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -529,7 +529,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["selling"],
     "date": "2026-06-23",
     "authorSlug": "yanxue",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/midtown.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/midtown.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -557,7 +557,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["investing"],
     "date": "2026-06-21",
     "authorSlug": "heidi",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/manhattan-skyline.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/manhattan-skyline.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -584,7 +584,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "property-taxes",
     "date": "2026-06-20",
     "authorSlug": "jingjingfeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/hudson-yards.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/hudson-yards.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -611,7 +611,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying", "selling"],
     "date": "2026-06-19",
     "authorSlug": "emmaniu",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brooklyn-bridge.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brooklyn-bridge.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",
@@ -639,7 +639,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-18",
     "authorSlug": "linafeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/flushing.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/flushing.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -667,7 +667,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-16",
     "authorSlug": "sunny",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/chinatown.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/chinatown.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -694,7 +694,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "new-immigrants",
     "date": "2026-06-15",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/subway.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/subway.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -721,7 +721,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "new-immigrants",
     "date": "2026-06-14",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/manhattan-skyline.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/manhattan-skyline.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -749,7 +749,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-12",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/central-park.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/central-park.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -776,7 +776,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "new-immigrants",
     "date": "2026-06-11",
     "authorSlug": "yanxue",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/apartment-building.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/apartment-building.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -803,7 +803,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "new-immigrants",
     "date": "2026-06-10",
     "authorSlug": "heidi",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/upper-west.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/upper-west.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Immigrant Life",
@@ -831,7 +831,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["renting"],
     "date": "2026-06-08",
     "authorSlug": "jingjingfeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/stony-brook.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/stony-brook.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -859,7 +859,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-07",
     "authorSlug": "emmaniu",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/columbia.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/columbia.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -887,7 +887,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["taxes"],
     "date": "2026-06-06",
     "authorSlug": "linafeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/nyu.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/nyu.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -915,7 +915,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-05",
     "authorSlug": "sunny",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/great-neck.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/great-neck.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -942,7 +942,7 @@ export const journalPosts: JournalPost[] = [
     "parentGuideSlug": "international-students",
     "date": "2026-06-03",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/roosevelt-island.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/roosevelt-island.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -970,7 +970,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["investing"],
     "date": "2026-06-02",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/central-park.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/central-park.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Students & Families",
@@ -998,7 +998,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-06-01",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/financial-district.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/financial-district.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Policy & News",
@@ -1026,7 +1026,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["policy"],
     "date": "2026-05-30",
     "authorSlug": "yanxue",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/hudson-yards.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/hudson-yards.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Policy & News",
@@ -1053,7 +1053,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["buying"],
     "date": "2026-05-29",
     "authorSlug": "heidi",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/construction.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/construction.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Policy & News",
@@ -1079,7 +1079,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "policy",
     "date": "2026-05-28",
     "authorSlug": "jingjingfeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/traffic.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/traffic.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Policy & News",
@@ -1107,7 +1107,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["policy"],
     "date": "2026-05-26",
     "authorSlug": "emmaniu",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/sandy-flood.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/sandy-flood.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Policy & News",
@@ -1133,7 +1133,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-05-25",
     "authorSlug": "linafeng",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/financial-district.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/financial-district.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Market Data",
@@ -1159,7 +1159,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-05-24",
     "authorSlug": "sunny",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/great-neck.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/great-neck.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Market Data",
@@ -1185,7 +1185,7 @@ export const journalPosts: JournalPost[] = [
     "topic": "market",
     "date": "2026-05-23",
     "authorSlug": "queenie",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/jersey-city.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/jersey-city.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Market Data",
@@ -1213,7 +1213,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["renting"],
     "date": "2026-05-21",
     "authorSlug": "kevinnli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Market Data",
@@ -1241,7 +1241,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["new-immigrants"],
     "date": "2026-05-20",
     "authorSlug": "michelleli",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/park-slope.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/park-slope.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Buyer Guide",
@@ -1269,7 +1269,7 @@ export const journalPosts: JournalPost[] = [
     "secondaryTags": ["new-immigrants", "investing"],
     "date": "2026-05-19",
     "authorSlug": "yanxue",
-    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/chinatown.jpg",
+    "cover": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/chinatown.jpg",
     "readMinutes": 8,
     "category": {
       "en": "Law & Taxes",

@@ -2,9 +2,9 @@ import type { Bilingual } from "@/content/journal/posts";
 
 /**
  * Evergreen pillar guides (/guides/[slug]) — undated hub pages that organize
- * the dated journal posts into topic clusters. Content rules:
+ * the dated guide articles into topic clusters. Content rules:
  * - Bilingual everywhere; zh is the primary audience.
- * - Factual, sourced from the journal posts they link to; no invented numbers.
+ * - Factual, sourced from the guide articles they link to; no invented numbers.
  * - YMYL topics (tax/legal/finance/immigration) carry the not-advice note the
  *   template renders automatically.
  * - Fair-Housing-safe phrasing (language capability, never audience exclusivity).
@@ -12,7 +12,7 @@ import type { Bilingual } from "@/content/journal/posts";
 
 export interface GuideSection {
   heading: Bilingual;
-  /** Markdown — rendered with the same component as journal bodies. */
+  /** Markdown — rendered with the same component as article bodies. */
   body: Bilingual;
 }
 
@@ -32,10 +32,10 @@ export interface Guide {
   intro: Bilingual;
   /** ISO date of last content review — rendered as 更新于/Updated. */
   updated: string;
-  /** Optional cover (reuse a journal cover path) for OG + index card. */
+  /** Optional cover (reuse a guide article cover path) for OG + index card. */
   cover?: string;
   sections: GuideSection[];
   faq: GuideFaq[];
-  /** Journal post slugs rendered as the "深入阅读 / Go deeper" cluster. */
+  /** Guide article slugs rendered as the "深入阅读 / Go deeper" cluster. */
   relatedSlugs: string[];
 }

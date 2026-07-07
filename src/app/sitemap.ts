@@ -46,7 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/join",
     "/calculator",
     "/contact",
-    "/journal",
+    "/guides/articles",
     "/privacy",
     "/terms",
     "/accessibility",
@@ -102,17 +102,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       ...withAlternates(`${base}/market-data/${a.slug}`),
     })),
     ...topics.map((tp) => ({
-      url: `${base}/journal/topic/${tp.slug}`,
+      url: `${base}/guides/topics/${tp.slug}`,
       changeFrequency: "weekly" as const,
       priority: 0.7,
-      ...withAlternates(`${base}/journal/topic/${tp.slug}`),
+      ...withAlternates(`${base}/guides/topics/${tp.slug}`),
     })),
     ...journalPosts.map((p) => ({
-      url: `${base}/journal/${p.slug}`,
+      url: `${base}/guides/articles/${p.slug}`,
       lastModified: p.date,
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}/journal/${p.slug}`),
+      ...withAlternates(`${base}/guides/articles/${p.slug}`),
     })),
   ];
 }

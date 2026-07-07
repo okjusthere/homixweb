@@ -54,7 +54,7 @@ export interface NavItem {
 export const primaryNav: NavItem[] = [
   { key: "sell", href: "/sell" },
   { key: "advisors", href: "/agents" },
-  { key: "learn", href: "/guides" },
+  { key: "guides", href: "/guides" },
   { key: "join", href: "/join" },
   { key: "about", href: "/about" },
 ];
@@ -80,7 +80,6 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "bilingualAgents", href: "/chinese-real-estate-agents-nyc" },
       { key: "guides", href: "/guides" },
       { key: "marketData", href: "/market-data" },
-      { key: "journal", href: "/journal" },
     ],
   },
   {

@@ -5,7 +5,7 @@ import type { Bilingual } from "@/content/journal/posts";
  * Living market-data source rows for /market-data/[slug].
  *
  * HARD RULE (see ./market-stats.ts): every number below is transcribed verbatim
- * from a cited journal post in src/content/journal/posts.ts — never estimated.
+ * from a cited guide article in src/content/journal/posts.ts — never estimated.
  * Each StatTable names its primary source and as-of period exactly as the post
  * states them. When the posts are refreshed, update these rows + asOf + updated
  * and keep the page URLs stable.
@@ -36,8 +36,8 @@ export const marketAreas: MarketArea[] = [
       en: "Sourced sales and rental data for Manhattan: borough-wide median price, the condo-vs-co-op spread, neighborhood medians and price per square foot, plus record median rent and vacancy — every figure carries its source and as-of date.",
     },
     intro: {
-      zh: "曼哈顿的中位价在上涨，但标题数字掩盖了一个分裂的市场——公寓（condo）和豪宅在推高价格，合作公寓（co-op）的中间层则持平或偏软。下表汇总的是有据可查的数据：**全区中位成交价、公寓与合作公寓的价差、逐街区的中位价与每平方英尺单价**，以及春季再创新高的**中位租金与空置率**。\n\n请把这些数字当作方向性参考：街区层面的月度样本量很小，单月中位价波动较大。想看完整的逐街区解读，见[《曼哈顿住宅市场数据 2026》](/journal/manhattan-residential-market-data-2026)与[《曼哈顿租赁市场 2026》](/journal/manhattan-rentals-2026)；要针对具体楼盘或街区做可比成交分析，也可查看在建的[新开发项目](/NewDevelopment)。所有数字均标注来源与时点，请以最新报告为准。",
-      en: "Manhattan's median is up, but the headline hides a split market — condos and luxury are pulling prices higher while the co-op middle sits flat to soft. The tables below gather the sourced figures: the **borough-wide median, the condo-vs-co-op spread, and neighborhood-by-neighborhood medians and price per square foot**, plus the **record median rent and vacancy** set this spring.\n\nTreat these as directional: neighborhood monthly samples are small and single-month medians swing. For the full read, see [Manhattan Residential Market Data 2026](/journal/manhattan-residential-market-data-2026) and [Manhattan Rentals in 2026](/journal/manhattan-rentals-2026); to weigh new inventory, browse current [new developments](/NewDevelopment). Every number carries its source and as-of date — rely on the latest report.",
+      zh: "曼哈顿的中位价在上涨，但标题数字掩盖了一个分裂的市场——公寓（condo）和豪宅在推高价格，合作公寓（co-op）的中间层则持平或偏软。下表汇总的是有据可查的数据：**全区中位成交价、公寓与合作公寓的价差、逐街区的中位价与每平方英尺单价**，以及春季再创新高的**中位租金与空置率**。\n\n请把这些数字当作方向性参考：街区层面的月度样本量很小，单月中位价波动较大。想看完整的逐街区解读，见[《曼哈顿住宅市场数据 2026》](/guides/articles/manhattan-residential-market-data-2026)与[《曼哈顿租赁市场 2026》](/guides/articles/manhattan-rentals-2026)；要针对具体楼盘或街区做可比成交分析，也可查看在建的[新开发项目](/NewDevelopment)。所有数字均标注来源与时点，请以最新报告为准。",
+      en: "Manhattan's median is up, but the headline hides a split market — condos and luxury are pulling prices higher while the co-op middle sits flat to soft. The tables below gather the sourced figures: the **borough-wide median, the condo-vs-co-op spread, and neighborhood-by-neighborhood medians and price per square foot**, plus the **record median rent and vacancy** set this spring.\n\nTreat these as directional: neighborhood monthly samples are small and single-month medians swing. For the full read, see [Manhattan Residential Market Data 2026](/guides/articles/manhattan-residential-market-data-2026) and [Manhattan Rentals in 2026](/guides/articles/manhattan-rentals-2026); to weigh new inventory, browse current [new developments](/NewDevelopment). Every number carries its source and as-of date — rely on the latest report.",
     },
     updated: "2026-07-07",
     tables: [
@@ -95,7 +95,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Douglas Elliman / Miller Samuel, Q1 2026; Redfin, March 2026 (via Homix Journal)",
+          "Douglas Elliman / Miller Samuel, Q1 2026; Redfin, March 2026 (via Homix Guides)",
         asOf: "2026 Q1 / 2026 年 3 月",
       },
       {
@@ -145,7 +145,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Redfin (Mar–Apr 2026); StreetEasy Q1 2026 (via Homix Journal). Neighborhood samples are small — read as directional.",
+          "Redfin (Mar–Apr 2026); StreetEasy Q1 2026 (via Homix Guides). Neighborhood samples are small — read as directional.",
         asOf: "2026 年 3–4 月 / Mar–Apr 2026",
       },
       {
@@ -194,7 +194,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Douglas Elliman / Miller Samuel; StreetEasy; Freddie Mac PMMS (via Homix Journal)",
+          "Douglas Elliman / Miller Samuel; StreetEasy; Freddie Mac PMMS (via Homix Guides)",
         asOf: "2026 年 4 月 / April 2026",
       },
     ],
@@ -267,8 +267,8 @@ export const marketAreas: MarketArea[] = [
       en: "Sourced Flushing and Queens data: the record borough quarterly median, co-op/condo/house price tiers, the inventory surge, and neighborhood-by-neighborhood medians and price per square foot for Flushing, Long Island City, Forest Hills, Bayside, and Jackson Heights.",
     },
     intro: {
-      zh: "皇后区刚刚录得有记录以来最高的季度成交中位价，但全区数字掩盖了至少三个市场——合作公寓、公寓与独立屋走势各异，到街区层面差异更大。下表汇总有据数据：**全区及分层中位价、库存变化，以及法拉盛、长岛市、森林小丘、贝赛、杰克逊高地的逐街区中位价、每平方英尺单价与在市天数**。\n\n法拉盛本身的关键词不是价格，而是**库存激增**——这带来了多年来最强的议价空间。街区月度样本量小、波动大，请把单一街区数字视为方向性参考。完整解读见[《皇后区住宅市场数据 2026》](/journal/queens-residential-market-data-2026)，社区介绍见[法拉盛](/neighborhoods/flushing)。所有数字均标注来源与时点。",
-      en: "Queens just posted its highest quarterly median sale price on record, but the borough number averages over at least three markets — co-ops, condos, and houses move differently, and the spread is wider still at the neighborhood level. The tables below gather the sourced figures: the **borough and by-type medians, inventory shifts, and neighborhood-by-neighborhood median, price per square foot, and days on market** for Flushing, Long Island City, Forest Hills, Bayside, and Jackson Heights.\n\nFor Flushing itself the story isn't price — it's the **inventory surge**, which has handed buyers their most negotiating leverage in years. Neighborhood samples are small and volatile, so read single-neighborhood figures as directional. For the full read see [Queens Residential Market Data 2026](/journal/queens-residential-market-data-2026), and for the community see [Flushing](/neighborhoods/flushing). Every number carries its source and as-of date.",
+      zh: "皇后区刚刚录得有记录以来最高的季度成交中位价，但全区数字掩盖了至少三个市场——合作公寓、公寓与独立屋走势各异，到街区层面差异更大。下表汇总有据数据：**全区及分层中位价、库存变化，以及法拉盛、长岛市、森林小丘、贝赛、杰克逊高地的逐街区中位价、每平方英尺单价与在市天数**。\n\n法拉盛本身的关键词不是价格，而是**库存激增**——这带来了多年来最强的议价空间。街区月度样本量小、波动大，请把单一街区数字视为方向性参考。完整解读见[《皇后区住宅市场数据 2026》](/guides/articles/queens-residential-market-data-2026)，社区介绍见[法拉盛](/neighborhoods/flushing)。所有数字均标注来源与时点。",
+      en: "Queens just posted its highest quarterly median sale price on record, but the borough number averages over at least three markets — co-ops, condos, and houses move differently, and the spread is wider still at the neighborhood level. The tables below gather the sourced figures: the **borough and by-type medians, inventory shifts, and neighborhood-by-neighborhood median, price per square foot, and days on market** for Flushing, Long Island City, Forest Hills, Bayside, and Jackson Heights.\n\nFor Flushing itself the story isn't price — it's the **inventory surge**, which has handed buyers their most negotiating leverage in years. Neighborhood samples are small and volatile, so read single-neighborhood figures as directional. For the full read see [Queens Residential Market Data 2026](/guides/articles/queens-residential-market-data-2026), and for the community see [Flushing](/neighborhoods/flushing). Every number carries its source and as-of date.",
     },
     updated: "2026-07-07",
     tables: [
@@ -333,7 +333,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Douglas Elliman / Miller Samuel, Q4 2025 (via QNS); StreetEasy 2025 Year in Review (via Homix Journal)",
+          "Douglas Elliman / Miller Samuel, Q4 2025 (via QNS); StreetEasy 2025 Year in Review (via Homix Guides)",
         asOf: "2025 Q4 / 2025 全年",
       },
       {
@@ -384,7 +384,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Redfin (Oct–Nov 2025); StreetEasy 2025 asking median for LIC ~$1.24M (via Homix Journal). Single-neighborhood figures are directional.",
+          "Redfin (Oct–Nov 2025); StreetEasy 2025 asking median for LIC ~$1.24M (via Homix Guides). Single-neighborhood figures are directional.",
         asOf: "2025 年 10–11 月 / Oct–Nov 2025",
       },
     ],
@@ -457,8 +457,8 @@ export const marketAreas: MarketArea[] = [
       en: "Sourced Long Island data across the Nassau North Shore and the South Shore / Suffolk: island- and county-wide medians, record average price and luxury-tier entry, tightening inventory, and community-level medians and price per square foot for Great Neck, Manhasset, Syosset, Jericho, Roslyn, and more.",
     },
     intro: {
-      zh: "长岛是纽约都会区供应最紧张的角落之一：库存收紧、价格坚挺、需求耐心而持续。下表汇总有据数据：**全岛及全县中位价、创纪录的平均成交价与豪宅门槛，以及拿骚北岸五个社区的中位价、每平方英尺单价、在售天数与学区排名**。\n\n请注意方法：大颈与罗斯林的\"门户网站中位价\"被村中心的公寓大幅拉低，独栋房屋实际成交更高——每平方英尺单价是更稳定的跨社区比较指标，小市场单月数据波动较大。完整解读见[《拿骚北岸数据 2026》](/journal/nassau-north-shore-long-island-market-data-2026)与[《长岛南岸与 Suffolk 2026》](/journal/long-island-south-shore-suffolk-2026)。社区介绍见[封闭式社区](/communities)与[大颈](/neighborhoods/great-neck)。所有数字均标注来源与时点。",
-      en: "Long Island is one of the New York metro's most supply-constrained corners: tight inventory, firm prices, and patient, persistent demand. The tables below gather the sourced figures: **island- and county-wide medians, the record average price and luxury-tier entry, and community-level median, price per square foot, days on market, and school rankings** across the Nassau North Shore.\n\nA note on method: portal \"median sale price\" for Great Neck and Roslyn is pulled down by village-center condos, so detached houses trade higher — price per square foot is the more stable cross-community comparison, and single-month figures in small markets are volatile. For the full read see [Nassau North Shore Data 2026](/journal/nassau-north-shore-long-island-market-data-2026) and [South Shore & Suffolk 2026](/journal/long-island-south-shore-suffolk-2026). For communities see [gated communities](/communities) and [Great Neck](/neighborhoods/great-neck). Every number carries its source and as-of date.",
+      zh: "长岛是纽约都会区供应最紧张的角落之一：库存收紧、价格坚挺、需求耐心而持续。下表汇总有据数据：**全岛及全县中位价、创纪录的平均成交价与豪宅门槛，以及拿骚北岸五个社区的中位价、每平方英尺单价、在售天数与学区排名**。\n\n请注意方法：大颈与罗斯林的\"门户网站中位价\"被村中心的公寓大幅拉低，独栋房屋实际成交更高——每平方英尺单价是更稳定的跨社区比较指标，小市场单月数据波动较大。完整解读见[《拿骚北岸数据 2026》](/guides/articles/nassau-north-shore-long-island-market-data-2026)与[《长岛南岸与 Suffolk 2026》](/guides/articles/long-island-south-shore-suffolk-2026)。社区介绍见[封闭式社区](/communities)与[大颈](/neighborhoods/great-neck)。所有数字均标注来源与时点。",
+      en: "Long Island is one of the New York metro's most supply-constrained corners: tight inventory, firm prices, and patient, persistent demand. The tables below gather the sourced figures: **island- and county-wide medians, the record average price and luxury-tier entry, and community-level median, price per square foot, days on market, and school rankings** across the Nassau North Shore.\n\nA note on method: portal \"median sale price\" for Great Neck and Roslyn is pulled down by village-center condos, so detached houses trade higher — price per square foot is the more stable cross-community comparison, and single-month figures in small markets are volatile. For the full read see [Nassau North Shore Data 2026](/guides/articles/nassau-north-shore-long-island-market-data-2026) and [South Shore & Suffolk 2026](/guides/articles/long-island-south-shore-suffolk-2026). For communities see [gated communities](/communities) and [Great Neck](/neighborhoods/great-neck). Every number carries its source and as-of date.",
     },
     updated: "2026-07-07",
     tables: [
@@ -531,7 +531,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Elliman / Miller Samuel, Q1 2026; OneKey MLS, full-year 2025 / Jan 2026 / April 2026 (via Homix Journal)",
+          "Elliman / Miller Samuel, Q1 2026; OneKey MLS, full-year 2025 / Jan 2026 / April 2026 (via Homix Guides)",
         asOf: "2026 Q1 / 2026 年 1–4 月",
       },
       {
@@ -580,7 +580,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Redfin / Zillow / Movoto (Nov 2025–Jun 2026); Niche 2025 school rankings — Jericho #1 in NY, Syosset #4 (via Homix Journal). Small-sample figures are directional.",
+          "Redfin / Zillow / Movoto (Nov 2025–Jun 2026); Niche 2025 school rankings — Jericho #1 in NY, Syosset #4 (via Homix Guides). Small-sample figures are directional.",
         asOf: "2025 年 11 月–2026 年 6 月 / Nov 2025–Jun 2026",
       },
     ],
@@ -657,8 +657,8 @@ export const marketAreas: MarketArea[] = [
       en: "Sourced Brooklyn data: the borough-wide median and price per square foot, plus neighborhood-by-neighborhood median, PPSF, and days on market for Williamsburg, Park Slope, Bed-Stuy, DUMBO/Brooklyn Heights, and Bay Ridge.",
     },
     intro: {
-      zh: "布鲁克林全区中位成交价稳健、缓慢上行，而这个数字底下的各个市场却朝相反方向拉扯。下表汇总有据数据：**全区中位价与每平方英尺单价，以及五个核心街区的中位价、单价与在市天数**。\n\n一个直白的警告：布鲁克林街区层面的月度样本量很小，单月中位价波动剧烈——几套顶层公寓成交就能让一个数字一夜之间跳动 90%。像布鲁克林高地的 +91.8% 或 DUMBO 的 220 天在市，几乎可以肯定是小样本造成的假象、而非趋势。请把每个单一街区数字视为方向性参考。完整解读见[《布鲁克林 2026 市场数据》](/journal/brooklyn-market-data-2026)，社区介绍见[本森贺](/neighborhoods/bensonhurst)与[日落公园](/neighborhoods/sunset-park)。所有数字均标注来源与时点。",
-      en: "Brooklyn's borough-wide median is firm and grinding slowly higher, while the markets *underneath* that number pull in opposite directions. The tables below gather the sourced figures: the **borough median and price per square foot, plus median, PPSF, and days on market** across five core neighborhoods.\n\nA blunt warning: neighborhood-level monthly samples in Brooklyn are small and single-month medians swing violently — a couple of penthouse closings can move a number 90% overnight. Prints like Brooklyn Heights at +91.8% or DUMBO at 220 days on market are almost certainly small-sample artifacts, not trends. Read every single-neighborhood figure as directional. For the full read see [The Brooklyn Market in 2026, Block by Block](/journal/brooklyn-market-data-2026); for communities see [Bensonhurst](/neighborhoods/bensonhurst) and [Sunset Park](/neighborhoods/sunset-park). Every number carries its source and as-of date.",
+      zh: "布鲁克林全区中位成交价稳健、缓慢上行，而这个数字底下的各个市场却朝相反方向拉扯。下表汇总有据数据：**全区中位价与每平方英尺单价，以及五个核心街区的中位价、单价与在市天数**。\n\n一个直白的警告：布鲁克林街区层面的月度样本量很小，单月中位价波动剧烈——几套顶层公寓成交就能让一个数字一夜之间跳动 90%。像布鲁克林高地的 +91.8% 或 DUMBO 的 220 天在市，几乎可以肯定是小样本造成的假象、而非趋势。请把每个单一街区数字视为方向性参考。完整解读见[《布鲁克林 2026 市场数据》](/guides/articles/brooklyn-market-data-2026)，社区介绍见[本森贺](/neighborhoods/bensonhurst)与[日落公园](/neighborhoods/sunset-park)。所有数字均标注来源与时点。",
+      en: "Brooklyn's borough-wide median is firm and grinding slowly higher, while the markets *underneath* that number pull in opposite directions. The tables below gather the sourced figures: the **borough median and price per square foot, plus median, PPSF, and days on market** across five core neighborhoods.\n\nA blunt warning: neighborhood-level monthly samples in Brooklyn are small and single-month medians swing violently — a couple of penthouse closings can move a number 90% overnight. Prints like Brooklyn Heights at +91.8% or DUMBO at 220 days on market are almost certainly small-sample artifacts, not trends. Read every single-neighborhood figure as directional. For the full read see [The Brooklyn Market in 2026, Block by Block](/guides/articles/brooklyn-market-data-2026); for communities see [Bensonhurst](/neighborhoods/bensonhurst) and [Sunset Park](/neighborhoods/sunset-park). Every number carries its source and as-of date.",
     },
     updated: "2026-07-07",
     tables: [
@@ -702,7 +702,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Redfin (3-mo., Jun 2026); Douglas Elliman / Miller Samuel (Q3 2025, Q4 2025); Freddie Mac PMMS (Jun 25, 2026) (via Homix Journal)",
+          "Redfin (3-mo., Jun 2026); Douglas Elliman / Miller Samuel (Q3 2025, Q4 2025); Freddie Mac PMMS (Jun 25, 2026) (via Homix Guides)",
         asOf: "2026 年 6 月 / June 2026",
       },
       {
@@ -760,7 +760,7 @@ export const marketAreas: MarketArea[] = [
           },
         ],
         source:
-          "Redfin (recent month, 2026); StreetEasy (2026) (via Homix Journal). *DUMBO's 220 DOM and the +91.8% Brooklyn Heights print are small-sample artifacts — read as directional.",
+          "Redfin (recent month, 2026); StreetEasy (2026) (via Homix Guides). *DUMBO's 220 DOM and the +91.8% Brooklyn Heights print are small-sample artifacts — read as directional.",
         asOf: "2026 年近月 / recent month, 2026",
       },
     ],

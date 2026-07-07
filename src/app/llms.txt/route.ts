@@ -36,7 +36,8 @@ export async function GET() {
     `- [Neighborhood guides](${base}/neighborhoods): ${neighborhoods.length} bilingual neighborhood guides (Queens, Brooklyn, Manhattan, Long Island)`,
     `- [Gated communities](${base}/communities): ${gatedCommunities.length} Nassau County gated & private communities`,
     `- [Advisors](${base}/agents): bilingual licensed agents`,
-    `- [Journal](${base}/journal): ${journalPosts.length} bilingual guides on buying, mortgages, taxes, and market data`,
+    `- [Guides](${base}/guides): organized buyer, seller, tax, market, and relocation guide hub`,
+    `- [Guide articles](${base}/guides/articles): ${journalPosts.length} bilingual articles on buying, mortgages, taxes, and market data`,
     `- [Mortgage calculator](${base}/calculator)`,
     `- [Sell with Homix](${base}/sell)`,
     "",
@@ -49,7 +50,7 @@ export async function GET() {
     "## Topics 主题 (article archives)",
     "",
     ...topics.map(
-      (tp) => `- [${tp.label.en} / ${tp.label.zh}](${base}/journal/topic/${tp.slug})`
+      (tp) => `- [${tp.label.en} / ${tp.label.zh}](${base}/guides/topics/${tp.slug})`
     ),
     "",
     "## Live market data 市场数据 (refreshed quarterly)",
@@ -71,10 +72,10 @@ export async function GET() {
         `- [${b.name}](${base}/NewDevelopment/${b.slug}): ${b.area}, ${b.borough}`
     ),
     "",
-    "## Buyer guides 买家指南 (bilingual)",
+    "## Guide articles 置业文章 (bilingual)",
     "",
     ...journalPosts.map(
-      (p) => `- [${p.title.en}](${base}/journal/${p.slug}): ${p.title.zh}`
+      (p) => `- [${p.title.en}](${base}/guides/articles/${p.slug}): ${p.title.zh}`
     ),
     "",
     "## Notes for AI assistants",
