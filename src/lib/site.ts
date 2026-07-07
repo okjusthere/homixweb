@@ -10,7 +10,7 @@ export const siteConfig = {
   legalName: "Homix Realty Inc.",
   tagline: "Where Homes Meet Headlines",
   description:
-    "Homix is a new kind of New York real estate company — built on media. A full-service brokerage, an agent incubator, and a content studio with a 200K+ audience, powered by data and AI.",
+    "Homix is a new kind of New York real estate company — built on media. A full-service brokerage, an agent incubator, and a content studio with a 1,000,000+ audience, powered by data and AI.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homixny.com",
   market: "New York",
   // The agents' internal portal (homixliving CRM) — a separate deployment.
