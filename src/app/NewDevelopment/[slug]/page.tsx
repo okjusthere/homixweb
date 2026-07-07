@@ -10,8 +10,8 @@ import { NewDevHighlights } from "@/components/new-development/NewDevHighlights"
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentMedia } from "@/data/new-development-media";
 import { getDevelopmentContent } from "@/data/new-development-content";
-import { getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
+import { getLocale, getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   buyerChecklist,
@@ -58,13 +58,34 @@ export async function generateMetadata({
   const { slug } = await params;
   const building = getDevelopment(slug);
   if (!building) return { title: "New development not found" };
+  const locale = await getLocale();
   const cover = getDevelopmentMedia(slug).images[0];
-  return {
-    title: `${building.name} — New Development`,
-    description: `${building.name} in ${building.area}: photos, building facts, floor-plan pricing, carrying costs, and buyer notes from Homix.`,
-    alternates: langAlternates(`/NewDevelopment/${slug}`),
-    openGraph: { type: "article", images: cover ? [cover.src] : undefined },
-  };
+  const range = priceRange(building);
+  const hasPrice = range.includes("$");
+  const boroughZh =
+    building.borough === "Manhattan"
+      ? "曼哈顿"
+      : building.borough === "Queens"
+        ? "皇后区"
+        : "泽西市";
+  return pageMetadata({
+    path: `/NewDevelopment/${slug}`,
+    locale,
+    title: {
+      en: `${building.name} — New Development`,
+      zh: `${building.name}——纽约新盘`,
+    },
+    description: {
+      en: hasPrice
+        ? `${building.name} in ${building.area}, ${building.borough}: homes priced ${range}, with floor plans, carrying costs, and buyer notes from Homix.`
+        : `${building.name} in ${building.area}, ${building.borough}: photos, building facts, floor-plan pricing, carrying costs, and buyer notes from Homix.`,
+      zh: hasPrice
+        ? `${building.name} 位于${boroughZh}${building.area}，售价自 ${range.split(" – ")[0]} 起，Homix 整理户型图、物业费与税费，提供中英双语看房服务。`
+        : `${building.name} 位于${boroughZh}${building.area}，Homix 整理楼盘资料、户型与持有成本，提供中英双语看房服务。`,
+    },
+    image: cover?.src,
+    ogType: "article",
+  });
 }
 
 export default async function NewDevelopmentDetailPage({

@@ -2,13 +2,25 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { InquiryForm } from "@/components/forms/InquiryForm";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: `Get in touch with Homix — ${siteConfig.contact.phone}.`,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/contact",
+    locale,
+    title: {
+      en: "Contact — Real Estate Advisors in Flushing, NY",
+      zh: "联系我们——法拉盛办公室 · 中英双语房产咨询",
+    },
+    description: {
+      en: "Call, email, or visit Homix at 37-20 Prince St in Flushing, Queens. Reach our bilingual New York real estate team about buying, selling, or joining.",
+      zh: "电话、邮件或到访均可联系 Homix：办公室位于纽约法拉盛 Prince St 37-20 号，中英双语团队为您解答买房、卖房与置业问题。",
+    },
+  });
+}
 
 export default async function ContactPage() {
   const { t } = await getT();

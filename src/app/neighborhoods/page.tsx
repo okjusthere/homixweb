@@ -5,18 +5,25 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
 import { neighborhoods } from "@/lib/site";
+import { absUrl, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Neighborhoods",
-  description:
-    "Local guides to the New York neighborhoods Homix knows best — across Queens, Long Island, and Manhattan.",
-  alternates: {
-    canonical: "/neighborhoods",
-    languages: { en: "/neighborhoods", "zh-Hans": "/neighborhoods?lang=zh", "x-default": "/neighborhoods" },
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/neighborhoods",
+    locale,
+    title: {
+      en: "NYC Neighborhood Guides — Queens, Manhattan & Long Island",
+      zh: "纽约社区指南——学区、通勤与房价解读",
+    },
+    description: {
+      en: "Local guides to the New York neighborhoods Homix knows best — schools, commutes, housing stock, and prices across Queens, Manhattan, and Long Island.",
+      zh: "纽约买房先看社区：Homix 深耕的法拉盛、皇后区、曼哈顿与长岛社区指南，逐区解读学区、通勤、房型与价格，帮你选对适合的家。",
+    },
+  });
+}
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");
@@ -31,8 +38,23 @@ export default async function NeighborhoodsPage() {
     ["Manhattan", zh ? "曼哈顿" : "Manhattan"],
   ];
 
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: neighborhoods.map((n, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: n.name,
+      url: absUrl(`/neighborhoods/${n.slug}`),
+    })),
+  };
+
   return (
     <Container className="py-12 sm:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
       <div className="max-w-2xl">
         <Eyebrow>{t.neighborhoodsPage.eyebrow}</Eyebrow>
         <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">

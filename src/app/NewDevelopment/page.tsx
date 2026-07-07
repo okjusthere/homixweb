@@ -3,26 +3,29 @@ import { Container } from "@/components/ui/Container";
 import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentCover } from "@/data/new-development-media";
 import { NewDevSearch, type DevCard } from "@/components/new-development/NewDevSearch";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
 import {
   formatProjectScale,
   newDevelopmentHref,
   priceLead,
 } from "@/lib/new-developments";
+import { absUrl, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "New Development",
-  description:
-    "A curated Homix guide to New York new development condos, with individual project pages for client sharing.",
-  alternates: {
-    canonical: "/NewDevelopment",
-    languages: {
-      en: "/NewDevelopment",
-      "zh-Hans": "/NewDevelopment?lang=zh",
-      "x-default": "/NewDevelopment",
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/NewDevelopment",
+    locale,
+    title: {
+      en: "NYC New Developments — New Construction Condos",
+      zh: "纽约新盘精选——曼哈顿与长岛市新建公寓",
     },
-  },
-};
+    description: {
+      en: "A curated guide to New York new development condos — Manhattan and Long Island City new construction projects with pricing, scale, and shareable pages.",
+      zh: "精选纽约新盘：曼哈顿与长岛市（LIC）新建公寓项目，含参考价格、楼盘规模与背景，每个新盘均有独立页面，方便对比并分享给客户。",
+    },
+  });
+}
 
 export default async function NewDevelopmentPage() {
   const { locale } = await getT();
@@ -56,6 +59,17 @@ export default async function NewDevelopmentPage() {
       : "A searchable, shareable index of the New York new developments Homix buyers ask about most.",
   };
 
+  const itemListLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: cards.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      url: absUrl(c.href),
+    })),
+  };
+
   const labels = {
     placeholder: zh ? "搜索楼盘名 / 区域 / 地址…" : "Search by building, area, or address…",
     view: zh ? "查看项目" : "View",
@@ -72,6 +86,10 @@ export default async function NewDevelopmentPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
       <section className="border-b border-line bg-surface">
         <Container className="py-8 sm:py-10">
           <p className="eyebrow">{copy.eyebrow}</p>

@@ -2,12 +2,24 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { MortgageCalculator } from "@/components/tools/MortgageCalculator";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Mortgage Calculator",
-  description: "Estimate your monthly mortgage payment for a New York home.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/calculator",
+    locale,
+    title: {
+      en: "Mortgage Calculator — Estimate Your Monthly Payment",
+      zh: "房贷计算器——估算纽约买房月供",
+    },
+    description: {
+      en: "Estimate your monthly mortgage payment for a New York home: adjust price, down payment, interest rate, and loan term to see principal and interest instantly.",
+      zh: "免费在线房贷计算器：输入房屋总价、首付、利率与贷款年限，即时估算在纽约买房的每月本金加利息月供，帮您提前做好置业预算。",
+    },
+  });
+}
 
 export default async function CalculatorPage() {
   const { t } = await getT();

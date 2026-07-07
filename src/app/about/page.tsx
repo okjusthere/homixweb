@@ -5,13 +5,25 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { StatsBand } from "@/components/home/StatsBand";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Homix is a media-first, AI-empowered New York real estate company — a brokerage, a media studio, and an agent incubator with a 1M+ bilingual audience.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/about",
+    locale,
+    title: {
+      en: "About — A Media-First New York Real Estate Company",
+      zh: "关于我们——媒体驱动的纽约房产经纪公司",
+    },
+    description: {
+      en: "Homix is a media-first, AI-empowered New York real estate company: a licensed brokerage, content studio, and agent incubator with bilingual advisors.",
+      zh: "Homix 是媒体驱动、AI 赋能的纽约房产经纪公司：持牌经纪、内容工作室与经纪人孵化器三合一，中英双语团队深耕法拉盛、皇后区与长岛。",
+    },
+    image: HERO,
+  });
+}
 
 const HERO = "/about/hero.jpg";
 

@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
+    title: locale === "zh" ? "页面未找到" : "Page not found",
+  };
+}
 
 export default async function NotFound() {
   const { t } = await getT();

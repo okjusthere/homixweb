@@ -6,12 +6,18 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
-import { getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
+import { getLocale, getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { neighborhoodGlance, neighborhoods, siteConfig } from "@/lib/site";
 
 function getNeighborhood(slug: string) {
   return neighborhoods.find((n) => n.slug === slug);
+}
+
+/** First complete sentence of guide copy — used as the meta description. */
+function firstSentence(text: string, zh = false) {
+  const end = zh ? text.indexOf("。") : text.search(/\.(?=\s|$)/);
+  return end === -1 ? text : text.slice(0, end + 1);
 }
 
 export async function generateStaticParams() {
@@ -26,12 +32,29 @@ export async function generateMetadata({
   const { slug } = await params;
   const n = getNeighborhood(slug);
   if (!n) return { title: "Neighborhood not found" };
-  return {
-    title: `${n.name} — Neighborhood Guide`,
-    description: n.blurb,
-    alternates: langAlternates(`/neighborhoods/${slug}`),
-    openGraph: { images: [n.image], type: "article" },
-  };
+  const locale = await getLocale();
+  const introEn = firstSentence(n.guide?.en ?? n.blurb);
+  const introZh = n.guide ? firstSentence(n.guide.zh, true) : "";
+  return pageMetadata({
+    path: `/neighborhoods/${slug}`,
+    locale,
+    title: {
+      en: `${n.name} — Neighborhood Guide`,
+      zh: `${n.name} 买房与社区指南`,
+    },
+    description: {
+      en:
+        introEn.length <= 170
+          ? introEn
+          : `${n.blurb} Homix's ${n.name} guide covers homes, transit, schools, and daily life.`,
+      zh:
+        introZh && introZh.length <= 110
+          ? introZh
+          : `${n.name} 买房与社区指南：住房类型、交通通勤、学区与生活配套，Homix 提供中英双语解析。`,
+    },
+    image: n.image,
+    ogType: "article",
+  });
 }
 
 export default async function NeighborhoodPage({

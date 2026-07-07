@@ -4,23 +4,30 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
 import {
   communitiesByTown,
   communityHref,
   gateLabel,
   homesLabel,
 } from "@/lib/gated-communities";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Nassau Gated & Private Communities",
-  description:
-    "Plain-language buyer guides to the gated and private communities of Nassau County, Long Island — North Shore to South Shore: what's behind the gate, what the HOA covers, and the real monthly cost.",
-  alternates: {
-    canonical: "/communities",
-    languages: { en: "/communities", "zh-Hans": "/communities?lang=zh", "x-default": "/communities" },
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/communities",
+    locale,
+    title: {
+      en: "Nassau County Gated & Private Communities — Long Island",
+      zh: "长岛封闭式社区指南——纳苏郡豪宅社区",
+    },
+    description: {
+      en: "Buyer guides to the gated and private communities of Nassau County, Long Island: what's behind the gate, what the HOA covers, and the real monthly cost.",
+      zh: "长岛纳苏郡（Nassau）封闭式与私人豪宅社区买家指南：门禁与保安类型、HOA 费用涵盖哪些项目、真实月度持有成本，用大白话一篇讲清楚。",
+    },
+  });
+}
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");

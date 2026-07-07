@@ -4,17 +4,24 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { journalPosts } from "@/content/journal/posts";
 import { JournalList, type JournalCardData } from "@/components/journal/JournalList";
 import { getAgents } from "@/lib/agents";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Journal",
-  description:
-    "Market reports, neighborhood deep-dives, and guides from the Homix team — New York's media-first brokerage.",
-  alternates: {
-    canonical: "/journal",
-    languages: { en: "/journal", "zh-Hans": "/journal?lang=zh", "x-default": "/journal" },
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/journal",
+    locale,
+    title: {
+      en: "Journal — NYC Real Estate Guides & Market Insights",
+      zh: "纽约买房指南——房产知识与市场解读",
+    },
+    description: {
+      en: "Market reports, buyer guides, and neighborhood deep-dives from the Homix team — practical knowledge for buying, selling, and investing in New York.",
+      zh: "纽约买房流程、税费贷款、学区与社区分析、市场月报——Homix 团队撰写的中文房产知识库，帮首次购房者与投资者看懂纽约楼市。",
+    },
+  });
+}
 
 export default async function JournalPage() {
   const { locale, t } = await getT();

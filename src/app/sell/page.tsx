@@ -4,14 +4,25 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Sell Your Home",
-  description:
-    "Sell with Homix — your home launches as content to a 1,000,000+ bilingual audience, reaching qualified buyers other brokerages can't. Broader demand, a faster sale, more money.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/sell",
+    locale,
+    title: {
+      en: "Sell Your Home in New York — Media-Powered Marketing",
+      zh: "在纽约卖房——媒体化营销的卖房服务",
+    },
+    description: {
+      en: "Sell your New York home with Homix: your listing launches as content to a 1,000,000+ bilingual audience, reaching qualified buyers other brokerages can't.",
+      zh: "在纽约卖房，选 Homix：房源挂牌当天即以中英双语内容推送给抖音、小红书、Instagram 上 100 万+ 受众，需求更广、成交更快、卖价更好。",
+    },
+  });
+}
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");

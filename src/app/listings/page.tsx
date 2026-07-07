@@ -8,13 +8,26 @@ import { ListingsPagination } from "@/components/listings/ListingsPagination";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
 import { listings, type ListingQuery, type PropertyType } from "@/lib/listings";
 import { formatNumber } from "@/lib/format";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Listings",
-  description:
-    "Search homes for sale across New York — Queens, Long Island, Manhattan and beyond — from the OneKey MLS, presented by Homix.",
-};
+// Canonical stays the clean /listings (or /listings?lang=zh) — filter params
+// (?page, ?city, ?type, ?minPrice, ?q, ?sort…) all canonicalize to the index.
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/listings",
+    locale,
+    title: {
+      en: "New York Homes for Sale — Search NYC & Long Island Listings",
+      zh: "纽约房源搜索——在售住宅与公寓",
+    },
+    description: {
+      en: "Search homes for sale across New York — Queens, Manhattan, Brooklyn, and Long Island — from the OneKey MLS. Filter by price, location, and bedrooms.",
+      zh: "搜索纽约在售房源：皇后区、曼哈顿、布鲁克林与长岛的住宅与公寓，可按价格、地区、卧室数筛选，Homix 中英双语持牌经纪人全程服务。",
+    },
+  });
+}
 
 const PER_PAGE = 12;
 

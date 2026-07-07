@@ -7,12 +7,36 @@ import { ListingGallery } from "@/components/listings/ListingGallery";
 import { ListingAttribution } from "@/components/listings/ListingAttribution";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
 import { listings } from "@/lib/listings";
+import type { PropertyType } from "@/lib/listings";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
+import { getLocale } from "@/lib/i18n";
+import { absUrl, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 function displayPrice(value: number): string {
   return value > 0 ? formatPrice(value) : "Price upon request";
 }
+
+/** Clean MLS copy for meta tags: collapse whitespace, cut at a word boundary. */
+function metaDescription(text: string): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= 155) return clean;
+  const cut = clean.slice(0, 155);
+  const breakAt = cut.lastIndexOf(" ");
+  return `${cut.slice(0, breakAt > 0 ? breakAt : 155).replace(/[.,;:!?—-]+$/, "")}…`;
+}
+
+/** schema.org types for each normalized MLS property type. */
+const SCHEMA_PROPERTY_TYPE: Record<PropertyType, string> = {
+  "Single Family": "SingleFamilyResidence",
+  Condo: "Apartment",
+  "Co-op": "Apartment",
+  Townhouse: "House",
+  "Multi-Family": "House",
+  Land: "Place",
+  Residential: "Residence",
+  Other: "Residence",
+};
 
 export async function generateMetadata({
   params,
@@ -22,9 +46,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const listing = await listings.getListingBySlug(slug);
   if (!listing) return { title: "Listing not found" };
+  const locale = await getLocale();
   return {
-    title: `${listing.address.street} — ${formatPrice(listing.listPrice)}`,
-    description: listing.description.slice(0, 155),
+    ...pageMetadata({
+      path: `/listings/${slug}`,
+      locale,
+      title: `${listing.address.street} — ${formatPrice(listing.listPrice)}`,
+      description:
+        metaDescription(listing.description) ||
+        `${listing.address.full} — ${listing.propertyType}, ${displayPrice(listing.listPrice)}.`,
+      // Sharing a listing must show the property itself, not the brand card.
+      image: listing.photos[0]?.url ?? null,
+      ogType: "article",
+      noAlternates: true,
+    }),
     // IDX detail pages: keep out of the index unless OneKey's license permits it.
     robots: { index: false, follow: true },
   };
@@ -64,9 +99,10 @@ export default async function ListingDetailPage({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SingleFamilyResidence",
+    "@type": SCHEMA_PROPERTY_TYPE[listing.propertyType] ?? "Residence",
     name: address.full,
     description: listing.description,
+    url: absUrl(`/listings/${listing.slug}`),
     image: listing.photos.slice(0, 5).map((p) => p.url),
     address: {
       "@type": "PostalAddress",
@@ -76,6 +112,9 @@ export default async function ListingDetailPage({
       postalCode: address.postalCode,
       addressCountry: "US",
     },
+    ...(listPrice > 0
+      ? { offers: { "@type": "Offer", price: listPrice, priceCurrency: "USD" } }
+      : {}),
   };
 
   return (

@@ -9,7 +9,7 @@ import { Markdown } from "@/components/journal/Markdown";
 import { getJournalPost, journalPosts } from "@/content/journal/posts";
 import { getAgentBySlug } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
+import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -25,11 +25,23 @@ export async function generateMetadata({
   const post = getJournalPost(slug);
   if (!post) return { title: "Article not found" };
   const locale = await getLocale();
+  const author = await getAgentBySlug(post.authorSlug);
+  const meta = pageMetadata({
+    path: `/journal/${slug}`,
+    locale,
+    title: post.title,
+    description: post.excerpt,
+    image: post.cover,
+    ogType: "article",
+  });
   return {
-    title: post.title[locale],
-    description: post.excerpt[locale],
-    alternates: langAlternates(`/journal/${slug}`),
-    openGraph: { images: [post.cover], type: "article" },
+    ...meta,
+    openGraph: {
+      ...meta.openGraph,
+      type: "article",
+      publishedTime: post.date,
+      authors: author ? [author.name] : undefined,
+    },
   };
 }
 
@@ -54,10 +66,15 @@ export default async function JournalArticlePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    headline: post.title.en,
-    description: post.excerpt.en,
+    headline: post.title[locale],
+    description: post.excerpt[locale],
     image: absUrl(post.cover),
     datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absUrl(`/journal/${post.slug}`),
+    },
     author: author
       ? { "@type": "Person", name: author.name, jobTitle: author.title }
       : { "@type": "Organization", name: siteConfig.legalName },

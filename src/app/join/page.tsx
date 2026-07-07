@@ -5,14 +5,26 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Join Homix — Careers for Agents",
-  description:
-    "Join the New York brokerage that hands you an audience. A 1M+ media engine, an in-house studio, real leads, AI tools, and bilingual mentorship — Homix turns agents into local stars.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return pageMetadata({
+    path: "/join",
+    locale,
+    title: {
+      en: "Careers — Join a Brokerage That Hands You an Audience",
+      zh: "纽约地产经纪人招聘——加入自带百万流量的经纪公司",
+    },
+    description: {
+      en: "Join a New York brokerage that hands you an audience: a 1,000,000+ media engine, in-house studio, real leads, AI tools, and bilingual mentorship from day one.",
+      zh: "加入 Homix：入职即接入抖音、小红书、Instagram 百万粉丝，自有内容工作室、AI 工具与中英双语导师，把经纪人打造成本地明星。",
+    },
+    image: HERO,
+  });
+}
 
 const HERO = "/join/hero.jpg";
 

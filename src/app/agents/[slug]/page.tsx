@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProfileNav } from "@/components/agents/ProfileNav";
 import { getAgentBySlug, getAgents } from "@/lib/agents";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
+import { breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { heroImage, siteConfig, socialReach } from "@/lib/site";
 
 const PLACEHOLDER = "/agent-placeholder-logo.png";
@@ -16,6 +17,13 @@ const PLACEHOLDER = "/agent-placeholder-logo.png";
 export async function generateStaticParams() {
   const agents = await getAgents();
   return agents.map((a) => ({ slug: a.slug }));
+}
+
+/** First complete sentence of a bio — only if it fits a meta description. */
+function bioSentence(bio: string): string | null {
+  const clean = bio.replace(/\s+/g, " ").trim();
+  const sentence = clean.match(/^[^.。]+[.。]/)?.[0].trim() ?? null;
+  return sentence && sentence.length <= 160 ? sentence : null;
 }
 
 export async function generateMetadata({
@@ -26,12 +34,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const agent = await getAgentBySlug(slug);
   if (!agent) return { title: "Advisor not found" };
-  return {
-    title: `${agent.name} · ${agent.title}`,
-    description:
-      agent.bio?.slice(0, 155) ||
-      `${agent.name}, ${agent.title} at Homix — bilingual New York real estate.`,
-  };
+  const locale = await getLocale();
+  const sentence = agent.bio ? bioSentence(agent.bio) : null;
+  return pageMetadata({
+    path: `/agents/${slug}`,
+    locale,
+    title: {
+      en: `${agent.name} — ${agent.title}`,
+      zh: `${agent.name}——纽约持牌房产经纪人`,
+    },
+    description: sentence ?? {
+      en: `${agent.name} is a bilingual real-estate advisor at Homix serving New York buyers and sellers.`,
+      zh: `${agent.name}，Homix 纽约持牌房产经纪人，提供中英双语买房卖房服务。`,
+    },
+    ogType: "profile",
+    // The placeholder logo makes a poor share card; inherit the branded one.
+    image: agent.photo && agent.photo !== PLACEHOLDER ? agent.photo : null,
+  });
 }
 
 const PLATFORM_LABEL: Record<string, string> = {
@@ -159,6 +178,11 @@ export default async function AgentProfilePage({
     sameAs: socialList.map(([, url]) => url),
     worksFor: { "@type": "Organization", name: siteConfig.legalName },
   };
+
+  const breadcrumbJsonLd = breadcrumbLd([
+    { name: zh ? "顾问团队" : "Advisors", path: "/agents" },
+    { name: agent.name, path: `/agents/${agent.slug}` },
+  ]);
 
   return (
     <>
@@ -386,6 +410,10 @@ export default async function AgentProfilePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

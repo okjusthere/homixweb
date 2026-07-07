@@ -10,7 +10,22 @@ import { neighborhoods, siteConfig } from "@/lib/site";
 /**
  * Static pages + advisor + neighborhood routes. Individual IDX listing detail
  * pages are intentionally excluded (kept noindex per MLS display rules).
+ *
+ * Every entry advertises its zh-Hans variant (?lang=zh) via sitemap-level
+ * hreflang so the Chinese layer is discoverable at scale — on-page link tags
+ * alone only cover pages a crawler already found.
  */
+function withAlternates(url: string) {
+  return {
+    alternates: {
+      languages: {
+        en: url,
+        "zh-Hans": `${url}?lang=zh`,
+      },
+    },
+  };
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
   const staticPaths = [
@@ -19,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     newDevelopmentBasePath,
     "/sell",
     "/agents",
+    "/chinese-real-estate-agents-nyc",
     "/neighborhoods",
     communitiesBasePath,
     "/about",
@@ -40,32 +56,38 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${base}${p}`,
       changeFrequency: "weekly" as const,
       priority: p === "" ? 1 : 0.7,
+      ...withAlternates(`${base}${p}`),
     })),
     ...agents.map((a) => ({
       url: `${base}/agents/${a.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      ...withAlternates(`${base}/agents/${a.slug}`),
     })),
     ...neighborhoods.map((n) => ({
       url: `${base}/neighborhoods/${n.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      ...withAlternates(`${base}/neighborhoods/${n.slug}`),
     })),
     ...featuredDevelopments.map((building) => ({
       url: `${base}${newDevelopmentHref(building.slug)}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      ...withAlternates(`${base}${newDevelopmentHref(building.slug)}`),
     })),
     ...gatedCommunities.map((c) => ({
       url: `${base}${communityHref(c.slug)}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      ...withAlternates(`${base}${communityHref(c.slug)}`),
     })),
     ...journalPosts.map((p) => ({
       url: `${base}/journal/${p.slug}`,
       lastModified: p.date,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      ...withAlternates(`${base}/journal/${p.slug}`),
     })),
   ];
 }

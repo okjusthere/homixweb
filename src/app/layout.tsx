@@ -3,8 +3,9 @@ import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
-import { getT } from "@/lib/i18n";
+import { getLocale, getT } from "@/lib/i18n";
 import { buyNav, primaryNav, siteConfig } from "@/lib/site";
+import { organizationLd, webSiteLd } from "@/lib/seo";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -18,27 +19,31 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: `${siteConfig.name} — ${siteConfig.market} Real Estate`,
-    template: `%s · ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.market} Real Estate`,
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getLocale();
+  return {
+    metadataBase: new URL(siteConfig.url),
+    title: {
+      default: `${siteConfig.name} — ${siteConfig.market} Real Estate`,
+      template: `%s · ${siteConfig.name}`,
+    },
     description: siteConfig.description,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-  },
-};
+    openGraph: {
+      type: "website",
+      locale: locale === "zh" ? "zh_CN" : "en_US",
+      url: siteConfig.url,
+      siteName: siteConfig.name,
+      title: `${siteConfig.name} — ${siteConfig.market} Real Estate`,
+      description: siteConfig.description,
+    },
+    // Card type ONLY. Setting twitter.title/description here would be
+    // inherited verbatim by every page and suppress Next's per-page auto-fill
+    // from OG — the old root config made every twitter card read just "Homix".
+    twitter: {
+      card: "summary_large_image",
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -83,6 +88,16 @@ export default async function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        {/* Sitewide brand entity for search + AI engines (NAP, license, geo,
+            bilingual alternate names, social profiles). */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteLd()) }}
+        />
       </body>
     </html>
   );

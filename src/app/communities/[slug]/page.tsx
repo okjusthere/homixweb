@@ -9,8 +9,8 @@ import { gatedCommunities } from "@/data/gated-communities";
 import { getCommunityContent } from "@/data/gated-community-content";
 import { amenityLabel, commuteFor, homeTypesLabel } from "@/data/gated-community-zh";
 import { NewDevGallery } from "@/components/new-development/NewDevGallery";
-import { getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, langAlternates } from "@/lib/seo";
+import { getLocale, getT } from "@/lib/i18n";
+import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   communitiesBasePath,
@@ -44,12 +44,21 @@ export async function generateMetadata({
   const { slug } = await params;
   const c = getCommunity(slug);
   if (!c) return { title: "Community not found" };
-  return {
-    title: `${c.name} — ${c.town}`,
-    description: `${c.name} in ${c.town}, Nassau County: a buyer's guide to this gated/private community — access, homes, HOA, commute, and resale.`,
-    alternates: langAlternates(`/communities/${slug}`),
-    openGraph: { type: "article", images: c.image ? [c.image] : undefined },
-  };
+  const locale = await getLocale();
+  return pageMetadata({
+    path: `/communities/${slug}`,
+    locale,
+    title: {
+      en: `${c.name} — ${c.town} Gated Community`,
+      zh: `${c.name}——${c.town} 封闭式社区`,
+    },
+    description: {
+      en: `${c.name} in ${c.town}, Nassau County: a buyer's guide to this gated community — access, homes, HOA dues, LIRR commute, and resale.`,
+      zh: `${c.name} 位于长岛${c.town}：门禁、户型、HOA 月费、通勤与转售指南，Homix 提供中英双语看房服务。`,
+    },
+    image: c.image,
+    ogType: "article",
+  });
 }
 
 export default async function CommunityDetailPage({
