@@ -9,7 +9,13 @@ import { Markdown } from "@/components/journal/Markdown";
 import { getGuide, guides } from "@/content/guides";
 import { getJournalPost } from "@/content/journal/posts";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, faqLd, pageMetadata } from "@/lib/seo";
+import {
+  absUrl,
+  breadcrumbLd,
+  faqLd,
+  jsonLd as serializeJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -231,13 +237,13 @@ export default async function GuidePage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleLd) }}
       />
       {guide.faq.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
+            __html: serializeJsonLd(
               faqLd(
                 guide.faq.map((f) => ({
                   question: f.question[locale],
@@ -251,7 +257,7 @@ export default async function GuidePage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: serializeJsonLd(
             breadcrumbLd([
               { name: zh ? "置业指南" : "Guides", path: "/guides" },
               { name: guide.title[locale], path: `/guides/${guide.slug}` },

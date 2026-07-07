@@ -7,7 +7,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { absUrl, breadcrumbLd, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 import { neighborhoodGlance, neighborhoods, siteConfig } from "@/lib/site";
 
 function getNeighborhood(slug: string) {
@@ -162,11 +162,11 @@ export default async function NeighborhoodPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(crumbs) }}
       />
     </Container>
   );

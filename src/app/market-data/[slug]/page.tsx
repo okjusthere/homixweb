@@ -8,7 +8,13 @@ import { Markdown } from "@/components/journal/Markdown";
 import { getMarketArea, marketAreas } from "@/data/market-stats";
 import { getJournalPost } from "@/content/journal/posts";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, faqLd, pageMetadata } from "@/lib/seo";
+import {
+  absUrl,
+  breadcrumbLd,
+  faqLd,
+  jsonLd as serializeJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -234,13 +240,13 @@ export default async function MarketDataPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(datasetLd) }}
       />
       {area.faq.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(
+            __html: serializeJsonLd(
               faqLd(
                 area.faq.map((f) => ({
                   question: f.question[locale],
@@ -254,7 +260,7 @@ export default async function MarketDataPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: serializeJsonLd(
             breadcrumbLd([
               { name: zh ? "市场数据" : "Market Data", path: "/market-data" },
               { name: area.name[locale], path: `/market-data/${area.slug}` },

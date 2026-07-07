@@ -9,7 +9,12 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ProfileNav } from "@/components/agents/ProfileNav";
 import { getAgentBySlug, getAgents } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
-import { breadcrumbLd, pageMetadata } from "@/lib/seo";
+import {
+  absUrl,
+  breadcrumbLd,
+  jsonLd as serializeJsonLd,
+  pageMetadata,
+} from "@/lib/seo";
 import { heroImage, siteConfig, socialReach } from "@/lib/site";
 
 const PLACEHOLDER = "/agent-placeholder-logo.png";
@@ -171,7 +176,7 @@ export default async function AgentProfilePage({
     "@type": "RealEstateAgent",
     name: agent.name,
     jobTitle: agent.title,
-    image: isPlaceholder ? undefined : agent.photo,
+    image: isPlaceholder ? undefined : absUrl(agent.photo),
     telephone: agent.phone || undefined,
     email: agent.email || undefined,
     knowsLanguage: ["en", "zh"],
@@ -409,11 +414,11 @@ export default async function AgentProfilePage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
     </>
   );

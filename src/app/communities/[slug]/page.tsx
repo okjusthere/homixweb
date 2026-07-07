@@ -10,7 +10,7 @@ import { getCommunityContent } from "@/data/gated-community-content";
 import { amenityLabel, commuteFor, homeTypesLabel } from "@/data/gated-community-zh";
 import { NewDevGallery } from "@/components/new-development/NewDevGallery";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { absUrl, breadcrumbLd, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   communitiesBasePath,
@@ -368,11 +368,11 @@ export default async function CommunityDetailPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(crumbs) }}
       />
     </>
   );

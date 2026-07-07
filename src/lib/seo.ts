@@ -18,6 +18,23 @@ function pick(value: Localized, locale: Locale): string {
   return typeof value === "string" ? value : value[locale];
 }
 
+function compact(value: string, max = 240): string {
+  const clean = value.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const breakAt = cut.lastIndexOf(" ");
+  return `${cut.slice(0, breakAt > 80 ? breakAt : max - 1).replace(/[.,;:!?—-]+$/, "")}…`;
+}
+
+function introOgImage(title: string, description: string, path: string) {
+  const params = new URLSearchParams({
+    title: compact(title, 92),
+    description: compact(description, 220),
+    path,
+  });
+  return `/og?${params.toString()}`;
+}
+
 export type PageMetaInput = {
   /** Clean path without locale param, e.g. "/about" or "/journal/foo". */
   path: string;
@@ -45,6 +62,8 @@ export function pageMetadata(input: PageMetaInput): Metadata {
   const zhUrl = `${input.path}?lang=zh`;
   const enUrl = input.path;
   const canonical = input.locale === "zh" ? zhUrl : enUrl;
+  const image = input.image ?? introOgImage(title, description, canonical);
+  const imageAlt = compact(`${title}. ${description}`, 300);
 
   return {
     title,
@@ -66,7 +85,7 @@ export function pageMetadata(input: PageMetaInput): Metadata {
       locale: input.locale === "zh" ? "zh_CN" : "en_US",
       title,
       description,
-      ...(input.image ? { images: [input.image] } : {}),
+      images: [{ url: image, width: 1200, height: 630, alt: imageAlt }],
     },
   };
 }
@@ -160,7 +179,28 @@ export function organizationLd() {
       { "@type": "AdministrativeArea", name: "Brooklyn" },
       { "@type": "AdministrativeArea", name: "Nassau County" },
     ],
+    knowsAbout: [
+      "New York real estate",
+      "NYC new development condos",
+      "Chinese-speaking real estate service",
+      "Flushing homes for sale",
+      "Long Island school-district home search",
+      "Manhattan buyer representation",
+      "Queens residential real estate",
+      "Nassau County gated communities",
+      "纽约买房",
+      "纽约新盘",
+      "纽约华人房产经纪",
+      "长岛学区房",
+    ],
     knowsLanguage: ["en", "zh"],
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: contact.phone,
+      contactType: "customer service",
+      areaServed: "US-NY",
+      availableLanguage: ["English", "Chinese"],
+    },
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "license",
@@ -181,5 +221,15 @@ export function webSiteLd() {
     alternateName: "纽约Homix地产",
     publisher: { "@id": `${siteConfig.url}/#organization` },
     inLanguage: ["en", "zh-Hans"],
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteConfig.url}/listings?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   };
+}
+
+/** Safe JSON-LD string for native script tags. */
+export function jsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
 }

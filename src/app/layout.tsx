@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { getLocale, getT } from "@/lib/i18n";
 import { buyNav, primaryNav, siteConfig } from "@/lib/site";
-import { organizationLd, webSiteLd } from "@/lib/seo";
+import { jsonLd, organizationLd, webSiteLd } from "@/lib/seo";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -92,11 +92,11 @@ export default async function RootLayout({
             bilingual alternate names, social profiles). */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd()) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationLd()) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteLd()) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(webSiteLd()) }}
         />
       </body>
     </html>

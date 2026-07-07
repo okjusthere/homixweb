@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { PhotoCredit } from "@/components/listings/PhotoCredit";
 import { getLocale, getT } from "@/lib/i18n";
 import { neighborhoods } from "@/lib/site";
-import { absUrl, pageMetadata } from "@/lib/seo";
+import { absUrl, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -54,7 +54,7 @@ export default async function NeighborhoodsPage() {
     <Container className="py-12 sm:py-16">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }}
       />
       <div className="max-w-2xl">
         <Eyebrow>{t.neighborhoodsPage.eyebrow}</Eyebrow>

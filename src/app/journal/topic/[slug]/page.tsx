@@ -10,7 +10,7 @@ import { getGuide } from "@/content/guides";
 import { topics, getTopic } from "@/content/journal/topics";
 import { getAgents } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { absUrl, breadcrumbLd, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return topics.map((t) => ({ slug: t.slug }));
@@ -159,7 +159,7 @@ export default async function TopicPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: serializeJsonLd({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
             name: topic.label[locale],
@@ -176,7 +176,7 @@ export default async function TopicPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: serializeJsonLd(
             breadcrumbLd([
               { name: zh ? "学堂" : "Learn", path: "/guides" },
               { name: zh ? "文章" : "Articles", path: "/journal" },

@@ -11,7 +11,7 @@ import { featuredDevelopments } from "@/data/featured-developments";
 import { getDevelopmentMedia } from "@/data/new-development-media";
 import { getDevelopmentContent } from "@/data/new-development-content";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { absUrl, breadcrumbLd, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import {
   buyerChecklist,
@@ -426,11 +426,11 @@ export default async function NewDevelopmentDetailPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(crumbs) }}
       />
     </Container>
   );

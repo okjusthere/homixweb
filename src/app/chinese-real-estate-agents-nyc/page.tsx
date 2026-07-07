@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { getT, getLocale } from "@/lib/i18n";
 import { getAgents } from "@/lib/agents";
 import { siteConfig } from "@/lib/site";
-import { breadcrumbLd, faqLd, pageMetadata } from "@/lib/seo";
+import { breadcrumbLd, faqLd, jsonLd, pageMetadata } from "@/lib/seo";
 
 const PATH = "/chinese-real-estate-agents-nyc";
 
@@ -270,12 +270,12 @@ export default async function ChineseAgentsPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd([...faq])) }}
+        dangerouslySetInnerHTML={{ __html: jsonLd(faqLd([...faq])) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: jsonLd(
             breadcrumbLd([
               { name: zh ? "首页" : "Home", path: "/" },
               { name: copy.h1, path: PATH },

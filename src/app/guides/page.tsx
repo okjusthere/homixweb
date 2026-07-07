@@ -8,7 +8,7 @@ import { marketAreas } from "@/data/market-stats";
 import { journalPosts } from "@/content/journal/posts";
 import { topics, getTopic } from "@/content/journal/topics";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, pageMetadata } from "@/lib/seo";
+import { absUrl, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -182,7 +182,7 @@ export default async function LearnHubPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }}
       />
     </Container>
   );

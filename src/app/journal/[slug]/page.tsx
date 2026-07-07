@@ -11,7 +11,7 @@ import { getGuide } from "@/content/guides";
 import { getTopic } from "@/content/journal/topics";
 import { getAgentBySlug } from "@/lib/agents";
 import { getLocale, getT } from "@/lib/i18n";
-import { absUrl, breadcrumbLd, pageMetadata } from "@/lib/seo";
+import { absUrl, breadcrumbLd, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 export async function generateStaticParams() {
@@ -187,12 +187,12 @@ export default async function JournalArticlePage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(
+          __html: serializeJsonLd(
             breadcrumbLd([
               { name: "Journal", path: "/journal" },
               { name: post.title.en, path: `/journal/${post.slug}` },

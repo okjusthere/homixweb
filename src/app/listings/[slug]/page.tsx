@@ -10,7 +10,7 @@ import { listings } from "@/lib/listings";
 import type { PropertyType } from "@/lib/listings";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
 import { getLocale } from "@/lib/i18n";
-import { absUrl, pageMetadata } from "@/lib/seo";
+import { absUrl, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 function displayPrice(value: number): string {
@@ -224,7 +224,7 @@ export default async function ListingDetailPage({
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
     </Container>
   );

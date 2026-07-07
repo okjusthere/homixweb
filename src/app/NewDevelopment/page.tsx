@@ -9,7 +9,7 @@ import {
   newDevelopmentHref,
   priceLead,
 } from "@/lib/new-developments";
-import { absUrl, pageMetadata } from "@/lib/seo";
+import { absUrl, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -88,7 +88,7 @@ export default async function NewDevelopmentPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListLd) }}
       />
       <section className="border-b border-line bg-surface">
         <Container className="py-8 sm:py-10">
