@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   images: {
+    // Vercel Hobby image transformations are capped; serve already curated media directly.
+    unoptimized: true,
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       // BBO listing media proxy and R2 public media.
