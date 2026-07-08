@@ -10,7 +10,7 @@ export const siteConfig = {
   legalName: "Homix Realty Inc.",
   tagline: "Where Homes Meet Headlines",
   description:
-    "Homix is a new kind of New York real estate company — built on media. A full-service brokerage, an agent incubator, and a content studio with a 1,000,000+ audience, powered by data and AI.",
+    "Homix is a new kind of New York real estate company with offices in Flushing, Long Island, and Manhattan — a full-service brokerage, agent incubator, and content studio with a 1,000,000+ audience, powered by data and AI.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homixny.com",
   market: "New York",
   // The agents' internal portal (homixliving CRM) — a separate deployment.
@@ -27,6 +27,38 @@ export const siteConfig = {
       state: "NY",
       zip: "11354",
     },
+    offices: [
+      {
+        key: "flushing",
+        label: { en: "Main Office", zh: "主办公室" },
+        market: { en: "Flushing · Queens", zh: "法拉盛 · 皇后区" },
+        line1: "37-20 Prince St, STE 3H",
+        city: "Flushing",
+        state: "NY",
+        zip: "11354",
+        isPrimary: true,
+      },
+      {
+        key: "jericho",
+        label: { en: "Long Island Office", zh: "长岛办公室" },
+        market: { en: "Jericho · Nassau County", zh: "Jericho · 拿骚县" },
+        line1: "366 N Broadway",
+        city: "Jericho",
+        state: "NY",
+        zip: "11753",
+        isPrimary: false,
+      },
+      {
+        key: "manhattan",
+        label: { en: "Manhattan Office", zh: "曼哈顿办公室" },
+        market: { en: "Hudson Square · Manhattan", zh: "Hudson Square · 曼哈顿" },
+        line1: "110 Charlton St",
+        city: "New York",
+        state: "NY",
+        zip: "10014",
+        isPrimary: false,
+      },
+    ],
   },
   // Required US/NY brokerage disclosures.
   legal: {

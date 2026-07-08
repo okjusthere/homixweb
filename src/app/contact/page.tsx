@@ -12,19 +12,29 @@ export async function generateMetadata(): Promise<Metadata> {
     path: "/contact",
     locale,
     title: {
-      en: "Contact — Real Estate Advisors in Flushing, NY",
-      zh: "联系我们——法拉盛办公室 · 中英双语房产咨询",
+      en: "Contact — Homix Offices in Flushing, Long Island & Manhattan",
+      zh: "联系我们——法拉盛、长岛与曼哈顿办公室",
     },
     description: {
-      en: "Call, email, or visit Homix at 37-20 Prince St in Flushing, Queens. Reach our bilingual New York real estate team about buying, selling, or joining.",
-      zh: "电话、邮件或到访均可联系 Homix：办公室位于纽约法拉盛 Prince St 37-20 号，中英双语团队为您解答买房、卖房与置业问题。",
+      en: "Call, email, or visit Homix by appointment at our Flushing main office, Long Island office in Jericho, or Manhattan office in Hudson Square.",
+      zh: "电话、邮件或预约到访 Homix 法拉盛主办公室、Jericho 长岛办公室或 Hudson Square 曼哈顿办公室，咨询买房、卖房与置业问题。",
     },
   });
 }
 
+type Office = (typeof siteConfig.contact.offices)[number];
+
+function officeMapHref(office: Office) {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+    `${office.line1}, ${office.city}, ${office.state} ${office.zip}`,
+  )}`;
+}
+
 export default async function ContactPage() {
-  const { t } = await getT();
+  const { locale, t } = await getT();
   const { contact } = siteConfig;
+  const primaryOffice = contact.offices.find((office) => office.isPrimary) ?? contact.offices[0];
+
   return (
     <Container className="py-20 sm:py-28">
       <div className="grid gap-12 md:grid-cols-2 md:gap-20">
@@ -65,10 +75,12 @@ export default async function ContactPage() {
             <div>
               <p className="eyebrow mb-2">{t.contactPage.inPerson}</p>
               <p className="text-ink/85">
-                {contact.address.line1}
+                <span className="font-medium text-ink">{primaryOffice.label[locale]}</span>
                 <br />
-                {contact.address.city}, {contact.address.state}{" "}
-                {contact.address.zip}
+                {primaryOffice.line1}
+                <br />
+                {primaryOffice.city}, {primaryOffice.state}{" "}
+                {primaryOffice.zip}
               </p>
             </div>
           </div>
@@ -78,6 +90,53 @@ export default async function ContactPage() {
           <InquiryForm labels={t.inquiry} source="contact" />
         </div>
       </div>
+
+      <section className="mt-16 border-t border-line pt-12 sm:mt-20 sm:pt-14">
+        <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+          <div>
+            <Eyebrow>{t.contactPage.officesEyebrow}</Eyebrow>
+            <h2 className="mt-4 font-serif text-3xl font-normal leading-tight tracking-tight text-ink">
+              {t.contactPage.officesTitle}
+            </h2>
+            <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+              {t.contactPage.officesLead}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-3">
+            {contact.offices.map((office) => (
+              <a
+                key={office.key}
+                href={officeMapHref(office)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex min-h-[220px] flex-col justify-between rounded-sm border border-line bg-surface p-6 transition-colors hover:border-bronze/60"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-[0.14em] text-muted">
+                    {office.market[locale]}
+                  </p>
+                  <h3 className="mt-4 font-serif text-2xl font-normal leading-tight text-ink group-hover:text-bronze">
+                    {office.label[locale]}
+                  </h3>
+                  {office.isPrimary && (
+                    <p className="mt-3 inline-flex border border-bronze/30 px-2.5 py-1 text-xs uppercase tracking-[0.12em] text-bronze">
+                      {t.contactPage.mainOffice}
+                    </p>
+                  )}
+                  <p className="mt-5 text-sm leading-relaxed text-muted">
+                    {office.line1}
+                    <br />
+                    {office.city}, {office.state} {office.zip}
+                  </p>
+                </div>
+                <p className="mt-6 text-sm font-medium text-bronze">
+                  {t.contactPage.openMap} →
+                </p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
     </Container>
   );
 }

@@ -545,6 +545,7 @@ const en = {
     eho: "Homix Realty Inc. is committed to the principles of the Fair Housing Act and the Equal Opportunity Act. We do not discriminate on the basis of race, color, religion, sex, disability, familial status, national origin, or any other class protected by applicable federal, New York State, or New York City law. All information is deemed reliable but not guaranteed.",
     brokerOfRecord: "Broker of Record",
     licensedIn: "Licensed in",
+    offices: "Offices",
     rights: "All rights reserved.",
   },
   hero: {
@@ -1773,6 +1774,11 @@ const en = {
     byPhone: "By phone",
     byEmail: "By email",
     inPerson: "In person",
+    officesEyebrow: "Office locations",
+    officesTitle: "Three New York offices, one advisory team.",
+    officesLead: "Meet us in Flushing, Long Island, or Manhattan by appointment. The Flushing office remains our main office for brokerage operations and client coordination.",
+    mainOffice: "Main office",
+    openMap: "Open map",
   },
   neighborhoodsPage: {
     eyebrow: "Neighborhoods",
@@ -1984,6 +1990,7 @@ const zh: Dict = {
     eho: "Homix Realty Inc. 恪守《公平住房法》与《平等机会法》。我们不因种族、肤色、宗教、性别、残障、家庭状况、国籍，或联邦、纽约州及纽约市法律保护的任何其他类别而歧视。所有信息力求可靠，但不作保证。",
     brokerOfRecord: "备案经纪人",
     licensedIn: "持牌州",
+    offices: "办公室",
     rights: "保留所有权利。",
   },
   hero: {
@@ -3212,6 +3219,11 @@ const zh: Dict = {
     byPhone: "电话",
     byEmail: "邮箱",
     inPerson: "到访",
+    officesEyebrow: "办公室",
+    officesTitle: "三处纽约办公室，一支顾问团队。",
+    officesLead: "可预约到访法拉盛、长岛或曼哈顿办公室。法拉盛仍是我们的主办公室，负责经纪业务运营与客户协调。",
+    mainOffice: "主办公室",
+    openMap: "打开地图",
   },
   neighborhoodsPage: {
     eyebrow: "社区",

@@ -8,7 +8,7 @@ import { EqualHousingLogo } from "./EqualHousingLogo";
 const year = new Date().getFullYear();
 
 export async function SiteFooter() {
-  const { t } = await getT();
+  const { locale, t } = await getT();
   const { contact, legal, legalName } = siteConfig;
   const common = t.common as Record<string, string>;
 
@@ -27,13 +27,23 @@ export async function SiteFooter() {
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
               {siteConfig.tagline}
             </p>
-            <div className="mt-6 space-y-1 text-sm text-ink/80">
-              <p>
-                {contact.address.line1}
-                <br />
-                {contact.address.city}, {contact.address.state}{" "}
-                {contact.address.zip}
-              </p>
+            <div className="mt-6 space-y-4 text-sm text-ink/80">
+              <div>
+                <p className="eyebrow mb-2">{t.footer.offices}</p>
+                <div className="space-y-3">
+                  {contact.offices.map((office) => (
+                    <p key={office.key}>
+                      <span className="font-medium text-ink">
+                        {office.label[locale]}
+                      </span>
+                      <br />
+                      {office.line1}
+                      <br />
+                      {office.city}, {office.state} {office.zip}
+                    </p>
+                  ))}
+                </div>
+              </div>
               <p>
                 <a className="hover:text-bronze" href={contact.phoneHref}>
                   {contact.phone}

@@ -18,8 +18,8 @@ export async function generateMetadata(): Promise<Metadata> {
       zh: "关于我们——媒体驱动的纽约房产经纪公司",
     },
     description: {
-      en: "Homix is a media-first, AI-empowered New York real estate company: a licensed brokerage, content studio, and agent incubator with bilingual advisors.",
-      zh: "Homix 是媒体驱动、AI 赋能的纽约房产经纪公司：持牌经纪、内容工作室与经纪人孵化器三合一，中英双语团队深耕法拉盛、皇后区与长岛。",
+      en: "Homix is a media-first, AI-empowered New York real estate company with offices in Flushing, Long Island, and Manhattan: a licensed brokerage, content studio, and agent incubator with bilingual advisors.",
+      zh: "Homix 是媒体驱动、AI 赋能的纽约房产经纪公司：办公室覆盖法拉盛、长岛与曼哈顿，持牌经纪、内容工作室与经纪人孵化器三合一。",
     },
     image: HERO,
   });

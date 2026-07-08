@@ -24,7 +24,11 @@ export async function GET() {
     "> and buyer education for the Chinese-speaking community in NYC and Long Island.",
     "> 纽约中英双语房产经纪公司：买房、新盘、社区与学区指南、华人买家科普。",
     "",
-    `- Office: ${siteConfig.contact.address.line1}, ${siteConfig.contact.address.city}, ${siteConfig.contact.address.state} ${siteConfig.contact.address.zip}`,
+    "- Offices:",
+    ...siteConfig.contact.offices.map(
+      (office) =>
+        `  - ${office.label.en}: ${office.line1}, ${office.city}, ${office.state} ${office.zip}`,
+    ),
     `- Phone: ${siteConfig.contact.phone} · Email: ${siteConfig.contact.email}`,
     `- License: ${siteConfig.legal.brokerLicense} (Broker of record: ${siteConfig.legal.brokerOfRecord})`,
     "- Chinese versions of every page are served at the same URL with `?lang=zh`.",

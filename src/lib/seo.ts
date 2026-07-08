@@ -145,6 +145,15 @@ export function faqLd(items: { question: string; answer: string }[]) {
  */
 export function organizationLd() {
   const { contact, legal, social } = siteConfig;
+  const addresses = contact.offices.map((office) => ({
+    "@type": "PostalAddress",
+    streetAddress: office.line1,
+    addressLocality: office.city,
+    addressRegion: office.state,
+    postalCode: office.zip,
+    addressCountry: "US",
+  }));
+
   return {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
@@ -158,14 +167,7 @@ export function organizationLd() {
     description: siteConfig.description,
     telephone: contact.phone,
     email: contact.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: contact.address.line1,
-      addressLocality: contact.address.city,
-      addressRegion: contact.address.state,
-      postalCode: contact.address.zip,
-      addressCountry: "US",
-    },
+    address: addresses,
     geo: {
       "@type": "GeoCoordinates",
       // 37-20 Prince St, Flushing NY 11354
