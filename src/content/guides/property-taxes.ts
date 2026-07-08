@@ -25,7 +25,7 @@ export const taxesGuide: Guide = {
     en: "Property tax is not one number — it is a set of rules that runs across **three phases: buying, holding, and selling**. In New York, many buyers treat the tax line on a listing like fixed weather and treat the sale price as their payday, and in doing so they miss that a buyer-only **mansion tax** hits at purchase, that the bill you hold can be **grieved every single year** (with abatements to claim), and that **capital-gains tax** and, for foreign sellers, **FIRPTA withholding** follow an entirely different logic at sale.\n\nThis guide breaks the whole chain apart along that timeline: first how NYC's tax classes and assessed values work (and how Long Island's Nassau/Suffolk differ), then the taxes at each of the buy, hold, and sell phases, and finally the [1031 exchange](/guides/articles/1031-exchange-explained) deferral mechanics for investors and the ITIN and estate-tax points that matter for overseas buyers.\n\nEvery rate, bracket, and deadline below is drawn verbatim from our [Law & Taxes](/guides/articles) posts, which note each figure's official source and as-of date. **Tax rates, assessment ratios, income limits, and deadlines change — sometimes annually.** Nothing here is legal, tax, or financial advice; before acting, confirm every figure against official sources and consult a licensed attorney, a CPA, or your county's assessing office.",
   },
   updated: "2026-07-07",
-  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/hudson-yards.jpg",
+  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/hudson-yards.jpg",
   sections: [
     {
       heading: {

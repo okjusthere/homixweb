@@ -22,7 +22,7 @@ export const rentingGuide: Guide = {
     en: "For most international students and new immigrants, the first real-estate transaction in New York is not a purchase — it is **signing a first lease**. And NYC's rental rules differ from those back home and from most other U.S. cities: landlords look for annual income of 40 times the monthly rent, applicants without a U.S. credit history often need a guarantor, and good listings can be gone within days.\n\nThis guide breaks the whole process down: how the market works, how qualification math is done, the common paths when you have no U.S. credit or income, what documents to prepare, which lease clauses to watch at signing, and — after a few years of renting — when it is time to seriously run the buy-vs-rent numbers.\n\nMarket figures are drawn from our post [Manhattan Rentals in 2026](/guides/articles/manhattan-rentals-2026), which notes the source and as-of date for every number. Rents and rules change; statements about New York State and City regulations here are general information — always confirm the rules in force when you sign.",
   },
   updated: "2026-07-07",
-  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/brownstone.jpg",
+  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/brownstone.jpg",
   sections: [
     {
       heading: {

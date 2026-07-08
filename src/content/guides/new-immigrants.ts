@@ -24,7 +24,7 @@ export const newImmigrantsGuide: Guide = {
     en: "For newcomers just landing in New York, buying a home is rarely the first thing — the first thing is **laying the foundation**: getting a tax ID, opening a bank account, getting a license, understanding taxes, then spending a year or two building credit, saving a down payment, and learning the neighborhoods before you seriously think about buying. This guide walks that path in order, because each step depends on the one before it and skipping around usually means backtracking.\n\nIt covers six things: your first-year settling checklist, building U.S. credit from zero, financing without a green card or with a new status (ITIN and foreign-national loans), bringing overseas funds in compliantly, the city-vs-Long-Island trade-off, and the basics of cost of living and health insurance. When you are ready to buy, continue to the [Buying Guide](/guides/buying-in-nyc); if your first transaction is a lease, start with the [Renting Guide](/guides/renting-in-nyc).\n\nEvery figure here is drawn from our guide articles, which note their source and as-of date — rates, tax rules, and policies change, and anything touching tax, immigration, finance, or law is general information only. Verify against official sources and consult a licensed professional before acting.",
   },
   updated: "2026-07-07",
-  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/guides/articles/covers/flushing.jpg",
+  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/flushing.jpg",
   sections: [
     {
       heading: {
