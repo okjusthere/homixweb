@@ -81,6 +81,19 @@ export interface Listing {
   isFeatured?: boolean;
 }
 
+/**
+ * External review profile. The `url` always points at the live source (Zillow,
+ * Google) so what a visitor clicks through to is never stale; `rating`/`count`
+ * are agent-attested display values, shown alongside the live link.
+ */
+export interface AgentReview {
+  url: string;
+  /** Agent-attested star rating, e.g. "4.9". */
+  rating?: string;
+  /** Agent-attested review count, e.g. "32". */
+  count?: string;
+}
+
 export interface Agent {
   id: string;
   slug: string;
@@ -93,15 +106,38 @@ export interface Agent {
   licenseNumber?: string;
   bio: string;
   specialties: string[];
+  /** Spoken languages, e.g. ["English", "中文", "粤语"]. UI falls back to EN/中文. */
+  languages?: string[];
   /** Link to the agent's profile on the legacy/current site, if any. */
   profileUrl?: string;
+  /** Uploaded WeChat QR image URL (agent-photos bucket) — a primary contact channel. */
+  wechatQr?: string;
   social?: {
     instagram?: string;
     linkedin?: string;
     xiaohongshu?: string;
     douyin?: string;
+    youtube?: string;
     website?: string;
   };
+  /** External review profiles — links stay live; rating/count are agent-attested. */
+  reviews?: {
+    zillow?: AgentReview;
+    google?: AgentReview;
+  };
+  /** Self-reported, verifiable track-record metrics (agent-entered; never fabricated). */
+  stats?: {
+    /** Years in the business, e.g. "10+". */
+    years?: string;
+    /** Closed transactions, e.g. "150+". */
+    transactions?: string;
+    /** Sales volume, e.g. "$80M+". */
+    volume?: string;
+    /** Areas served, e.g. "Flushing · Long Island · Manhattan". */
+    areas?: string;
+  };
+  /** Short client testimonials the agent has permission to publish. */
+  testimonials?: { quote: string; author?: string }[];
 }
 
 /** Query / filter shape accepted by every provider. */

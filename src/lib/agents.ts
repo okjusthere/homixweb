@@ -1,12 +1,29 @@
 import { STATIC_AGENTS } from "./agents/static-roster";
 import { getSupabase } from "./supabase";
-import type { Agent } from "./listings/types";
+import type { Agent, AgentReview } from "./listings/types";
 
 /**
  * Agent roster data layer. Reads from Supabase when configured (so advisors can
  * self-edit), otherwise falls back to the bundled static roster — the site works
  * either way.
  */
+
+export interface AgentReviews {
+  zillow?: AgentReview;
+  google?: AgentReview;
+}
+
+export interface AgentStats {
+  years?: string;
+  transactions?: string;
+  volume?: string;
+  areas?: string;
+}
+
+export interface AgentTestimonial {
+  quote: string;
+  author?: string;
+}
 
 export interface AgentRow {
   id: string;
@@ -18,7 +35,12 @@ export interface AgentRow {
   email: string | null;
   bio: string | null;
   specialties: string[] | null;
+  languages: string[] | null;
   social: Record<string, string> | null;
+  wechat_qr: string | null;
+  reviews: AgentReviews | null;
+  stats: AgentStats | null;
+  testimonials: AgentTestimonial[] | null;
   license_number: string | null;
   profile_url: string | null;
   visible: boolean | null;
@@ -26,7 +48,38 @@ export interface AgentRow {
   edit_token?: string;
 }
 
+/** Keep only reviews that carry a live URL; drop empty/rating-only entries. */
+function cleanReviews(reviews: AgentReviews | null): Agent["reviews"] {
+  if (!reviews) return undefined;
+  const out: AgentReviews = {};
+  for (const key of ["zillow", "google"] as const) {
+    const r = reviews[key];
+    if (r && r.url) out[key] = r;
+  }
+  return Object.keys(out).length ? out : undefined;
+}
+
+/** Drop stat keys with no value so the UI can test presence cleanly. */
+function cleanStats(stats: AgentStats | null): Agent["stats"] {
+  if (!stats) return undefined;
+  const out: AgentStats = {};
+  for (const key of ["years", "transactions", "volume", "areas"] as const) {
+    const v = stats[key]?.trim();
+    if (v) out[key] = v;
+  }
+  return Object.keys(out).length ? out : undefined;
+}
+
+function cleanTestimonials(list: AgentTestimonial[] | null): Agent["testimonials"] {
+  if (!list) return undefined;
+  const out = list
+    .filter((t) => t && t.quote?.trim())
+    .map((t) => ({ quote: t.quote.trim(), author: t.author?.trim() || undefined }));
+  return out.length ? out : undefined;
+}
+
 function rowToAgent(r: AgentRow): Agent {
+  const languages = (r.languages || []).map((l) => l.trim()).filter(Boolean);
   return {
     id: r.id,
     slug: r.slug,
@@ -37,9 +90,14 @@ function rowToAgent(r: AgentRow): Agent {
     email: r.email || "",
     bio: r.bio || "",
     specialties: r.specialties || [],
+    languages: languages.length ? languages : undefined,
     licenseNumber: r.license_number || undefined,
     profileUrl: r.profile_url || undefined,
+    wechatQr: r.wechat_qr || undefined,
     social: r.social || undefined,
+    reviews: cleanReviews(r.reviews),
+    stats: cleanStats(r.stats),
+    testimonials: cleanTestimonials(r.testimonials),
   };
 }
 

@@ -11,7 +11,12 @@ create table if not exists public.agents (
   email text,
   bio text,
   specialties text[] not null default '{}',
+  languages text[] not null default '{}',
   social jsonb not null default '{}'::jsonb,
+  wechat_qr text,
+  reviews jsonb not null default '{}'::jsonb,
+  stats jsonb not null default '{}'::jsonb,
+  testimonials jsonb not null default '[]'::jsonb,
   license_number text,
   profile_url text,
   edit_token text unique not null,
@@ -19,6 +24,15 @@ create table if not exists public.agents (
   visible boolean not null default true,
   updated_at timestamptz not null default now()
 );
+
+-- Profile-card fields added after the initial launch. Safe to re-run: each
+-- column is only added if it doesn't already exist. Run these in the Supabase
+-- SQL editor against the existing agents table.
+alter table public.agents add column if not exists languages text[] not null default '{}';
+alter table public.agents add column if not exists wechat_qr text;
+alter table public.agents add column if not exists reviews jsonb not null default '{}'::jsonb;
+alter table public.agents add column if not exists stats jsonb not null default '{}'::jsonb;
+alter table public.agents add column if not exists testimonials jsonb not null default '[]'::jsonb;
 
 -- Row Level Security: anyone may READ visible agents; nobody may write through
 -- the public/anon key. All writes go through the server (service role key),

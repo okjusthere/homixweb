@@ -4,7 +4,10 @@ import Link from "next/link";
 import { useActionState, useEffect, useState } from "react";
 import type { Agent } from "@/lib/listings";
 import { AvatarCropper } from "./AvatarCropper";
+import { QrUpload } from "./QrUpload";
 import { updateAgentProfile, type SaveState } from "./actions";
+
+const MAX_TESTIMONIALS = 3;
 
 const PLACEHOLDER = "/agent-placeholder-logo.png";
 
@@ -29,19 +32,25 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
   );
 
   const social = agent.social ?? {};
+  const reviews = agent.reviews ?? {};
   const [title, setTitle] = useState(agent.title);
   const [phone, setPhone] = useState(agent.phone);
   const [email, setEmail] = useState(agent.email);
   const [bio, setBio] = useState(agent.bio);
   const [specialtiesStr, setSpecialtiesStr] = useState(agent.specialties.join(", "));
+  const [languagesStr, setLanguagesStr] = useState((agent.languages ?? []).join(", "));
   const [instagram, setInstagram] = useState(social.instagram ?? "");
   const [xiaohongshu, setXiaohongshu] = useState(social.xiaohongshu ?? "");
   const [douyin, setDouyin] = useState(social.douyin ?? "");
+  const [youtube, setYoutube] = useState(social.youtube ?? "");
   const [linkedin, setLinkedin] = useState(social.linkedin ?? "");
   const [website, setWebsite] = useState(social.website ?? "");
+  const [zillowUrl, setZillowUrl] = useState(reviews.zillow?.url ?? "");
+  const [googleUrl, setGoogleUrl] = useState(reviews.google?.url ?? "");
   const [photoPicked, setPhotoPicked] = useState(
     Boolean(agent.photo) && agent.photo !== PLACEHOLDER,
   );
+  const [wechatPicked, setWechatPicked] = useState(Boolean(agent.wechatQr));
 
   const [dirty, setDirty] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -77,17 +86,22 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
 
   // Profile-strength score.
   const specialtiesList = parseSpecialties(specialtiesStr);
-  const socialCount = [instagram, xiaohongshu, douyin, linkedin, website].filter(
+  const languagesList = parseSpecialties(languagesStr);
+  const socialCount = [instagram, xiaohongshu, douyin, youtube, linkedin, website].filter(
     (s) => s.trim(),
   ).length;
+  const hasReviews = Boolean(zillowUrl.trim() || googleUrl.trim());
   const score =
-    (photoPicked ? 25 : 0) +
-    (bio.trim().length >= BIO_GOOD ? 25 : 0) +
-    (title.trim() ? 10 : 0) +
-    (phone.trim() ? 10 : 0) +
-    (email.trim() ? 10 : 0) +
-    (specialtiesList.length ? 10 : 0) +
-    (socialCount ? 10 : 0);
+    (photoPicked ? 20 : 0) +
+    (bio.trim().length >= BIO_GOOD ? 20 : 0) +
+    (title.trim() ? 8 : 0) +
+    (phone.trim() ? 8 : 0) +
+    (email.trim() ? 8 : 0) +
+    (specialtiesList.length ? 8 : 0) +
+    (languagesList.length ? 6 : 0) +
+    (socialCount ? 8 : 0) +
+    (wechatPicked ? 6 : 0) +
+    (hasReviews ? 8 : 0);
 
   const tier =
     score >= 80
@@ -102,13 +116,19 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
       ? "A short bio builds trust · 写几句简介更可信"
       : !specialtiesList.length
         ? "Add your specialties · 添加你的专长"
-        : !socialCount
-          ? "Link a social channel · 关联一个社交账号"
-          : !phone.trim()
-            ? "Add a phone number · 添加电话"
-            : !email.trim()
-              ? "Add an email · 添加邮箱"
-              : null;
+        : !languagesList.length
+          ? "List the languages you speak · 添加你会的语言"
+          : !socialCount
+            ? "Link a social channel · 关联一个社交账号"
+            : !wechatPicked
+              ? "Add your WeChat QR · 上传微信二维码"
+              : !hasReviews
+                ? "Link your Zillow / Google reviews · 关联 Zillow / Google 评价"
+                : !phone.trim()
+                  ? "Add a phone number · 添加电话"
+                  : !email.trim()
+                    ? "Add an email · 添加邮箱"
+                    : null;
 
   const bioLen = bio.trim().length;
   const bioColor =
@@ -174,6 +194,26 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
             <label className={label} htmlFor="license">License # / 牌照号</label>
             <input id="license" name="license" defaultValue={agent.licenseNumber ?? ""} className={input} />
           </div>
+          <div className="sm:col-span-2">
+            <label className={label} htmlFor="languages">Languages you speak / 你会的语言</label>
+            <input
+              id="languages"
+              name="languages"
+              value={languagesStr}
+              onChange={(e) => setLanguagesStr(e.target.value)}
+              placeholder="English, 中文, 粤语 / 用逗号分隔"
+              className={input}
+            />
+            {languagesList.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-2">
+                {languagesList.map((l, i) => (
+                  <span key={`${l}-${i}`} className="rounded-sm border border-line px-3 py-1 text-xs text-muted">
+                    {l}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </section>
 
@@ -234,8 +274,109 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
           <input name="social_instagram" value={instagram} onChange={(e) => setInstagram(e.target.value)} placeholder="Instagram URL" className={input} />
           <input name="social_xiaohongshu" value={xiaohongshu} onChange={(e) => setXiaohongshu(e.target.value)} placeholder="小红书 / RED URL" className={input} />
           <input name="social_douyin" value={douyin} onChange={(e) => setDouyin(e.target.value)} placeholder="抖音 / Douyin URL" className={input} />
+          <input name="social_youtube" value={youtube} onChange={(e) => setYoutube(e.target.value)} placeholder="YouTube URL" className={input} />
           <input name="social_linkedin" value={linkedin} onChange={(e) => setLinkedin(e.target.value)} placeholder="LinkedIn URL" className={input} />
           <input name="social_website" value={website} onChange={(e) => setWebsite(e.target.value)} placeholder="Website URL" className={`${input} sm:col-span-2`} />
+        </div>
+      </section>
+
+      {/* WeChat QR */}
+      <section>
+        <p className="eyebrow mb-1">WeChat QR / 微信二维码</p>
+        <p className="mb-4 text-xs text-muted">
+          For many clients WeChat is the fastest way to reach you · 对很多客户，微信是最快的联系方式。
+        </p>
+        <QrUpload
+          current={agent.wechatQr}
+          onChange={(hasQr) => {
+            setWechatPicked(hasQr);
+            onFormChange();
+          }}
+        />
+      </section>
+
+      {/* Reviews */}
+      <section>
+        <p className="eyebrow mb-1">Reviews / 客户评价</p>
+        <p className="mb-4 text-xs text-muted">
+          Paste your public review-profile link. Rating and count are optional and shown next to a
+          live link to the source · 填公开评价主页链接；星级与条数选填，会与「实时链接」一起显示。
+        </p>
+        <div className="space-y-4">
+          <div>
+            <label className={label}>Zillow</label>
+            <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+              <input name="review_zillow_url" value={zillowUrl} onChange={(e) => setZillowUrl(e.target.value)} placeholder="Zillow profile URL" className={input} />
+              <input name="review_zillow_rating" defaultValue={reviews.zillow?.rating ?? ""} placeholder="4.9" className={`${input} sm:w-24`} />
+              <input name="review_zillow_count" defaultValue={reviews.zillow?.count ?? ""} placeholder="# reviews" className={`${input} sm:w-28`} />
+            </div>
+          </div>
+          <div>
+            <label className={label}>Google</label>
+            <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+              <input name="review_google_url" value={googleUrl} onChange={(e) => setGoogleUrl(e.target.value)} placeholder="Google reviews URL" className={input} />
+              <input name="review_google_rating" defaultValue={reviews.google?.rating ?? ""} placeholder="4.9" className={`${input} sm:w-24`} />
+              <input name="review_google_count" defaultValue={reviews.google?.count ?? ""} placeholder="# reviews" className={`${input} sm:w-28`} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Track record */}
+      <section>
+        <p className="eyebrow mb-1">Track record / 业绩与资历</p>
+        <p className="mb-4 text-xs text-muted">
+          Optional. Enter only figures you can stand behind — they must be truthful and current ·
+          选填。只填你能负责的真实、最新数字。
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div>
+            <label className={label} htmlFor="stat_years">Years in real estate / 从业年数</label>
+            <input id="stat_years" name="stat_years" defaultValue={agent.stats?.years ?? ""} placeholder="10+" className={input} />
+          </div>
+          <div>
+            <label className={label} htmlFor="stat_transactions">Homes closed / 成交套数</label>
+            <input id="stat_transactions" name="stat_transactions" defaultValue={agent.stats?.transactions ?? ""} placeholder="150+" className={input} />
+          </div>
+          <div>
+            <label className={label} htmlFor="stat_volume">Sales volume / 成交额</label>
+            <input id="stat_volume" name="stat_volume" defaultValue={agent.stats?.volume ?? ""} placeholder="$80M+" className={input} />
+          </div>
+          <div>
+            <label className={label} htmlFor="stat_areas">Areas served / 服务区域</label>
+            <input id="stat_areas" name="stat_areas" defaultValue={agent.stats?.areas ?? ""} placeholder="Flushing · Long Island · Manhattan" className={input} />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section>
+        <p className="eyebrow mb-1">Client testimonials / 客户好评</p>
+        <p className="mb-4 text-xs text-muted">
+          Up to {MAX_TESTIMONIALS}. Use real client words you have permission to share ·
+          最多 {MAX_TESTIMONIALS} 条，请使用获授权分享的真实客户原话。
+        </p>
+        <div className="space-y-4">
+          {Array.from({ length: MAX_TESTIMONIALS }).map((_, i) => {
+            const t = agent.testimonials?.[i];
+            return (
+              <div key={i} className="rounded-sm border border-line p-4">
+                <textarea
+                  name={`testimonial_${i}_quote`}
+                  rows={2}
+                  defaultValue={t?.quote ?? ""}
+                  placeholder={`Testimonial ${i + 1} · 客户原话`}
+                  className={input}
+                />
+                <input
+                  name={`testimonial_${i}_author`}
+                  defaultValue={t?.author ?? ""}
+                  placeholder="Attribution, e.g. J. Chen · 署名（可用姓名缩写）"
+                  className={`${input} mt-3`}
+                />
+              </div>
+            );
+          })}
         </div>
       </section>
 

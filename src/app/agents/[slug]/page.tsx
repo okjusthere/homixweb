@@ -7,7 +7,9 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProfileNav } from "@/components/agents/ProfileNav";
+import { SaveContactButton } from "@/components/agents/SaveContactButton";
 import { getAgentBySlug, getAgents } from "@/lib/agents";
+import type { Agent } from "@/lib/listings/types";
 import { getLocale, getT } from "@/lib/i18n";
 import {
   absUrl,
@@ -15,7 +17,7 @@ import {
   jsonLd as serializeJsonLd,
   pageMetadata,
 } from "@/lib/seo";
-import { heroImage, siteConfig, socialReach } from "@/lib/site";
+import { heroImage, siteConfig } from "@/lib/site";
 
 const PLACEHOLDER = "/agent-placeholder-logo.png";
 
@@ -62,8 +64,14 @@ const PLATFORM_LABEL: Record<string, string> = {
   instagram: "Instagram",
   xiaohongshu: "小红书 · RED",
   douyin: "抖音 · Douyin",
+  youtube: "YouTube",
   linkedin: "LinkedIn",
   website: "Website",
+};
+
+const REVIEW_LABEL: Record<string, string> = {
+  zillow: "Zillow",
+  google: "Google",
 };
 
 function initialsOf(name: string): string {
@@ -75,6 +83,41 @@ function initialsOf(name: string): string {
     return (a + b).toUpperCase();
   }
   return name.slice(0, 2);
+}
+
+/** True only for http(s) URLs — blocks javascript:/data: hrefs from stored data. */
+function isHttpUrl(url: string | undefined): boolean {
+  return typeof url === "string" && /^https?:\/\//i.test(url.trim());
+}
+
+/**
+ * Escape a text value per RFC 6350 so a stored field can't break out of its
+ * line. Crucially collapses ALL line breaks (\r\n, lone \r, lone \n) so a
+ * CRLF-carrying value can't inject extra vCard properties into the .vcf.
+ */
+function vcardEscape(s: string): string {
+  return s
+    .replace(/\\/g, "\\\\")
+    .replace(/([;,])/g, "\\$1")
+    .replace(/\r\n|\r|\n/g, "\\n");
+}
+
+/** Build a downloadable vCard (3.0) from an agent's public contact details. */
+function buildVCard(agent: Agent, org: string, url: string): string {
+  return [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    `FN:${vcardEscape(agent.name)}`,
+    `N:;${vcardEscape(agent.name)};;;`,
+    `ORG:${vcardEscape(org)}`,
+    agent.title ? `TITLE:${vcardEscape(agent.title)}` : "",
+    agent.phone ? `TEL;TYPE=CELL:${agent.phone.replace(/[^\d+]/g, "")}` : "",
+    agent.email ? `EMAIL;TYPE=INTERNET:${vcardEscape(agent.email)}` : "",
+    url ? `URL:${url}` : "",
+    "END:VCARD",
+  ]
+    .filter(Boolean)
+    .join("\r\n");
 }
 
 export default async function AgentProfilePage({
@@ -111,7 +154,6 @@ export default async function AgentProfilePage({
         workCard: "浏览 Homix 在售房源",
         workSub: "从法拉盛到长岛与曼哈顿，探索我们代理的房源。",
         browse: "查看房源 →",
-        featured: "由 Homix 出品",
         follow: "关注 →",
         contactLead: `想买房、卖房，或了解 Homix 的招募与媒体合作？${first}随时为你服务。`,
         contactCta: `联系${first}`,
@@ -138,11 +180,82 @@ export default async function AgentProfilePage({
         workSub:
           "From Flushing to Long Island and Manhattan, explore the listings we represent.",
         browse: "View listings →",
-        featured: "Featured on Homix",
         follow: "Follow →",
         contactLead: `Buying, selling, or exploring Homix's incubator and media partnerships? ${first} is here to help.`,
         contactCta: `Contact ${first}`,
       };
+
+  // Second label block — the profile-card additions (track record, reviews,
+  // testimonials, WeChat, save-contact).
+  const M = zh
+    ? {
+        trackEyebrow: "业绩与资历",
+        statYears: "从业年数",
+        statTransactions: "成交套数",
+        statVolume: "成交额",
+        statAreas: "服务区域",
+        reviewsEyebrow: "客户评价",
+        reviewsLead: "真实评价在第三方平台，点击查看最新内容。",
+        reviewsRead: "查看评价 →",
+        reviewsCount: (n: string) => `${n} 条评价`,
+        testimonialsEyebrow: "客户怎么说",
+        wechatEyebrow: "微信",
+        wechatScan: `扫码添加${first}的微信`,
+        saveContact: "存入通讯录",
+      }
+    : {
+        trackEyebrow: "Track record",
+        statYears: "Years in business",
+        statTransactions: "Homes closed",
+        statVolume: "Sales volume",
+        statAreas: "Areas served",
+        reviewsEyebrow: "Reviews",
+        reviewsLead: "Real reviews live on third-party platforms — tap to see the latest.",
+        reviewsRead: "Read reviews →",
+        reviewsCount: (n: string) => `${n} reviews`,
+        testimonialsEyebrow: "What clients say",
+        wechatEyebrow: "WeChat",
+        wechatScan: `Scan to add ${first} on WeChat`,
+        saveContact: "Save contact",
+      };
+
+  const languages = agent.languages?.length ? agent.languages : ["English", "中文"];
+
+  // Only surface reviews whose link is a real http(s) URL — this blocks a
+  // javascript:/data: href from an agent-entered field reaching an anchor.
+  const reviewList = Object.entries(agent.reviews ?? {}).filter(
+    (entry): entry is [string, { url: string; rating?: string; count?: string }] =>
+      isHttpUrl(entry[1]?.url),
+  );
+
+  const stats = agent.stats ?? {};
+  // Numeric-style figures render in a stat grid; "areas served" is free text and
+  // renders on its own line so a long location list never crowds a number cell.
+  const figureStats = (
+    [
+      [stats.years, M.statYears],
+      [stats.transactions, M.statTransactions],
+      [stats.volume, M.statVolume],
+    ] as [string | undefined, string][]
+  )
+    .filter(([v]) => v)
+    .map(([v, label]) => ({ value: v as string, label }));
+  const hasTrackRecord = figureStats.length > 0 || Boolean(stats.areas);
+  // Always-filled grid: 1 → full width, 2 → halves, 3 → stacked on mobile, row on desktop.
+  const statCols =
+    figureStats.length === 1
+      ? "grid-cols-1"
+      : figureStats.length === 2
+        ? "grid-cols-2"
+        : "grid-cols-1 sm:grid-cols-3";
+
+  const testimonials = agent.testimonials ?? [];
+
+  const vcard = buildVCard(
+    agent,
+    siteConfig.legalName,
+    absUrl(`/agents/${agent.slug}`),
+  );
 
   const isPlaceholder = !agent.photo || agent.photo === PLACEHOLDER;
   const phoneDigits = agent.phone.replace(/[^\d+]/g, "");
@@ -151,23 +264,34 @@ export default async function AgentProfilePage({
     ? `${agent.name} 是 Homix 的纽约持牌地产专业人士，服务大纽约地区的买家与卖家，以双语沟通与媒体驱动的服务著称。`
     : `${agent.name} is a licensed New York real estate professional with Homix, serving buyers and sellers across the greater New York market with bilingual, media-driven service.`;
 
-  const socialList = Object.entries(agent.social ?? {}).filter(([, v]) => v) as [
-    string,
-    string,
-  ][];
+  // Personal channels, http(s) only (same anti-javascript:-href guard as reviews).
+  const socialList = (Object.entries(agent.social ?? {}) as [string, string][]).filter(
+    ([, v]) => isHttpUrl(v),
+  );
   const hasOwnChannels = socialList.length > 0;
-  const channels = hasOwnChannels
-    ? socialList.map(([platform, url]) => ({
-        label: PLATFORM_LABEL[platform] ?? platform,
-        sub: L.follow,
-        href: url,
-      }))
-    : socialReach.map((c) => ({ label: c.platform, sub: c.handle, href: c.href }));
+  // "Website" is the only common-noun platform label; localize it so a zh page
+  // never shows a bare English word. Brand names stay as-is.
+  const channelLabel = (platform: string) =>
+    platform === "website"
+      ? zh
+        ? "个人网站"
+        : "Website"
+      : PLATFORM_LABEL[platform] ?? platform;
+  // Personal channels only — never fall back to company accounts on an
+  // individual's page (that made unset advisors look like they ran the brand's
+  // Douyin/RED/IG). If the advisor hasn't linked their own, hide the section.
+  const channels = socialList.map(([platform, url]) => ({
+    label: channelLabel(platform),
+    sub: L.follow,
+    href: url,
+  }));
 
+  // The Headlines tab is only meaningful when the advisor has their own channels;
+  // otherwise its section doesn't render and the tab would be a dead anchor.
   const tabs = [
     { id: "about", label: L.about },
     { id: "work", label: L.work },
-    { id: "headlines", label: L.headlines },
+    ...(hasOwnChannels ? [{ id: "headlines", label: L.headlines }] : []),
     { id: "contact", label: L.contact },
   ];
 
@@ -179,8 +303,14 @@ export default async function AgentProfilePage({
     image: isPlaceholder ? undefined : absUrl(agent.photo),
     telephone: agent.phone || undefined,
     email: agent.email || undefined,
-    knowsLanguage: ["en", "zh"],
-    sameAs: socialList.map(([, url]) => url),
+    knowsLanguage: languages,
+    // sameAs points at the advisor's live third-party profiles (socials + review
+    // sites) — the honest, verifiable signal. We deliberately do NOT emit
+    // aggregateRating or review[]: self-attested star ratings and self-curated
+    // testimonials on the brokerage's own LocalBusiness page are self-serving
+    // review markup that Google disallows (and would risk a manual action). The
+    // on-page reviews block links out to the live source for the real numbers.
+    sameAs: [...socialList.map(([, url]) => url), ...reviewList.map(([, r]) => r.url)],
     worksFor: { "@type": "Organization", name: siteConfig.legalName },
   };
 
@@ -233,7 +363,7 @@ export default async function AgentProfilePage({
             <div className="mt-6 space-y-3">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="eyebrow mr-1">{L.languages}</span>
-                {["English", "中文"].map((lng) => (
+                {languages.map((lng) => (
                   <span
                     key={lng}
                     className="rounded-sm border border-line px-3 py-1 text-xs text-muted"
@@ -302,6 +432,100 @@ export default async function AgentProfilePage({
           </Reveal>
         </section>
 
+        {/* Track record — the advisor's own, agent-entered figures */}
+        {hasTrackRecord && (
+          <Reveal>
+            <section className="pb-14">
+              <Eyebrow>{M.trackEyebrow}</Eyebrow>
+              {figureStats.length > 0 && (
+                <div
+                  className={`mt-6 grid gap-px overflow-hidden rounded-sm border border-line bg-line ${statCols}`}
+                >
+                  {figureStats.map((s) => (
+                    <div key={s.label} className="bg-surface px-6 py-6 sm:px-8">
+                      <p className="font-serif text-3xl text-ink sm:text-4xl">{s.value}</p>
+                      <p className="eyebrow mt-2">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {stats.areas && (
+                <p className="mt-4 text-sm text-muted">
+                  <span className="eyebrow mr-2">{M.statAreas}</span>
+                  {stats.areas}
+                </p>
+              )}
+            </section>
+          </Reveal>
+        )}
+
+        {/* Reviews — links stay live; rating/count are agent-attested */}
+        {reviewList.length > 0 && (
+          <Reveal>
+            <section className="pb-14">
+              <Eyebrow>{M.reviewsEyebrow}</Eyebrow>
+              <p className="mt-3 max-w-2xl text-sm text-muted">{M.reviewsLead}</p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {reviewList.map(([site, r]) => (
+                  <a
+                    key={site}
+                    href={r.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center justify-between gap-4 rounded-sm border border-line bg-surface p-6 transition-colors hover:border-bronze/60"
+                  >
+                    <div>
+                      <p className="eyebrow">{REVIEW_LABEL[site] ?? site}</p>
+                      {r.rating ? (
+                        <p className="mt-2 flex items-baseline gap-2">
+                          <span className="font-serif text-3xl text-ink">{r.rating}</span>
+                          <span className="text-bronze" aria-hidden>
+                            ★
+                          </span>
+                          {r.count && (
+                            <span className="text-sm text-muted">{M.reviewsCount(r.count)}</span>
+                          )}
+                        </p>
+                      ) : (
+                        <p className="mt-2 font-serif text-xl text-ink">
+                          {REVIEW_LABEL[site] ?? site}
+                        </p>
+                      )}
+                    </div>
+                    <span className="shrink-0 text-sm font-medium text-bronze underline-offset-4 group-hover:underline">
+                      {M.reviewsRead}
+                    </span>
+                  </a>
+                ))}
+              </div>
+            </section>
+          </Reveal>
+        )}
+
+        {/* Testimonials — real client words the advisor is cleared to share */}
+        {testimonials.length > 0 && (
+          <Reveal>
+            <section className="pb-14">
+              <Eyebrow>{M.testimonialsEyebrow}</Eyebrow>
+              <div className="mt-6 grid gap-5 sm:grid-cols-2">
+                {testimonials.map((t, i) => (
+                  <figure
+                    key={i}
+                    className="rounded-sm border border-line bg-surface p-7"
+                  >
+                    <blockquote className="font-serif text-lg leading-relaxed text-ink/90">
+                      &ldquo;{t.quote}&rdquo;
+                    </blockquote>
+                    {t.author && (
+                      <figcaption className="mt-4 eyebrow">— {t.author}</figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </section>
+          </Reveal>
+        )}
+
         {/* Credibility strip — the Homix media engine (always present) */}
         <Reveal>
           <section className="overflow-hidden rounded-sm border border-line bg-surface">
@@ -355,56 +579,84 @@ export default async function AgentProfilePage({
           </Reveal>
         </section>
 
-        {/* In the Headlines — agent's channels, or brand channels as fallback */}
-        <section id="headlines" className="scroll-mt-32 py-14">
-          <Reveal>
-            <Eyebrow>{hasOwnChannels ? L.headlines : L.featured}</Eyebrow>
-            <div className="mt-6 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
-              {channels.map((c, i) => (
-                <a
-                  key={`${c.label}-${i}`}
-                  href={c.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group bg-surface p-7 transition-colors hover:bg-paper sm:p-8"
-                >
-                  <p className="eyebrow">{c.label}</p>
-                  <p className="mt-3 font-serif text-xl text-ink transition-colors group-hover:text-bronze">
-                    {c.sub}
-                  </p>
-                </a>
-              ))}
-            </div>
-          </Reveal>
-        </section>
+        {/* In the Headlines — the advisor's OWN channels only (no brand fallback) */}
+        {hasOwnChannels && (
+          <section id="headlines" className="scroll-mt-32 py-14">
+            <Reveal>
+              <Eyebrow>{L.headlines}</Eyebrow>
+              <div className="mt-6 grid gap-px overflow-hidden rounded-sm border border-line bg-line sm:grid-cols-3">
+                {channels.map((c, i) => (
+                  <a
+                    key={`${c.label}-${i}`}
+                    href={c.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-surface p-7 transition-colors hover:bg-paper sm:p-8"
+                  >
+                    <p className="eyebrow">{c.label}</p>
+                    <p className="mt-3 font-serif text-xl text-ink transition-colors group-hover:text-bronze">
+                      {c.sub}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </Reveal>
+          </section>
+        )}
 
         {/* Contact */}
         <section id="contact" className="scroll-mt-32 border-t border-line py-14">
           <Reveal>
-            <div className="max-w-2xl">
-              <Eyebrow>{L.contactCta}</Eyebrow>
-              <p className="mt-5 text-lg leading-relaxed text-ink/85">{L.contactLead}</p>
-              <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
-                {agent.email && <Button href={`mailto:${agent.email}`}>{L.email}</Button>}
-                {agent.phone && (
-                  <Button href={`tel:${phoneDigits}`} variant="outline">
-                    {L.call} {agent.phone}
-                  </Button>
+            <div className="grid gap-10 md:grid-cols-[1.5fr_0.5fr] md:items-start">
+              <div>
+                <Eyebrow>{L.contactCta}</Eyebrow>
+                <p className="mt-5 text-lg leading-relaxed text-ink/85">{L.contactLead}</p>
+                <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+                  {agent.email && <Button href={`mailto:${agent.email}`}>{L.email}</Button>}
+                  {agent.phone && (
+                    <Button href={`tel:${phoneDigits}`} variant="outline">
+                      {L.call} {agent.phone}
+                    </Button>
+                  )}
+                  {(agent.phone || agent.email) && (
+                    <SaveContactButton
+                      vcard={vcard}
+                      filename={`${agent.slug}.vcf`}
+                      label={M.saveContact}
+                      className="inline-flex items-center justify-center gap-2 rounded-sm border border-ink/80 px-6 py-3 text-sm font-medium tracking-wide text-ink transition-colors duration-200 hover:border-bronze hover:text-bronze"
+                    />
+                  )}
+                </div>
+                {socialList.length > 0 && (
+                  <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-6 text-sm">
+                    {socialList.map(([platform, url]) => (
+                      <a
+                        key={platform}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-ink underline-offset-4 hover:text-bronze hover:underline"
+                      >
+                        {channelLabel(platform)}
+                      </a>
+                    ))}
+                  </div>
                 )}
               </div>
-              {socialList.length > 0 && (
-                <div className="mt-7 flex flex-wrap gap-x-4 gap-y-2 border-t border-line pt-6 text-sm">
-                  {socialList.map(([platform, url]) => (
-                    <a
-                      key={platform}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-ink underline-offset-4 hover:text-bronze hover:underline"
-                    >
-                      {PLATFORM_LABEL[platform] ?? platform}
-                    </a>
-                  ))}
+
+              {agent.wechatQr && (
+                <div className="rounded-sm border border-line bg-surface p-6 text-center">
+                  <p className="eyebrow">{M.wechatEyebrow}</p>
+                  <div className="relative mx-auto mt-4 aspect-square w-44 max-w-full overflow-hidden rounded-sm bg-paper">
+                    <Image
+                      src={agent.wechatQr}
+                      alt={zh ? `${agent.name} 微信二维码` : `${agent.name} WeChat QR`}
+                      fill
+                      sizes="176px"
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <p className="mt-4 text-sm text-muted">{M.wechatScan}</p>
                 </div>
               )}
             </div>
