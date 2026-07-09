@@ -31,7 +31,7 @@ export async function GET() {
     ),
     `- Phone: ${siteConfig.contact.phone} · Email: ${siteConfig.contact.email}`,
     `- License: ${siteConfig.legal.brokerLicense} (Broker of record: ${siteConfig.legal.brokerOfRecord})`,
-    "- Chinese versions of every page are served at the same URL with `?lang=zh`.",
+    "- Chinese versions are first-class pages under `/zh/...` (for example, `/zh/guides/buying-in-nyc`).",
     "",
     "## Key pages",
     "",

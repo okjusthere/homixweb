@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import { cn } from "@/lib/cn";
 
 /** Link-based pagination that preserves the current filters. */

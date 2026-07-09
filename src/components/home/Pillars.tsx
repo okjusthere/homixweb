@@ -2,12 +2,12 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { pillarLinks } from "@/lib/site";
 
 /** The three business lines: buy/sell homes, careers, media & marketing. */
-export async function Pillars() {
-  const { t } = await getT();
+export async function Pillars({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   return (
     <section className="border-t border-line py-24 sm:py-32">
       <Container>

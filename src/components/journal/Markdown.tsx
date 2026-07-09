@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import ReactMarkdown, { type Components } from "react-markdown";
 import remarkGfm from "remark-gfm";
 

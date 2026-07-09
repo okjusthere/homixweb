@@ -3,11 +3,11 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { ListingCard } from "@/components/listings/ListingCard";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { listings } from "@/lib/listings";
 
-export async function FeaturedListings() {
-  const { t } = await getT();
+export async function FeaturedListings({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   const featured = await listings.getFeaturedListings(3);
   if (featured.length === 0) return null;
 

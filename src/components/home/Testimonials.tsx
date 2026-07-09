@@ -1,11 +1,11 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { testimonials } from "@/lib/site";
 
-export async function Testimonials() {
-  const { t } = await getT();
+export async function Testimonials({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   const featured = testimonials[0];
   if (!featured) return null;
 

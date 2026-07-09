@@ -25,6 +25,7 @@ export function SiteHeader({
   buy,
   buyLabel,
   locale,
+  homeHref,
   langLabel,
   phone,
   phoneHref,
@@ -35,6 +36,7 @@ export function SiteHeader({
   buy: ToolNavItem[];
   buyLabel: string;
   locale: Locale;
+  homeHref: string;
   langLabel: string;
   phone: string;
   phoneHref: string;
@@ -42,7 +44,8 @@ export function SiteHeader({
   portalHref: string;
 }) {
   const pathname = usePathname();
-  const overHero = pathname === "/" || pathname === "/about";
+  const currentPath = pathname === "/zh" ? "/" : pathname?.replace(/^\/zh(?=\/|$)/, "") || "/";
+  const overHero = currentPath === "/" || currentPath === "/about";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -79,7 +82,7 @@ export function SiteHeader({
           )}
         >
           <div className="mx-auto flex h-[68px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-12">
-            <Link href="/" aria-label="Homix — home" className="flex items-center">
+            <Link href={homeHref} aria-label="Homix — home" className="flex items-center">
               <Image
                 src="/homix-mark.webp"
                 alt="Homix"

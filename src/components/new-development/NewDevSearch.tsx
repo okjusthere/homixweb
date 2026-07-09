@@ -2,8 +2,10 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import { Reveal } from "@/components/ui/Reveal";
+import type { Locale } from "@/lib/i18n";
+import { localizePath } from "@/lib/locale";
 
 export interface DevCard {
   slug: string;
@@ -37,9 +39,11 @@ export interface DevSearchLabels {
 export function NewDevSearch({
   buildings,
   labels,
+  locale,
 }: {
   buildings: DevCard[];
   labels: DevSearchLabels;
+  locale: Locale;
 }) {
   const [q, setQ] = useState("");
 
@@ -86,7 +90,7 @@ export function NewDevSearch({
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((b, index) => (
             <Reveal key={b.slug} delay={(index % 6) * 40}>
-              <DevCardView b={b} labels={labels} />
+              <DevCardView b={b} labels={labels} locale={locale} />
             </Reveal>
           ))}
         </div>
@@ -95,11 +99,19 @@ export function NewDevSearch({
   );
 }
 
-function DevCardView({ b, labels }: { b: DevCard; labels: DevSearchLabels }) {
+function DevCardView({
+  b,
+  labels,
+  locale,
+}: {
+  b: DevCard;
+  labels: DevSearchLabels;
+  locale: Locale;
+}) {
   const [copied, setCopied] = useState(false);
 
   const copyLink = () => {
-    const url = `${window.location.origin}${b.href}`;
+    const url = `${window.location.origin}${localizePath(locale, b.href)}`;
     navigator.clipboard?.writeText(url).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 1600);

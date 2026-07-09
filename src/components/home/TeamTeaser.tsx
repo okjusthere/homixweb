@@ -1,14 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { getAgents } from "@/lib/agents";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 
-export async function TeamTeaser() {
-  const { t } = await getT();
+export async function TeamTeaser({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   const agents = (await getAgents()).slice(0, 3);
 
   return (

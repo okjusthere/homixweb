@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import type { Agent } from "@/lib/listings";
 
 /** Editorial 4:5 portrait card for the advisor directory. */

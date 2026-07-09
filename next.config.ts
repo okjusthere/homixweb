@@ -30,8 +30,10 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       // /offer (and its /offers alias) moved into the gated agent portal.
-      { source: "/offer", destination: "https://agents.homixny.com/offer", permanent: false },
-      { source: "/offers", destination: "https://agents.homixny.com/offer", permanent: false },
+      { source: "/offer", destination: "https://agents.homixny.com/offer", permanent: true },
+      { source: "/offers", destination: "https://agents.homixny.com/offer", permanent: true },
+      { source: "/zh/offer", destination: "https://agents.homixny.com/offer", permanent: true },
+      { source: "/zh/offers", destination: "https://agents.homixny.com/offer", permanent: true },
     ];
   },
 };

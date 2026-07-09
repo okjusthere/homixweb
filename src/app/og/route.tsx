@@ -3,6 +3,27 @@ import { siteConfig } from "@/lib/site";
 
 const size = { width: 1200, height: 630 };
 
+let cjkFontPromise: Promise<ArrayBuffer> | undefined;
+
+/**
+ * ImageResponse does not inherit browser/system CJK fallbacks. Keep an OFL
+ * Simplified Chinese subset alongside this route so share cards render without
+ * depending on Google Fonts or the host operating system.
+ */
+function getCjkFont() {
+  cjkFontPromise ??= fetch(
+    new URL(
+      "../../assets/fonts/noto-sans-sc-chinese-simplified-400.woff",
+      import.meta.url,
+    ),
+  ).then((response) => response.arrayBuffer());
+  return cjkFontPromise;
+}
+
+function hasCjk(value: string): boolean {
+  return /[\u3400-\u9fff]/.test(value);
+}
+
 function fit(value: string | null, fallback: string, max: number): string {
   const clean = (value || fallback).replace(/\s+/g, " ").trim();
   if (clean.length <= max) return clean;
@@ -20,13 +41,39 @@ function displayPath(value: string | null): string {
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
+  const rawTitle = searchParams.get("title");
+  const rawDescription = searchParams.get("description");
+  const cjkTitle = hasCjk(rawTitle || "");
+  const cjkDescription = hasCjk(rawDescription || "");
+  const cjk = cjkTitle || cjkDescription;
   const title = fit(
-    searchParams.get("title"),
+    rawTitle,
     `${siteConfig.name} — ${siteConfig.market} Real Estate`,
-    92,
+    cjkTitle ? 30 : 92,
   );
-  const description = fit(searchParams.get("description"), siteConfig.description, 230);
+  const description = fit(
+    rawDescription,
+    siteConfig.description,
+    cjkDescription ? 130 : 230,
+  );
   const path = displayPath(searchParams.get("path"));
+  const titleFontSize = cjkTitle
+    ? title.length > 24
+      ? 42
+      : title.length > 16
+        ? 50
+        : 58
+    : title.length > 62
+      ? 58
+      : 68;
+  const descriptionFontSize = cjkDescription
+    ? description.length > 84
+      ? 25
+      : 29
+    : description.length > 150
+      ? 28
+      : 32;
+  const cjkFont = cjk ? await getCjkFont() : undefined;
 
   return new ImageResponse(
     (
@@ -83,8 +130,8 @@ export async function GET(request: Request) {
           <div
             style={{
               display: "flex",
-              fontFamily: "Georgia, serif",
-              fontSize: title.length > 62 ? 58 : 68,
+              fontFamily: cjkTitle ? "Noto Sans SC" : "Georgia, serif",
+              fontSize: titleFontSize,
               lineHeight: 1.04,
               color: "#1C1B18",
             }}
@@ -95,10 +142,13 @@ export async function GET(request: Request) {
             style={{
               display: "flex",
               marginTop: 30,
-              fontSize: description.length > 150 ? 28 : 32,
+              fontSize: descriptionFontSize,
               lineHeight: 1.35,
               color: "#4E4A43",
               maxWidth: 970,
+              fontFamily: cjkDescription
+                ? "Noto Sans SC"
+                : 'Inter, Arial, sans-serif',
             }}
           >
             {description}
@@ -111,6 +161,20 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      ...(cjkFont
+        ? {
+            fonts: [
+              {
+                name: "Noto Sans SC",
+                data: cjkFont,
+                weight: 400,
+                style: "normal" as const,
+              },
+            ],
+          }
+        : {}),
+    },
   );
 }

@@ -1,14 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
+import { localizePath } from "@/lib/locale";
 import { footerNav, siteConfig } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { EqualHousingLogo } from "./EqualHousingLogo";
 
 const year = new Date().getFullYear();
 
-export async function SiteFooter() {
-  const { locale, t } = await getT();
+export async function SiteFooter({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   const { contact, legal, legalName } = siteConfig;
   const common = t.common as Record<string, string>;
 
@@ -77,7 +78,7 @@ export async function SiteFooter() {
                   {col.links.map((link) => (
                     <li key={link.href}>
                       <Link
-                        href={link.href}
+                        href={localizePath(locale, link.href)}
                         className="text-sm text-ink/80 transition-colors hover:text-bronze"
                       >
                         {common[link.key]}

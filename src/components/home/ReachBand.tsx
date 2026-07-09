@@ -1,15 +1,15 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { socialReach } from "@/lib/site";
 
 /**
  * "Our reach" — honest content-platform presence in place of a press logo wall.
  * Homix's real asset is its own media following — exactly the "headlines" promise.
  */
-export async function ReachBand() {
-  const { t } = await getT();
+export async function ReachBand({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   return (
     <section className="py-20 sm:py-24">
       <Container>

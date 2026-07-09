@@ -1,10 +1,11 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/cn";
 import type { Locale } from "@/lib/i18n";
+import { localizePath } from "@/lib/locale";
 
-/** Switches the `locale` cookie and refreshes server components in-place. */
+/** Switches between the canonical English and Chinese URL trees. */
 export function LocaleToggle({
   locale,
   label,
@@ -16,12 +17,11 @@ export function LocaleToggle({
   className?: string;
 }) {
   const router = useRouter();
+  const pathname = usePathname() || "/";
 
   const toggle = () => {
     const next = locale === "zh" ? "en" : "zh";
-    const secure = window.location.protocol === "https:" ? "; secure" : "";
-    document.cookie = `locale=${next}; path=/; max-age=31536000; samesite=lax${secure}`;
-    router.refresh();
+    router.push(localizePath(next, pathname));
   };
 
   return (

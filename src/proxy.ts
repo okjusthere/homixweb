@@ -1,25 +1,43 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { localizePath } from "@/lib/locale";
 
 /**
- * Locale proxy: makes the Chinese layer crawlable.
+ * Public locale routing.
  *
- * Cookie-based locale is invisible to crawlers (they don't send cookies), so
- * `?lang=zh` / `?lang=en` on any URL forces that locale for the request via a
- * request header that `getLocale()` reads before the cookie. Pages emit
- * hreflang alternates pointing at the `?lang=zh` variants.
+ * English keeps the established clean URLs and rewrites internally to /en.
+ * Chinese is a first-class /zh tree. Legacy ?lang= URLs permanently migrate
+ * to their canonical path so crawlers and shared links consolidate correctly.
  */
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
   const lang = request.nextUrl.searchParams.get("lang");
   if (lang === "zh" || lang === "en") {
-    const headers = new Headers(request.headers);
-    headers.set("x-locale", lang);
-    return NextResponse.next({ request: { headers } });
+    const url = request.nextUrl.clone();
+    url.searchParams.delete("lang");
+    url.pathname = localizePath(lang, pathname);
+    return NextResponse.redirect(url, 308);
   }
-  return NextResponse.next();
+
+  // /en is an internal route only. Keep one canonical English URL surface.
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = localizePath("en", pathname);
+    return NextResponse.redirect(url, 308);
+  }
+
+  // /zh is a real public route and reaches app/[locale] without a rewrite.
+  if (pathname === "/zh" || pathname.startsWith("/zh/")) return NextResponse.next();
+
+  // Preserve external English URLs while rendering through app/[locale].
+  const url = request.nextUrl.clone();
+  url.pathname = pathname === "/" ? "/en" : `/en${pathname}`;
+  return NextResponse.rewrite(url);
 }
 
 export const config = {
-  // Skip static assets and Next internals — only pages need locale handling.
-  matcher: ["/((?!_next/|api/|.*\\.[a-zA-Z0-9]+$).*)"],
+  // Skip non-localized routes, metadata files, API, and static assets.
+  matcher: [
+    "/((?!_next(?:/|$)|api(?:/|$)|og(?:/|$)|llms\\.txt$|robots\\.txt$|sitemap\\.xml$|opengraph-image(?:/|$)|icon\\.png$|apple-icon\\.png$|admin(?:/|$)|edit(?:/|$)|training(?:/|$)|.*\\.[a-zA-Z0-9]+$).*)",
+  ],
 };
