@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProfileNav } from "@/components/agents/ProfileNav";
 import { SaveContactButton } from "@/components/agents/SaveContactButton";
+import { ListingCard } from "@/components/listings/ListingCard";
 import { getAgentBySlug, getAgents } from "@/lib/agents";
+import { listings } from "@/lib/listings";
 import type { Agent } from "@/lib/listings/types";
 import { getLocale, getT } from "@/lib/i18n";
 import {
@@ -133,6 +135,11 @@ export default async function AgentProfilePage({
   const zh = locale === "zh";
   const first = agent.name.trim().split(/\s+/)[0] || agent.name;
 
+  // Company-level featured listings (BBO is office-wide, not per-agent). Shown
+  // directly on the profile so visitors see real homes without a second click.
+  // Returns [] if BBO is down/unconfigured — the section falls back to a CTA.
+  const featured = await listings.getFeaturedListings(3);
+
   const L = zh
     ? {
         back: "返回顾问团队",
@@ -151,6 +158,7 @@ export default async function AgentProfilePage({
         followers: "全网粉丝",
         contentDaily: "每日内容产出",
         bilingual: "双语服务",
+        workLead: "Homix 代理的精选在售房源，点击查看详情。",
         workCard: "浏览 Homix 在售房源",
         workSub: "从法拉盛到长岛与曼哈顿，探索我们代理的房源。",
         browse: "查看房源 →",
@@ -161,7 +169,7 @@ export default async function AgentProfilePage({
     : {
         back: t.agentsPage.title,
         about: "About",
-        work: "Recent work",
+        work: "Listings",
         headlines: "In the Headlines",
         contact: "Contact",
         advisor: "Homix Advisor",
@@ -176,6 +184,7 @@ export default async function AgentProfilePage({
         followers: "Audience",
         contentDaily: "Content, daily",
         bilingual: "Bilingual service",
+        workLead: "A selection of homes Homix currently represents — tap to view.",
         workCard: "Browse homes Homix represents",
         workSub:
           "From Flushing to Long Island and Manhattan, explore the listings we represent.",
@@ -550,33 +559,65 @@ export default async function AgentProfilePage({
           </section>
         </Reveal>
 
-        {/* Recent work — single intentional CTA, never an empty grid */}
+        {/* Listings — a live selection of homes Homix represents (office-wide,
+            so honestly framed as the company's, not this advisor's own sales).
+            Real cards render directly; a CTA covers the BBO-empty case. */}
         <section id="work" className="scroll-mt-32 py-14">
           <Reveal>
-            <Eyebrow>{L.work}</Eyebrow>
-            <Link
-              href="/listings"
-              className="group mt-6 block overflow-hidden rounded-sm border border-line"
-            >
-              <div className="relative aspect-[16/7] bg-line/50">
-                <Image
-                  src={heroImage.src}
-                  alt=""
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 900px"
-                  className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/55 to-transparent" />
-                <div className="absolute bottom-0 left-0 p-7 sm:p-9">
-                  <p className="font-serif text-2xl text-paper sm:text-3xl">{L.workCard}</p>
-                  <p className="mt-2 text-sm text-paper/85">{L.workSub}</p>
-                  <span className="mt-4 inline-block text-sm font-medium text-paper underline-offset-4 group-hover:underline">
-                    {L.browse}
-                  </span>
-                </div>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <Eyebrow>{L.work}</Eyebrow>
+                <p className="mt-3 max-w-xl text-ink/80">{L.workLead}</p>
               </div>
-            </Link>
+              {featured.length > 0 && (
+                <Button href="/listings" variant="ghost" className="hidden sm:inline-flex">
+                  {t.featured.viewAll} →
+                </Button>
+              )}
+            </div>
           </Reveal>
+
+          {featured.length > 0 ? (
+            <>
+              <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+                {featured.map((listing, i) => (
+                  <Reveal key={listing.id} delay={i * 70}>
+                    <ListingCard listing={listing} />
+                  </Reveal>
+                ))}
+              </div>
+              <div className="mt-10 sm:hidden">
+                <Button href="/listings" variant="outline" className="w-full">
+                  {t.featured.viewAll}
+                </Button>
+              </div>
+            </>
+          ) : (
+            <Reveal>
+              <Link
+                href="/listings"
+                className="group mt-6 block overflow-hidden rounded-sm border border-line"
+              >
+                <div className="relative aspect-[16/7] bg-line/50">
+                  <Image
+                    src={heroImage.src}
+                    alt=""
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 900px"
+                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-ink/55 to-transparent" />
+                  <div className="absolute bottom-0 left-0 p-7 sm:p-9">
+                    <p className="font-serif text-2xl text-paper sm:text-3xl">{L.workCard}</p>
+                    <p className="mt-2 text-sm text-paper/85">{L.workSub}</p>
+                    <span className="mt-4 inline-block text-sm font-medium text-paper underline-offset-4 group-hover:underline">
+                      {L.browse}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </Reveal>
+          )}
         </section>
 
         {/* In the Headlines — the advisor's OWN channels only (no brand fallback) */}
