@@ -44,6 +44,7 @@ export interface AgentRow {
   testimonials: AgentTestimonial[] | null;
   license_number: string | null;
   profile_url: string | null;
+  mls_id: string | null;
   visible: boolean | null;
   sort: number | null;
   edit_token?: string;
@@ -97,6 +98,7 @@ function rowToAgent(r: AgentRow): Agent {
     languages: languages.length ? languages : undefined,
     licenseNumber: r.license_number || undefined,
     profileUrl: r.profile_url || undefined,
+    mlsId: r.mls_id || undefined,
     wechatQr: r.wechat_qr || undefined,
     social: r.social || undefined,
     reviews: cleanReviews(r.reviews),

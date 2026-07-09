@@ -1,6 +1,8 @@
 import "server-only";
 
 import type {
+  AgentCareer,
+  CareerDeal,
   Listing,
   ListingPhoto,
   ListingQuery,
@@ -81,6 +83,42 @@ interface BboSearchResponse {
 interface BboDetailResponse {
   listing?: BboListingDTO;
   imageUrls?: string[];
+}
+
+interface BboCareerDealDTO {
+  listingKey?: string;
+  listingId?: string;
+  closeDate?: string;
+  closePrice?: string;
+  listPrice?: string;
+  propertyType?: string;
+  propertySubType?: string;
+  streetAddress?: string;
+  city?: string;
+  stateOrProvince?: string;
+  postalCode?: string;
+  beds?: number | null;
+  baths?: number | null;
+  side?: string;
+  listOfficeName?: string;
+  buyerOfficeName?: string;
+  photoUrl?: string;
+  mlgCanUse?: string;
+}
+
+interface BboCareerResponse {
+  stats?: {
+    total?: number;
+    asListAgent?: number;
+    asBuyerAgent?: number;
+    saleDeals?: number;
+    leaseDeals?: number;
+    saleVolume?: string;
+    firstCloseDate?: string;
+    lastCloseDate?: string;
+  };
+  deals?: BboCareerDealDTO[];
+  dataAsOf?: string;
 }
 
 interface BboSyncResponse {
@@ -169,6 +207,41 @@ export class BboListingsProvider implements ListingsProvider {
   async getFeaturedListings(limit = 3): Promise<Listing[]> {
     const result = await this.getListings({ limit, sort: "newest" });
     return result.listings;
+  }
+
+  async getAgentCareer(mlsId: string): Promise<AgentCareer | null> {
+    const cfg = bboConfig();
+    const id = mlsId.trim();
+    if (!cfg.apiKey || !id) return null;
+
+    try {
+      const payload = await this.request<BboCareerResponse>(
+        `/api/v1/agents/${encodeURIComponent(id)}/career`,
+      );
+      const stats = payload.stats ?? {};
+      const deals = (payload.deals ?? [])
+        .map(toCareerDeal)
+        .filter(Boolean) as CareerDeal[];
+      return {
+        stats: {
+          total: stats.total ?? deals.length,
+          asListAgent: stats.asListAgent ?? 0,
+          asBuyerAgent: stats.asBuyerAgent ?? 0,
+          saleDeals: stats.saleDeals ?? 0,
+          leaseDeals: stats.leaseDeals ?? 0,
+          saleVolume: toNumber(stats.saleVolume),
+          firstCloseDate: trim(stats.firstCloseDate) || undefined,
+          lastCloseDate: trim(stats.lastCloseDate) || undefined,
+        },
+        deals,
+        dataAsOf: trim(payload.dataAsOf) || undefined,
+      };
+    } catch (error) {
+      // Missing mls_id mapping or a BBO outage both degrade to "no section",
+      // never to a broken profile page.
+      logBboFailure("career", error);
+      return null;
+    }
   }
 
   cities(limit = 24): string[] {
@@ -298,6 +371,29 @@ function toListing(dto: BboListingDTO): Listing | null {
     daysOnMarket: positiveInteger(dto.daysOnMarket),
     county: trim(dto.countyOrParish) || undefined,
     attribution: officeName ? `Listing courtesy of ${officeName}` : undefined,
+  };
+}
+
+function toCareerDeal(dto: BboCareerDealDTO): CareerDeal | null {
+  const listingKey = trim(dto.listingKey);
+  if (!listingKey) return null;
+  const side =
+    dto.side === "buyer" || dto.side === "both" ? dto.side : ("list" as const);
+  return {
+    listingKey,
+    closeDate: trim(dto.closeDate) || undefined,
+    closePrice: positiveNumber(dto.closePrice),
+    propertyType: trim(dto.propertyType) || undefined,
+    propertySubType: trim(dto.propertySubType) || undefined,
+    streetAddress: trim(dto.streetAddress) || undefined,
+    city: trim(dto.city) || undefined,
+    state: trim(dto.stateOrProvince) || undefined,
+    postalCode: trim(dto.postalCode) || undefined,
+    beds: dto.beds ?? undefined,
+    baths: dto.baths ?? undefined,
+    side,
+    listOfficeName: trim(dto.listOfficeName) || undefined,
+    photoUrl: trim(dto.photoUrl) || undefined,
   };
 }
 

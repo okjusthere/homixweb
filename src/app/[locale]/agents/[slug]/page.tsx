@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { CareerSection } from "@/components/agents/CareerSection";
 import { ProfileNav } from "@/components/agents/ProfileNav";
 import { SaveContactButton } from "@/components/agents/SaveContactButton";
 import { ListingCard } from "@/components/listings/ListingCard";
@@ -137,10 +138,15 @@ export default async function AgentProfilePage({
   const zh = locale === "zh";
   const first = agent.name.trim().split(/\s+/)[0] || agent.name;
 
-  // Company-level featured listings (BBO is office-wide, not per-agent). Shown
-  // directly on the profile so visitors see real homes without a second click.
-  // Returns [] if BBO is down/unconfigured — the section falls back to a CTA.
-  const featured = await listings.getFeaturedListings(3);
+  // Company-level featured listings (BBO is office-wide, not per-agent), plus
+  // this advisor's MLS-verified career history when an admin has mapped their
+  // mls_id. Both degrade gracefully: featured falls back to a CTA, career to
+  // no section at all.
+  const [featured, career] = await Promise.all([
+    listings.getFeaturedListings(3),
+    agent.mlsId ? (listings.getAgentCareer?.(agent.mlsId) ?? null) : null,
+  ]);
+  const hasCareer = Boolean(career && career.stats.total > 0 && career.deals.length > 0);
 
   const L = zh
     ? {
@@ -301,6 +307,7 @@ export default async function AgentProfilePage({
   // otherwise its section doesn't render and the tab would be a dead anchor.
   const tabs = [
     { id: "about", label: L.about },
+    ...(hasCareer ? [{ id: "sales", label: zh ? "历史成交" : "Past sales" }] : []),
     { id: "work", label: L.work },
     ...(hasOwnChannels ? [{ id: "headlines", label: L.headlines }] : []),
     { id: "contact", label: L.contact },
@@ -476,6 +483,13 @@ export default async function AgentProfilePage({
               )}
             </section>
           </Reveal>
+        )}
+
+        {/* Past sales — MLS-verified career history (OneKey Closed feed via
+            BBO). Complements the self-reported figures above: this block only
+            counts OneKey-recorded deals, so the two can legitimately differ. */}
+        {hasCareer && career && (
+          <CareerSection career={career} zh={zh} firstName={first} />
         )}
 
         {/* Reviews — links stay live; rating/count are agent-attested */}
