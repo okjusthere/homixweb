@@ -54,16 +54,31 @@ export function SiteHeader({
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    // Two complementary signals drive the solid/transparent flip:
+    // 1. A plain scroll listener — immediate, low-latency.
+    // 2. An IntersectionObserver on a top-of-document sentinel — scroll
+    //    events get coalesced/dropped on instant jumps, momentum settles,
+    //    and back/forward-cache restores, which strands the header in the
+    //    wrong variant; the observer is re-evaluated on every produced
+    //    frame, so the state always converges to the truth.
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    // Back/forward-cache restores (browser Back) re-show the page mid-scroll
-    // WITHOUT firing a scroll event — without this, the header could stay in
-    // its over-hero white variant on top of cream content.
-    window.addEventListener("pageshow", onScroll);
+
+    const sentinel = document.createElement("div");
+    sentinel.style.cssText =
+      "position:absolute;top:0;left:0;width:1px;height:25px;pointer-events:none;visibility:hidden";
+    document.body.prepend(sentinel);
+    const io = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { threshold: 0 },
+    );
+    io.observe(sentinel);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("pageshow", onScroll);
+      io.disconnect();
+      sentinel.remove();
     };
   }, []);
 
