@@ -140,11 +140,13 @@ export interface Agent {
   testimonials?: { quote: string; author?: string }[];
   /**
    * OneKey MLS member id (e.g. "KEY207692") — keys the MLS-verified career
-   * history. Admin-set only (mapped against the MLS roster), never editable
-   * through the self-edit form: a self-set id could claim someone else's
-   * production.
+   * history. Set by admin mapping or by license verification against the
+   * official MLS roster (never as free text: a wrong number simply fails to
+   * match, so it can't attach someone else's production).
    */
   mlsId?: string;
+  /** Advisor's choice to show their MLS past sales (default true). */
+  showPastDeals?: boolean;
 }
 
 /** One closed transaction from the agent's MLS career history. */

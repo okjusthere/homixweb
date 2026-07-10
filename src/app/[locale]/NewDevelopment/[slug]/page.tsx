@@ -415,8 +415,8 @@ export default async function NewDevelopmentDetailPage({
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-paper/72">
                 {zh
-                  ? "把这个页面发给客户，或直接联系 Homix 安排楼盘资料、看房和单元费用核验。"
-                  : "Share this page with a client, or contact Homix for the building deck, tours, and unit-level carrying-cost checks."}
+                  ? "想实地看看这栋楼？联系 Homix 安排看房，我们会为你备好楼盘资料和一份完整的费用明细。"
+                  : "Want to see it in person? Contact Homix for a tour, the building materials, and a full cost breakdown."}
               </p>
             </div>
             <Button href={siteConfig.contact.phoneHref} onDark>

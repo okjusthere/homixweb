@@ -193,6 +193,26 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
           <div className="sm:col-span-2">
             <label className={label} htmlFor="license">License # / 牌照号</label>
             <input id="license" name="license" defaultValue={agent.licenseNumber ?? ""} className={input} />
+            <p className="mt-2 text-xs text-muted">
+              We verify this against the MLS roster to link your past sales automatically.
+              保存时会与 MLS 官方名册核对，自动关联你的历史成交。
+            </p>
+          </div>
+          <div className="sm:col-span-2 flex items-start gap-3 rounded-sm border border-line bg-surface p-4">
+            <input
+              id="show_past_deals"
+              name="show_past_deals"
+              type="checkbox"
+              defaultChecked={agent.showPastDeals !== false}
+              className="mt-1 h-4 w-4 accent-bronze"
+            />
+            <label htmlFor="show_past_deals" className="cursor-pointer text-sm leading-relaxed">
+              <span className="font-medium">Show my past sales / 展示我的历史成交</span>
+              <span className="mt-1 block text-xs text-muted">
+                Your closed deals from the MLS record appear on your profile. Uncheck to hide the section.
+                个人主页会展示你在 MLS 的成交记录；不想展示可取消勾选。
+              </span>
+            </label>
           </div>
           <div className="sm:col-span-2">
             <label className={label} htmlFor="languages">Languages you speak / 你会的语言</label>
@@ -436,6 +456,9 @@ export function EditForm({ agent, token }: { agent: Agent; token: string }) {
           )}
           {state?.error && !pending && (
             <span className="text-sm text-bronze-dark">{state.error}</span>
+          )}
+          {state?.ok && state.notice && !pending && (
+            <span className="text-sm text-muted">{state.notice}</span>
           )}
         </div>
       </div>

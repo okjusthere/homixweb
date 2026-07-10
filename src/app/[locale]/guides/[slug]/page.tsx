@@ -72,12 +72,12 @@ export default async function GuidePage({
     faq: zh ? "常见问题" : "Frequently asked questions",
     backToGuides: zh ? "全部指南" : "All guides",
     disclaimer: zh
-      ? "本指南为一般性市场信息,不构成法律、税务、贷款或移民建议;具体交易请咨询相应持牌专业人士。数据以引用文章的截至日期为准。"
+      ? "本指南为一般性市场信息，不构成法律、税务、贷款或移民建议；具体交易请咨询相应持牌专业人士。数据以引用文章的截至日期为准。"
       : "This guide is general market information — not legal, tax, lending, or immigration advice. Consult licensed professionals for your situation. Figures are as of the dates cited in the linked reports.",
     reviewed: zh
-      ? `本指南由 Homix 持牌经纪团队复审(记录经纪 ${siteConfig.legal.brokerOfRecord},${siteConfig.legal.brokerLicense})。税务、移民、法律与贷款细节请以持牌专业人士的意见为准。`
+      ? `本指南由 Homix 持牌经纪团队审阅（记录经纪 ${siteConfig.legal.brokerOfRecord}，${siteConfig.legal.brokerLicense}）。税务、移民、法律与贷款细节请以持牌专业人士的意见为准。`
       : `Reviewed by the Homix licensed brokerage team (Broker of Record ${siteConfig.legal.brokerOfRecord}, ${siteConfig.legal.brokerLicense}). For tax, immigration, legal, and lending specifics, rely on the relevant licensed professional.`,
-    reviewLabel: zh ? "内容复审" : "Content review",
+    reviewLabel: zh ? "持牌团队审阅" : "Reviewed by our licensed team",
     talk: zh ? "和双语顾问聊聊" : "Talk to a bilingual advisor",
   };
 

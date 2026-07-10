@@ -64,7 +64,7 @@ export default async function NewDevelopmentPage({
     eyebrow: "New Development",
     title: zh ? "纽约新盘精选" : "New York New Development",
     lead: zh
-      ? "每个新盘都有独立项目页，方便快速查找、发给客户，并对比地段、楼宇背景、户型和预算。"
+      ? "每个新盘都有独立项目页，方便对比地段、楼宇背景、户型和预算。"
       : "A searchable, shareable index of the New York new developments Homix buyers ask about most.",
   };
 
@@ -83,7 +83,7 @@ export default async function NewDevelopmentPage({
     placeholder: zh ? "搜索楼盘名 / 区域 / 地址…" : "Search by building, area, or address…",
     view: zh ? "查看项目" : "View",
     starting: zh ? "参考价" : "From",
-    mediaPending: zh ? "官方图片待核验" : "Official media pending",
+    mediaPending: zh ? "官方图片即将上线" : "Photos coming soon",
     stories: zh ? "楼层" : "Stories",
     units: zh ? "户数" : "Units",
     year: zh ? "年份" : "Year",

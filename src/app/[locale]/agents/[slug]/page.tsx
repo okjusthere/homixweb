@@ -136,15 +136,21 @@ export default async function AgentProfilePage({
   const locale = await getRouteLocale(params);
   const { t } = await getT(locale);
   const zh = locale === "zh";
-  const first = agent.name.trim().split(/\s+/)[0] || agent.name;
+  // Names are stored as "Legal Name (Preferred)" — greet with the preferred
+  // name when present ("Zhijun Zhang (Zoey)" → "Zoey"), else the first name.
+  const first =
+    agent.name.match(/\(([^)]+)\)\s*$/)?.[1].trim() ||
+    agent.name.trim().split(/\s+/)[0] ||
+    agent.name;
 
   // Company-level featured listings (BBO is office-wide, not per-agent), plus
   // this advisor's MLS-verified career history when an admin has mapped their
   // mls_id. Both degrade gracefully: featured falls back to a CTA, career to
   // no section at all.
+  const wantsCareer = agent.showPastDeals !== false;
   const [featured, career] = await Promise.all([
     listings.getFeaturedListings(3),
-    agent.mlsId ? (listings.getAgentCareer?.(agent.mlsId) ?? null) : null,
+    wantsCareer && agent.mlsId ? (listings.getAgentCareer?.(agent.mlsId) ?? null) : null,
   ]);
   const hasCareer = Boolean(career && career.stats.total > 0 && career.deals.length > 0);
 
@@ -162,7 +168,7 @@ export default async function AgentProfilePage({
         call: "致电",
         email: "邮件",
         reachEyebrow: "Homix 媒体引擎",
-        reachLead: "每位 Homix 顾问背后，是一台全网千万级流量的内容机器。",
+        reachLead: "每位 Homix 顾问背后，是一台全网百万级流量的内容机器。",
         followers: "全网粉丝",
         contentDaily: "每日内容产出",
         bilingual: "双语服务",

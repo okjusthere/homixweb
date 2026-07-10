@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { journalPosts } from "@/content/journal/posts";
+import { journalPosts, postModified } from "@/content/journal/posts";
 import { guides } from "@/content/guides";
 import { topics } from "@/content/journal/topics";
 import { marketAreas } from "@/data/market-stats";
@@ -107,7 +107,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     })),
     ...journalPosts.flatMap((p) => localizedEntries(`/guides/articles/${p.slug}`, {
-      lastModified: p.date,
+      // Signal re-review freshness, not just the original publish date.
+      lastModified: postModified(p),
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

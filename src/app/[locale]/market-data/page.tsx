@@ -57,12 +57,12 @@ export default async function MarketDataIndexPage({
       <div className="max-w-3xl">
         <Eyebrow>{zh ? "市场数据" : "Market Data"}</Eyebrow>
         <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.1] tracking-tight text-ink sm:text-[3.25rem]">
-          {zh ? "纽约房价,一页看清" : "New York prices, one page per market"}
+          {zh ? "纽约房价，一页看清" : "New York prices, one page per market"}
         </h1>
         <p className="mt-6 text-xl leading-relaxed text-muted">
           {zh
-            ? "每个市场一个固定页面,数字全部来自有出处的报告,按季度刷新——收藏一次,常年有效。"
-            : "One stable page per market. Every number traces to a sourced report and refreshes quarterly — bookmark once, current all year."}
+            ? "看清纽约每个市场的真实行情，数据每季度更新。"
+            : "A clear read on every New York market, refreshed each quarter."}
         </p>
       </div>
 

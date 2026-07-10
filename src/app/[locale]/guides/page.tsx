@@ -180,7 +180,7 @@ export default async function GuidesPage({
           <div>
             <p className="eyebrow">{zh ? "先选路径" : "Choose a path"}</p>
             <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-ink">
-              {zh ? "正常客户会这样找答案" : "The way clients actually look for answers"}
+              {zh ? "从你的处境开始" : "Start where you are"}
             </h2>
           </div>
           <Link href="/guides/articles" className="text-sm font-medium text-bronze hover:underline">
@@ -256,7 +256,7 @@ export default async function GuidesPage({
         <div>
           <p className="eyebrow">{zh ? "市场数据" : "Market data"}</p>
           <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-ink">
-            {zh ? "把文章和数字分开看。" : "Separate the numbers from the narrative."}
+            {zh ? "先看数字，再看背后的故事。" : "The numbers, then the story behind them."}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted">
             {zh
@@ -288,7 +288,7 @@ export default async function GuidesPage({
           <div>
             <p className="eyebrow">{zh ? "近期更新" : "Recent updates"}</p>
             <h2 className="mt-3 font-serif text-3xl font-normal tracking-tight text-ink">
-              {zh ? "保留时效性，但不让它主导浏览。" : "Fresh when it matters, organized when it does not."}
+              {zh ? "常读常新的市场与置业观察。" : "New thinking, worth your time."}
             </h2>
           </div>
           <Link href="/guides/articles" className="text-sm font-medium text-bronze hover:underline">

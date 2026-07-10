@@ -51,6 +51,12 @@ export async function GET() {
       (g) => `- [${g.title.en}](${base}/guides/${g.slug}): ${g.title.zh}`
     ),
     "",
+    "### 中文版 Chinese editions",
+    "",
+    ...guides.map(
+      (g) => `- [${g.title.zh}](${base}/zh/guides/${g.slug})`
+    ),
+    "",
     "## Topics 主题 (article archives)",
     "",
     ...topics.map(

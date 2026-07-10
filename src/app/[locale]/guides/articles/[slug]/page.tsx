@@ -84,6 +84,7 @@ export default async function JournalArticlePage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    inLanguage: locale === "zh" ? "zh-Hans" : "en",
     headline: post.title[locale],
     description: post.excerpt[locale],
     image: absUrl(post.cover),
@@ -100,6 +101,7 @@ export default async function JournalArticlePage({
       "@id": `${siteConfig.url}/#organization`,
       "@type": "RealEstateAgent",
       name: siteConfig.legalName,
+      logo: { "@type": "ImageObject", url: absUrl("/icon.png") },
     },
   };
 

@@ -73,7 +73,7 @@ export default async function MarketDataPage({
     explore: zh ? "相关页面" : "Explore",
     backToAll: zh ? "全部市场数据" : "All market data",
     methodology: zh
-      ? "说明:本页数字摘自下方引用的 Homix 市场报告及其标注的原始数据源,按统计期呈现;市场数据随时间变化,交易决策前请与顾问核实最新数字。"
+      ? "说明：本页数字摘自下方引用的 Homix 市场报告及其标注的原始数据源，按统计期呈现；市场数据随时间变化，交易决策前请与顾问核实最新数字。"
       : "Note: figures are lifted from the cited Homix market reports and their named primary sources, presented per stated period. Markets move — verify current numbers with an advisor before acting.",
     talk: zh ? "咨询双语顾问" : "Ask a bilingual advisor",
   };

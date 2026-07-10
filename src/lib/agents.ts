@@ -45,6 +45,7 @@ export interface AgentRow {
   license_number: string | null;
   profile_url: string | null;
   mls_id: string | null;
+  show_past_deals: boolean | null;
   visible: boolean | null;
   sort: number | null;
   edit_token?: string;
@@ -99,6 +100,8 @@ function rowToAgent(r: AgentRow): Agent {
     licenseNumber: r.license_number || undefined,
     profileUrl: r.profile_url || undefined,
     mlsId: r.mls_id || undefined,
+    // Only an explicit false hides past sales; missing column/value = show.
+    showPastDeals: r.show_past_deals === false ? false : undefined,
     wechatQr: r.wechat_qr || undefined,
     social: r.social || undefined,
     reviews: cleanReviews(r.reviews),

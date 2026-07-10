@@ -2,11 +2,14 @@
 
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
+import { findRosterMemberByLicense } from "@/lib/agents/mls-roster";
 import { getSupabase } from "@/lib/supabase";
 
 export interface SaveState {
   ok: boolean;
   error?: string;
+  /** Non-blocking feedback, e.g. the license-verification result. */
+  notice?: string;
 }
 
 const SOCIAL_KEYS = [
@@ -80,9 +83,12 @@ export async function updateAgentProfile(
   if (!sb) return { ok: false, error: "Editing isn't configured yet." };
   if (!token) return { ok: false, error: "Missing edit token." };
 
+  // Full-row select doubles as feature detection: mls_id / show_past_deals
+  // only exist after the career-columns migration, and the update payload
+  // must not reference columns that aren't there yet.
   const { data: agent, error: lookupErr } = await sb
     .from("agents")
-    .select("id, slug, photo_url, wechat_qr")
+    .select("*")
     .eq("edit_token", token)
     .maybeSingle();
   // Distinguish a real DB error (e.g. a missing column before the migration ran)
@@ -150,6 +156,40 @@ export async function updateAgentProfile(
     testimonials.push({ quote, ...(author ? { author } : {}) });
   }
 
+  const license = cleanText(formData.get("license")) || null;
+  const hasCareerColumns = "mls_id" in agent && "show_past_deals" in agent;
+
+  // License verification against the official MLS roster. A license number is
+  // DOS-issued digits, NOT the MLS member id — but the roster carries each
+  // member's license, so an exact match resolves the member id safely:
+  //  - only fills mls_id when it's empty (never overrides an admin mapping)
+  //  - refuses a member id already claimed by another advisor (typo guard)
+  //  - a non-matching number still saves as display text, with a notice
+  let notice: string | undefined;
+  let verifiedMlsId: string | null = null;
+  if (license && hasCareerColumns) {
+    const member = await findRosterMemberByLicense(license);
+    if (member) {
+      const { data: claimed } = await sb
+        .from("agents")
+        .select("slug")
+        .eq("mls_id", member.memberMlsId)
+        .neq("id", agent.id)
+        .maybeSingle();
+      if (claimed) {
+        notice = `License ${license} belongs to ${member.fullName}, already linked to another profile — please double-check the number.`;
+      } else if (!agent.mls_id) {
+        verifiedMlsId = member.memberMlsId;
+        notice = `License verified against the MLS roster (${member.fullName}) — past sales are now linked.`;
+      } else if (agent.mls_id !== member.memberMlsId) {
+        notice = `Heads-up: this license belongs to ${member.fullName} on the MLS roster, but the profile is linked to a different MLS member. Ask an admin to review.`;
+      }
+    } else {
+      notice =
+        "License saved, but it didn't match the MLS roster — check for typos if your past sales don't appear.";
+    }
+  }
+
   const { error } = await sb
     .from("agents")
     .update({
@@ -160,7 +200,7 @@ export async function updateAgentProfile(
       // Bio is multi-paragraph (rendered whitespace-pre-line) and isn't used in
       // the vCard/JSON-LD, so preserve its newlines — just trim.
       bio: String(formData.get("bio") || "").trim() || null,
-      license_number: cleanText(formData.get("license")) || null,
+      license_number: license,
       specialties,
       languages,
       social,
@@ -170,6 +210,12 @@ export async function updateAgentProfile(
       testimonials,
       photo_url: photoUrl,
       updated_at: new Date().toISOString(),
+      ...(hasCareerColumns
+        ? {
+            show_past_deals: formData.get("show_past_deals") === "on",
+            ...(verifiedMlsId ? { mls_id: verifiedMlsId } : {}),
+          }
+        : {}),
     })
     .eq("edit_token", token);
 
@@ -181,5 +227,5 @@ export async function updateAgentProfile(
   revalidatePath("/agents");
   revalidatePath("/zh/agents");
   revalidatePath("/sitemap.xml");
-  return { ok: true };
+  return { ok: true, notice };
 }

@@ -165,8 +165,8 @@ export function CareerSection({
         <Eyebrow>{zh ? "历史成交" : "Past sales"}</Eyebrow>
         <p className="mt-3 max-w-2xl text-ink/80">
           {zh
-            ? `${firstName} 在 OneKey MLS 的真实成交记录——每一笔都可核验。`
-            : `${firstName}'s closed transactions on OneKey MLS — every deal verifiable.`}
+            ? `${firstName} 近年为客户完成的买卖交易。`
+            : `The homes ${firstName} has helped clients buy and sell.`}
         </p>
 
         <div

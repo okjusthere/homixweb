@@ -24,7 +24,7 @@ export async function generateMetadata({
     },
     description: {
       en: "Browse Homix articles by topic: buying, selling, renting, taxes, market data, immigration, students, families, and investing in New York real estate.",
-      zh: "按主题浏览 Homix 置业文章: 买房、卖房、租房、税务、市场数据、新移民、留学家庭与纽约地产投资。",
+      zh: "按主题浏览 Homix 置业文章：买房、卖房、租房、税务、市场数据、新移民、留学家庭与纽约地产投资。",
     },
   });
 }
