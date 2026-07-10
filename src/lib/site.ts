@@ -555,9 +555,12 @@ export const neighborhoods: NeighborhoodTeaser[] = [
   }
 ];
 
-/** Hero art direction — replace with owned photography for launch. */
+/** Hero art direction. Self-hosted (public/hero-home.jpg): the previous
+ *  remote Unsplash URL meant the whole above-the-fold rendered cream while
+ *  the image loaded (white header + headline unreadable) and added a
+ *  third-party point of failure. Swap this file to move to owned photography. */
 export const heroImage = {
-  src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80",
+  src: "/hero-home.jpg",
   alt: "A bright, contemporary New York home at dusk",
 };
 

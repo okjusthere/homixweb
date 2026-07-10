@@ -45,8 +45,10 @@ export default async function AboutPage({
 
   return (
     <>
-      {/* Full-bleed hero */}
-      <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
+      {/* Full-bleed hero — bg-ink keeps the white header/headline readable
+          while the remote photo streams in (or if it fails); the before:
+          strip paints the macOS overscroll gap dark instead of cream. */}
+      <section className="relative h-[80vh] min-h-[520px] w-full bg-ink before:absolute before:inset-x-0 before:-top-64 before:h-64 before:bg-ink">
         <Image
           src={HERO}
           alt="The New York skyline at dusk"

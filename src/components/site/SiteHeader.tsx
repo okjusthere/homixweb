@@ -53,7 +53,14 @@ export function SiteHeader({
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    // Back/forward-cache restores (browser Back) re-show the page mid-scroll
+    // WITHOUT firing a scroll event — without this, the header could stay in
+    // its over-hero white variant on top of cream content.
+    window.addEventListener("pageshow", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("pageshow", onScroll);
+    };
   }, []);
 
   useEffect(() => {
