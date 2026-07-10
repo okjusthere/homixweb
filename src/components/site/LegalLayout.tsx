@@ -1,7 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { legalDocs } from "@/content/legal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 
 /** Render plain-text URLs inside legal copy as real links (e.g. the DOS Fair Housing Notice). */
 function autolink(text: string) {
@@ -23,8 +23,14 @@ function autolink(text: string) {
 }
 
 /** Renders a bilingual legal document by key (privacy / terms / etc.). */
-export async function LegalLayout({ doc }: { doc: keyof typeof legalDocs }) {
-  const { locale, t } = await getT();
+export async function LegalLayout({
+  doc,
+  locale,
+}: {
+  doc: keyof typeof legalDocs;
+  locale: Locale;
+}) {
+  const { t } = await getT(locale);
   const d = legalDocs[doc];
 
   return (

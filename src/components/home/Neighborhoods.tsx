@@ -1,14 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { neighborhoods } from "@/lib/site";
 
-export async function Neighborhoods() {
-  const { t } = await getT();
+export async function Neighborhoods({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   return (
     <section className="border-t border-line bg-surface py-24 sm:py-32">
       <Container>

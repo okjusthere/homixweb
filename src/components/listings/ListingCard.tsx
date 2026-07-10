@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Link from "@/components/ui/LocalizedLink";
 import { cn } from "@/lib/cn";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
 import type { Listing } from "@/lib/listings";

@@ -31,7 +31,7 @@ export async function GET() {
     ),
     `- Phone: ${siteConfig.contact.phone} · Email: ${siteConfig.contact.email}`,
     `- License: ${siteConfig.legal.brokerLicense} (Broker of record: ${siteConfig.legal.brokerOfRecord})`,
-    "- Chinese versions of every page are served at the same URL with `?lang=zh`.",
+    "- Chinese versions are first-class pages under `/zh/...` (for example, `/zh/guides/buying-in-nyc`).",
     "",
     "## Key pages",
     "",
@@ -49,6 +49,12 @@ export async function GET() {
     "",
     ...guides.map(
       (g) => `- [${g.title.en}](${base}/guides/${g.slug}): ${g.title.zh}`
+    ),
+    "",
+    "### 中文版 Chinese editions",
+    "",
+    ...guides.map(
+      (g) => `- [${g.title.zh}](${base}/zh/guides/${g.slug})`
     ),
     "",
     "## Topics 主题 (article archives)",

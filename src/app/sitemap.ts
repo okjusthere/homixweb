@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { journalPosts } from "@/content/journal/posts";
+import { journalPosts, postModified } from "@/content/journal/posts";
 import { guides } from "@/content/guides";
 import { topics } from "@/content/journal/topics";
 import { marketAreas } from "@/data/market-stats";
@@ -8,26 +8,32 @@ import { getAgents } from "@/lib/agents";
 import { newDevelopmentBasePath, newDevelopmentHref } from "@/lib/new-developments";
 import { gatedCommunities } from "@/data/gated-communities";
 import { communitiesBasePath, communityHref } from "@/lib/gated-communities";
+import { localizePath } from "@/lib/locale";
 import { neighborhoods, siteConfig } from "@/lib/site";
 
 /**
  * Static pages + advisor + neighborhood routes. Individual IDX listing detail
  * pages are intentionally excluded (kept noindex per MLS display rules).
  *
- * Every entry advertises its zh-Hans variant (?lang=zh) via sitemap-level
- * hreflang so the Chinese layer is discoverable at scale — on-page link tags
- * alone only cover pages a crawler already found.
+ * Every language version has its own <loc> and carries the full reciprocal
+ * hreflang cluster. Google requires a URL entry for each locale variant.
  */
-function withAlternates(url: string) {
+function withAlternates(enUrl: string, zhUrl: string) {
   return {
     alternates: {
       languages: {
-        en: url,
-        "zh-Hans": `${url}?lang=zh`,
+        en: enUrl,
+        "zh-Hans": zhUrl,
+        "x-default": enUrl,
       },
     },
   };
 }
+
+type SitemapEntryOptions = Pick<
+  MetadataRoute.Sitemap[number],
+  "lastModified" | "changeFrequency" | "priority"
+>;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url.replace(/\/$/, "");
@@ -55,64 +61,56 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const agents = await getAgents();
+  const localizedEntries = (path: string, options: SitemapEntryOptions) => {
+    const enUrl = `${base}${localizePath("en", path || "/")}`;
+    const zhUrl = `${base}${localizePath("zh", path || "/")}`;
+    const alternates = withAlternates(enUrl, zhUrl);
+    return [
+      { url: enUrl, ...options, ...alternates },
+      { url: zhUrl, ...options, ...alternates },
+    ];
+  };
 
   return [
-    ...staticPaths.map((p) => ({
-      url: `${base}${p}`,
+    ...staticPaths.flatMap((p) => localizedEntries(p, {
       changeFrequency: "weekly" as const,
       priority: p === "" ? 1 : 0.7,
-      ...withAlternates(`${base}${p}`),
     })),
-    ...agents.map((a) => ({
-      url: `${base}/agents/${a.slug}`,
+    ...agents.flatMap((a) => localizedEntries(`/agents/${a.slug}`, {
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}/agents/${a.slug}`),
     })),
-    ...neighborhoods.map((n) => ({
-      url: `${base}/neighborhoods/${n.slug}`,
+    ...neighborhoods.flatMap((n) => localizedEntries(`/neighborhoods/${n.slug}`, {
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}/neighborhoods/${n.slug}`),
     })),
-    ...featuredDevelopments.map((building) => ({
-      url: `${base}${newDevelopmentHref(building.slug)}`,
+    ...featuredDevelopments.flatMap((building) => localizedEntries(newDevelopmentHref(building.slug), {
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}${newDevelopmentHref(building.slug)}`),
     })),
-    ...gatedCommunities.map((c) => ({
-      url: `${base}${communityHref(c.slug)}`,
+    ...gatedCommunities.flatMap((c) => localizedEntries(communityHref(c.slug), {
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}${communityHref(c.slug)}`),
     })),
-    ...guides.map((g) => ({
-      url: `${base}/guides/${g.slug}`,
+    ...guides.flatMap((g) => localizedEntries(`/guides/${g.slug}`, {
       lastModified: g.updated,
       changeFrequency: "monthly" as const,
       priority: 0.8,
-      ...withAlternates(`${base}/guides/${g.slug}`),
     })),
-    ...marketAreas.map((a) => ({
-      url: `${base}/market-data/${a.slug}`,
+    ...marketAreas.flatMap((a) => localizedEntries(`/market-data/${a.slug}`, {
       lastModified: a.updated,
       changeFrequency: "monthly" as const,
       priority: 0.8,
-      ...withAlternates(`${base}/market-data/${a.slug}`),
     })),
-    ...topics.map((tp) => ({
-      url: `${base}/guides/topics/${tp.slug}`,
+    ...topics.flatMap((tp) => localizedEntries(`/guides/topics/${tp.slug}`, {
       changeFrequency: "weekly" as const,
       priority: 0.7,
-      ...withAlternates(`${base}/guides/topics/${tp.slug}`),
     })),
-    ...journalPosts.map((p) => ({
-      url: `${base}/guides/articles/${p.slug}`,
-      lastModified: p.date,
+    ...journalPosts.flatMap((p) => localizedEntries(`/guides/articles/${p.slug}`, {
+      // Signal re-review freshness, not just the original publish date.
+      lastModified: postModified(p),
       changeFrequency: "monthly" as const,
       priority: 0.6,
-      ...withAlternates(`${base}/guides/articles/${p.slug}`),
     })),
   ];
 }

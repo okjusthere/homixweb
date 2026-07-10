@@ -2,6 +2,8 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
+import type { Locale } from "@/lib/i18n";
+import { localizePath } from "@/lib/locale";
 
 const selectClass =
   "rounded-sm border border-line bg-surface px-3 py-2.5 text-sm text-ink focus:border-bronze focus:outline-none";
@@ -28,6 +30,13 @@ const TYPES = [
 ];
 
 export interface ListingFilterLabels {
+  source: string;
+  city: string;
+  propertyType: string;
+  minPrice: string;
+  maxPrice: string;
+  bedrooms: string;
+  sort: string;
   scopeHomix: string;
   scopeAll: string;
   allLocations: string;
@@ -45,9 +54,11 @@ export interface ListingFilterLabels {
 
 export function ListingFilters({
   cities,
+  locale,
   labels,
 }: {
   cities: string[];
+  locale: Locale;
   labels: ListingFilterLabels;
 }) {
   const router = useRouter();
@@ -59,9 +70,13 @@ export function ListingFilters({
       if (value) next.set(key, value);
       else next.delete(key);
       next.delete("page");
-      router.push(`/listings?${next.toString()}`, { scroll: false });
+      const query = next.toString();
+      router.push(
+        localizePath(locale, query ? `/listings?${query}` : "/listings"),
+        { scroll: false },
+      );
     },
-    [params, router],
+    [locale, params, router],
   );
 
   const val = (k: string) => params.get(k) ?? "";
@@ -69,7 +84,7 @@ export function ListingFilters({
   return (
     <div className="flex flex-wrap items-center gap-3">
       <select
-        aria-label="Listing source"
+        aria-label={labels.source}
         className={selectClass}
         value={val("scope")}
         onChange={(e) => update("scope", e.target.value)}
@@ -79,7 +94,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="City"
+        aria-label={labels.city}
         className={selectClass}
         value={val("city")}
         onChange={(e) => update("city", e.target.value)}
@@ -93,7 +108,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="Property type"
+        aria-label={labels.propertyType}
         className={selectClass}
         value={val("type")}
         onChange={(e) => update("type", e.target.value)}
@@ -107,7 +122,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="Minimum price"
+        aria-label={labels.minPrice}
         className={selectClass}
         value={val("minPrice")}
         onChange={(e) => update("minPrice", e.target.value)}
@@ -121,7 +136,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="Maximum price"
+        aria-label={labels.maxPrice}
         className={selectClass}
         value={val("maxPrice")}
         onChange={(e) => update("maxPrice", e.target.value)}
@@ -135,7 +150,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="Bedrooms"
+        aria-label={labels.bedrooms}
         className={selectClass}
         value={val("beds")}
         onChange={(e) => update("beds", e.target.value)}
@@ -149,7 +164,7 @@ export function ListingFilters({
       </select>
 
       <select
-        aria-label="Sort"
+        aria-label={labels.sort}
         className={`${selectClass} ml-auto`}
         value={val("sort")}
         onChange={(e) => update("sort", e.target.value)}

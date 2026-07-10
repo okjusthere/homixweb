@@ -1,9 +1,9 @@
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 
-export async function StatsBand() {
-  const { t } = await getT();
+export async function StatsBand({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   return (
     <section className="border-y border-line bg-surface py-16 sm:py-20">
       <Container>

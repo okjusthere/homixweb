@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 import type { Locale } from "@/lib/i18n";
+import { localizePath } from "@/lib/locale";
 
 /**
  * SEO helpers for the bilingual layer.
  *
- * URL model: English lives at the clean URL, the crawlable Chinese variant at
- * `?lang=zh` (see src/proxy.ts). Each language version is SELF-canonical —
- * the zh page canonicalizes to `?lang=zh`, not to the English URL — so Google
- * can index both sides of every hreflang cluster. (Canonicalizing zh → en, as
- * we did before 2026-07, silently deindexed the entire Chinese layer.)
+ * URL model: English lives at the established clean URL and Chinese at `/zh`.
+ * Every language version is self-canonical and has a reciprocal hreflang link.
  */
 
 type Localized = string | { en: string; zh: string };
@@ -26,21 +24,25 @@ function compact(value: string, max = 240): string {
   return `${cut.slice(0, breakAt > 80 ? breakAt : max - 1).replace(/[.,;:!?—-]+$/, "")}…`;
 }
 
+function hasCjk(value: string): boolean {
+  return /[\u3400-\u9fff]/.test(value);
+}
+
 function introOgImage(title: string, description: string, path: string) {
   const params = new URLSearchParams({
-    title: compact(title, 92),
-    description: compact(description, 220),
+    title: compact(title, hasCjk(title) ? 30 : 92),
+    description: compact(description, hasCjk(description) ? 130 : 220),
     path,
   });
   return `/og?${params.toString()}`;
 }
 
 export type PageMetaInput = {
-  /** Clean path without locale param, e.g. "/about" or "/guides/articles/foo". */
+  /** Clean English path, e.g. "/about" or "/guides/articles/foo". */
   path: string;
   title: Localized;
   description: Localized;
-  /** Current render locale — pass the result of getLocale(). */
+  /** Current render locale — pass the route locale. */
   locale: Locale;
   /** Page-specific social image (path or absolute). Omit to inherit the branded card. */
   image?: string | null;
@@ -59,8 +61,8 @@ export type PageMetaInput = {
 export function pageMetadata(input: PageMetaInput): Metadata {
   const title = pick(input.title, input.locale);
   const description = pick(input.description, input.locale);
-  const zhUrl = `${input.path}?lang=zh`;
-  const enUrl = input.path;
+  const enUrl = localizePath("en", input.path);
+  const zhUrl = localizePath("zh", input.path);
   const canonical = input.locale === "zh" ? zhUrl : enUrl;
   const image = input.image ?? introOgImage(title, description, canonical);
   const imageAlt = compact(`${title}. ${description}`, 300);
@@ -95,13 +97,14 @@ export function pageMetadata(input: PageMetaInput): Metadata {
  * locale so the canonical points at the language actually being served.
  */
 export function langAlternates(path: string, locale: Locale = "en") {
-  const zhUrl = `${path}?lang=zh`;
+  const enUrl = localizePath("en", path);
+  const zhUrl = localizePath("zh", path);
   return {
-    canonical: locale === "zh" ? zhUrl : path,
+    canonical: locale === "zh" ? zhUrl : enUrl,
     languages: {
-      en: path,
+      en: enUrl,
       "zh-Hans": zhUrl,
-      "x-default": path,
+      "x-default": enUrl,
     },
   };
 }
@@ -112,7 +115,10 @@ export function absUrl(path: string) {
 }
 
 /** BreadcrumbList JSON-LD for 2-level section → detail hierarchies. */
-export function breadcrumbLd(items: { name: string; path: string }[]) {
+export function breadcrumbLd(
+  items: { name: string; path: string }[],
+  locale: Locale = "en",
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -120,7 +126,7 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: absUrl(item.path),
+      item: absUrl(localizePath(locale, item.path)),
     })),
   };
 }
@@ -145,14 +151,16 @@ export function faqLd(items: { question: string; answer: string }[]) {
  */
 export function organizationLd() {
   const { contact, legal, social } = siteConfig;
-  const addresses = contact.offices.map((office) => ({
+  const primaryOffice =
+    contact.offices.find((office) => office.isPrimary) ?? contact.offices[0];
+  const postalAddress = (office: (typeof contact.offices)[number]) => ({
     "@type": "PostalAddress",
     streetAddress: office.line1,
     addressLocality: office.city,
     addressRegion: office.state,
     postalCode: office.zip,
     addressCountry: "US",
-  }));
+  });
 
   return {
     "@context": "https://schema.org",
@@ -167,7 +175,19 @@ export function organizationLd() {
     description: siteConfig.description,
     telephone: contact.phone,
     email: contact.email,
-    address: addresses,
+    // Use one unambiguous primary NAP on the parent entity. Additional offices
+    // are explicit branch entities rather than a loosely-associated address
+    // array, which is easier for local search and AI systems to reconcile.
+    address: postalAddress(primaryOffice),
+    department: contact.offices.map((office) => ({
+      "@type": "RealEstateAgent",
+      "@id": `${siteConfig.url}/#office-${office.key}`,
+      name: `${siteConfig.legalName} — ${office.label.en}`,
+      address: postalAddress(office),
+      telephone: contact.phone,
+      email: contact.email,
+      parentOrganization: { "@id": `${siteConfig.url}/#organization` },
+    })),
     geo: {
       "@type": "GeoCoordinates",
       // 37-20 Prince St, Flushing NY 11354

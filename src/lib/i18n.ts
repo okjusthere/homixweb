@@ -1,31 +1,31 @@
-import { cookies, headers } from "next/headers";
+import {
+  defaultLocale,
+  localeFromParam,
+  type Locale,
+} from "@/lib/locale";
+
+export { defaultLocale, locales } from "@/lib/locale";
+export type { Locale } from "@/lib/locale";
 
 /**
- * Lightweight bilingual (English / 中文) layer.
- *
- * Locale resolution order:
- *   1. `x-locale` request header — set by src/proxy.ts when the URL carries
- *      `?lang=zh|en`. This makes the zh layer crawlable/indexable (crawlers
- *      don't send cookies); pages emit hreflang alternates to the ?lang=zh URLs.
- *   2. `locale` cookie — set by the header toggle for returning visitors.
- * Listing/agent DATA stays as-is (MLS is English); only brand/marketing copy
- * is translated.
+ * Bilingual copy. Locale is a route parameter (`/` for English, `/zh` for
+ * Chinese), not request state, so public pages can be prerendered and cached.
+ * Listing/agent DATA stays as-is (MLS is English); brand and marketing copy
+ * are translated.
  */
 
-export const locales = ["en", "zh"] as const;
-export type Locale = (typeof locales)[number];
-
-export async function getLocale(): Promise<Locale> {
-  const hdrs = await headers();
-  const forced = hdrs.get("x-locale");
-  if (forced === "zh" || forced === "en") return forced;
-  const store = await cookies();
-  return store.get("locale")?.value === "zh" ? "zh" : "en";
+export async function getLocale(locale: Locale = defaultLocale): Promise<Locale> {
+  return locale;
 }
 
-export async function getT() {
-  const locale = await getLocale();
+export async function getT(locale: Locale = defaultLocale) {
   return { locale, t: messages[locale] };
+}
+
+export async function getRouteLocale<T extends { locale: string }>(
+  params: Promise<T>,
+): Promise<Locale> {
+  return localeFromParam((await params).locale);
 }
 
 const brokerageFormsSheetUrl =

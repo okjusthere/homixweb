@@ -1,11 +1,11 @@
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { InquiryForm } from "@/components/forms/InquiryForm";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 
-export async function ContactBand() {
-  const { t } = await getT();
+export async function ContactBand({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   const { contact } = siteConfig;
   return (
     <section className="bg-ink py-24 text-paper sm:py-32">

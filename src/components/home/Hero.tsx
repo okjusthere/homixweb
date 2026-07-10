@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import { getT } from "@/lib/i18n";
+import { getT, type Locale } from "@/lib/i18n";
 import { heroImage } from "@/lib/site";
 
-export async function Hero() {
-  const { t } = await getT();
+export async function Hero({ locale }: { locale: Locale }) {
+  const { t } = await getT(locale);
   return (
     <section className="relative flex min-h-[92vh] items-end overflow-hidden">
       <Image

@@ -138,6 +138,55 @@ export interface Agent {
   };
   /** Short client testimonials the agent has permission to publish. */
   testimonials?: { quote: string; author?: string }[];
+  /**
+   * OneKey MLS member id (e.g. "KEY207692") — keys the MLS-verified career
+   * history. Set by admin mapping or by license verification against the
+   * official MLS roster (never as free text: a wrong number simply fails to
+   * match, so it can't attach someone else's production).
+   */
+  mlsId?: string;
+  /** Advisor's choice to show their MLS past sales (default true). */
+  showPastDeals?: boolean;
+}
+
+/** One closed transaction from the agent's MLS career history. */
+export interface CareerDeal {
+  listingKey: string;
+  /** ISO date, e.g. "2019-06-15". */
+  closeDate?: string;
+  closePrice?: number;
+  propertyType?: string;
+  propertySubType?: string;
+  streetAddress?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  beds?: number;
+  baths?: number;
+  /** Which side the agent represented: listing, buyer, or both. */
+  side: "list" | "buyer" | "both";
+  /** Listing brokerage — required for "Listing courtesy of …" attribution. */
+  listOfficeName?: string;
+  /** Locally cached primary photo (MLS media may not be hotlinked). */
+  photoUrl?: string;
+}
+
+/** MLS-verified career summary + deals for one agent. */
+export interface AgentCareer {
+  stats: {
+    total: number;
+    asListAgent: number;
+    asBuyerAgent: number;
+    saleDeals: number;
+    leaseDeals: number;
+    /** Total sale volume in dollars (leases excluded). */
+    saleVolume: number;
+    firstCloseDate?: string;
+    lastCloseDate?: string;
+  };
+  deals: CareerDeal[];
+  /** ISO timestamp of the career sync — the required "data as of" line. */
+  dataAsOf?: string;
 }
 
 /** Query / filter shape accepted by every provider. */
@@ -179,6 +228,12 @@ export interface ListingsProvider {
   getListings(query?: ListingQuery): Promise<ListingResult>;
   getListingBySlug(slug: string): Promise<Listing | null>;
   getFeaturedListings(limit?: number): Promise<Listing[]>;
+  /**
+   * MLS-verified career history for an agent (by OneKey member id, e.g.
+   * "KEY207692"). Returns null when unavailable (no mls_id, BBO down, or
+   * unknown member) — the profile section renders nothing in that case.
+   */
+  getAgentCareer?(mlsId: string): Promise<AgentCareer | null>;
   /** Distinct cities for filter facets, if supported. */
   cities?(limit?: number): string[];
 }

@@ -34,6 +34,15 @@ alter table public.agents add column if not exists reviews jsonb not null defaul
 alter table public.agents add column if not exists stats jsonb not null default '{}'::jsonb;
 alter table public.agents add column if not exists testimonials jsonb not null default '[]'::jsonb;
 
+-- OneKey MLS member id (e.g. KEY207692) -- powers the MLS-verified career
+-- history on the profile page. Set by admin mapping or by license
+-- verification against the official MLS roster (never free-text editable:
+-- a wrong license simply fails to match, and ids already claimed by another
+-- profile are refused).
+alter table public.agents add column if not exists mls_id text;
+-- Advisor's own switch for the "Past sales" section (default on).
+alter table public.agents add column if not exists show_past_deals boolean not null default true;
+
 -- Row Level Security: anyone may READ visible agents; nobody may write through
 -- the public/anon key. All writes go through the server (service role key),
 -- which bypasses RLS and is gated by each advisor's secret edit token.

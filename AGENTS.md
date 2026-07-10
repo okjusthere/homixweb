@@ -22,6 +22,13 @@ deploys to Vercel.
 - Production requires `BBO_API_URL`, `BBO_API_KEY`,
   `BBO_HOMIX_LIST_OFFICE_MLS_ID=KEYHRMI01`, and
   `BBO_HOMIX_LIST_OFFICE_KEY=KEY421354028`; see `.env.example`.
+- Agent career history ("Past sales" on profile pages) comes from BBO's
+  `/api/v1/agents/{mlsId}/career` via `listings.getAgentCareer(mlsId)`.
+  `agents.mls_id` is set by admin mapping (`supabase/backfill-mls-ids.sql`)
+  or by license verification against the MLS roster on self-edit save —
+  **never as free text** (a wrong license fails to match; ids claimed by
+  another profile are refused). Advisors can hide the section via
+  `show_past_deals`.
 
 **Compliance is not optional** (US real estate): Equal Housing Opportunity logo
 & language in the footer, MLS listing attribution ("Listing courtesy of …"),

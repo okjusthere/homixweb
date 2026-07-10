@@ -142,6 +142,79 @@ procedures to be publicly available on maintained websites and apps. Keep dated
 archives of SOP amendments and update the website within the required period
 after changes.
 
+## SEO, GEO, And Local Search
+
+### Canonical Locale URLs
+
+- English public URLs stay clean: `/about`, `/guides/buying-in-nyc`, and so on.
+- Chinese public URLs are first-class pages under `/zh/...`, for example
+  `/zh/about` and `/zh/guides/buying-in-nyc`.
+- Do not publish, link, or campaign against `?lang=zh` URLs. The proxy sends
+  legacy query-string links to their permanent canonical route.
+- Every indexable public page must retain a self-canonical URL plus reciprocal
+  `en`, `zh-Hans`, and `x-default` hreflang entries. `sitemap.xml` must include
+  a separate `<loc>` entry for each language URL, not just alternates on English.
+
+### Canonical NAP
+
+The source-controlled primary business record is:
+
+```text
+Homix Realty Inc.
+37-20 Prince St, STE 3H
+Flushing, NY 11354
+(929) 666-9886
+homix@homixny.com
+NYS Real Estate Broker License #10991241632
+```
+
+The SEO/GEO audit found a conflicting external office variant using `3720 Prince
+St, STE F`. This cannot be corrected in Git. Before changing any external
+profile, the broker of record must confirm the legally authorized suite from the
+lease, NYS brokerage record, and MLS office record. Do not guess between the two
+suite numbers or create duplicate profiles.
+
+Once the authoritative NAP is confirmed, update the same exact legal name,
+address, primary phone, website, license, and category across the following,
+then record the date and profile owner in the operating log:
+
+1. OneKey MLS brokerage and office records.
+2. Google Business Profile and Google Maps.
+3. Apple Business Connect and Bing Places.
+4. Realtor.com, Zillow, Homes.com, and any active brokerage directories.
+5. NYS Department of State/public licensing records where a public address is
+   displayed.
+6. Social bio links and link-in-bio pages that represent the brokerage.
+
+For a suite or phone change, update the website and all profiles in the same
+release window. Keep a screenshot or export of the before/after record; local
+search systems reconcile conflicting data slowly, and a partial update creates
+more duplicate-entity risk than a short delay.
+
+### Release Verification
+
+After each production deployment, check at least one English and Chinese URL
+from each page family:
+
+1. `/about` and `/zh/about`: correct canonical, hreflang cluster, `html[lang]`,
+   localized title/description, and an individual Open Graph image URL.
+2. `/guides/buying-in-nyc` and `/zh/guides/buying-in-nyc`: localized Article,
+   Breadcrumb, and organization entity references in rendered JSON-LD.
+3. `/agents/<slug>` and `/zh/agents/<slug>`: agent JSON-LD contains an `@id`,
+   the visible profile URL, and `worksFor.@id` pointing to the Homix entity.
+4. `/sitemap.xml`: both English and `/zh` locations appear for each indexable
+   route, with reciprocal alternates.
+5. A Chinese share URL in Facebook Sharing Debugger, LinkedIn Post Inspector,
+   and a fresh iMessage/WeChat preview: the card describes that page, rather
+   than the generic homepage, and CJK text stays on-card.
+6. Google Search Console: submit the sitemap after this migration, inspect a
+   representative Chinese URL, and monitor canonical-selection, alternate-page,
+   and duplicate-title reports for at least four weeks.
+
+MLS detail pages remain `noindex` by design. Their social cards should identify
+the specific property, but do not add them to the sitemap or manually request
+indexing without written OneKey approval.
+
 ## Deployment Checklist
 
 Before production deploy:
