@@ -44,8 +44,12 @@ export function SiteHeader({
   portalHref: string;
 }) {
   const pathname = usePathname();
-  const currentPath = pathname === "/zh" ? "/" : pathname?.replace(/^\/zh(?=\/|$)/, "") || "/";
-  const overHero = currentPath === "/" || currentPath === "/about";
+  // usePathname may return the browser path ("/", "/zh/about") on client
+  // navigations but the middleware-REWRITTEN internal path ("/en", "/en/about")
+  // on direct loads — strip BOTH locale prefixes or the homepage renders the
+  // wrong header variant depending on how the visitor arrived.
+  const currentPath = pathname?.replace(/^\/(en|zh)(?=\/|$)/, "") || "/";
+  const overHero = currentPath === "" || currentPath === "/" || currentPath === "/about";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -97,8 +101,11 @@ export function SiteHeader({
                 height={699}
                 priority
                 className={cn(
-                  "h-10 w-auto transition-[filter] duration-200",
-                  light ? "brightness-0 invert" : "",
+                  // The wordmark asset is a pale watermark gray — force it to
+                  // pure white over the hero and pure ink on the solid bar so
+                  // it reads at full contrast in both modes.
+                  "h-10 w-auto transition-[filter] duration-200 brightness-0",
+                  light ? "invert" : "opacity-80",
                 )}
               />
             </Link>
