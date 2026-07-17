@@ -122,7 +122,11 @@ const loadPublicAgents = unstable_cache(async (): Promise<Agent[]> => {
   if (error || !data || data.length === 0) return STATIC_AGENTS;
   return (data as AgentRow[]).map(rowToAgent);
 }, ["public-agents"], {
-  revalidate: 300,
+  // Long TTL is safe: the self-edit save action revalidates the tag, so
+  // changes appear immediately — the TTL is only a fallback. Keeping it high
+  // stops the roster from rewriting the data cache every few minutes under
+  // crawler traffic (Vercel ISR-write/CPU quota).
+  revalidate: 86400,
   tags: [PUBLIC_AGENTS_CACHE_TAG],
 });
 
@@ -135,7 +139,8 @@ const loadPublicAgentBySlug = unstable_cache(async (slug: string): Promise<Agent
   if (data && (data as AgentRow).visible !== true) return null;
   return data ? rowToAgent(data as AgentRow) : (STATIC_AGENTS.find((a) => a.slug === slug) ?? null);
 }, ["public-agent-by-slug"], {
-  revalidate: 300,
+  // Same story as public-agents above: tag-invalidated on save, long fallback.
+  revalidate: 86400,
   tags: [PUBLIC_AGENTS_CACHE_TAG],
 });
 

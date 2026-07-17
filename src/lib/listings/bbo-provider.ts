@@ -15,7 +15,7 @@ import type {
 const DEFAULT_BBO_API_URL = "https://onekey.kevv.ai";
 const DEFAULT_HOMIX_OFFICE_MLS_ID = "KEYHRMI01";
 const DEFAULT_HOMIX_OFFICE_KEY = "KEY421354028";
-const DEFAULT_REVALIDATE_SECONDS = 300;
+const DEFAULT_REVALIDATE_SECONDS = 1800;
 
 const CITY_OPTIONS = [
   "Flushing",
@@ -215,8 +215,13 @@ export class BboListingsProvider implements ListingsProvider {
     if (!cfg.apiKey || !id) return null;
 
     try {
+      // Career data changes when BBO's monthly sync (or a roster change) runs —
+      // a 24h cache is still generous and keeps ~50 per-agent URLs from
+      // rewriting the data cache every few minutes under crawler traffic.
       const payload = await this.request<BboCareerResponse>(
         `/api/v1/agents/${encodeURIComponent(id)}/career`,
+        undefined,
+        86400,
       );
       const stats = payload.stats ?? {};
       const deals = (payload.deals ?? [])
@@ -261,7 +266,11 @@ export class BboListingsProvider implements ListingsProvider {
     }
   }
 
-  private async request<T>(path: string, params?: URLSearchParams): Promise<T> {
+  private async request<T>(
+    path: string,
+    params?: URLSearchParams,
+    revalidateSeconds?: number,
+  ): Promise<T> {
     const cfg = bboConfig();
     if (!cfg.apiKey) throw new Error("BBO_API_KEY is not configured.");
     const url = new URL(path, cfg.apiUrl);
@@ -273,7 +282,7 @@ export class BboListingsProvider implements ListingsProvider {
         Authorization: `Bearer ${cfg.apiKey}`,
         Accept: "application/json",
       },
-      next: { revalidate: cfg.revalidateSeconds },
+      next: { revalidate: revalidateSeconds ?? cfg.revalidateSeconds },
       // A hung upstream should degrade to the "listings unavailable" notice,
       // not stall the page render until the platform function timeout.
       signal: AbortSignal.timeout(8000),
