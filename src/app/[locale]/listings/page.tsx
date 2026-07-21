@@ -64,13 +64,19 @@ export default async function ListingsPage({
     minBeds: one(sp.beds) ? Number(one(sp.beds)) : undefined,
     q: one(sp.q) || undefined,
     sort: (one(sp.sort) as ListingQuery["sort"]) || "newest",
+    // BBO permits exact counts for this office-scoped search. Wider OneKey
+    // searches retain lower-bound pagination to protect the shared API.
+    exactTotal: scope === "homix",
     limit: PER_PAGE,
     offset: (page - 1) * PER_PAGE,
   };
 
   const result = await listings.getListings(query);
   const { listings: results, total, hasMore, totalIsEstimate, unavailable } = result;
-  const pages = hasMore && totalIsEstimate ? page + 1 : Math.max(1, Math.ceil(total / PER_PAGE));
+  // An estimated total is only a lower bound. Keep the pager navigable via
+  // hasMore, but never present a guessed total page count as fact.
+  const pages = totalIsEstimate ? page : Math.max(1, Math.ceil(total / PER_PAGE));
+  const totalLabel = totalIsEstimate ? `${formatNumber(total)}+` : formatNumber(total);
 
   const cities = listings.cities ? listings.cities(30) : [];
 
@@ -149,14 +155,16 @@ export default async function ListingsPage({
         <p className="mt-6 text-sm text-muted">
           {zh ? (
             <>
-              {formatNumber(total)} 套房源
-              {query.city ? `（${query.city}）` : ""} · 第 {page} / {pages || 1} 页
+              {totalLabel} 套房源
+              {query.city ? `（${query.city}）` : ""} · 第 {page}
+              {totalIsEstimate ? "" : ` / ${pages || 1}`} 页
               {scope === "homix" ? " · Homix Realty Inc." : " · 全部 OneKey"}
             </>
           ) : (
             <>
-              {formatNumber(total)} {total === 1 ? "home" : "homes"}
-              {query.city ? ` in ${query.city}` : ""} · page {page} of {pages || 1}
+              {totalLabel} {total === 1 && !totalIsEstimate ? "home" : "homes"}
+              {query.city ? ` in ${query.city}` : ""} · page {page}
+              {totalIsEstimate ? "" : ` of ${pages || 1}`}
               {scope === "homix" ? " · Homix Realty Inc." : " · All OneKey"}
             </>
           )}

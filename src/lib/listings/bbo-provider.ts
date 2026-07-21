@@ -158,6 +158,7 @@ export class BboListingsProvider implements ListingsProvider {
     if (query.minBeds != null) params.set("bedsMin", String(query.minBeds));
     if (query.minBaths != null) params.set("bathsMin", String(query.minBaths));
     if (query.propertyType) applyPropertyType(params, query.propertyType);
+    if (query.exactTotal) params.set("exactTotal", "1");
 
     if (query.scope !== "all") {
       params.set("listOfficeMlsId", cfg.homixOfficeMlsId);

@@ -203,13 +203,15 @@ export interface ListingQuery {
   /** Free-text search across address + neighborhood + description. */
   q?: string;
   sort?: "price-asc" | "price-desc" | "newest" | "beds-desc";
+  /** Ask BBO for an exact total on a selectively scoped query (for example, one office). */
+  exactTotal?: boolean;
   limit?: number;
   offset?: number;
 }
 
 export interface ListingResult {
   listings: Listing[];
-  /** Total matches before limit/offset — for pagination. */
+  /** Exact total unless `totalIsEstimate` is true, when this is a lower bound. */
   total: number;
   /** BBO returns this for cursor-like next-page behavior on large searches. */
   hasMore?: boolean;
