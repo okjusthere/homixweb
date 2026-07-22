@@ -8,6 +8,7 @@ import { getRouteLocale, getT } from "@/lib/i18n";
 import { isLocale, locales, localizePath } from "@/lib/locale";
 import { buyNav, primaryNav, siteConfig } from "@/lib/site";
 import { jsonLd, organizationLd, webSiteLd } from "@/lib/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -115,6 +116,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: jsonLd(webSiteLd()) }}
         />
+        <SpeedInsights />
       </body>
     </html>
   );
