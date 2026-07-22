@@ -163,6 +163,15 @@ export async function GET(request: Request) {
     ),
     {
       ...size,
+      // Satori rendering (+ CJK font) costs real CPU per invocation, and
+      // Vercel's edge cache only stores function responses on s-maxage —
+      // ImageResponse's default max-age alone left every crawler fetch
+      // re-rendering. Card URLs are content-addressed (title/description/path
+      // in the query), so a changed card is a new URL: cache for a year.
+      headers: {
+        "Cache-Control":
+          "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800",
+      },
       ...(cjkFont
         ? {
             fonts: [
