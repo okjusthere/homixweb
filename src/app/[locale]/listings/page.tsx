@@ -11,26 +11,49 @@ import { formatNumber } from "@/lib/format";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
 
-// Filter params (?page, ?city, ?type, ?minPrice, ?q, ?sort…) canonicalize to
-// the localized listing index, never to a duplicate filter URL.
+// Only the clean listing index is indexable. Filter/pagination combinations
+// (?page, ?city, ?type, ?minPrice, ?q, ?sort…) are unbounded duplicate/thin
+// URLs: they get noindex,follow (same treatment as MLS detail pages) so
+// crawlers keep following into listings without indexing — or endlessly
+// re-crawling — the facet space.
+const FILTER_PARAM_KEYS = [
+  "page",
+  "scope",
+  "city",
+  "type",
+  "minPrice",
+  "maxPrice",
+  "beds",
+  "q",
+  "sort",
+] as const;
+
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<SearchParams>;
 }): Promise<Metadata> {
   const locale = await getRouteLocale(params);
-  return pageMetadata({
-    path: "/listings",
-    locale,
-    title: {
-      en: "New York Homes for Sale — Search NYC & Long Island Listings",
-      zh: "纽约房源搜索——在售住宅与公寓",
-    },
-    description: {
-      en: "Search homes for sale across New York — Queens, Manhattan, Brooklyn, and Long Island — from the OneKey MLS. Filter by price, location, and bedrooms.",
-      zh: "搜索纽约在售房源：皇后区、曼哈顿、布鲁克林与长岛的住宅与公寓，可按价格、地区、卧室数筛选，Homix 中英双语持牌经纪人全程服务。",
-    },
-  });
+  const sp = await searchParams;
+  const filtered = FILTER_PARAM_KEYS.some((k) => one(sp[k]));
+  return {
+    ...pageMetadata({
+      path: "/listings",
+      locale,
+      title: {
+        en: "New York Homes for Sale — Search NYC & Long Island Listings",
+        zh: "纽约房源搜索——在售住宅与公寓",
+      },
+      description: {
+        en: "Search homes for sale across New York — Queens, Manhattan, Brooklyn, and Long Island — from the OneKey MLS. Filter by price, location, and bedrooms.",
+        zh: "搜索纽约在售房源：皇后区、曼哈顿、布鲁克林与长岛的住宅与公寓，可按价格、地区、卧室数筛选，Homix 中英双语持牌经纪人全程服务。",
+      },
+      noAlternates: filtered,
+    }),
+    ...(filtered ? { robots: { index: false, follow: true } } : {}),
+  };
 }
 
 const PER_PAGE = 12;

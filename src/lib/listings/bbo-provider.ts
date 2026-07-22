@@ -146,6 +146,24 @@ export class BboListingsProvider implements ListingsProvider {
       return unavailableResult("BBO_API_KEY is not configured.");
     }
 
+    // Vercel's data cache charges per write and keys on the full request URL.
+    // Only the clean per-scope first page — where real traffic concentrates —
+    // earns a cache entry. Filtered/paginated/free-text combinations are an
+    // unbounded key space minted mostly by crawlers, each a paid write with a
+    // near-zero hit rate, so those bypass the platform cache and hit BBO
+    // directly (our own service; an 8s-timeout fetch, not a shared quota).
+    const stableQuery =
+      !query.q &&
+      !query.city &&
+      !query.status &&
+      query.minPrice == null &&
+      query.maxPrice == null &&
+      query.minBeds == null &&
+      query.minBaths == null &&
+      !query.propertyType &&
+      (query.offset ?? 0) === 0 &&
+      (query.sort ?? "newest") === "newest";
+
     const params = new URLSearchParams();
     params.set("limit", String(query.limit ?? 12));
     params.set("offset", String(query.offset ?? 0));
@@ -167,7 +185,11 @@ export class BboListingsProvider implements ListingsProvider {
 
     try {
       const [payload] = await Promise.all([
-        this.request<BboSearchResponse>("/api/v1/listings/search", params),
+        this.request<BboSearchResponse>(
+          "/api/v1/listings/search",
+          params,
+          stableQuery ? undefined : null,
+        ),
         this.refreshSyncStatus(),
       ]);
       const items = payload.items ?? payload.results ?? [];
@@ -267,10 +289,12 @@ export class BboListingsProvider implements ListingsProvider {
     }
   }
 
+  // revalidateSeconds: undefined → provider default TTL; a number → that TTL;
+  // null → cache: "no-store" (no data-cache entry, no ISR write).
   private async request<T>(
     path: string,
     params?: URLSearchParams,
-    revalidateSeconds?: number,
+    revalidateSeconds?: number | null,
   ): Promise<T> {
     const cfg = bboConfig();
     if (!cfg.apiKey) throw new Error("BBO_API_KEY is not configured.");
@@ -283,7 +307,9 @@ export class BboListingsProvider implements ListingsProvider {
         Authorization: `Bearer ${cfg.apiKey}`,
         Accept: "application/json",
       },
-      next: { revalidate: revalidateSeconds ?? cfg.revalidateSeconds },
+      ...(revalidateSeconds === null
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: revalidateSeconds ?? cfg.revalidateSeconds } }),
       // A hung upstream should degrade to the "listings unavailable" notice,
       // not stall the page render until the platform function timeout.
       signal: AbortSignal.timeout(8000),
