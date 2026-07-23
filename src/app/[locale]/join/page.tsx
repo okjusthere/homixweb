@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
-import Link from "@/components/ui/LocalizedLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
@@ -32,6 +31,7 @@ export async function generateMetadata({
 }
 
 const HERO = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/join/hero.jpg";
+const TRAINING_PHOTOS = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training";
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");
@@ -50,16 +50,7 @@ export default async function JoinPage({
       <Container className="py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-              <Eyebrow>{t.join.eyebrow}</Eyebrow>
-              <Link
-                href="/training"
-                className="inline-flex items-center gap-2 border-l border-bronze pl-3 text-xs font-semibold text-ink transition-colors hover:text-bronze"
-              >
-                <span>{t.join.trainingTag}</span>
-                <span aria-hidden>→</span>
-              </Link>
-            </div>
+            <Eyebrow>{t.join.eyebrow}</Eyebrow>
             <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.05] tracking-tight text-ink sm:text-[3.25rem]">
               {t.join.title}
             </h1>
@@ -120,6 +111,54 @@ export default async function JoinPage({
           ))}
         </div>
       </Container>
+
+      {/* Training spotlight */}
+      <section className="border-t border-line py-20 sm:py-28">
+        <Container>
+          <div className="grid items-center gap-12 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
+            <div>
+              <Eyebrow>{t.join.trainingEyebrow}</Eyebrow>
+              <h2 className="mt-5 font-serif text-3xl font-normal leading-tight tracking-tight text-ink sm:text-[2.6rem]">
+                {t.join.trainingTitle}
+              </h2>
+              <p className="mt-6 text-lg leading-relaxed text-muted">{t.join.trainingLead}</p>
+              <ul className="mt-8 space-y-4">
+                {t.join.trainingFeatures.map((f) => (
+                  <li key={f} className="flex gap-3 border-l border-bronze/50 pl-4">
+                    <span className="text-base leading-relaxed text-ink">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-9">
+                <Button href="/training" variant="outline">
+                  {t.join.trainingCta}
+                  <span aria-hidden>→</span>
+                </Button>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <Reveal className="relative aspect-[3/4] overflow-hidden rounded-sm bg-line/40">
+                <Image
+                  src={`${TRAINING_PHOTOS}/live-workshop.jpg`}
+                  alt="Homix agents in a live training workshop"
+                  fill
+                  sizes="(max-width: 1024px) 45vw, 260px"
+                  className="object-cover"
+                />
+              </Reveal>
+              <Reveal delay={80} className="relative mt-8 aspect-[3/4] overflow-hidden rounded-sm bg-line/40">
+                <Image
+                  src={`${TRAINING_PHOTOS}/roundtable-window-session.jpg`}
+                  alt="Homix agents in a roundtable training session"
+                  fill
+                  sizes="(max-width: 1024px) 45vw, 260px"
+                  className="object-cover"
+                />
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
 
       {/* How to join */}
       <section className="border-y border-line bg-surface py-20 sm:py-28">

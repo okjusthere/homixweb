@@ -196,7 +196,6 @@ const en = {
     title: "We don't hand you a desk. We hand you an audience.",
     lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. Day one, you step into an audience of 1,000,000+ across 抖音, 小红书, and Instagram, an in-house content studio, AI and data tools, and bilingual senior mentors who have closed in this market. Where Homes Meet Headlines — we turn agents into local stars.",
     heroCta: "Apply to join Homix",
-    trainingTag: "Agent training",
     stats: [
       {
         value: "1,000,000+",
@@ -243,6 +242,16 @@ const en = {
         body: "Some brokerages just rent you a seat and collect a monthly fee. Homix invests in you because your wins are our story. Transparent economics, a clear path to grow, and a team that shows up — we'd rather have a smaller roster of stars than a warehouse of names.",
       },
     ],
+    trainingEyebrow: "See it for yourself",
+    trainingTitle: "Weekly boot camps and expert seminars — not a manual to read alone.",
+    trainingLead:
+      "This is what \"bilingual senior mentorship\" looks like in practice: structured boot camps and specialist sessions with real estate attorneys, mortgage teams, and media strategists — walking agents through the deals, contracts, and content that come up every week.",
+    trainingFeatures: [
+      "Buyer & Listing Mastery boot camps — 6 weeks, 12 practical sessions each",
+      "Weekly specialist seminars on legal, financing, media, and applied AI, led by named experts",
+      "In-person coaching and roundtables, not just a channel to scroll",
+    ],
+    trainingCta: "Explore agent training",
     stepsEyebrow: "How to join",
     stepsTitle: "From hello to local star.",
     steps: [
@@ -677,7 +686,6 @@ const zh: Dict = {
     title: "我们给你的不是一张办公桌，而是一群观众。",
     lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就接入抖音、小红书、Instagram 上超过 100 万的粉丝群体，拥有自有内容工作室、AI 与数据工具，以及在本地真正成交过的双语资深导师。Where Homes Meet Headlines——我们把经纪人打造成本地明星。",
     heroCta: "申请加入 Homix",
-    trainingTag: "经纪人培训",
     stats: [
       {
         value: "1,000,000+",
@@ -724,6 +732,16 @@ const zh: Dict = {
         body: "有些经纪公司只是租给你一个座位、按月收费。Homix 选择投资你，因为你的成功就是我们的故事。透明的分成结构、清晰的成长路径，以及一个真正并肩作战的团队——我们宁愿打造一小批明星，也不要一仓库的名字。",
       },
     ],
+    trainingEyebrow: "眼见为实",
+    trainingTitle: "每周训练营与专题讲座——不是丢给你一本手册自己啃。",
+    trainingLead:
+      "这就是“双语资深导师带教”在 Homix 的真实样子：结构化训练营，以及由地产律师、贷款团队、自媒体专家主讲的专题课，带你走过每周都会遇到的交易、合同与内容难题。",
+    trainingFeatures: [
+      "买家精英 & Listing Mastery 训练营——每期 6 周、12 节实战课程",
+      "每周专题讲座——法律、贷款、自媒体与 AI 实战，由行业专家主讲",
+      "线下带教与圆桌讨论，而不只是一个刷不完的群",
+    ],
+    trainingCta: "查看经纪人培训",
     stepsEyebrow: "如何加入",
     stepsTitle: "从初次见面，到本地明星。",
     steps: [
