@@ -1,4 +1,5 @@
 import type { Guide } from "./types";
+import { SITE_MEDIA_ROOT } from "@/lib/media";
 
 /**
  * Buying pillar guide — the definitive zh-first NYC home-buying walkthrough.
@@ -30,7 +31,7 @@ export const buyingGuide: Guide = {
     en: "Buying a home in New York is unlike buying one back home — or even in most other U.S. cities. This is an \"attorney state\": an accepted offer is not a done deal; what makes a transaction binding is a written contract both sides' lawyers approve. And if you buy a co-op, you are not buying real property at all — you are buying shares in a corporation, and you must also clear the building's board. From accepted offer to keys, a typical NYC purchase runs about **60 to 90 days**.\n\nThis guide walks the whole path once, in order: first a stage-by-stage **timeline**, then budget and financing (pre-approval, rates, and buying power), the condo/co-op/townhouse differences that matter, going from offer to signed contract, the buyer's **closing-cost breakdown** (including the mansion-tax threshold), how to pass a co-op board, and finally the common pitfalls and realistic timing. To rough out a monthly payment and total cost at any point, open our [buying calculator](/calculator); working with a [bilingual (Chinese/English) agent](/chinese-real-estate-agents-nyc) keeps every deadline from becoming a scramble.\n\nEvery figure here traces back to our guide articles, each of which notes its source and as-of date. Rates, tax rates, and rules change; anything touching tax, law, or financing is general information — rely on your attorney, lender, and tax professional, and on the rules in force when you act.",
   },
   updated: "2026-07-07",
-  cover: "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/journal/covers/apartment-building.jpg",
+  cover: `${SITE_MEDIA_ROOT}/journal/covers/apartment-building.jpg`,
   sections: [
     {
       heading: {

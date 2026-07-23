@@ -8,6 +8,7 @@ import { InquiryForm } from "@/components/forms/InquiryForm";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { SITE_MEDIA_ROOT } from "@/lib/media";
 
 export async function generateMetadata({
   params,
@@ -30,8 +31,8 @@ export async function generateMetadata({
   });
 }
 
-const HERO = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/join/hero.jpg";
-const TRAINING_PHOTOS = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training";
+const HERO = `${SITE_MEDIA_ROOT}/join/hero.jpg`;
+const TRAINING_PHOTOS = `${SITE_MEDIA_ROOT}/training`;
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");

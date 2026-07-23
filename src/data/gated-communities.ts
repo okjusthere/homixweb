@@ -1,3 +1,4 @@
+import { SITE_MEDIA_ROOT } from "@/lib/media";
 /**
  * Nassau County (Long Island) gated & private communities — facts layer.
  *
@@ -142,55 +143,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg`,
         "caption": "Aerial / drone view of a Stone Hill home (58 Stone Hill Dr S, Manhasset) showing t… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/high-res-aerial-exterior-of-58-stone-hil.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/high-res-aerial-exterior-of-58-stone-hil.jpg`,
         "caption": "High-res aerial/exterior of 58 Stone Hill Drive S, Manhasset — front of the home w… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/front-exterior-streetscape-of-a-stone-hi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/front-exterior-streetscape-of-a-stone-hi.jpg`,
         "caption": "Front exterior / streetscape of a Stone Hill home (58 Stone Hill Dr S) — white-and… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/rear-paver-patio-of-a-stone-hill-home-lo.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/rear-paver-patio-of-a-stone-hill-home-lo.jpg`,
         "caption": "Rear paver patio of a Stone Hill home looking out over open green space toward the… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/representative-stone-hill-estate-home-st.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/representative-stone-hill-estate-home-st.jpg`,
         "caption": "Representative Stone Hill estate home — stately brick center-hall Colonial with co… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/representative-stone-hill-streetscape-ho.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/representative-stone-hill-streetscape-ho.jpg`,
         "caption": "Representative Stone Hill streetscape home — gray colonial with two-car garage and… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/stone-hill-area-luxury-home-with-private.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/stone-hill-area-luxury-home-with-private.jpg`,
         "caption": "Stone Hill-area luxury home with private in-ground swimming pool (25 Shelter Rock… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/gourmet-eat-in-kitchen-with-center-islan.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/gourmet-eat-in-kitchen-with-center-islan.jpg`,
         "caption": "Gourmet eat-in kitchen with center island, custom cabinetry and marble flooring in… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/interior-bright-sitting-room-upstairs-la.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/interior-bright-sitting-room-upstairs-la.jpg`,
         "caption": "Interior — bright sitting room / upstairs landing with crystal chandeliers and har… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/primary-bedroom-suite-with-crown-molding.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/primary-bedroom-suite-with-crown-molding.jpg`,
         "caption": "Primary bedroom suite with crown molding and hardwood floors in a Stone Hill home · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/formal-dining-area-off-the-kitchen-with-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/formal-dining-area-off-the-kitchen-with-.jpg`,
         "caption": "Formal dining area off the kitchen with bay windows overlooking the landscaped gro… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/modern-architectural-home-listed-in-the-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/modern-architectural-home-listed-in-the-.jpg`,
         "caption": "Modern/architectural home listed in the Stone Hill, Manhasset search (7 Folie Cour… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/stone-hill-north-hills/aerial-drone-view-of-a-stone-hill-home-5.jpg`
   },
   {
     "slug": "gracewood-north-hills",
@@ -270,7 +271,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://hoasrus.com/hoa-fees/new-york/manhasset/gracewood-at-north-hills-home-owners-association-inc"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg`,
     "confidence": "high",
     "propertyTax": {
       "en": "~$34,000–$45,000 / yr",
@@ -278,35 +279,35 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/gracewood-entrance-gatehouse-monument-th.jpg`,
         "caption": "Gracewood entrance / gatehouse monument — the carved stone \"Gracewood\" community e… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/the-mansion-clubhouse-present-day-color-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/the-mansion-clubhouse-present-day-color-.jpg`,
         "caption": "The Mansion Clubhouse — present-day color photo of the restored white Grace family… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/historic-aerial-of-the-original-grace-es.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/historic-aerial-of-the-original-grace-es.jpg`,
         "caption": "Historic AERIAL of the original Grace estate mansion and its park-like grounds, tr… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/historic-front-facade-of-the-grace-mansi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/historic-front-facade-of-the-grace-mansi.jpg`,
         "caption": "Historic front facade of the Grace Mansion (now clubhouse) — grand columned/pedime… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/historic-garden-terrace-of-the-grace-man.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/historic-garden-terrace-of-the-grace-man.jpg`,
         "caption": "Historic garden terrace of the Grace Mansion — brick rear elevation with striped a… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/representative-gracewood-home-cream-clap.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/representative-gracewood-home-cream-clap.jpg`,
         "caption": "Representative Gracewood home — cream clapboard estate-style single-family house w… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/representative-gracewood-home-and-street.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/representative-gracewood-home-and-street.jpg`,
         "caption": "Representative Gracewood home and streetscape — gray-blue colonial with two-car ga… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/gracewood-north-hills/representative-gracewood-home-grey-two-s.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/gracewood-north-hills/representative-gracewood-home-grey-two-s.jpg`,
         "caption": "Representative Gracewood home — grey two-story colonial with landscaped front yard… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ]
@@ -378,7 +379,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.ownwell.com/trends/new-york/nassau-county/manhasset"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg`,
     "confidence": "high",
     "hoaDues": "~$400-$430 / mo",
     "propertyTax": {
@@ -387,43 +388,43 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/aerial-skyline-location-image-used-by-to.jpg`,
         "caption": "Aerial/skyline location image used by Toll Brothers for Manhasset Crest — Manhatta… · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/large-hero-exterior-of-the-hecksher-mode.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/large-hero-exterior-of-the-hecksher-mode.jpg`,
         "caption": "Large hero exterior of the Hecksher Modern Farmhouse home design at Manhasset Crest · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/brady-model-interior-walkthrough-hero-sn.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/brady-model-interior-walkthrough-hero-sn.jpg`,
         "caption": "Brady model interior/walkthrough hero snapshot at Manhasset Crest · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/gatsby-model-home-outdoor-living-space-c.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/gatsby-model-home-outdoor-living-space-c.jpg`,
         "caption": "Gatsby model home outdoor living space (covered patio / rear exterior) at Manhasse… · Photo: ml.globenewswire.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/interior-great-room-of-the-crawley-moder.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/interior-great-room-of-the-crawley-moder.jpg`,
         "caption": "Interior — great room of the Crawley Modern Farmhouse model, representative of the… · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/interior-primary-bedroom-crawley-modern-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/interior-primary-bedroom-crawley-modern-.jpg`,
         "caption": "Interior — primary bedroom (Crawley Modern Farmhouse model). Source: Toll Brothers… · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/interior-casual-dining-area-gatsby-model.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/interior-casual-dining-area-gatsby-model.jpg`,
         "caption": "Interior — casual dining area, Gatsby model at Manhasset Crest · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/interior-formal-dining-room-gatsby-model.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/interior-formal-dining-room-gatsby-model.jpg`,
         "caption": "Interior — formal dining room, Gatsby model at Manhasset Crest. Source: Toll Broth… · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/interior-finished-basement-entertaining-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/interior-finished-basement-entertaining-.jpg`,
         "caption": "Interior — finished basement entertaining space, Gatsby model at Manhasset Crest.… · Photo: cdn.tollbrothers.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/manhasset-crest/toll-brothers-long-island-design-studio-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/manhasset-crest/toll-brothers-long-island-design-studio-.jpg`,
         "caption": "Toll Brothers Long Island Design Studio · Photo: cdn.tollbrothers.com"
       }
     ]
@@ -514,55 +515,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg`,
         "caption": "Aerial view of the Stone Hill at Muttontown community — rolling estate home-sites,… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/the-stone-hill-gatehouse-gated-entrance-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/the-stone-hill-gatehouse-gated-entrance-.jpg`,
         "caption": "The Stone Hill gatehouse / gated entrance with its signature serpentine stone wall… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/second-view-of-the-old-world-gatehouse-e.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/second-view-of-the-old-world-gatehouse-e.jpg`,
         "caption": "Second view of the old-world gatehouse / entry drive at Stone Hill at Muttontown (… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/landscaped-water-feature-waterfall-ameni.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/landscaped-water-feature-waterfall-ameni.jpg`,
         "caption": "Landscaped water feature / waterfall amenity within the Stone Hill common grounds… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/streetscape-street-design-within-stone-h.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/streetscape-street-design-within-stone-h.jpg`,
         "caption": "Streetscape / street design within Stone Hill — manicured roadway, plantings and s… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/community-master-plan-site-map-of-stone-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/community-master-plan-site-map-of-stone-.jpg`,
         "caption": "Community master-plan / site map of Stone Hill at Muttontown showing the estate ho… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/representative-stone-hill-estate-home-5-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/representative-stone-hill-estate-home-5-.jpg`,
         "caption": "Representative Stone Hill estate home — 5 Westgate Road, Muttontown (Stone Hill at… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/stone-hill-estate-home-5-buckingham-cour.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/stone-hill-estate-home-5-buckingham-cour.jpg`,
         "caption": "Stone Hill estate home — 5 Buckingham Court, Muttontown. MLS listing photo via the… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/stone-hill-estate-home-11-buckingham-cou.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/stone-hill-estate-home-11-buckingham-cou.jpg`,
         "caption": "Stone Hill estate home — 11 Buckingham Court, Muttontown. Large brick/stone reside… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/stone-hill-estate-home-9-earle-drive-mut.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/stone-hill-estate-home-9-earle-drive-mut.jpg`,
         "caption": "Stone Hill estate home — 9 Earle Drive, Muttontown. MLS listing photo. ~393 KB. · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/stone-hill-estate-home-2-buckingham-cour.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/stone-hill-estate-home-2-buckingham-cour.jpg`,
         "caption": "Stone Hill estate home — 2 Buckingham Court, Muttontown. Representative home/stree… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/stone-hill-estate-home-2-earle-drive-mut.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/stone-hill-estate-home-2-earle-drive-mut.jpg`,
         "caption": "Stone Hill estate home — 2 Earle Drive, Muttontown. Representative home exterior.… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/stone-hill-muttontown/aerial-view-of-the-stone-hill-at-muttont.jpg`
   },
   {
     "slug": "spring-hill-old-westbury",
@@ -640,7 +641,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.longisland.com/articles/01-08-26/house-of-the-week-a-28m-all-season-resort-estate-behind-the-gates-of-old-westburys-spring-hill.html"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg`,
     "confidence": "high",
     "builtYear": "2013–present (build-to-suit; existing estates built ~2013 onward)",
     "propertyTax": {
@@ -649,51 +650,51 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-community-s-grand-wrought-iron-entra.jpg`,
         "caption": "The community's grand wrought-iron entrance gate (ornate antique iron gate between… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-ornamental-iron-entrance-gate-closer.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-ornamental-iron-entrance-gate-closer.jpg`,
         "caption": "The ornamental iron entrance gate, closer frontal view through the gate to the tre… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/spring-hill-entrance-gate-wide-view-of-t.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/spring-hill-entrance-gate-wide-view-of-t.jpg`,
         "caption": "Spring Hill entrance gate — wide view of the decorative wrought-iron gate and ston… · Photo: keandevelopment.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/spring-hill-entrance-gate-alternate-angl.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/spring-hill-entrance-gate-alternate-angl.jpg`,
         "caption": "Spring Hill entrance gate, alternate angle framed by mature trees with lush green… · Photo: keandevelopment.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-community-s-signature-amenity-the-wh.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-community-s-signature-amenity-the-wh.jpg`,
         "caption": "The community's signature amenity: the white floating boathouse/pavilion on the 3-… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-floating-lake-pavilion-boathouse-wit.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-floating-lake-pavilion-boathouse-wit.jpg`,
         "caption": "The floating lake pavilion/boathouse with open-air seating area over the water, se… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-lakeside-floating-boathouse-with-cov.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-lakeside-floating-boathouse-with-cov.jpg`,
         "caption": "The lakeside floating boathouse with covered lounge deck and connecting footbridge… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/wide-landscape-view-of-the-community-s-p.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/wide-landscape-view-of-the-community-s-p.jpg`,
         "caption": "Wide landscape view of the community's private lake with the boathouse at right, m… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/the-community-lake-and-white-columned-bo.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/the-community-lake-and-white-columned-bo.jpg`,
         "caption": "The community lake and white columned boathouse pavilion reflected in the water, s… · Photo: keandevelopment.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/elevated-aerial-style-view-looking-down-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/elevated-aerial-style-view-looking-down-.jpg`,
         "caption": "Elevated/aerial-style view looking down the dock toward the floating lake pavilion… · Photo: keandevelopment.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/inside-the-lake-pavilion-s-covered-loung.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/inside-the-lake-pavilion-s-covered-loung.jpg`,
         "caption": "Inside the lake pavilion's covered lounge — teak furniture with blue cushions and… · Photo: springhillatoldwestbury.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/spring-hill-old-westbury/lake-pavilion-lounge-deck-with-blue-and-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/spring-hill-old-westbury/lake-pavilion-lounge-deck-with-blue-and-.jpg`,
         "caption": "Lake pavilion lounge deck with blue-and-white furnishings and 'SH' monogrammed pil… · Photo: springhillatoldwestbury.com"
       }
     ]
@@ -775,47 +776,47 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg`,
         "caption": "Aerial drone view of the full Legend Yacht & Beach Club community on its 46 waterf… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/aerial-drone-shot-from-the-water-showing.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/aerial-drone-shot-from-the-water-showing.jpg`,
         "caption": "Aerial drone shot from the water showing the community, marina and Long Island Sou… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/the-gated-security-entrance-gates-of-the.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/the-gated-security-entrance-gates-of-the.jpg`,
         "caption": "The gated/security entrance gates of the community (24/7 guarded gatehouse communi… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/the-clubhouse-beach-club-building-with-w.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/the-clubhouse-beach-club-building-with-w.jpg`,
         "caption": "The clubhouse / beach club building with waterfront views · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/clubhouse-patio-deck-overlooking-long-is.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/clubhouse-patio-deck-overlooking-long-is.jpg`,
         "caption": "Clubhouse patio/deck overlooking Long Island Sound · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/the-heated-swimming-pool-and-patio-overl.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/the-heated-swimming-pool-and-patio-overl.jpg`,
         "caption": "The heated swimming pool and patio overlooking the private marina · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/the-community-s-indoor-tennis-court-mult.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/the-community-s-indoor-tennis-court-mult.jpg`,
         "caption": "The community's indoor tennis court / multi-sport facility · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/the-private-marina-with-boat-slips-on-th.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/the-private-marina-with-boat-slips-on-th.jpg`,
         "caption": "The private marina with boat slips on the waterfront · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/landscaped-pond-and-nature-walking-groun.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/landscaped-pond-and-nature-walking-groun.jpg`,
         "caption": "Landscaped pond and nature/walking grounds within the gated community · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/nearby-garvies-point-waterfront-boardwal.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/nearby-garvies-point-waterfront-boardwal.jpg`,
         "caption": "Nearby Garvies Point waterfront boardwalk · Photo: community marketing archive"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/legend-yacht-beach-club/aerial-drone-view-of-the-full-legend-yac.jpg`
   },
   {
     "slug": "estates-north-hills-2",
@@ -886,7 +887,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.condoli.com/condos/estates-ii-mahasset/"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg`,
     "confidence": "high",
     "hoaDues": "~$700-$1,200 / mo",
     "propertyTax": {
@@ -895,31 +896,31 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/guard-gatehouse-and-gated-entrance-of-th.jpg`,
         "caption": "Guard gatehouse and gated entrance of The Estates at North Hills II, with the bric… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/wider-view-of-the-community-entrance-dri.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/wider-view-of-the-community-entrance-dri.jpg`,
         "caption": "Wider view of the community entrance drive curving up to the manned gatehouse, wit… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/renovated-clubhouse-great-room-vaulted-w.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/renovated-clubhouse-great-room-vaulted-w.jpg`,
         "caption": "Renovated clubhouse great room — vaulted white truss ceiling, chandeliers, seating… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/clubhouse-interior-dining-area-with-ston.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/clubhouse-interior-dining-area-with-ston.jpg`,
         "caption": "Clubhouse interior dining area with stone fireplace, wood floors and long communal… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/outdoor-swimming-pool-patio-bluestone-de.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/outdoor-swimming-pool-patio-bluestone-de.jpg`,
         "caption": "Outdoor swimming pool patio — bluestone deck with navy market umbrellas, café tabl… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/tennis-pickleball-courts-framed-by-matur.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/tennis-pickleball-courts-framed-by-matur.jpg`,
         "caption": "Tennis / pickleball courts framed by mature trees, with a landscaped paver walkway… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/estates-north-hills-2/close-up-of-the-community-s-hard-tennis-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/estates-north-hills-2/close-up-of-the-community-s-hard-tennis-.jpg`,
         "caption": "Close-up of the community's hard tennis court with net and shaded courtside bench,… · Photo: public-files.hoa-express.com"
       }
     ]
@@ -1000,7 +1001,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://www.zillow.com/homedetails/467-S-Links-Dr-North-Hills-NY-11576/2128306266_zpid/"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg`,
     "confidence": "high",
     "hoaDues": "~$1,180–$1,400 / mo",
     "propertyTax": {
@@ -1009,43 +1010,43 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/official-hoa-site-banner-photo-the-commu.jpg`,
         "caption": "Official HOA site banner photo: the community's stone-and-flower entrance monument… · Photo: public-files.hoa-express.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/the-community-clubhouse-gabled-clubhouse.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/the-community-clubhouse-gabled-clubhouse.jpg`,
         "caption": "The community CLUBHOUSE — gabled clubhouse building with covered front porch, perg… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/the-community-tennis-courts-green-hard-c.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/the-community-tennis-courts-green-hard-c.jpg`,
         "caption": "The community TENNIS COURTS — green hard courts with nets, ringed by mature evergr… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/representative-home-exterior-streetscape.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/representative-home-exterior-streetscape.jpg`,
         "caption": "Representative home exterior / streetscape: a beige two-story townhome with attach… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/representative-home-wide-front-side-elev.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/representative-home-wide-front-side-elev.jpg`,
         "caption": "Representative home — wide front/side elevation of a ranch-style attached home wit… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/streetscape-of-attached-townhomes-with-a.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/streetscape-of-attached-townhomes-with-a.jpg`,
         "caption": "Streetscape of attached townhomes with a large open green common lawn in front — t… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/entrance-gate-area-the-the-links-at-nort.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/entrance-gate-area-the-the-links-at-nort.jpg`,
         "caption": "Entrance/gate area: the 'THE LINKS At North Hills' stone monument sign beside the… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/open-landscaped-common-green-space-rolli.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/open-landscaped-common-green-space-rolli.jpg`,
         "caption": "Open landscaped common green space / rolling lawn with mature trees inside the 125… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/private-rear-deck-of-a-home-overlooking-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/private-rear-deck-of-a-home-overlooking-.jpg`,
         "caption": "Private rear deck of a home overlooking the community's open green lawn and tree l… · Photo: photos.prod.cirrussystem.net"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/links-north-hills/interior-of-a-representative-home-full-b.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/links-north-hills/interior-of-a-representative-home-full-b.jpg`,
         "caption": "Interior of a representative home — full bathroom with double-sink vanity and glas… · Photo: photos.prod.cirrussystem.net"
       }
     ]
@@ -1138,47 +1139,47 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg`,
         "caption": "Outdoor pool — the large outdoor/Olympic-sized swimming pool and deck area. Full-r… · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/outdoor-pool-alternate-view-poolside-dec.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/outdoor-pool-alternate-view-poolside-dec.jpg`,
         "caption": "Outdoor pool, alternate view (poolside / deck). Full-resolution from the official… · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/tennis-courts-at-acorn-ponds-har-tru-har.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/tennis-courts-at-acorn-ponds-har-tru-har.jpg`,
         "caption": "Tennis courts at Acorn Ponds (Har-Tru / hard courts, also used for pickleball). Fu… · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/the-grand-clubhouse-building-houses-fitn.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/the-grand-clubhouse-building-houses-fitn.jpg`,
         "caption": "The Grand Clubhouse building (houses fitness center, sauna, steam room, indoor poo… · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/fitness-center-gym-inside-the-clubhouse-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/fitness-center-gym-inside-the-clubhouse-.jpg`,
         "caption": "Fitness center / gym inside the clubhouse · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/the-namesake-pond-beside-the-clubhouse-l.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/the-namesake-pond-beside-the-clubhouse-l.jpg`,
         "caption": "The namesake pond beside the clubhouse — landscaped water feature within the commu… · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/community-streetscape-village-road-withi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/community-streetscape-village-road-withi.jpg`,
         "caption": "Community streetscape / village road within Acorn Ponds · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/community-playground-in-the-gated-park-a.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/community-playground-in-the-gated-park-a.jpg`,
         "caption": "Community playground in the gated park area · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/lowell-h-kane-village-park-layout-park-p.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/lowell-h-kane-village-park-layout-park-p.jpg`,
         "caption": "Lowell H. Kane Village Park layout / park & playground amenity · Photo: acornpondscondo.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/acorn-ponds-community-building-exterior-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/acorn-ponds-community-building-exterior-.jpg`,
         "caption": "Acorn Ponds community / building exterior · Photo: suffolkexperts.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/acorn-ponds/outdoor-pool-the-large-outdoor-olympic-s.jpg`
   },
   {
     "slug": "greens-north-hills",
@@ -1253,55 +1254,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg`,
         "caption": "Aerial view over The Greens at North Hills showing the community outdoor swimming… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/exterior-streetscape-of-a-greens-townhou.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/exterior-streetscape-of-a-greens-townhou.jpg`,
         "caption": "Exterior/streetscape of a Greens townhouse at 227 Ibis Court, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/townhouse-exterior-at-211-hornbill-drive.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/townhouse-exterior-at-211-hornbill-drive.jpg`,
         "caption": "Townhouse exterior at 211 Hornbill Drive, Manhasset — representative Greens at Nor… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/front-exterior-of-33-fairway-drive-townh.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/front-exterior-of-33-fairway-drive-townh.jpg`,
         "caption": "Front exterior of 33 Fairway Drive townhouse with garden and attached garage — The… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/front-exterior-with-landscaped-garden-34.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/front-exterior-with-landscaped-garden-34.jpg`,
         "caption": "Front exterior with landscaped garden, 34 Fairway Drive — The Greens at North Hill… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/townhouse-exterior-at-2-fairway-drive-th.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/townhouse-exterior-at-2-fairway-drive-th.jpg`,
         "caption": "Townhouse exterior at 2 Fairway Drive — The Greens at North Hills, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/exterior-view-of-16-fairway-circle-south.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/exterior-view-of-16-fairway-circle-south.jpg`,
         "caption": "Exterior view of 16 Fairway Circle South — renovated home in The Greens at North H… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/rear-exterior-of-42-fairway-drive-showin.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/rear-exterior-of-42-fairway-drive-showin.jpg`,
         "caption": "Rear exterior of 42 Fairway Drive showing private backyard and garden — The Greens… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/interior-living-space-of-227-ibis-court-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/interior-living-space-of-227-ibis-court-.jpg`,
         "caption": "Interior (living space) of 227 Ibis Court unit — The Greens at North Hills, showin… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/greens-area-townhouse-exterior-265-sparr.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/greens-area-townhouse-exterior-265-sparr.jpg`,
         "caption": "Greens-area townhouse exterior, 265 Sparrow Drive, Manhasset · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/home-with-garden-landscaping-190-sussex-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/home-with-garden-landscaping-190-sussex-.jpg`,
         "caption": "Home with garden/landscaping, 190 Sussex Drive, Manhasset — Greens at North Hills… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/onekey-mls-listing-photo-of-25-fairway-c.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/onekey-mls-listing-photo-of-25-fairway-c.jpg`,
         "caption": "OneKey MLS listing photo of 25 Fairway Circle S — townhouse in The Greens at North… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/greens-north-hills/aerial-view-over-the-greens-at-north-hil.jpg`
   },
   {
     "slug": "whitewood-north-hills",
@@ -1372,19 +1373,19 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg`,
         "caption": "The gated vehicle entrance to Whitewood at North Hills — stone gate pier, lantern,… · Photo: suffolkexperts.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/whitewood-north-hills/front-side-exterior-of-a-whitewood-home-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/whitewood-north-hills/front-side-exterior-of-a-whitewood-home-.jpg`,
         "caption": "Front/side exterior of a Whitewood home — brick multi-level townhouse-style reside… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/whitewood-north-hills/streetscape-of-attached-whitewood-reside.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/whitewood-north-hills/streetscape-of-attached-whitewood-reside.jpg`,
         "caption": "Streetscape of attached Whitewood residences — row of brick townhomes with 2-car g… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/whitewood-north-hills/the-gated-vehicle-entrance-to-whitewood-.jpg`
   },
   {
     "slug": "roslyn-landing",
@@ -1484,55 +1485,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg`,
         "caption": "Aerial view of the Roslyn Landing community — professional drone photo showing the… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/aerial-view-of-roslyn-landing-2-overhead.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/aerial-view-of-roslyn-landing-2-overhead.jpg`,
         "caption": "Aerial view of Roslyn Landing #2 — overhead shot of the community's rooflines, cou… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/aerial-view-of-roslyn-landing-3-bird-s-e.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/aerial-view-of-roslyn-landing-3-bird-s-e.jpg`,
         "caption": "Aerial view of Roslyn Landing #3 — bird's-eye view of the gated community and surr… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/aerial-view-of-roslyn-landing-4-high-ang.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/aerial-view-of-roslyn-landing-4-high-ang.jpg`,
         "caption": "Aerial view of Roslyn Landing #4 — high-angle photo of the full development showin… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-exterior-landscaped-great.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-exterior-landscaped-great.jpg`,
         "caption": "Roslyn Landing exterior — landscaped 'great lawn' / green space with the community… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-exterior-streetscape-prof.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-exterior-streetscape-prof.jpg`,
         "caption": "Roslyn Landing exterior / streetscape — professionally photographed view of the to… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/representative-roslyn-landing-home-exter.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/representative-roslyn-landing-home-exter.jpg`,
         "caption": "Representative Roslyn Landing home exterior — building facade and entrance in the… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-streetscape-row-of-townho.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-streetscape-row-of-townho.jpg`,
         "caption": "Roslyn Landing streetscape — row of townhomes with driveways and landscaping along… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-building-exterior-home-fa.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-building-exterior-home-fa.jpg`,
         "caption": "Roslyn Landing building exterior — home facade / streetscape within the gated comm… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-exterior-grounds-communit.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-exterior-grounds-communit.jpg`,
         "caption": "Roslyn Landing exterior / grounds — community buildings with landscaped common are… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-exterior-townhome-buildin.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-exterior-townhome-buildin.jpg`,
         "caption": "Roslyn Landing exterior — townhome building facades and entryways along a landscap… · Photo: community marketing archive"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/roslyn-landing-streetscape-view-down-a-c.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/roslyn-landing-streetscape-view-down-a-c.jpg`,
         "caption": "Roslyn Landing streetscape — view down a community street lined with the classic-s… · Photo: community marketing archive"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/roslyn-landing/aerial-view-of-the-roslyn-landing-commun.jpg`
   },
   {
     "slug": "fieldstone-oyster-bay",
@@ -1607,55 +1608,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg`,
         "caption": "Fieldstone gated entrance / gatehouse — official HOA rendering of the guard house,… · Photo: casamere-hoa.s3.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext.jpg`,
         "caption": "Representative Fieldstone home — front exterior / streetscape of 38 Fieldstone Lan… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext-2.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/representative-fieldstone-home-front-ext-2.jpg`,
         "caption": "Representative Fieldstone home — front exterior with sidewalk streetscape (red/blu… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-home-exterior-blue-shingled-r.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-home-exterior-blue-shingled-r.jpg`,
         "caption": "Fieldstone home exterior — blue-shingled residence with landscaped front yard and… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-home-rear-backyard-exterior-p.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-home-rear-backyard-exterior-p.jpg`,
         "caption": "Fieldstone home rear / backyard exterior — private lawn and patio behind a shingle… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-community-grounds-open-green-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-community-grounds-open-green-.jpg`,
         "caption": "Fieldstone community grounds — open green common lawn / parkland ringed by mature… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-interior-streetscape-quiet-tr.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-interior-streetscape-quiet-tr.jpg`,
         "caption": "Fieldstone interior streetscape — quiet tree-lined community road curving through… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/aerial-view-of-a-fieldstone-lane-home-an.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/aerial-view-of-a-fieldstone-lane-home-an.jpg`,
         "caption": "Aerial view of a Fieldstone Lane home and its expansive lawn/grounds among mature… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-home-streetscape-38-fieldston.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-home-streetscape-38-fieldston.jpg`,
         "caption": "Fieldstone home streetscape — 38 Fieldstone Lane seen from the community street, s… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-home-exterior-detail-front-el.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-home-exterior-detail-front-el.jpg`,
         "caption": "Fieldstone home exterior detail — front elevation of 38 Fieldstone Lane with entry… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-home-interior-two-story-great.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-home-interior-two-story-great.jpg`,
         "caption": "Fieldstone home interior — two-story great room with vaulted ceiling, fireplace an… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-location-lifestyle-nearby-oys.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-location-lifestyle-nearby-oys.jpg`,
         "caption": "Fieldstone location / lifestyle — nearby Oyster Bay Harbor waterfront with boat la… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/fieldstone-oyster-bay/fieldstone-gated-entrance-gatehouse-offi.jpg`
   },
   {
     "slug": "lattingtown-preserve",
@@ -1732,55 +1733,55 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg`,
         "caption": "Wide aerial hero shot over the community's private beach and beachfront clubhouse… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/aerial-of-the-two-story-beachfront-commu.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/aerial-of-the-two-story-beachfront-commu.jpg`,
         "caption": "Aerial of the two-story beachfront community clubhouse (wraparound porches, kayak/… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/covered-clubhouse-porch-terrace-overlook.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/covered-clubhouse-porch-terrace-overlook.jpg`,
         "caption": "Covered clubhouse/porch terrace overlooking the beach and open water of Long Islan… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/the-community-s-private-sandy-beach-on-l.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/the-community-s-private-sandy-beach-on-l.jpg`,
         "caption": "The community's private sandy beach on Long Island Sound with a protective rock je… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/beach-watersports-amenity-community-kaya.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/beach-watersports-amenity-community-kaya.jpg`,
         "caption": "Beach watersports amenity: community kayak/paddleboard racks and storage on the pr… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/representative-home-in-the-community-fro.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/representative-home-in-the-community-fro.jpg`,
         "caption": "Representative home in the community — front exterior of a shingle/Tudor-style res… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/parklike-community-streetscape-expansive.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/parklike-community-streetscape-expansive.jpg`,
         "caption": "Parklike community streetscape: expansive lawns and mature trees with homes set ba… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/wooded-private-driveway-entry-lane-windi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/wooded-private-driveway-entry-lane-windi.jpg`,
         "caption": "Wooded private driveway/entry lane winding through mature evergreens and flowering… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/carriage-house-style-multi-bay-garage-wi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/carriage-house-style-multi-bay-garage-wi.jpg`,
         "caption": "Carriage-house style multi-bay garage with upper balcony — representative outbuild… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/backyard-recreation-private-sport-basket.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/backyard-recreation-private-sport-basket.jpg`,
         "caption": "Backyard recreation: private sport/basketball court with adjacent patio, outdoor d… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/representative-home-interior-vaulted-upp.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/representative-home-interior-vaulted-upp.jpg`,
         "caption": "Representative home interior — vaulted upper-level bedroom/flex room with shiplap… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/representative-home-interior-large-light.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/representative-home-interior-large-light.jpg`,
         "caption": "Representative home interior — large light-filled room with cathedral ceiling, exp… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/lattingtown-preserve/wide-aerial-hero-shot-over-the-community.jpg`
   },
   {
     "slug": "hamlet-olde-oyster-bay",
@@ -1861,7 +1862,7 @@ export const gatedCommunities: GatedCommunity[] = [
         "url": "https://hoa-community.com/hamlet-olde-oyster-bay-hoa-plainview-ny/"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg",
+    "image": `${SITE_MEDIA_ROOT}/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg`,
     "confidence": "high",
     "propertyTax": {
       "en": "~$16,000–$28,000 / yr (Nassau County; ~$16,300 avg per 2018 MLS records, higher for larger single-family homes)",
@@ -1869,15 +1870,15 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-olde-oyster-bay/representative-home-at-11-bayview-drive-.jpg`,
         "caption": "Representative home at 11 Bayview Drive — two-story residence with light siding an… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-olde-oyster-bay/home-streetscape-at-173-sagamore-drive-l.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-olde-oyster-bay/home-streetscape-at-173-sagamore-drive-l.jpg`,
         "caption": "Home/streetscape at 173 Sagamore Drive. Large full-resolution image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-olde-oyster-bay/home-streetscape-at-108-sagamore-drive-f.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-olde-oyster-bay/home-streetscape-at-108-sagamore-drive-f.jpg`,
         "caption": "Home/streetscape at 108 Sagamore Drive. Full-resolution image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       }
     ]
@@ -1960,35 +1961,35 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg`,
         "caption": "Home at 1 Olde Hamlet Drive — welcome/entrance shot of a home just inside the gate… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/estate-home-streetscape-at-20-kettlepond.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/estate-home-streetscape-at-20-kettlepond.jpg`,
         "caption": "Estate home / streetscape at 20 Kettlepond Road, The Hamlet Estates at Jericho · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/estate-home-exterior-at-3-olde-hamlet-dr.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/estate-home-exterior-at-3-olde-hamlet-dr.jpg`,
         "caption": "Estate home exterior at 3 Olde Hamlet Drive (official HOA site). Large hero image · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/estate-home-front-elevation-at-50-holida.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/estate-home-front-elevation-at-50-holida.jpg`,
         "caption": "Estate home / front elevation at 50 Holiday Pond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/estate-home-exterior-at-53-kettlepond-ro.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/estate-home-exterior-at-53-kettlepond-ro.jpg`,
         "caption": "Estate home exterior at 53 Kettlepond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/home-streetscape-at-17-olde-hamlet-drive.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/home-streetscape-at-17-olde-hamlet-drive.jpg`,
         "caption": "Home / streetscape at 17 Olde Hamlet Drive · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/home-at-36-kettlepond-road-official-hoa-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/home-at-36-kettlepond-road-official-hoa-.jpg`,
         "caption": "Home at 36 Kettlepond Road · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/hamlet-estates-jericho/home-at-1-olde-hamlet-drive-welcome-entr.jpg`
   },
   {
     "slug": "hamlet-jericho",
@@ -2081,39 +2082,39 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg`,
         "caption": "Representative Hamlet Estates home exterior — 20 Kettlepond Road. Signature Prairi… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/streetscape-home-exterior-3-olde-hamlet-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/streetscape-home-exterior-3-olde-hamlet-.jpg`,
         "caption": "Streetscape / home exterior — 3 Olde Hamlet Drive. Front elevation with mature lan… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/representative-home-exterior-50-holiday-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/representative-home-exterior-50-holiday-.jpg`,
         "caption": "Representative home exterior — 50 Holiday Pond Road. Contemporary two-story with b… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/home-exterior-streetscape-53-kettlepond-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/home-exterior-streetscape-53-kettlepond-.jpg`,
         "caption": "Home exterior / streetscape — 53 Kettlepond Road. Three-quarter view showing full… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/home-exterior-17-olde-hamlet-drive-side-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/home-exterior-17-olde-hamlet-drive-side-.jpg`,
         "caption": "Home exterior — 17 Olde Hamlet Drive. Side/front elevation with stone veneer and P… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/interior-grand-two-story-marble-foyer-wi.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/interior-grand-two-story-marble-foyer-wi.jpg`,
         "caption": "Interior — grand two-story marble foyer with curved staircase, iron chandelier and… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/current-active-listing-primary-photo-com.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/current-active-listing-primary-photo-com.jpg`,
         "caption": "Current active listing primary photo (community feed) — home exterior. From the li… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/current-active-listing-primary-photo-com-2.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/current-active-listing-primary-photo-com-2.jpg`,
         "caption": "Current active listing primary photo (community feed) — home/streetscape. From the… · Photo: casamere-hoa.s3.us-east-1.amazonaws.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/hamlet-jericho/representative-hamlet-estates-home-exter.jpg`
   },
   {
     "slug": "lattingtown-ponds",
@@ -2188,27 +2189,27 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg`,
         "caption": "12 Sparrow Court, Lattingtown Ponds (Glen Cove, NY 11542) — representative townhom… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/2-cardinal-court-lattingtown-ponds-repre.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/2-cardinal-court-lattingtown-ponds-repre.jpg`,
         "caption": "2 Cardinal Court, Lattingtown Ponds — representative home exterior; hero photo fro… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/18-swan-court-lattingtown-ponds-3-bed-to.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/18-swan-court-lattingtown-ponds-3-bed-to.jpg`,
         "caption": "18 Swan Court, Lattingtown Ponds — 3-bed townhome exterior; hero photo from the Co… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/9-pembroke-drive-glen-cove-ny-11542-home.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/9-pembroke-drive-glen-cove-ny-11542-home.jpg`,
         "caption": "9 Pembroke Drive, Glen Cove NY 11542 — home exterior/streetscape near/within the c… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/115-lattingtown-road-glen-cove-ny-11542-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/115-lattingtown-road-glen-cove-ny-11542-.jpg`,
         "caption": "115 Lattingtown Road, Glen Cove NY 11542 — property on the main road serving the c… · Listing photo · courtesy of the listing brokerage (OneKey® MLS)"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/lattingtown-ponds/12-sparrow-court-lattingtown-ponds-glen-.jpg`
   },
   {
     "slug": "summit-high-point-north-hills",
@@ -2281,54 +2282,54 @@ export const gatedCommunities: GatedCommunity[] = [
     },
     "gallery": [
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg`,
         "caption": "Elevated / aerial view of the community — rows of terracotta-roofed townhomes set… · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/outdoor-tennis-courts-green-hard-courts-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/outdoor-tennis-courts-green-hard-courts-.jpg`,
         "caption": "Outdoor tennis courts (green hard courts) at the community's racquet/health-club a… · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/indoor-swimming-pool-in-the-community-cl.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/indoor-swimming-pool-in-the-community-cl.jpg`,
         "caption": "Indoor swimming pool in the community clubhouse / health club. WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/fitness-center-gym-community-health-club.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/fitness-center-gym-community-health-club.jpg`,
         "caption": "Fitness center / gym (community health club). WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/townhouse-building-exterior-streetscape-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/townhouse-building-exterior-streetscape-.jpg`,
         "caption": "Townhouse building exterior / streetscape (gray-sided multi-unit building). WebP 1… · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/streetscape-row-of-townhouse-building-ex.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/streetscape-row-of-townhouse-building-ex.jpg`,
         "caption": "Streetscape: row of townhouse building exteriors with private wooden decks. WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/streetscape-townhouse-row-exteriors-with.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/streetscape-townhouse-row-exteriors-with.jpg`,
         "caption": "Streetscape: townhouse row exteriors with decks and landscaped grounds. WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/covered-patio-deck-of-a-home-overlooking.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/covered-patio-deck-of-a-home-overlooking.jpg`,
         "caption": "Covered patio/deck of a home overlooking the community's landscaped grounds. WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/landscaped-grounds-flower-garden-walking.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/landscaped-grounds-flower-garden-walking.jpg`,
         "caption": "Landscaped grounds / flower-garden walking path within the community. WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/landscaped-community-common-area-garden-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/landscaped-community-common-area-garden-.jpg`,
         "caption": "Landscaped community common area / garden with signage and plantings near a buildi… · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/home-exterior-with-private-deck-and-wood.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/home-exterior-with-private-deck-and-wood.jpg`,
         "caption": "Home exterior with private deck and wooded backdrop (representative unit). WebP, · Photo: cdn.erealtymedia.com"
       },
       {
-        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/representative-interior-marble-finished-.jpg",
+        "src": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/representative-interior-marble-finished-.jpg`,
         "caption": "Representative interior: marble-finished bathroom in a community unit. WebP, · Photo: cdn.erealtymedia.com"
       }
     ],
-    "image": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg"
+    "image": `${SITE_MEDIA_ROOT}/communities/summit-high-point-north-hills/elevated-aerial-view-of-the-community-ro.jpg`
   }
 ];

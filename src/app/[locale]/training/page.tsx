@@ -5,10 +5,11 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getRouteLocale, getT, type Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
+import { SITE_MEDIA_ROOT } from "@/lib/media";
 
 const ARCHIVE_URL = "https://agents.homixny.com/training";
 const POSTER_ROOT =
-  "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/training";
+  `${SITE_MEDIA_ROOT}/training`;
 
 type LocalizedText = Record<Locale, string>;
 

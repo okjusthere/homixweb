@@ -7,6 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { StatsBand } from "@/components/home/StatsBand";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
+import { SITE_MEDIA_ROOT } from "@/lib/media";
 
 export async function generateMetadata({
   params,
@@ -29,7 +30,7 @@ export async function generateMetadata({
   });
 }
 
-const HERO = "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/about/hero.jpg";
+const HERO = `${SITE_MEDIA_ROOT}/about/hero.jpg`;
 
 function n2(i: number): string {
   return String(i + 1).padStart(2, "0");
@@ -114,7 +115,7 @@ export default async function AboutPage({
           </div>
           <div className="relative mt-12 aspect-[3/2] overflow-hidden rounded-sm bg-line/40">
             <Image
-              src="https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/agent-photos/site-media/about/team.jpg"
+              src={`${SITE_MEDIA_ROOT}/about/team.jpg`}
               alt="The Homix team"
               fill
               sizes="(max-width: 1024px) 100vw, 1200px"
