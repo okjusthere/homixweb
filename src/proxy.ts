@@ -19,8 +19,12 @@ export function proxy(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  // /en is an internal route only. Keep one canonical English URL surface.
+  // Direct /en visits canonicalize to the clean English URL. Requests carrying
+  // this private marker are the internal target of the rewrite below.
   if (pathname === "/en" || pathname.startsWith("/en/")) {
+    if (request.headers.get("x-homix-locale-rewrite") === "1") {
+      return NextResponse.next();
+    }
     const url = request.nextUrl.clone();
     url.pathname = localizePath("en", pathname);
     return NextResponse.redirect(url, 308);
@@ -32,12 +36,14 @@ export function proxy(request: NextRequest) {
   // Preserve external English URLs while rendering through app/[locale].
   const url = request.nextUrl.clone();
   url.pathname = pathname === "/" ? "/en" : `/en${pathname}`;
-  return NextResponse.rewrite(url);
+  const headers = new Headers(request.headers);
+  headers.set("x-homix-locale-rewrite", "1");
+  return NextResponse.rewrite(url, { request: { headers } });
 }
 
 export const config = {
   // Skip non-localized routes, metadata files, API, and static assets.
   matcher: [
-    "/((?!_next(?:/|$)|api(?:/|$)|og(?:/|$)|llms\\.txt$|robots\\.txt$|sitemap\\.xml$|opengraph-image(?:/|$)|icon\\.png$|apple-icon\\.png$|admin(?:/|$)|edit(?:/|$)|training(?:/|$)|.*\\.[a-zA-Z0-9]+$).*)",
+    "/((?!_next(?:/|$)|api(?:/|$)|og(?:/|$)|llms\\.txt$|robots\\.txt$|sitemap\\.xml$|icon\\.png$|apple-icon\\.png$|admin(?:/|$)|edit(?:/|$)|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };

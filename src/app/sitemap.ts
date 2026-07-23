@@ -50,6 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     communitiesBasePath,
     "/about",
     "/join",
+    "/training",
     "/calculator",
     "/contact",
     "/guides/articles",

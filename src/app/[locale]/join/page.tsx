@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import Link from "@/components/ui/LocalizedLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
@@ -49,7 +50,16 @@ export default async function JoinPage({
       <Container className="py-16 sm:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           <div>
-            <Eyebrow>{t.join.eyebrow}</Eyebrow>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
+              <Eyebrow>{t.join.eyebrow}</Eyebrow>
+              <Link
+                href="/training"
+                className="inline-flex items-center gap-2 border-l border-bronze pl-3 text-xs font-semibold text-ink transition-colors hover:text-bronze"
+              >
+                <span>{t.join.trainingTag}</span>
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
             <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.05] tracking-tight text-ink sm:text-[3.25rem]">
               {t.join.title}
             </h1>

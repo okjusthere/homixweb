@@ -64,7 +64,9 @@ export function pageMetadata(input: PageMetaInput): Metadata {
   const enUrl = localizePath("en", input.path);
   const zhUrl = localizePath("zh", input.path);
   const canonical = input.locale === "zh" ? zhUrl : enUrl;
-  const image = input.image ?? introOgImage(title, description, canonical);
+  // Keep share-image URLs self-contained instead of relying on parent metadata
+  // resolution when route metadata is generated independently.
+  const image = absUrl(input.image ?? introOgImage(title, description, canonical));
   const imageAlt = compact(`${title}. ${description}`, 300);
 
   return {
