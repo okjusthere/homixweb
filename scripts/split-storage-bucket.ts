@@ -62,10 +62,41 @@ async function main() {
   const sources = await listAll(SRC_PREFIX);
   console.log(`Found ${sources.length} objects under ${SRC_BUCKET}/${SRC_PREFIX}/`);
 
-  // 3. Copy (download → upload; cross-bucket copy isn't in the client API).
+  // 3a. Resume support: list what's already in the destination so a re-run
+  // after a mid-copy failure (rate limit, network) skips finished files
+  // instead of re-copying all 1000+.
+  async function listDst(prefix: string): Promise<Set<string>> {
+    const out = new Set<string>();
+    async function walk(p: string) {
+      let offset = 0;
+      for (;;) {
+        const { data, error } = await sb.storage.from(DST_BUCKET).list(p, { limit: 100, offset });
+        if (error) return; // bucket empty/new — nothing to skip
+        if (!data || data.length === 0) break;
+        for (const entry of data) {
+          const path = p ? `${p}/${entry.name}` : entry.name;
+          if (entry.id === null) await walk(path);
+          else out.add(path);
+        }
+        if (data.length < 100) break;
+        offset += data.length;
+      }
+    }
+    await walk(prefix);
+    return out;
+  }
+  const alreadyThere = await listDst("");
+  if (alreadyThere.size) console.log(`Destination already has ${alreadyThere.size} objects — will skip those.`);
+
+  // 3b. Copy (download → upload; cross-bucket copy isn't in the client API).
   let copied = 0;
+  let skipped = 0;
   for (const src of sources) {
     const dst = src.replace(new RegExp(`^${SRC_PREFIX}/`), "");
+    if (alreadyThere.has(dst)) {
+      skipped += 1;
+      continue;
+    }
     const { data: blob, error: dlErr } = await sb.storage.from(SRC_BUCKET).download(src);
     if (dlErr || !blob) throw new Error(`download ${src}: ${dlErr?.message}`);
     const { error: upErr } = await sb.storage
@@ -73,9 +104,9 @@ async function main() {
       .upload(dst, blob, { upsert: true, contentType: blob.type || undefined });
     if (upErr) throw new Error(`upload ${dst}: ${upErr.message}`);
     copied += 1;
-    if (copied % 25 === 0) console.log(`  ${copied}/${sources.length}…`);
+    if (copied % 25 === 0) console.log(`  copied ${copied} (skipped ${skipped})…`);
   }
-  console.log(`Copied ${copied} objects into "${DST_BUCKET}".`);
+  console.log(`Copied ${copied} objects into "${DST_BUCKET}" (skipped ${skipped} already present).`);
 
   // 4. Verify one public URL end-to-end.
   if (sources.length > 0) {

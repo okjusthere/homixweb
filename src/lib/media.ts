@@ -9,11 +9,13 @@
  * - `site-media`    — editorial/site imagery (journal, guides, neighborhoods,
  *   communities, training, page heroes). Managed by hand in the dashboard.
  *
- * SITE_MEDIA_ROOT still points at the legacy `agent-photos/site-media/`
- * prefix until the objects are copied to the dedicated bucket; flip the
- * constant at cutover.
+ * The 1111 site-media objects were copied into the dedicated public
+ * `site-media` bucket (scripts/split-storage-bucket.ts, verified 200), so
+ * SITE_MEDIA_ROOT now points there. `agent-photos` is back to advisor
+ * portraits only. The old `agent-photos/site-media/` copies are kept until
+ * this deploy is verified, then cleaned up by hand.
  */
 export const STORAGE_ROOT =
   "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public";
 
-export const SITE_MEDIA_ROOT = `${STORAGE_ROOT}/agent-photos/site-media`;
+export const SITE_MEDIA_ROOT = `${STORAGE_ROOT}/site-media`;
