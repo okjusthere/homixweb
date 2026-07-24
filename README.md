@@ -42,15 +42,17 @@ Minimum for a public launch with inquiries:
 NEXT_PUBLIC_SITE_URL=https://www.homixny.com
 SUPABASE_URL=...
 SUPABASE_SERVICE_ROLE_KEY=...
-ADMIN_SECRET=...
-ADMIN_PASSWORD=...
+AGENTS_REVALIDATE_SECRET=...
 RESEND_API_KEY=...
 INQUIRY_TO_EMAIL=homix@homixny.com
 INQUIRY_FROM_EMAIL="Homix Website <inquiries@homixny.com>"
 ```
 
-`ADMIN_SECRET` protects one-time admin API endpoints. `ADMIN_PASSWORD` is the
-login password for `/admin`; keep them different.
+`AGENTS_REVALIDATE_SECRET` is the shared secret with the agents.homixny.com
+portal — it authorizes the portal's advisor-profile, roster-admin, and
+cache-revalidate calls to this site, and must match the portal's value. Advisor
+profiles are managed entirely from that portal (self-edit + admin `/roster`);
+this site has no password-gated admin page.
 
 ## Supabase
 

@@ -7,8 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      // Internal admin/edit routes carry meta noindex; keep API handlers out of
-      // the crawl budget entirely.
+      // Keep API handlers out of the crawl budget entirely.
       disallow: ["/api/"],
     },
     sitemap: `${base}/sitemap.xml`,

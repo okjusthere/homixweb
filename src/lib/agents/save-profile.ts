@@ -5,15 +5,15 @@ import { findRosterMemberByLicense } from "@/lib/agents/mls-roster";
 import { getSupabase } from "@/lib/supabase";
 
 /**
- * Shared core for saving a public advisor profile. Both entry points reuse it:
- *  - the magic-link editor (edit/[token]/actions.ts), which finds the agent by
- *    edit_token, and
- *  - the portal-facing API (/api/agent-profile), which finds the agent by
+ * Shared core for saving a public advisor profile. Every entry point reuses it,
+ * so validation / image upload / MLS-license verification / cache revalidation
+ * can never drift between them. Callers resolve the agent row their own way,
+ * then hand it here with the submitted form:
+ *  - /api/agent-profile — the advisor's own linked profile, keyed by
  *    portal_agent_id from an authenticated agents.homixny.com session.
+ *  - /api/agent-admin/edit — an admin editing any advisor, keyed by public id.
  *
  * The write is keyed by agent id, so it doesn't matter how the row was found.
- * All validation, image upload, MLS-license verification, and cache
- * revalidation live here so the two callers can never drift.
  */
 
 export interface SaveState {

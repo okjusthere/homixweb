@@ -151,14 +151,3 @@ export async function getAgents(): Promise<Agent[]> {
 export async function getAgentBySlug(slug: string): Promise<Agent | null> {
   return loadPublicAgentBySlug(slug);
 }
-
-/** Load an advisor by their secret edit token (for the self-edit page). */
-export async function getAgentByToken(
-  token: string,
-): Promise<(Agent & { editToken: string }) | null> {
-  const sb = getSupabase();
-  if (!sb) return null;
-  const { data } = await sb.from("agents").select("*").eq("edit_token", token).maybeSingle();
-  if (!data) return null;
-  return { ...rowToAgent(data as AgentRow), editToken: token };
-}

@@ -16,8 +16,7 @@ Required for public launch:
 - `BBO_HOMIX_LIST_OFFICE_KEY`: `KEY421354028`.
 - `SUPABASE_URL`: Supabase Project URL.
 - `SUPABASE_SERVICE_ROLE_KEY`: server-only Supabase service-role key.
-- `ADMIN_SECRET`: long random secret for `/api/admin/*` utility endpoints.
-- `ADMIN_PASSWORD`: password used by `/admin`.
+- `AGENTS_REVALIDATE_SECRET`: shared secret with the agents.homixny.com portal; authorizes the portal's advisor-profile, roster-admin, and cache-revalidate calls. Must match the portal's value.
 - `RESEND_API_KEY`: Resend API key for inquiry email delivery.
 - `INQUIRY_TO_EMAIL`: `homix@homixny.com`.
 - `INQUIRY_FROM_EMAIL`: verified sender, for example `Homix Website <inquiries@homixny.com>`.
@@ -27,7 +26,7 @@ Optional:
 - `INQUIRY_BCC_EMAIL`: comma-separated internal BCC recipients.
 - `BBO_REVALIDATE_SECONDS`: server-side listing fetch revalidation window; default `300`.
 
-Never expose `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_SECRET`, `ADMIN_PASSWORD`,
+Never expose `SUPABASE_SERVICE_ROLE_KEY`, `AGENTS_REVALIDATE_SECRET`,
 `RESEND_API_KEY`, or `BBO_API_KEY` with a `NEXT_PUBLIC_` prefix.
 
 ## Supabase Setup
@@ -70,8 +69,9 @@ The script uploads to the existing public `agent-photos` bucket, updates agent
 `photo_url` rows by slug, and replaces local content-media paths in source files
 with Supabase public URLs. Keep the service-role key out of Git and logs.
 
-New advisor self-service uploads through `/edit/<token>` also write to
-`agent-photos/agents/<slug>/...`.
+Advisor profile edits from the agents.homixny.com portal also upload headshots to
+`agent-photos/agents/<slug>/...` (forwarded to this site's `/api/agent-profile` /
+`/api/agent-admin/edit`).
 
 Listing photos are excluded from this storage policy. They are dynamic MLS media
 served through BBO/R2 and should not be copied into Supabase or Git.
@@ -105,25 +105,30 @@ Operational check after deploy:
 Avoid using a temporary sender for production; it can reduce deliverability or
 fail when sending outside test recipients.
 
-## Admin And Advisor Profiles
+## Advisor Profiles
 
-`/admin` requires `ADMIN_PASSWORD`.
+Advisor profiles live in `public.agents` and are managed entirely from the
+agents.homixny.com portal — this site has no password-gated admin page. Portal
+calls are authorized by `AGENTS_REVALIDATE_SECRET` (must match the portal's value)
+and land on this site's endpoints:
 
-Admin utility endpoints require `ADMIN_SECRET`:
-
-- `/api/admin/migrate-agents?secret=...`
-- `/api/admin/edit-links?secret=...`
+- `/api/agent-profile` (+ `/publish`) — an advisor self-editing their own linked
+  profile, keyed by `portal_agent_id`.
+- `/api/agent-admin` (+ `/edit`) — an admin managing the roster: create, publish/
+  hide (`visible`), reorder, delete, and edit any advisor by public id (including
+  advisors with no portal account).
+- `/api/revalidate-agents` — cache refresh after an edit.
 
 Recommended launch sequence:
 
-1. Set Supabase env vars, `ADMIN_SECRET`, and `ADMIN_PASSWORD`.
+1. Set the Supabase env vars and `AGENTS_REVALIDATE_SECRET` (identical on this
+   site and the portal).
 2. Deploy.
-3. Visit `/api/admin/migrate-agents?secret=YOUR_SECRET` once to seed advisors.
-4. Store private edit links securely.
-5. Send each advisor their own `/edit/<token>` link.
+3. In the portal, admins open **/roster** to add/manage advisors; advisors
+   self-edit under **我的档案 → 对外主页**.
 
-Advisor missing photos, bios, phone numbers, emails, and license numbers are
-expected to be completed through Supabase self-editing.
+Advisors missing photos, bios, phone numbers, emails, and license numbers are
+expected to complete them from the portal.
 
 ## Legal And Compliance
 
