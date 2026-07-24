@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
+import { syncAgentIdentity } from "@/lib/agents/sync-identity";
 import { getSupabase } from "@/lib/supabase";
 
 export const runtime = "nodejs";
@@ -10,7 +11,8 @@ export const dynamic = "force-dynamic";
 // This replaces the old website /admin page: agents.homixny.com authenticates an
 // admin (Google/NextAuth) and forwards management actions here over the shared
 // server-to-server secret. Account creation/deactivation lives in the portal;
-// this endpoint only controls public visibility and ordering.
+// this endpoint controls public visibility, ordering, and explicit links to
+// portal accounts. It never guesses identity from names or emails.
 function authed(req: NextRequest): boolean {
   const secret = process.env.AGENTS_REVALIDATE_SECRET?.trim();
   if (!secret) return false;
@@ -39,7 +41,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({ agents: data ?? [] }, { headers: { "Cache-Control": "no-store" } });
 }
 
-/** POST → a JSON management action: visibility | reorder. */
+/** POST → a JSON management action: visibility | reorder | link. */
 export async function POST(req: NextRequest) {
   if (!authed(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const sb = getSupabase();
@@ -47,6 +49,100 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json().catch(() => ({}));
   const action = String(body.action || "");
+
+  if (action === "link") {
+    const id = String(body.id || "").trim();
+    const portalAgentId = Number(body.portalAgentId);
+    if (!id || !Number.isInteger(portalAgentId) || portalAgentId <= 0) {
+      return NextResponse.json(
+        { error: "id and portalAgentId required" },
+        { status: 400 },
+      );
+    }
+
+    const { data: profile, error: loadError } = await sb
+      .from("agents")
+      .select("id, portal_agent_id")
+      .eq("id", id)
+      .maybeSingle();
+    if (loadError) {
+      return NextResponse.json({ error: loadError.message }, { status: 500 });
+    }
+    if (!profile) {
+      return NextResponse.json({ error: "Public profile not found" }, { status: 404 });
+    }
+    if (
+      profile.portal_agent_id != null &&
+      profile.portal_agent_id !== portalAgentId
+    ) {
+      return NextResponse.json(
+        { error: "Public profile is already linked to another portal account." },
+        { status: 409 },
+      );
+    }
+
+    const { data: claimed, error: claimedError } = await sb
+      .from("agents")
+      .select("id")
+      .eq("portal_agent_id", portalAgentId)
+      .neq("id", id)
+      .maybeSingle();
+    if (claimedError) {
+      return NextResponse.json({ error: claimedError.message }, { status: 500 });
+    }
+    if (claimed) {
+      return NextResponse.json(
+        { error: "Portal account is already linked to another public profile." },
+        { status: 409 },
+      );
+    }
+
+    if (profile.portal_agent_id == null) {
+      const { data: linked, error: linkError } = await sb
+        .from("agents")
+        .update({
+          portal_agent_id: portalAgentId,
+          updated_at: new Date().toISOString(),
+        })
+        .eq("id", id)
+        .is("portal_agent_id", null)
+        .select("id")
+        .maybeSingle();
+      if (linkError) {
+        const status = linkError.code === "23505" ? 409 : 500;
+        return NextResponse.json({ error: linkError.message }, { status });
+      }
+      if (!linked) {
+        return NextResponse.json(
+          { error: "Public profile changed. Refresh and try again." },
+          { status: 409 },
+        );
+      }
+    }
+
+    const identity = await syncAgentIdentity({
+      portalAgentId,
+      name: body.name,
+      phone: body.phone,
+      license: body.license,
+    });
+    if (!identity.ok) {
+      return NextResponse.json(
+        {
+          error: identity.error || "Profile linked, but identity sync failed.",
+          linked: true,
+          id,
+        },
+        { status: 500 },
+      );
+    }
+    return NextResponse.json({
+      ok: true,
+      id,
+      portalAgentId,
+      notice: identity.notice,
+    });
+  }
 
   if (action === "visibility") {
     const id = String(body.id || "");

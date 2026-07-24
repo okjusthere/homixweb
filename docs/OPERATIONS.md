@@ -116,8 +116,14 @@ and land on this site's endpoints:
   advisor profile keyed by `portal_agent_id`. Portal owns identity; advisors
   edit marketing fields and may switch `visible` ↔ `agent_hidden`.
 - `/api/agent-admin` (+ `/edit`) — Portal admins manage `admin_hidden`, ordering,
-  and marketing fields. Account creation/deactivation remains in the Portal.
+  marketing fields, and explicit links for legacy public profiles. Account
+  creation/deactivation remains in the Portal.
 - `/api/revalidate-agents` — cache refresh after an edit.
+
+New Portal agents are linked automatically. Older public profiles may remain
+unlinked because nicknames and public contact details are not reliable identity
+keys. An administrator must reconcile those from the Portal `/roster` page;
+never infer a link from fuzzy name matching.
 
 Recommended launch sequence:
 
