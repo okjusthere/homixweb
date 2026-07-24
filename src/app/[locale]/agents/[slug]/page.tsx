@@ -282,7 +282,6 @@ export default async function AgentProfilePage({
 
   const isPlaceholder = !agent.photo || agent.photo === PLACEHOLDER;
   const phoneDigits = agent.phone.replace(/[^\d+]/g, "");
-  const bioLead = agent.bio ? agent.bio.split("\n")[0].slice(0, 180) : "";
   const fallbackBio = zh
     ? `${agent.name} 是 Homix 的纽约持牌地产专业人士，服务大纽约地区的买家与卖家，以双语沟通与媒体驱动的服务著称。`
     : `${agent.name} is a licensed New York real estate professional with Homix, serving buyers and sellers across the greater New York market with bilingual, media-driven service.`;
@@ -362,7 +361,7 @@ export default async function AgentProfilePage({
         </Link>
 
         {/* Hero */}
-        <div className="mt-8 grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
+        <div className="mt-8 grid gap-10 md:grid-cols-[0.85fr_1.15fr] md:items-start md:gap-16">
           <div>
             {isPlaceholder ? (
               <div className="flex aspect-[4/5] flex-col items-center justify-center rounded-sm border border-line bg-surface">
@@ -381,6 +380,27 @@ export default async function AgentProfilePage({
                   sizes="(max-width: 768px) 100vw, 420px"
                   className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
                 />
+              </div>
+            )}
+
+            {/* WeChat — surfaced right under the portrait so it's visible without
+                scrolling; the fuller card in Contact repeats it for anyone who
+                scrolls all the way through, same pattern as the phone/email CTAs. */}
+            {agent.wechatQr && (
+              <div className="mt-6 flex items-center gap-4 rounded-sm border border-line bg-surface p-4">
+                <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-sm bg-paper">
+                  <Image
+                    src={agent.wechatQr}
+                    alt={zh ? `${agent.name} 微信二维码` : `${agent.name} WeChat QR`}
+                    fill
+                    sizes="80px"
+                    className="object-contain p-1.5"
+                  />
+                </div>
+                <div>
+                  <p className="eyebrow">{M.wechatEyebrow}</p>
+                  <p className="mt-1.5 text-sm leading-snug text-muted">{M.wechatScan}</p>
+                </div>
               </div>
             )}
           </div>
@@ -417,13 +437,6 @@ export default async function AgentProfilePage({
                 </div>
               )}
             </div>
-
-            {bioLead && (
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink/85">
-                {bioLead}
-                {agent.bio && agent.bio.length > 180 ? "…" : ""}
-              </p>
-            )}
 
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
               <Button href="#contact">{L.workWith}</Button>
