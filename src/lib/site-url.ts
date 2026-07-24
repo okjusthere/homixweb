@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
 
 /**
- * Absolute origin for building shareable links (advisor edit links, etc.).
+ * Absolute origin for building canonical and shareable website links.
  *
  * Prefers the ACTUAL request host so links work on whatever domain the app is
  * currently served from — e.g. https://homixweb.vercel.app before the

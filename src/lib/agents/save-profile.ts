@@ -1,13 +1,14 @@
 import "server-only";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
-import { findRosterMemberByLicense } from "@/lib/agents/mls-roster";
 import { getSupabase } from "@/lib/supabase";
 
 /**
  * Shared core for saving a public advisor profile. Every entry point reuses it,
- * so validation / image upload / MLS-license verification / cache revalidation
- * can never drift between them. Callers resolve the agent row their own way,
+ * so validation / image upload / cache revalidation can never drift between
+ * them. Identity fields (name, phone, license) are deliberately NOT accepted
+ * here; portal.agents owns them and syncs through /api/agent-profile/identity.
+ * Callers resolve the agent row their own way,
  * then hand it here with the submitted form:
  *  - /api/agent-profile — the advisor's own linked profile, keyed by
  *    portal_agent_id from an authenticated agents.homixny.com session.
@@ -167,51 +168,16 @@ export async function saveAgentProfileFromForm(
     testimonials.push({ quote, ...(author ? { author } : {}) });
   }
 
-  const license = cleanText(formData.get("license")) || null;
   const hasCareerColumns = "mls_id" in agent && "show_past_deals" in agent;
-
-  // License verification against the official MLS roster. A license number is
-  // DOS-issued digits, NOT the MLS member id — but the roster carries each
-  // member's license, so an exact match resolves the member id safely:
-  //  - only fills mls_id when it's empty (never overrides an admin mapping)
-  //  - refuses a member id already claimed by another advisor (typo guard)
-  //  - a non-matching number still saves as display text, with a notice
-  let notice: string | undefined;
-  let verifiedMlsId: string | null = null;
-  if (license && hasCareerColumns) {
-    const member = await findRosterMemberByLicense(license);
-    if (member) {
-      const { data: claimed } = await sb
-        .from("agents")
-        .select("slug")
-        .eq("mls_id", member.memberMlsId)
-        .neq("id", agent.id)
-        .maybeSingle();
-      if (claimed) {
-        notice = `License ${license} belongs to ${member.fullName}, already linked to another profile — please double-check the number.`;
-      } else if (!agent.mls_id) {
-        verifiedMlsId = member.memberMlsId;
-        notice = `License verified against the MLS roster (${member.fullName}) — past sales are now linked.`;
-      } else if (agent.mls_id !== member.memberMlsId) {
-        notice = `Heads-up: this license belongs to ${member.fullName} on the MLS roster, but the profile is linked to a different MLS member. Ask an admin to review.`;
-      }
-    } else {
-      notice =
-        "License saved, but it didn't match the MLS roster — check for typos if your past sales don't appear.";
-    }
-  }
 
   const { error } = await sb
     .from("agents")
     .update({
-      name: cleanText(formData.get("name")),
       title: cleanText(formData.get("title")) || "Licensed Real Estate Salesperson",
-      phone: cleanText(formData.get("phone")) || null,
       email: cleanText(formData.get("email")) || null,
       // Bio is multi-paragraph (rendered whitespace-pre-line) and isn't used in
       // the vCard/JSON-LD, so preserve its newlines — just trim.
       bio: String(formData.get("bio") || "").trim() || null,
-      license_number: license,
       specialties,
       languages,
       social,
@@ -224,7 +190,6 @@ export async function saveAgentProfileFromForm(
       ...(hasCareerColumns
         ? {
             show_past_deals: formData.get("show_past_deals") === "on",
-            ...(verifiedMlsId ? { mls_id: verifiedMlsId } : {}),
           }
         : {}),
     })
@@ -238,5 +203,5 @@ export async function saveAgentProfileFromForm(
   revalidatePath("/agents");
   revalidatePath("/zh/agents");
   revalidatePath("/sitemap.xml");
-  return { ok: true, notice };
+  return { ok: true };
 }

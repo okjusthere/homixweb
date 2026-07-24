@@ -3,8 +3,8 @@
 When Supabase is configured, advisor profiles are read from the `agents` table.
 Advisors edit their own profile (photo, contact, bio, social) from the
 **agents.homixny.com portal**, and admins manage the roster there too — there is
-no password-gated page on the marketing site. Until Supabase is configured, the
-site uses the bundled static roster.
+no password-gated page on the marketing site. Supabase is the only runtime
+roster source; missing configuration fails closed with an empty directory.
 
 The same schema also creates `public.inquiries`, used by website inquiry forms.
 
@@ -33,9 +33,11 @@ The same schema also creates `public.inquiries`, used by website inquiry forms.
 5. **Deploy** (or restart `npm run dev`).
 6. **Manage advisors from the portal** (agents.homixny.com):
    - Advisors self-edit their public profile under **我的档案 → 对外主页**.
-   - Admins manage the whole roster at **/roster** — add advisors, publish/hide,
-     reorder, delete, and edit anyone's profile (including advisors who don't have
-     a portal account). Changes sync to www.homixny.com within a minute.
+   - Admins add/approve/deactivate accounts under **经纪人**. Creation and
+     approval automatically create a minimal visible public profile.
+   - Admins manage public ordering and force-hide/show under **/roster**.
+   - Advisors can switch their own profile between `visible` and
+     `agent_hidden`; only admins can apply or release `admin_hidden`.
 
 ## Notes
 
@@ -44,5 +46,7 @@ The same schema also creates `public.inquiries`, used by website inquiry forms.
   `/api/agent-profile` (self-edit) and `/api/agent-admin` (roster admin) endpoints,
   which are gated by the shared secret.
 - Headshots upload to the `agent-photos` bucket and are served from Supabase Storage.
+- Existing shared databases must run the Portal repository's lifecycle Phase A
+  migration before deployment and Phase B after both deployments are verified.
 - Website inquiries are stored in `public.inquiries`; email delivery status is
   reflected in the `status`, `email_sent_at`, and `email_error` columns.

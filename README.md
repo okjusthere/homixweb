@@ -51,14 +51,15 @@ INQUIRY_FROM_EMAIL="Homix Website <inquiries@homixny.com>"
 `AGENTS_REVALIDATE_SECRET` is the shared secret with the agents.homixny.com
 portal — it authorizes the portal's advisor-profile, roster-admin, and
 cache-revalidate calls to this site, and must match the portal's value. Advisor
-profiles are managed entirely from that portal (self-edit + admin `/roster`);
+profiles are managed entirely from that portal (account lifecycle under
+`/agents`, self-edit, and public ordering/visibility under `/roster`);
 this site has no password-gated admin page.
 
 ## Supabase
 
 Run `supabase/schema.sql` in the Supabase SQL editor. It creates:
 
-- `agents` for advisor profiles and private edit links.
+- `agents` for Portal-managed advisor profiles and lifecycle visibility.
 - `agent-photos` public storage bucket for advisor headshots and long-lived
   website media.
 - `inquiries` for website contact form submissions.
@@ -69,7 +70,7 @@ service-role key after validation.
 Storage paths are intentionally stable:
 
 - `agent-photos/agents/...` stores advisor headshots. Production agent cards use
-  `public.agents.photo_url`; the static roster only keeps the brand fallback.
+  `public.agents.photo_url`; missing headshots use the brand placeholder.
 - `agent-photos/site-media/...` stores long-lived editorial assets such as new
   development images, gated community images, guide article covers, neighborhood
   photos, onboarding materials, and training images.

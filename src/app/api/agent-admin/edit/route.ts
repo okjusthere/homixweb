@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
   const { data, error } = await sb
     .from("agents")
     .select(
-      "id, slug, name, title, phone, email, bio, license_number, specialties, languages, social, wechat_qr, reviews, stats, testimonials, photo_url, show_past_deals, visible, mls_id, portal_agent_id",
+      "id, slug, name, title, phone, email, bio, license_number, specialties, languages, social, wechat_qr, reviews, stats, testimonials, photo_url, show_past_deals, visibility_status, mls_id, portal_agent_id",
     )
     .eq("id", id)
     .maybeSingle();

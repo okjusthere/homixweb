@@ -48,8 +48,8 @@ submit to the Next.js server, and the server writes through the service-role key
 The website uses Supabase Storage for long-lived brand and content assets:
 
 - `agent-photos/agents/...`: advisor headshots. The production source of truth is
-  `public.agents.photo_url`; the static roster only uses `/agent-placeholder-logo.png`
-  as a fallback when Supabase is unavailable.
+  `public.agents.photo_url`; profiles without a headshot use
+  `/agent-placeholder-logo.png`.
 - `agent-photos/site-media/...`: new development media, gated community media,
   guide article covers, neighborhood images, onboarding materials, training images,
   and other long-lived editorial assets.
@@ -112,11 +112,11 @@ agents.homixny.com portal — this site has no password-gated admin page. Portal
 calls are authorized by `AGENTS_REVALIDATE_SECRET` (must match the portal's value)
 and land on this site's endpoints:
 
-- `/api/agent-profile` (+ `/publish`) — an advisor self-editing their own linked
-  profile, keyed by `portal_agent_id`.
-- `/api/agent-admin` (+ `/edit`) — an admin managing the roster: create, publish/
-  hide (`visible`), reorder, delete, and edit any advisor by public id (including
-  advisors with no portal account).
+- `/api/agent-profile` (+ `/publish`, `/identity`, `/visibility`) — the linked
+  advisor profile keyed by `portal_agent_id`. Portal owns identity; advisors
+  edit marketing fields and may switch `visible` ↔ `agent_hidden`.
+- `/api/agent-admin` (+ `/edit`) — Portal admins manage `admin_hidden`, ordering,
+  and marketing fields. Account creation/deactivation remains in the Portal.
 - `/api/revalidate-agents` — cache refresh after an edit.
 
 Recommended launch sequence:
@@ -124,8 +124,10 @@ Recommended launch sequence:
 1. Set the Supabase env vars and `AGENTS_REVALIDATE_SECRET` (identical on this
    site and the portal).
 2. Deploy.
-3. In the portal, admins open **/roster** to add/manage advisors; advisors
-   self-edit under **我的档案 → 对外主页**.
+3. In the portal, admins add/approve accounts under **经纪人**; the minimal
+   public profile is created visible automatically. **/roster** controls public
+   ordering and administrator visibility. Advisors self-edit under
+   **我的档案 → 对外主页**.
 
 Advisors missing photos, bios, phone numbers, emails, and license numbers are
 expected to complete them from the portal.

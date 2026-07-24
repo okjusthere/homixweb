@@ -1,12 +1,12 @@
 import { unstable_cache } from "next/cache";
-import { STATIC_AGENTS } from "./agents/static-roster";
 import { getSupabase } from "./supabase";
 import type { Agent, AgentReview } from "./listings/types";
 
 /**
  * Agent roster data layer. Reads from Supabase when configured (so advisors can
- * self-edit), otherwise falls back to the bundled static roster — the site works
- * either way.
+ * self-edit). Supabase is the only runtime roster source: missing
+ * configuration, query errors, and an empty roster all fail closed so stale
+ * bundled content can never revive a hidden or inactive advisor.
  */
 
 export interface AgentReviews {
@@ -46,10 +46,12 @@ export interface AgentRow {
   profile_url: string | null;
   mls_id: string | null;
   show_past_deals: boolean | null;
-  visible: boolean | null;
+  visibility_status: AgentVisibilityStatus | null;
   sort: number | null;
-  edit_token?: string;
+  portal_agent_id: number | null;
 }
+
+export type AgentVisibilityStatus = "visible" | "agent_hidden" | "admin_hidden";
 
 /** Public roster cache tag, invalidated whenever an advisor record changes. */
 export const PUBLIC_AGENTS_CACHE_TAG = "public-agents";
@@ -112,14 +114,18 @@ function rowToAgent(r: AgentRow): Agent {
 
 const loadPublicAgents = unstable_cache(async (): Promise<Agent[]> => {
   const sb = getSupabase();
-  if (!sb) return STATIC_AGENTS;
+  if (!sb) return [];
   const { data, error } = await sb
     .from("agents")
     .select("*")
-    .eq("visible", true)
+    .eq("visibility_status", "visible")
     .order("sort", { ascending: true })
     .order("name", { ascending: true });
-  if (error || !data || data.length === 0) return STATIC_AGENTS;
+  if (error) {
+    console.error("Unable to load public agent roster:", error.message);
+    return [];
+  }
+  if (!data) return [];
   return (data as AgentRow[]).map(rowToAgent);
 }, ["public-agents"], {
   // Long TTL is safe: the self-edit save action revalidates the tag, so
@@ -132,12 +138,16 @@ const loadPublicAgents = unstable_cache(async (): Promise<Agent[]> => {
 
 const loadPublicAgentBySlug = unstable_cache(async (slug: string): Promise<Agent | null> => {
   const sb = getSupabase();
-  if (!sb) return STATIC_AGENTS.find((a) => a.slug === slug) ?? null;
-  const { data } = await sb.from("agents").select("*").eq("slug", slug).maybeSingle();
-  // A hidden Supabase profile must not fall through to a same-slug static
-  // record: the public directory only represents explicitly visible advisors.
-  if (data && (data as AgentRow).visible !== true) return null;
-  return data ? rowToAgent(data as AgentRow) : (STATIC_AGENTS.find((a) => a.slug === slug) ?? null);
+  if (!sb) return null;
+  const { data, error } = await sb.from("agents").select("*").eq("slug", slug).maybeSingle();
+  if (error) {
+    console.error(`Unable to load public agent profile "${slug}":`, error.message);
+    return null;
+  }
+  // The service-role query can read hidden rows, so enforce visibility again
+  // before returning a direct profile route.
+  if (data && (data as AgentRow).visibility_status !== "visible") return null;
+  return data ? rowToAgent(data as AgentRow) : null;
 }, ["public-agent-by-slug"], {
   // Same story as public-agents above: tag-invalidated on save, long fallback.
   revalidate: 86400,

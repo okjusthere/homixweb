@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { randomBytes } from "node:crypto";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
 import { getSupabase } from "@/lib/supabase";
@@ -10,21 +9,12 @@ export const dynamic = "force-dynamic";
 // Portal-facing admin console for the public advisor roster (public.agents).
 // This replaces the old website /admin page: agents.homixny.com authenticates an
 // admin (Google/NextAuth) and forwards management actions here over the shared
-// server-to-server secret. Keyed by PUBLIC agent id, so it covers every advisor —
-// including those with no portal account (which portal_agent_id editing can't
-// reach). Per-profile field editing lives in ./edit (multipart, reuses the core).
+// server-to-server secret. Account creation/deactivation lives in the portal;
+// this endpoint only controls public visibility and ordering.
 function authed(req: NextRequest): boolean {
   const secret = process.env.AGENTS_REVALIDATE_SECRET?.trim();
   if (!secret) return false;
   return req.headers.get("authorization") === `Bearer ${secret}`;
-}
-
-function kebab(s: string): string {
-  return s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 48);
 }
 
 function revalidatePublicAgents() {
@@ -42,14 +32,14 @@ export async function GET(req: NextRequest) {
 
   const { data, error } = await sb
     .from("agents")
-    .select("id, name, slug, visible, sort, portal_agent_id, photo_url, license_number")
+    .select("id, name, slug, visibility_status, sort, portal_agent_id, photo_url, license_number")
     .order("sort", { ascending: true })
     .order("name", { ascending: true });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
   return NextResponse.json({ agents: data ?? [] }, { headers: { "Cache-Control": "no-store" } });
 }
 
-/** POST → a JSON management action: create | visible | reorder | delete. */
+/** POST → a JSON management action: visibility | reorder. */
 export async function POST(req: NextRequest) {
   if (!authed(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const sb = getSupabase();
@@ -58,55 +48,27 @@ export async function POST(req: NextRequest) {
   const body = await req.json().catch(() => ({}));
   const action = String(body.action || "");
 
-  if (action === "create") {
-    const name = String(body.name || "").trim();
-    if (!name) return NextResponse.json({ error: "Name required" }, { status: 400 });
-
-    let slug = kebab(name) || `advisor-${randomBytes(2).toString("hex")}`;
-    const { data: exists } = await sb.from("agents").select("slug").eq("slug", slug).maybeSingle();
-    if (exists) slug = `${slug}-${randomBytes(2).toString("hex")}`;
-
-    const { data: maxRow } = await sb
-      .from("agents")
-      .select("sort")
-      .order("sort", { ascending: false })
-      .limit(1)
-      .maybeSingle();
-    const sort = (maxRow?.sort ?? 0) + 1;
-
-    const { error } = await sb.from("agents").insert({
-      id: slug,
-      slug,
-      name,
-      title: "Licensed Real Estate Salesperson",
-      photo_url: "/agent-placeholder-logo.png",
-      specialties: [],
-      social: {},
-      edit_token: randomBytes(20).toString("hex"),
-      sort,
-      visible: true,
+  if (action === "visibility") {
+    const id = String(body.id || "");
+    const portalAgentId = Number(body.portalAgentId);
+    if (!id && (!Number.isInteger(portalAgentId) || portalAgentId <= 0)) {
+      return NextResponse.json({ error: "id or portalAgentId required" }, { status: 400 });
+    }
+    const visibilityStatus = String(body.visibilityStatus || "");
+    if (!["visible", "admin_hidden"].includes(visibilityStatus)) {
+      return NextResponse.json({ error: "Invalid admin visibility status" }, { status: 400 });
+    }
+    const update = sb.from("agents").update({
+      visibility_status: visibilityStatus,
+      updated_at: new Date().toISOString(),
     });
+    const { data, error } = id
+      ? await update.eq("id", id).select("id, slug").maybeSingle()
+      : await update.eq("portal_agent_id", portalAgentId).select("id, slug").maybeSingle();
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+    if (!data) return NextResponse.json({ error: "Linked public profile not found" }, { status: 404 });
     revalidatePublicAgents();
-    return NextResponse.json({ ok: true, id: slug, slug });
-  }
-
-  if (action === "visible") {
-    const id = String(body.id || "");
-    if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
-    const { error } = await sb.from("agents").update({ visible: !!body.visible }).eq("id", id);
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    revalidatePublicAgents();
-    return NextResponse.json({ ok: true });
-  }
-
-  if (action === "delete") {
-    const id = String(body.id || "");
-    if (!id) return NextResponse.json({ error: "id required" }, { status: 400 });
-    const { error } = await sb.from("agents").delete().eq("id", id);
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-    revalidatePublicAgents();
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({ ok: true, id: data.id, visibilityStatus });
   }
 
   if (action === "reorder") {
