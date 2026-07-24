@@ -2,15 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { randomBytes } from "node:crypto";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
+import { syncAgentIdentity } from "@/lib/agents/sync-identity";
 import { getSupabase } from "@/lib/supabase";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 // Create a public advisor profile for a portal agent who doesn't have one yet,
-// and link it (portal_agent_id). New profiles start hidden (visible:false) so
-// the office can review before they go live. After this, the agent edits the
-// profile from agents.homixny.com — no magic link. Idempotent per portal agent.
+// and link it (portal_agent_id). Admin creation/approval is the company's
+// authorization to list the advisor, so new profiles start visible with a
+// deliberately minimal card. The advisor fills in the rest from the portal.
 function authed(req: NextRequest): boolean {
   const secret = process.env.AGENTS_REVALIDATE_SECRET?.trim();
   if (!secret) return false;
@@ -42,11 +43,28 @@ export async function POST(req: NextRequest) {
   // Already published? Return the existing link (idempotent).
   const { data: existing } = await sb
     .from("agents")
-    .select("id, slug, visible")
+    .select("id, slug, visibility_status")
     .eq("portal_agent_id", portalAgentId)
     .maybeSingle();
   if (existing) {
-    return NextResponse.json({ published: true, alreadyLinked: true, ...existing });
+    const identity = await syncAgentIdentity({
+      portalAgentId,
+      name,
+      phone: body.phone,
+      license: body.license,
+    });
+    if (!identity.ok) {
+      return NextResponse.json(
+        { error: identity.error || "Identity synchronization failed." },
+        { status: 500 },
+      );
+    }
+    return NextResponse.json({
+      published: true,
+      alreadyLinked: true,
+      ...existing,
+      notice: identity.notice,
+    });
   }
 
   // Unique slug (single collision retry, same as the admin flow).
@@ -66,23 +84,50 @@ export async function POST(req: NextRequest) {
     id: slug,
     slug,
     name,
-    email: String(body.email || "").trim() || null,
-    phone: String(body.phone || "").trim() || null,
-    license_number: String(body.license || "").trim() || null,
+    // The Google login email is an internal identity and must never become the
+    // public contact email. Advisors add a public email from their profile.
+    email: null,
+    // Identity synchronization below owns these fields. Keeping the initial
+    // license empty guarantees a newly linked profile runs MLS verification.
+    phone: null,
+    license_number: null,
     title: "Licensed Real Estate Salesperson",
     photo_url: "/agent-placeholder-logo.png",
     specialties: [],
     social: {},
-    edit_token: randomBytes(20).toString("hex"),
     sort,
-    visible: false, // review before it shows on the public site
+    visibility_status: "visible",
     portal_agent_id: portalAgentId,
   });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+
+  const identity = await syncAgentIdentity({
+    portalAgentId,
+    name,
+    phone: body.phone,
+    license: body.license,
+  });
+  if (!identity.ok) {
+    return NextResponse.json(
+      {
+        error: identity.error || "Profile created, but identity synchronization failed.",
+        published: true,
+        slug,
+        id: slug,
+      },
+      { status: 500 },
+    );
+  }
 
   revalidateTag(PUBLIC_AGENTS_CACHE_TAG, "max");
   revalidatePath("/agents");
   revalidatePath("/zh/agents");
   revalidatePath("/sitemap.xml");
-  return NextResponse.json({ published: true, slug, id: slug, visible: false });
+  return NextResponse.json({
+    published: true,
+    slug,
+    id: slug,
+    visibility_status: "visible",
+    notice: identity.notice,
+  });
 }

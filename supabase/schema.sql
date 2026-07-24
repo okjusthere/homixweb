@@ -1,4 +1,4 @@
--- Homix — agent self-edit schema.
+-- Homix public website schema.
 -- Run once in the Supabase SQL editor after creating your project.
 
 create table if not exists public.agents (
@@ -19,11 +19,16 @@ create table if not exists public.agents (
   testimonials jsonb not null default '[]'::jsonb,
   license_number text,
   profile_url text,
-  edit_token text unique not null,
   sort int not null default 100,
-  visible boolean not null default true,
+  visibility_status text not null default 'visible'
+    check (visibility_status in ('visible', 'agent_hidden', 'admin_hidden')),
+  portal_agent_id integer,
   updated_at timestamptz not null default now()
 );
+
+create unique index if not exists idx_public_agents_portal_link
+  on public.agents(portal_agent_id)
+  where portal_agent_id is not null;
 
 -- Profile-card fields added after the initial launch. Safe to re-run: each
 -- column is only added if it doesn't already exist. Run these in the Supabase
@@ -43,15 +48,14 @@ alter table public.agents add column if not exists mls_id text;
 -- Advisor's own switch for the "Past sales" section (default on).
 alter table public.agents add column if not exists show_past_deals boolean not null default true;
 
--- Row Level Security: anyone may READ visible agents; nobody may write through
--- the public/anon key. All writes go through the server (service role key),
--- which bypasses RLS and is gated by each advisor's secret edit token.
+-- Row Level Security: anyone may read explicitly visible agents; nobody writes
+-- through the public/anon key. Portal-authenticated server APIs own all writes.
 alter table public.agents enable row level security;
 
 drop policy if exists "agents public read" on public.agents;
 create policy "agents public read"
   on public.agents for select
-  using (visible = true);
+  using (visibility_status = 'visible');
 
 -- Public bucket for advisor headshots and long-lived website media.
 insert into storage.buckets (id, name, public)
