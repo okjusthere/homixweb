@@ -59,6 +59,12 @@ interface BboListingDTO {
   imageUrls?: string[];
   media?: { url?: string }[];
   publicRemarks?: string;
+  chineseDescription?: {
+    text?: string;
+    status?: string;
+    model?: string;
+    generatedAt?: string;
+  };
   roomsSummary?: string;
   unitTypesSummary?: string;
   architecturalStyle?: string;
@@ -402,6 +408,7 @@ function toListing(dto: BboListingDTO): Listing | null {
       trim(dto.roomsSummary) ||
       trim(dto.unitTypesSummary) ||
       "",
+    descriptionZh: trim(dto.chineseDescription?.text) || undefined,
     features: [dto.propertySubType, dto.architecturalStyle, dto.propertyCondition]
       .map(trim)
       .filter(Boolean),

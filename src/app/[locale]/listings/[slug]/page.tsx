@@ -27,6 +27,15 @@ function metaDescription(text: string): string {
   return `${cut.slice(0, breakAt > 0 ? breakAt : 155).replace(/[.,;:!?—-]+$/, "")}…`;
 }
 
+function localizedDescription(
+  listing: { description: string; descriptionZh?: string },
+  locale: string,
+): string {
+  return locale === "zh"
+    ? listing.descriptionZh?.trim() || listing.description
+    : listing.description;
+}
+
 /** schema.org types for each normalized MLS property type. */
 const SCHEMA_PROPERTY_TYPE: Record<PropertyType, string> = {
   "Single Family": "SingleFamilyResidence",
@@ -48,6 +57,7 @@ export async function generateMetadata({
   const listing = await listings.getListingBySlug(slug);
   if (!listing) return { title: "Listing not found" };
   const locale = await getRouteLocale(params);
+  const description = localizedDescription(listing, locale);
   return {
     ...pageMetadata({
       path: `/listings/${slug}`,
@@ -58,8 +68,10 @@ export async function generateMetadata({
       },
       description:
         locale === "zh"
-          ? `${listing.address.full}，${listing.propertyType}，${displayPrice(listing.listPrice)}。Homix 提供中英双语看房与置业咨询。`
-          : metaDescription(listing.description) ||
+          ? listing.descriptionZh
+            ? metaDescription(listing.descriptionZh)
+            : `${listing.address.full}，${listing.propertyType}，${displayPrice(listing.listPrice)}。Homix 提供中英双语看房与置业咨询。`
+          : metaDescription(description) ||
             `${listing.address.full} — ${listing.propertyType}, ${displayPrice(listing.listPrice)}.`,
       // Sharing a listing must show the property itself, not the brand card.
       image: listing.photos[0]?.url ?? null,
@@ -83,6 +95,7 @@ export default async function ListingDetailPage({
   const locale = await getRouteLocale(params);
   const { t } = await getT(locale);
   const zh = locale === "zh";
+  const description = localizedDescription(listing, locale);
   const { address, listPrice, beds, baths, halfBaths, sqft, status } = listing;
   const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address.full)}`;
   const copy = zh
@@ -157,7 +170,7 @@ export default async function ListingDetailPage({
     "@context": "https://schema.org",
     "@type": SCHEMA_PROPERTY_TYPE[listing.propertyType] ?? "Residence",
     name: address.full,
-    description: listing.description,
+    description,
     url: absUrl(localizePath(locale, `/listings/${listing.slug}`)),
     image: listing.photos.slice(0, 5).map((p) => p.url),
     address: {
@@ -220,11 +233,11 @@ export default async function ListingDetailPage({
             )}
           </div>
 
-          {listing.description && (
+          {description && (
             <div className="mt-8">
               <h2 className="eyebrow">{copy.about}</h2>
               <p className="mt-3 whitespace-pre-line leading-relaxed text-ink/85">
-                {listing.description}
+                {description}
               </p>
             </div>
           )}
