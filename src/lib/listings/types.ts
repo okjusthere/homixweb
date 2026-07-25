@@ -61,7 +61,10 @@ export interface Listing {
   /** Lot size in square feet (omit for condos). */
   lotSqft?: number;
   yearBuilt?: number;
+  /** Original MLS English public remarks, with feed fallbacks when absent. */
   description: string;
+  /** AI-generated Chinese description supplied by BBO when ready. */
+  descriptionZh?: string;
   features: string[];
   photos: ListingPhoto[];
   /** Agent id (MLS) who holds the listing. */
