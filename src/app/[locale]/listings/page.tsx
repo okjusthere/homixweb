@@ -151,7 +151,7 @@ export default async function ListingsPage({
           locale={locale}
           labels={{
             source: zh ? "房源范围" : "Listing source",
-            city: zh ? "地区" : "City",
+            city: zh ? "地区" : "Location",
             propertyType: zh ? "房屋类型" : "Property type",
             minPrice: zh ? "最低价格" : "Minimum price",
             maxPrice: zh ? "最高价格" : "Maximum price",

@@ -19,16 +19,17 @@ const DEFAULT_REVALIDATE_SECONDS = 1800;
 
 const CITY_OPTIONS = [
   "Flushing",
-  "New York",
+  "Manhattan",
+  "Astoria",
   "Long Island City",
   "Bayside",
   "Forest Hills",
+  "Brooklyn",
   "Great Neck",
   "Manhasset",
   "Roslyn",
   "Garden City",
   "Hempstead",
-  "Brooklyn",
 ];
 
 interface BboListingDTO {
@@ -41,6 +42,7 @@ interface BboListingDTO {
   stateOrProvince?: string;
   postalCode?: string;
   countyOrParish?: string;
+  postalCity?: string;
   listPrice?: number | string | null;
   propertyType?: string;
   propertySubType?: string;
@@ -168,7 +170,7 @@ export class BboListingsProvider implements ListingsProvider {
     params.set("limit", String(query.limit ?? 12));
     params.set("offset", String(query.offset ?? 0));
     params.set("sort", toBboSort(query.sort));
-    if (query.city) params.set("city", query.city);
+    if (query.city) params.set("city", toBboLocation(query.city));
     if (query.q) params.set("q", query.q);
     if (query.status) params.set("status", query.status);
     if (query.minPrice != null) params.set("priceMin", String(query.minPrice));
@@ -352,9 +354,12 @@ function toListing(dto: BboListingDTO): Listing | null {
 
   const unparsed = trim(dto.unparsedAddress);
   const city = trim(dto.city);
+  const postalCity = trim(dto.postalCity);
+  const locality =
+    postalCity === "New York (Manhattan)" ? "Manhattan" : postalCity || city;
   const state = trim(dto.stateOrProvince) || "NY";
   const postalCode = trim(dto.postalCode);
-  const cityLine = [city, state, postalCode].filter(Boolean).join(" ");
+  const cityLine = [locality, state, postalCode].filter(Boolean).join(" ");
   // Never surface the raw listing key as an address — it means nothing to a
   // buyer. Prefer the street line; otherwise fall back to city/state/zip, then
   // a neutral label. (When the feed omits the street, BBO is the real fix.)
@@ -380,11 +385,11 @@ function toListing(dto: BboListingDTO): Listing | null {
     address: {
       full,
       street,
-      city,
+      city: locality,
       state,
       postalCode,
       // Skip the city eyebrow when the city is already standing in as the street.
-      neighborhood: hasStreet ? city || undefined : undefined,
+      neighborhood: hasStreet ? locality || undefined : undefined,
     },
     beds: toInteger(dto.bedroomsTotal),
     baths: toInteger(dto.bathroomsFull ?? dto.bathroomsTotalInteger),
@@ -434,13 +439,36 @@ function toCareerDeal(dto: BboCareerDealDTO): CareerDeal | null {
 }
 
 function applyPropertyType(params: URLSearchParams, type: PropertyType): void {
-  if (type === "Residential") {
-    params.set("propertyType", "Residential");
-    return;
+  switch (type) {
+    case "Single Family":
+      params.set("propertySubType", "Single Family Residence");
+      return;
+    case "Condo":
+      params.set("propertySubType", "Condominium");
+      return;
+    case "Co-op":
+      params.set("propertySubType", "Stock Cooperative");
+      return;
+    case "Townhouse":
+      params.set("propertySubType", "Townhouse");
+      return;
+    case "Multi-Family":
+      params.set("propertyType", "Residential Income,Residential");
+      params.set("propertySubType", "Multi Family,Duplex,Triplex,Quadruplex");
+      return;
+    case "Land":
+      params.set("propertyType", "Land");
+      return;
+    case "Residential":
+      params.set("propertyType", "Residential");
+      return;
+    default:
+      return;
   }
-  if (type !== "Other") {
-    params.set("propertySubType", type);
-  }
+}
+
+function toBboLocation(location: string): string {
+  return location === "Manhattan" ? "New York (Manhattan)" : location;
 }
 
 function normalizeStatus(raw?: string): ListingStatus {
@@ -456,7 +484,15 @@ function normalizePropertyType(type?: string, subType?: string): PropertyType {
   if (value.includes("condo")) return "Condo";
   if (value.includes("co-op") || value.includes("coop")) return "Co-op";
   if (value.includes("town")) return "Townhouse";
-  if (value.includes("multi")) return "Multi-Family";
+  if (
+    value.includes("multi") ||
+    value.includes("duplex") ||
+    value.includes("triplex") ||
+    value.includes("quadruplex") ||
+    value.includes("residential income")
+  ) {
+    return "Multi-Family";
+  }
   if (value.includes("land")) return "Land";
   if (value.includes("single")) return "Single Family";
   if (value.includes("residential")) return "Residential";
@@ -469,6 +505,8 @@ function toBboSort(sort: ListingQuery["sort"]): string {
       return "price_asc";
     case "price-desc":
       return "price_desc";
+    case "beds-desc":
+      return "beds_desc";
     default:
       return "newest";
   }
