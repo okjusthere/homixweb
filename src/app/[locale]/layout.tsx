@@ -21,7 +21,10 @@ const inter = Inter({
   display: "swap",
 });
 
-export const dynamicParams = false;
+// CMS-backed child routes (notably /agents/[slug]) must be able to render
+// records created after the last deployment. The locale values themselves are
+// still prebuilt below, while the public proxy only emits "en" or "zh".
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
