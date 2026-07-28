@@ -20,7 +20,7 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
           {/* Brand */}
           <div className="lg:col-span-3">
             <Image
-              src="/homix-logo.webp"
+              src="/homix-logo-small.webp"
               alt={siteConfig.legalName}
               width={240}
               height={136}

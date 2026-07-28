@@ -110,7 +110,7 @@ export function SiteHeader({
           <div className="mx-auto flex h-[68px] max-w-[1320px] items-center justify-between px-5 sm:px-8 lg:px-12">
             <Link href={homeHref} aria-label="Homix — home" className="flex items-center">
               <Image
-                src="/homix-mark.webp"
+                src="/homix-mark-small.webp"
                 alt="Homix"
                 width={1500}
                 height={699}

@@ -66,7 +66,19 @@ function splitList(v: unknown): string[] {
     .filter(Boolean);
 }
 
-/** Upload one image to the shared public agent-photos bucket, returning its URL. */
+/** Display-size ceilings. Headshots render at ≤420px (agent profile hero), the
+ *  WeChat QR at ≤176px; 2x those caps keeps retina sharpness. The site serves
+ *  images unoptimized (Vercel transform quota), so upload time is the only
+ *  place a 12MP phone photo can be cut down. */
+const IMAGE_MAX_WIDTH: Record<string, number> = { headshot: 1100, wechat: 600 };
+
+/** Upload one image to the shared public agent-photos bucket, returning its URL.
+ *  Re-encodes through sharp: capped to the render size, EXIF-rotated then
+ *  stripped. Headshots become JPEG — they double as the profile's og:image,
+ *  and WeChat/QQ share-card crawlers don't render webp (this audience lives
+ *  on WeChat). Everything else becomes webp. Animated GIFs skip re-encoding
+ *  (sharp would keep only the first frame) and upload as-is. Filenames are
+ *  timestamped, so the year-long cache never serves a stale replacement. */
 async function uploadImage(
   sb: NonNullable<ReturnType<typeof getSupabase>>,
   slug: string,
@@ -74,13 +86,35 @@ async function uploadImage(
   file: File,
 ): Promise<{ url: string } | { error: string }> {
   if (file.size > 8 * 1024 * 1024) return { error: "Image is too large (max 8MB)." };
-  const ext = IMAGE_TYPES[file.type];
-  if (!ext) return { error: "Please upload a JPG, PNG, WebP, or GIF image." };
+  if (!IMAGE_TYPES[file.type]) return { error: "Please upload a JPG, PNG, WebP, or GIF image." };
+
+  let buf = Buffer.from(await file.arrayBuffer());
+  let ext = IMAGE_TYPES[file.type];
+  let contentType = file.type;
+  if (file.type !== "image/gif") {
+    try {
+      const sharp = (await import("sharp")).default;
+      const base = sharp(buf)
+        .rotate()
+        .resize({ width: IMAGE_MAX_WIDTH[kind] ?? 1100, withoutEnlargement: true });
+      if (kind === "headshot") {
+        buf = Buffer.from(await base.jpeg({ quality: 84, mozjpeg: true }).toBuffer());
+        ext = "jpg";
+        contentType = "image/jpeg";
+      } else {
+        buf = Buffer.from(await base.webp({ quality: 82 }).toBuffer());
+        ext = "webp";
+        contentType = "image/webp";
+      }
+    } catch {
+      return { error: "That image could not be read — please try a different file." };
+    }
+  }
+
   const path = `agents/${slug}/${kind}-${Date.now()}.${ext}`;
-  const buf = Buffer.from(await file.arrayBuffer());
   const { error } = await sb.storage
     .from("agent-photos")
-    .upload(path, buf, { contentType: file.type, upsert: true });
+    .upload(path, buf, { contentType, upsert: true, cacheControl: "31536000" });
   if (error) return { error: `Upload failed: ${error.message}` };
   return { url: sb.storage.from("agent-photos").getPublicUrl(path).data.publicUrl };
 }

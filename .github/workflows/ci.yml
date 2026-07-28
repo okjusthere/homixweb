@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    # No env needed: the BBO and Supabase data layers fail closed when their
+    # keys are absent, so `next build` prerenders every static page without
+    # touching the network. Deliberately do NOT set a dummy BBO_API_KEY —
+    # a non-empty key would make the home-page prerender fetch the real BBO
+    # host at build time.
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Lint
+        run: npm run lint
+
+      # No test step: the repo has no test runner or test files yet.
+      # Add `npm test` here when one lands.
+
+      - name: Build
+        run: npm run build
