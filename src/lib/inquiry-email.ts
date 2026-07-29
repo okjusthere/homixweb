@@ -26,8 +26,12 @@ function escapeHtml(value: string): string {
 }
 
 function lines(data: InquiryEmailData): string[] {
+  const title =
+    data.source === "sell-valuation"
+      ? "New Homix home valuation request"
+      : "New Homix website inquiry";
   return [
-    "New Homix website inquiry",
+    title,
     "",
     `Name: ${data.name}`,
     `Email: ${data.email}`,
@@ -42,6 +46,10 @@ function lines(data: InquiryEmailData): string[] {
 }
 
 function htmlBody(data: InquiryEmailData): string {
+  const title =
+    data.source === "sell-valuation"
+      ? "New Homix home valuation request"
+      : "New Homix inquiry";
   const rows = [
     ["Name", data.name],
     ["Email", data.email],
@@ -53,7 +61,7 @@ function htmlBody(data: InquiryEmailData): string {
 
   return `
     <div style="font-family: Inter, Arial, sans-serif; color: #1C1B18; line-height: 1.55;">
-      <h1 style="font-family: Georgia, serif; font-weight: 400; margin: 0 0 20px;">New Homix inquiry</h1>
+      <h1 style="font-family: Georgia, serif; font-weight: 400; margin: 0 0 20px;">${title}</h1>
       <table cellpadding="0" cellspacing="0" style="border-collapse: collapse; width: 100%; max-width: 640px;">
         ${rows
           .map(
@@ -87,6 +95,10 @@ export async function sendInquiryEmail(data: InquiryEmailData): Promise<EmailRes
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
+  const subject =
+    data.source === "sell-valuation"
+      ? `New Homix home valuation request from ${data.name}`
+      : `New Homix inquiry from ${data.name}`;
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -100,7 +112,7 @@ export async function sendInquiryEmail(data: InquiryEmailData): Promise<EmailRes
         to: [to],
         ...(bcc.length ? { bcc } : {}),
         reply_to: data.email,
-        subject: `New Homix inquiry from ${data.name}`,
+        subject,
         text: lines(data).join("\n"),
         html: htmlBody(data),
       }),
