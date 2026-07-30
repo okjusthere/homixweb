@@ -25,8 +25,8 @@ export async function generateMetadata({
       zh: "纽约置业指南——买房、卖房、税务与市场数据",
     },
     description: {
-      en: "Homix's organized New York real estate guide hub: buyer guides, seller strategy, renting, taxes, immigration, students, market data, and 45+ bilingual articles.",
-      zh: "Homix 纽约置业指南中心: 买房、卖房、租房、税务、新移民、留学家庭、市场数据与 45+ 篇中英双语文章。",
+      en: "Homix's organized New York real estate guide hub: buyer guides, seller strategy, renting, investing, taxes, immigration, students, market data, and 50+ bilingual articles.",
+      zh: "Homix 纽约置业指南中心: 买房、卖房、租房、投资、税务、新移民、留学家庭、市场数据与 50+ 篇中英双语文章。",
     },
   });
 }
@@ -59,6 +59,7 @@ export default async function GuidesPage({
         ? "定价、布置、媒体曝光、卖方税费与挂牌前最值得做的准备。"
         : "Pricing, staging, media exposure, seller taxes, and what to prepare before listing.",
       href: "/guides/topics/selling",
+      guideSlug: "selling-in-new-york",
     },
     {
       topic: "renting",
@@ -111,6 +112,7 @@ export default async function GuidesPage({
         ? "投资房、租金测算、持有成本与第一套投资房的判断框架。"
         : "Investment property, rental math, carrying costs, and a first-property decision frame.",
       href: "/guides/topics/investing",
+      guideSlug: "investing-and-landlording",
     },
   ];
 
@@ -281,6 +283,26 @@ export default async function GuidesPage({
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="mt-16 grid gap-7 border-y border-line py-10 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
+        <div>
+          <p className="eyebrow">{zh ? "每日动态" : "Current developments"}</p>
+          <h2 className="mt-3 font-serif text-3xl font-normal text-ink">
+            {zh ? "常青指南之外，关注今天真正发生的变化。" : "Beyond evergreen guidance, follow what is changing now."}
+          </h2>
+          <p className="mt-3 max-w-2xl leading-relaxed text-muted">
+            {zh
+              ? "News 是独立新闻栏目，只收录通过来源、相关性与事实核查门槛的纽约都市圈地产动态。"
+              : "News is a separate newsroom for New York metro real-estate developments that clear source, relevance, and factual-quality gates."}
+          </p>
+        </div>
+        <Link
+          href="/news"
+          className="inline-flex min-h-12 items-center justify-center rounded-sm border border-ink px-6 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white"
+        >
+          {zh ? "查看地产新闻" : "Open News"} →
+        </Link>
       </section>
 
       <section className="mt-16">

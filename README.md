@@ -11,6 +11,7 @@ design, bilingual content, agent credibility, and light IDX/listing support.
 - Tailwind CSS v4 via CSS tokens in `src/app/globals.css`
 - TypeScript
 - Supabase for advisor self-editing and website inquiry records
+- Supabase for the automated News archive and ingestion state
 - Resend for website inquiry email delivery
 - Vercel deployment
 
@@ -48,6 +49,22 @@ INQUIRY_TO_EMAIL=homix@homixny.com
 INQUIRY_FROM_EMAIL="Homix Website <inquiries@homixny.com>"
 ```
 
+The automated `/news` publisher additionally requires:
+
+```bash
+CRON_SECRET=...             # Vercel Cron Bearer secret
+NEWS_AI_MODEL=openai/gpt-5-mini
+# Optional explicit Gateway credential:
+AI_GATEWAY_API_KEY=...
+# Or call OpenAI directly (takes precedence over VERCEL_OIDC_TOKEN):
+OPENAI_API_KEY=...
+```
+
+Vercel's automatic `VERCEL_OIDC_TOKEN` still requires AI Gateway to be enabled
+for the Vercel team. If Gateway billing is not enabled, configure an independent
+`OPENAI_API_KEY` for this project instead. Do not reuse unrelated application
+credentials.
+
 `AGENTS_REVALIDATE_SECRET` is the shared secret with the agents.homixny.com
 portal — it authorizes the portal's advisor-profile, roster-admin, and
 cache-revalidate calls to this site, and must match the portal's value. Advisor
@@ -63,6 +80,11 @@ Run `supabase/schema.sql` in the Supabase SQL editor. It creates:
 - `agent-photos` public storage bucket for advisor headshots and long-lived
   website media.
 - `inquiries` for website contact form submissions.
+
+Then run `supabase/automated-news.sql` once. It creates the private source,
+candidate, article, and run tables; seeds the initial RSS sources; and extends
+Share Center links to accept `news`. The service-role key is the only runtime
+credential with access to these tables.
 
 No public write policy is created for `inquiries`; the server writes through the
 service-role key after validation.
@@ -89,6 +111,22 @@ All public inquiry forms submit through a Server Action. A submission:
 4. updates the inquiry status with email delivery state.
 
 If Resend is not configured but Supabase is configured, the lead is still stored.
+
+## Automated News
+
+Vercel calls `/api/cron/news` once each morning. A run:
+
+1. claims that New York calendar date so concurrent retries cannot double-publish;
+2. reads enabled publisher and Google News RSS sources from Supabase;
+3. rejects stale, irrelevant, duplicate, low-trust, or uncorroborated candidates;
+4. creates an original bilingual briefing from the strongest candidate;
+5. applies deterministic number checks and a separate editorial verification;
+6. publishes at most one article and revalidates `/news` plus Share Center.
+
+If no candidate clears every gate, the run is recorded as
+`skipped_no_candidate` and `/news` receives no article that day. Evergreen
+Guides are never used as a news fallback. Feed and editorial state can be
+inspected in `public.news_ingestion_runs` and `public.news_candidates`.
 
 ## Deployment
 

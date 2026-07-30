@@ -1,4 +1,5 @@
 import { SITE_MEDIA_ROOT } from "@/lib/media";
+import { priorityEvergreenPosts } from "./priority-evergreen";
 /**
  * Guide articles / 置业文章 — editorial content.
  *
@@ -65,6 +66,7 @@ export function postsByTopic(topicSlug: string): JournalPost[] {
 }
 
 export const journalPosts: JournalPost[] = [
+  ...priorityEvergreenPosts,
   {
     "slug": "manhattan-residential-market-data-2026",
     "contentKind": "timely",
@@ -1209,9 +1211,9 @@ export const journalPosts: JournalPost[] = [
   {
     "slug": "manhattan-rentals-2026",
     "contentKind": "timely",
-    "topic": "market",
+    "topic": "renting",
     "parentGuideSlug": "renting-in-nyc",
-    "secondaryTags": ["renting"],
+    "secondaryTags": ["market"],
     "date": "2026-05-21",
     "authorSlug": "kevinnli",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/brownstone.jpg`,
