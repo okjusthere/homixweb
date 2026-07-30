@@ -1,7 +1,10 @@
 import { timingSafeEqual } from "node:crypto";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
-import { runNewsPipeline } from "@/lib/news/pipeline";
+import {
+  regenerateNewsArticle,
+  runNewsPipeline,
+} from "@/lib/news/pipeline";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -19,7 +22,17 @@ function authorized(request: NextRequest): boolean {
   );
 }
 
-export async function GET(request: NextRequest) {
+function revalidateNews(slug?: string) {
+  revalidateTag("homix-news", "max");
+  revalidatePath("/news");
+  revalidatePath("/zh/news");
+  if (slug) {
+    revalidatePath(`/news/${slug}`);
+    revalidatePath(`/zh/news/${slug}`);
+  }
+}
+
+function authorizationError(request: NextRequest) {
   if (!process.env.CRON_SECRET?.trim()) {
     return NextResponse.json(
       { error: "News cron is not configured" },
@@ -29,17 +42,17 @@ export async function GET(request: NextRequest) {
   if (!authorized(request)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  return null;
+}
+
+export async function GET(request: NextRequest) {
+  const authError = authorizationError(request);
+  if (authError) return authError;
 
   try {
     const result = await runNewsPipeline();
     if (result.status === "published") {
-      revalidateTag("homix-news", "max");
-      revalidatePath("/news");
-      revalidatePath("/zh/news");
-      if (result.slug) {
-        revalidatePath(`/news/${result.slug}`);
-        revalidatePath(`/zh/news/${result.slug}`);
-      }
+      revalidateNews(result.slug);
     }
     return NextResponse.json(result, {
       headers: { "Cache-Control": "private, no-store" },
@@ -50,6 +63,57 @@ export async function GET(request: NextRequest) {
     console.error("Automated news run failed", { message });
     return NextResponse.json(
       { error: "News pipeline failed" },
+      {
+        status: 500,
+        headers: { "Cache-Control": "private, no-store" },
+      },
+    );
+  }
+}
+
+export async function POST(request: NextRequest) {
+  const authError = authorizationError(request);
+  if (authError) return authError;
+
+  const body = (await request.json().catch(() => null)) as {
+    slug?: unknown;
+  } | null;
+  const slug = typeof body?.slug === "string" ? body.slug.trim() : "";
+  if (
+    slug.length === 0 ||
+    slug.length > 160 ||
+    !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)
+  ) {
+    return NextResponse.json(
+      { error: "A valid news slug is required" },
+      { status: 400 },
+    );
+  }
+
+  try {
+    const result = await regenerateNewsArticle(slug);
+    if (result.status === "not_found") {
+      return NextResponse.json(result, {
+        status: 404,
+        headers: { "Cache-Control": "private, no-store" },
+      });
+    }
+    if (result.status === "rejected") {
+      return NextResponse.json(result, {
+        status: 422,
+        headers: { "Cache-Control": "private, no-store" },
+      });
+    }
+    revalidateNews(result.slug);
+    return NextResponse.json(result, {
+      headers: { "Cache-Control": "private, no-store" },
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : "News regeneration failed";
+    console.error("News regeneration failed", { slug, message });
+    return NextResponse.json(
+      { error: "News regeneration failed" },
       {
         status: 500,
         headers: { "Cache-Control": "private, no-store" },

@@ -9,6 +9,10 @@ import {
   type FeedCandidate,
   type NewsSource,
 } from "@/lib/news/rss";
+import {
+  NEWS_CATEGORIES,
+  type NewsCategory,
+} from "@/lib/news/types";
 
 type SourceRow = {
   id: number | string;
@@ -30,6 +34,21 @@ type CandidateRow = {
   rejection_reason: string | null;
 };
 
+type RegenerationCandidateRow = {
+  id: number | string;
+  source_id: number | string | null;
+  title: string;
+  summary: string;
+  source_name: string;
+  source_url: string;
+  publisher_url: string | null;
+  published_at: string | null;
+  category: string | null;
+  region: string | null;
+  content_hash: string;
+  raw_payload: Record<string, unknown> | null;
+};
+
 export type NewsPipelineResult = {
   status: "published" | "skipped_no_candidate" | "already_complete";
   runDate: string;
@@ -40,6 +59,16 @@ export type NewsPipelineResult = {
   failedSources?: string[];
   sourceCounts?: Record<string, number>;
 };
+
+export type NewsRegenerationResult =
+  | {
+      status: "regenerated";
+      slug: string;
+      bodyEnLength: number;
+      bodyZhLength: number;
+    }
+  | { status: "not_found"; slug: string }
+  | { status: "rejected"; slug: string; reason: string };
 
 function newYorkDate(now = new Date()): string {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -64,6 +93,36 @@ function mapSource(row: SourceRow): NewsSource {
     categories: row.categories ?? [],
     regions: row.regions ?? [],
     requiresCorroboration: row.requires_corroboration,
+  };
+}
+
+function isNewsCategory(value: string | null): value is NewsCategory {
+  return (NEWS_CATEGORIES as readonly string[]).includes(value ?? "");
+}
+
+function regenerationCandidate(
+  row: RegenerationCandidateRow,
+  source: SourceRow,
+): FeedCandidate {
+  if (!isNewsCategory(row.category)) {
+    throw new Error("News candidate has an invalid category");
+  }
+  return {
+    sourceId: Number(row.source_id),
+    sourceKey: source.source_key,
+    trustTier: source.trust_tier,
+    requiresCorroboration: source.requires_corroboration,
+    title: row.title,
+    summary: row.summary,
+    sourceName: row.source_name,
+    sourceUrl: row.source_url,
+    publisherUrl: row.publisher_url,
+    publishedAt: row.published_at,
+    category: row.category,
+    region: row.region ?? "New York Metro",
+    contentHash: row.content_hash,
+    score: 0,
+    rawPayload: row.raw_payload ?? {},
   };
 }
 
@@ -235,6 +294,82 @@ async function publishDraft(input: {
     .maybeSingle();
   if (existingError || !existing) throw error ?? existingError ?? new Error("Unable to publish news");
   return { id: Number(existing.id), slug: existing.slug as string };
+}
+
+export async function regenerateNewsArticle(
+  slug: string,
+): Promise<NewsRegenerationResult> {
+  const client = getSupabase();
+  if (!client) throw new Error("Supabase is not configured");
+
+  const { data: article, error: articleError } = await client
+    .from("news_articles")
+    .select("id,slug,candidate_id")
+    .eq("slug", slug)
+    .maybeSingle();
+  if (articleError) throw articleError;
+  if (!article?.candidate_id) return { status: "not_found", slug };
+
+  const { data: candidateData, error: candidateError } = await client
+    .from("news_candidates")
+    .select(
+      "id,source_id,title,summary,source_name,source_url,publisher_url,published_at,category,region,content_hash,raw_payload",
+    )
+    .eq("id", article.candidate_id)
+    .maybeSingle();
+  if (candidateError) throw candidateError;
+  const candidateRow = candidateData as RegenerationCandidateRow | null;
+  if (!candidateRow?.source_id) return { status: "not_found", slug };
+
+  const { data: sourceData, error: sourceError } = await client
+    .from("news_sources")
+    .select(
+      "id,source_key,name,source_type,trust_tier,feed_url,publisher_domain,categories,regions,requires_corroboration",
+    )
+    .eq("id", candidateRow.source_id)
+    .maybeSingle();
+  if (sourceError) throw sourceError;
+  const source = sourceData as SourceRow | null;
+  if (!source) return { status: "not_found", slug };
+
+  const result = await writeAndVerifyNews(
+    regenerationCandidate(candidateRow, source),
+  );
+  if (!result.draft) {
+    return { status: "rejected", slug, reason: result.reason };
+  }
+
+  const draft = result.draft;
+  const { error: updateError } = await client
+    .from("news_articles")
+    .update({
+      category: draft.category,
+      region: draft.region,
+      title_en: draft.title_en,
+      title_zh: draft.title_zh,
+      summary_en: draft.summary_en,
+      summary_zh: draft.summary_zh,
+      body_en: draft.body_en,
+      body_zh: draft.body_zh,
+      homix_take_en: draft.homix_take_en,
+      homix_take_zh: draft.homix_take_zh,
+      updated_at: new Date().toISOString(),
+    })
+    .eq("id", article.id);
+  if (updateError) throw updateError;
+
+  const { error: candidateStatusError } = await client
+    .from("news_candidates")
+    .update({ status: "published", rejection_reason: null })
+    .eq("id", candidateRow.id);
+  if (candidateStatusError) throw candidateStatusError;
+
+  return {
+    status: "regenerated",
+    slug,
+    bodyEnLength: draft.body_en.length,
+    bodyZhLength: draft.body_zh.length,
+  };
 }
 
 export async function runNewsPipeline(
