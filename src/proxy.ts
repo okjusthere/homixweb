@@ -44,6 +44,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   // Skip non-localized routes, metadata files, API, and static assets.
   matcher: [
-    "/((?!_next(?:/|$)|api(?:/|$)|og(?:/|$)|llms\\.txt$|robots\\.txt$|sitemap\\.xml$|icon\\.png$|apple-icon\\.png$|admin(?:/|$)|edit(?:/|$)|.*\\.[a-zA-Z0-9]+$).*)",
+    "/((?!_next(?:/|$)|api(?:/|$)|og(?:/|$)|news-cover(?:/|$)|llms\\.txt$|robots\\.txt$|sitemap\\.xml$|icon\\.png$|apple-icon\\.png$|admin(?:/|$)|edit(?:/|$)|.*\\.[a-zA-Z0-9]+$).*)",
   ],
 };
