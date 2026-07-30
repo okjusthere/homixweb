@@ -9,6 +9,7 @@ import type { Listing } from "@/lib/listings/types";
 import type { Locale } from "@/lib/locale";
 import { neighborhoods } from "@/lib/site";
 import { getPublishedNews, listPublishedNews } from "@/lib/news/repository";
+import { newsCoverPath } from "@/lib/news/cover";
 import { newsText } from "@/lib/news/types";
 import { absUrl } from "@/lib/seo";
 
@@ -151,15 +152,6 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
   ];
 }
 
-function newsImage(title: string, subtitle: string): string {
-  const params = new URLSearchParams({
-    title,
-    description: subtitle,
-    path: "/news",
-  });
-  return absUrl(`/og?${params.toString()}`);
-}
-
 async function newsCatalog(locale: Locale): Promise<ShareCatalogItem[]> {
   const articles = await listPublishedNews(100);
   return articles.map((article) => {
@@ -170,7 +162,7 @@ async function newsCatalog(locale: Locale): Promise<ShareCatalogItem[]> {
       path: `/news/${article.slug}`,
       title: copy.title,
       subtitle: shortText(copy.summary),
-      image: newsImage(copy.title, copy.summary),
+      image: absUrl(newsCoverPath(article, locale)),
       eyebrow: locale === "zh" ? "地产新闻" : "Real estate news",
     };
   });
@@ -207,7 +199,7 @@ export async function findShareCatalogItem(
       path: `/news/${article.slug}`,
       title: copy.title,
       subtitle: shortText(copy.summary),
-      image: newsImage(copy.title, copy.summary),
+      image: absUrl(newsCoverPath(article, locale)),
       eyebrow: locale === "zh" ? "地产新闻" : "Real estate news",
     };
   }

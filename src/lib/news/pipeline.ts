@@ -2,6 +2,7 @@ import "server-only";
 
 import { createHash } from "node:crypto";
 import { getSupabase } from "@/lib/supabase";
+import { generateNewsImageForArticle } from "@/lib/news/image";
 import { writeAndVerifyNews, type NewsDraft } from "@/lib/news/editor";
 import {
   candidatesCorroborate,
@@ -477,13 +478,31 @@ export async function runNewsPipeline(
           .from("news_candidates")
           .update({ status: "published", rejection_reason: null })
           .eq("id", candidateId);
+        let imageMessage = "";
+        try {
+          const imageResult = await generateNewsImageForArticle(article.slug);
+          imageMessage =
+            imageResult.status === "generated"
+              ? "AI image generated"
+              : "AI image article not found";
+        } catch (imageError) {
+          const message =
+            imageError instanceof Error
+              ? imageError.message
+              : "unknown image error";
+          imageMessage = `AI image fallback: ${message.slice(0, 500)}`;
+          console.error("News image generation failed", {
+            slug: article.slug,
+            message,
+          });
+        }
         await finishRun({
           runDate,
           status: "published",
           fetched,
           qualified,
           articleId: article.id,
-          message: `Published ${article.slug}`,
+          message: `Published ${article.slug}. ${imageMessage}`,
         });
         return {
           status: "published",

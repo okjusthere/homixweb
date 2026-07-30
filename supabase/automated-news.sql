@@ -63,10 +63,20 @@ CREATE TABLE IF NOT EXISTS public.news_articles (
   source_name TEXT NOT NULL,
   source_url TEXT NOT NULL,
   source_published_at TIMESTAMPTZ,
+  image_url TEXT,
+  image_alt_en TEXT,
+  image_alt_zh TEXT,
+  image_generated_at TIMESTAMPTZ,
   published_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+ALTER TABLE public.news_articles
+  ADD COLUMN IF NOT EXISTS image_url TEXT,
+  ADD COLUMN IF NOT EXISTS image_alt_en TEXT,
+  ADD COLUMN IF NOT EXISTS image_alt_zh TEXT,
+  ADD COLUMN IF NOT EXISTS image_generated_at TIMESTAMPTZ;
 
 CREATE INDEX IF NOT EXISTS idx_news_articles_published
   ON public.news_articles(status, published_at DESC);
@@ -131,6 +141,20 @@ ALTER TABLE public.news_sources ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.news_candidates ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.news_articles ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.news_ingestion_runs ENABLE ROW LEVEL SECURITY;
+
+INSERT INTO storage.buckets
+  (id, name, public, file_size_limit, allowed_mime_types)
+VALUES
+  ('news-images', 'news-images', TRUE, 10485760, ARRAY['image/jpeg', 'image/png'])
+ON CONFLICT (id) DO UPDATE SET
+  public = EXCLUDED.public,
+  file_size_limit = EXCLUDED.file_size_limit,
+  allowed_mime_types = EXCLUDED.allowed_mime_types;
+
+DROP POLICY IF EXISTS "news images public read" ON storage.objects;
+CREATE POLICY "news images public read"
+  ON storage.objects FOR SELECT
+  USING (bucket_id = 'news-images');
 
 DO $$ BEGIN
   IF EXISTS (SELECT 1 FROM pg_roles WHERE rolname = 'service_role') THEN

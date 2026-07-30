@@ -5,6 +5,7 @@ import {
   regenerateNewsArticle,
   runNewsPipeline,
 } from "@/lib/news/pipeline";
+import { generateNewsImageForArticle } from "@/lib/news/image";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -77,6 +78,7 @@ export async function POST(request: NextRequest) {
 
   const body = (await request.json().catch(() => null)) as {
     slug?: unknown;
+    operation?: unknown;
   } | null;
   const slug = typeof body?.slug === "string" ? body.slug.trim() : "";
   if (
@@ -89,16 +91,20 @@ export async function POST(request: NextRequest) {
       { status: 400 },
     );
   }
+  const operation = body?.operation === "image" ? "image" : "article";
 
   try {
-    const result = await regenerateNewsArticle(slug);
+    const result =
+      operation === "image"
+        ? await generateNewsImageForArticle(slug)
+        : await regenerateNewsArticle(slug);
     if (result.status === "not_found") {
       return NextResponse.json(result, {
         status: 404,
         headers: { "Cache-Control": "private, no-store" },
       });
     }
-    if (result.status === "rejected") {
+    if ("status" in result && result.status === "rejected") {
       return NextResponse.json(result, {
         status: 422,
         headers: { "Cache-Control": "private, no-store" },
@@ -109,11 +115,10 @@ export async function POST(request: NextRequest) {
       headers: { "Cache-Control": "private, no-store" },
     });
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : "News regeneration failed";
-    console.error("News regeneration failed", { slug, message });
+    const message = error instanceof Error ? error.message : "News update failed";
+    console.error("News update failed", { slug, operation, message });
     return NextResponse.json(
-      { error: "News regeneration failed" },
+      { error: "News update failed" },
       {
         status: 500,
         headers: { "Cache-Control": "private, no-store" },

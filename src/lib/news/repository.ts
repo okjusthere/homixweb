@@ -25,6 +25,10 @@ type NewsRow = {
   source_name: string;
   source_url: string;
   source_published_at: string | null;
+  image_url: string | null;
+  image_alt_en: string | null;
+  image_alt_zh: string | null;
+  image_generated_at: string | null;
   published_at: string;
 };
 
@@ -51,6 +55,10 @@ function mapRow(row: NewsRow): NewsArticle | null {
     sourceName: row.source_name,
     sourceUrl: row.source_url,
     sourcePublishedAt: row.source_published_at,
+    imageUrl: row.image_url,
+    imageAltEn: row.image_alt_en,
+    imageAltZh: row.image_alt_zh,
+    imageGeneratedAt: row.image_generated_at,
     publishedAt: row.published_at,
   };
 }
@@ -72,6 +80,10 @@ const selectColumns = [
   "source_name",
   "source_url",
   "source_published_at",
+  "image_url",
+  "image_alt_en",
+  "image_alt_zh",
+  "image_generated_at",
   "published_at",
 ].join(",");
 
