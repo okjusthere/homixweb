@@ -47,6 +47,7 @@ export const topics: Topic[] = [
       en: "Listing and selling — staging, media-first marketing, seller costs.",
       zh: "卖房挂牌:布置、媒体化营销、卖方成本。",
     },
+    pillarSlug: "selling-in-new-york",
   },
   {
     slug: "taxes",
@@ -82,6 +83,7 @@ export const topics: Topic[] = [
       en: "Investment property, rental math, 1031 exchanges.",
       zh: "投资房、租金测算、1031 置换。",
     },
+    pillarSlug: "investing-and-landlording",
   },
   {
     slug: "market",
@@ -94,10 +96,10 @@ export const topics: Topic[] = [
   },
   {
     slug: "policy",
-    label: { en: "Policy & News", zh: "政策与动态" },
+    label: { en: "Policy & Regulation", zh: "政策与法规" },
     blurb: {
-      en: "Rates, zoning reform, congestion pricing, flood risk — what moves the market.",
-      zh: "利率、分区改革、拥堵收费、洪水风险——影响楼市的动态。",
+      en: "Housing rules, zoning, fair housing, flood risk, and other regulations that shape a transaction.",
+      zh: "住房规则、分区、公平住房、洪水风险及其他影响交易的法规。",
     },
   },
 ];

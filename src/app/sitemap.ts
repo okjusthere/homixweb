@@ -10,6 +10,7 @@ import { gatedCommunities } from "@/data/gated-communities";
 import { communitiesBasePath, communityHref } from "@/lib/gated-communities";
 import { localizePath } from "@/lib/locale";
 import { neighborhoods, siteConfig } from "@/lib/site";
+import { listPublishedNews } from "@/lib/news/repository";
 
 /**
  * Static pages + advisor + neighborhood routes. Individual IDX listing detail
@@ -45,6 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/agents",
     "/chinese-real-estate-agents-nyc",
     "/guides",
+    "/news",
     "/market-data",
     "/neighborhoods",
     communitiesBasePath,
@@ -62,6 +64,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   const agents = await getAgents();
+  const news = await listPublishedNews(100);
   const localizedEntries = (path: string, options: SitemapEntryOptions) => {
     const enUrl = `${base}${localizePath("en", path || "/")}`;
     const zhUrl = `${base}${localizePath("zh", path || "/")}`;
@@ -112,6 +115,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: postModified(p),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    })),
+    ...news.flatMap((article) => localizedEntries(`/news/${article.slug}`, {
+      lastModified: article.publishedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
     })),
   ];
 }

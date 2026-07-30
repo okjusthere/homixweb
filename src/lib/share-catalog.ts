@@ -8,6 +8,9 @@ import { listings } from "@/lib/listings";
 import type { Listing } from "@/lib/listings/types";
 import type { Locale } from "@/lib/locale";
 import { neighborhoods } from "@/lib/site";
+import { getPublishedNews, listPublishedNews } from "@/lib/news/repository";
+import { newsText } from "@/lib/news/types";
+import { absUrl } from "@/lib/seo";
 
 export const SHARE_CONTENT_KINDS = [
   "listing",
@@ -15,6 +18,7 @@ export const SHARE_CONTENT_KINDS = [
   "community",
   "development",
   "guide",
+  "news",
 ] as const;
 
 export type ShareContentKind = (typeof SHARE_CONTENT_KINDS)[number];
@@ -147,6 +151,31 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
   ];
 }
 
+function newsImage(title: string, subtitle: string): string {
+  const params = new URLSearchParams({
+    title,
+    description: subtitle,
+    path: "/news",
+  });
+  return absUrl(`/og?${params.toString()}`);
+}
+
+async function newsCatalog(locale: Locale): Promise<ShareCatalogItem[]> {
+  const articles = await listPublishedNews(100);
+  return articles.map((article) => {
+    const copy = newsText(article, locale);
+    return {
+      kind: "news",
+      key: article.slug,
+      path: `/news/${article.slug}`,
+      title: copy.title,
+      subtitle: shortText(copy.summary),
+      image: newsImage(copy.title, copy.summary),
+      eyebrow: locale === "zh" ? "地产新闻" : "Real estate news",
+    };
+  });
+}
+
 function matches(item: ShareCatalogItem, query: string): boolean {
   if (!query) return true;
   const haystack = `${item.title} ${item.subtitle} ${item.eyebrow ?? ""}`.toLocaleLowerCase();
@@ -167,6 +196,22 @@ export async function findShareCatalogItem(
   const staticMatch = staticCatalog(locale).find((item) => item.path === normalized);
   if (staticMatch) return staticMatch;
 
+  const newsSlug = normalized.match(/^\/news\/([^/]+)$/)?.[1];
+  if (newsSlug) {
+    const article = await getPublishedNews(decodeURIComponent(newsSlug));
+    if (!article) return null;
+    const copy = newsText(article, locale);
+    return {
+      kind: "news",
+      key: article.slug,
+      path: `/news/${article.slug}`,
+      title: copy.title,
+      subtitle: shortText(copy.summary),
+      image: newsImage(copy.title, copy.summary),
+      eyebrow: locale === "zh" ? "地产新闻" : "Real estate news",
+    };
+  }
+
   const listingSlug = normalized.match(/^\/listings\/([^/]+)$/)?.[1];
   if (!listingSlug) return null;
   const listing = await listings.getListingBySlug(decodeURIComponent(listingSlug));
@@ -184,15 +229,18 @@ export async function getShareCatalog(input: {
   const pageSize = Math.min(48, Math.max(6, Math.floor(input.pageSize ?? 24)));
   const query = (input.query ?? "").trim().toLocaleLowerCase().slice(0, 100);
   const staticItems = staticCatalog(input.locale);
+  const dynamicNewsItems = await newsCatalog(input.locale);
+  const catalogItems = [...staticItems, ...dynamicNewsItems];
   const counts: ShareCatalogResult["counts"] = {
     neighborhood: staticItems.filter((item) => item.kind === "neighborhood").length,
     community: staticItems.filter((item) => item.kind === "community").length,
     development: staticItems.filter((item) => item.kind === "development").length,
     guide: staticItems.filter((item) => item.kind === "guide").length,
+    news: dynamicNewsItems.length,
   };
 
   if (input.kind !== "all" && input.kind !== "listing") {
-    const matching = staticItems
+    const matching = catalogItems
       .filter((item) => item.kind === input.kind)
       .filter((item) => matches(item, query));
     const offset = (page - 1) * pageSize;
@@ -230,7 +278,7 @@ export async function getShareCatalog(input: {
     };
   }
 
-  const matchingStatic = staticItems.filter((item) => matches(item, query));
+  const matchingStatic = catalogItems.filter((item) => matches(item, query));
   const groupedPreview = SHARE_CONTENT_KINDS.flatMap((kind) => {
     if (kind === "listing") return [];
     return matchingStatic.filter((item) => item.kind === kind).slice(0, query ? 12 : 8);

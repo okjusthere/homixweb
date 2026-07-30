@@ -1,6 +1,8 @@
 import type { Guide } from "./types";
 import { buyingGuide } from "./buying-in-nyc";
 import { rentingGuide } from "./renting-in-nyc";
+import { sellingGuide } from "./selling-in-new-york";
+import { investingGuide } from "./investing-and-landlording";
 import { newImmigrantsGuide } from "./new-immigrants";
 import { internationalStudentsGuide } from "./international-students";
 import { taxesGuide } from "./property-taxes";
@@ -11,6 +13,8 @@ export type { Guide, GuideFaq, GuideSection } from "./types";
 export const guides: Guide[] = [
   buyingGuide,
   rentingGuide,
+  sellingGuide,
+  investingGuide,
   newImmigrantsGuide,
   internationalStudentsGuide,
   taxesGuide,
