@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { ImageResponse } from "next/og";
 import { getPublishedNews } from "@/lib/news/repository";
 import {
@@ -11,12 +12,18 @@ const SLUG_PATTERN = /^[a-z0-9](?:[a-z0-9-]{0,118}[a-z0-9])?$/;
 let cjkFontPromise: Promise<ArrayBuffer> | undefined;
 
 function getCjkFont() {
-  cjkFontPromise ??= fetch(
+  cjkFontPromise ??= readFile(
     new URL(
       "../../assets/fonts/noto-sans-sc-chinese-simplified-400.woff",
       import.meta.url,
     ),
-  ).then((response) => response.arrayBuffer());
+  ).then(
+    (font) =>
+      font.buffer.slice(
+        font.byteOffset,
+        font.byteOffset + font.byteLength,
+      ) as ArrayBuffer,
+  );
   return cjkFontPromise;
 }
 
