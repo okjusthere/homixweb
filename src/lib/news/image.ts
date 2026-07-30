@@ -145,16 +145,43 @@ export async function generateNewsImageForArticle(
   if (rendered.info.width !== 1200 || rendered.info.height !== 630) {
     throw new Error("Generated news image has invalid dimensions");
   }
+  if (
+    rendered.data[0] !== 0xff ||
+    rendered.data[1] !== 0xd8 ||
+    rendered.data[2] !== 0xff
+  ) {
+    throw new Error("Generated news image is not a valid JPEG");
+  }
 
   const objectPath = `news/${article.slug}/${Date.now()}.jpg`;
+  // Supabase Storage's fetch transport can stringify a Node Buffer in some
+  // serverless runtimes. A standalone ArrayBuffer preserves the binary bytes.
+  const uploadBody = new Uint8Array(rendered.data).buffer;
   const { error: uploadError } = await client.storage
     .from(NEWS_IMAGE_BUCKET)
-    .upload(objectPath, rendered.data, {
+    .upload(objectPath, uploadBody, {
       contentType: "image/jpeg",
       cacheControl: "31536000",
       upsert: false,
     });
   if (uploadError) throw uploadError;
+
+  const { data: storedObject, error: downloadError } = await client.storage
+    .from(NEWS_IMAGE_BUCKET)
+    .download(objectPath);
+  if (downloadError || !storedObject) {
+    await client.storage.from(NEWS_IMAGE_BUCKET).remove([objectPath]);
+    throw downloadError ?? new Error("Stored news image could not be verified");
+  }
+  const storedBytes = new Uint8Array(await storedObject.arrayBuffer());
+  if (
+    storedBytes[0] !== 0xff ||
+    storedBytes[1] !== 0xd8 ||
+    storedBytes[2] !== 0xff
+  ) {
+    await client.storage.from(NEWS_IMAGE_BUCKET).remove([objectPath]);
+    throw new Error("Stored news image failed binary verification");
+  }
 
   const imageUrl = client.storage
     .from(NEWS_IMAGE_BUCKET)
