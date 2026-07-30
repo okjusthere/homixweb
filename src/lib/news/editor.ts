@@ -171,12 +171,73 @@ function sourcePacket(candidate: FeedCandidate, articleText: string): string {
   );
 }
 
+const NUMBER_WORDS: Record<string, string> = {
+  one: "1",
+  first: "1",
+  two: "2",
+  second: "2",
+  three: "3",
+  third: "3",
+  thirds: "3",
+  four: "4",
+  fourth: "4",
+  five: "5",
+  fifth: "5",
+  six: "6",
+  sixth: "6",
+  seven: "7",
+  seventh: "7",
+  eight: "8",
+  eighth: "8",
+  nine: "9",
+  ninth: "9",
+  ten: "10",
+  tenth: "10",
+  eleven: "11",
+  twelfth: "12",
+  twelve: "12",
+};
+
+function normalizedNumber(value: string): string | null {
+  const match = value
+    .toLocaleLowerCase()
+    .match(/^(\d+(?:[.,]\d+)*)(?:\s*(thousand|million|billion)|([kmb万亿]))?/i);
+  if (!match) return null;
+  const number = Number(match[1].replace(/,/g, ""));
+  if (!Number.isFinite(number)) return null;
+  const scale = (match[2] ?? match[3] ?? "").toLocaleLowerCase();
+  const multiplier =
+    scale === "k" || scale === "thousand" || scale === "万"
+      ? scale === "万"
+        ? 10_000
+        : 1_000
+      : scale === "m" || scale === "million"
+        ? 1_000_000
+        : scale === "b" || scale === "billion" || scale === "亿"
+          ? scale === "亿"
+            ? 100_000_000
+            : 1_000_000_000
+          : 1;
+  const normalized = number * multiplier;
+  return Number.isInteger(normalized)
+    ? String(normalized)
+    : String(Number(normalized.toFixed(6)));
+}
+
 function numericTokens(value: string): Set<string> {
-  return new Set(
-    value
-      .match(/\b\d+(?:[.,]\d+)*(?:%|x)?\b/gi)
-      ?.map((token) => token.replace(/,/g, "").toLocaleLowerCase()) ?? [],
-  );
+  const tokens = new Set<string>();
+  for (const match of value.matchAll(
+    /\d+(?:[.,]\d+)*(?:\s*(?:thousand|million|billion)|[kmb万亿])?(?:%|x)?/gi,
+  )) {
+    const normalized = normalizedNumber(match[0]);
+    if (normalized) tokens.add(normalized);
+  }
+  for (const match of value
+    .toLocaleLowerCase()
+    .matchAll(/\b(one|first|two|second|three|thirds?|four|fourth|five|fifth|six|sixth|seven|seventh|eight|eighth|nine|ninth|ten|tenth|eleven|twelve|twelfth)\b/g)) {
+    tokens.add(NUMBER_WORDS[match[1]]);
+  }
+  return tokens;
 }
 
 function numbersAreGrounded(
