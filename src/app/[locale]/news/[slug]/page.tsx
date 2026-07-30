@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "@/components/ui/LocalizedLink";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
@@ -7,6 +8,7 @@ import { Markdown } from "@/components/journal/Markdown";
 import { getRouteLocale } from "@/lib/i18n";
 import { localizePath } from "@/lib/locale";
 import { getPublishedNews } from "@/lib/news/repository";
+import { newsCoverPath } from "@/lib/news/cover";
 import {
   NEWS_CATEGORY_LABELS,
   newsText,
@@ -34,6 +36,7 @@ export async function generateMetadata({
     locale,
     title: copy.title,
     description: copy.summary,
+    image: newsCoverPath(article.slug, locale),
     ogType: "article",
   });
 }
@@ -56,6 +59,7 @@ export default async function NewsArticlePage({
     timeZone: "America/New_York",
   });
   const articleUrl = absUrl(localizePath(locale, `/news/${article.slug}`));
+  const coverUrl = absUrl(newsCoverPath(article.slug, locale));
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -79,6 +83,7 @@ export default async function NewsArticlePage({
       },
     },
     citation: article.sourceUrl,
+    image: coverUrl,
     inLanguage: zh ? "zh-Hans" : "en",
   };
 
@@ -108,6 +113,17 @@ export default async function NewsArticlePage({
             <span>Homix News</span>
           </div>
         </header>
+
+        <figure className="mt-8 overflow-hidden rounded-sm border border-line bg-surface">
+          <Image
+            src={newsCoverPath(article.slug, locale)}
+            alt={zh ? `${copy.title} 新闻封面` : `${copy.title} news cover`}
+            width={1200}
+            height={630}
+            priority
+            className="aspect-[1200/630] h-auto w-full object-cover"
+          />
+        </figure>
 
         <div className="mt-9">
           <Markdown>{copy.body}</Markdown>

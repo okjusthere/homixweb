@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getRouteLocale } from "@/lib/i18n";
 import { listPublishedNews } from "@/lib/news/repository";
+import { newsCoverPath } from "@/lib/news/cover";
 import {
   NEWS_CATEGORIES,
   NEWS_CATEGORY_LABELS,
@@ -145,23 +146,38 @@ export default async function NewsPage({
             return (
               <article
                 key={article.id}
-                className={`grid gap-5 py-9 sm:py-11 ${
+                className={`grid gap-6 py-9 sm:py-11 ${
                   index === 0
-                    ? "lg:grid-cols-[minmax(0,1.25fr)_minmax(240px,0.75fr)]"
-                    : "md:grid-cols-[180px_minmax(0,1fr)]"
+                    ? "lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.95fr)] lg:items-center"
+                    : "md:grid-cols-[220px_minmax(0,1fr)] md:items-center"
                 }`}
               >
-                <div className={index === 0 ? "lg:order-2" : ""}>
-                  <p className="text-xs uppercase text-muted">
-                    {NEWS_CATEGORY_LABELS[article.category][locale]} · {article.region}
-                  </p>
-                  <p className="mt-2 text-sm text-muted">
-                    {df.format(new Date(article.publishedAt))}
-                  </p>
-                </div>
+                <Link
+                  href={`/news/${article.slug}`}
+                  className={`block overflow-hidden rounded-sm border border-line bg-surface ${
+                    index === 0 ? "lg:order-2" : ""
+                  }`}
+                >
+                  <Image
+                    src={newsCoverPath(article.slug, locale)}
+                    alt=""
+                    width={1200}
+                    height={630}
+                    className="aspect-[1200/630] h-auto w-full object-cover transition-transform duration-300 hover:scale-[1.015]"
+                  />
+                </Link>
                 <div className={index === 0 ? "lg:order-1" : ""}>
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase text-muted">
+                    <span>
+                      {NEWS_CATEGORY_LABELS[article.category][locale]} · {article.region}
+                    </span>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={article.publishedAt}>
+                      {df.format(new Date(article.publishedAt))}
+                    </time>
+                  </div>
                   <h2
-                    className={`font-serif font-normal leading-tight text-ink ${
+                    className={`mt-3 font-serif font-normal leading-tight text-ink ${
                       index === 0 ? "text-3xl sm:text-4xl" : "text-2xl"
                     }`}
                   >
