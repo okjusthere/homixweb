@@ -56,6 +56,9 @@ CRON_SECRET=...             # Vercel Cron Bearer secret
 AZURE_OPENAI_API_KEY=...
 AZURE_OPENAI_RESPONSES_ENDPOINT=https://YOUR-RESOURCE.services.ai.azure.com/openai/v1/responses
 AZURE_OPENAI_DEPLOYMENT=...
+AZURE_OPENAI_IMAGE_ENDPOINT=https://YOUR-RESOURCE.services.ai.azure.com/openai/v1/images/generations?api-version=preview
+AZURE_OPENAI_IMAGE_API_KEY=...
+AZURE_OPENAI_IMAGE_DEPLOYMENT=gpt-image-2
 ```
 
 The newsroom calls the dedicated Azure deployment directly with Azure's

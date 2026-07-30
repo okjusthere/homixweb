@@ -159,7 +159,7 @@ export default async function NewsPage({
                   }`}
                 >
                   <Image
-                    src={newsCoverPath(article.slug, locale)}
+                    src={newsCoverPath(article, locale)}
                     alt=""
                     width={1200}
                     height={630}

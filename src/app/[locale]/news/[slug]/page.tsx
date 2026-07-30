@@ -36,7 +36,7 @@ export async function generateMetadata({
     locale,
     title: copy.title,
     description: copy.summary,
-    image: newsCoverPath(article.slug, locale),
+    image: newsCoverPath(article, locale),
     ogType: "article",
   });
 }
@@ -59,7 +59,7 @@ export default async function NewsArticlePage({
     timeZone: "America/New_York",
   });
   const articleUrl = absUrl(localizePath(locale, `/news/${article.slug}`));
-  const coverUrl = absUrl(newsCoverPath(article.slug, locale));
+  const coverUrl = absUrl(newsCoverPath(article, locale));
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
@@ -116,13 +116,23 @@ export default async function NewsArticlePage({
 
         <figure className="mt-8 overflow-hidden rounded-sm border border-line bg-surface">
           <Image
-            src={newsCoverPath(article.slug, locale)}
-            alt={zh ? `${copy.title} 新闻封面` : `${copy.title} news cover`}
+            src={newsCoverPath(article, locale)}
+            alt={
+              (zh ? article.imageAltZh : article.imageAltEn) ??
+              (zh ? `${copy.title} 新闻封面` : `${copy.title} news cover`)
+            }
             width={1200}
             height={630}
             priority
             className="aspect-[1200/630] h-auto w-full object-cover"
           />
+          {article.imageUrl && (
+            <figcaption className="border-t border-line px-4 py-2 text-xs leading-relaxed text-muted">
+              {zh
+                ? "AI 生成的概念配图，并非项目或事件的实际照片或效果图。"
+                : "AI-generated conceptual editorial image, not an actual photograph or project rendering."}
+            </figcaption>
+          )}
         </figure>
 
         <div className="mt-9">

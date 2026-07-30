@@ -29,6 +29,10 @@ export type NewsArticle = {
   sourceName: string;
   sourceUrl: string;
   sourcePublishedAt: string | null;
+  imageUrl: string | null;
+  imageAltEn: string | null;
+  imageAltZh: string | null;
+  imageGeneratedAt: string | null;
   publishedAt: string;
 };
 
