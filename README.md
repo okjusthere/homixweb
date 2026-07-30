@@ -53,17 +53,14 @@ The automated `/news` publisher additionally requires:
 
 ```bash
 CRON_SECRET=...             # Vercel Cron Bearer secret
-NEWS_AI_MODEL=openai/gpt-5-mini
-# Optional explicit Gateway credential:
-AI_GATEWAY_API_KEY=...
-# Or call OpenAI directly (takes precedence over VERCEL_OIDC_TOKEN):
-OPENAI_API_KEY=...
+AZURE_OPENAI_API_KEY=...
+AZURE_OPENAI_RESPONSES_ENDPOINT=https://YOUR-RESOURCE.services.ai.azure.com/openai/v1/responses
+AZURE_OPENAI_DEPLOYMENT=...
 ```
 
-Vercel's automatic `VERCEL_OIDC_TOKEN` still requires AI Gateway to be enabled
-for the Vercel team. If Gateway billing is not enabled, configure an independent
-`OPENAI_API_KEY` for this project instead. Do not reuse unrelated application
-credentials.
+The newsroom calls the dedicated Azure deployment directly with Azure's
+`api-key` authentication. It does not use Vercel AI Gateway or a generic
+`OPENAI_API_KEY`.
 
 `AGENTS_REVALIDATE_SECRET` is the shared secret with the agents.homixny.com
 portal — it authorizes the portal's advisor-profile, roster-admin, and
