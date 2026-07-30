@@ -2,6 +2,11 @@
 
 import { cookies, headers } from "next/headers";
 import { sendInquiryEmail, type InquiryEmailData } from "@/lib/inquiry-email";
+import {
+  recordShareEvent,
+  resolvePublicShare,
+  validShareSession,
+} from "@/lib/share-links";
 import { getSupabase } from "@/lib/supabase";
 
 export interface InquiryActionState {
@@ -95,6 +100,8 @@ export async function submitInquiry(
   const notes = cleanMessage(formData.get("message"));
   const source = clean(formData.get("source"), 80) || "website";
   const pagePath = clean(formData.get("page_path"), 300);
+  const shareCode = clean(formData.get("share_code"), 24);
+  const shareSession = clean(formData.get("share_session"), 64);
   const consent = formData.get("consent") === "on";
   const isSellerValuation = source === "sell-valuation";
   const propertyAddress = clean(formData.get("property_address"), 300);
@@ -159,26 +166,51 @@ export async function submitInquiry(
   };
 
   const sb = getSupabase();
+  const shareContext = shareCode
+    ? await resolvePublicShare(shareCode, pagePath)
+    : null;
   let inquiryId: string | null = null;
   let stored = false;
 
   if (sb) {
-    const { data, error } = await sb
+    const inquiry: Record<string, unknown> = {
+      name,
+      phone: phone || null,
+      email,
+      message: message || null,
+      consent,
+      source,
+      page_path: pagePath || null,
+      locale,
+      status: "received",
+      ...metadata,
+    };
+    let result = await sb
       .from("inquiries")
-      .insert({
-        name,
-        phone: phone || null,
-        email,
-        message: message || null,
-        consent,
-        source,
-        page_path: pagePath || null,
-        locale,
-        status: "received",
-        ...metadata,
-      })
+      .insert(
+        shareContext
+          ? {
+              ...inquiry,
+              share_link_id: shareContext.linkId,
+              referred_agent_id: shareContext.agentId,
+            }
+          : inquiry,
+      )
       .select("id")
       .single();
+
+    // During deploy-before-migrate, keep lead capture working even if the new
+    // attribution columns have not reached PostgREST's schema cache yet.
+    if (
+      result.error &&
+      shareContext &&
+      (result.error.code === "42703" ||
+        result.error.code === "PGRST204" ||
+        /share_link_id|referred_agent_id/.test(result.error.message))
+    ) {
+      result = await sb.from("inquiries").insert(inquiry).select("id").single();
+    }
+    const { data, error } = result;
 
     if (error) {
       console.error("Inquiry insert failed:", error.message);
@@ -206,6 +238,15 @@ export async function submitInquiry(
         email_error: emailResult.sent ? null : emailResult.error,
       })
       .eq("id", inquiryId);
+  }
+
+  if (shareContext) {
+    await recordShareEvent({
+      context: shareContext,
+      sessionKey: validShareSession(shareSession) ? shareSession : null,
+      eventType: "inquiry",
+      metadata: inquiryId ? { inquiryId } : undefined,
+    });
   }
 
   if (!stored && !emailResult.sent) {

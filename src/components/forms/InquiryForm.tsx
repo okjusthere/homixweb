@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { submitInquiry, type InquiryActionState } from "@/app/inquiry-actions";
 import { Button } from "@/components/ui/Button";
@@ -43,10 +43,23 @@ export function InquiryForm({
   source?: string;
 }) {
   const pathname = usePathname();
+  const shareCodeRef = useRef<HTMLInputElement>(null);
+  const shareSessionRef = useRef<HTMLInputElement>(null);
   const [state, formAction, pending] = useActionState<InquiryActionState | null, FormData>(
     submitInquiry,
     null,
   );
+
+  useEffect(() => {
+    const code = new URLSearchParams(window.location.search).get("share") || "";
+    if (!/^[A-Za-z0-9_-]{8,24}$/.test(code)) return;
+    const key = `homix-share-session:${code}`;
+    const session =
+      window.sessionStorage.getItem(key) || window.crypto.randomUUID();
+    window.sessionStorage.setItem(key, session);
+    if (shareCodeRef.current) shareCodeRef.current.value = code;
+    if (shareSessionRef.current) shareSessionRef.current.value = session;
+  }, []);
 
   if (state?.ok) {
     return (
@@ -61,6 +74,13 @@ export function InquiryForm({
     <form className="space-y-4" action={formAction}>
       <input type="hidden" name="source" value={source} />
       <input type="hidden" name="page_path" value={pathname} />
+      <input ref={shareCodeRef} type="hidden" name="share_code" defaultValue="" />
+      <input
+        ref={shareSessionRef}
+        type="hidden"
+        name="share_session"
+        defaultValue=""
+      />
       <input
         type="text"
         name="company"

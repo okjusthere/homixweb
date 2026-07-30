@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Fraunces, Inter } from "next/font/google";
+import { Suspense } from "react";
 import "../globals.css";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { ShareAttribution } from "@/components/share/ShareAttribution";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { isLocale, locales, localizePath } from "@/lib/locale";
 import { buyNav, primaryNav, siteConfig } from "@/lib/site";
@@ -104,6 +106,9 @@ export default async function RootLayout({
           portalLabel={t.common.agentLogin}
           portalHref={siteConfig.portalUrl}
         />
+        <Suspense fallback={null}>
+          <ShareAttribution locale={locale} />
+        </Suspense>
         <main id="main" className="flex-1">
           {children}
         </main>
