@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import {
   deviceType,
   referrerDomain,
-  resolvePublicShare,
+  resolveTrackedShare,
   upsertShareVisit,
   validShareSession,
   visitorHash,
@@ -28,7 +28,11 @@ export async function POST(request: NextRequest) {
   }
   const code = String(body.code || "");
   const path = String(body.path || "");
-  const context = await resolvePublicShare(code, path);
+  const context = await resolveTrackedShare(
+    code,
+    path,
+    String(body.sessionKey),
+  );
   if (!context) {
     return NextResponse.json({ error: "Share link not found" }, { status: 404 });
   }

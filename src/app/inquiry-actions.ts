@@ -4,7 +4,7 @@ import { cookies, headers } from "next/headers";
 import { sendInquiryEmail, type InquiryEmailData } from "@/lib/inquiry-email";
 import {
   recordShareEvent,
-  resolvePublicShare,
+  resolveTrackedShare,
   validShareSession,
 } from "@/lib/share-links";
 import { getSupabase } from "@/lib/supabase";
@@ -167,7 +167,7 @@ export async function submitInquiry(
 
   const sb = getSupabase();
   const shareContext = shareCode
-    ? await resolvePublicShare(shareCode, pagePath)
+    ? await resolveTrackedShare(shareCode, pagePath, shareSession)
     : null;
   let inquiryId: string | null = null;
   let stored = false;

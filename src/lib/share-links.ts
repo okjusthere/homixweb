@@ -108,6 +108,35 @@ export async function resolvePublicShare(
   };
 }
 
+export async function resolveTrackedShare(
+  code: string,
+  currentPath: string,
+  sessionKey?: string | null,
+): Promise<PublicShareContext | null> {
+  const context = await resolvePublicShare(code);
+  if (!context) return null;
+  if (
+    normalizeShareContentPath(currentPath) ===
+    normalizeShareContentPath(context.contentPath)
+  ) {
+    return context;
+  }
+  if (!sessionKey || !validShareSession(sessionKey)) return null;
+
+  const sb = getSupabase();
+  if (!sb) return null;
+  const { data, error } = await sb
+    .from("share_visits")
+    .select("share_link_id")
+    .eq("session_key", sessionKey)
+    .maybeSingle();
+  if (error) {
+    console.error("Share continuation lookup failed:", error.message);
+    return null;
+  }
+  return data && Number(data.share_link_id) === context.linkId ? context : null;
+}
+
 export function visitorHash(ip: string, userAgent: string): string {
   const secret =
     process.env.SHARE_ANALYTICS_SALT?.trim() ||

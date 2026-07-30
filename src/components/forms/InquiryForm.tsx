@@ -4,6 +4,11 @@ import { useActionState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { submitInquiry, type InquiryActionState } from "@/app/inquiry-actions";
 import { Button } from "@/components/ui/Button";
+import {
+  getOrCreateShareSession,
+  readShareAttribution,
+  validClientShareCode,
+} from "@/lib/share-session";
 
 const inputClass =
   "w-full rounded-sm border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted focus:border-bronze focus:outline-none";
@@ -51,15 +56,21 @@ export function InquiryForm({
   );
 
   useEffect(() => {
-    const code = new URLSearchParams(window.location.search).get("share") || "";
-    if (!/^[A-Za-z0-9_-]{8,24}$/.test(code)) return;
-    const key = `homix-share-session:${code}`;
-    const session =
-      window.sessionStorage.getItem(key) || window.crypto.randomUUID();
-    window.sessionStorage.setItem(key, session);
+    if (shareCodeRef.current) shareCodeRef.current.value = "";
+    if (shareSessionRef.current) shareSessionRef.current.value = "";
+    const requestedCode =
+      new URLSearchParams(window.location.search).get("share") || "";
+    const stored = requestedCode ? null : readShareAttribution();
+    const code = validClientShareCode(requestedCode)
+      ? requestedCode
+      : stored?.code || "";
+    const session = requestedCode
+      ? getOrCreateShareSession(code)
+      : stored?.sessionKey || null;
+    if (!code || !session) return;
     if (shareCodeRef.current) shareCodeRef.current.value = code;
     if (shareSessionRef.current) shareSessionRef.current.value = session;
-  }, []);
+  }, [pathname]);
 
   if (state?.ok) {
     return (

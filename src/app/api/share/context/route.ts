@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { resolvePublicShare } from "@/lib/share-links";
+import { resolveTrackedShare } from "@/lib/share-links";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -7,7 +7,8 @@ export const dynamic = "force-dynamic";
 export async function GET(request: NextRequest) {
   const code = request.nextUrl.searchParams.get("code") || "";
   const path = request.nextUrl.searchParams.get("path") || "";
-  const context = await resolvePublicShare(code, path);
+  const sessionKey = request.nextUrl.searchParams.get("sessionKey");
+  const context = await resolveTrackedShare(code, path, sessionKey);
   if (!context) {
     return NextResponse.json({ error: "Share link not found" }, { status: 404 });
   }

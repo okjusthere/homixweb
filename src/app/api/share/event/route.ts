@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
   recordShareEvent,
-  resolvePublicShare,
+  resolveTrackedShare,
   validShareSession,
 } from "@/lib/share-links";
 
@@ -24,9 +24,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const context = await resolvePublicShare(
+  const context = await resolveTrackedShare(
     String(body.code || ""),
     String(body.path || ""),
+    typeof sessionKey === "string" ? sessionKey : null,
   );
   if (!context) {
     return NextResponse.json({ error: "Share link not found" }, { status: 404 });

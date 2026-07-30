@@ -64,6 +64,9 @@ function listingItem(listing: Listing): ShareCatalogItem {
 
 function staticCatalog(locale: Locale): ShareCatalogItem[] {
   const zh = locale === "zh";
+  const newestPosts = journalPosts
+    .slice()
+    .sort((a, b) => b.date.localeCompare(a.date));
 
   const neighborhoodItems: ShareCatalogItem[] = neighborhoods.map((item) => ({
     kind: "neighborhood",
@@ -113,21 +116,27 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
       path: `/guides/topics/${item.slug}`,
       title: item.label[locale],
       subtitle: shortText(item.blurb[locale]),
-      image: null,
+      image:
+        newestPosts.find(
+          (post) =>
+            post.topic === item.slug ||
+            (post.secondaryTags ?? []).includes(item.slug),
+        )?.cover ??
+        (item.pillarSlug
+          ? guides.find((guide) => guide.slug === item.pillarSlug)?.cover
+          : null) ??
+        null,
       eyebrow: zh ? "内容主题" : "Guide topic",
     })),
-    ...journalPosts
-      .slice()
-      .sort((a, b) => b.date.localeCompare(a.date))
-      .map((item) => ({
-        kind: "guide" as const,
-        key: `article:${item.slug}`,
-        path: `/guides/articles/${item.slug}`,
-        title: item.title[locale],
-        subtitle: shortText(item.excerpt[locale]),
-        image: item.cover,
-        eyebrow: item.category[locale],
-      })),
+    ...newestPosts.map((item) => ({
+      kind: "guide" as const,
+      key: `article:${item.slug}`,
+      path: `/guides/articles/${item.slug}`,
+      title: item.title[locale],
+      subtitle: shortText(item.excerpt[locale]),
+      image: item.cover,
+      eyebrow: item.category[locale],
+    })),
   ];
 
   return [

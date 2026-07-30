@@ -10,6 +10,14 @@ import {
 } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/locale";
+import {
+  clearShareAttribution,
+  getOrCreateShareSession,
+  readShareAttribution,
+  saveShareAttribution,
+  touchShareAttribution,
+  validClientShareCode,
+} from "@/lib/share-session";
 
 type ShareContext = {
   code: string;
@@ -28,65 +36,127 @@ type ShareContext = {
   };
 };
 
-function sessionKey(code: string): string {
-  const key = `homix-share-session:${code}`;
-  const existing = window.sessionStorage.getItem(key);
-  if (existing) return existing;
-  const created = window.crypto.randomUUID();
-  window.sessionStorage.setItem(key, created);
-  return created;
-}
-
 function normalizePath(pathname: string): string {
   return pathname.replace(/^\/(?:en|zh)(?=\/|$)/, "") || "/";
 }
 
+type ActiveShare = {
+  context: ShareContext;
+  sessionKey: string;
+  originPage: boolean;
+  loadedPath: string;
+};
+
 export function ShareAttribution({ locale }: { locale: Locale }) {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const code = searchParams.get("share") || "";
+  const requestedCode = searchParams.get("share") || "";
   const normalizedPath = normalizePath(pathname);
-  const [context, setContext] = useState<ShareContext | null>(null);
-  const activeContext =
-    context?.code === code && context.contentPath === normalizedPath
-      ? context
-      : null;
+  const [activeShare, setActiveShare] = useState<ActiveShare | null>(null);
+  const currentShare =
+    activeShare?.loadedPath === normalizedPath ? activeShare : null;
+  const activeContext = currentShare?.context ?? null;
   const [wechatOpen, setWechatOpen] = useState(false);
-  const [stickyVisible, setStickyVisible] = useState(false);
+  const [stickyPath, setStickyPath] = useState<string | null>(null);
   const bannerRef = useRef<HTMLElement>(null);
-  const sessionRef = useRef("");
+  const verifiedShareRef = useRef<{
+    context: ShareContext;
+    sessionKey: string;
+  } | null>(null);
 
   useEffect(() => {
-    if (!/^[A-Za-z0-9_-]{8,24}$/.test(code)) return;
     const controller = new AbortController();
-    fetch(
-      `/api/share/context?code=${encodeURIComponent(code)}&path=${encodeURIComponent(normalizedPath)}`,
-      { cache: "no-store", signal: controller.signal },
-    )
-      .then(async (response) => {
-        if (!response.ok) return null;
-        return (await response.json()) as ShareContext;
-      })
-      .then((value) => {
-        if (!value) return;
-        sessionRef.current = sessionKey(code);
-        setContext(value);
-      })
-      .catch(() => {});
+    const load = async () => {
+      const explicit = validClientShareCode(requestedCode);
+      if (requestedCode && !explicit) {
+        clearShareAttribution();
+        verifiedShareRef.current = null;
+        setActiveShare(null);
+        return;
+      }
+
+      const stored = explicit ? null : readShareAttribution();
+      const code = explicit ? requestedCode : stored?.code || "";
+      const key = explicit
+        ? getOrCreateShareSession(code)
+        : stored?.sessionKey || null;
+      if (!code || !key) {
+        verifiedShareRef.current = null;
+        setActiveShare(null);
+        return;
+      }
+
+      const verified = verifiedShareRef.current;
+      if (
+        !explicit &&
+        verified?.context.code === code &&
+        verified.sessionKey === key
+      ) {
+        touchShareAttribution(code);
+        setActiveShare({
+          context: verified.context,
+          sessionKey: key,
+          originPage: verified.context.contentPath === normalizedPath,
+          loadedPath: normalizedPath,
+        });
+        return;
+      }
+
+      const params = new URLSearchParams({
+        code,
+        path: normalizedPath,
+        sessionKey: key,
+      });
+      const response = await fetch(`/api/share/context?${params}`, {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      if (!response.ok) {
+        if (!controller.signal.aborted) {
+          clearShareAttribution();
+          verifiedShareRef.current = null;
+          setActiveShare(null);
+        }
+        return;
+      }
+      const value = (await response.json()) as ShareContext;
+
+      if (explicit) {
+        saveShareAttribution({
+          code,
+          sessionKey: key,
+          originPath: value.contentPath,
+        });
+      } else {
+        touchShareAttribution(code);
+      }
+
+      if (!controller.signal.aborted) {
+        verifiedShareRef.current = { context: value, sessionKey: key };
+        setActiveShare({
+          context: value,
+          sessionKey: key,
+          originPage: value.contentPath === normalizedPath,
+          loadedPath: normalizedPath,
+        });
+      }
+    };
+    void load().catch(() => {});
     return () => controller.abort();
-  }, [code, normalizedPath]);
+  }, [requestedCode, normalizedPath]);
 
   const postVisit = useCallback(
     (activeSecondsDelta: number, maxScrollDepth: number, beacon = false) => {
-      if (!activeContext || !sessionRef.current) return;
+      if (!currentShare) return;
       const body = JSON.stringify({
-        code: activeContext.code,
+        code: currentShare.context.code,
         path: normalizedPath,
-        sessionKey: sessionRef.current,
+        sessionKey: currentShare.sessionKey,
         activeSecondsDelta,
         maxScrollDepth,
         referrer: document.referrer,
       });
+      touchShareAttribution(currentShare.context.code);
       if (beacon && navigator.sendBeacon) {
         navigator.sendBeacon(
           "/api/share/visit",
@@ -101,11 +171,11 @@ export function ShareAttribution({ locale }: { locale: Locale }) {
         keepalive: true,
       });
     },
-    [activeContext, normalizedPath],
+    [currentShare, normalizedPath],
   );
 
   useEffect(() => {
-    if (!activeContext) return;
+    if (!currentShare) return;
     let pendingSeconds = 0;
     let maxScrollDepth = 0;
 
@@ -140,17 +210,18 @@ export function ShareAttribution({ locale }: { locale: Locale }) {
       window.removeEventListener("pagehide", onPageHide);
       flush(true);
     };
-  }, [activeContext, postVisit]);
+  }, [currentShare, postVisit]);
 
   useEffect(() => {
-    if (!activeContext || !bannerRef.current) return;
+    if (!currentShare?.originPage || !bannerRef.current) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setStickyVisible(!entry.isIntersecting),
+      ([entry]) =>
+        setStickyPath(entry.isIntersecting ? null : normalizedPath),
       { threshold: 0.05 },
     );
     observer.observe(bannerRef.current);
     return () => observer.disconnect();
-  }, [activeContext]);
+  }, [currentShare, normalizedPath]);
 
   const trackEvent = useCallback(
     (eventType: "call" | "email" | "wechat" | "profile") => {
@@ -161,16 +232,16 @@ export function ShareAttribution({ locale }: { locale: Locale }) {
         body: JSON.stringify({
           code: activeContext.code,
           path: normalizedPath,
-          sessionKey: sessionRef.current || null,
+          sessionKey: currentShare?.sessionKey || null,
           eventType,
         }),
         keepalive: true,
       });
     },
-    [activeContext, normalizedPath],
+    [activeContext, currentShare?.sessionKey, normalizedPath],
   );
 
-  if (!activeContext) return null;
+  if (!currentShare || !activeContext) return null;
 
   const zh = locale === "zh";
   const profileHref =
@@ -183,14 +254,17 @@ export function ShareAttribution({ locale }: { locale: Locale }) {
   const emailHref = activeContext.agent.email
     ? `mailto:${activeContext.agent.email}`
     : null;
+  const stickyVisible =
+    !currentShare.originPage || stickyPath === normalizedPath;
 
   return (
     <>
-      <section
-        ref={bannerRef}
-        className="border-y border-bronze/40 bg-ink text-paper"
-        aria-label={zh ? "分享经纪人联系方式" : "Sharing agent contact"}
-      >
+      {currentShare.originPage && (
+        <section
+          ref={bannerRef}
+          className="border-y border-bronze/40 bg-ink text-paper"
+          aria-label={zh ? "分享经纪人联系方式" : "Sharing agent contact"}
+        >
         <div className="mx-auto grid min-h-[350px] max-w-[1320px] grid-cols-1 gap-8 px-5 py-9 sm:px-8 md:min-h-0 md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:py-8 lg:px-12">
           <div className="min-w-0">
             <div className="flex items-center justify-between gap-5">
@@ -283,14 +357,10 @@ export function ShareAttribution({ locale }: { locale: Locale }) {
             <p className="mt-2 font-serif text-2xl leading-snug text-paper">
               {activeContext.contentTitle}
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-paper/60">
-              {zh
-                ? "内容由 Homix 官方网站提供，房源与文章保持实时更新。"
-                : "Official Homix content, kept current at its original source."}
-            </p>
           </div>
         </div>
-      </section>
+        </section>
+      )}
 
       {stickyVisible && (
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-bronze/40 bg-ink px-4 py-3 text-paper shadow-[0_-8px_24px_rgba(0,0,0,0.16)]">
