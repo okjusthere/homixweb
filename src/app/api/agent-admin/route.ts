@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { revalidatePath, revalidateTag } from "next/cache";
 import { PUBLIC_AGENTS_CACHE_TAG } from "@/lib/agents";
+import { revalidatePublicAgents as revalidateAgentPaths } from "@/lib/agents/revalidate";
 import { syncAgentIdentity } from "@/lib/agents/sync-identity";
 import { getSupabase } from "@/lib/supabase";
 
@@ -44,7 +45,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({ agents: data ?? [] }, { headers: { "Cache-Control": "no-store" } });
 }
 
-/** POST → a JSON management action: visibility | reorder | link. */
+/** POST → a JSON management action: visibility | reorder | link | merge_link. */
 export async function POST(req: NextRequest) {
   if (!authed(req)) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const sb = getSupabase();
@@ -52,6 +53,100 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json().catch(() => ({}));
   const action = String(body.action || "");
+
+  if (action === "merge_link") {
+    const keepProfileId = String(body.keepProfileId || "").trim();
+    const deleteProfileId = String(body.deleteProfileId || "").trim();
+    const portalAgentId = Number(body.portalAgentId);
+    if (
+      !keepProfileId ||
+      !deleteProfileId ||
+      keepProfileId === deleteProfileId ||
+      !Number.isInteger(portalAgentId) ||
+      portalAgentId <= 0
+    ) {
+      return NextResponse.json(
+        { error: "Two different profile ids and a valid portalAgentId are required." },
+        { status: 400 },
+      );
+    }
+
+    const { data: profiles, error: loadError } = await sb
+      .from("agents")
+      .select("id, slug, name, portal_agent_id")
+      .in("id", [keepProfileId, deleteProfileId]);
+    if (loadError) {
+      return NextResponse.json({ error: loadError.message }, { status: 500 });
+    }
+    const keepProfile = profiles?.find((profile) => profile.id === keepProfileId);
+    const deleteProfile = profiles?.find((profile) => profile.id === deleteProfileId);
+    if (!keepProfile || !deleteProfile) {
+      return NextResponse.json(
+        { error: "One of the selected public profiles no longer exists." },
+        { status: 404 },
+      );
+    }
+    if (keepProfile.portal_agent_id != null) {
+      return NextResponse.json(
+        { error: "The profile selected to retain is already linked." },
+        { status: 409 },
+      );
+    }
+    if (deleteProfile.portal_agent_id !== portalAgentId) {
+      return NextResponse.json(
+        { error: "The duplicate profile is not linked to this Portal account." },
+        { status: 409 },
+      );
+    }
+
+    const { data: mergedRows, error: mergeError } = await sb.rpc(
+      "merge_agent_profiles",
+      {
+        p_portal_agent_id: portalAgentId,
+        p_keep_profile_id: keepProfileId,
+        p_delete_profile_id: deleteProfileId,
+      },
+    );
+    if (mergeError) {
+      const status = mergeError.code === "P0001" || mergeError.code === "23505" ? 409 : 500;
+      return NextResponse.json({ error: mergeError.message }, { status });
+    }
+    const merged = Array.isArray(mergedRows) ? mergedRows[0] : null;
+    if (!merged) {
+      return NextResponse.json({ error: "Profile merge returned no result." }, { status: 500 });
+    }
+
+    const identity = await syncAgentIdentity({
+      portalAgentId,
+      name: body.name,
+      phone: body.phone,
+      license: body.license,
+      // The retained website profile may already contain verified contact and
+      // MLS data. A sparse Portal account must not erase those fields.
+      preserveMissing: true,
+    });
+    revalidateAgentPaths(keepProfile.slug);
+    revalidateAgentPaths(deleteProfile.slug);
+
+    return NextResponse.json({
+      ok: true,
+      id: keepProfile.id,
+      portalAgentId,
+      kept: {
+        id: keepProfile.id,
+        slug: keepProfile.slug,
+        name: keepProfile.name,
+      },
+      deleted: {
+        id: deleteProfile.id,
+        slug: deleteProfile.slug,
+        name: deleteProfile.name,
+      },
+      notice: identity.ok
+        ? identity.notice
+        : "Profiles were merged, but Portal identity synchronization should be retried.",
+    });
+  }
 
   if (action === "link") {
     const id = String(body.id || "").trim();

@@ -23,22 +23,30 @@ export async function syncAgentIdentity(input: {
   name: unknown;
   phone: unknown;
   license: unknown;
+  preserveMissing?: boolean;
 }): Promise<IdentitySyncResult> {
   const sb = getSupabase();
   if (!sb) return { ok: false, error: "Not configured" };
 
   const name = cleanText(input.name);
-  const phone = cleanText(input.phone) || null;
-  const license = cleanText(input.license) || null;
+  const suppliedPhone = cleanText(input.phone);
+  const suppliedLicense = cleanText(input.license);
   if (!name) return { ok: false, error: "Name required" };
 
   const { data: agent, error: loadError } = await sb
     .from("agents")
-    .select("id, slug, license_number, mls_id")
+    .select("id, slug, phone, license_number, mls_id")
     .eq("portal_agent_id", input.portalAgentId)
     .maybeSingle();
   if (loadError) return { ok: false, error: loadError.message };
   if (!agent) return { ok: false, error: "Linked public profile not found" };
+
+  const phone = input.preserveMissing && !suppliedPhone
+    ? agent.phone
+    : suppliedPhone || null;
+  const license = input.preserveMissing && !suppliedLicense
+    ? agent.license_number
+    : suppliedLicense || null;
 
   let nextMlsId: string | null = agent.mls_id;
   let notice: string | undefined;
