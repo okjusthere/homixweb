@@ -141,7 +141,7 @@ export default async function ChineseAgentsPage({
     services: zh
       ? [
           { title: "买房代理", body: "从看房、报价谈判到过户的全流程双语陪同，覆盖二手房与新盘。" },
-          { title: "卖房营销", body: "媒体化的房源营销：您的房子作为内容触达 100 万+ 双语受众。" },
+          { title: "卖房营销", body: "媒体化的房源营销：您的房子可通过合计 100 万+ 粉丝的关联账号发布为双语内容。" },
           { title: "新盘认购", body: "曼哈顿与皇后区新开发公寓的一手信息、户型比价与优惠谈判。" },
           { title: "学区与社区分析", body: "法拉盛、长岛大颈、Syosset 等热门学区的边界、房价与入学讲解。" },
           { title: "海外买家支持", body: "外国人贷款、ITIN、资金合规与税务安排的经验与资源对接。" },
@@ -149,7 +149,7 @@ export default async function ChineseAgentsPage({
         ]
       : [
           { title: "Buyer representation", body: "Full bilingual guidance from search and offers through closing — resale and new construction." },
-          { title: "Listing & marketing", body: "Media-first selling: your home reaches a 1,000,000+ bilingual audience as content." },
+          { title: "Listing & marketing", body: "Media-first selling: your home becomes bilingual content distributed through affiliated accounts with 1M+ combined followers." },
           { title: "New developments", body: "First-hand intel, floor-plan comparisons, and negotiation across NYC new condos." },
           { title: "Schools & neighborhoods", body: "Zoning boundaries, pricing, and enrollment guidance for the region's top districts." },
           { title: "International buyers", body: "Foreign-national and ITIN financing, funds compliance, and tax-planning resources." },

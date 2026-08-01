@@ -168,8 +168,8 @@ export default async function AgentProfilePage({
         call: "致电",
         email: "邮件",
         reachEyebrow: "Homix 媒体引擎",
-        reachLead: "每位 Homix 顾问背后，是一台全网百万级流量的内容机器。",
-        followers: "全网粉丝",
+        reachLead: "每位 Homix 顾问都可使用 Homix 的内容工作室与关联社媒分发网络。",
+        followers: "关联账号合计粉丝",
         contentDaily: "每日内容产出",
         bilingual: "双语服务",
         workLead: "Homix 代理的精选在售房源，点击查看详情。",
@@ -194,8 +194,8 @@ export default async function AgentProfilePage({
         email: "Email",
         reachEyebrow: "The Homix media engine",
         reachLead:
-          "Behind every Homix advisor is a content machine with a seven-figure audience.",
-        followers: "Audience",
+          "Every Homix advisor can use the Homix content studio and affiliated social distribution network.",
+        followers: "Combined followers",
         contentDaily: "Content, daily",
         bilingual: "Bilingual service",
         workLead: "A selection of homes Homix currently represents — tap to view.",
@@ -589,7 +589,7 @@ export default async function AgentProfilePage({
             </div>
             <div className="mt-7 grid grid-cols-1 gap-px bg-line sm:grid-cols-3">
               {[
-                { figure: "1,000,000+", label: L.followers },
+                { figure: "1M+", label: L.followers },
                 { figure: zh ? "每日" : "Daily", label: L.contentDaily },
                 { figure: "EN · 中文", label: L.bilingual },
               ].map((s) => (

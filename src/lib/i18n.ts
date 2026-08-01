@@ -67,15 +67,15 @@ const en = {
   hero: {
     eyebrow: "New York Real Estate · Media · AI",
     title: "Where homes meet headlines.",
-    lead: "New York's media-first real estate company. We sell homes, build star agents, and run the content machine — a 1,000,000+ audience and AI-driven marketing that traditional brokerages can't touch.",
+    lead: "New York's media-first real estate company. We sell homes, develop agents, and publish bilingual content every day — backed by 1M+ combined followers across Homix-affiliated social accounts and AI-assisted marketing.",
     ctaPrimary: "View listings",
     ctaSecondary: "Meet the team",
   },
   brandStory: {
     eyebrow: "The firm",
     title: "Not another brokerage. A real estate media company.",
-    p1: "Homix blends the essence of home and mix: brokerage, media studio, and agent incubator under one roof. Viral video, lifestyle content, and a 1M+ audience put every listing — and every agent — in front of the market.",
-    p2: "The result is exposure most firms can only dream of, faster closings, and a bilingual team that knows Queens, Long Island, and Manhattan by heart — backed by the data and AI that make every move sharper.",
+    p1: "Homix blends the essence of home and mix: brokerage, media studio, and agent incubator under one roof. Daily video, lifestyle content, and 1M+ combined followers across affiliated accounts give selected listings and agent stories an established distribution network.",
+    p2: "The result is consistent, bilingual market visibility from a team that knows Queens, Long Island, and Manhattan by heart — backed by data and AI that make every move better informed.",
   },
   pillars: {
     eyebrow: "What we do",
@@ -90,29 +90,29 @@ const en = {
       {
         eyebrow: "Careers",
         title: "Build your career",
-        body: "Join the brokerage that hands you an audience. Media training, personal-brand building, leads, and AI tools — we turn agents into stars, not just hires.",
+        body: "Join a brokerage with an established media platform. Media training, personal-brand building, leads, and AI tools help agents become recognizable local professionals.",
         cta: "Join Homix",
       },
       {
         eyebrow: "Media & Marketing",
         title: "Reach more buyers",
-        body: "A content studio with a 1M+ following produces the video and runs the campaigns that put properties — and people — in front of the entire market.",
+        body: "Our content studio publishes daily through affiliated accounts with 1M+ combined followers, then builds focused campaigns around properties and people.",
         cta: "Work with our studio",
       },
     ],
   },
   stats: {
     items: [
-      { value: "1M+", label: "Social followers" },
-      { value: "40+", label: "Advisors" },
-      { value: "Top", label: "NY content brokerage" },
+      { value: "1M+", label: "Combined social followers" },
+      { value: "100+", label: "Agents across the Homix network" },
+      { value: "Daily", label: "Bilingual content publishing" },
       { value: "中 / EN", label: "Bilingual service" },
     ],
   },
   valueProps: [
     {
       title: "Media is our marketplace",
-      body: "We were built on a self-media platform — viral video, lifestyle content, and a 1M+ audience that puts every listing in front of the right buyers, fast.",
+      body: "We were built on a self-media platform — daily video, lifestyle content, and affiliated accounts with 1M+ combined followers. Actual reach varies by content, platform, and campaign.",
     },
     {
       title: "We make agents into stars",
@@ -137,7 +137,7 @@ const en = {
   reach: {
     eyebrow: "Our reach",
     title: "We don't wait for the headlines. We make them.",
-    lead: "Every listing rides a content engine with a 1,000,000+ audience across platforms — the marketing edge behind faster, higher sales.",
+    lead: "Selected listings are supported by a daily content engine and affiliated social accounts with 1M+ combined followers — with campaign reach measured by platform and content.",
   },
   testimonials: { eyebrow: "In their words" },
   team: {
@@ -193,13 +193,13 @@ const en = {
   },
   join: {
     eyebrow: "Careers at Homix · Flushing · NYC · LI",
-    title: "We don't hand you a desk. We hand you an audience.",
-    lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. Day one, you step into an audience of 1,000,000+ across 抖音, 小红书, and Instagram, an in-house content studio, AI and data tools, and bilingual senior mentors who have closed in this market. Where Homes Meet Headlines — we turn agents into local stars.",
+    title: "We don't hand you a desk. We build your platform.",
+    lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. From day one, you gain access to an in-house studio and distribution through affiliated 抖音, 小红书, and Instagram accounts with 1M+ combined followers, plus AI and data tools and bilingual senior mentors who have closed in this market.",
     heroCta: "Apply to join Homix",
     stats: [
       {
-        value: "1,000,000+",
-        label: "Followers across 抖音 · 小红书 · Instagram you tap into on day one",
+        value: "1M+",
+        label: "Combined followers across affiliated 抖音 · 小红书 · Instagram accounts",
       },
       {
         value: "Bilingual",
@@ -218,8 +218,8 @@ const en = {
     benefitsTitle: "What you get on day one.",
     benefits: [
       {
-        title: "An audience, handed to you",
-        body: "You don't start from zero followers. Our 1,000,000+ community across 抖音, 小红书, and Instagram becomes the top of your funnel. Your listings, your face, and your story go out to people already watching Homix — so the leads find you, not the other way around.",
+        title: "A media platform from day one",
+        body: "You do not build alone. Approved listings and personal-brand content can be distributed through Homix-affiliated 抖音, 小红书, and Instagram accounts with 1M+ combined followers. Reach varies by content and platform, while the studio helps you improve it over time.",
       },
       {
         title: "An in-house studio that makes you famous",
@@ -261,7 +261,7 @@ const en = {
       },
       {
         title: "Build your brand kit",
-        body: "Our studio shoots your intro content, sets up your bilingual profile, and plugs you into the Homix channels so the 1,000,000+ audience starts seeing your name and your listings.",
+        body: "Our studio shoots your intro content, sets up your bilingual profile, and plans distribution through Homix channels so the audience can begin discovering your name and your listings.",
       },
       {
         title: "Get paired with a mentor and tools",
@@ -288,7 +288,7 @@ const en = {
       },
       {
         q: "Do I need an existing following to benefit from the media engine?",
-        a: "No — that's the entire point. You plug into our 1,000,000+ audience and in-house studio from day one. We build your personal brand from where you are; you don't need to arrive famous, you leave famous.",
+        a: "No. You gain access to our in-house studio and distribution workflow from day one. We build your personal brand from where you are and publish approved content through Homix channels; results depend on the content, market, and platform.",
       },
       {
         q: "Do I have to speak Chinese to work here?",
@@ -427,12 +427,12 @@ const en = {
   sell: {
     eyebrow: "Sell with Homix",
     title: "Sell your New York home with Homix.",
-    lead: "Broker-led pricing, bilingual representation, and a media team that puts your home in front of buyers across Queens, Long Island, Manhattan, and our 1,000,000+ social audience.",
+    lead: "Broker-led pricing, bilingual representation, and a media team that can publish your campaign through affiliated social accounts with 1M+ combined followers across Queens, Long Island, Manhattan, and beyond.",
     heroCta: "Request a home valuation",
     proof: {
       eyebrow: "The Homix difference",
       items: [
-        { value: "1,000,000+", label: "Audience we reach" },
+        { value: "1M+", label: "Combined social followers" },
         { value: "EN · 中文", label: "Bilingual marketing" },
         { value: "抖音 · 小红书 · IG", label: "Where we publish" },
         { value: "Flushing · NYC · LI", label: "Where we go deep" },
@@ -442,8 +442,8 @@ const en = {
     advantagesTitle: "An unfair advantage for your listing.",
     advantages: [
       {
-        headline: "Your home launches to an audience we already own",
-        body: "Most listings sit on a portal waiting to be found. We broadcast yours on day one to a 1,000,000+ following across 抖音, 小红书, and Instagram — real buyers already watching New York real estate. More eyes in the first days means more showings, faster, and the demand that creates competing offers.",
+        headline: "Your home launches through an established media network",
+        body: "Most listings sit on a portal waiting to be found. We create a day-one campaign for affiliated 抖音, 小红书, and Instagram accounts with 1M+ combined followers, including people who follow Homix for New York real estate. Actual reach, showings, and offers depend on the property, price, content, and market.",
       },
       {
         headline: "We reach buyers in the language they buy in",
@@ -487,7 +487,7 @@ const en = {
       },
       {
         title: "Media launch",
-        body: "A coming-soon warm-up, then a day-one broadcast to our 1,000,000+ audience across every channel.",
+        body: "A coming-soon warm-up, followed by coordinated day-one publishing across the Homix media network.",
       },
       {
         title: "MLS, offers & closing",
@@ -564,7 +564,7 @@ const en = {
     orCall: "Or call",
     listingsCta: {
       kicker: "Thinking of selling?",
-      line: "Your home deserves more than a yard sign. We launch it to a 1,000,000+ bilingual audience — and reach buyers other brokerages can't.",
+      line: "Your home deserves more than a yard sign. We build a bilingual campaign and distribute it through affiliated accounts with 1M+ combined followers.",
       button: "Sell with Homix",
     },
   },
@@ -624,15 +624,15 @@ const zh: Dict = {
   hero: {
     eyebrow: "纽约地产 · 媒体 · AI",
     title: "好房，自带头条。",
-    lead: "纽约以媒体驱动的地产公司。我们卖房、孵化明星经纪人、运营内容机器——100 万+ 全网粉丝与 AI 营销，传统经纪公司望尘莫及。",
+    lead: "纽约以媒体驱动的地产公司。我们卖房、培养经纪人并坚持每日发布双语内容——Homix 旗下及关联社媒账号合计 100 万+ 粉丝，并以 AI 辅助营销。",
     ctaPrimary: "浏览房源",
     ctaSecondary: "认识团队",
   },
   brandStory: {
     eyebrow: "关于公司",
     title: "我们不是又一家经纪公司，而是一家地产媒体公司。",
-    p1: "Homix 融合 home 与 mix：经纪、媒体工作室、经纪人孵化器集于一体。爆款视频、生活方式内容与 100 万+ 粉丝，把每一套房、每一位经纪人推到市场面前。",
-    p2: "由此带来同行难以企及的曝光、更快的成交，以及一支深耕皇后区、长岛与曼哈顿的双语团队——背后是让每一步都更精准的数据与 AI。",
+    p1: "Homix 融合 home 与 mix：经纪、媒体工作室、经纪人孵化器集于一体。每日视频、生活方式内容与关联账号合计 100 万+ 粉丝，为精选房源和经纪人内容提供成熟的分发网络。",
+    p2: "由此带来持续、双语的市场曝光，以及一支深耕皇后区、长岛与曼哈顿的团队——背后是让每一步都更有依据的数据与 AI。",
   },
   pillars: {
     eyebrow: "我们做什么",
@@ -647,29 +647,29 @@ const zh: Dict = {
       {
         eyebrow: "加入我们",
         title: "成就你的事业",
-        body: "加入这家把流量交到你手里的经纪公司。媒体培训、个人 IP、客源与 AI 工具——我们把经纪人打造成明星，而不只是招人。",
+        body: "加入一家拥有成熟媒体平台的经纪公司。媒体培训、个人 IP、客源与 AI 工具，帮助经纪人成为可被本地客户识别的专业人士。",
         cta: "加入我们",
       },
       {
         eyebrow: "媒体 · 流量",
         title: "触达更多买家",
-        body: "拥有 100 万+ 粉丝的内容工作室，产出视频、运营投放，把房与人推到整个市场面前。",
+        body: "内容工作室坚持日更，并通过合计 100 万+ 粉丝的关联账号，为房源与经纪人策划和发布内容。",
         cta: "合作媒体业务",
       },
     ],
   },
   stats: {
     items: [
-      { value: "100万+", label: "全网粉丝" },
-      { value: "40+", label: "经纪人" },
-      { value: "头部", label: "纽约内容型经纪" },
+      { value: "100 万+", label: "关联社媒账号合计粉丝" },
+      { value: "100+", label: "Homix 网络经纪人" },
+      { value: "每日", label: "双语内容持续发布" },
       { value: "中 / EN", label: "双语服务" },
     ],
   },
   valueProps: [
     {
       title: "媒体即市场",
-      body: "我们生于自媒体平台——爆款视频、生活方式内容，以及把每套房迅速送到对的买家面前的 100 万+ 粉丝。",
+      body: "我们生于自媒体平台——每日视频、生活方式内容，以及关联账号合计 100 万+ 粉丝。实际触达取决于内容、平台与具体推广方案。",
     },
     {
       title: "我们把经纪人打造成明星",
@@ -694,7 +694,7 @@ const zh: Dict = {
   reach: {
     eyebrow: "我们的影响力",
     title: "我们不等头条，我们制造头条。",
-    lead: "每一套房源都背靠一台全网 100 万+ 粉丝的内容引擎——这正是成交更快、卖价更高背后的营销优势。",
+    lead: "精选房源由每日内容引擎与合计 100 万+ 粉丝的关联社媒账号支持，并按平台和内容衡量每次推广的实际触达。",
   },
   testimonials: { eyebrow: "客户怎么说" },
   team: {
@@ -750,13 +750,13 @@ const zh: Dict = {
   },
   join: {
     eyebrow: "Homix 招募 · Flushing · NYC · LI",
-    title: "我们给你的不是一张办公桌，而是一群观众。",
-    lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就接入抖音、小红书、Instagram 上超过 100 万的粉丝群体，拥有自有内容工作室、AI 与数据工具，以及在本地真正成交过的双语资深导师。Where Homes Meet Headlines——我们把经纪人打造成本地明星。",
+    title: "我们给你的不是一张办公桌，而是一套成长平台。",
+    lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就能使用自有内容工作室，并通过抖音、小红书、Instagram 等合计 100 万+ 粉丝的关联账号进行内容分发，同时获得 AI、数据工具与本地双语资深导师支持。",
     heroCta: "申请加入 Homix",
     stats: [
       {
-        value: "1,000,000+",
-        label: "抖音 · 小红书 · Instagram 全网粉丝，入职即可触达",
+        value: "100 万+",
+        label: "关联抖音 · 小红书 · Instagram 账号合计粉丝",
       },
       {
         value: "Bilingual",
@@ -775,8 +775,8 @@ const zh: Dict = {
     benefitsTitle: "入职第一天，你就拥有。",
     benefits: [
       {
-        title: "一群现成的观众，直接交到你手上",
-        body: "你不必从零粉丝起步。我们在抖音、小红书、Instagram 上超过 100 万的社群，就是你的获客漏斗顶端。你的房源、你的出镜、你的故事，会推送给本就关注 Homix 的人群——让客户主动找到你，而不是你苦苦去找客户。",
+        title: "入职即可使用的媒体平台",
+        body: "你不必独自从零搭建内容渠道。通过审核的房源和个人品牌内容，可由 Homix 工作室制作并在合计 100 万+ 粉丝的关联账号分发。实际触达因内容与平台而异，工作室会持续帮助你优化。",
       },
       {
         title: "自有工作室，把你打造成名",
@@ -818,7 +818,7 @@ const zh: Dict = {
       },
       {
         title: "打造你的品牌素材包",
-        body: "我们的工作室为你拍摄出镜内容、建立你的双语主页，并将你接入 Homix 各大渠道，让超过 100 万的观众开始看到你的名字和你的房源。",
+        body: "我们的工作室为你拍摄出镜内容、建立双语主页，并规划在 Homix 渠道的内容分发，让市场逐步认识你的名字和房源。",
       },
       {
         title: "配对导师，开通工具",
@@ -845,7 +845,7 @@ const zh: Dict = {
       },
       {
         q: "我需要先有粉丝才能用上媒体引擎吗？",
-        a: "不需要——这正是关键所在。你从第一天起就接入我们超过 100 万的观众和自有工作室。我们从你当下的起点出发，帮你打造个人品牌；你不必带着名气进来，而是带着名气走出去。",
+        a: "不需要。你从第一天起就能使用自有工作室和内容分发流程。我们从你当下的起点出发，通过 Homix 渠道发布经审核的内容；最终效果取决于内容、市场与平台。",
       },
       {
         q: "在这里工作必须会中文吗？",
@@ -984,12 +984,12 @@ const zh: Dict = {
   sell: {
     eyebrow: "卖房 · Homix",
     title: "在纽约卖房，交给 Homix。",
-    lead: "由持牌经纪人判断价格，中英文双语服务，再通过专业内容团队，把你的家带到皇后区、长岛、曼哈顿买家及 100 万+ 社交媒体受众面前。",
+    lead: "由持牌经纪人判断价格，中英文双语服务，再由专业内容团队通过合计 100 万+ 粉丝的关联社媒账号，在皇后区、长岛、曼哈顿及更广区域发布房源营销内容。",
     heroCta: "申请免费房屋估值",
     proof: {
       eyebrow: "Homix 的不同之处",
       items: [
-        { value: "1,000,000+", label: "触达受众" },
+        { value: "100 万+", label: "关联社媒账号合计粉丝" },
         { value: "EN · 中文", label: "双语营销" },
         { value: "抖音 · 小红书 · IG", label: "发布平台" },
         { value: "Flushing · NYC · LI", label: "深耕区域" },
@@ -999,8 +999,8 @@ const zh: Dict = {
     advantagesTitle: "给你的房源，一个别人给不了的优势。",
     advantages: [
       {
-        headline: "你的房子，第一天就推给我们自己的百万受众",
-        body: "大多数房源只是挂在网站上，等着被人翻到。我们不一样：挂牌第一天，就把你的房子推送给抖音、小红书、Instagram 上 100 万+ 的粉丝——一群本就在看纽约房子的真实买家。开盘头几天看的人越多，带看越多、越快，也越容易形成抢 offer 的局面。",
+        headline: "你的房子，通过成熟的媒体网络上线",
+        body: "大多数房源只是挂在网站上等待被发现。我们会为挂牌首日制作内容，并通过抖音、小红书、Instagram 等合计 100 万+ 粉丝的关联账号发布，其中包括长期关注 Homix 纽约地产内容的人群。实际触达、带看和 offer 仍取决于房屋、定价、内容与市场。",
       },
       {
         headline: "我们能用买家的母语，把房子卖给他们",
@@ -1044,7 +1044,7 @@ const zh: Dict = {
       },
       {
         title: "媒体开盘",
-        body: "先做预热，挂牌第一天各平台同时开盘，推送给我们 100 万+ 的受众。",
+        body: "先做预热，再在挂牌首日通过 Homix 媒体网络协调发布。",
       },
       {
         title: "挂牌上市 · 谈判 · 过户",
@@ -1121,7 +1121,7 @@ const zh: Dict = {
     orCall: "或致电",
     listingsCta: {
       kicker: "在考虑卖房？",
-      line: "你的家，值得的不止门口一块牌子。我们把它推给 100 万+ 双语受众，触达别家够不着的买家。",
+      line: "你的家，值得的不止门口一块牌子。我们制作双语推广内容，并通过合计 100 万+ 粉丝的关联账号分发。",
       button: "卖房 · Homix",
     },
   },

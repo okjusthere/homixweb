@@ -20,12 +20,12 @@ export async function generateMetadata({
     path: "/join",
     locale,
     title: {
-      en: "Careers — Join a Brokerage That Hands You an Audience",
-      zh: "纽约地产经纪人招聘——加入自带百万流量的经纪公司",
+      en: "Careers — Join a Media-First New York Brokerage",
+      zh: "纽约地产经纪人招聘——加入媒体驱动的 Homix",
     },
     description: {
-      en: "Join a New York brokerage that hands you an audience: a 1,000,000+ media engine, in-house studio, real leads, AI tools, and bilingual mentorship from day one.",
-      zh: "加入 Homix：入职即接入抖音、小红书、Instagram 百万粉丝，自有内容工作室、AI 工具与中英双语导师，把经纪人打造成本地明星。",
+      en: "Join a New York brokerage with an in-house studio, distribution through affiliated accounts with 1M+ combined followers, AI tools, leads, and bilingual mentorship from day one.",
+      zh: "加入 Homix：从第一天起使用自有内容工作室、合计 100 万+ 粉丝的关联账号分发渠道、AI 工具、客源与中英双语导师支持。",
     },
     image: HERO,
   });

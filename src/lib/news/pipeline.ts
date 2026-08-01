@@ -450,6 +450,7 @@ export async function runNewsPipeline(
       );
     });
     qualified = publishable.length;
+    const editorialRejections: string[] = [];
 
     for (const candidate of publishable.slice(0, 3)) {
       const row = rowsByHash.get(candidate.contentHash);
@@ -463,6 +464,9 @@ export async function runNewsPipeline(
       try {
         const result = await writeAndVerifyNews(candidate);
         if (!result.draft) {
+          editorialRejections.push(
+            `${candidate.title}: ${result.reason}`.slice(0, 700),
+          );
           await client
             .from("news_candidates")
             .update({ status: "rejected", rejection_reason: result.reason })
@@ -530,6 +534,9 @@ export async function runNewsPipeline(
       qualified,
       message: [
         "No candidate passed all deterministic and editorial gates",
+        editorialRejections.length
+          ? `Editorial rejections: ${editorialRejections.join(" | ")}`
+          : "",
         failedSources.length ? `Feed failures: ${failedSources.join(" | ")}` : "",
       ]
         .filter(Boolean)

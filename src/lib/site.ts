@@ -11,7 +11,7 @@ export const siteConfig = {
   legalName: "Homix Realty Inc.",
   tagline: "Where Homes Meet Headlines",
   description:
-    "Homix is a new kind of New York real estate company with offices in Flushing, Long Island, and Manhattan — a full-service brokerage, agent incubator, and content studio with a 1,000,000+ audience, powered by data and AI.",
+    "Homix is a media-first New York real estate company with offices in Flushing, Long Island, and Manhattan — a full-service brokerage, agent incubator, and daily content studio supported by affiliated social accounts with 1M+ combined followers.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.homixny.com",
   market: "New York",
   // The agents' internal portal (homixliving CRM) — a separate deployment.
