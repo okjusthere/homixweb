@@ -57,8 +57,7 @@ export default async function SellPage({
         <div className="absolute inset-0 bg-ink/60" aria-hidden="true" />
         <Container className="relative flex min-h-[68svh] items-end py-14 sm:py-20">
           <div className="max-w-3xl">
-            <Eyebrow className="text-paper/75">{t.sell.eyebrow}</Eyebrow>
-            <h1 className="mt-5 font-serif text-4xl font-normal leading-[1.08] tracking-tight text-paper sm:text-[3.75rem]">
+            <h1 className="font-serif text-4xl font-normal leading-[1.08] tracking-tight text-paper sm:text-[3.75rem]">
               {t.sell.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/80 sm:text-xl">

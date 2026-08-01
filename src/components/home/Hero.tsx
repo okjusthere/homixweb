@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { getT, type Locale } from "@/lib/i18n";
 import { heroImage } from "@/lib/site";
 
@@ -34,8 +33,7 @@ export async function Hero({ locale }: { locale: Locale }) {
       />
 
       <Container className="relative z-10 pb-20 pt-32">
-        <Eyebrow className="text-paper/75">{t.hero.eyebrow}</Eyebrow>
-        <h1 className="mt-5 max-w-3xl font-serif text-[2.75rem] font-normal leading-[1.05] tracking-tight text-paper [text-shadow:0_1px_3px_rgba(12,15,14,0.45)] sm:text-[4rem]">
+        <h1 className="max-w-3xl font-serif text-[2.75rem] font-normal leading-[1.05] tracking-tight text-paper [text-shadow:0_1px_3px_rgba(12,15,14,0.45)] sm:text-[4rem]">
           {t.hero.title}
         </h1>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper/90 [text-shadow:0_1px_2px_rgba(12,15,14,0.5)]">
