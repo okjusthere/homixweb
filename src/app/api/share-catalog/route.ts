@@ -53,9 +53,12 @@ export async function GET(request: NextRequest) {
     request.nextUrl.searchParams.get("pageSize") || "24",
     10,
   );
+  const listingScopeParam = request.nextUrl.searchParams.get("listingScope");
+  const listingScope = listingScopeParam === "all" ? "all" : "homix";
   const result = await getShareCatalog({
     locale,
     kind,
+    listingScope,
     query: request.nextUrl.searchParams.get("q") || "",
     page: Number.isFinite(page) ? page : 1,
     pageSize: Number.isFinite(pageSize) ? pageSize : 24,

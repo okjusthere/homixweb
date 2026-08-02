@@ -39,6 +39,8 @@ export type ShareCatalogResult = {
   total: number;
   page: number;
   pageSize: number;
+  hasMore: boolean;
+  totalIsEstimate: boolean;
   overview: boolean;
   unavailable?: boolean;
   counts: Partial<Record<ShareContentKind | "all", number>>;
@@ -213,6 +215,7 @@ export async function findShareCatalogItem(
 export async function getShareCatalog(input: {
   locale: Locale;
   kind: ShareContentKind | "all";
+  listingScope?: "homix" | "all";
   query?: string;
   page?: number;
   pageSize?: number;
@@ -241,22 +244,28 @@ export async function getShareCatalog(input: {
       total: matching.length,
       page,
       pageSize,
+      hasMore: offset + pageSize < matching.length,
+      totalIsEstimate: false,
       overview: false,
       counts,
     };
   }
 
+  // The mixed overview stays office-scoped. The full listing category can
+  // browse the wider OneKey IDX feed without an expensive exact-count scan.
+  const listingScope =
+    input.kind === "listing" ? input.listingScope ?? "homix" : "homix";
   const listingLimit = input.kind === "all" ? (query ? 24 : 12) : pageSize;
   const listingOffset = input.kind === "all" ? 0 : (page - 1) * pageSize;
   const listingResult = await listings.getListings({
-    scope: "homix",
+    scope: listingScope,
     q: query || undefined,
     sort: "newest",
-    exactTotal: true,
+    exactTotal: listingScope === "homix",
     limit: listingLimit,
     offset: listingOffset,
   });
-  counts.listing = listingResult.total;
+  if (!listingResult.totalIsEstimate) counts.listing = listingResult.total;
 
   if (input.kind === "listing") {
     return {
@@ -264,6 +273,8 @@ export async function getShareCatalog(input: {
       total: listingResult.total,
       page,
       pageSize,
+      hasMore: listingResult.hasMore === true,
+      totalIsEstimate: listingResult.totalIsEstimate === true,
       overview: false,
       unavailable: listingResult.unavailable,
       counts,
@@ -283,6 +294,8 @@ export async function getShareCatalog(input: {
     total,
     page: 1,
     pageSize: listingLimit + groupedPreview.length,
+    hasMore: false,
+    totalIsEstimate: false,
     overview: true,
     unavailable: listingResult.unavailable,
     counts,

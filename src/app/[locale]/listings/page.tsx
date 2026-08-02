@@ -150,6 +150,12 @@ export default async function ListingsPage({
           cities={cities}
           locale={locale}
           labels={{
+            searchQuery: zh ? "搜索房源" : "Search listings",
+            searchPlaceholder: zh
+              ? "输入地址、邮编或 MLS 编号"
+              : "Enter an address, ZIP code, or MLS number",
+            searchAction: zh ? "搜索" : "Search",
+            clearSearch: zh ? "清除" : "Clear",
             source: zh ? "房源范围" : "Listing source",
             city: zh ? "地区" : "Location",
             propertyType: zh ? "房屋类型" : "Property type",
