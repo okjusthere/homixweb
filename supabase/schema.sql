@@ -10,6 +10,7 @@ create table if not exists public.agents (
   phone text,
   email text,
   bio text,
+  bio_zh text,
   specialties text[] not null default '{}',
   languages text[] not null default '{}',
   social jsonb not null default '{}'::jsonb,
@@ -38,6 +39,7 @@ alter table public.agents add column if not exists wechat_qr text;
 alter table public.agents add column if not exists reviews jsonb not null default '{}'::jsonb;
 alter table public.agents add column if not exists stats jsonb not null default '{}'::jsonb;
 alter table public.agents add column if not exists testimonials jsonb not null default '[]'::jsonb;
+alter table public.agents add column if not exists bio_zh text;
 
 -- OneKey MLS member id (e.g. KEY207692) -- powers the MLS-verified career
 -- history on the profile page. Set by admin mapping or by license

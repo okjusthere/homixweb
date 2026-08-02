@@ -35,6 +35,7 @@ export interface AgentRow {
   phone: string | null;
   email: string | null;
   bio: string | null;
+  bio_zh: string | null;
   specialties: string[] | null;
   languages: string[] | null;
   social: Record<string, string> | null;
@@ -97,6 +98,7 @@ function rowToAgent(r: AgentRow): Agent {
     phone: r.phone || "",
     email: r.email || "",
     bio: r.bio || "",
+    bioZh: r.bio_zh || undefined,
     specialties: r.specialties || [],
     languages: languages.length ? languages : undefined,
     licenseNumber: r.license_number || undefined,

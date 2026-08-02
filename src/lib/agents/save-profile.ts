@@ -125,6 +125,7 @@ export type AgentRowForSave = {
   slug: string;
   photo_url: string | null;
   wechat_qr: string | null;
+  bio_zh?: string | null;
   mls_id?: string | null;
   show_past_deals?: boolean | null;
 };
@@ -203,6 +204,7 @@ export async function saveAgentProfileFromForm(
   }
 
   const hasCareerColumns = "mls_id" in agent && "show_past_deals" in agent;
+  const submittedBioZh = formData.get("bio_zh");
 
   const { error } = await sb
     .from("agents")
@@ -212,6 +214,11 @@ export async function saveAgentProfileFromForm(
       // Bio is multi-paragraph (rendered whitespace-pre-line) and isn't used in
       // the vCard/JSON-LD, so preserve its newlines — just trim.
       bio: String(formData.get("bio") || "").trim() || null,
+      // Older portal clients do not submit bio_zh. Preserve the current
+      // translation until their bilingual editor is deployed.
+      ...(submittedBioZh !== null
+        ? { bio_zh: String(submittedBioZh).trim() || null }
+        : {}),
       specialties,
       languages,
       social,

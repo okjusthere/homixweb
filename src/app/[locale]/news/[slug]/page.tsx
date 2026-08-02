@@ -126,13 +126,6 @@ export default async function NewsArticlePage({
             priority
             className="aspect-[1200/630] h-auto w-full object-cover"
           />
-          {article.imageUrl && (
-            <figcaption className="border-t border-line px-4 py-2 text-xs leading-relaxed text-muted">
-              {zh
-                ? "AI 生成的概念配图，并非项目或事件的实际照片或效果图。"
-                : "AI-generated conceptual editorial image, not an actual photograph or project rendering."}
-            </figcaption>
-          )}
         </figure>
 
         <div className="mt-9">

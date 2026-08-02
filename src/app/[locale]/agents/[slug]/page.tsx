@@ -46,7 +46,8 @@ export async function generateMetadata({
   const agent = await getAgentBySlug(slug);
   if (!agent) return { title: "Advisor not found" };
   const locale = await getRouteLocale(params);
-  const sentence = agent.bio ? bioSentence(agent.bio) : null;
+  const localizedBio = locale === "zh" ? agent.bioZh || agent.bio : agent.bio;
+  const sentence = localizedBio ? bioSentence(localizedBio) : null;
   return pageMetadata({
     path: `/agents/${slug}`,
     locale,
@@ -55,8 +56,8 @@ export async function generateMetadata({
       zh: `${agent.name}——纽约持牌房产经纪人`,
     },
     description: sentence ?? {
-      en: `${agent.name} is a bilingual real-estate advisor at Homix serving New York buyers and sellers.`,
-      zh: `${agent.name}，Homix 纽约持牌房产经纪人，提供中英双语买房卖房服务。`,
+      en: `${agent.name} is a Homix real-estate advisor serving New York buyers and sellers.`,
+      zh: `${agent.name}，Homix 纽约持牌房产经纪人，为买家和卖家提供房地产服务。`,
     },
     ogType: "profile",
     // The placeholder logo makes a poor share card; inherit the branded one.
@@ -242,7 +243,7 @@ export default async function AgentProfilePage({
         saveContact: "Save contact",
       };
 
-  const languages = agent.languages?.length ? agent.languages : ["English", "中文"];
+  const languages = agent.languages ?? [];
 
   // Only surface reviews whose link is a real http(s) URL — this blocks a
   // javascript:/data: href from an agent-entered field reaching an anchor.
@@ -283,8 +284,9 @@ export default async function AgentProfilePage({
   const isPlaceholder = !agent.photo || agent.photo === PLACEHOLDER;
   const phoneDigits = agent.phone.replace(/[^\d+]/g, "");
   const fallbackBio = zh
-    ? `${agent.name} 是 Homix 的纽约持牌地产专业人士，服务大纽约地区的买家与卖家，以双语沟通与媒体驱动的服务著称。`
-    : `${agent.name} is a licensed New York real estate professional with Homix, serving buyers and sellers across the greater New York market with bilingual, media-driven service.`;
+    ? `${agent.name} 是 Homix 的纽约持牌地产专业人士，依托团队资源服务大纽约地区的买家与卖家。`
+    : `${agent.name} is a licensed New York real estate professional serving buyers and sellers across the greater New York market through the Homix team.`;
+  const localizedBio = zh ? agent.bioZh || agent.bio : agent.bio;
 
   // Personal channels, http(s) only (same anti-javascript:-href guard as reviews).
   const socialList = (Object.entries(agent.social ?? {}) as [string, string][]).filter(
@@ -330,7 +332,7 @@ export default async function AgentProfilePage({
     image: isPlaceholder ? undefined : absUrl(agent.photo),
     telephone: agent.phone || undefined,
     email: agent.email || undefined,
-    knowsLanguage: languages,
+    knowsLanguage: languages.length ? languages : undefined,
     // sameAs points at the advisor's live third-party profiles (socials + review
     // sites) — the honest, verifiable signal. We deliberately do NOT emit
     // aggregateRating or review[]: self-attested star ratings and self-curated
@@ -413,17 +415,19 @@ export default async function AgentProfilePage({
 
             {/* Languages + specialties */}
             <div className="mt-6 space-y-3">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="eyebrow mr-1">{L.languages}</span>
-                {languages.map((lng) => (
-                  <span
-                    key={lng}
-                    className="rounded-sm border border-line px-3 py-1 text-xs text-muted"
-                  >
-                    {lng}
-                  </span>
-                ))}
-              </div>
+              {languages.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="eyebrow mr-1">{L.languages}</span>
+                  {languages.map((lng) => (
+                    <span
+                      key={lng}
+                      className="rounded-sm border border-line px-3 py-1 text-xs text-muted"
+                    >
+                      {lng}
+                    </span>
+                  ))}
+                </div>
+              )}
               {agent.specialties.length > 0 && (
                 <div className="flex flex-wrap gap-2">
                   {agent.specialties.map((s) => (
@@ -472,7 +476,7 @@ export default async function AgentProfilePage({
           <Reveal>
             <Eyebrow>{L.about}</Eyebrow>
             <p className="mt-6 max-w-[60ch] whitespace-pre-line text-lg leading-relaxed text-ink/85">
-              {agent.bio || fallbackBio}
+              {localizedBio || fallbackBio}
             </p>
           </Reveal>
         </section>

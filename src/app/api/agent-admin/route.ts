@@ -35,10 +35,12 @@ export async function GET(req: NextRequest) {
 
   const { data, error } = await sb
     .from("agents")
-    // `bio` is included so the portal can tell which advisors still have an
+    // Both bios are included so the portal can tell which advisors still have an
     // empty profile — it drives the "needs attention" hint on the roster, not
     // visibility (an incomplete profile still publishes by design).
-    .select("id, name, slug, visibility_status, sort, portal_agent_id, photo_url, license_number, bio")
+    .select(
+      "id, name, slug, visibility_status, sort, portal_agent_id, photo_url, license_number, bio, bio_zh",
+    )
     .order("sort", { ascending: true })
     .order("name", { ascending: true });
   if (error) return NextResponse.json({ error: error.message }, { status: 500 });

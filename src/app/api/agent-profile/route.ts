@@ -19,7 +19,7 @@ function authed(req: NextRequest): boolean {
 
 // Columns the portal editor needs to populate its form.
 const PROFILE_COLUMNS =
-  "id, slug, name, title, phone, email, bio, license_number, specialties, languages, social, wechat_qr, reviews, stats, testimonials, photo_url, show_past_deals, visibility_status, mls_id, portal_agent_id";
+  "id, slug, name, title, phone, email, bio, bio_zh, license_number, specialties, languages, social, wechat_qr, reviews, stats, testimonials, photo_url, show_past_deals, visibility_status, mls_id, portal_agent_id";
 
 /** GET ?portalAgentId=N → the linked public profile for editing (404 if none). */
 export async function GET(req: NextRequest) {

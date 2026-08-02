@@ -86,6 +86,7 @@ BEGIN
     phone = COALESCE(NULLIF(BTRIM(keep_profile.phone), ''), delete_profile.phone),
     email = COALESCE(NULLIF(BTRIM(keep_profile.email), ''), delete_profile.email),
     bio = COALESCE(NULLIF(BTRIM(keep_profile.bio), ''), delete_profile.bio),
+    bio_zh = COALESCE(NULLIF(BTRIM(keep_profile.bio_zh), ''), delete_profile.bio_zh),
     specialties = CASE
       WHEN COALESCE(CARDINALITY(keep_profile.specialties), 0) > 0
       THEN keep_profile.specialties

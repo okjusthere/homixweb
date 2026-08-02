@@ -1,7 +1,7 @@
 # Advisor profiles (Supabase) — setup
 
 When Supabase is configured, advisor profiles are read from the `agents` table.
-Advisors edit their own profile (photo, contact, bio, social) from the
+Advisors edit their own profile (photo, contact, English bio, social) from the
 **agents.homixny.com portal**, and admins manage the roster there too — there is
 no password-gated page on the marketing site. Supabase is the only runtime
 roster source; missing configuration fails closed with an empty directory.
@@ -38,6 +38,22 @@ The same schema also creates `public.inquiries`, used by website inquiry forms.
    - Admins manage public ordering and force-hide/show under **/roster**.
    - Advisors can switch their own profile between `visible` and
      `agent_hidden`; only admins can apply or release `admin_hidden`.
+
+## Bilingual biography migration
+
+Existing projects created before bilingual advisor profiles must run these SQL
+files once, in this order:
+
+1. `supabase/add-agent-bilingual-bios.sql` adds the nullable `bio_zh` column.
+2. `supabase/backfill-agent-bilingual-bios.sql` replaces every current profile's
+   `bio` with an English biography and fills its Simplified Chinese `bio_zh`.
+   The script verifies all 66 prepared profile ids before updating anything and
+   rolls back on a roster mismatch.
+3. Re-run `supabase/merge-agent-profiles.sql` so future duplicate-profile merges
+   preserve both language versions.
+
+The website reads `bio` on English routes and `bio_zh` on Chinese routes. Older
+portal clients that submit only `bio` leave the existing Chinese version intact.
 
 ## Notes
 

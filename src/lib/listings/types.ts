@@ -108,6 +108,8 @@ export interface Agent {
   /** State real estate license number — required disclosure in many states. */
   licenseNumber?: string;
   bio: string;
+  /** Simplified Chinese profile bio. English remains in `bio`. */
+  bioZh?: string;
   specialties: string[];
   /** Spoken languages, e.g. ["English", "中文", "粤语"]. UI falls back to EN/中文. */
   languages?: string[];
