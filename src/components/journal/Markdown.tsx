@@ -26,7 +26,7 @@ const components: Components = {
   a: ({ href, children }) => (
     <Link
       href={href ?? "#"}
-      className="text-bronze underline-offset-4 hover:underline"
+      className="break-all text-bronze underline-offset-4 hover:underline"
     >
       {children}
     </Link>

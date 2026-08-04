@@ -1,4 +1,5 @@
 import { SITE_MEDIA_ROOT } from "@/lib/media";
+import { newYorkColumnPosts } from "./new-york-column";
 import { priorityEvergreenPosts } from "./priority-evergreen";
 /**
  * Guide articles / 置业文章 — editorial content.
@@ -67,6 +68,7 @@ export function postsByTopic(topicSlug: string): JournalPost[] {
 
 export const journalPosts: JournalPost[] = [
   ...priorityEvergreenPosts,
+  ...newYorkColumnPosts,
   {
     "slug": "manhattan-residential-market-data-2026",
     "contentKind": "timely",
@@ -474,7 +476,7 @@ export const journalPosts: JournalPost[] = [
     "contentKind": "evergreen",
     "topic": "taxes",
     "parentGuideSlug": "property-taxes",
-    "secondaryTags": ["buying"],
+    "secondaryTags": ["buying", "new-york"],
     "date": "2026-06-25",
     "authorSlug": "kevinnli",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/financial-district.jpg`,
@@ -585,6 +587,7 @@ export const journalPosts: JournalPost[] = [
     "contentKind": "evergreen",
     "topic": "taxes",
     "parentGuideSlug": "property-taxes",
+    "secondaryTags": ["new-york"],
     "date": "2026-06-20",
     "authorSlug": "jingjingfeng",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/hudson-yards.jpg`,
@@ -1026,7 +1029,7 @@ export const journalPosts: JournalPost[] = [
     "contentKind": "evergreen",
     "topic": "taxes",
     "parentGuideSlug": "property-taxes",
-    "secondaryTags": ["policy"],
+    "secondaryTags": ["policy", "new-york"],
     "date": "2026-05-30",
     "authorSlug": "yanxue",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/hudson-yards.jpg`,
@@ -1053,7 +1056,7 @@ export const journalPosts: JournalPost[] = [
     "slug": "city-of-yes-zoning-buyers",
     "contentKind": "timely",
     "topic": "policy",
-    "secondaryTags": ["buying"],
+    "secondaryTags": ["buying", "new-york"],
     "date": "2026-05-29",
     "authorSlug": "heidi",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/construction.jpg`,
@@ -1080,6 +1083,7 @@ export const journalPosts: JournalPost[] = [
     "slug": "congestion-pricing-neighborhoods",
     "contentKind": "timely",
     "topic": "policy",
+    "secondaryTags": ["new-york"],
     "date": "2026-05-28",
     "authorSlug": "jingjingfeng",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/traffic.jpg`,
@@ -1107,7 +1111,7 @@ export const journalPosts: JournalPost[] = [
     "contentKind": "evergreen",
     "topic": "buying",
     "parentGuideSlug": "buying-in-nyc",
-    "secondaryTags": ["policy"],
+    "secondaryTags": ["policy", "new-york"],
     "date": "2026-05-26",
     "authorSlug": "emmaniu",
     "cover": `${SITE_MEDIA_ROOT}/journal/covers/sandy-flood.jpg`,

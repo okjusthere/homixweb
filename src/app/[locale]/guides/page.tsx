@@ -25,8 +25,8 @@ export async function generateMetadata({
       zh: "纽约置业指南——买房、卖房、税务与市场数据",
     },
     description: {
-      en: "Homix's organized New York real estate guide hub: buyer guides, seller strategy, renting, investing, taxes, immigration, students, market data, and 50+ bilingual articles.",
-      zh: "Homix 纽约置业指南中心: 买房、卖房、租房、投资、税务、新移民、留学家庭、市场数据与 50+ 篇中英双语文章。",
+      en: "Homix's organized New York real estate guide hub: buying, selling, renting, homeowner programs, investing, taxes, immigration, students, market data, and bilingual articles.",
+      zh: "Homix 纽约置业指南中心:买房、卖房、租房、房主福利、投资、税务、新移民、留学家庭、市场数据与中英双语文章。",
     },
   });
 }
@@ -69,6 +69,14 @@ export default async function GuidesPage({
         : "Income rules, guarantors, no-credit paths, deposit rules, and the New York rental market.",
       href: "/guides/topics/renting",
       guideSlug: "renting-in-nyc",
+    },
+    {
+      topic: "new-york",
+      title: zh ? "纽约专栏" : "New York homeownership",
+      body: zh
+        ? "STAR、房产税账单、城市档案、装修许可与纽约房主日常实务。"
+        : "STAR, property-tax bills, city records, renovation permits, and practical safeguards for New York owners.",
+      href: "/guides/topics/new-york",
     },
     {
       topic: "taxes",
@@ -149,8 +157,8 @@ export default async function GuidesPage({
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
             {zh
-              ? "买房、卖房、租房、税务、新移民、留学家庭与市场数据分开整理。先选你的处境，再读对应的完整指南和深度文章。"
-              : "Buying, selling, renting, taxes, newcomers, student families, and market data are separated into clear paths. Start with your situation, then go deeper."}
+              ? "买房、卖房、租房、纽约房主实务、税务、新移民、留学家庭与市场数据分开整理。先选你的处境，再读对应的完整指南和深度文章。"
+              : "Buying, selling, renting, New York homeownership, taxes, newcomers, student families, and market data are separated into clear paths. Start with your situation, then go deeper."}
           </p>
         </div>
         <div className="border-y border-line py-6 lg:border-l lg:border-y-0 lg:py-0 lg:pl-8">
@@ -189,7 +197,7 @@ export default async function GuidesPage({
             {zh ? "查看全部文章" : "All articles"} →
           </Link>
         </div>
-        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {paths.map((path) => {
             const count = path.topic === "market" ? postsByTopic("market").length : postsByTopic(path.topic).length;
             const guide = path.guideSlug ? guideBySlug.get(path.guideSlug) : undefined;

@@ -41,6 +41,14 @@ export const topics: Topic[] = [
     pillarSlug: "renting-in-nyc",
   },
   {
+    slug: "new-york",
+    label: { en: "New York Homeownership", zh: "纽约专栏" },
+    blurb: {
+      en: "Practical New York homeowner programs, property records, permits, tax bills, and safeguards.",
+      zh: "纽约房主实务:STAR、房产税账单、城市档案、装修许可与产权保护。",
+    },
+  },
+  {
     slug: "selling",
     label: { en: "Selling", zh: "卖房" },
     blurb: {
