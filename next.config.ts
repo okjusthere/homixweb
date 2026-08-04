@@ -1,6 +1,12 @@
 import type { NextConfig } from "next";
 
+// Preserve Next's blocking-metadata crawler list and add WeChat, whose link
+// preview fetcher needs OG tags in the initial <head> rather than streamed.
+const htmlLimitedBots =
+  /[\w-]+-Google|Google-[\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight|MicroMessenger|WeChat/i;
+
 const nextConfig: NextConfig = {
+  htmlLimitedBots,
   // Pin the workspace root — a stray lockfile in the home dir confuses inference.
   turbopack: {
     root: __dirname,
