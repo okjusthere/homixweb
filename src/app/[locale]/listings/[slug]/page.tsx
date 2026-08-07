@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import Link from "@/components/ui/LocalizedLink";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { ListingGallery } from "@/components/listings/ListingGallery";
 import { ListingAttribution } from "@/components/listings/ListingAttribution";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
+import { getAgentByMlsId } from "@/lib/agents";
 import { listings } from "@/lib/listings";
 import type { PropertyType } from "@/lib/listings";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
+import { formatOpenHouseRange, listingStatusLabel } from "@/lib/listing-display";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { localizePath } from "@/lib/locale";
 import { absUrl, jsonLd as serializeJsonLd, pageMetadata } from "@/lib/seo";
@@ -93,7 +97,10 @@ export default async function ListingDetailPage({
   if (!listing) notFound();
 
   const locale = await getRouteLocale(params);
-  const { t } = await getT(locale);
+  const [{ t }, listingAgent] = await Promise.all([
+    getT(locale),
+    listing.listingAgentId ? getAgentByMlsId(listing.listingAgentId) : null,
+  ]);
   const zh = locale === "zh";
   const description = localizedDescription(listing, locale);
   const { address, listPrice, beds, baths, halfBaths, sqft, status } = listing;
@@ -121,6 +128,10 @@ export default async function ListingDetailPage({
         schoolDistrict: "学区",
         county: "郡",
         mls: "MLS 编号",
+        openHouse: "开放日",
+        openHouseNote: "以下时间均为纽约当地时间，安排来自 OneKey MLS。",
+        listingAdvisor: "挂牌顾问",
+        viewProfile: "查看顾问主页",
       }
     : {
         back: "All listings",
@@ -144,12 +155,21 @@ export default async function ListingDetailPage({
         schoolDistrict: "School district",
         county: "County",
         mls: "MLS #",
+        openHouse: "Open house",
+        openHouseNote: "Times are shown in New York local time and sourced from OneKey MLS.",
+        listingAdvisor: "Listing advisor",
+        viewProfile: "View advisor profile",
       };
+
+  const openHouses = (listing.openHouses ?? []).flatMap((openHouse) => {
+    const display = formatOpenHouseRange(openHouse, locale);
+    return display ? [{ openHouse, display }] : [];
+  });
 
   const specs: { label: string; value: string }[] = [
     { label: copy.price, value: displayPrice(listPrice) },
     { label: copy.type, value: listing.propertyType },
-    { label: copy.status, value: status },
+    { label: copy.status, value: listingStatusLabel(status, locale) },
     { label: copy.bedrooms, value: beds > 0 ? String(beds) : "—" },
     { label: copy.bathrooms, value: baths > 0 ? formatBaths(baths, halfBaths) : "—" },
     { label: copy.interior, value: sqft ? `${formatNumber(sqft)} ${copy.squareFeet}` : "—" },
@@ -242,6 +262,38 @@ export default async function ListingDetailPage({
             </div>
           )}
 
+          {openHouses.length > 0 && (
+            <section className="mt-10 border-y border-line py-7">
+              <h2 className="eyebrow">{copy.openHouse}</h2>
+              <p className="mt-2 text-sm text-muted">{copy.openHouseNote}</p>
+              <div className="mt-5 divide-y divide-line border-y border-line">
+                {openHouses.map(({ openHouse, display }) => (
+                  <div
+                    key={openHouse.id}
+                    className="grid gap-2 py-4 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-8"
+                  >
+                    <div>
+                      <time
+                        dateTime={openHouse.startsAt}
+                        className="font-serif text-xl text-ink"
+                      >
+                        {display.date}
+                      </time>
+                      {openHouse.remarks && (
+                        <p className="mt-1 text-sm leading-relaxed text-muted">
+                          {openHouse.remarks}
+                        </p>
+                      )}
+                    </div>
+                    <p className="text-sm font-medium tabular-nums text-bronze">
+                      {display.time}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
           {/* Spec sheet */}
           <div className="mt-10">
             <h2 className="eyebrow">{copy.details}</h2>
@@ -271,6 +323,36 @@ export default async function ListingDetailPage({
         {/* Inquiry sidebar */}
         <aside className="lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-sm border border-line bg-surface p-6 sm:p-7">
+            {listingAgent ? (
+              <Link
+                href={`/agents/${listingAgent.slug}`}
+                className="mb-6 flex items-center gap-4 border-b border-line pb-6"
+              >
+                <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-line/60">
+                  <Image
+                    src={listingAgent.photo}
+                    alt={listingAgent.name}
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
+                </span>
+                <span className="min-w-0">
+                  <span className="eyebrow block">{copy.listingAdvisor}</span>
+                  <span className="mt-1 block truncate font-serif text-lg text-ink">
+                    {listingAgent.name}
+                  </span>
+                  <span className="mt-1 block text-xs text-bronze">
+                    {copy.viewProfile} →
+                  </span>
+                </span>
+              </Link>
+            ) : listing.listAgentName ? (
+              <div className="mb-6 border-b border-line pb-5">
+                <p className="eyebrow">{copy.listingAdvisor}</p>
+                <p className="mt-1 font-serif text-lg text-ink">{listing.listAgentName}</p>
+              </div>
+            ) : null}
             <p className="font-serif text-xl text-ink">{copy.privateShowing}</p>
             <p className="mt-2 text-sm text-muted">
               {copy.followUp}

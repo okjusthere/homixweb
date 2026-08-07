@@ -163,3 +163,10 @@ export async function getAgents(): Promise<Agent[]> {
 export async function getAgentBySlug(slug: string): Promise<Agent | null> {
   return loadPublicAgentBySlug(slug);
 }
+
+export async function getAgentByMlsId(mlsId: string): Promise<Agent | null> {
+  const normalized = mlsId.trim().toUpperCase();
+  if (!normalized) return null;
+  const agents = await loadPublicAgents();
+  return agents.find((agent) => agent.mlsId?.trim().toUpperCase() === normalized) ?? null;
+}

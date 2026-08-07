@@ -44,6 +44,11 @@ NEXT_PUBLIC_SITE_URL=https://www.homixny.com
 SUPABASE_URL=...
 SUPABASE_SERVICE_ROLE_KEY=...
 AGENTS_REVALIDATE_SECRET=...
+BBO_API_URL=https://onekey.kevv.ai
+BBO_API_KEY=...
+BBO_HOMIX_LIST_OFFICE_MLS_ID=KEYHRMI01
+BBO_HOMIX_LIST_OFFICE_KEY=KEY421354028
+BBO_REVALIDATE_SECRET=...
 RESEND_API_KEY=...
 INQUIRY_TO_EMAIL=homix@homixny.com
 INQUIRY_FROM_EMAIL="Homix Website <inquiries@homixny.com>"
@@ -142,3 +147,14 @@ The listings data layer is intentionally isolated behind `src/lib/listings`.
 UI imports only the provider interface/singleton. The website does not call
 OneKey/MLSGrid directly and does not keep a local MLS cache; BBO is the only MLS
 backend.
+
+Homix office search includes `Coming Soon`, `Active`, `Pending`, and `Closed`
+records. BBO applies lifecycle-first ordering across pages so current inventory
+stays ahead of pending homes and sold homes remain last. The wider OneKey search
+continues to default to current for-sale inventory only.
+
+Price, status, media, and Open House changes trigger
+`POST /api/revalidate-listings` from BBO. `BBO_REVALIDATE_SECRET` must be the
+same long random value in BBO and Vercel; it is server-only and must never use a
+`NEXT_PUBLIC_` prefix. The five-minute fetch TTL is the fallback if delivery of
+that invalidation call fails.

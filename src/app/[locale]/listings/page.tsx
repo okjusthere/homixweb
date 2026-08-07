@@ -6,7 +6,13 @@ import { ListingCard } from "@/components/listings/ListingCard";
 import { ListingFilters } from "@/components/listings/ListingFilters";
 import { ListingsPagination } from "@/components/listings/ListingsPagination";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
-import { listings, type ListingQuery, type PropertyType } from "@/lib/listings";
+import { getAgents } from "@/lib/agents";
+import {
+  listings,
+  type ListingQuery,
+  type ListingStatus,
+  type PropertyType,
+} from "@/lib/listings";
 import { formatNumber } from "@/lib/format";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
@@ -24,6 +30,7 @@ const FILTER_PARAM_KEYS = [
   "minPrice",
   "maxPrice",
   "beds",
+  "status",
   "q",
   "sort",
 ] as const;
@@ -43,12 +50,12 @@ export async function generateMetadata({
       path: "/listings",
       locale,
       title: {
-        en: "New York Homes for Sale — Search NYC & Long Island Listings",
-        zh: "纽约房源搜索——在售住宅与公寓",
+        en: "Homix New York Listings — Active, Pending & Sold Homes",
+        zh: "Homix 纽约房源——在售、合同中与已成交",
       },
       description: {
-        en: "Search homes for sale across New York — Queens, Manhattan, Brooklyn, and Long Island — from the OneKey MLS. Filter by price, location, and bedrooms.",
-        zh: "搜索纽约在售房源：皇后区、曼哈顿、布鲁克林与长岛的住宅与公寓，可按价格、地区、卧室数筛选，Homix 中英双语持牌经纪人全程服务。",
+        en: "Browse homes represented by Homix across Queens, Manhattan, Brooklyn, and Long Island, including active, pending, and recently sold OneKey MLS listings.",
+        zh: "浏览 Homix 在皇后区、曼哈顿、布鲁克林与长岛代理的 OneKey MLS 房源，包括在售、合同处理中与近期成交记录。",
       },
       noAlternates: filtered,
     }),
@@ -62,6 +69,21 @@ type SearchParams = Record<string, string | string[] | undefined>;
 
 function one(v: string | string[] | undefined): string {
   return (Array.isArray(v) ? v[0] : v) ?? "";
+}
+
+function homixStatuses(value: string): ListingStatus[] | undefined {
+  switch (value) {
+    case "for-sale":
+      return ["Coming Soon", "Active"];
+    case "coming-soon":
+      return ["Coming Soon"];
+    case "pending":
+      return ["Pending"];
+    case "sold":
+      return ["Sold"];
+    default:
+      return undefined;
+  }
 }
 
 export default async function ListingsPage({
@@ -85,8 +107,11 @@ export default async function ListingsPage({
     minPrice: one(sp.minPrice) ? Number(one(sp.minPrice)) : undefined,
     maxPrice: one(sp.maxPrice) ? Number(one(sp.maxPrice)) : undefined,
     minBeds: one(sp.beds) ? Number(one(sp.beds)) : undefined,
+    statuses: scope === "homix" ? homixStatuses(one(sp.status)) : undefined,
     q: one(sp.q) || undefined,
-    sort: (one(sp.sort) as ListingQuery["sort"]) || "newest",
+    sort:
+      (one(sp.sort) as ListingQuery["sort"]) ||
+      (scope === "homix" ? "status-priority" : "newest"),
     // BBO permits exact counts for this office-scoped search. Wider OneKey
     // searches retain lower-bound pagination to protect the shared API.
     exactTotal: scope === "homix",
@@ -94,8 +119,16 @@ export default async function ListingsPage({
     offset: (page - 1) * PER_PAGE,
   };
 
-  const result = await listings.getListings(query);
+  const [result, publicAgents] = await Promise.all([
+    listings.getListings(query),
+    scope === "homix" ? getAgents() : Promise.resolve([]),
+  ]);
   const { listings: results, total, hasMore, totalIsEstimate, unavailable } = result;
+  const agentsByMlsId = new Map(
+    publicAgents
+      .filter((agent) => agent.mlsId)
+      .map((agent) => [agent.mlsId!.trim().toUpperCase(), agent]),
+  );
   // An estimated total is only a lower bound. Keep the pager navigable via
   // hasMore, but never present a guessed total page count as fact.
   const pages = totalIsEstimate ? page : Math.max(1, Math.ceil(total / PER_PAGE));
@@ -105,7 +138,17 @@ export default async function ListingsPage({
 
   // Preserve active filters in pagination links.
   const baseParams: Record<string, string> = {};
-  for (const k of ["scope", "city", "type", "minPrice", "maxPrice", "beds", "q", "sort"]) {
+  for (const k of [
+    "scope",
+    "status",
+    "city",
+    "type",
+    "minPrice",
+    "maxPrice",
+    "beds",
+    "q",
+    "sort",
+  ]) {
     const v = one(sp[k]);
     if (v) baseParams[k] = v;
   }
@@ -116,7 +159,13 @@ export default async function ListingsPage({
         <div className="max-w-2xl">
           <Eyebrow>{zh ? "房源搜索" : "Listings"}</Eyebrow>
           <h1 className="mt-4 font-serif text-4xl font-normal leading-tight tracking-tight text-ink sm:text-5xl">
-            {zh ? "在售房源" : "Homes for sale"}
+            {scope === "homix"
+              ? zh
+                ? "Homix 代理房源"
+                : "Homes represented by Homix"
+              : zh
+                ? "OneKey 在售房源"
+                : "OneKey homes for sale"}
           </h1>
           <Link
             href="/calculator"
@@ -157,6 +206,7 @@ export default async function ListingsPage({
             searchAction: zh ? "搜索" : "Search",
             clearSearch: zh ? "清除" : "Clear",
             source: zh ? "房源范围" : "Listing source",
+            status: zh ? "房源状态" : "Listing status",
             city: zh ? "地区" : "Location",
             propertyType: zh ? "房屋类型" : "Property type",
             minPrice: zh ? "最低价格" : "Minimum price",
@@ -165,6 +215,11 @@ export default async function ListingsPage({
             sort: zh ? "排序" : "Sort",
             scopeHomix: zh ? "Homix 房源" : "Homix listings",
             scopeAll: zh ? "全部 OneKey 房源" : "All OneKey listings",
+            statusAll: zh ? "全部 Homix 房源" : "All Homix listings",
+            statusForSale: zh ? "在售与即将上市" : "For sale",
+            statusComingSoon: zh ? "即将上市" : "Coming soon",
+            statusPending: zh ? "合同处理中" : "Pending",
+            statusSold: zh ? "已成交" : "Sold",
             allLocations: zh ? "全部地区" : "All locations",
             anyType: zh ? "全部类型" : "Any type",
             noMin: zh ? "不限最低价" : "No min",
@@ -172,6 +227,7 @@ export default async function ListingsPage({
             upTo: zh ? "最高" : "Up to",
             anyBeds: zh ? "不限卧室" : "Any beds",
             bedsSuffix: zh ? " 居+" : "+ beds",
+            sortPortfolio: zh ? "在售优先" : "For sale first",
             sortNewest: zh ? "最新上架" : "Newest",
             sortPriceDesc: zh ? "价格从高到低" : "Price (high to low)",
             sortPriceAsc: zh ? "价格从低到高" : "Price (low to high)",
@@ -223,7 +279,14 @@ export default async function ListingsPage({
       ) : (
         <div className="mt-8 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {results.map((listing, i) => (
-            <ListingCard key={listing.id} listing={listing} priority={i < 3} />
+            <ListingCard
+              key={listing.id}
+              listing={listing}
+              agent={agentsByMlsId.get(listing.listingAgentId.trim().toUpperCase())}
+              locale={locale}
+              priority={i < 3}
+              showAgent={scope === "homix"}
+            />
           ))}
         </div>
       )}

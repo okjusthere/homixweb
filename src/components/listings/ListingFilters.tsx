@@ -35,6 +35,7 @@ export interface ListingFilterLabels {
   searchAction: string;
   clearSearch: string;
   source: string;
+  status: string;
   city: string;
   propertyType: string;
   minPrice: string;
@@ -43,6 +44,11 @@ export interface ListingFilterLabels {
   sort: string;
   scopeHomix: string;
   scopeAll: string;
+  statusAll: string;
+  statusForSale: string;
+  statusComingSoon: string;
+  statusPending: string;
+  statusSold: string;
   allLocations: string;
   anyType: string;
   noMin: string;
@@ -50,6 +56,7 @@ export interface ListingFilterLabels {
   upTo: string; // e.g. "Up to" / "最高"
   anyBeds: string;
   bedsSuffix: string; // e.g. "+ beds" / "居+"
+  sortPortfolio: string;
   sortNewest: string;
   sortPriceDesc: string;
   sortPriceAsc: string;
@@ -90,6 +97,10 @@ export function ListingFilters({
       const next = new URLSearchParams(params.toString());
       if (value) next.set(key, value);
       else next.delete(key);
+      if (key === "scope" && value === "all") {
+        next.delete("status");
+        if (next.get("sort") === "status-priority") next.delete("sort");
+      }
       navigate(next);
     },
     [navigate, params],
@@ -112,6 +123,7 @@ export function ListingFilters({
   }
 
   const val = (k: string) => params.get(k) ?? "";
+  const homixScope = val("scope") !== "all";
 
   return (
     <div className="space-y-4">
@@ -162,6 +174,21 @@ export function ListingFilters({
           <option value="">{labels.scopeHomix}</option>
           <option value="all">{labels.scopeAll}</option>
         </select>
+
+        {homixScope && (
+          <select
+            aria-label={labels.status}
+            className={selectClass}
+            value={val("status")}
+            onChange={(e) => update("status", e.target.value)}
+          >
+            <option value="">{labels.statusAll}</option>
+            <option value="for-sale">{labels.statusForSale}</option>
+            <option value="coming-soon">{labels.statusComingSoon}</option>
+            <option value="pending">{labels.statusPending}</option>
+            <option value="sold">{labels.statusSold}</option>
+          </select>
+        )}
 
         <select
           aria-label={labels.city}
@@ -236,9 +263,10 @@ export function ListingFilters({
         <select
           aria-label={labels.sort}
           className={`${selectClass} ml-auto`}
-          value={val("sort")}
+          value={val("sort") || (homixScope ? "status-priority" : "newest")}
           onChange={(e) => update("sort", e.target.value)}
         >
+          {homixScope && <option value="status-priority">{labels.sortPortfolio}</option>}
           <option value="newest">{labels.sortNewest}</option>
           <option value="price-desc">{labels.sortPriceDesc}</option>
           <option value="price-asc">{labels.sortPriceAsc}</option>
