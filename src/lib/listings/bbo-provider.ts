@@ -192,14 +192,15 @@ export class BboListingsProvider implements ListingsProvider {
     }
 
     try {
-      const [payload] = await Promise.all([
-        this.request<BboSearchResponse>(
-          "/api/v1/listings/search",
-          params,
-          stableQuery ? undefined : null,
-        ),
-        this.refreshSyncStatus(),
-      ]);
+      // Sync metadata is informational; never put it on the critical path for
+      // listing cards. Starting it here usually lets it finish alongside the
+      // search while a slow status endpoint can no longer delay useful data.
+      void this.refreshSyncStatus();
+      const payload = await this.request<BboSearchResponse>(
+        "/api/v1/listings/search",
+        params,
+        stableQuery ? (query.scope === "all" ? 120 : 300) : null,
+      );
       const items = payload.items ?? payload.results ?? [];
       return {
         listings: items.map(toListing).filter(Boolean) as Listing[],

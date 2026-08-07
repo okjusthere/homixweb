@@ -128,6 +128,7 @@ export type AgentRowForSave = {
   bio_zh?: string | null;
   mls_id?: string | null;
   show_past_deals?: boolean | null;
+  portal_agent_id?: number | null;
 };
 
 /**
@@ -206,6 +207,7 @@ export async function saveAgentProfileFromForm(
   const hasCareerColumns = "mls_id" in agent && "show_past_deals" in agent;
   const submittedBioZh = formData.get("bio_zh");
 
+  const updatedAt = new Date().toISOString();
   const { error } = await sb
     .from("agents")
     .update({
@@ -227,7 +229,7 @@ export async function saveAgentProfileFromForm(
       stats,
       testimonials,
       photo_url: photoUrl,
-      updated_at: new Date().toISOString(),
+      updated_at: updatedAt,
       ...(hasCareerColumns
         ? {
             show_past_deals: formData.get("show_past_deals") === "on",
@@ -237,6 +239,20 @@ export async function saveAgentProfileFromForm(
     .eq("id", agent.id);
 
   if (error) return { ok: false, error: error.message };
+
+  // Existing share codes stay stable for analytics, while their versioned URL
+  // changes whenever the public identity changes. That forces WeChat and other
+  // social crawlers to fetch the updated name/headshot instead of reusing an
+  // old card indefinitely.
+  if (agent.portal_agent_id) {
+    const { error: shareVersionError } = await sb
+      .from("share_links")
+      .update({ updated_at: updatedAt })
+      .eq("agent_id", agent.portal_agent_id);
+    if (shareVersionError && shareVersionError.code !== "42P01") {
+      console.warn("Unable to refresh share-card versions:", shareVersionError.message);
+    }
+  }
 
   revalidateTag(PUBLIC_AGENTS_CACHE_TAG, "max");
   revalidatePath(`/agents/${agent.slug}`);

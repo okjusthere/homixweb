@@ -44,8 +44,16 @@ export async function generateMetadata({
   const description = zh
     ? `${agent.name} 来自 Homix Realty，专注纽约买卖、租赁与地产资讯。`
     : `${agent.name} at Homix Realty. New York homes, rentals, and real estate insights.`;
-  const image = absUrl(agent.photoUrl || "/agent-placeholder-logo.png");
-  const shareUrl = absUrl(`/s/${encodeURIComponent(context.code)}?card=agent-v1`);
+  const cardQuery = new URLSearchParams({
+    card: "agent-v2",
+    v: context.cardVersion,
+  });
+  const image = absUrl(
+    `/api/share-card/${encodeURIComponent(context.code)}?v=${encodeURIComponent(context.cardVersion)}`,
+  );
+  const shareUrl = absUrl(
+    `/s/${encodeURIComponent(context.code)}?${cardQuery.toString()}`,
+  );
   const canonical = absUrl(localizePath(locale, context.contentPath));
 
   return {
@@ -60,10 +68,17 @@ export async function generateMetadata({
       locale: zh ? "zh_CN" : "en_US",
       title,
       description,
-      images: [{ url: image, alt: `${agent.name}, Homix Realty` }],
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: `${agent.name}, Homix Realty`,
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title,
       description,
       images: [image],

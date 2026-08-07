@@ -23,6 +23,7 @@ export type PublicShareContext = {
   contentPath: string;
   contentTitle: string;
   locale: "en" | "zh";
+  cardVersion: string;
   agent: PublicShareAgent;
 };
 
@@ -34,7 +35,15 @@ type ShareLinkRow = {
   content_title: string;
   locale: "en" | "zh";
   is_active: boolean;
+  updated_at: string | null;
 };
+
+export function shareCardVersion(updatedAt?: string | null): string {
+  const timestamp = updatedAt ? Date.parse(updatedAt) : Number.NaN;
+  return Number.isFinite(timestamp)
+    ? Math.floor(timestamp).toString(36)
+    : "1";
+}
 
 export function validShareCode(value: unknown): value is string {
   return typeof value === "string" && SHARE_CODE.test(value);
@@ -54,7 +63,9 @@ export async function resolvePublicShare(
 
   const { data: linkData, error: linkError } = await sb
     .from("share_links")
-    .select("id, code, agent_id, content_path, content_title, locale, is_active")
+    .select(
+      "id, code, agent_id, content_path, content_title, locale, is_active, updated_at",
+    )
     .eq("code", code)
     .eq("is_active", true)
     .maybeSingle();
@@ -93,6 +104,7 @@ export async function resolvePublicShare(
     contentPath: normalizeShareContentPath(link.content_path),
     contentTitle: link.content_title,
     locale: link.locale === "en" ? "en" : "zh",
+    cardVersion: shareCardVersion(link.updated_at),
     agent: {
       slug: String(agentData.slug),
       name: String(agentData.name),

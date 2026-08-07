@@ -69,7 +69,12 @@ function listingItem(listing: Listing): ShareCatalogItem {
   };
 }
 
+const staticCatalogCache = new Map<Locale, ShareCatalogItem[]>();
+
 function staticCatalog(locale: Locale): ShareCatalogItem[] {
+  const cached = staticCatalogCache.get(locale);
+  if (cached) return cached;
+
   const zh = locale === "zh";
   const newestPosts = journalPosts
     .slice()
@@ -146,12 +151,14 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
     })),
   ];
 
-  return [
+  const result = [
     ...neighborhoodItems,
     ...communityItems,
     ...developmentItems,
     ...guideItems,
   ];
+  staticCatalogCache.set(locale, result);
+  return result;
 }
 
 async function newsCatalog(locale: Locale): Promise<ShareCatalogItem[]> {
@@ -221,20 +228,50 @@ export async function getShareCatalog(input: {
   pageSize?: number;
 }): Promise<ShareCatalogResult> {
   const page = Math.max(1, Math.floor(input.page ?? 1));
-  const pageSize = Math.min(48, Math.max(6, Math.floor(input.pageSize ?? 24)));
+  const pageSize = Math.min(48, Math.max(6, Math.floor(input.pageSize ?? 12)));
   const query = (input.query ?? "").trim().toLocaleLowerCase().slice(0, 100);
+
+  if (input.kind === "listing") {
+    const listingScope = input.listingScope ?? "homix";
+    const listingResult = await listings.getListings({
+      scope: listingScope,
+      q: query || undefined,
+      sort: "newest",
+      exactTotal: false,
+      limit: pageSize,
+      offset: (page - 1) * pageSize,
+    });
+    return {
+      items: listingResult.listings.map(listingItem),
+      total: listingResult.total,
+      page,
+      pageSize,
+      hasMore: listingResult.hasMore === true,
+      totalIsEstimate: listingResult.totalIsEstimate === true,
+      overview: false,
+      unavailable: listingResult.unavailable,
+      counts: listingResult.totalIsEstimate
+        ? {}
+        : { listing: listingResult.total },
+    };
+  }
+
   const staticItems = staticCatalog(input.locale);
-  const dynamicNewsItems = await newsCatalog(input.locale);
-  const catalogItems = [...staticItems, ...dynamicNewsItems];
   const counts: ShareCatalogResult["counts"] = {
     neighborhood: staticItems.filter((item) => item.kind === "neighborhood").length,
     community: staticItems.filter((item) => item.kind === "community").length,
     development: staticItems.filter((item) => item.kind === "development").length,
     guide: staticItems.filter((item) => item.kind === "guide").length,
-    news: dynamicNewsItems.length,
   };
 
-  if (input.kind !== "all" && input.kind !== "listing") {
+  let catalogItems = staticItems;
+  if (input.kind === "news" || input.kind === "all") {
+    const dynamicNewsItems = await newsCatalog(input.locale);
+    counts.news = dynamicNewsItems.length;
+    catalogItems = [...staticItems, ...dynamicNewsItems];
+  }
+
+  if (input.kind !== "all") {
     const matching = catalogItems
       .filter((item) => item.kind === input.kind)
       .filter((item) => matches(item, query));
@@ -251,53 +288,27 @@ export async function getShareCatalog(input: {
     };
   }
 
-  // The mixed overview stays office-scoped. The full listing category can
-  // browse the wider OneKey IDX feed without an expensive exact-count scan.
-  const listingScope =
-    input.kind === "listing" ? input.listingScope ?? "homix" : "homix";
-  const listingLimit = input.kind === "all" ? (query ? 24 : 12) : pageSize;
-  const listingOffset = input.kind === "all" ? 0 : (page - 1) * pageSize;
-  const listingResult = await listings.getListings({
-    scope: listingScope,
-    q: query || undefined,
-    sort: "newest",
-    exactTotal: listingScope === "homix",
-    limit: listingLimit,
-    offset: listingOffset,
-  });
-  if (!listingResult.totalIsEstimate) counts.listing = listingResult.total;
-
-  if (input.kind === "listing") {
-    return {
-      items: listingResult.listings.map(listingItem),
-      total: listingResult.total,
-      page,
-      pageSize,
-      hasMore: listingResult.hasMore === true,
-      totalIsEstimate: listingResult.totalIsEstimate === true,
-      overview: false,
-      unavailable: listingResult.unavailable,
-      counts,
-    };
-  }
-
+  // The overview is intentionally independent from the IDX feed. Listings load
+  // only after the user opens the listing tab, so MLS latency cannot block the
+  // share center's first useful paint.
   const matchingStatic = catalogItems.filter((item) => matches(item, query));
-  const groupedPreview = SHARE_CONTENT_KINDS.flatMap((kind) => {
-    if (kind === "listing") return [];
-    return matchingStatic.filter((item) => item.kind === kind).slice(0, query ? 12 : 8);
-  });
-  const total = listingResult.total + matchingStatic.length;
+  const groupedPreview = query
+    ? matchingStatic.slice(0, 24)
+    : SHARE_CONTENT_KINDS.flatMap((kind) => {
+        if (kind === "listing") return [];
+        return matchingStatic.filter((item) => item.kind === kind).slice(0, 4);
+      });
+  const total = matchingStatic.length;
   counts.all = total;
 
   return {
-    items: [...listingResult.listings.map(listingItem), ...groupedPreview],
+    items: groupedPreview,
     total,
     page: 1,
-    pageSize: listingLimit + groupedPreview.length,
+    pageSize: groupedPreview.length,
     hasMore: false,
     totalIsEstimate: false,
     overview: true,
-    unavailable: listingResult.unavailable,
     counts,
   };
 }

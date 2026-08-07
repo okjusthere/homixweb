@@ -82,6 +82,7 @@ export async function syncAgentIdentity(input: {
     }
   }
 
+  const updatedAt = new Date().toISOString();
   const { error } = await sb
     .from("agents")
     .update({
@@ -89,10 +90,18 @@ export async function syncAgentIdentity(input: {
       phone,
       license_number: license,
       mls_id: nextMlsId,
-      updated_at: new Date().toISOString(),
+      updated_at: updatedAt,
     })
     .eq("id", agent.id);
   if (error) return { ok: false, error: error.message };
+
+  const { error: shareVersionError } = await sb
+    .from("share_links")
+    .update({ updated_at: updatedAt })
+    .eq("agent_id", input.portalAgentId);
+  if (shareVersionError && shareVersionError.code !== "42P01") {
+    console.warn("Unable to refresh share-card versions:", shareVersionError.message);
+  }
 
   revalidatePublicAgents(agent.slug);
   return { ok: true, slug: agent.slug, notice };

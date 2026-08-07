@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
 
   const page = Number.parseInt(request.nextUrl.searchParams.get("page") || "1", 10);
   const pageSize = Number.parseInt(
-    request.nextUrl.searchParams.get("pageSize") || "24",
+    request.nextUrl.searchParams.get("pageSize") || "12",
     10,
   );
   const listingScopeParam = request.nextUrl.searchParams.get("listingScope");
@@ -61,7 +61,7 @@ export async function GET(request: NextRequest) {
     listingScope,
     query: request.nextUrl.searchParams.get("q") || "",
     page: Number.isFinite(page) ? page : 1,
-    pageSize: Number.isFinite(pageSize) ? pageSize : 24,
+    pageSize: Number.isFinite(pageSize) ? pageSize : 12,
   });
 
   return NextResponse.json(result, {
