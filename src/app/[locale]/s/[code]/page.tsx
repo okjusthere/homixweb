@@ -45,7 +45,7 @@ export async function generateMetadata({
     ? `${agent.name} 来自 Homix Realty，专注纽约买卖、租赁与地产资讯。`
     : `${agent.name} at Homix Realty. New York homes, rentals, and real estate insights.`;
   const cardQuery = new URLSearchParams({
-    card: "agent-v2",
+    card: "agent-v3",
     v: context.cardVersion,
   });
   const image = absUrl(agent.photoUrl || "/agent-placeholder-logo.png");
