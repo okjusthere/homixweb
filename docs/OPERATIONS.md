@@ -14,6 +14,7 @@ Required for public launch:
 - `BBO_API_KEY`: server-only read key for BBO listings. Use a DB-backed key with `["listings:read","sync:read"]` scopes.
 - `BBO_HOMIX_LIST_OFFICE_MLS_ID`: `KEYHRMI01`.
 - `BBO_HOMIX_LIST_OFFICE_KEY`: `KEY421354028`.
+- `BBO_REVALIDATE_SECRET`: shared only with BBO; authorizes listing-cache invalidation calls.
 - `SUPABASE_URL`: Supabase Project URL.
 - `SUPABASE_SERVICE_ROLE_KEY`: server-only Supabase service-role key.
 - `AGENTS_REVALIDATE_SECRET`: shared secret with the agents.homixny.com portal; authorizes the portal's advisor-profile, roster-admin, and cache-revalidate calls. Must match the portal's value.
@@ -27,7 +28,8 @@ Optional:
 - `BBO_REVALIDATE_SECONDS`: server-side listing fetch revalidation window; default `300`.
 
 Never expose `SUPABASE_SERVICE_ROLE_KEY`, `AGENTS_REVALIDATE_SECRET`,
-`RESEND_API_KEY`, or `BBO_API_KEY` with a `NEXT_PUBLIC_` prefix.
+`BBO_REVALIDATE_SECRET`, `RESEND_API_KEY`, or `BBO_API_KEY` with a
+`NEXT_PUBLIC_` prefix.
 
 ## Supabase Setup
 
@@ -283,13 +285,33 @@ Default public listing search sends `listOfficeMlsId=KEYHRMI01`, which maps to
 `Homix Realty Inc` / `officeKey=KEY421354028` in BBO. The `/listings?scope=all`
 view searches the wider BBO/OneKey set through the same API key.
 
+The default Homix scope requests `Coming Soon,Active,Pending,Closed`. BBO sorts
+these across the complete result set as current inventory, then Pending, then
+Closed; changing price or bedroom sort only changes order inside each lifecycle
+group. The wider OneKey scope still defaults to `Active,Coming Soon` so other
+firms' sold history is not mixed into public search.
+
+BBO calls `POST /api/revalidate-listings` after a Homix price, status, media, or
+Open House change. The route validates `BBO_REVALIDATE_SECRET`, expires both the
+office and listing-specific data-cache tags, and revalidates listing, homepage,
+and advisor paths. Keep `BBO_REVALIDATE_SECONDS=300` as an outage fallback.
+
 If listings fail:
 
 1. confirm `BBO_API_URL` and `BBO_API_KEY` are set in Vercel;
 2. smoke test `GET /api/v1/listings/search?listOfficeMlsId=KEYHRMI01&limit=1` against BBO;
 3. smoke test `GET /api/v1/sync/status` against BBO;
-4. check BBO Railway logs and `syncLog` for `Property` sync status;
+4. check Azure Container Apps Job logs and `syncLog` for `Property` and
+   `PropertyHomix` sync status;
 5. confirm media URLs are served from the BBO proxy or R2 public media domain.
+
+Production acceptance probes after a listing-data deployment:
+
+1. `3 Court Square` returns the current OneKey list price;
+2. `245-71 61st Avenue` returns a real R2 thumbnail rather than the retired placeholder;
+3. searching `1034330` resolves the same listing as `KEY1034330`;
+4. Homix Pending and Sold records appear after current inventory;
+5. Homix cards link to the matched advisor profile and upcoming Open Houses show in New York time.
 
 Do not reintroduce local cache files, mock listing data, Vercel cron deploy
 hooks, or direct OneKey/MLSGrid credentials in this website.

@@ -39,6 +39,16 @@ export interface ListingPhoto {
   alt?: string;
 }
 
+export interface ListingOpenHouse {
+  id: string;
+  /** ISO timestamp supplied by BBO in UTC. */
+  startsAt: string;
+  /** ISO timestamp supplied by BBO in UTC. */
+  endsAt: string;
+  type?: string;
+  remarks?: string;
+}
+
 export interface Listing {
   /** Stable internal key (RESO: ListingKey). */
   id: string;
@@ -67,6 +77,8 @@ export interface Listing {
   descriptionZh?: string;
   features: string[];
   photos: ListingPhoto[];
+  /** Upcoming public open houses, already filtered by BBO. */
+  openHouses?: ListingOpenHouse[];
   /** Agent id (MLS) who holds the listing. */
   listingAgentId: string;
   /** Listing agent display name (from the feed). */
@@ -200,14 +212,18 @@ export interface ListingQuery {
   scope?: "homix" | "all";
   city?: string;
   status?: ListingStatus;
+  /** Multiple lifecycle states for office portfolio views. */
+  statuses?: ListingStatus[];
   propertyType?: PropertyType;
   minPrice?: number;
   maxPrice?: number;
   minBeds?: number;
   minBaths?: number;
+  /** Verified OneKey member id; used by Agent Profile current-listing tabs. */
+  listAgentMlsId?: string;
   /** Free-text search across address + neighborhood + description. */
   q?: string;
-  sort?: "price-asc" | "price-desc" | "newest" | "beds-desc";
+  sort?: "price-asc" | "price-desc" | "newest" | "beds-desc" | "status-priority";
   /** Ask BBO for an exact total on a selectively scoped query (for example, one office). */
   exactTotal?: boolean;
   limit?: number;
@@ -235,6 +251,8 @@ export interface ListingsProvider {
   getListings(query?: ListingQuery): Promise<ListingResult>;
   getListingBySlug(slug: string): Promise<Listing | null>;
   getFeaturedListings(limit?: number): Promise<Listing[]>;
+  /** Current office listings held by one verified OneKey member. */
+  getAgentListings?(mlsId: string, limit?: number): Promise<Listing[]>;
   /**
    * MLS-verified career history for an agent (by OneKey member id, e.g.
    * "KEY207692"). Returns null when unavailable (no mls_id, BBO down, or

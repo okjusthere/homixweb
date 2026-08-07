@@ -3,13 +3,22 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import { ListingCard } from "@/components/listings/ListingCard";
+import { getAgents } from "@/lib/agents";
 import { getT, type Locale } from "@/lib/i18n";
 import { listings } from "@/lib/listings";
 
 export async function FeaturedListings({ locale }: { locale: Locale }) {
   const { t } = await getT(locale);
-  const featured = await listings.getFeaturedListings(3);
+  const [featured, agents] = await Promise.all([
+    listings.getFeaturedListings(3),
+    getAgents(),
+  ]);
   if (featured.length === 0) return null;
+  const agentsByMlsId = new Map(
+    agents
+      .filter((agent) => agent.mlsId)
+      .map((agent) => [agent.mlsId!.trim().toUpperCase(), agent]),
+  );
 
   return (
     <section className="py-24 sm:py-32">
@@ -29,7 +38,12 @@ export async function FeaturedListings({ locale }: { locale: Locale }) {
         <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {featured.map((listing, i) => (
             <Reveal key={listing.id} delay={i * 70}>
-              <ListingCard listing={listing} priority={i === 0} />
+              <ListingCard
+                listing={listing}
+                agent={agentsByMlsId.get(listing.listingAgentId.trim().toUpperCase())}
+                locale={locale}
+                priority={i === 0}
+              />
             </Reveal>
           ))}
         </div>

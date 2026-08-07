@@ -21,7 +21,7 @@ import {
   jsonLd as serializeJsonLd,
   pageMetadata,
 } from "@/lib/seo";
-import { heroImage, siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 
 const PLACEHOLDER = "/agent-placeholder-logo.png";
 
@@ -144,22 +144,24 @@ export default async function AgentProfilePage({
     agent.name.trim().split(/\s+/)[0] ||
     agent.name;
 
-  // Company-level featured listings (BBO is office-wide, not per-agent), plus
-  // this advisor's MLS-verified career history when an admin has mapped their
-  // mls_id. Both degrade gracefully: featured falls back to a CTA, career to
-  // no section at all.
+  // Current listings and career history are both tied to the advisor's
+  // verified OneKey member id. An unmapped advisor never inherits company-wide
+  // inventory that could be mistaken for their own work.
   const wantsCareer = agent.showPastDeals !== false;
-  const [featured, career] = await Promise.all([
-    listings.getFeaturedListings(3),
+  const [agentListings, career] = await Promise.all([
+    agent.mlsId && listings.getAgentListings
+      ? listings.getAgentListings(agent.mlsId, 6)
+      : Promise.resolve([]),
     wantsCareer && agent.mlsId ? (listings.getAgentCareer?.(agent.mlsId) ?? null) : null,
   ]);
+  const hasAgentListings = agentListings.length > 0;
   const hasCareer = Boolean(career && career.stats.total > 0 && career.deals.length > 0);
 
   const L = zh
     ? {
         back: "返回顾问团队",
         about: "关于",
-        work: "精选房源",
+        work: "当前房源",
         headlines: "媒体报道",
         contact: "联系",
         advisor: "合美顾问",
@@ -173,10 +175,7 @@ export default async function AgentProfilePage({
         followers: "关联账号合计粉丝",
         contentDaily: "每日内容产出",
         bilingual: "双语服务",
-        workLead: "Homix 代理的精选在售房源，点击查看详情。",
-        workCard: "浏览 Homix 在售房源",
-        workSub: "从法拉盛到长岛与曼哈顿，探索我们代理的房源。",
-        browse: "查看房源 →",
+        workLead: `${first} 当前负责的在售、即将上市与合同处理中房源。`,
         follow: "关注 →",
         contactLead: `想买房、卖房，或了解 Homix 的招募与媒体合作？${first}随时为你服务。`,
         contactCta: `联系${first}`,
@@ -184,7 +183,7 @@ export default async function AgentProfilePage({
     : {
         back: t.agentsPage.title,
         about: "About",
-        work: "Listings",
+        work: "Current listings",
         headlines: "In the Headlines",
         contact: "Contact",
         advisor: "Homix Advisor",
@@ -199,11 +198,7 @@ export default async function AgentProfilePage({
         followers: "Combined followers",
         contentDaily: "Content, daily",
         bilingual: "Bilingual service",
-        workLead: "A selection of homes Homix currently represents — tap to view.",
-        workCard: "Browse homes Homix represents",
-        workSub:
-          "From Flushing to Long Island and Manhattan, explore the listings we represent.",
-        browse: "View listings →",
+        workLead: `Homes currently represented by ${first}, including active, coming soon, and pending listings.`,
         follow: "Follow →",
         contactLead: `Buying, selling, or exploring Homix's incubator and media partnerships? ${first} is here to help.`,
         contactCta: `Contact ${first}`,
@@ -314,8 +309,8 @@ export default async function AgentProfilePage({
   // otherwise its section doesn't render and the tab would be a dead anchor.
   const tabs = [
     { id: "about", label: L.about },
+    ...(hasAgentListings ? [{ id: "work", label: L.work }] : []),
     ...(hasCareer ? [{ id: "sales", label: zh ? "历史成交" : "Past sales" }] : []),
-    { id: "work", label: L.work },
     ...(hasOwnChannels ? [{ id: "headlines", label: L.headlines }] : []),
     { id: "contact", label: L.contact },
   ];
@@ -508,6 +503,35 @@ export default async function AgentProfilePage({
           </Reveal>
         )}
 
+        {hasAgentListings && (
+          <section id="work" className="scroll-mt-32 py-14">
+            <Reveal>
+              <div className="flex flex-wrap items-end justify-between gap-4">
+                <div>
+                  <Eyebrow>{L.work}</Eyebrow>
+                  <p className="mt-3 max-w-xl text-ink/80">{L.workLead}</p>
+                </div>
+                <Button href="/listings" variant="ghost" className="hidden sm:inline-flex">
+                  {t.featured.viewAll} →
+                </Button>
+              </div>
+            </Reveal>
+
+            <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+              {agentListings.map((listing, i) => (
+                <Reveal key={listing.id} delay={i * 70}>
+                  <ListingCard listing={listing} locale={locale} showAgent={false} />
+                </Reveal>
+              ))}
+            </div>
+            <div className="mt-10 sm:hidden">
+              <Button href="/listings" variant="outline" className="w-full">
+                {t.featured.viewAll}
+              </Button>
+            </div>
+          </section>
+        )}
+
         {/* Past sales — MLS-verified career history (OneKey Closed feed via
             BBO). Complements the self-reported figures above: this block only
             counts OneKey-recorded deals, so the two can legitimately differ. */}
@@ -605,67 +629,6 @@ export default async function AgentProfilePage({
             </div>
           </section>
         </Reveal>
-
-        {/* Listings — a live selection of homes Homix represents (office-wide,
-            so honestly framed as the company's, not this advisor's own sales).
-            Real cards render directly; a CTA covers the BBO-empty case. */}
-        <section id="work" className="scroll-mt-32 py-14">
-          <Reveal>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <Eyebrow>{L.work}</Eyebrow>
-                <p className="mt-3 max-w-xl text-ink/80">{L.workLead}</p>
-              </div>
-              {featured.length > 0 && (
-                <Button href="/listings" variant="ghost" className="hidden sm:inline-flex">
-                  {t.featured.viewAll} →
-                </Button>
-              )}
-            </div>
-          </Reveal>
-
-          {featured.length > 0 ? (
-            <>
-              <div className="mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-                {featured.map((listing, i) => (
-                  <Reveal key={listing.id} delay={i * 70}>
-                    <ListingCard listing={listing} />
-                  </Reveal>
-                ))}
-              </div>
-              <div className="mt-10 sm:hidden">
-                <Button href="/listings" variant="outline" className="w-full">
-                  {t.featured.viewAll}
-                </Button>
-              </div>
-            </>
-          ) : (
-            <Reveal>
-              <Link
-                href="/listings"
-                className="group mt-6 block overflow-hidden rounded-sm border border-line"
-              >
-                <div className="relative aspect-[16/7] bg-line/50">
-                  <Image
-                    src={heroImage.src}
-                    alt=""
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 900px"
-                    className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/55 to-transparent" />
-                  <div className="absolute bottom-0 left-0 p-7 sm:p-9">
-                    <p className="font-serif text-2xl text-paper sm:text-3xl">{L.workCard}</p>
-                    <p className="mt-2 text-sm text-paper/85">{L.workSub}</p>
-                    <span className="mt-4 inline-block text-sm font-medium text-paper underline-offset-4 group-hover:underline">
-                      {L.browse}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </Reveal>
-          )}
-        </section>
 
         {/* In the Headlines — the advisor's OWN channels only (no brand fallback) */}
         {hasOwnChannels && (

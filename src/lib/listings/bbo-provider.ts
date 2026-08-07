@@ -4,6 +4,7 @@ import type {
   AgentCareer,
   CareerDeal,
   Listing,
+  ListingOpenHouse,
   ListingPhoto,
   ListingQuery,
   ListingResult,
@@ -11,11 +12,12 @@ import type {
   ListingsProvider,
   PropertyType,
 } from "./types";
+import { HOMIX_LISTINGS_CACHE_TAG, listingCacheTag } from "./cache";
 
 const DEFAULT_BBO_API_URL = "https://onekey.kevv.ai";
 const DEFAULT_HOMIX_OFFICE_MLS_ID = "KEYHRMI01";
 const DEFAULT_HOMIX_OFFICE_KEY = "KEY421354028";
-const DEFAULT_REVALIDATE_SECONDS = 1800;
+const DEFAULT_REVALIDATE_SECONDS = 300;
 
 const CITY_OPTIONS = [
   "Flushing",
@@ -44,6 +46,7 @@ interface BboListingDTO {
   countyOrParish?: string;
   postalCity?: string;
   listPrice?: number | string | null;
+  closePrice?: number | string | null;
   propertyType?: string;
   propertySubType?: string;
   bedroomsTotal?: number | null;
@@ -57,6 +60,7 @@ interface BboListingDTO {
   onMarketDate?: string;
   modificationTimestamp?: string;
   imageUrls?: string[];
+  thumbnailUrl?: string;
   media?: { url?: string }[];
   publicRemarks?: string;
   chineseDescription?: {
@@ -75,6 +79,16 @@ interface BboListingDTO {
   listOfficeKey?: string;
   listOfficeMlsId?: string;
   listOfficeName?: string;
+  nextOpenHouse?: BboOpenHouseDTO;
+  upcomingOpenHouses?: BboOpenHouseDTO[];
+}
+
+interface BboOpenHouseDTO {
+  openHouseKey?: string;
+  startTime?: string;
+  endTime?: string;
+  type?: string;
+  remarks?: string;
 }
 
 interface BboSearchResponse {
@@ -164,26 +178,43 @@ export class BboListingsProvider implements ListingsProvider {
       !query.q &&
       !query.city &&
       !query.status &&
+      !query.statuses?.length &&
       query.minPrice == null &&
       query.maxPrice == null &&
       query.minBeds == null &&
       query.minBaths == null &&
       !query.propertyType &&
+      !query.listAgentMlsId &&
       (query.offset ?? 0) === 0 &&
-      (query.sort ?? "newest") === "newest";
+      (query.sort ?? (query.scope === "all" ? "newest" : "status-priority")) ===
+        (query.scope === "all" ? "newest" : "status-priority");
 
     const params = new URLSearchParams();
     params.set("limit", String(query.limit ?? 12));
     params.set("offset", String(query.offset ?? 0));
-    params.set("sort", toBboSort(query.sort));
+    params.set(
+      "sort",
+      toBboSort(
+        query.sort ?? (query.scope === "all" ? "newest" : "status-priority"),
+        query.scope !== "all",
+      ),
+    );
     if (query.city) params.set("city", toBboLocation(query.city));
     if (query.q) params.set("q", query.q);
-    if (query.status) params.set("status", query.status);
+    const statuses = query.statuses?.length
+      ? query.statuses
+      : query.status
+        ? [query.status]
+        : query.scope === "all"
+          ? []
+          : (["Active", "Coming Soon", "Pending", "Sold"] as ListingStatus[]);
+    if (statuses.length) params.set("status", statuses.map(toBboStatus).join(","));
     if (query.minPrice != null) params.set("priceMin", String(query.minPrice));
     if (query.maxPrice != null) params.set("priceMax", String(query.maxPrice));
     if (query.minBeds != null) params.set("bedsMin", String(query.minBeds));
     if (query.minBaths != null) params.set("bathsMin", String(query.minBaths));
     if (query.propertyType) applyPropertyType(params, query.propertyType);
+    if (query.listAgentMlsId) params.set("listAgentMlsId", query.listAgentMlsId);
     if (query.exactTotal) params.set("exactTotal", "1");
 
     if (query.scope !== "all") {
@@ -200,6 +231,7 @@ export class BboListingsProvider implements ListingsProvider {
         "/api/v1/listings/search",
         params,
         stableQuery ? (query.scope === "all" ? 120 : 300) : null,
+        query.scope === "all" ? undefined : [HOMIX_LISTINGS_CACHE_TAG],
       );
       const items = payload.items ?? payload.results ?? [];
       return {
@@ -222,6 +254,9 @@ export class BboListingsProvider implements ListingsProvider {
     try {
       const payload = await this.request<BboDetailResponse>(
         `/api/v1/listings/by-key/${encodeURIComponent(key)}`,
+        undefined,
+        undefined,
+        [HOMIX_LISTINGS_CACHE_TAG, listingCacheTag(key)],
       );
       const dto = payload.listing;
       if (!dto) return null;
@@ -237,7 +272,23 @@ export class BboListingsProvider implements ListingsProvider {
   }
 
   async getFeaturedListings(limit = 3): Promise<Listing[]> {
-    const result = await this.getListings({ limit, sort: "newest" });
+    const result = await this.getListings({
+      limit,
+      sort: "newest",
+      statuses: ["Coming Soon", "Active"],
+    });
+    return result.listings;
+  }
+
+  async getAgentListings(mlsId: string, limit = 12): Promise<Listing[]> {
+    const id = trim(mlsId);
+    if (!id) return [];
+    const result = await this.getListings({
+      limit,
+      sort: "status-priority",
+      statuses: ["Coming Soon", "Active", "Pending"],
+      listAgentMlsId: id,
+    });
     return result.listings;
   }
 
@@ -304,6 +355,7 @@ export class BboListingsProvider implements ListingsProvider {
     path: string,
     params?: URLSearchParams,
     revalidateSeconds?: number | null,
+    tags?: string[],
   ): Promise<T> {
     const cfg = bboConfig();
     if (!cfg.apiKey) throw new Error("BBO_API_KEY is not configured.");
@@ -318,7 +370,12 @@ export class BboListingsProvider implements ListingsProvider {
       },
       ...(revalidateSeconds === null
         ? { cache: "no-store" as const }
-        : { next: { revalidate: revalidateSeconds ?? cfg.revalidateSeconds } }),
+        : {
+            next: {
+              revalidate: revalidateSeconds ?? cfg.revalidateSeconds,
+              ...(tags?.length ? { tags } : {}),
+            },
+          }),
       // A hung upstream should degrade to the "listings unavailable" notice,
       // not stall the page render until the platform function timeout.
       signal: AbortSignal.timeout(8000),
@@ -376,19 +433,30 @@ function toListing(dto: BboListingDTO): Listing | null {
   const officeName = trim(dto.listOfficeName);
   const images = dto.imageUrls?.length
     ? dto.imageUrls
-    : dto.media?.map((m) => m.url).filter(isNonEmptyString) ?? [];
+    : dto.media?.map((m) => m.url).filter(isNonEmptyString) ??
+      (dto.thumbnailUrl ? [dto.thumbnailUrl] : []);
   const photos: ListingPhoto[] = images.map((url) => ({
     url,
     alt: full,
   }));
+  const status = normalizeStatus(dto.standardStatus || dto.mlsStatus);
+  if (!status) return null;
+  const openHouses = (
+    dto.upcomingOpenHouses ?? (dto.nextOpenHouse ? [dto.nextOpenHouse] : [])
+  )
+    .map(toOpenHouse)
+    .filter(Boolean) as ListingOpenHouse[];
 
   return {
     id: listingKey,
     mlsNumber: trim(dto.listingId) || listingKey,
     slug: listingSlug(street, listingKey),
-    status: normalizeStatus(dto.standardStatus || dto.mlsStatus),
+    status,
     propertyType: normalizePropertyType(dto.propertyType, dto.propertySubType),
-    listPrice: toNumber(dto.listPrice),
+    listPrice:
+      status === "Sold"
+        ? toNumber(dto.closePrice) || toNumber(dto.listPrice)
+        : toNumber(dto.listPrice),
     address: {
       full,
       street,
@@ -414,7 +482,8 @@ function toListing(dto: BboListingDTO): Listing | null {
       .map(trim)
       .filter(Boolean),
     photos,
-    listingAgentId: trim(dto.listAgentKey) || trim(dto.listAgentMlsId),
+    openHouses: openHouses.length ? openHouses : undefined,
+    listingAgentId: trim(dto.listAgentMlsId) || trim(dto.listAgentKey),
     listAgentName: trim(dto.listAgentFullName) || undefined,
     listDate: trim(dto.onMarketDate) || trim(dto.modificationTimestamp),
     daysOnMarket: positiveInteger(dto.daysOnMarket),
@@ -479,12 +548,13 @@ function toBboLocation(location: string): string {
   return location === "Manhattan" ? "New York (Manhattan)" : location;
 }
 
-function normalizeStatus(raw?: string): ListingStatus {
+function normalizeStatus(raw?: string): ListingStatus | null {
   const value = trim(raw).toLowerCase();
   if (value === "coming soon") return "Coming Soon";
   if (value === "pending") return "Pending";
   if (value === "closed" || value === "sold") return "Sold";
-  return "Active";
+  if (value === "active") return "Active";
+  return null;
 }
 
 function normalizePropertyType(type?: string, subType?: string): PropertyType {
@@ -507,17 +577,37 @@ function normalizePropertyType(type?: string, subType?: string): PropertyType {
   return "Other";
 }
 
-function toBboSort(sort: ListingQuery["sort"]): string {
+function toBboSort(sort: ListingQuery["sort"], lifecycleFirst = false): string {
   switch (sort) {
     case "price-asc":
-      return "price_asc";
+      return lifecycleFirst ? "status_price_asc" : "price_asc";
     case "price-desc":
-      return "price_desc";
+      return lifecycleFirst ? "status_price_desc" : "price_desc";
     case "beds-desc":
-      return "beds_desc";
+      return lifecycleFirst ? "status_beds_desc" : "beds_desc";
+    case "status-priority":
+      return "status_priority";
     default:
-      return "newest";
+      return lifecycleFirst ? "status_priority" : "newest";
   }
+}
+
+function toBboStatus(status: ListingStatus): string {
+  return status === "Sold" ? "Closed" : status;
+}
+
+function toOpenHouse(dto: BboOpenHouseDTO): ListingOpenHouse | null {
+  const id = trim(dto.openHouseKey);
+  const startsAt = trim(dto.startTime);
+  const endsAt = trim(dto.endTime);
+  if (!id || !startsAt || !endsAt) return null;
+  return {
+    id,
+    startsAt,
+    endsAt,
+    type: trim(dto.type) || undefined,
+    remarks: trim(dto.remarks) || undefined,
+  };
 }
 
 function listingSlug(street: string, listingKey: string): string {
