@@ -48,9 +48,7 @@ export async function generateMetadata({
     card: "agent-v2",
     v: context.cardVersion,
   });
-  const image = absUrl(
-    `/api/share-card/${encodeURIComponent(context.code)}?v=${encodeURIComponent(context.cardVersion)}`,
-  );
+  const image = absUrl(agent.photoUrl || "/agent-placeholder-logo.png");
   const shareUrl = absUrl(
     `/s/${encodeURIComponent(context.code)}?${cardQuery.toString()}`,
   );
@@ -71,14 +69,14 @@ export async function generateMetadata({
       images: [
         {
           url: image,
-          width: 1200,
-          height: 630,
+          width: 600,
+          height: 600,
           alt: `${agent.name}, Homix Realty`,
         },
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
       images: [image],
