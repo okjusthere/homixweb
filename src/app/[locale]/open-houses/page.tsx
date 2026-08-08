@@ -146,7 +146,7 @@ export default async function OpenHousesPage({
         />
       ) : (
         <div>
-          {groups.map((group) => (
+          {groups.map((group, groupIndex) => (
             <section
               key={group.dateKey}
               aria-labelledby={`open-house-${group.dateKey}`}
@@ -166,13 +166,18 @@ export default async function OpenHousesPage({
               </div>
 
               <ol className="divide-y divide-line border-t border-line lg:border-t-0">
-                {group.items.map((event) => {
+                {group.items.map((event, eventIndex) => {
                   const agent = agentsByMlsId.get(
                     event.listing.listingAgentId.trim().toUpperCase(),
                   );
                   return (
                     <li key={event.openHouse.id} className="py-7 first:lg:pt-0">
-                      <OpenHouseRow event={event} agent={agent} locale={locale} />
+                      <OpenHouseRow
+                        event={event}
+                        agent={agent}
+                        locale={locale}
+                        priority={groupIndex === 0 && eventIndex === 0}
+                      />
                     </li>
                   );
                 })}
@@ -200,10 +205,12 @@ function OpenHouseRow({
   event,
   agent,
   locale,
+  priority,
 }: {
   event: DisplayEvent;
   agent?: Agent;
   locale: Locale;
+  priority: boolean;
 }) {
   const { listing, openHouse, display } = event;
   const photo = listing.photos[0];
@@ -226,6 +233,7 @@ function OpenHouseRow({
             src={photo.url}
             alt={photo.alt ?? listing.address.full}
             fill
+            priority={priority}
             sizes="(max-width: 640px) 100vw, 220px"
             className="object-cover transition-transform duration-300 hover:scale-[1.03]"
           />
