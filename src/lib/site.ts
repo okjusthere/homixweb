@@ -106,6 +106,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     headingKey: "explore",
     links: [
       { key: "listings", href: "/listings" },
+      { key: "openHouses", href: "/open-houses" },
       { key: "sell", href: "/sell" },
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "communities", href: "/communities" },

@@ -30,7 +30,8 @@ export function formatNumber(value: number): string {
 
 /** "5 BD · 5.5 BA · 6,120 SF" style baths, merging half baths. */
 export function formatBaths(baths: number, halfBaths = 0): string {
-  return halfBaths > 0 ? `${baths}.${halfBaths}` : `${baths}`;
+  const total = baths + halfBaths * 0.5;
+  return Number.isInteger(total) ? `${total}` : total.toFixed(1);
 }
 
 /** "June 17, 2026" */
