@@ -167,13 +167,22 @@ export default async function ListingsPage({
                 ? "OneKey 在售房源"
                 : "OneKey homes for sale"}
           </h1>
-          <Link
-            href="/calculator"
-            className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
-          >
-            {t.common.calculator}
-            <span aria-hidden>→</span>
-          </Link>
+          <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link
+              href="/calculator"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
+            >
+              {t.common.calculator}
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/open-houses"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
+            >
+              {zh ? "仅看 Open House" : "View Open Houses"}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </div>
 
         {/* Sell-side CTA */}
@@ -234,15 +243,6 @@ export default async function ListingsPage({
             sortBeds: zh ? "卧室最多" : "Most bedrooms",
           }}
         />
-        <div className="mt-4 flex justify-end border-t border-line pt-4">
-          <Link
-            href="/open-houses"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-bronze"
-          >
-            {zh ? "仅看 Open House" : "View Open Houses"}
-            <span aria-hidden>→</span>
-          </Link>
-        </div>
       </div>
 
       {!unavailable && (
