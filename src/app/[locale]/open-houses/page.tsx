@@ -176,7 +176,7 @@ export default async function OpenHousesPage({
                         event={event}
                         agent={agent}
                         locale={locale}
-                        priority={groupIndex === 0 && eventIndex === 0}
+                        eager={groupIndex === 0 && eventIndex === 0}
                       />
                     </li>
                   );
@@ -205,12 +205,12 @@ function OpenHouseRow({
   event,
   agent,
   locale,
-  priority,
+  eager,
 }: {
   event: DisplayEvent;
   agent?: Agent;
   locale: Locale;
-  priority: boolean;
+  eager: boolean;
 }) {
   const { listing, openHouse, display } = event;
   const photo = listing.photos[0];
@@ -233,7 +233,7 @@ function OpenHouseRow({
             src={photo.url}
             alt={photo.alt ?? listing.address.full}
             fill
-            priority={priority}
+            loading={eager ? "eager" : "lazy"}
             sizes="(max-width: 640px) 100vw, 220px"
             className="object-cover transition-transform duration-300 hover:scale-[1.03]"
           />
