@@ -1,6 +1,7 @@
 import { featuredDevelopments } from "@/data/featured-developments";
 import { gatedCommunities } from "@/data/gated-communities";
 import { getDevelopmentCover } from "@/data/new-development-media";
+import { marketAreas } from "@/data/market-stats";
 import { guides } from "@/content/guides";
 import { journalPosts } from "@/content/journal/posts";
 import { topics } from "@/content/journal/topics";
@@ -18,6 +19,7 @@ export const SHARE_CONTENT_KINDS = [
   "neighborhood",
   "community",
   "development",
+  "market",
   "guide",
   "news",
 ] as const;
@@ -112,6 +114,21 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
     eyebrow: zh ? "纽约新盘" : "New development",
   }));
 
+  const marketItems: ShareCatalogItem[] = marketAreas.map((item) => {
+    const report = item.reportSlugs
+      .map((slug) => newestPosts.find((post) => post.slug === slug))
+      .find(Boolean);
+    return {
+      kind: "market" as const,
+      key: item.slug,
+      path: `/market-data/${item.slug}`,
+      title: item.title[locale],
+      subtitle: shortText(item.description[locale]),
+      image: report?.cover ?? null,
+      eyebrow: zh ? "市场数据" : "Market data",
+    };
+  });
+
   const guideItems: ShareCatalogItem[] = [
     ...guides.map((item) => ({
       kind: "guide" as const,
@@ -155,6 +172,7 @@ function staticCatalog(locale: Locale): ShareCatalogItem[] {
     ...neighborhoodItems,
     ...communityItems,
     ...developmentItems,
+    ...marketItems,
     ...guideItems,
   ];
   staticCatalogCache.set(locale, result);
@@ -261,6 +279,7 @@ export async function getShareCatalog(input: {
     neighborhood: staticItems.filter((item) => item.kind === "neighborhood").length,
     community: staticItems.filter((item) => item.kind === "community").length,
     development: staticItems.filter((item) => item.kind === "development").length,
+    market: staticItems.filter((item) => item.kind === "market").length,
     guide: staticItems.filter((item) => item.kind === "guide").length,
   };
 
