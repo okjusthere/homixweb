@@ -41,6 +41,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPaths = [
     "",
     "/listings",
+    "/open-houses",
     newDevelopmentBasePath,
     "/sell",
     "/agents",

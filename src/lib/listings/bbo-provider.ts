@@ -11,6 +11,9 @@ import type {
   ListingStatus,
   ListingsProvider,
   PropertyType,
+  UpcomingOpenHouseEvent,
+  UpcomingOpenHouseQuery,
+  UpcomingOpenHouseResult,
 } from "./types";
 import { HOMIX_LISTINGS_CACHE_TAG, listingCacheTag } from "./cache";
 
@@ -105,6 +108,18 @@ interface BboSearchResponse {
 interface BboDetailResponse {
   listing?: BboListingDTO;
   imageUrls?: string[];
+}
+
+interface BboUpcomingOpenHouseItem {
+  openHouse?: BboOpenHouseDTO;
+  listing?: BboListingDTO;
+}
+
+interface BboUpcomingOpenHousesResponse {
+  items?: BboUpcomingOpenHouseItem[];
+  count?: number;
+  dataAsOf?: string;
+  stale?: boolean;
 }
 
 interface BboCareerDealDTO {
@@ -280,6 +295,53 @@ export class BboListingsProvider implements ListingsProvider {
     return result.listings;
   }
 
+  async getUpcomingOpenHouses(
+    query: UpcomingOpenHouseQuery = {},
+  ): Promise<UpcomingOpenHouseResult> {
+    const cfg = bboConfig();
+    if (!cfg.apiKey) {
+      return unavailableOpenHouseResult("BBO_API_KEY is not configured.");
+    }
+
+    const params = new URLSearchParams({
+      listOfficeMlsId: cfg.homixOfficeMlsId,
+      horizonDays: String(boundedInteger(query.horizonDays, 30, 1, 60)),
+      limit: String(boundedInteger(query.limit, 20, 1, 100)),
+    });
+
+    try {
+      const payload = await this.request<BboUpcomingOpenHousesResponse>(
+        "/api/v1/open-houses/upcoming",
+        params,
+        DEFAULT_REVALIDATE_SECONDS,
+        [HOMIX_LISTINGS_CACHE_TAG],
+      );
+      if (payload.stale) {
+        return {
+          events: [],
+          dataAsOf: trim(payload.dataAsOf) || undefined,
+          stale: true,
+          unavailable: true,
+          message: "The Open House schedule is being refreshed.",
+        };
+      }
+
+      const events = (payload.items ?? [])
+        .map(toUpcomingOpenHouseEvent)
+        .filter(Boolean) as UpcomingOpenHouseEvent[];
+      return {
+        events,
+        dataAsOf: trim(payload.dataAsOf) || undefined,
+        stale: false,
+      };
+    } catch (error) {
+      logBboFailure("upcoming-open-houses", error);
+      return unavailableOpenHouseResult(
+        "The Open House schedule is temporarily unavailable.",
+      );
+    }
+  }
+
   async getAgentListings(mlsId: string, limit = 12): Promise<Listing[]> {
     const id = trim(mlsId);
     if (!id) return [];
@@ -410,6 +472,27 @@ function unavailableResult(message: string): ListingResult {
     unavailable: true,
     message,
   };
+}
+
+function unavailableOpenHouseResult(message: string): UpcomingOpenHouseResult {
+  return {
+    events: [],
+    unavailable: true,
+    message,
+  };
+}
+
+function toUpcomingOpenHouseEvent(
+  item: BboUpcomingOpenHouseItem,
+): UpcomingOpenHouseEvent | null {
+  if (!item.openHouse || !item.listing) return null;
+  const openHouse = toOpenHouse(item.openHouse);
+  const listing = toListing({
+    ...item.listing,
+    nextOpenHouse: item.openHouse,
+  });
+  if (!openHouse || !listing) return null;
+  return { openHouse, listing };
 }
 
 function toListing(dto: BboListingDTO): Listing | null {
@@ -656,6 +739,16 @@ function toInteger(value: unknown): number {
 function positiveInteger(value: unknown): number | undefined {
   const parsed = toInteger(value);
   return parsed > 0 ? parsed : undefined;
+}
+
+function boundedInteger(
+  value: number | undefined,
+  fallback: number,
+  min: number,
+  max: number,
+): number {
+  if (!Number.isFinite(value)) return fallback;
+  return Math.min(max, Math.max(min, Math.round(value!)));
 }
 
 function logBboFailure(operation: string, error: unknown): void {

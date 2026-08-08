@@ -241,6 +241,28 @@ export interface ListingResult {
   message?: string;
 }
 
+export interface UpcomingOpenHouseQuery {
+  /** Future scheduling window requested from BBO. */
+  horizonDays?: number;
+  /** Maximum number of individual Open House sessions. */
+  limit?: number;
+}
+
+/** One scheduled public session paired with its current listing summary. */
+export interface UpcomingOpenHouseEvent {
+  openHouse: ListingOpenHouse;
+  listing: Listing;
+}
+
+export interface UpcomingOpenHouseResult {
+  events: UpcomingOpenHouseEvent[];
+  /** ISO timestamp of BBO's last successful OpenHouse sync. */
+  dataAsOf?: string;
+  stale?: boolean;
+  unavailable?: boolean;
+  message?: string;
+}
+
 /**
  * The single seam between the UI and the BBO listing backend.
  */
@@ -251,6 +273,9 @@ export interface ListingsProvider {
   getListings(query?: ListingQuery): Promise<ListingResult>;
   getListingBySlug(slug: string): Promise<Listing | null>;
   getFeaturedListings(limit?: number): Promise<Listing[]>;
+  getUpcomingOpenHouses(
+    query?: UpcomingOpenHouseQuery,
+  ): Promise<UpcomingOpenHouseResult>;
   /** Current office listings held by one verified OneKey member. */
   getAgentListings?(mlsId: string, limit?: number): Promise<Listing[]>;
   /**

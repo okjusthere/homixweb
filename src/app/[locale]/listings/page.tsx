@@ -234,6 +234,15 @@ export default async function ListingsPage({
             sortBeds: zh ? "卧室最多" : "Most bedrooms",
           }}
         />
+        <div className="mt-4 flex justify-end border-t border-line pt-4">
+          <Link
+            href="/open-houses"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-bronze"
+          >
+            {zh ? "仅看 Open House" : "View Open Houses"}
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
       </div>
 
       {!unavailable && (

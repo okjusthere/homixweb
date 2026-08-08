@@ -36,6 +36,7 @@ export async function POST(request: Request) {
   revalidateTag(listingCacheTag(listingKey), { expire: 0 });
   revalidatePath("/[locale]", "page");
   revalidatePath("/[locale]/listings", "page");
+  revalidatePath("/[locale]/open-houses", "page");
   revalidatePath("/[locale]/listings/[slug]", "page");
   revalidatePath("/[locale]/agents/[slug]", "page");
 

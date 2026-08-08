@@ -4,6 +4,7 @@ import { BrandStory } from "@/components/home/BrandStory";
 import { Pillars } from "@/components/home/Pillars";
 import { StatsBand } from "@/components/home/StatsBand";
 import { FeaturedListings } from "@/components/home/FeaturedListings";
+import { UpcomingOpenHouses } from "@/components/home/UpcomingOpenHouses";
 import { Neighborhoods } from "@/components/home/Neighborhoods";
 import { ReachBand } from "@/components/home/ReachBand";
 import { Testimonials } from "@/components/home/Testimonials";
@@ -11,6 +12,8 @@ import { TeamTeaser } from "@/components/home/TeamTeaser";
 import { ContactBand } from "@/components/home/ContactBand";
 import { getRouteLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
+
+export const revalidate = 300;
 
 // The org-level RealEstateAgent + WebSite JSON-LD moved to the root layout
 // (src/app/layout.tsx) so every page carries the entity signal, not just "/".
@@ -51,6 +54,7 @@ export default async function HomePage({
       <Pillars locale={locale} />
       <StatsBand locale={locale} />
       <FeaturedListings locale={locale} />
+      <UpcomingOpenHouses locale={locale} />
       <Neighborhoods locale={locale} />
       <ReachBand locale={locale} />
       <Testimonials locale={locale} />
