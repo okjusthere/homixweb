@@ -39,6 +39,7 @@ const en = {
     learn: "Guides",
     sell: "Sell",
     join: "Join Homix",
+    commissionPlan: "Commission plan",
     about: "About",
     contact: "Contact",
     neighborhoods: "Neighborhoods",
@@ -213,6 +214,7 @@ const en = {
     title: "We don't hand you a desk. We build your platform.",
     lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. From day one, you gain access to an in-house studio and distribution through affiliated 抖音, 小红书, and Instagram accounts with 1M+ combined followers, plus AI and data tools and bilingual senior mentors who have closed in this market.",
     heroCta: "Apply to join Homix",
+    commissionPlanCta: "View commission plan",
     stats: [
       {
         value: "1M+",
@@ -301,7 +303,7 @@ const en = {
       },
       {
         q: "How do the splits and economics work?",
-        a: "We keep economics transparent and discuss them openly in your first conversation, because the right structure depends on your experience and goals. What we won't do is dress up a monthly desk fee as a 'partnership.' We invest in your brand and leads because your growth is how we grow.",
+        a: "The full commission-plan page publishes the numbers before you apply: Solo is 85/15 with a $12,000 annual cap, Solo Pro is $3,650 per year with 100% commission from the first closing, and Team Members are 90/10 with a $10,000 Homix cap plus separately documented team economics.",
       },
       {
         q: "Do I need an existing following to benefit from the media engine?",
@@ -613,6 +615,7 @@ const zh: Dict = {
     learn: "置业指南",
     sell: "卖房",
     join: "加入我们",
+    commissionPlan: "佣金方案",
     about: "关于",
     contact: "联系",
     neighborhoods: "社区",
@@ -787,6 +790,7 @@ const zh: Dict = {
     title: "我们给你的不是一张办公桌，而是一套成长平台。",
     lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就能使用自有内容工作室，并通过抖音、小红书、Instagram 等合计 100 万+ 粉丝的关联账号进行内容分发，同时获得 AI、数据工具与本地双语资深导师支持。",
     heroCta: "申请加入 Homix",
+    commissionPlanCta: "查看佣金方案",
     stats: [
       {
         value: "100 万+",
@@ -875,7 +879,7 @@ const zh: Dict = {
       },
       {
         q: "佣金分成和收入结构是怎样的？",
-        a: "我们坚持透明的收入结构，并会在首次面谈时与你开诚布公地讨论，因为最合适的方案取决于你的经验和目标。我们绝不会把每月的桌费包装成所谓的“合伙”。我们投资你的品牌与客户，因为你的成长就是我们的成长方式。",
+        a: "佣金方案页面会在申请前直接公布数字：Solo 为 85/15 与 $12,000 年度封顶；Solo Pro 每年 $3,650，从第一笔成交进入 100% 佣金模式；Team Member 为 90/10 与 $10,000 Homix 封顶，Team economics 则另行写入团队协议。",
       },
       {
         q: "我需要先有粉丝才能用上媒体引擎吗？",

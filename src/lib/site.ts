@@ -121,6 +121,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
     links: [
       { key: "about", href: "/about" },
       { key: "join", href: "/join" },
+      { key: "commissionPlan", href: "/commission-plan" },
       { key: "calculator", href: "/calculator" },
       { key: "contact", href: "/contact" },
     ],

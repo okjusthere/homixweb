@@ -49,7 +49,11 @@ export function SiteHeader({
   // on direct loads — strip BOTH locale prefixes or the homepage renders the
   // wrong header variant depending on how the visitor arrived.
   const currentPath = pathname?.replace(/^\/(en|zh)(?=\/|$)/, "") || "/";
-  const overHero = currentPath === "" || currentPath === "/" || currentPath === "/about";
+  const overHero =
+    currentPath === "" ||
+    currentPath === "/" ||
+    currentPath === "/about" ||
+    currentPath === "/commission-plan";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -61,9 +65,14 @@ export function SiteHeader({
     //    and back/forward-cache restores, which strands the header in the
     //    wrong variant; the observer is re-evaluated on every produced
     //    frame, so the state always converges to the truth.
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    // A direct fragment URL can jump after the first effect tick without
+    // emitting a reliable scroll event. Any in-page hash on a hero route
+    // points below the hero, so it should use the solid navigation treatment.
+    const onScroll = () =>
+      setScrolled(window.scrollY > 24 || Boolean(window.location.hash));
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("hashchange", onScroll);
 
     const sentinel = document.createElement("div");
     sentinel.style.cssText =
@@ -77,6 +86,7 @@ export function SiteHeader({
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("hashchange", onScroll);
       io.disconnect();
       sentinel.remove();
     };

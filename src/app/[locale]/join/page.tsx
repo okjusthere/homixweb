@@ -58,8 +58,8 @@ export default async function JoinPage({
             <p className="mt-6 text-xl leading-relaxed text-muted">{t.join.lead}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Button href="#apply">{t.join.heroCta}</Button>
-              <Button href="/agents" variant="outline">
-                {t.join.whoEyebrow}
+              <Button href="/commission-plan" variant="outline">
+                {t.join.commissionPlanCta}
               </Button>
             </div>
           </div>
