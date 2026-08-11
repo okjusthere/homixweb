@@ -6,6 +6,7 @@ import { formatOpenHouseRange, listingStatusLabel } from "@/lib/listing-display"
 import type { Locale } from "@/lib/i18n";
 import type { Agent, Listing } from "@/lib/listings";
 import { ListingAttribution } from "./ListingAttribution";
+import { ListingMediaImage } from "./ListingMediaImage";
 
 function displayPrice(value: number, locale: Locale): string {
   if (value > 0) return formatPrice(value);
@@ -29,7 +30,6 @@ export function ListingCard({
   className?: string;
 }) {
   const { address, listPrice, beds, baths, halfBaths, sqft, photos, status } = listing;
-  const photo = photos[0];
   const nextOpenHouse = listing.openHouses?.[0]
     ? formatOpenHouseRange(listing.openHouses[0], locale)
     : null;
@@ -39,20 +39,14 @@ export function ListingCard({
     <article className={cn("group", className)}>
       <Link href={`/listings/${listing.slug}`} className="block focus-visible:outline-none">
         <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-line/50">
-          {photo ? (
-            <Image
-              src={photo.url}
-              alt={photo.alt ?? address.full}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
-              priority={priority}
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center bg-surface text-xs uppercase tracking-[0.18em] text-muted">
-              Homix
-            </div>
-          )}
+          <ListingMediaImage
+            photos={photos}
+            alt={address.full}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+            preload={priority}
+          />
           {status !== "Active" && (
             <span className="absolute left-3 top-3 rounded-sm bg-surface/95 px-2.5 py-1 text-xs font-medium uppercase tracking-[0.14em] text-ink">
               {listingStatusLabel(status, locale)}

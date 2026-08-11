@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "@/components/ui/LocalizedLink";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ListingAttribution } from "@/components/listings/ListingAttribution";
+import { ListingMediaImage } from "@/components/listings/ListingMediaImage";
 import { MlsDisclaimer } from "@/components/listings/MlsDisclaimer";
 import { getAgents } from "@/lib/agents";
 import { formatBaths, formatNumber, formatPrice } from "@/lib/format";
@@ -213,7 +213,6 @@ function OpenHouseRow({
   eager: boolean;
 }) {
   const { listing, openHouse, display } = event;
-  const photo = listing.photos[0];
   const zh = locale === "zh";
   const locality = [listing.address.city, listing.address.state]
     .filter(Boolean)
@@ -228,20 +227,14 @@ function OpenHouseRow({
         href={`/listings/${listing.slug}`}
         className="relative block aspect-[4/3] overflow-hidden rounded-sm bg-line/50"
       >
-        {photo ? (
-          <Image
-            src={photo.url}
-            alt={photo.alt ?? listing.address.full}
-            fill
-            loading={eager ? "eager" : "lazy"}
-            sizes="(max-width: 640px) 100vw, 220px"
-            className="object-cover transition-transform duration-300 hover:scale-[1.03]"
-          />
-        ) : (
-          <span className="flex h-full items-center justify-center bg-surface text-xs uppercase text-muted">
-            Homix
-          </span>
-        )}
+        <ListingMediaImage
+          photos={listing.photos}
+          alt={listing.address.full}
+          fill
+          loading={eager ? "eager" : "lazy"}
+          sizes="(max-width: 640px) 100vw, 220px"
+          className="object-cover transition-transform duration-300 hover:scale-[1.03]"
+        />
       </Link>
 
       <div className="min-w-0">
