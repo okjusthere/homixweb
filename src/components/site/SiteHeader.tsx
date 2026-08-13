@@ -53,6 +53,7 @@ export function SiteHeader({
     currentPath === "" ||
     currentPath === "/" ||
     currentPath === "/about" ||
+    currentPath === "/sell" ||
     currentPath === "/commission-plan";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
