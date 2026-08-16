@@ -109,7 +109,7 @@ export function SiteHeader({
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-colors duration-200",
-          solid ? "bg-surface/95" : "bg-transparent",
+          solid ? "bg-surface" : "bg-transparent",
         )}
       >
         <div
