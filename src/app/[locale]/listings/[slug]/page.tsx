@@ -128,7 +128,7 @@ export default async function ListingDetailPage({
         schoolDistrict: "学区",
         county: "郡",
         mls: "MLS 编号",
-        openHouse: "开放日",
+        openHouse: "公展",
         openHouseNote: "以下时间均为纽约当地时间，安排来自 OneKey MLS。",
         listingAdvisor: "挂牌顾问",
         viewProfile: "查看顾问主页",

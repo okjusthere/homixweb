@@ -293,7 +293,7 @@ export const sellPageCopy = {
       eyebrow: "自带传播能力",
       title: "买家在搜索地址之前，就可能先在内容里认识这套房。",
       lead:
-        "Homix 顾问与关联创作者每天都在发布纽约地产内容。遇到合适的房源，这些已有的关注会成为上市渠道：用不同平台习惯的形式，讲清户型、房况、社区、购买重点与开放日信息。",
+        "Homix 顾问与关联创作者每天都在发布纽约地产内容。遇到合适的房源，这些已有的关注会成为上市渠道：用不同平台习惯的形式，讲清户型、房况、社区、购买重点与公展信息。",
       imageAlt: "Homix 关联账号在抖音、小红书、TikTok 和微信发布纽约地产内容的案例",
       imageCaption: "历史内容示例；截图中的平台数据以截取当时为准，并会随时间变化。",
       channels: [
@@ -311,7 +311,7 @@ export const sellPageCopy = {
         },
         {
           name: "Instagram",
-          title: "视觉首发与开放日提醒",
+          title: "视觉首发与公展提醒",
           body: "通过 Reels、Stories 与活动更新，让房源不只存在于一次搜索里。",
           hrefKey: "instagram",
         },
@@ -352,7 +352,7 @@ export const sellPageCopy = {
           body: "不夸张，用两种语言把房屋真正有价值的事实讲清楚。",
         },
         {
-          title: "首发与开放日素材",
+          title: "首发与公展素材",
           body: "围绕同一套视觉系统，制作分享图、邮件内容、社媒剪辑与活动提醒。",
         },
       ],
@@ -380,7 +380,7 @@ export const sellPageCopy = {
         },
         {
           label: "转化",
-          title: "开放日与直接跟进",
+          title: "公展与直接跟进",
           body: "可分享页面、活动推广、及时回复与一对一跟进，把关注转成真实沟通。",
         },
       ],

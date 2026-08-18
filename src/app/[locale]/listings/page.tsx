@@ -179,7 +179,7 @@ export default async function ListingsPage({
               href="/open-houses"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 transition-colors hover:text-bronze"
             >
-              {zh ? "仅看 Open House" : "View Open Houses"}
+              {zh ? "仅看公展" : "View Open Houses"}
               <span aria-hidden>→</span>
             </Link>
           </div>

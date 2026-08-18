@@ -31,11 +31,11 @@ export async function generateMetadata({
     locale,
     title: {
       en: "Upcoming Open Houses in New York",
-      zh: "Homix 本周开放日｜纽约近期 Open House",
+      zh: "Homix 本周公展｜纽约近期看房安排",
     },
     description: {
       en: "See upcoming public Open Houses for homes represented by Homix across New York, with current dates and times supplied by OneKey MLS.",
-      zh: "查看 Homix 在纽约代理房源的近期公开开放日，包括最新日期、时间、价格与挂牌经纪人信息。",
+      zh: "查看 Homix 在纽约代理房源的近期公展安排，包括最新日期、时间、价格与挂牌经纪人信息。",
     },
   });
 }
@@ -161,7 +161,7 @@ export default async function OpenHousesPage({
                   {group.items[0].display.date}
                 </h2>
                 <p className="mt-2 text-sm text-muted">
-                  {group.items.length} {locale === "zh" ? "场开放日" : group.items.length === 1 ? "Open House" : "Open Houses"}
+                  {group.items.length} {locale === "zh" ? "场公展" : group.items.length === 1 ? "Open House" : "Open Houses"}
                 </p>
               </div>
 

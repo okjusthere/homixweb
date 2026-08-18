@@ -58,7 +58,7 @@ export function ListingCard({
           {nextOpenHouse && (
             <p className="mb-3 border-l-2 border-bronze pl-3 text-xs leading-relaxed text-ink">
               <span className="font-medium uppercase tracking-[0.12em] text-bronze">
-                {zh ? "开放日" : "Open house"}
+                {zh ? "公展" : "Open house"}
               </span>
               <span className="ml-2 text-muted">
                 {nextOpenHouse.date} · {nextOpenHouse.time}
