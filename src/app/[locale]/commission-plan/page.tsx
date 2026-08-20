@@ -20,28 +20,28 @@ const copy = {
     meta: {
       title: "Real Estate Agent Commission Plan & Splits",
       description:
-        "Compare what agents keep under Homix Realty's Solo, Solo Pro, and Team commission plans, including annual company caps, team economics, transaction fees, lead fees, and sponsor rewards.",
+        "Compare Homix Realty's Solo, Solo Pro, and Team commission plans, annual company caps, transaction and lead fees, and the 10% Sponsor Lifetime Referral.",
     },
     hero: {
       eyebrow: "Homix commission & growth",
       title: "Keep more as your business grows.",
-      lead: "Choose an independent, 100%, or team path. Start with what you actually keep, then see the company cap, post-cap economics, and lead fees before you join.",
+      lead: "Three ways to build your business: operate independently, move into 100% commission from your first closing, or grow with a team. Fees, splits, caps, and lead costs are disclosed before you join.",
       primary: "Compare the plans",
       secondary: "Apply to Homix",
       alt: "Homix real estate advisors together in the studio",
     },
     plans: {
       eyebrow: "Choose your path",
-      title: "Start with what you keep.",
-      lead: "The percentages below show the agent or member side before the Homix cap. Your source of business does not choose your plan; source economics apply only when a lead comes from Homix or an outside referral.",
-      annualFee: "Membership",
-      commission: "What you keep",
-      cap: "Homix company cap",
+      title: "Three plans for three stages of business.",
+      lead: "Compare each plan's annual cost, pre-cap agent-side percentage, and post-cap terms. Homix lead fees and outside referral terms apply only when the business comes from those sources.",
+      annualFee: "Annual cost",
+      commission: "Pre-cap agent side",
+      cap: "Annual Homix cap",
       items: [
         {
           tag: "Independent",
           name: "Solo",
-          audience: "For independent agents who want a low fixed cost and a reachable cap.",
+          audience: "For independent agents who value a low annual cost and a clear path to 100% commission.",
           fee: "$288 / year",
           feeNote: "or $500 / 2 years prepaid",
           split: "85%",
@@ -55,7 +55,7 @@ const copy = {
         {
           tag: "High production",
           name: "Solo Pro",
-          audience: "For established producers who prefer certainty from closing one.",
+          audience: "For established producers who want 100% commission from their first closing.",
           fee: "$3,650 / year",
           feeNote: "base affiliation fee included",
           split: "100%",
@@ -69,7 +69,7 @@ const copy = {
         {
           tag: "Team based",
           name: "Team Member",
-          audience: "For agents who want a leader, shared training, and team infrastructure.",
+          audience: "For agents who want hands-on leadership, shared training, and team infrastructure.",
           fee: "$288 / year",
           feeNote: "or $500 / 2 years prepaid",
           split: "≈ 81%",
@@ -78,15 +78,15 @@ const copy = {
           capNote: "≈ $100,000 eligible commission to Homix cap",
           afterLabel: "After the Homix cap",
           result: "≈ 90%, less transaction fee",
-          body: "On each eligible $100, Homix receives $10 first. The recommended 10% Team Split is then calculated from the remaining $90: $9 to the Team Leader and $81 to the Member. After the Homix cap, the Homix split stops and the transaction fee begins, but the Team Split may continue. Exact economics follow your Team Agreement.",
+          body: "Before the Homix cap, each eligible $100 allocates $10 to Homix. The recommended Team Split is 10% of the remaining $90, leaving $81 to the Member and $9 to the Team Leader. After the Homix cap, the Homix split ends and the applicable transaction fee begins; Team terms continue according to the signed Team Agreement.",
         },
       ],
-      note: "The $500 two-year membership is prepaid and saves $76 compared with two annual $288 payments. Solo Pro and Team Leader pricing already includes the base affiliation fee. Team figures use Homix's recommended 10% Team Split; your signed Team Agreement controls the actual configuration.",
+      note: "Prepaying $500 for two years saves $76 compared with two annual $288 payments. Solo Pro and Team Leader pricing includes the base affiliation fee. Team figures use Homix's recommended 10% Team Split; the signed Team Agreement controls the final configuration.",
     },
     cap: {
       eyebrow: "The cap",
-      title: "A finish line, not a forever split.",
-      lead: "Homix company dollar accumulates from eligible commission during your individual anniversary year. Reach the Homix cap and the company percentage split stops; a Team Split is a separate ledger and may continue under your Team Agreement.",
+      title: "Reach the cap. The company split stops.",
+      lead: "Solo and Team company dollar accrues during each agent's anniversary year. Once the Homix cap is reached, Homix no longer takes a percentage split for the balance of that year. A Team Split is separate and continues according to the Team Agreement.",
       solo: {
         name: "Solo",
         split: "15% Homix",
@@ -105,16 +105,16 @@ const copy = {
         after: "≈ 90% member net*",
         stages: [
           ["Before cap", "10% builds toward $10,000; approximately $100,000 of eligible commission reaches it"],
-          ["Team economics", "The recommended 10% Team Split is calculated from the remaining 90% agent side"],
+          ["Team Split", "The recommended 10% Team Split is calculated from the remaining 90% agent side"],
           ["After Homix cap", "Homix's 10% stops and the transaction fee begins; Team terms continue separately"],
         ],
       },
-      reset: "Caps reset on the agent's anniversary, not January 1. Outside referrals, sponsor payouts, transaction fees, and third-party charges do not create cap credit. *The approximate 90% Team Member result assumes the recommended 10% Team Split and is before the applicable transaction fee; actual Team terms may differ.",
+      reset: "The cap year follows each agent's anniversary date, not the calendar year. Outside referrals, Sponsor payouts, transaction fees, and third-party charges do not create cap credit. *The approximate 90% Team Member result assumes the recommended 10% Team Split and is before the applicable transaction fee; the signed Team Agreement controls.",
     },
     example: {
-      eyebrow: "See the math",
-      title: "One $10,000 self-generated closing. Three clear outcomes.",
-      lead: "This example shows a pre-cap closing with no outside referral, client rebate, or other adjustment.",
+      eyebrow: "Commission example",
+      title: "How a $10,000 self-generated commission is allocated.",
+      lead: "These examples assume a pre-cap closing with no outside referral, client rebate, or other adjustment.",
       items: [
         {
           name: "Solo",
@@ -139,8 +139,8 @@ const copy = {
     },
     source: {
       eyebrow: "Lead source",
-      title: "First identify where the business came from.",
-      lead: "Source economics are taken off the top. The remaining commission then enters your Solo, Solo Pro, or Team plan.",
+      title: "Lead source determines the first calculation.",
+      lead: "Self-generated business carries no lead fee. Homix rental or sales leads and outside referrals are settled first, and the remaining commission then enters the selected plan.",
       items: [
         {
           name: "Self-generated",
@@ -163,35 +163,37 @@ const copy = {
           body: "Paid according to the signed referral agreement before plan economics.",
         },
       ],
-      flowTitle: "The order stays consistent",
+      flowTitle: "How each closing is calculated",
       flow: [
         "Gross commission",
-        "Source economics",
-        "Homix split or 100% fee",
-        "Team economics, if applicable",
+        "Lead or referral fee",
+        "Homix split or 100% transaction fee",
+        "Team Split, if applicable",
         "Agent-side amount",
       ],
-      note: "A team-generated lead is governed by the approved team configuration; it is not automatically treated as a Homix lead.",
+      note: "A team-generated lead follows the signed Team Agreement and is not automatically treated as a Homix company lead.",
     },
     transaction: {
       eyebrow: "100% commission mode",
-      title: "A fixed transaction fee, never a second split.",
-      lead: "The transaction fee applies only to Solo Pro and post-cap closings. If a closing still generates the normal 15% or 10% Homix company dollar, no transaction fee is added.",
+      title: "Company split or transaction fee, never both.",
+      lead: "Solo Pro uses the transaction fee schedule from the first closing. Solo and Team Member closings move to the same schedule after the Homix cap. A pre-cap closing that generates the standard 15% or 10% company dollar is not charged an additional transaction fee.",
       checkLabel: "Commission check",
       fees: [
         { range: "Up to $30,000", fee: "$200" },
         { range: "$30,000.01–$100,000", fee: "$500" },
         { range: "Over $100,000", fee: "$1,000" },
       ],
-      principle: "Split or transaction fee",
-      detail: "One closing creates one Homix transaction fee, even when co-agents, a Team Leader, or an outside referral share the commission. The tier is determined by the full Homix commission check.",
+      principle: "One closing, one Homix fee structure",
+      detail: "A closing creates one Homix transaction fee even when co-agents, a Team Leader, or an outside referral share the commission. The fee tier is based on the full commission check received by Homix.",
     },
     sponsor: {
-      eyebrow: "Sponsor reward",
-      title: "Bring the right people. Share in the growth.",
-      lead: "Under the current plan, a sponsor may receive a Lifetime Referral equal to 10% of eligible Homix-owned revenue generated by the agent they introduce.",
+      eyebrow: "10% Sponsor reward",
+      title: "Refer great agents. Earn a 10% Lifetime Referral.",
+      lead: "When an agent you introduce joins Homix, you may receive 10% of the eligible Homix-owned revenue they generate for as long as the referral remains qualified. The reward is paid by Homix and is never deducted from the introduced agent's commission.",
       value: "10%",
       valueLabel: "Lifetime Referral on eligible Homix-owned revenue",
+      qualificationTitle: "Annual production requirement",
+      qualification: "For each reward year, both the Sponsor and the introduced agent must individually reach at least $10,000 in qualifying commission production.",
       eligibleTitle: "Included",
       eligible: [
         "Solo or Team company dollar",
@@ -206,13 +208,13 @@ const copy = {
         "Client rebates or credits",
         "MLS, association, government, tax, or third-party fees",
       ],
-      note: "Sponsor and Team Leader are separate roles; one person may be both. Sponsor payouts never reduce an agent's cap credit or agent-side commission. “Lifetime” describes the current program's referral relationship while all eligibility, good-standing, active-status, and signed-agreement requirements remain satisfied; it is not guaranteed income.",
+      note: "Sponsor and Team Leader are separate roles, although one person may serve as both. Sponsor payouts do not reduce the introduced agent's commission or cap credit. “Lifetime” means the referral may continue while the program remains available and all annual production, active-status, good-standing, and signed-agreement requirements are met. It is not unconditional, permanent, or guaranteed income.",
       alt: "Homix advisors celebrating a training milestone in the office",
     },
     platform: {
-      eyebrow: "Beyond the split",
-      title: "Clear economics. A platform built to make them count.",
-      lead: "A commission plan matters only if you can build production behind it. Homix pairs transparent economics with bilingual coaching, real deal review, an in-house content studio, and practical AI and data tools.",
+      eyebrow: "The Homix platform",
+      title: "The support behind your production.",
+      lead: "Homix agents have access to bilingual coaching, live transaction reviews, an in-house content studio, and practical AI and market-data tools designed for day-to-day real estate work.",
       items: [
         "Buyer and listing boot camps built around New York transactions",
         "In-person coaching, roundtables, and specialist seminars",
@@ -226,7 +228,7 @@ const copy = {
     },
     faq: {
       eyebrow: "Questions",
-      title: "Read the fine print without needing a spreadsheet.",
+      title: "Plan details, in plain language.",
       items: [
         {
           q: "What exactly is the annual cap?",
@@ -253,6 +255,10 @@ const copy = {
           a: "The $288 one-year or $500 two-year affiliation pricing also applies to an approved Holding or Non-Producing status. Permitted activity and eligibility are governed by the applicable agreement, brokerage policy, and New York law.",
         },
         {
+          q: "How does the 10% Lifetime Referral qualify?",
+          a: "For each reward year, the Sponsor and introduced agent must each record at least $10,000 in qualifying commission production, remain active and in good standing, and satisfy the signed program terms. The 10% is calculated only on eligible Homix-owned revenue; transaction fees, outside referral pass-throughs, client rebates or credits, and third-party charges are excluded.",
+        },
+        {
           q: "Are leads, sponsor income, or earnings guaranteed?",
           a: "No. Lead availability, closings, sponsor eligibility, and earnings vary. Nothing on this page is an earnings claim or guarantee; actual compensation follows the signed agreements and the facts of each transaction.",
         },
@@ -264,8 +270,8 @@ const copy = {
     },
     cta: {
       eyebrow: "Find your fit",
-      title: "Choose the structure. Build the business.",
-      lead: "We will walk through your production, team goals, and lead mix, then show you exactly how the plan applies before you make a decision.",
+      title: "Find the plan that fits your business.",
+      lead: "Tell us about your production, preferred way of working, and lead mix. We will review the applicable plan and costs with you before any agreement is signed.",
       primary: "Apply to join Homix",
       secondary: "Explore agent training",
     },
@@ -274,34 +280,34 @@ const copy = {
     meta: {
       title: "地产经纪人佣金分成与封顶方案",
       description:
-        "比较 Homix Realty 的 Solo、Solo Pro 与 Team 佣金方案，清楚了解经纪人实际保留比例、公司年度封顶、团队分成、Transaction Fee、客源费与 Sponsor 奖励。",
+        "比较 Homix Realty 的 Solo、Solo Pro 与 Team 佣金方案，了解年度公司封顶、封顶前后佣金、Transaction Fee、客源费及 10% Sponsor Lifetime Referral 奖励。",
     },
     hero: {
       eyebrow: "Homix 佣金与成长方案",
       title: "业务越成熟，留给自己的越多。",
-      lead: "独立发展、从第一单进入 100%，或加入团队——先看你实际保留多少，再看公司封顶、封顶后规则与客源费用。",
+      lead: "三种发展路径，对应不同阶段的业务需要：独立经营、从第一笔成交采用 100% 模式，或加入团队获得带教与协作支持。费用、分成、封顶和客源规则，均在加入前说明清楚。",
       primary: "比较三种方案",
       secondary: "申请加入 Homix",
       alt: "Homix 房地产经纪人团队在工作室合影",
     },
     plans: {
       eyebrow: "选择发展路径",
-      title: "先看你实际保留多少。",
-      lead: "以下百分比显示达到 Homix Cap 前，Agent 或 Team Member 实际保留的部分。方案由你选择；只有客源来自 Homix 或外部 referral 时，才会先处理对应的客源经济规则。",
-      annualFee: "会员费用",
-      commission: "你实际保留",
-      cap: "Homix 公司年度封顶",
+      title: "三种方案，匹配不同的发展阶段。",
+      lead: "比较每种方案的年度费用、封顶前经纪人所得及封顶后的安排。只有在使用 Homix 客源或外部转介时，才会另按相应的客源或转介规则结算。",
+      annualFee: "年度费用",
+      commission: "封顶前经纪人所得",
+      cap: "年度 Homix 封顶",
       items: [
         {
           tag: "独立发展",
           name: "Solo",
-          audience: "适合希望固定成本低、封顶目标清晰的独立经纪人。",
+          audience: "适合重视较低年度成本，并希望通过明确封顶进入 100% 模式的独立经纪人。",
           fee: "$288 / 年",
           feeNote: "或一次预付 $500 / 两年",
           split: "85%",
           splitNote: "Homix 公司分成：15%",
           capValue: "$12,000",
-          capNote: "约 $80,000 可计入封顶的佣金即可达到",
+          capNote: "约需 $80,000 可计入封顶的佣金",
           afterLabel: "达到 Homix Cap 后",
           result: "100% 佣金，另收 Transaction Fee",
           body: "封顶前，每 $100 可计入封顶的佣金中，你保留 $85，Homix 获得 $15。达到 Homix Cap 后，当个周年年度不再收取百分比分成。",
@@ -309,7 +315,7 @@ const copy = {
         {
           tag: "高产经纪人",
           name: "Solo Pro",
-          audience: "适合希望从第一单就确定采用 100% 模式的成熟经纪人。",
+          audience: "适合业务稳定，希望从第一笔成交起采用 100% 模式的成熟经纪人。",
           fee: "$3,650 / 年",
           feeNote: "已包含基础 affiliation fee",
           split: "100%",
@@ -323,24 +329,24 @@ const copy = {
         {
           tag: "团队发展",
           name: "Team Member",
-          audience: "适合希望获得 Team Leader、共同培训与团队基础设施支持的经纪人。",
+          audience: "适合希望获得 Team Leader 带教、共同培训与团队资源支持的经纪人。",
           fee: "$288 / 年",
           feeNote: "或一次预付 $500 / 两年",
           split: "约 81%",
-          splitNote: "推荐配置下，Homix 封顶前 Member 实际比例",
+          splitNote: "采用推荐团队分成时，封顶前 Member 所得",
           capValue: "$10,000",
-          capNote: "约 $100,000 可计入封顶的佣金即可达到",
+          capNote: "约需 $100,000 可计入封顶的佣金",
           afterLabel: "达到 Homix Cap 后",
           result: "约保留 90%，另收 Transaction Fee",
-          body: "每 $100 可计入封顶的佣金中，Homix 先获得 $10；推荐的 10% Team Split 再从剩余 $90 中计算，即 Team Leader 获得 $9，Member 保留 $81。达到 Homix Cap 后，Homix 的 10% 停止并改收 Transaction Fee，但 Team Split 可能继续；最终以你的 Team Agreement 为准。",
+          body: "达到 Homix Cap 前，每 $100 可计入封顶的佣金中，Homix 获得 $10。推荐的 Team Split 为剩余 $90 的 10%，即 Member 获得 $81，Team Leader 获得 $9。达到 Homix Cap 后，公司分成停止并开始适用 Transaction Fee；团队分成继续按已签署的 Team Agreement 执行。",
         },
       ],
-      note: "$500 两年方案为一次预付，比连续两年各付 $288 节省 $76。Solo Pro 与 Team Leader 的 $3,650 已包含基础 affiliation fee。Team 数字采用 Homix 推荐的 10% Team Split，实际配置以已签署的 Team Agreement 为准。",
+      note: "一次预付 $500 可覆盖两年，比连续两年各付 $288 节省 $76。Solo Pro 与 Team Leader 的 $3,650 已包含基础会员费。Team 示例采用 Homix 推荐的 10% Team Split，最终配置以已签署的 Team Agreement 为准。",
     },
     cap: {
       eyebrow: "年度封顶",
-      title: "分成有终点，不会无限持续。",
-      lead: "每位经纪人以自己的入职周年年为周期，可计入封顶的佣金会持续产生 Homix Company Dollar。达到 Homix Cap 后，公司百分比分成停止；Team Split 使用独立账本，仍可能按 Team Agreement 继续。",
+      title: "达到年度封顶后，公司分成即停止。",
+      lead: "Solo 与 Team Member 的公司分成按个人入职周年年度累计。达到对应的 Homix Cap 后，该周期内不再收取公司百分比分成；Team Member 与 Team Leader 之间的团队分成仍按 Team Agreement 执行。",
       solo: {
         name: "Solo",
         split: "15% Homix",
@@ -359,117 +365,119 @@ const copy = {
         after: "Member 约保留 90%*",
         stages: [
           ["封顶前", "10% 持续累计至 $10,000，约需 $100,000 可计入封顶的佣金"],
-          ["Team economics", "推荐的 10% Team Split 从剩余 90% Agent Side 中计算"],
+          ["团队分成", "推荐的 10% Team Split 从剩余 90% 经纪人所得中计算"],
           ["Homix 封顶后", "Homix 的 10% 停止并改收 Transaction Fee；团队条款继续独立执行"],
         ],
       },
-      reset: "Cap 按个人入职周年重置，不是每年 1 月 1 日。Outside referral、Sponsor payout、Transaction Fee 与第三方费用都不会形成 Cap credit。*约 90% 的 Team Member 结果以推荐的 10% Team Split 为前提，且尚未扣除适用的 Transaction Fee；实际团队条款可能不同。",
+      reset: "封顶周期按个人入职周年计算，并非自然年。外部转介费、Sponsor 奖励、Transaction Fee 与第三方费用均不计入封顶。*Team Member 封顶后约保留 90%，按推荐的 10% Team Split 估算，尚未扣除适用的 Transaction Fee；实际以已签署的 Team Agreement 为准。",
     },
     example: {
-      eyebrow: "直接看数字",
-      title: "同一笔 $10,000 自有客源佣金，三种清晰结果。",
-      lead: "以下假设该笔成交仍在封顶前，且没有 outside referral、客户 rebate 或其他调整。",
+      eyebrow: "佣金示例",
+      title: "一笔 $10,000 自有客源佣金，三种方案分别如何分配？",
+      lead: "以下示例假设成交发生在封顶前，且不涉及外部转介、客户返还或其他调整。",
       items: [
         {
           name: "Solo",
           amount: "$8,500",
-          label: "Agent Side",
+          label: "经纪人所得",
           detail: "$1,500 累计进入 Solo Cap。",
         },
         {
           name: "Solo Pro",
           amount: "$9,800",
-          label: "Agent Side",
+          label: "经纪人所得",
           detail: "commission check 不超过 $30,000，对应 $200 Transaction Fee。",
         },
         {
           name: "Team Member",
           amount: "$8,100",
-          label: "Member Side",
+          label: "团队成员所得",
           detail: "Homix 先获得 $1,000，再从剩余 $9,000 中分给 Team Leader $900：Member 81% / Team Leader 9% / Homix 10%。",
         },
       ],
-      disclaimer: "以上为解释结构的示例金额，尚未扣除税费与日常经营支出。Team 实际结果以 approved team configuration 为准。如存在 Sponsor payout，该金额来自 eligible Homix revenue，不会减少此处展示的 Agent Side。",
+      disclaimer: "以上金额仅用于说明分配方式，尚未扣除税费与日常经营支出。团队方案以已批准并签署的 Team Agreement 为准。Sponsor 奖励如适用，由 Homix 可计入奖励的自有收入支付，不会从经纪人所得中另行扣除。",
     },
     source: {
-      eyebrow: "客源来源",
-      title: "第一步，先确认这笔业务从哪里来。",
-      lead: "客源相关费用先从总佣金顶部处理，剩余佣金才进入 Solo、Solo Pro 或 Team 方案。",
+      eyebrow: "客源与转介",
+      title: "客源不同，结算方式也不同。",
+      lead: "自有客源不收客源费。Homix 提供的出租或买卖客源，以及外部转介，会先按相应约定结算，剩余佣金再进入所选方案。",
       items: [
         {
-          name: "Self-generated",
+          name: "自有客源",
           value: "0%",
-          body: "没有客源费，全部 eligible commission 直接进入你的方案。",
+          body: "不收客源费，可计入方案的佣金全部进入所选方案。",
         },
         {
           name: "Homix 出租客源",
           value: "15%",
-          body: "先扣 Homix Lead Fee，剩余佣金再进入你的方案。",
+          body: "先扣除 Homix 客源费，剩余佣金再进入所选方案。",
         },
         {
           name: "Homix 买卖客源",
           value: "25%",
-          body: "先扣 Homix Lead Fee，剩余佣金再进入你的方案。",
+          body: "先扣除 Homix 客源费，剩余佣金再进入所选方案。",
         },
         {
-          name: "Outside referral",
+          name: "外部转介",
           value: "按协议",
-          body: "先依照已签 referral agreement 支付，再进入方案计算。",
+          body: "先依照已签署的转介协议支付，再进入方案计算。",
         },
       ],
-      flowTitle: "计算顺序始终一致",
+      flowTitle: "每笔成交按以下顺序结算",
       flow: [
-        "Gross commission",
-        "客源经济规则",
-        "Homix Split 或 100% Fee",
-        "Team economics（如适用）",
-        "Agent Side",
+        "总佣金",
+        "客源费或转介费",
+        "Homix 分成或 100% 模式 Transaction Fee",
+        "团队分成（如适用）",
+        "经纪人所得",
       ],
-      note: "Team-generated lead 按 approved team configuration 执行，不会自动被视作 Homix lead。",
+      note: "团队提供的客源按已签署的 Team Agreement 结算，不会自动视为 Homix 公司客源。",
     },
     transaction: {
       eyebrow: "100% 佣金模式",
-      title: "收固定 Transaction Fee，不再叠加第二层分成。",
-      lead: "Transaction Fee 只适用于 Solo Pro 与封顶后的成交。只要某笔成交仍产生正常的 15% 或 10% Homix Company Dollar，就不会再加收 Transaction Fee。",
-      checkLabel: "Commission Check 金额",
+      title: "公司分成与 Transaction Fee 不会重复收取。",
+      lead: "Solo Pro 从第一笔成交起按 Transaction Fee 表执行；Solo 与 Team Member 达到 Homix Cap 后，也改按同一标准执行。仍在封顶前、已产生 15% 或 10% 公司分成的成交，不另收 Transaction Fee。",
+      checkLabel: "Homix 收到的佣金",
       fees: [
         { range: "不超过 $30,000", fee: "$200" },
         { range: "$30,000.01–$100,000", fee: "$500" },
         { range: "超过 $100,000", fee: "$1,000" },
       ],
-      principle: "Split 或 Transaction Fee，二选一",
-      detail: "同一笔成交即使包含 co-agent、Team Leader 或 outside referral，也只产生一次 Homix Transaction Fee。收费档位以 Homix 收到的整张 commission check 为准。",
+      principle: "一笔成交，只适用一种公司收费方式",
+      detail: "同一笔成交即使包含共同经纪人、Team Leader 或外部转介，也只产生一次 Homix Transaction Fee。收费档位以 Homix 收到的整笔佣金为准。",
     },
     sponsor: {
-      eyebrow: "Sponsor 奖励",
-      title: "介绍对的人，也能分享长期成长。",
-      lead: "在当前方案下，Sponsor 可获得 Lifetime Referral，金额为其介绍经纪人所产生的 eligible Homix-owned revenue 的 10%。",
+      eyebrow: "10% Sponsor 奖励",
+      title: "介绍优秀经纪人，获得 10% Lifetime Referral。",
+      lead: "当你介绍的经纪人加入 Homix，并持续满足计划资格时，你可按其为 Homix 带来的合资格自有收入获得 10% Lifetime Referral。奖励由 Homix 支付，不会从被介绍经纪人的佣金中扣除。",
       value: "10%",
-      valueLabel: "eligible Homix-owned revenue 的 Lifetime Referral",
+      valueLabel: "合资格 Homix 自有收入的 Lifetime Referral",
+      qualificationTitle: "年度产量要求",
+      qualification: "每个奖励年度内，Sponsor 与被介绍经纪人双方各自均须达到至少 $10,000 的可认定佣金产量，方可获得该年度奖励。",
       eligibleTitle: "计入范围",
       eligible: [
-        "Solo 或 Team 产生的 Company Dollar",
-        "Homix 出租与买卖 Lead Fee",
-        "Solo 与 Team Member affiliation fee",
+        "Solo 或 Team 产生的 Homix 公司分成",
+        "Homix 出租与买卖客源费",
+        "Solo 与 Team Member 会员费",
         "Solo Pro 年费或符合条件的升级实付金额",
       ],
       excludedTitle: "不计入范围",
       excluded: [
         "Homix Transaction Fee",
-        "支付给外部的 referral pass-through",
-        "客户 rebate 或 credit",
-        "MLS、协会、政府、税费与第三方费用",
+        "支付给外部机构或转介方的费用",
+        "客户返还或抵扣",
+        "MLS、协会、政府、税费及第三方费用",
       ],
-      note: "Sponsor 与 Team Leader 是两个独立角色，同一人可以兼任。Sponsor payout 不会减少经纪人的 Cap credit 或 Agent Side。“Lifetime”指在当前项目下，只要资格、active status、good standing 与已签协议要求始终满足，该 referral relationship 可持续；并不构成收入保证。",
+      note: "Sponsor 与 Team Leader 是两个独立角色，同一人可以兼任。Sponsor 奖励不会减少被介绍经纪人的佣金或封顶累计。“Lifetime”表示推荐关系可在该计划持续有效，且双方每年均满足产量、在职状态、良好执业记录及已签协议要求的前提下延续；并非无条件永久支付，也不构成收入保证。",
       alt: "Homix 经纪人在办公室庆祝培训里程碑",
     },
     platform: {
-      eyebrow: "分成之外",
-      title: "经济规则讲清楚，平台再把它放大。",
-      lead: "只有持续做出 production，佣金方案才真正有意义。Homix 在透明结构之外，还提供双语带教、真实交易复盘、自有内容工作室，以及实用的 AI 与数据工具。",
+      eyebrow: "Homix 平台支持",
+      title: "佣金方案之外，还有把业务做起来的支持。",
+      lead: "Homix 为经纪人提供中英双语带教、真实交易复盘、自有内容工作室，以及面向日常业务的 AI 与市场数据工具。",
       items: [
-        "围绕纽约真实交易设计的 Buyer 与 Listing Boot Camp",
-        "线下带教、圆桌复盘与专业嘉宾专题课",
+        "围绕纽约真实交易设计的买方与房源代理实战训练营",
+        "线下带教、圆桌复盘和专业嘉宾课程",
         "中英双语内容制作与个人品牌支持",
         "帮助经纪人节省时间的 AI、市场数据与工作流工具",
       ],
@@ -480,46 +488,50 @@ const copy = {
     },
     faq: {
       eyebrow: "常见问题",
-      title: "不用打开 Excel，也能看懂细则。",
+      title: "重要细则，一次说明清楚。",
       items: [
         {
           q: "年度 Cap 到底是什么？",
-          a: "Cap 是每个入职周年年内，正常分成最多为 Homix 产生的 Company Dollar：Solo 为 $12,000，约需 $80,000 可计入封顶的佣金；Team Member 为 $10,000，约需 $100,000 可计入封顶的佣金。达到后，当年剩余时间停止 Homix 百分比分成；Team Split 独立计算，仍可能继续。",
+          a: "年度封顶是指每个入职周年年度内，Homix 通过常规分成最多收取的公司分成。Solo 封顶为 $12,000，约在累计 $80,000 可计入封顶的佣金时达到；Team Member 封顶为 $10,000，约在累计 $100,000 时达到。达到封顶后，该周期内不再收取 Homix 百分比分成；Team Split 仍依 Team Agreement 执行。",
         },
         {
           q: "Split 和 Transaction Fee 会同时收吗？",
-          a: "不会。核心规则是 Split 或 Transaction Fee 二选一。封顶前的 Solo 与 Team 成交产生 Company Dollar，不收 Transaction Fee；Solo Pro 与封顶后的成交改按 Transaction Fee 表执行。",
+          a: "不会。封顶前的 Solo 与 Team 成交按百分比分成，不另收 Transaction Fee；Solo Pro 与封顶后的成交改按 Transaction Fee 标准结算。",
         },
         {
           q: "Team Split 是 Homix 的第二层分成吗？",
-          a: "不是。Homix 先获得 10% Company Dollar，Team Split 再从剩余 90% Agent Side 中独立计算。采用推荐的 10% Team Split 时，每 $100 中 Member 获得 $81、Team Leader 获得 $9、Homix 获得 $10。获批的 Team preset 与任何 optional Team Cap 都会写入已签署的 Team Agreement。",
+          a: "不是。每 $100 可计入方案的佣金中，Homix 先获得 $10；推荐的 10% Team Split 从剩余 $90 计算，Team Member 获得 $81，Team Leader 获得 $9。具体团队分成及可选的 Team Cap 都会写入已签署的 Team Agreement。",
         },
         {
           q: "Team 的 $10,000 Cap 更低，是不是更快拿到 100%？",
-          a: "不是。Team 的 Homix Cap 按 10% 累计，因此约需 $100,000 可计入封顶的佣金才能达到 $10,000；Solo 按 15% 累计，约 $80,000 即达到 $12,000。Team 达到 Homix Cap 后，Homix 的 10% 停止，但 Team Split 通常继续；按推荐配置，Member 会从约 81% 变为约 90%，不是 100%，并另收适用的 Transaction Fee。",
+          a: "不会。Team 的 Homix Cap 按 10% 累计，因此约需 $100,000 可计入封顶的佣金才能达到 $10,000；Solo 按 15% 累计，约 $80,000 即达到 $12,000。Team Member 达到 Homix Cap 后，公司 10% 分成停止，但 Team Split 通常继续；按推荐配置，Member 所得会从约 81% 调整为约 90%，并另收适用的 Transaction Fee，而不是直接进入 100%。",
         },
         {
           q: "中途升级 Solo Pro 怎么计算？",
-          a: "支付 $288 或 $500 基础 affiliation fee 后 90 天内升级，可将该笔基础费用全额抵扣 $3,650 Solo Pro 年费；超过 90 天则不再抵扣。升级日起重新开始 12 个月 Solo Pro term，不现金退款，也不按月 prorate。",
+          a: "支付 $288 或 $500 基础会员费后 90 天内升级，可将该笔费用全额抵扣 $3,650 Solo Pro 年费；超过 90 天则不再抵扣。升级之日起重新开始 12 个月 Solo Pro 周期，不提供现金退款，也不按月份折算。",
         },
         {
           q: "暂不做单、只保留牌照也用基础会员费吗？",
-          a: "经批准的 Holding 或 Non-Producing status 同样采用 $288 一年或 $500 两年的基础 affiliation pricing。可从事的活动与资格仍以适用协议、公司政策及纽约州法律为准。",
+          a: "经批准的牌照保留（Holding）或非生产（Non-Producing）状态，同样采用 $288 一年或 $500 两年的基础会员费。可从事的活动及相关资格，以适用协议、公司政策和纽约州法律为准。",
         },
         {
-          q: "公司客源、Sponsor 收入或最终收入有保证吗？",
-          a: "没有。客源数量、成交结果、Sponsor 资格与收入都会变化。本页不是 earnings claim 或收入保证，实际 compensation 以已签协议和每笔交易事实为准。",
+          q: "10% Lifetime Referral 需要满足什么资格？",
+          a: "每个奖励年度内，Sponsor 与被介绍经纪人的可认定佣金产量都必须分别达到至少 $10,000，同时保持在职、良好执业状态，并满足已签署的计划条款。10% 只按合资格的 Homix 自有收入计算，不包括 Transaction Fee、外部转介支出、客户返还或抵扣及第三方费用。",
+        },
+        {
+          q: "公司客源、Sponsor 奖励或最终收入有保证吗？",
+          a: "不保证。客源数量、成交结果、Sponsor 资格和最终收入会因个人业务及具体交易而异。本页不构成收入承诺，实际报酬以已签协议和每笔交易为准。",
         },
       ],
     },
     disclosure: {
       title: "重要方案说明",
-      body: "本页是便于理解的摘要，不构成 independent contractor agreement 或任何 compensation 承诺。实际佣金以已签署的 Homix 协议、Team Agreement、referral 或 lead-source 文件、交易事实、公司政策及适用法律为准。在协议与法律允许范围内，方案资格、费用、Cap 与项目条款可能调整。所有金额仅为解释结构的示例，不包含税费与日常经营成本；相关成本可能包括牌照、MLS 或协会会费、保险、营销及第三方费用。",
+      body: "本页为方案摘要，不构成独立承包人协议或任何报酬承诺。实际佣金以已签署的 Homix 协议、Team Agreement、转介或客源文件、交易事实、公司政策及适用法律为准。在协议与法律允许的范围内，方案资格、费用、封顶及项目条款可能调整。所有金额仅用于说明分配方式，不包含税费与日常经营成本；相关成本可能包括牌照、MLS 或协会会费、保险、营销及第三方费用。",
     },
     cta: {
       eyebrow: "找到适合你的路径",
-      title: "选定结构，然后把业务做起来。",
-      lead: "我们会和你一起看 production、团队目标与客源结构，并在你做决定前逐项说明方案如何落到你的实际业务上。",
+      title: "一起选出适合你业务的方案。",
+      lead: "告诉我们你目前的业务阶段、合作方式与客源结构。签署任何协议前，我们会说明适用方案、费用及具体规则。",
       primary: "申请加入 Homix",
       secondary: "查看经纪人培训",
     },
@@ -830,9 +842,19 @@ export default async function CommissionPlanPage({
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted">{content.sponsor.lead}</p>
 
-              <div className="mt-8 flex items-end gap-4 border-y border-line py-6">
-                <p className="font-serif text-6xl tabular-nums text-bronze">{content.sponsor.value}</p>
-                <p className="max-w-48 pb-1 text-sm leading-snug text-muted">{content.sponsor.valueLabel}</p>
+              <div className="mt-8 border-y border-bronze/50 bg-surface px-5 py-6">
+                <div className="flex items-end gap-5">
+                  <p className="font-serif text-7xl tabular-nums text-bronze">{content.sponsor.value}</p>
+                  <p className="max-w-56 pb-1 text-sm font-medium leading-snug text-ink">
+                    {content.sponsor.valueLabel}
+                  </p>
+                </div>
+                <div className="mt-5 border-t border-line pt-4">
+                  <p className="text-xs font-medium text-bronze">{content.sponsor.qualificationTitle}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-muted">
+                    {content.sponsor.qualification}
+                  </p>
+                </div>
               </div>
 
               <div className="mt-7 grid gap-8 sm:grid-cols-2">
