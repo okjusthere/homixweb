@@ -54,10 +54,10 @@ INQUIRY_TO_EMAIL=homix@homixny.com
 INQUIRY_FROM_EMAIL="Homix Website <inquiries@homixny.com>"
 ```
 
-The automated `/news` publisher additionally requires:
+Automated News and advisor MLS reconciliation additionally require:
 
 ```bash
-CRON_SECRET=...             # Vercel Cron Bearer secret
+CRON_SECRET=...             # Vercel Cron Bearer secret for both scheduled routes
 AZURE_OPENAI_API_KEY=...
 AZURE_OPENAI_RESPONSES_ENDPOINT=https://YOUR-RESOURCE.services.ai.azure.com/openai/v1/responses
 AZURE_OPENAI_DEPLOYMENT=...
@@ -132,6 +132,18 @@ If no candidate clears every gate, the run is recorded as
 `skipped_no_candidate` and `/news` receives no article that day. Evergreen
 Guides are never used as a news fallback. Feed and editorial state can be
 inspected in `public.news_ingestion_runs` and `public.news_candidates`.
+
+## Advisor MLS Identity
+
+When a Portal advisor saves a New York license number, the website compares it
+with BBO's Homix OneKey roster and writes `agents.mls_id` only for one exact,
+unclaimed match. New profiles verify immediately when the roster is available.
+`/api/cron/agent-mls` retries unmatched profiles each day after BBO's Member and
+Career jobs, covering temporary outages and advisors added between roster runs.
+
+An MLS identity match does not guarantee a Past Sales section. The profile only
+shows that section when BBO's authorized OneKey Closed archive contains at
+least one listing- or buyer-side record for the matched member key.
 
 ## Deployment
 

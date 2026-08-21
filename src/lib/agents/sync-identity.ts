@@ -1,5 +1,9 @@
 import "server-only";
-import { getMlsRoster, normalizeLicense } from "@/lib/agents/mls-roster";
+import {
+  getMlsRoster,
+  matchRosterMemberByLicense,
+  normalizeLicense,
+} from "@/lib/agents/mls-roster";
 import { revalidatePublicAgents } from "@/lib/agents/revalidate";
 import { getSupabase } from "@/lib/supabase";
 
@@ -12,7 +16,17 @@ export type IdentitySyncResult = {
   error?: string;
   notice?: string;
   slug?: string;
+  verificationStatus?: MlsVerificationStatus;
+  mlsId?: string;
 };
+
+export type MlsVerificationStatus =
+  | "not_provided"
+  | "verified"
+  | "unavailable"
+  | "unmatched"
+  | "ambiguous"
+  | "claimed";
 
 /**
  * Mirror portal-owned identity fields into one linked public profile.
@@ -50,33 +64,43 @@ export async function syncAgentIdentity(input: {
 
   let nextMlsId: string | null = agent.mls_id;
   let notice: string | undefined;
+  let verificationStatus: MlsVerificationStatus = license
+    ? agent.mls_id
+      ? "verified"
+      : "unmatched"
+    : "not_provided";
   const licenseChanged =
     normalizeLicense(license) !== normalizeLicense(agent.license_number);
   if (licenseChanged || (license && !agent.mls_id)) {
     if (licenseChanged) nextMlsId = null;
     if (license) {
       const roster = await getMlsRoster();
-      const wanted = normalizeLicense(license);
-      const matches = roster.filter(
-        (member) => normalizeLicense(member.stateLicense) === wanted,
-      );
-      if (matches.length === 1) {
-        const member = matches[0];
-        const { data: claimed } = await sb
+      const match = matchRosterMemberByLicense(license, roster);
+      if (roster.length === 0) {
+        verificationStatus = "unavailable";
+        notice = "License saved; MLS verification is temporarily unavailable and will retry automatically.";
+      } else if (match.status === "matched") {
+        const { data: claimed, error: claimedError } = await sb
           .from("agents")
           .select("id")
-          .eq("mls_id", member.memberMlsId)
+          .eq("mls_id", match.member.memberMlsId)
           .neq("id", agent.id)
+          .limit(1)
           .maybeSingle();
+        if (claimedError) return { ok: false, error: claimedError.message };
         if (claimed) {
+          verificationStatus = "claimed";
           notice = "License is already linked to another public profile; past sales remain hidden.";
         } else {
-          nextMlsId = member.memberMlsId;
-          notice = `License verified against the MLS roster (${member.fullName}).`;
+          nextMlsId = match.member.memberMlsId;
+          verificationStatus = "verified";
+          notice = `License verified against the MLS roster (${match.member.fullName}).`;
         }
-      } else if (roster.length === 0) {
-        notice = "License saved; MLS verification is temporarily unavailable.";
+      } else if (match.status === "ambiguous") {
+        verificationStatus = "ambiguous";
+        notice = "License matches multiple MLS roster records and requires administrator review.";
       } else {
+        verificationStatus = "unmatched";
         notice = "License saved but did not match exactly one Homix MLS member.";
       }
     }
@@ -104,5 +128,11 @@ export async function syncAgentIdentity(input: {
   }
 
   revalidatePublicAgents(agent.slug);
-  return { ok: true, slug: agent.slug, notice };
+  return {
+    ok: true,
+    slug: agent.slug,
+    notice,
+    verificationStatus,
+    mlsId: nextMlsId || undefined,
+  };
 }

@@ -64,6 +64,8 @@ export async function POST(req: NextRequest) {
       alreadyLinked: true,
       ...existing,
       notice: identity.notice,
+      verificationStatus: identity.verificationStatus,
+      mlsId: identity.mlsId,
     });
   }
 
@@ -129,5 +131,7 @@ export async function POST(req: NextRequest) {
     id: slug,
     visibility_status: "visible",
     notice: identity.notice,
+    verificationStatus: identity.verificationStatus,
+    mlsId: identity.mlsId,
   });
 }

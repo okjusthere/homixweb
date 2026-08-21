@@ -15,7 +15,11 @@ import type {
   UpcomingOpenHouseQuery,
   UpcomingOpenHouseResult,
 } from "./types";
-import { HOMIX_LISTINGS_CACHE_TAG, listingCacheTag } from "./cache";
+import {
+  AGENT_CAREER_CACHE_TAG,
+  HOMIX_LISTINGS_CACHE_TAG,
+  listingCacheTag,
+} from "./cache";
 
 const DEFAULT_BBO_API_URL = "https://onekey.kevv.ai";
 const DEFAULT_HOMIX_OFFICE_MLS_ID = "KEYHRMI01";
@@ -360,13 +364,13 @@ export class BboListingsProvider implements ListingsProvider {
     if (!cfg.apiKey || !id) return null;
 
     try {
-      // Career data changes when BBO's monthly sync (or a roster change) runs —
-      // a 24h cache is still generous and keeps ~50 per-agent URLs from
-      // rewriting the data cache every few minutes under crawler traffic.
+      // BBO refreshes Career daily. The website cron expires this shared tag
+      // after that job while the 24h TTL remains an outage fallback.
       const payload = await this.request<BboCareerResponse>(
         `/api/v1/agents/${encodeURIComponent(id)}/career`,
         undefined,
         86400,
+        [AGENT_CAREER_CACHE_TAG],
       );
       const stats = payload.stats ?? {};
       const deals = (payload.deals ?? [])

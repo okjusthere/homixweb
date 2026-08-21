@@ -27,7 +27,8 @@ deploys to Vercel.
   `agents.mls_id` is set by admin mapping (`supabase/backfill-mls-ids.sql`)
   or by license verification against the MLS roster on self-edit save —
   **never as free text** (a wrong license fails to match; ids claimed by
-  another profile are refused). Advisors can hide the section via
+  another profile are refused). A daily authenticated cron retries profiles
+  saved before the BBO roster was ready. Advisors can hide the section via
   `show_past_deals`.
 
 **Compliance is not optional** (US real estate): Equal Housing Opportunity logo

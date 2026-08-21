@@ -1,4 +1,15 @@
 import "server-only";
+import {
+  matchRosterMemberByLicense,
+  type RosterMember,
+} from "@/lib/agents/mls-license";
+
+export {
+  matchRosterMemberByLicense,
+  normalizeLicense,
+  type LicenseMatch,
+  type RosterMember,
+} from "@/lib/agents/mls-license";
 
 /**
  * MLS roster lookup — powers self-service license verification.
@@ -13,14 +24,6 @@ import "server-only";
  * caller guards against separately (mls_id uniqueness across agents).
  */
 
-export interface RosterMember {
-  memberKey: string;
-  memberMlsId: string;
-  fullName: string;
-  stateLicense?: string;
-  status?: string;
-}
-
 interface RosterResponse {
   members?: {
     memberKey?: string;
@@ -31,20 +34,17 @@ interface RosterResponse {
   }[];
 }
 
-/** Digits-only view of a license number ("# 10401337464" → "10401337464"). */
-export function normalizeLicense(v: string | null | undefined): string {
-  return (v ?? "").replace(/\D/g, "");
-}
-
 /** Fetch the office roster from BBO (revalidated hourly; [] on any failure). */
-export async function getMlsRoster(): Promise<RosterMember[]> {
+export async function getMlsRoster(options?: { fresh?: boolean }): Promise<RosterMember[]> {
   const apiUrl = (process.env.BBO_API_URL || "https://onekey.kevv.ai").replace(/\/$/, "");
   const apiKey = process.env.BBO_API_KEY || "";
   if (!apiKey) return [];
   try {
     const res = await fetch(`${apiUrl}/api/v1/agents/roster`, {
       headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" },
-      next: { revalidate: 3600 },
+      ...(options?.fresh
+        ? { cache: "no-store" as const }
+        : { next: { revalidate: 3600 } }),
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) return [];
@@ -67,9 +67,7 @@ export async function getMlsRoster(): Promise<RosterMember[]> {
 export async function findRosterMemberByLicense(
   license: string,
 ): Promise<RosterMember | null> {
-  const wanted = normalizeLicense(license);
-  if (wanted.length < 6) return null;
   const roster = await getMlsRoster();
-  const hits = roster.filter((m) => normalizeLicense(m.stateLicense) === wanted);
-  return hits.length === 1 ? hits[0] : null;
+  const result = matchRosterMemberByLicense(license, roster);
+  return result.status === "matched" ? result.member : null;
 }

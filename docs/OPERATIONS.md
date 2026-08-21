@@ -140,6 +140,30 @@ Recommended launch sequence:
 Advisors missing photos, bios, phone numbers, emails, and license numbers are
 expected to complete them from the portal.
 
+### Advisor MLS reconciliation
+
+Saving a license in the Portal triggers an immediate exact-license lookup
+against `GET /api/v1/agents/roster`. The website never guesses from a name or
+email and refuses an MLS ID already linked to another public profile.
+
+Vercel calls `/api/cron/agent-mls` daily at 13:15 UTC, after BBO's daily Member,
+Career, and roster-projection jobs. It retries every `public.agents` row that
+has `license_number` but no `mls_id`. The JSON response reports only aggregate
+counts (`matched`, `unmatched`, `ambiguous`, `claimed`, and `failures`); it does
+not expose license numbers. A successful run also expires the shared advisor
+Career cache so BBO's latest Closed projection is used on the next profile view.
+
+If an advisor still has no Past Sales section:
+
+1. confirm their public profile has the exact NY license number and a non-null
+   `mls_id`;
+2. call BBO `/api/v1/agents/{mlsId}/career` and inspect `stats.total` plus
+   `dataAsOf`;
+3. if `stats.total` is zero, confirm the OneKey Closed archive contains that
+   member key. Do not create or infer transactions from a biography;
+4. if `mls_id` is null, correct the license or wait for the next daily Member
+   sync and reconciliation run.
+
 ## Legal And Compliance
 
 Before public launch, confirm with broker/counsel:
