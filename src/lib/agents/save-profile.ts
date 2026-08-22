@@ -17,9 +17,19 @@ import { getSupabase } from "@/lib/supabase";
  * The write is keyed by agent id, so it doesn't matter how the row was found.
  */
 
+export type SaveErrorCode =
+  | "image_too_large"
+  | "heic_requires_conversion"
+  | "unsupported_image"
+  | "image_decode_failed"
+  | "image_upload_failed"
+  | "profile_update_failed";
+
 export interface SaveState {
   ok: boolean;
   error?: string;
+  code?: SaveErrorCode;
+  field?: "photo" | "wechat_qr";
   /** Non-blocking feedback, e.g. the license-verification result. */
   notice?: string;
 }
@@ -36,15 +46,11 @@ const REVIEW_SITES = ["zillow", "google"] as const;
 const STAT_KEYS = ["years", "transactions", "volume", "areas"] as const;
 const MAX_TESTIMONIALS = 3;
 
-/** Allowed image MIME types → canonical extension. The content-type and the
- *  stored extension are derived from THIS map, never from the client's
- *  filename/file.type, so a `x.html`/`text/html` upload can't land in the bucket. */
-const IMAGE_TYPES: Record<string, string> = {
-  "image/jpeg": "jpg",
-  "image/png": "png",
-  "image/webp": "webp",
-  "image/gif": "gif",
-};
+const MAX_IMAGE_UPLOAD_BYTES = 3 * 1024 * 1024;
+const IMAGE_FORMATS = new Set(["jpeg", "png", "webp", "gif"]);
+const HEIC_MIME_TYPES = new Set(["image/heic", "image/heif", "image/heic-sequence", "image/heif-sequence"]);
+const HEIC_EXTENSIONS = /\.(?:heic|heif)$/i;
+const HEIC_BRANDS = new Set(["heic", "heix", "hevc", "hevx", "mif1", "msf1"]);
 
 /** Strip control chars (incl. CR/LF) so a value can't inject extra lines into a
  *  vCard, a mailto: header, or JSON-LD downstream. */
@@ -84,16 +90,30 @@ async function uploadImage(
   slug: string,
   kind: string,
   file: File,
-): Promise<{ url: string } | { error: string }> {
-  if (file.size > 8 * 1024 * 1024) return { error: "Image is too large (max 8MB)." };
-  if (!IMAGE_TYPES[file.type]) return { error: "Please upload a JPG, PNG, WebP, or GIF image." };
+): Promise<{ url: string } | { error: string; code: SaveErrorCode }> {
+  if (file.size > MAX_IMAGE_UPLOAD_BYTES) {
+    return { error: "The processed image is too large (max 3 MB).", code: "image_too_large" };
+  }
 
   let buf = Buffer.from(await file.arrayBuffer());
-  let ext = IMAGE_TYPES[file.type];
-  let contentType = file.type;
-  if (file.type !== "image/gif") {
-    try {
-      const sharp = (await import("sharp")).default;
+  const brand = buf.length >= 12 ? buf.subarray(8, 12).toString("ascii") : "";
+  if (HEIC_MIME_TYPES.has(file.type.toLowerCase()) || HEIC_EXTENSIONS.test(file.name) || HEIC_BRANDS.has(brand)) {
+    return {
+      error: "HEIC/HEIF must be converted in the browser before uploading.",
+      code: "heic_requires_conversion",
+    };
+  }
+
+  try {
+    const sharp = (await import("sharp")).default;
+    const metadata = await sharp(buf).metadata();
+    if (!metadata.format || !IMAGE_FORMATS.has(metadata.format)) {
+      return { error: "Please upload a JPG, PNG, WebP, or GIF image.", code: "unsupported_image" };
+    }
+
+    let ext = metadata.format === "jpeg" ? "jpg" : metadata.format;
+    let contentType = metadata.format === "jpeg" ? "image/jpeg" : `image/${metadata.format}`;
+    if (metadata.format !== "gif") {
       const base = sharp(buf)
         .rotate()
         .resize({ width: IMAGE_MAX_WIDTH[kind] ?? 1100, withoutEnlargement: true });
@@ -106,17 +126,26 @@ async function uploadImage(
         ext = "webp";
         contentType = "image/webp";
       }
-    } catch {
-      return { error: "That image could not be read — please try a different file." };
     }
-  }
 
-  const path = `agents/${slug}/${kind}-${Date.now()}.${ext}`;
-  const { error } = await sb.storage
-    .from("agent-photos")
-    .upload(path, buf, { contentType, upsert: true, cacheControl: "31536000" });
-  if (error) return { error: `Upload failed: ${error.message}` };
-  return { url: sb.storage.from("agent-photos").getPublicUrl(path).data.publicUrl };
+    const path = `agents/${slug}/${kind}-${Date.now()}.${ext}`;
+    const { error } = await sb.storage
+      .from("agent-photos")
+      .upload(path, buf, { contentType, upsert: true, cacheControl: "31536000" });
+    if (error) {
+      console.warn("Agent profile image storage upload failed", { kind, message: error.message });
+      return { error: "The image could not be uploaded. Please try again.", code: "image_upload_failed" };
+    }
+    return { url: sb.storage.from("agent-photos").getPublicUrl(path).data.publicUrl };
+  } catch (error) {
+    console.warn("Agent profile image decode failed", {
+      kind,
+      mime: file.type || "unknown",
+      size: file.size,
+      message: error instanceof Error ? error.message : "unknown",
+    });
+    return { error: "That image could not be read. Please try a different file.", code: "image_decode_failed" };
+  }
 }
 
 /** The Supabase agents row shape this module reads. */
@@ -149,7 +178,7 @@ export async function saveAgentProfileFromForm(
   const photo = formData.get("photo");
   if (photo instanceof File && photo.size > 0) {
     const res = await uploadImage(sb, agent.slug, "headshot", photo);
-    if ("error" in res) return { ok: false, error: res.error };
+    if ("error" in res) return { ok: false, error: res.error, code: res.code, field: "photo" };
     photoUrl = res.url;
   }
 
@@ -160,7 +189,7 @@ export async function saveAgentProfileFromForm(
     wechatQr = null;
   } else if (qr instanceof File && qr.size > 0) {
     const res = await uploadImage(sb, agent.slug, "wechat", qr);
-    if ("error" in res) return { ok: false, error: res.error };
+    if ("error" in res) return { ok: false, error: res.error, code: res.code, field: "wechat_qr" };
     wechatQr = res.url;
   }
 
@@ -238,7 +267,10 @@ export async function saveAgentProfileFromForm(
     })
     .eq("id", agent.id);
 
-  if (error) return { ok: false, error: error.message };
+  if (error) {
+    console.warn("Agent public profile update failed", { agentId: agent.id, message: error.message });
+    return { ok: false, error: "The profile could not be saved. Please try again.", code: "profile_update_failed" };
+  }
 
   // Existing share codes stay stable for analytics, while their versioned URL
   // changes whenever the public identity changes. That forces WeChat and other
