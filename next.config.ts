@@ -37,6 +37,20 @@ const htmlLimitedBots =
 
 const nextConfig: NextConfig = {
   htmlLimitedBots,
+  // The profile upload routes use Sharp for content validation and resizing.
+  // Turbopack traces Sharp's JavaScript but can miss libvips, which leaves the
+  // deployed Vercel function unable to decode any image. Keep these patterns
+  // route-scoped so the native binaries are only added to the two upload APIs.
+  outputFileTracingIncludes: {
+    "/api/agent-profile": [
+      "node_modules/sharp/**/*",
+      "node_modules/@img/sharp-*/**/*",
+    ],
+    "/api/agent-admin/edit": [
+      "node_modules/sharp/**/*",
+      "node_modules/@img/sharp-*/**/*",
+    ],
+  },
   // Pin the workspace root — a stray lockfile in the home dir confuses inference.
   turbopack: {
     root: __dirname,
