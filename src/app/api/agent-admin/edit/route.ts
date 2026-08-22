@@ -57,6 +57,13 @@ export async function POST(req: NextRequest) {
   if (!agent) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
   const result = await saveAgentProfileFromForm(agent, formData);
+  if (!result.ok) {
+    console.warn("Admin public profile save rejected", {
+      publicAgentId: id,
+      code: result.code ?? "unknown",
+      field: result.field ?? "profile",
+    });
+  }
   return NextResponse.json(result, {
     status: result.ok ? 200 : 400,
     headers: { "Cache-Control": "no-store" },

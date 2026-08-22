@@ -78,6 +78,13 @@ export async function POST(req: NextRequest) {
   }
 
   const result = await saveAgentProfileFromForm(agent, formData);
+  if (!result.ok) {
+    console.warn("Portal public profile save rejected", {
+      portalAgentId,
+      code: result.code ?? "unknown",
+      field: result.field ?? "profile",
+    });
+  }
   return NextResponse.json(result, {
     status: result.ok ? 200 : 400,
     headers: { "Cache-Control": "no-store" },
