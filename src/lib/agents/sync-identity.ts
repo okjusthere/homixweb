@@ -1,10 +1,12 @@
 import "server-only";
+import { revalidateTag } from "next/cache";
 import {
   getMlsRoster,
   matchRosterMemberByLicense,
   normalizeLicense,
 } from "@/lib/agents/mls-roster";
 import { revalidatePublicAgents } from "@/lib/agents/revalidate";
+import { AGENT_CAREER_CACHE_TAG } from "@/lib/listings/cache";
 import { getSupabase } from "@/lib/supabase";
 
 function cleanText(value: unknown): string {
@@ -127,6 +129,9 @@ export async function syncAgentIdentity(input: {
     console.warn("Unable to refresh share-card versions:", shareVersionError.message);
   }
 
+  // Identity changes alter the BBO career lookup key. Expire prior empty or
+  // mismatched career responses before regenerating the public profile.
+  revalidateTag(AGENT_CAREER_CACHE_TAG, { expire: 0 });
   revalidatePublicAgents(agent.slug);
   return {
     ok: true,
