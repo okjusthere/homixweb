@@ -252,7 +252,7 @@ const copy = {
         },
         {
           q: "Does the base membership cover a non-producing license?",
-          a: "The $288 one-year or $500 two-year affiliation pricing also applies to an approved Holding or Non-Producing status. Permitted activity and eligibility are governed by the applicable agreement, brokerage policy, and New York law.",
+          a: "Yes. An approved non-producing agent remains on the Solo affiliation plan at $288 for one year or $500 for two years; Non-Producing is a business status, not a separate commission plan. Permitted activity and eligibility are governed by the applicable agreement, brokerage policy, and New York law.",
         },
         {
           q: "How does the 10% Lifetime Referral qualify?",
@@ -512,7 +512,7 @@ const copy = {
         },
         {
           q: "暂不做单、只保留牌照也用基础会员费吗？",
-          a: "经批准的牌照保留（Holding）或非生产（Non-Producing）状态，同样采用 $288 一年或 $500 两年的基础会员费。可从事的活动及相关资格，以适用协议、公司政策和纽约州法律为准。",
+          a: "是。经批准暂不展业的经纪人仍归入 Solo affiliation plan，费用为 $288 一年或 $500 两年；暂不展业是一种经营状态，不是独立佣金方案。可从事的活动及相关资格，以适用协议、公司政策和纽约州法律为准。",
         },
         {
           q: "10% Lifetime Referral 需要满足什么资格？",
