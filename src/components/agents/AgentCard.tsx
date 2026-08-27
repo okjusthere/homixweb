@@ -14,7 +14,7 @@ export function AgentCard({ agent }: { agent: Agent }) {
           src={agent.photo}
           alt={agent.name}
           fill
-          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
         />
       </div>

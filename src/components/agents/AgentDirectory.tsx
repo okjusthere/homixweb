@@ -97,7 +97,7 @@ export function AgentDirectory({
           {labels.noResults}
         </p>
       ) : (
-        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
           {filtered.map((agent, index) => (
             <Reveal key={agent.id} delay={(index % 4) * 50}>
               <AgentCard agent={agent} />
