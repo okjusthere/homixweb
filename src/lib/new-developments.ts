@@ -13,7 +13,11 @@ export function getDevelopment(slug: string): FeaturedDevelopment | undefined {
 }
 
 export function priceLead(building: FeaturedDevelopment) {
-  return building.priceBands[0]?.price ?? "By unit";
+  return (
+    building.priceBands.find((band) => band.price.includes("$"))?.price ??
+    building.priceBands[0]?.price ??
+    "By unit"
+  );
 }
 
 export function layoutLead(building: FeaturedDevelopment) {

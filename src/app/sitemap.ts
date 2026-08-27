@@ -43,6 +43,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/listings",
     "/open-houses",
     newDevelopmentBasePath,
+    "/rmb-homes",
     "/sell",
     "/agents",
     "/chinese-real-estate-agents-nyc",

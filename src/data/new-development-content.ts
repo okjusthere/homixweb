@@ -1,5 +1,6 @@
 // AUTO-GENERATED project-specific bilingual copy for the new-development pages.
 // Edit wording here. See scripts/ for the generator.
+import { rmbDevelopmentContent } from "@/data/rmb-development-content";
 export type DevelopmentHighlight = { titleZh: string; bodyZh: string; titleEn: string; bodyEn: string };
 export type CarryingBand = {
   layout: string;
@@ -3417,5 +3418,5 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   }
 };
 export function getDevelopmentContent(slug: string): DevelopmentContent | undefined {
-  return newDevelopmentContent[slug];
+  return newDevelopmentContent[slug] ?? rmbDevelopmentContent[slug];
 }

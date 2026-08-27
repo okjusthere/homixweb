@@ -68,7 +68,9 @@ export async function generateMetadata({
       ? "曼哈顿"
       : building.borough === "Queens"
         ? "皇后区"
-        : "泽西市";
+        : building.borough === "Brooklyn"
+          ? "布鲁克林"
+          : "泽西市";
   return pageMetadata({
     path: `/NewDevelopment/${slug}`,
     locale,
@@ -226,7 +228,17 @@ export default async function NewDevelopmentDetailPage({
 
       {/* Header: name / address / price */}
       <header className="mt-8 border-b border-line pb-8">
-        <p className="eyebrow">{building.area}</p>
+        <div className="flex flex-wrap items-center gap-3">
+          <p className="eyebrow">{building.area}</p>
+          {building.rmbEligible && (
+            <Link
+              href="/rmb-homes"
+              className="border border-bronze/45 bg-bronze/5 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze transition-colors hover:bg-bronze/10"
+            >
+              {zh ? "人民币房源" : "RMB purchase option"}
+            </Link>
+          )}
+        </div>
         <h1 className="mt-3 font-serif text-4xl font-normal leading-[1.0] tracking-tight text-ink sm:text-6xl">
           {building.name}
         </h1>

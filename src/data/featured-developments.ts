@@ -1,13 +1,16 @@
+import { rmbDevelopments } from "@/data/rmb-developments";
+
 export type FeaturedDevelopment = {
   slug: string;
   name: string;
-  borough: "Manhattan" | "Queens" | "Jersey City";
+  borough: "Manhattan" | "Queens" | "Brooklyn" | "Jersey City";
   area: string;
   address: string;
   sourceUrl: string;
   officialUrl?: string;
   galleryCount: number;
   sourceUpdated: string;
+  rmbEligible?: true;
   transit: string;
   facts: {
     units: string;
@@ -26,7 +29,7 @@ export type FeaturedDevelopment = {
   }[];
 };
 
-export const featuredDevelopments = [
+const baseFeaturedDevelopments = [
   {
     slug: "waldorf-astoria-residences-new-york",
     name: "Waldorf Astoria Residences New York",
@@ -1046,3 +1049,18 @@ export const featuredDevelopments = [
     ]
   },
 ] as const satisfies FeaturedDevelopment[];
+
+const rmbEligibleExistingSlugs = new Set([
+  "monogram-new-york",
+  "eastlight-condominium",
+  "radiant-condominium",
+]);
+
+export const featuredDevelopments: FeaturedDevelopment[] = [
+  ...baseFeaturedDevelopments.map((development) =>
+    rmbEligibleExistingSlugs.has(development.slug)
+      ? { ...development, rmbEligible: true as const }
+      : development,
+  ),
+  ...rmbDevelopments,
+];

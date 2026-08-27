@@ -20,6 +20,7 @@ export interface DevCard {
   units: string;
   built: string;
   href: string;
+  rmbEligible: boolean;
 }
 
 export interface DevSearchLabels {
@@ -34,31 +35,48 @@ export interface DevSearchLabels {
   copied: string;
   noResults: string;
   showing: string; // e.g. "showing" → "showing 12 / 34"
+  rmbOnly: string;
+  allProjects: string;
+  rmbBadge: string;
 }
 
 export function NewDevSearch({
   buildings,
   labels,
   locale,
+  initialRmbOnly = false,
+  showRmbFilter = true,
 }: {
   buildings: DevCard[];
   labels: DevSearchLabels;
   locale: Locale;
+  initialRmbOnly?: boolean;
+  showRmbFilter?: boolean;
 }) {
   const [q, setQ] = useState("");
+  const [rmbOnly, setRmbOnly] = useState(initialRmbOnly);
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
-    if (!s) return buildings;
-    return buildings.filter((b) =>
-      `${b.name} ${b.area} ${b.borough} ${b.address}`.toLowerCase().includes(s),
-    );
-  }, [q, buildings]);
+    return buildings.filter((b) => {
+      if (rmbOnly && !b.rmbEligible) return false;
+      if (!s) return true;
+      return `${b.name} ${b.area} ${b.borough} ${b.address}`.toLowerCase().includes(s);
+    });
+  }, [q, rmbOnly, buildings]);
+
+  const setPurchaseFilter = (next: boolean) => {
+    setRmbOnly(next);
+    const url = new URL(window.location.href);
+    if (next) url.searchParams.set("purchase", "rmb");
+    else url.searchParams.delete("purchase");
+    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+  };
 
   return (
     <>
       <div className="sticky top-[57px] z-20 -mx-4 mb-8 border-b border-line bg-paper/95 px-4 py-3 backdrop-blur sm:top-[65px]">
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <div className="relative w-full max-w-md">
             <svg
               aria-hidden
@@ -78,7 +96,27 @@ export function NewDevSearch({
               className="w-full rounded-sm border border-line bg-surface py-2.5 pl-10 pr-4 text-sm text-ink outline-none transition focus:border-bronze"
             />
           </div>
-          <span className="flex-none whitespace-nowrap text-sm text-muted">
+          {showRmbFilter && (
+            <div className="flex flex-none border border-line bg-surface p-0.5" aria-label={labels.rmbOnly}>
+              <button
+                type="button"
+                onClick={() => setPurchaseFilter(false)}
+                aria-pressed={!rmbOnly}
+                className={`px-3 py-2 text-xs font-medium transition-colors ${!rmbOnly ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
+              >
+                {labels.allProjects}
+              </button>
+              <button
+                type="button"
+                onClick={() => setPurchaseFilter(true)}
+                aria-pressed={rmbOnly}
+                className={`px-3 py-2 text-xs font-medium transition-colors ${rmbOnly ? "bg-bronze text-white" : "text-muted hover:text-ink"}`}
+              >
+                {labels.rmbOnly}
+              </button>
+            </div>
+          )}
+          <span className="flex-none whitespace-nowrap text-sm text-muted sm:ml-auto">
             {labels.showing} {filtered.length} / {buildings.length}
           </span>
         </div>
@@ -130,12 +168,22 @@ function DevCardView({
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
+            {b.rmbEligible && (
+              <span className="absolute left-3 top-3 bg-paper/94 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze shadow-sm backdrop-blur">
+                {labels.rmbBadge}
+              </span>
+            )}
           </div>
         ) : (
-          <div className="flex aspect-[16/10] items-center justify-center border-b border-line bg-paper px-5 text-center">
+          <div className="relative flex aspect-[16/10] items-center justify-center border-b border-line bg-paper px-5 text-center">
             <p className="text-xs uppercase tracking-[0.16em] text-muted">
               {labels.mediaPending}
             </p>
+            {b.rmbEligible && (
+              <span className="absolute left-3 top-3 bg-surface px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze">
+                {labels.rmbBadge}
+              </span>
+            )}
           </div>
         )}
         <div className="border-b border-line p-5">

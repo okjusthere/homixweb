@@ -45,6 +45,8 @@ const en = {
     neighborhoods: "Neighborhoods",
     communities: "Gated communities",
     openHouses: "Open Houses",
+    newDevelopment: "New Development",
+    rmbHomes: "RMB purchase options",
     privacy: "Privacy",
     terms: "Terms",
     accessibility: "Accessibility",
@@ -343,6 +345,7 @@ const en = {
     { title: "Neighborhoods", desc: "Guides to the areas we cover" },
     { title: "Gated communities", desc: "Nassau's gated & private enclaves" },
     { title: "New Development", desc: "Shareable condo project pages" },
+    { title: "RMB purchase options", desc: "Projects accepting RMB payment" },
     { title: "Mortgage calculator", desc: "Estimate your monthly payment" },
   ],
   agentsPage: {
@@ -621,6 +624,8 @@ const zh: Dict = {
     neighborhoods: "社区",
     communities: "封闭社区",
     openHouses: "本周公展",
+    newDevelopment: "纽约新盘",
+    rmbHomes: "人民币房源",
     privacy: "隐私政策",
     terms: "服务条款",
     accessibility: "无障碍",
@@ -919,6 +924,7 @@ const zh: Dict = {
     { title: "社区指南", desc: "我们覆盖区域的本地指南" },
     { title: "封闭社区", desc: "Nassau 封闭与私密社区" },
     { title: "纽约新盘", desc: "可转发给客户的项目页" },
+    { title: "人民币房源", desc: "可使用人民币付款的新盘" },
     { title: "房贷计算器", desc: "估算你的月供" },
   ],
   agentsPage: {

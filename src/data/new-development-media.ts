@@ -1,4 +1,5 @@
 import media from "./new-development-media.json";
+import rmbMedia from "./rmb-development-media.json";
 
 export type DevelopmentImage = {
   id: string;
@@ -25,9 +26,10 @@ export type DevelopmentMedia = {
 };
 
 export const newDevelopmentMedia = media as Record<string, DevelopmentMedia>;
+const rmbDevelopmentMedia = rmbMedia as Record<string, DevelopmentMedia>;
 
 export function getDevelopmentMedia(slug: string): DevelopmentMedia {
-  return newDevelopmentMedia[slug] ?? { images: [], floorPlans: [] };
+  return newDevelopmentMedia[slug] ?? rmbDevelopmentMedia[slug] ?? { images: [], floorPlans: [] };
 }
 
 export function getDevelopmentCover(slug: string): DevelopmentImage | undefined {

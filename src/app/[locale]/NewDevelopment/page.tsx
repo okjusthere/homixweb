@@ -34,10 +34,13 @@ export async function generateMetadata({
 
 export default async function NewDevelopmentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ purchase?: string }>;
 }) {
   const locale = await getRouteLocale(params);
+  const query = await searchParams;
   const zh = locale === "zh";
 
   const cards: DevCard[] = [...featuredDevelopments]
@@ -57,6 +60,7 @@ export default async function NewDevelopmentPage({
         units: b.facts.units,
         built: b.facts.built,
         href: newDevelopmentHref(b.slug),
+        rmbEligible: b.rmbEligible === true,
       };
     });
 
@@ -91,6 +95,9 @@ export default async function NewDevelopmentPage({
     copied: zh ? "已复制 ✓" : "Copied ✓",
     noResults: zh ? "没有匹配的楼盘，换个关键词试试。" : "No matching buildings — try another keyword.",
     showing: zh ? "显示" : "Showing",
+    rmbOnly: zh ? "人民币房源" : "RMB options",
+    allProjects: zh ? "全部新盘" : "All projects",
+    rmbBadge: zh ? "人民币" : "RMB option",
   };
 
   return (
@@ -107,13 +114,18 @@ export default async function NewDevelopmentPage({
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">{copy.lead}</p>
           <p className="mt-3 text-sm text-muted">
-            {featuredDevelopments.length} {zh ? "个项目 · Manhattan · Long Island City · A–Z" : "projects · Manhattan · Long Island City · A–Z"}
+            {featuredDevelopments.length} {zh ? "个项目 · Manhattan · Queens · Brooklyn · A–Z" : "projects · Manhattan · Queens · Brooklyn · A–Z"}
           </p>
         </Container>
       </section>
 
       <Container className="pb-14 pt-6">
-        <NewDevSearch buildings={cards} labels={labels} locale={locale} />
+        <NewDevSearch
+          buildings={cards}
+          labels={labels}
+          locale={locale}
+          initialRmbOnly={query.purchase === "rmb"}
+        />
       </Container>
     </>
   );

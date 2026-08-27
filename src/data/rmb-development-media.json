@@ -1,0 +1,368 @@
+{
+  "hendrix-house": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/hendrix-house/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://hendrixhousenyc.com",
+        "width": 1440,
+        "height": 1440
+      },
+      {
+        "id": "facade",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/hendrix-house/images/facade.jpg",
+        "caption": "Terracotta facade and arched windows",
+        "alt": "Terracotta facade and arched windows",
+        "sourceUrl": "https://hendrixhousenyc.com",
+        "width": 2400,
+        "height": 1543
+      },
+      {
+        "id": "reception",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/hendrix-house/images/reception.jpg",
+        "caption": "Residential reception",
+        "alt": "Residential reception",
+        "sourceUrl": "https://hendrixhousenyc.com",
+        "width": 2048,
+        "height": 1406
+      }
+    ],
+    "floorPlans": []
+  },
+  "the-kent": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-kent/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://thekentnyc.com",
+        "width": 1845,
+        "height": 1800
+      },
+      {
+        "id": "arrival",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-kent/images/arrival.jpg",
+        "caption": "Residential arrival",
+        "alt": "Residential arrival",
+        "sourceUrl": "https://thekentnyc.com",
+        "width": 2400,
+        "height": 1258
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-kent/images/living-room.jpg",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://thekentnyc.com",
+        "width": 2160,
+        "height": 1440
+      }
+    ],
+    "floorPlans": []
+  },
+  "urban-21": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/urban-21/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://streeteasy.com/building/urban-21",
+        "width": 770,
+        "height": 1100
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/urban-21/images/kitchen.jpg",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://streeteasy.com/building/urban-21",
+        "width": 2400,
+        "height": 1800
+      }
+    ],
+    "floorPlans": []
+  },
+  "skyline-tower": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/images/exterior.jpg",
+        "caption": "Tower exterior",
+        "alt": "Tower exterior",
+        "sourceUrl": "https://skylinetower-lic.com",
+        "width": 750,
+        "height": 808
+      },
+      {
+        "id": "skyline-view",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/images/skyline-view.jpg",
+        "caption": "Manhattan skyline view",
+        "alt": "Manhattan skyline view",
+        "sourceUrl": "https://skylinetower-lic.com",
+        "width": 765,
+        "height": 600
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/images/living-room.jpg",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://skylinetower-lic.com",
+        "width": 970,
+        "height": 610
+      }
+    ],
+    "floorPlans": []
+  },
+  "vesta-lic": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/vesta-lic/images/exterior.jpg",
+        "caption": "Park-front building exterior",
+        "alt": "Park-front building exterior",
+        "sourceUrl": "https://www.vestalic.com",
+        "width": 2250,
+        "height": 1500
+      },
+      {
+        "id": "residence",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/vesta-lic/images/residence.jpg",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://www.vestalic.com",
+        "width": 2000,
+        "height": 1331
+      }
+    ],
+    "floorPlans": []
+  },
+  "the-farrington": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-farrington/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://streeteasy.com/building/the-farrington-queens-ny",
+        "width": 800,
+        "height": 1060
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-farrington/images/living-room.jpg",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://streeteasy.com/building/the-farrington-queens-ny",
+        "width": 600,
+        "height": 400
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-farrington/images/kitchen.jpg",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://streeteasy.com/building/the-farrington-queens-ny",
+        "width": 1620,
+        "height": 1080
+      }
+    ],
+    "floorPlans": []
+  },
+  "the-prince-flushing": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-prince-flushing/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://theprinceflushing.com",
+        "width": 2400,
+        "height": 1502
+      },
+      {
+        "id": "residence",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-prince-flushing/images/residence.jpg",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://theprinceflushing.com",
+        "width": 2400,
+        "height": 1800
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-prince-flushing/images/kitchen.jpg",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://theprinceflushing.com",
+        "width": 2400,
+        "height": 1600
+      }
+    ],
+    "floorPlans": []
+  },
+  "la-vita-flushing": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/la-vita-flushing/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://www.lavitany.com",
+        "width": 1781,
+        "height": 1724
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/la-vita-flushing/images/kitchen.jpg",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://www.lavitany.com",
+        "width": 2000,
+        "height": 858
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/la-vita-flushing/images/living-room.jpg",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://www.lavitany.com",
+        "width": 2000,
+        "height": 866
+      }
+    ],
+    "floorPlans": []
+  },
+  "centric-condominium": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/centric-condominium/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://www.centricnyc.com",
+        "width": 2400,
+        "height": 1666
+      },
+      {
+        "id": "arrival",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/centric-condominium/images/arrival.jpg",
+        "caption": "Residential arrival",
+        "alt": "Residential arrival",
+        "sourceUrl": "https://www.centricnyc.com",
+        "width": 2400,
+        "height": 1351
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/centric-condominium/images/living-room.jpg",
+        "caption": "Residence living room",
+        "alt": "Residence living room",
+        "sourceUrl": "https://www.centricnyc.com",
+        "width": 2400,
+        "height": 1173
+      }
+    ],
+    "floorPlans": []
+  },
+  "the-marina-astoria": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/images/exterior.jpg",
+        "caption": "Waterfront building exterior",
+        "alt": "Waterfront building exterior",
+        "sourceUrl": "https://www.themarinaastoria.com",
+        "width": 850,
+        "height": 1120
+      },
+      {
+        "id": "residence",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/images/residence.jpg",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://www.themarinaastoria.com",
+        "width": 1324,
+        "height": 1800
+      },
+      {
+        "id": "waterfront-view",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/images/waterfront-view.jpg",
+        "caption": "Waterfront view",
+        "alt": "Waterfront view",
+        "sourceUrl": "https://www.themarinaastoria.com",
+        "width": 2400,
+        "height": 1453
+      }
+    ],
+    "floorPlans": []
+  },
+  "sophie-condominium": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://www.corcoran.com/new-developments/for-sale/astoria/sophie-condominium/12935",
+        "width": 2400,
+        "height": 1600
+      },
+      {
+        "id": "residence",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/images/residence.jpg",
+        "caption": "Residence interior",
+        "alt": "Residence interior",
+        "sourceUrl": "https://www.corcoran.com/new-developments/for-sale/astoria/sophie-condominium/12935",
+        "width": 1990,
+        "height": 1800
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/images/kitchen.jpg",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://www.corcoran.com/new-developments/for-sale/astoria/sophie-condominium/12935",
+        "width": 2400,
+        "height": 1600
+      }
+    ],
+    "floorPlans": []
+  },
+  "stanhope-foundry": {
+    "images": [
+      {
+        "id": "exterior",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/stanhope-foundry/images/exterior.jpg",
+        "caption": "Building exterior",
+        "alt": "Building exterior",
+        "sourceUrl": "https://www.stanhopefoundry.com",
+        "width": 2246,
+        "height": 1800
+      },
+      {
+        "id": "bedroom",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/stanhope-foundry/images/bedroom.jpg",
+        "caption": "Residence bedroom",
+        "alt": "Residence bedroom",
+        "sourceUrl": "https://www.stanhopefoundry.com",
+        "width": 2340,
+        "height": 1800
+      },
+      {
+        "id": "wellness",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/stanhope-foundry/images/wellness.jpg",
+        "caption": "Wellness studio",
+        "alt": "Wellness studio",
+        "sourceUrl": "https://www.stanhopefoundry.com",
+        "width": 2400,
+        "height": 1503
+      }
+    ],
+    "floorPlans": []
+  }
+}
