@@ -230,12 +230,12 @@ export default async function NewDevelopmentDetailPage({
       <header className="mt-8 border-b border-line pb-8">
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{building.area}</p>
-          {building.rmbEligible && (
+          {building.flexiblePayment && (
             <Link
-              href="/rmb-homes"
+              href="/flexible-payment-homes"
               className="border border-bronze/45 bg-bronze/5 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze transition-colors hover:bg-bronze/10"
             >
-              {zh ? "人民币房源" : "RMB purchase option"}
+              {zh ? "支持灵活支付" : "Flexible payment"}
             </Link>
           )}
         </div>

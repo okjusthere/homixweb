@@ -60,7 +60,7 @@ export default async function NewDevelopmentPage({
         units: b.facts.units,
         built: b.facts.built,
         href: newDevelopmentHref(b.slug),
-        rmbEligible: b.rmbEligible === true,
+        flexiblePayment: b.flexiblePayment === true,
       };
     });
 
@@ -95,9 +95,9 @@ export default async function NewDevelopmentPage({
     copied: zh ? "已复制 ✓" : "Copied ✓",
     noResults: zh ? "没有匹配的楼盘，换个关键词试试。" : "No matching buildings — try another keyword.",
     showing: zh ? "显示" : "Showing",
-    rmbOnly: zh ? "人民币房源" : "RMB options",
+    flexibleOnly: zh ? "灵活支付" : "Flexible payment",
     allProjects: zh ? "全部新盘" : "All projects",
-    rmbBadge: zh ? "人民币" : "RMB option",
+    flexibleBadge: zh ? "支持灵活支付" : "Flexible payment",
   };
 
   return (
@@ -124,7 +124,7 @@ export default async function NewDevelopmentPage({
           buildings={cards}
           labels={labels}
           locale={locale}
-          initialRmbOnly={query.purchase === "rmb"}
+          initialFlexibleOnly={query.purchase === "flexible" || query.purchase === "rmb"}
         />
       </Container>
     </>

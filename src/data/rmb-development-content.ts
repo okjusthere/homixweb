@@ -1,6 +1,6 @@
-import type { DevelopmentContent } from "@/data/new-development-content";
+import type { CarryingBand, DevelopmentContent } from "@/data/new-development-content";
 
-export const rmbDevelopmentContent: Record<string, DevelopmentContent> = {
+const baseFlexibleDevelopmentContent: Record<string, DevelopmentContent> = {
   "hendrix-house": {
     overview: {
       zh: "Hendrix House 是 Kips Bay 一栋仅 59 户的精品新盘。项目由 New Empire Corp. 开发，DXA Studio 与 Morali Architects 负责建筑，Paris Forino 完成室内。赤陶色立面、拱形窗与尺度克制的公共空间，让它更接近一栋有住宅感的曼哈顿公寓，而不是大型玻璃塔楼。",
@@ -182,3 +182,137 @@ export const rmbDevelopmentContent: Record<string, DevelopmentContent> = {
     },
   },
 };
+
+function verifiedBand(
+  layout: string,
+  commonCharges: string,
+  taxes: string,
+  unit: string,
+): CarryingBand {
+  return {
+    layout,
+    commonCharges: {
+      zh: `约 ${commonCharges}/月（代表单元 ${unit}）`,
+      en: `~${commonCharges} / mo (representative unit ${unit})`,
+    },
+    taxes: {
+      zh: `约 ${taxes}/月（代表单元 ${unit}）`,
+      en: `~${taxes} / mo (representative unit ${unit})`,
+    },
+  };
+}
+
+const verifiedNote = {
+  zh: "数据根据 2026 年 8 月 27 日可查的项目官网及公开在售单元整理。物业费与地产税会随户型线、楼层、面积、税收减免及具体单元变化，认购前须以当期发售计划书和单元费用表书面核验。",
+  en: "Based on project websites and publicly available unit information reviewed August 27, 2026. Common charges and property taxes vary by line, floor, area, abatement, and unit; verify the current offering plan and unit schedule in writing before purchase.",
+};
+
+const carryingBySlug: Record<string, NonNullable<DevelopmentContent["carrying"]>> = {
+  "hendrix-house": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("1 bed", "$752", "$1,105", "2C"),
+      verifiedBand("2 beds", "$1,455", "$2,167", "11B"),
+    ],
+  },
+  "the-kent": {
+    note: {
+      zh: `${verifiedNote.zh} 当前公开单元显示较低税额并注明税收减免；减免资格和到期日须由律师按目标单元核验。`,
+      en: `${verifiedNote.en} Current public units show reduced taxes and reference an abatement; counsel must verify eligibility and expiration for the target unit.`,
+    },
+    bands: [
+      verifiedBand("4 beds", "$3,751", "$342", "18B"),
+      verifiedBand("5 beds", "$4,701", "$428", "15A"),
+    ],
+  },
+  "urban-21": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("1 bed", "$404", "$591", "2B"),
+      verifiedBand("2 beds", "$618", "$904", "3E"),
+    ],
+  },
+  "skyline-tower": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("Studio", "$342", "$568", "3306"),
+      verifiedBand("1 bed", "$573", "$953", "3307"),
+      verifiedBand("2 beds", "$877", "$1,372", "PH205"),
+      verifiedBand("3 beds", "$1,118", "$1,749", "PH307"),
+    ],
+  },
+  "vesta-lic": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("Studio", "$336", "$503", "101A"),
+      verifiedBand("1 bed", "$443–$492", "$658–$731", "609B / 202B"),
+      verifiedBand("2 beds", "$763", "$1,134", "411B"),
+      verifiedBand("3 beds", "$1,123", "$1,669", "PH7B"),
+    ],
+  },
+  "the-farrington": {
+    note: {
+      zh: `${verifiedNote.zh} 公开单元显示的地产税很低，可能受减免影响；不得将该金额视为长期固定税额。`,
+      en: `${verifiedNote.en} Public units show unusually low property taxes that may reflect an abatement; do not treat the amount as a permanent fixed tax.`,
+    },
+    bands: [verifiedBand("2 beds", "$467", "$20", "13J")],
+  },
+  "the-prince-flushing": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("1 bed", "$326–$369", "$435", "10A / 6A"),
+      verifiedBand("2 beds", "$532–$611", "$661–$720", "7K / current sponsor range"),
+    ],
+  },
+  "la-vita-flushing": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("Studio", "$289", "$300", "3A"),
+      verifiedBand("1 bed", "$352", "$365", "5K"),
+      verifiedBand("2 beds", "$511", "$530", "18C"),
+      {
+        layout: "3 beds",
+        commonCharges: { zh: "按具体单元核验", en: "Verify by unit" },
+        taxes: { zh: "按具体单元核验", en: "Verify by unit" },
+      },
+    ],
+  },
+  "centric-condominium": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("1 bed", "$335–$418", "$574–$718", "current sponsor range"),
+      verifiedBand("2 beds", "$574–$747", "$985–$1,282", "current sponsor range"),
+      verifiedBand("3 beds", "$997", "$1,711", "12C"),
+    ],
+  },
+  "the-marina-astoria": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("Studio", "$248", "$533", "3F"),
+      verifiedBand("1 bed", "$599", "$327", "4G"),
+      verifiedBand("2 beds", "$890", "$481", "2K"),
+    ],
+  },
+  "sophie-condominium": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("Studio", "$285", "$493", "207"),
+      verifiedBand("1 bed", "$351", "$605", "406"),
+      verifiedBand("2 beds", "$554", "$957", "201"),
+    ],
+  },
+  "stanhope-foundry": {
+    note: verifiedNote,
+    bands: [
+      verifiedBand("1 bed", "$429", "$257", "3B"),
+      verifiedBand("2 beds", "$630", "$378", "2A"),
+    ],
+  },
+};
+
+export const rmbDevelopmentContent: Record<string, DevelopmentContent> = Object.fromEntries(
+  Object.entries(baseFlexibleDevelopmentContent).map(([slug, content]) => [
+    slug,
+    { ...content, carrying: carryingBySlug[slug] },
+  ]),
+);

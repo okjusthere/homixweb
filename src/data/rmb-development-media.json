@@ -27,9 +27,27 @@
         "sourceUrl": "https://hendrixhousenyc.com",
         "width": 2048,
         "height": 1406
+      },
+      {
+        "id": "home-office",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/hendrix-house/images/home-office.webp",
+        "caption": "Built-in home office",
+        "alt": "Built-in home office",
+        "sourceUrl": "https://hendrixhousenyc.com",
+        "width": 1440,
+        "height": 1560
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "2bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/hendrix-house/floorplans/2bed.webp",
+        "title": "2 bedrooms · 1 bath · Residence 3E–10E · 782 SF",
+        "sourceUrl": "https://streeteasy.com/building/hendrix-house/9e",
+        "width": 1228,
+        "height": 800
+      }
+    ]
   },
   "the-kent": {
     "images": [
@@ -61,7 +79,24 @@
         "height": 1440
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "4bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-kent/floorplans/4bed.webp",
+        "title": "4 bedrooms · Residence 18B · 2,735 SF",
+        "sourceUrl": "https://streeteasy.com/building/the-kent/18b",
+        "width": 1422,
+        "height": 800
+      },
+      {
+        "id": "5bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-kent/floorplans/5bed.webp",
+        "title": "5 bedrooms · Residence 15A · 3,564 SF",
+        "sourceUrl": "https://streeteasy.com/building/the-kent/15a",
+        "width": 1422,
+        "height": 800
+      }
+    ]
   },
   "urban-21": {
     "images": [
@@ -116,7 +151,40 @@
         "height": 610
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "studio",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/floorplans/studio.webp",
+        "title": "Studio · Residence 3306 · 413 SF",
+        "sourceUrl": "https://streeteasy.com/building/skyline-tower/3306",
+        "width": 518,
+        "height": 800
+      },
+      {
+        "id": "1bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/floorplans/1bed.webp",
+        "title": "1 bedroom · Residence 3307 · 704 SF",
+        "sourceUrl": "https://streeteasy.com/building/skyline-tower/3307",
+        "width": 518,
+        "height": 800
+      },
+      {
+        "id": "2bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/floorplans/2bed.webp",
+        "title": "2 bedrooms · Residence PH205 · 1,192 SF",
+        "sourceUrl": "https://streeteasy.com/building/skyline-tower/ph205",
+        "width": 866,
+        "height": 800
+      },
+      {
+        "id": "3bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/skyline-tower/floorplans/3bed.webp",
+        "title": "3 bedrooms · Residence PH307 · 1,547 SF",
+        "sourceUrl": "https://streeteasy.com/building/skyline-tower/ph307",
+        "width": 518,
+        "height": 800
+      }
+    ]
   },
   "vesta-lic": {
     "images": [
@@ -171,7 +239,24 @@
         "height": 1080
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "1bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-farrington/floorplans/1bed.webp",
+        "title": "1 bedroom · Residence 8G · 764 SF",
+        "sourceUrl": "https://streeteasy.com/building/the-farrington-queens-ny/8g",
+        "width": 808,
+        "height": 800
+      },
+      {
+        "id": "2bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-farrington/floorplans/2bed.webp",
+        "title": "2 bedrooms · Residence 13J · 911 SF",
+        "sourceUrl": "https://streeteasy.com/building/the-farrington-queens-ny/13j",
+        "width": 1043,
+        "height": 800
+      }
+    ]
   },
   "the-prince-flushing": {
     "images": [
@@ -201,6 +286,24 @@
         "sourceUrl": "https://theprinceflushing.com",
         "width": 2400,
         "height": 1600
+      },
+      {
+        "id": "city-view-residence",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-prince-flushing/images/city-view-residence.webp",
+        "caption": "Residence with Flushing city views",
+        "alt": "Residence with Flushing city views",
+        "sourceUrl": "https://theprinceflushing.com",
+        "width": 1070,
+        "height": 1070
+      },
+      {
+        "id": "corner-living",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-prince-flushing/images/corner-living.webp",
+        "caption": "Corner living room",
+        "alt": "Corner living room",
+        "sourceUrl": "https://theprinceflushing.com",
+        "width": 1070,
+        "height": 1070
       }
     ],
     "floorPlans": []
@@ -265,6 +368,24 @@
         "sourceUrl": "https://www.centricnyc.com",
         "width": 2400,
         "height": 1173
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/centric-condominium/images/kitchen.webp",
+        "caption": "Residence kitchen and dining area",
+        "alt": "Residence kitchen and dining area",
+        "sourceUrl": "https://www.centricnyc.com",
+        "width": 1500,
+        "height": 962
+      },
+      {
+        "id": "lobby",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/centric-condominium/images/lobby.webp",
+        "caption": "Residential lobby",
+        "alt": "Residential lobby",
+        "sourceUrl": "https://www.centricnyc.com",
+        "width": 1500,
+        "height": 1053
       }
     ],
     "floorPlans": []
@@ -297,9 +418,36 @@
         "sourceUrl": "https://www.themarinaastoria.com",
         "width": 2400,
         "height": 1453
+      },
+      {
+        "id": "kitchen",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/images/kitchen.webp",
+        "caption": "Residence kitchen",
+        "alt": "Residence kitchen",
+        "sourceUrl": "https://www.themarinaastoria.com",
+        "width": 1500,
+        "height": 1139
+      },
+      {
+        "id": "bedroom",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/images/bedroom.webp",
+        "caption": "Residence bedroom",
+        "alt": "Residence bedroom",
+        "sourceUrl": "https://www.themarinaastoria.com",
+        "width": 1500,
+        "height": 798
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "2bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/the-marina-astoria/floorplans/2bed.webp",
+        "title": "2 bedrooms · 2 baths · Residence 2K · 903 SF",
+        "sourceUrl": "https://streeteasy.com/building/the-marina-astoria/2k",
+        "width": 617,
+        "height": 800
+      }
+    ]
   },
   "sophie-condominium": {
     "images": [
@@ -331,7 +479,32 @@
         "height": 1600
       }
     ],
-    "floorPlans": []
+    "floorPlans": [
+      {
+        "id": "studio",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/floorplans/studio.webp",
+        "title": "Studio · Residence 207 · 444 SF",
+        "sourceUrl": "https://streeteasy.com/building/sophie-condominium/207",
+        "width": 1035,
+        "height": 800
+      },
+      {
+        "id": "1bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/floorplans/1bed.webp",
+        "title": "1 bedroom · Residence 406 · 610 SF",
+        "sourceUrl": "https://streeteasy.com/building/sophie-condominium/406",
+        "width": 1035,
+        "height": 800
+      },
+      {
+        "id": "2bed",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/sophie-condominium/floorplans/2bed.webp",
+        "title": "2 bedrooms · Residence 201 · 949 SF",
+        "sourceUrl": "https://streeteasy.com/building/sophie-condominium/201",
+        "width": 1035,
+        "height": 800
+      }
+    ]
   },
   "stanhope-foundry": {
     "images": [
@@ -361,6 +534,24 @@
         "sourceUrl": "https://www.stanhopefoundry.com",
         "width": 2400,
         "height": 1503
+      },
+      {
+        "id": "living-room",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/stanhope-foundry/images/living-room.webp",
+        "caption": "Residence living room and kitchen",
+        "alt": "Residence living room and kitchen",
+        "sourceUrl": "https://www.stanhopefoundry.com",
+        "width": 1500,
+        "height": 938
+      },
+      {
+        "id": "roof-terrace",
+        "src": "https://wnshsoxtxkfbphglyvmj.supabase.co/storage/v1/object/public/site-media/new-development/stanhope-foundry/images/roof-terrace.webp",
+        "caption": "Roof terrace",
+        "alt": "Roof terrace",
+        "sourceUrl": "https://www.stanhopefoundry.com",
+        "width": 1500,
+        "height": 882
       }
     ],
     "floorPlans": []

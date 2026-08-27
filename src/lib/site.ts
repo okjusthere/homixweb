@@ -98,7 +98,7 @@ export const buyNav: string[] = [
   "/neighborhoods",
   "/communities",
   "/NewDevelopment",
-  "/rmb-homes",
+  "/flexible-payment-homes",
   "/calculator",
 ];
 
@@ -109,7 +109,7 @@ export const footerNav: { headingKey: string; links: NavItem[] }[] = [
       { key: "listings", href: "/listings" },
       { key: "openHouses", href: "/open-houses" },
       { key: "newDevelopment", href: "/NewDevelopment" },
-      { key: "rmbHomes", href: "/rmb-homes" },
+      { key: "flexiblePaymentHomes", href: "/flexible-payment-homes" },
       { key: "sell", href: "/sell" },
       { key: "neighborhoods", href: "/neighborhoods" },
       { key: "communities", href: "/communities" },

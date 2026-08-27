@@ -10,7 +10,7 @@ export type FeaturedDevelopment = {
   officialUrl?: string;
   galleryCount: number;
   sourceUpdated: string;
-  rmbEligible?: true;
+  flexiblePayment?: true;
   transit: string;
   facts: {
     units: string;
@@ -1050,7 +1050,7 @@ const baseFeaturedDevelopments = [
   },
 ] as const satisfies FeaturedDevelopment[];
 
-const rmbEligibleExistingSlugs = new Set([
+const flexiblePaymentExistingSlugs = new Set([
   "monogram-new-york",
   "eastlight-condominium",
   "radiant-condominium",
@@ -1058,8 +1058,8 @@ const rmbEligibleExistingSlugs = new Set([
 
 export const featuredDevelopments: FeaturedDevelopment[] = [
   ...baseFeaturedDevelopments.map((development) =>
-    rmbEligibleExistingSlugs.has(development.slug)
-      ? { ...development, rmbEligible: true as const }
+    flexiblePaymentExistingSlugs.has(development.slug)
+      ? { ...development, flexiblePayment: true as const }
       : development,
   ),
   ...rmbDevelopments,

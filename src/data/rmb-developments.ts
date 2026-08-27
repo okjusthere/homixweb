@@ -13,7 +13,7 @@ export const rmbDevelopments = [
     officialUrl: "https://hendrixhousenyc.com",
     galleryCount: 4,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Kips Bay address near Madison Square Park, Gramercy, the 6 train at 23rd and 28th Streets, and crosstown bus service.",
     facts: {
       units: "59",
@@ -40,7 +40,7 @@ export const rmbDevelopments = [
     officialUrl: "https://thekentnyc.com",
     galleryCount: 3,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Upper East Side location near the Q at 96th Street, the 4/5/6 at 86th Street, Central Park, and neighborhood schools and museums.",
     facts: {
       units: "83",
@@ -64,9 +64,9 @@ export const rmbDevelopments = [
     area: "Hunters Point",
     address: "11-58 46th Road, Long Island City, NY 11101",
     sourceUrl: "https://streeteasy.com/building/urban-21",
-    galleryCount: 3,
+    galleryCount: 2,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Hunters Point location within a short walk of the G, E, M and 7 trains, Court Square, MoMA PS1, and the LIC waterfront.",
     facts: {
       units: "71",
@@ -91,7 +91,7 @@ export const rmbDevelopments = [
     officialUrl: "https://skylinetower-lic.com",
     galleryCount: 3,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Directly beside Court Square's E, G, M and 7 subway hub, with fast access to Midtown and a short walk to MoMA PS1.",
     facts: {
       units: "802",
@@ -120,7 +120,7 @@ export const rmbDevelopments = [
     officialUrl: "https://www.vestalic.com",
     galleryCount: 2,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Park-front position by Murray Park, close to the G, E, M and 7 trains, MoMA PS1, Court Square, and Gantry Plaza State Park.",
     facts: {
       units: "115",
@@ -147,7 +147,7 @@ export const rmbDevelopments = [
     sourceUrl: "https://streeteasy.com/building/the-farrington-queens-ny",
     galleryCount: 3,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Downtown Flushing location near Main Street retail, the 7 train, LIRR service, Northern Boulevard, and LaGuardia Airport.",
     facts: {
       units: "100",
@@ -168,9 +168,9 @@ export const rmbDevelopments = [
     address: "33-71 Prince Street, Flushing, NY 11354",
     sourceUrl: "https://streeteasy.com/building/the-prince",
     officialUrl: "https://theprinceflushing.com",
-    galleryCount: 3,
+    galleryCount: 5,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Central Flushing address near Main Street shopping, the 7 train and LIRR, with convenient access to Northern Boulevard and LaGuardia Airport.",
     facts: {
       units: "120",
@@ -194,7 +194,7 @@ export const rmbDevelopments = [
     officialUrl: "https://www.lavitany.com",
     galleryCount: 3,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Downtown Flushing address a short walk from the 7 train and LIRR at Main Street, restaurants, shopping, and Flushing Creek waterfront plans.",
     facts: {
       units: "150",
@@ -221,9 +221,9 @@ export const rmbDevelopments = [
     address: "58-01 Queens Boulevard, Woodside, NY 11377",
     sourceUrl: "https://streeteasy.com/building/centric-condominium",
     officialUrl: "https://www.centricnyc.com",
-    galleryCount: 3,
+    galleryCount: 5,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Queens Boulevard location near the 7 train at 52nd and 61st Streets, Woodside LIRR service, and major east-west roads.",
     facts: {
       units: "131",
@@ -249,9 +249,9 @@ export const rmbDevelopments = [
     address: "30-07 Vernon Boulevard, Astoria, NY 11102",
     sourceUrl: "https://streeteasy.com/building/the-marina-astoria",
     officialUrl: "https://www.themarinaastoria.com",
-    galleryCount: 3,
+    galleryCount: 5,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Astoria waterfront location near the NYC Ferry, Socrates Sculpture Park, Noguchi Museum, and bus connections to subway service.",
     facts: {
       units: "67",
@@ -277,7 +277,7 @@ export const rmbDevelopments = [
     sourceUrl: "https://streeteasy.com/building/sophie-condominium",
     galleryCount: 3,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Ditmars-Steinway location near neighborhood dining, Astoria Park, local bus service, and the N/W train at Ditmars Boulevard.",
     facts: {
       units: "24",
@@ -300,9 +300,9 @@ export const rmbDevelopments = [
     address: "196 Stanhope Street, Brooklyn, NY 11237",
     sourceUrl: "https://streeteasy.com/building/stanhope-foundry",
     officialUrl: "https://www.stanhopefoundry.com",
-    galleryCount: 3,
+    galleryCount: 5,
     sourceUpdated: updated,
-    rmbEligible: true,
+    flexiblePayment: true,
     transit: "Bushwick location near the M at Knickerbocker Avenue and Central Avenue and the L at DeKalb Avenue and Jefferson Street.",
     facts: {
       units: "10",
