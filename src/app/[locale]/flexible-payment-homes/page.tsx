@@ -58,6 +58,7 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
       units: development.facts.units,
       built: development.facts.built,
       href: newDevelopmentHref(development.slug),
+      flexiblePayment: false,
     };
   });
 
@@ -73,6 +74,9 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
     copied: zh ? "已复制 ✓" : "Copied ✓",
     noResults: zh ? "没有匹配的项目，换个关键词试试。" : "No matching projects — try another keyword.",
     showing: zh ? "显示" : "Showing",
+    flexibleOnly: zh ? "灵活支付" : "Flexible payment",
+    allProjects: zh ? "全部新盘" : "All projects",
+    flexibleBadge: zh ? "支持灵活支付" : "Flexible payment",
   };
 
   const itemListLd = {
@@ -122,6 +126,7 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
           buildings={cards}
           labels={labels}
           locale={locale}
+          showFlexibleFilter={false}
         />
       </Container>
     </>

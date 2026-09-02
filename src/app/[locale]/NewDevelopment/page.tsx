@@ -34,10 +34,13 @@ export async function generateMetadata({
 
 export default async function NewDevelopmentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ purchase?: string }>;
 }) {
   const locale = await getRouteLocale(params);
+  const query = await searchParams;
   const zh = locale === "zh";
 
   const cards: DevCard[] = [...featuredDevelopments]
@@ -57,6 +60,7 @@ export default async function NewDevelopmentPage({
         units: b.facts.units,
         built: b.facts.built,
         href: newDevelopmentHref(b.slug),
+        flexiblePayment: b.featuredInFlexiblePaymentFilter === true,
       };
     });
 
@@ -91,6 +95,9 @@ export default async function NewDevelopmentPage({
     copied: zh ? "已复制 ✓" : "Copied ✓",
     noResults: zh ? "没有匹配的楼盘，换个关键词试试。" : "No matching buildings — try another keyword.",
     showing: zh ? "显示" : "Showing",
+    flexibleOnly: zh ? "灵活支付" : "Flexible payment",
+    allProjects: zh ? "全部新盘" : "All projects",
+    flexibleBadge: zh ? "支持灵活支付" : "Flexible payment",
   };
 
   return (
@@ -117,6 +124,7 @@ export default async function NewDevelopmentPage({
           buildings={cards}
           labels={labels}
           locale={locale}
+          initialFlexibleOnly={query.purchase === "flexible"}
         />
       </Container>
     </>

@@ -11,6 +11,7 @@ export type FeaturedDevelopment = {
   galleryCount: number;
   sourceUpdated: string;
   flexiblePayment?: true;
+  featuredInFlexiblePaymentFilter?: true;
   transit: string;
   facts: {
     units: string;
@@ -1056,11 +1057,25 @@ const flexiblePaymentExistingSlugs = new Set([
   "radiant-condominium",
 ]);
 
+const privateFlexiblePaymentSlugs = new Set([
+  "urban-21",
+  "the-farrington",
+  "the-prince-flushing",
+]);
+
 export const featuredDevelopments: FeaturedDevelopment[] = [
   ...baseFeaturedDevelopments.map((development) =>
     flexiblePaymentExistingSlugs.has(development.slug)
-      ? { ...development, flexiblePayment: true as const }
+      ? {
+          ...development,
+          flexiblePayment: true as const,
+          featuredInFlexiblePaymentFilter: true as const,
+        }
       : development,
   ),
-  ...rmbDevelopments,
+  ...rmbDevelopments.map((development) =>
+    privateFlexiblePaymentSlugs.has(development.slug)
+      ? development
+      : { ...development, featuredInFlexiblePaymentFilter: true as const },
+  ),
 ];

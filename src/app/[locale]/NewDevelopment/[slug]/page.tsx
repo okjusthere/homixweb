@@ -230,6 +230,11 @@ export default async function NewDevelopmentDetailPage({
       <header className="mt-8 border-b border-line pb-8">
         <div className="flex flex-wrap items-center gap-3">
           <p className="eyebrow">{building.area}</p>
+          {building.featuredInFlexiblePaymentFilter && (
+            <span className="border border-bronze/45 bg-bronze/5 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze">
+              {zh ? "支持灵活支付" : "Flexible payment"}
+            </span>
+          )}
         </div>
         <h1 className="mt-3 font-serif text-4xl font-normal leading-[1.0] tracking-tight text-ink sm:text-6xl">
           {building.name}
