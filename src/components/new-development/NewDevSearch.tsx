@@ -20,7 +20,6 @@ export interface DevCard {
   units: string;
   built: string;
   href: string;
-  flexiblePayment: boolean;
 }
 
 export interface DevSearchLabels {
@@ -35,43 +34,26 @@ export interface DevSearchLabels {
   copied: string;
   noResults: string;
   showing: string; // e.g. "showing" → "showing 12 / 34"
-  flexibleOnly: string;
-  allProjects: string;
-  flexibleBadge: string;
 }
 
 export function NewDevSearch({
   buildings,
   labels,
   locale,
-  initialFlexibleOnly = false,
-  showFlexibleFilter = true,
 }: {
   buildings: DevCard[];
   labels: DevSearchLabels;
   locale: Locale;
-  initialFlexibleOnly?: boolean;
-  showFlexibleFilter?: boolean;
 }) {
   const [q, setQ] = useState("");
-  const [flexibleOnly, setFlexibleOnly] = useState(initialFlexibleOnly);
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
     return buildings.filter((b) => {
-      if (flexibleOnly && !b.flexiblePayment) return false;
       if (!s) return true;
       return `${b.name} ${b.area} ${b.borough} ${b.address}`.toLowerCase().includes(s);
     });
-  }, [q, flexibleOnly, buildings]);
-
-  const setPurchaseFilter = (next: boolean) => {
-    setFlexibleOnly(next);
-    const url = new URL(window.location.href);
-    if (next) url.searchParams.set("purchase", "flexible");
-    else url.searchParams.delete("purchase");
-    window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-  };
+  }, [q, buildings]);
 
   return (
     <>
@@ -96,26 +78,6 @@ export function NewDevSearch({
               className="w-full rounded-sm border border-line bg-surface py-2.5 pl-10 pr-4 text-sm text-ink outline-none transition focus:border-bronze"
             />
           </div>
-          {showFlexibleFilter && (
-            <div className="flex flex-none border border-line bg-surface p-0.5" aria-label={labels.flexibleOnly}>
-              <button
-                type="button"
-                onClick={() => setPurchaseFilter(false)}
-                aria-pressed={!flexibleOnly}
-                className={`px-3 py-2 text-xs font-medium transition-colors ${!flexibleOnly ? "bg-ink text-paper" : "text-muted hover:text-ink"}`}
-              >
-                {labels.allProjects}
-              </button>
-              <button
-                type="button"
-                onClick={() => setPurchaseFilter(true)}
-                aria-pressed={flexibleOnly}
-                className={`px-3 py-2 text-xs font-medium transition-colors ${flexibleOnly ? "bg-bronze text-white" : "text-muted hover:text-ink"}`}
-              >
-                {labels.flexibleOnly}
-              </button>
-            </div>
-          )}
           <span className="flex-none whitespace-nowrap text-sm text-muted sm:ml-auto">
             {labels.showing} {filtered.length} / {buildings.length}
           </span>
@@ -168,22 +130,12 @@ function DevCardView({
               sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
             />
-            {b.flexiblePayment && (
-              <span className="absolute left-3 top-3 bg-paper/94 px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze shadow-sm backdrop-blur">
-                {labels.flexibleBadge}
-              </span>
-            )}
           </div>
         ) : (
           <div className="relative flex aspect-[16/10] items-center justify-center border-b border-line bg-paper px-5 text-center">
             <p className="text-xs uppercase tracking-[0.16em] text-muted">
               {labels.mediaPending}
             </p>
-            {b.flexiblePayment && (
-              <span className="absolute left-3 top-3 bg-surface px-2.5 py-1 text-[0.65rem] font-medium uppercase tracking-[0.1em] text-bronze">
-                {labels.flexibleBadge}
-              </span>
-            )}
           </div>
         )}
         <div className="border-b border-line p-5">

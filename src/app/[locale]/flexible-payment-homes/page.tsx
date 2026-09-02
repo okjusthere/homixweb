@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "@/components/ui/LocalizedLink";
 import { Container } from "@/components/ui/Container";
 import { NewDevSearch, type DevCard } from "@/components/new-development/NewDevSearch";
 import { featuredDevelopments } from "@/data/featured-developments";
@@ -13,18 +12,28 @@ const routePath = "/flexible-payment-homes";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const locale = await getRouteLocale(params);
-  return pageMetadata({
-    path: routePath,
-    locale,
-    title: {
-      en: "New York New Developments with Flexible Payment Options",
-      zh: "纽约灵活支付新盘",
+  return {
+    ...pageMetadata({
+      path: routePath,
+      locale,
+      title: {
+        en: "New York New Developments with Flexible Payment Options",
+        zh: "纽约灵活支付新盘",
+      },
+      description: {
+        en: "A curated Homix guide to New York new developments where flexible payment arrangements may be available, subject to project-specific terms and transaction review.",
+        zh: "Homix 整理可根据买家情况提供灵活付款安排的纽约新盘。具体付款方式、时间与适用条件以项目及交易方案核验为准。",
+      },
+    }),
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true,
+      },
     },
-    description: {
-      en: "A curated Homix guide to New York new developments where flexible payment arrangements may be available, subject to project-specific terms and transaction review.",
-      zh: "Homix 整理可根据买家情况提供灵活付款安排的纽约新盘。具体付款方式、时间与适用条件以项目及交易方案核验为准。",
-    },
-  });
+  };
 }
 
 export default async function FlexiblePaymentHomesPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -49,7 +58,6 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
       units: development.facts.units,
       built: development.facts.built,
       href: newDevelopmentHref(development.slug),
-      flexiblePayment: true,
     };
   });
 
@@ -65,9 +73,6 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
     copied: zh ? "已复制 ✓" : "Copied ✓",
     noResults: zh ? "没有匹配的项目，换个关键词试试。" : "No matching projects — try another keyword.",
     showing: zh ? "显示" : "Showing",
-    flexibleOnly: zh ? "灵活支付" : "Flexible payment",
-    allProjects: zh ? "全部新盘" : "All projects",
-    flexibleBadge: zh ? "支持灵活支付" : "Flexible payment",
   };
 
   const itemListLd = {
@@ -109,9 +114,6 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
               </p>
             </div>
           </div>
-          <Link href="/NewDevelopment?purchase=flexible" className="mt-7 inline-flex text-sm font-medium text-bronze transition-colors hover:text-bronze-dark">
-            {zh ? "在纽约新盘库中查看筛选结果 →" : "View this filter in the full new-development library →"}
-          </Link>
         </Container>
       </section>
 
@@ -120,8 +122,6 @@ export default async function FlexiblePaymentHomesPage({ params }: { params: Pro
           buildings={cards}
           labels={labels}
           locale={locale}
-          initialFlexibleOnly
-          showFlexibleFilter={false}
         />
       </Container>
     </>

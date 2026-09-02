@@ -38,7 +38,6 @@ export async function GET() {
     `- [Homes for sale](${base}/listings): MLS listings across New York`,
     `- [Upcoming Open Houses](${base}/open-houses): current public showing times for homes represented by Homix`,
     `- [New developments](${base}/NewDevelopment): ${featuredDevelopments.length} curated NYC new-construction condo buildings with pricing and floor plans`,
-    `- [Flexible payment options](${base}/flexible-payment-homes): ${featuredDevelopments.filter((building) => building.flexiblePayment).length} New York new-development projects where flexible payment arrangements may be available, subject to project-specific terms`,
     `- [Neighborhood guides](${base}/neighborhoods): ${neighborhoods.length} bilingual neighborhood guides (Queens, Brooklyn, Manhattan, Long Island)`,
     `- [Gated communities](${base}/communities): ${gatedCommunities.length} Nassau County gated & private communities`,
     `- [Advisors](${base}/agents): bilingual licensed agents`,
