@@ -1084,8 +1084,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
   },
   "malabar-residences": {
     "overview": {
-      "zh": "Malabar Residences 是 ODA 操刀设计、印度 Mahindra 集团旗下 MRR Development 开发的 28 层、145 户全新公寓楼，坐落于曼哈顿中城东 126 East 57th Street，紧邻 Billionaires' Row（亿万富翁街）与 Park、Lexington 大道。它最具辨识度的标志，是 ODA 那套\"像素化\"层叠清水混凝土外立面——不是为了好看而堆砌的造型，而是把楼体逐层错位、退台，让 145 户里有 100 户都带上了自己的私人户外空间（阳台、敞廊或露台），并在密集的中城地块里争取到更多采光与景观。",
-      "en": "Malabar Residences is a brand-new 28-story, 145-unit condominium at 126 East 57th Street in Midtown East, designed inside and out by ODA and developed by MRR Development (the Mahindra Group's real estate arm), steps from Billionaires' Row and Park/Lexington Avenue. Its signature is ODA's \"pixelated,\" cascading cast-in-place concrete facade — not styling for its own sake: the stepped, staggered massing gives 100 of the 145 homes their own private outdoor space and pulls extra light and views into a dense Midtown block."
+      "zh": "Malabar Residences 是一栋由 ODA 负责建筑与室内设计的 28 层、145 户全新公寓楼，坐落于曼哈顿中城东 126 East 57th Street，紧邻 Billionaires' Row（亿万富翁街）与 Park、Lexington 大道。项目由 MRR Development 联合创始人 Anand G. Mahindra、Rotem Rosen 与发起人 Yitzhaq Hajaj 推进；项目官网特别说明 Mahindra Group 本身并未参与开发。它最具辨识度的标志，是 ODA 那套\"像素化\"层叠清水混凝土外立面——楼体逐层错位、退台，让 145 户里有 100 户拥有自己的私人户外空间，并在密集的中城地块里争取到更多采光与景观。",
+      "en": "Malabar Residences is a new 28-story, 145-unit condominium at 126 East 57th Street in Midtown East, with architecture and interiors by ODA. The project is led by MRR Development co-founders Anand G. Mahindra and Rotem Rosen together with sponsor principal Yitzhaq Hajaj; the official sponsor page expressly states that the Mahindra Group itself is not involved in the development. Its signature is ODA's pixelated, cascading cast-in-place concrete facade: the stepped massing gives 100 of the 145 homes private outdoor space while bringing more light and views into a dense Midtown block."
     },
     "highlights": [
       {
@@ -1121,8 +1121,8 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
       {
         "titleZh": "户型从工作室到 3 房，覆盖面广",
         "titleEn": "Studios through three-bedrooms — a wide range",
-        "bodyZh": "在售户型从工作室、1 房、2 房到 3 房及顶层复式，定价区间从工作室约 151 万美元到 3 房/顶层最高 1,350 万美元。对想进入 57 街、Billionaires' Row 板块、但预算差异很大的买家，同一栋楼里就能从入门到旗舰各取所需。",
-        "bodyEn": "The mix runs from studios and one-beds to two- and three-bedrooms and penthouses, priced from about \\$1.51M for a studio up to \\$13.5M at the three-bed/penthouse end. For buyers who want into the 57th Street / Billionaires' Row corridor at very different budgets, a single building covers entry-level through flagship."
+        "bodyZh": "目前项目官网公开户型从 Studio、1 房、2 房到 3 房及顶层单位，在售价格约从 148 万美元起，至 PH1A 的 1,200 万美元。对想进入 57 街、Billionaires' Row 板块、但预算差异很大的买家，同一栋楼里就能从入门到旗舰各取所需。",
+        "bodyEn": "The current official availability runs from studios and one-beds to two- and three-bedroom homes and a penthouse, starting around \\$1.48M and reaching \\$12M for PH1A. For buyers seeking the 57th Street and Billionaires' Row corridor at very different budgets, one building spans entry-level through flagship."
       }
     ],
     "location": {
@@ -1131,52 +1131,52 @@ export const newDevelopmentContent: Record<string, DevelopmentContent> = {
     },
     "carrying": {
       "note": {
-        "zh": "仅为近似估算——公共维护费与地税因户型线、楼层、朝向及户外空间而异，须按单元结合当前房源与发售计划书（纽约州总检察长备案号 CD24-0247）逐一核验。Malabar Residences 以\"享有地税减免（tax-abated）\"的共管公寓销售，故此处为减免期内的较低地税，期满后将逐步上调；Studio 与一居室数据来自实际在售单元（如 #901 Studio 约 $959 维护费/约 $790 地税；#603 一居室 $1,049 维护费/$865 地税），二居室与三居室区间则依据本楼实测的每平方英尺费率推算，须按单元核验。",
-        "en": "Approximate estimates only — common charges and taxes vary by line, floor, exposure, and outdoor space, and must be verified per unit against the current listing and offering plan (NY AG File No. CD24-0247). Malabar Residences is marketed as a tax-abated condominium, so these are reduced abated taxes that will step up over the abatement term; studio and 1-bed figures are anchored to actual listed units (e.g., #901 studio ~$959 CC / ~$790 tax; #603 one-bed $1,049 CC / $865 tax), while 2-bed and 3-bed ranges are extrapolated from the building's observed per-square-foot rates and should be confirmed unit-by-unit."
+        "zh": "以下为项目官网当前 Availability 页面列示的在售单元月度公共维护费与地税范围，并非按面积推算。费用会因户型线、楼层、朝向和户外空间而异，价格及费用也可能随发售进度调整，认购前须按具体单元及最新版发售文件逐一核验。",
+        "en": "These ranges use the monthly common charges and real estate taxes shown for currently offered residences on the project's official Availability page, rather than extrapolated estimates. Charges vary by line, floor, exposure, and outdoor space and may change as sales progress; verify the specific residence against the latest offering documents before purchase."
       },
       "bands": [
         {
           "layout": "Studio",
           "commonCharges": {
-            "zh": "约 $900–$1,100/月",
-            "en": "~$900–$1,100 / mo"
+            "zh": "约 $980/月",
+            "en": "~$980 / mo"
           },
           "taxes": {
-            "zh": "约 $750–$900/月",
-            "en": "~$750–$900 / mo"
+            "zh": "约 $1,132/月",
+            "en": "~$1,132 / mo"
           }
         },
         {
           "layout": "1 bed",
           "commonCharges": {
-            "zh": "约 $1,000–$1,500/月",
-            "en": "~$1,000–$1,500 / mo"
+            "zh": "约 $965–$1,452/月",
+            "en": "~$965–$1,452 / mo"
           },
           "taxes": {
-            "zh": "约 $800–$1,250/月",
-            "en": "~$800–$1,250 / mo"
+            "zh": "约 $1,115–$1,677/月",
+            "en": "~$1,115–$1,677 / mo"
           }
         },
         {
           "layout": "2 beds",
           "commonCharges": {
-            "zh": "约 $2,100–$2,700/月",
-            "en": "~$2,100–$2,700 / mo"
+            "zh": "约 $2,054–$2,087/月",
+            "en": "~$2,054–$2,087 / mo"
           },
           "taxes": {
-            "zh": "约 $1,700–$2,300/月",
-            "en": "~$1,700–$2,300 / mo"
+            "zh": "约 $2,371–$2,410/月",
+            "en": "~$2,371–$2,410 / mo"
           }
         },
         {
           "layout": "3 beds",
           "commonCharges": {
-            "zh": "约 $2,900–$5,500/月",
-            "en": "~$2,900–$5,500 / mo"
+            "zh": "约 $3,033–$4,165/月",
+            "en": "~$3,033–$4,165 / mo"
           },
           "taxes": {
-            "zh": "约 $2,400–$4,500/月",
-            "en": "~$2,400–$4,500 / mo"
+            "zh": "约 $3,503–$4,809/月",
+            "en": "~$3,503–$4,809 / mo"
           }
         }
       ]

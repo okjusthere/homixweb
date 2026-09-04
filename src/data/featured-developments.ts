@@ -297,7 +297,7 @@ const baseFeaturedDevelopments = [
     sourceUrl: "https://streeteasy.com/building/malabar-residences",
     officialUrl: "https://malabarnyc.com",
     galleryCount: 23,
-    sourceUpdated: "9/18/2025",
+    sourceUpdated: "9/3/2026",
     transit:
       "57th Street corridor near Billionaires' Row, Park Avenue, Fifth Avenue, Central Park, and multiple Midtown subway lines.",
     facts: {
@@ -305,16 +305,16 @@ const baseFeaturedDevelopments = [
       stories: "28",
       built: "2026",
       status: "New development",
-      developer: "MRR Development (Anand Mahindra, Rotem Rosen); Zahi Hagag",
+      developer: "MRR Development; Anand G. Mahindra, Rotem Rosen & Yitzhaq Hajaj",
       architect: "ODA Architecture",
       interiors: "ODA Architecture",
-      sales: "Douglas Elliman Development Marketing",
+      sales: "Nest Seekers International",
     },
     priceBands: [
-      { layout: "Studio", price: "$1,510,000 - $1,580,000", availability: "3 available" },
-      { layout: "1 bed", price: "$1,599,000 - $2,870,000", availability: "6 available" },
-      { layout: "2 beds", price: "$3,620,000 - $4,730,000", availability: "3 available" },
-      { layout: "3 beds", price: "$5,500,000 - $13,500,000", availability: "4 available" },
+      { layout: "Studio", price: "$1,480,000 - $1,580,000", availability: "2 currently offered" },
+      { layout: "1 bed", price: "$1,930,000 - $2,570,000", availability: "4 currently offered" },
+      { layout: "2 beds", price: "$3,400,000 - $3,730,000", availability: "2 currently offered" },
+      { layout: "3 beds", price: "$5,500,000 - $12,000,000", availability: "2 currently offered, including PH1A" },
     ],
   },
   {
