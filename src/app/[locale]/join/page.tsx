@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { InquiryForm } from "@/components/forms/InquiryForm";
 import { getRouteLocale, getT } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { portalJoinUrl, siteConfig } from "@/lib/site";
 import { SITE_MEDIA_ROOT } from "@/lib/media";
 
 export async function generateMetadata({
@@ -45,6 +45,7 @@ export default async function JoinPage({
 }) {
   const locale = await getRouteLocale(params);
   const { t } = await getT(locale);
+  const applyUrl = portalJoinUrl(locale);
   return (
     <>
       {/* Hero */}
@@ -57,9 +58,16 @@ export default async function JoinPage({
             </h1>
             <p className="mt-6 text-xl leading-relaxed text-muted">{t.join.lead}</p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <Button href="#apply">{t.join.heroCta}</Button>
+              <Button href={applyUrl} sameTab>
+                {t.join.heroCta}
+                <span aria-hidden>→</span>
+              </Button>
               <Button href="/commission-plan" variant="outline">
                 {t.join.commissionPlanCta}
+              </Button>
+              <Button href="#questions" variant="ghost">
+                {t.join.consultationCta}
+                <span aria-hidden>↓</span>
               </Button>
             </div>
           </div>
@@ -220,8 +228,8 @@ export default async function JoinPage({
         </Container>
       </section>
 
-      {/* Apply */}
-      <section id="apply" className="scroll-mt-24 bg-ink py-20 text-paper sm:py-28">
+      {/* Pre-application questions */}
+      <section id="questions" className="scroll-mt-24 bg-ink py-20 text-paper sm:py-28">
         <Container>
           <div className="grid gap-12 md:grid-cols-2 md:gap-20">
             <div>
@@ -240,7 +248,7 @@ export default async function JoinPage({
               </p>
             </div>
             <div className="rounded-sm bg-surface p-7 sm:p-9">
-              <InquiryForm labels={t.inquiry} source="join" />
+              <InquiryForm labels={t.inquiry} source="join-consultation" />
             </div>
           </div>
         </Container>

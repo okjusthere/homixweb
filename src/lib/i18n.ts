@@ -216,6 +216,7 @@ const en = {
     lead: "Most brokerages sell you a logo and a commission split, then leave you to find clients alone. Homix is a brokerage, an agent incubator, and a media engine in one. From day one, you gain access to an in-house studio and distribution through affiliated 抖音, 小红书, and Instagram accounts with 1M+ combined followers, plus AI and data tools and bilingual senior mentors who have closed in this market.",
     heroCta: "Apply to join Homix",
     commissionPlanCta: "View commission plan",
+    consultationCta: "Talk with recruiting",
     stats: [
       {
         value: "1M+",
@@ -315,9 +316,9 @@ const en = {
         a: "It's a strong advantage because so many of our clients are Chinese-American, and our team operates in both languages. But it isn't a hard requirement — drive, coachability, and integrity come first. We'll place you where you can win.",
       },
     ],
-    ctaEyebrow: "Let's talk",
-    ctaTitle: "Stop chasing leads alone. Become the headline.",
-    ctaLead: "One conversation is all it takes to see what an audience, a studio, AI tools, and real mentorship could do for your career. Apply below — we'll reply in the language you prefer.",
+    ctaEyebrow: "Before you apply",
+    ctaTitle: "Questions about making the move?",
+    ctaLead: "Talk with our recruiting team about license transfer, commission plans, team options, or what your first months at Homix could look like. This form is for questions; the application begins through the button above.",
     orReach: "Or reach us directly at",
   },
   training: {
@@ -793,6 +794,7 @@ const zh: Dict = {
     lead: "大多数经纪公司卖给你一个 logo 和一份佣金分成，然后让你独自去找客户。Homix 不一样——我们是经纪公司、经纪人孵化器和媒体引擎三合一。入职第一天，你就能使用自有内容工作室，并通过抖音、小红书、Instagram 等合计 100 万+ 粉丝的关联账号进行内容分发，同时获得 AI、数据工具与本地双语资深导师支持。",
     heroCta: "申请加入 Homix",
     commissionPlanCta: "查看佣金方案",
+    consultationCta: "先与招聘团队沟通",
     stats: [
       {
         value: "100 万+",
@@ -892,9 +894,9 @@ const zh: Dict = {
         a: "会中文是很大的优势，因为我们大量客户是华人，团队本身也以中英双语运作。但这并非硬性要求——企图心、虚心受教和正直更为重要。我们会把你安排在最能取胜的位置。",
       },
     ],
-    ctaEyebrow: "聊一聊",
-    ctaTitle: "别再独自追着客户跑。让自己成为头条。",
-    ctaLead: "只需一次面谈，你就能看到一群观众、一个工作室、一套 AI 工具和真正的导师，能为你的事业带来什么。请在下方申请——我们会用你偏好的语言回复你。",
+    ctaEyebrow: "申请前咨询",
+    ctaTitle: "转入 Homix 前，还有问题？",
+    ctaLead: "你可以在这里向招聘团队了解执照转入、佣金方案、团队选择或入职后的发展安排。本表单仅用于咨询；正式申请请点击页面上方的申请按钮。",
     orReach: "或直接联系我们：",
   },
   training: {

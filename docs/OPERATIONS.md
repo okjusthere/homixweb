@@ -140,6 +140,23 @@ Recommended launch sequence:
 Advisors missing photos, bios, phone numbers, emails, and license numbers are
 expected to complete them from the portal.
 
+### Recruiting application handoff
+
+The public website explains the brokerage and compensation plans, but the
+formal agent application is owned by the Agent Portal:
+
+- `/join` and `/commission-plan` link to
+  `https://agents.homixny.com/join?source=homix-web&lang=<locale>`;
+- the website's bottom form is pre-application recruiting contact only and
+  continues to use the normal inquiry email/Supabase pipeline;
+- no reusable onboarding invitation token is stored in this repository;
+- the Portal validates source, language, campaign, and optional plan hints,
+  then owns Google identity, application state, agreement, payment, and
+  activation.
+
+Deploy the Portal `/join` route before deploying a website change that points
+at it. Smoke-test both English and Chinese links after either project changes.
+
 ### Advisor MLS reconciliation
 
 Saving a license in the Portal triggers an immediate exact-license lookup
@@ -267,6 +284,10 @@ Then verify:
 
 - homepage desktop and mobile first viewport;
 - `/join` stats band uses warm Homix colors, not green;
+- `/join` and `/commission-plan` application CTAs open the Portal's public
+  application entry in the same tab with the correct `lang` value;
+- the `/join` bottom form is described as recruiting consultation, not as the
+  formal application;
 - `/contact` test inquiry stores and emails;
 - `/privacy`, `/terms`, `/fair-housing`, `/standard-operating-procedures`;
 - footer license, Equal Housing language, and legal links;

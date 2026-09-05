@@ -5,6 +5,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SITE_MEDIA_ROOT } from "@/lib/media";
 import { getRouteLocale } from "@/lib/i18n";
+import { portalJoinUrl } from "@/lib/site";
 import {
   breadcrumbLd,
   faqLd,
@@ -561,6 +562,7 @@ export default async function CommissionPlanPage({
 }) {
   const locale = await getRouteLocale(params);
   const content = copy[locale];
+  const applyUrl = portalJoinUrl(locale);
 
   return (
     <>
@@ -588,7 +590,7 @@ export default async function CommissionPlanPage({
                 {content.hero.primary}
                 <span aria-hidden>↓</span>
               </Button>
-              <Button href="/join#apply" variant="outline" onDark>
+              <Button href={applyUrl} variant="outline" onDark sameTab>
                 {content.hero.secondary}
               </Button>
             </div>
@@ -907,7 +909,7 @@ export default async function CommissionPlanPage({
                 <Button href="/training" variant="outline">
                   {content.platform.trainingCta}
                 </Button>
-                <Button href="/join#apply" variant="ghost">
+                <Button href={applyUrl} variant="ghost" sameTab>
                   {content.platform.applyCta}
                   <span aria-hidden>→</span>
                 </Button>
@@ -983,7 +985,7 @@ export default async function CommissionPlanPage({
               </p>
             </div>
             <div className="flex flex-wrap gap-4 md:justify-end">
-              <Button href="/join#apply" onDark>
+              <Button href={applyUrl} onDark sameTab>
                 {content.cta.primary}
               </Button>
               <Button href="/training" variant="outline" onDark>

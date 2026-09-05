@@ -77,6 +77,23 @@ export const siteConfig = {
   },
 } as const;
 
+export type PortalJoinPlan = "solo" | "solo_pro" | "team_member";
+
+/** Build the single public handoff into the Agent Portal application flow. */
+export function portalJoinUrl(
+  locale: "en" | "zh",
+  options: { plan?: PortalJoinPlan; campaign?: string } = {},
+): string {
+  const url = new URL("/join", siteConfig.portalUrl);
+  url.searchParams.set("source", "homix-web");
+  url.searchParams.set("lang", locale);
+  if (options.plan) url.searchParams.set("plan", options.plan);
+  if (options.campaign && /^[a-z0-9_-]{1,64}$/i.test(options.campaign)) {
+    url.searchParams.set("campaign", options.campaign);
+  }
+  return url.toString();
+}
+
 /** Nav items reference i18n keys (see common.* in i18n.ts) for their labels. */
 export interface NavItem {
   key: string;

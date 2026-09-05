@@ -31,7 +31,11 @@ type BaseProps = {
   children: React.ReactNode;
 };
 
-type LinkProps = BaseProps & { href: string };
+type LinkProps = BaseProps & {
+  href: string;
+  /** Keep cross-domain conversion flows in the current tab. */
+  sameTab?: boolean;
+};
 
 type BtnProps = BaseProps & {
   href?: undefined;
@@ -57,7 +61,9 @@ export function Button(props: LinkProps | BtnProps) {
       return (
         <a
           href={props.href}
-          {...(isHttp ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          {...(isHttp && !props.sameTab
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
           className={classes}
         >
           {props.children}
